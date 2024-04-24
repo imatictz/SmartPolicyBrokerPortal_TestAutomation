@@ -545,7 +545,17 @@ public class SeleniumOperations
     	 
      }
      
-     
+     public static void browserClose() {
+    	 try {
+    	 driver.quit();
+    	 }
+    	 catch(Exception e) {
+    		 outputparameters.put("STATUS","Fail");
+  		   outputparameters.put("MESSAGE","Method Used:browserColse, Input Given:");
+  		 	 
+    	 }
+     }
+          
  }		 
 	
 	
