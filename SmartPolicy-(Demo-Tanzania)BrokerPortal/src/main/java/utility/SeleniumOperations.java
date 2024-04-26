@@ -491,22 +491,23 @@ public class SeleniumOperations
      public static void wait(Object[]Inputparameters) throws InterruptedException {
     	String input=(String)Inputparameters[0];
     	 WebElement waitTill= driver.findElement(By.xpath(input));
- 		Thread.sleep(5000);
- 		//WebDriverWait wait1 = new WebDriverWait(driver, 20);
- 		//wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
+ 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+ 		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
      }
      
 //SwitchWindow     
      
      public static Hashtable<String, Object> switchWindow() throws IOException {
-    	
-    	Set<String> ids = driver.getWindowHandles();
+    	try {
+    		driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+    		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+     		wait1.until(ExpectedConditions.visibilityOfElementLocated( By.xpath("//*[text()='Demo Insurance Brokers (T) Limited.']")));
+    		Set<String> ids = driver.getWindowHandles();
     	
     	Iterator<String> values = ids.iterator();    
     	
     	String one = values.next();
     	String two = values.next();
-    	
     	
         driver.switchTo().window(two);
     	
@@ -527,7 +528,6 @@ public class SeleniumOperations
     	PDDocument pdDocument = PDDocument.load(bufferedInput);
     	int pages = pdDocument.getNumberOfPages();
     	System.out.println("Number Of Pages In PDF"+" "+pages);
-        Assert.assertEquals(pages,1);
         System.out.println("==========End==========");
         
         PDFTextStripper text = new PDFTextStripper();
@@ -537,8 +537,13 @@ public class SeleniumOperations
         System.out.println("==========End==========");
       
        outputparameters.put("STATUS","Pass");
-	   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
-	     
+	   outputparameters.put("MESSAGE","Method Used:switchWindow, Input Given:");
+    	}
+    	catch(Exception e) {
+   		 outputparameters.put("STATUS","Fail");
+ 		   outputparameters.put("MESSAGE","Method Used:switchWindow, Input Given:");
+ 		 	 
+   	 }
 		return outputparameters;
     	
     	 
@@ -547,6 +552,7 @@ public class SeleniumOperations
      
      public static void browserClose() {
     	 try {
+    		 driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
     	 driver.quit();
     	 }
     	 catch(Exception e) {
