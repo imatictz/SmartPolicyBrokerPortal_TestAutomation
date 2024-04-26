@@ -1296,13 +1296,7 @@ When user select "2024" as year
 And user click on show report button
 Then user able to view MIS - Performance Report (Yearly) in pdf format
 
-@106
-Scenario: Verify user able to view MIS - Performance Report (Yearly) Report successfully
-When user search "MIS - Performance Report (Yearly)" as report name in search box
-Then user click to select MIS - Performance Report (Yearly) as report
-When user select "2024" as year
-And user click on show report button
-Then user able to view MIS - Performance Report (Yearly) in pdf format
+
 
 
 

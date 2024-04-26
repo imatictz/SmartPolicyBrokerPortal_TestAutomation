@@ -492,14 +492,14 @@ public class SeleniumOperations
     	String input=(String)Inputparameters[0];
     	 WebElement waitTill= driver.findElement(By.xpath(input));
  		Thread.sleep(5000);
- 		//WebDriverWait wait1 = new WebDriverWait(driver, 20);
- 		//wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
+ 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+ 		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
      }
      
 //SwitchWindow     
      
      public static Hashtable<String, Object> switchWindow() throws IOException {
-    	
+    	try {
     	Set<String> ids = driver.getWindowHandles();
     	
     	Iterator<String> values = ids.iterator();    
@@ -538,11 +538,18 @@ public class SeleniumOperations
       
        outputparameters.put("STATUS","Pass");
 	   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+    	}
+    	catch(Exception e) {
+ 		   outputparameters.put("STATUS","Fail");
+ 		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+ 		 }
 	     
 		return outputparameters;
-    	
-    	 
-    	 
+     
+     }
+     
+     public static void browserColse() {
+    	 driver.quit();
      }
      
      
