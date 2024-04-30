@@ -54,4 +54,9 @@ public class Hookable {
 		input4[0]="//*[text()='Login']";
 		SeleniumOperations.clickOnElement(input4);
     } 
+	
+	@After(order=1)
+	public void browserClose() {
+		SeleniumOperations.browserClose();
+	}
 }

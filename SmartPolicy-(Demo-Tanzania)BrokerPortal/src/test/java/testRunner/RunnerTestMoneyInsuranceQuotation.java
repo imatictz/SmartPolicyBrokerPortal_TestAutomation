@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Reports/Report.feature",     
-                   tags= "@105", 
+                   tags= "@All", 
                    glue={"cucumberMap21Reports","MyHooks"}, 
                    monochrome=true,   
                    plugin= {"pretty",   	
