@@ -186,13 +186,17 @@ public class SeleniumOperations
 		   
 		   if(givenText.equalsIgnoreCase(findText)){
 			 System.out.println("Test Case Pass");
+			 outputparameters.put("STATUS","PASS");
+			   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
+		     
 		   }
 		   else {
 			 System.out.println("Test Case Fail");
+			 outputparameters.put("STATUS","FAIL");
+			   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
 		   }
-		   outputparameters.put("STATUS","PASS");
-		   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
-	     }
+		   }
+		   
 	     catch(Exception e) {
 		   outputparameters.put("STATUS","FAIL");
 		   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
@@ -488,8 +492,8 @@ public class SeleniumOperations
      }
      
 // Explicit Wait
-     public static void wait(Object[]Inputparameters) throws InterruptedException {
-    	String input=(String)Inputparameters[0];
+     public static void wait(Object[] inputparameters) throws InterruptedException {
+    	String input=(String)inputparameters[0];
     	 WebElement waitTill= driver.findElement(By.xpath(input));
  		WebDriverWait wait1 = new WebDriverWait(driver, 20);
  		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));

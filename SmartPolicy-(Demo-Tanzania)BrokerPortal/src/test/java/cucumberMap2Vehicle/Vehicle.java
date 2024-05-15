@@ -680,12 +680,12 @@ public class Vehicle
 		   Thread.sleep(4000);
 	 }
 
-	 @When("^user click on OK button to accept commission rate alert$")
+	/* @When("^user click on OK button to accept commission rate alert$")
 	 public void clickOnOkButton() throws Throwable 
 	 {
 		 Hashtable<String, Object> output = SeleniumOperations.alert();
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on OK button to accept commission rate alert",output.get("MESSAGE").toString());
-	 }
+	 }*/
 
 
 	 @Then("^user able to view \"([^\"]*)\" as status$")

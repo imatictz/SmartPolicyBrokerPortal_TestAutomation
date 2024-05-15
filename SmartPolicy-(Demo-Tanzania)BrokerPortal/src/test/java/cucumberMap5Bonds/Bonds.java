@@ -450,7 +450,7 @@ public class Bonds
 		public void user_click_on_borrower_type_dropdown() throws Throwable {
 		   
 			Object[] input50=new Object[1];
-			   input50[0]="(//*[@class='select2-chosen'])[5]";
+			   input50[0]="//*[@id='s2id_MainContent_cmbBorrower']";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on borrower type dropdown",output50.get("MESSAGE").toString());
 		}

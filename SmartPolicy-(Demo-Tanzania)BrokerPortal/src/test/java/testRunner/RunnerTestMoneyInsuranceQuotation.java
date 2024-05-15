@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Reports/Report.feature",     
-                   tags= "@All", 
+                   tags= "@154", 
                    glue={"cucumberMap21Reports","MyHooks"}, 
                    monochrome=true,   
                    plugin= {"pretty",   	
@@ -46,7 +46,7 @@ public class RunnerTestMoneyInsuranceQuotation extends AbstractTestNGCucumberTes
 
 //NO compute button present in travel insurance quotation   - which Insurer to select 
 //Group Life when user click on recompute button it get stuck 
-//Educare life insurance no present in insurance type
+
 
 
 

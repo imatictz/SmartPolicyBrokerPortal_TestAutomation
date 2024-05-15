@@ -11,7 +11,7 @@ Then user click on renew policy option
 Scenario: (RenewPolicy) Verify user able to create the quotation for the renewing policy successfully
 #Renew (Bonds Quote)
 When user enter "01/01/2024" as expiry from date
-And user enter "30280" as risk note
+And user enter "31883" as risk note
 Then user click on search button
 When user click on renew option
 Then user click on renew button for renewal confirmation

@@ -101,9 +101,7 @@ public class AccidentalDamage
 
 		@When("^user Select \"([^\"]*)\" as insurance class$")
 		public void user_Select_as_insurance_class(String insuranceClass) throws Throwable {
-			Object[] input1=new Object[1];
-		    input1[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
-		   SeleniumOperations.clickOnElement(input1);
+			
 			Object[] input= new Object[4];
 			input[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
 			input[1]="//*[@class='select2-input select2-focused']";
@@ -234,23 +232,24 @@ public class AccidentalDamage
 		@When("^user click on save button$")
 		public void clickOnSaveButton() throws Throwable 
 		{
-			Object[] input1=new Object[1];
-			   input1[0]="//*[@id='btnSave']";
-			  SeleniumOperations.clickOnElement(input1);
-			  Thread.sleep(2000);
+			
 		   Object[] input=new Object[1];
 		   input[0]="//*[@id='btnSave']";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString());
 		   Thread.sleep(2000);
+		   Object[] input1=new Object[1];
+		   input1[0]="//*[@id='btnSave']";
+		  SeleniumOperations.clickOnElement(input1);
+		  Thread.sleep(2000);
 		}
 
-		@When("^user click on Ok button to accept commission alert$")
+		/*@When("^user click on Ok button to accept commission alert$")
 		public void clickOnOKButton() throws Throwable 
 		{
 			Hashtable<String,Object> output= SeleniumOperations.alert();
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
-		}
+		}*/
 
 		@Then("^user able to view \"([^\"]*)\" as status$")
 		public void user_able_to_view_as_status(String awaitingReceipt) throws Throwable 
@@ -386,7 +385,7 @@ public class AccidentalDamage
 		public void user_click_on_borrower_type_dropdown() throws Throwable {
 		   
 			Object[] input50=new Object[1];
-			   input50[0]="(//*[@class='select2-chosen'])[5]";
+			   input50[0]="//*[@id='s2id_MainContent_cmbBorrower']";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on borrower type dropdown",output50.get("MESSAGE").toString());
 		}

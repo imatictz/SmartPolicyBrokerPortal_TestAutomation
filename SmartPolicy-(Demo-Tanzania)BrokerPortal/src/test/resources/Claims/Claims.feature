@@ -9,7 +9,7 @@ When user Click on risk note menu
 @reportClaims
 Scenario: (Report Claims) Verify user able to report claim successfully
 When user select "01/01/2023" as from date
-When user enter "34074" as risk note number
+When user enter "36571" as risk note number
 When user click on search button
 When user click on options button
 When user click on report claim umbrella like button 

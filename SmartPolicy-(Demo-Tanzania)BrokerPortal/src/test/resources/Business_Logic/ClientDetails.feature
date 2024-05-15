@@ -18,13 +18,13 @@ Scenario: (ClientDetails) Enter new client details with mandatory fields
 When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
-When user enter "AutomationTesting208" as client name
+When user enter "TestAutomation101" as client name
 When user click in account number field
-When user enter "15420261548941008" as account number
+When user enter "5412502145021001" as account number
 When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
-When user enter "15420261548941008" as ID number
+When user enter "5412502145021001" as ID number
 When user click on date of birth icon
 When user click on previous button
 When user select year from calender
@@ -57,13 +57,13 @@ Scenario: (ClientDetails) Enter new client details with all fields
 When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
-When user enter "AutomationTesting307" as client name
+When user enter "TestAutomation201" as client name
 When user click in account number field
-When user enter "12345648494820046" as account number
+When user enter "564548465468482001" as account number
 When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
-When user enter "1234564849482006" as ID number
+When user enter "564548465468482001" as ID number
 When user enter "215112165151115" as TIN/PAN
 When user enter "32189412349515" as ZRB No
 When user click on date of birth icon
@@ -130,13 +130,13 @@ Scenario: (ClientDetails) Enter new client details with all fields for corporate
 When user click on title dropdown
 When user enter "M/S" as title in search box
 When user click on Mr from dropdown
-When user enter "AutomationTesting407" as client name
+When user enter "TestAutomation301" as client name
 When user click in account number field
-When user enter "1234566496843006" as account number
+When user enter "654851846543001" as account number
 When user click on ID type dropdown
 When user enter "Company Incorporation Certificate Number" to search ID type in search box
 When user click on Company Incorporation Certificate Number as ID type from dropdown
-When user enter "1234566496843006" as ID number
+When user enter "654851846543001" as ID number
 When user enter "215112165151162" as TIN/PAN
 When user enter "321894123495" as ZRB No
 When user select "None" as Disability Status 
