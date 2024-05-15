@@ -17,7 +17,7 @@ public class Hookable {
 		System.out.println("--------------------Scenario Start---------------------");
 	}
 	
-	@After
+	@After(order=0)
 	public void after(Scenario Scenario){
 		HTMLReportGenerator.TestCaseEnd();
 		HTMLReportGenerator.TestSuiteEnd();
@@ -56,7 +56,12 @@ public class Hookable {
     } 
 	
 	@After(order=1)
+
 	public void browserClose() {
 		SeleniumOperations.browserClose();
+
+	public void browserColse() {
+		SeleniumOperations.browserColse();
+
 	}
 }
