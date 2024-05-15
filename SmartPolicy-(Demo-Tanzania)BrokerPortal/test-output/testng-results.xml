@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-14T12:26:26 EAT" name="Default suite" finished-at="2024-05-14T12:27:23 EAT" duration-ms="56676">
+  <suite started-at="2024-05-15T09:07:54 EAT" name="Default suite" finished-at="2024-05-15T09:09:01 EAT" duration-ms="67777">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@3d08f3f5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-05-14T12:26:26 EAT" name="Default test" finished-at="2024-05-14T12:27:23 EAT" duration-ms="56676">
+    <test started-at="2024-05-15T09:07:54 EAT" name="Default test" finished-at="2024-05-15T09:09:01 EAT" duration-ms="67777">
       <class name="testRunner.RunnerTestMoneyInsuranceQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@3d08f3f5]" started-at="2024-05-14T12:26:26 EAT" name="setUpClass" finished-at="2024-05-14T12:26:28 EAT" duration-ms="2256" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@3d08f3f5]" started-at="2024-05-15T09:07:54 EAT" name="setUpClass" finished-at="2024-05-15T09:07:56 EAT" duration-ms="2855" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@33f4c769]]>
+                <![CDATA[org.testng.TestRunner@2bc16fe2]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@3d08f3f5]" started-at="2024-05-14T12:26:28 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-05-14T12:27:22 EAT" duration-ms="54211" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@3d08f3f5]" started-at="2024-05-15T09:07:56 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-05-15T09:09:01 EAT" duration-ms="64622" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -48,7 +48,7 @@ at ✽.user select "January" as monthly(file:///C:/Users/Administrator/git/Smart
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@3d08f3f5]" started-at="2024-05-14T12:27:23 EAT" name="tearDownClass" finished-at="2024-05-14T12:27:23 EAT" duration-ms="121" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@3d08f3f5]" started-at="2024-05-15T09:09:01 EAT" name="tearDownClass" finished-at="2024-05-15T09:09:01 EAT" duration-ms="221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

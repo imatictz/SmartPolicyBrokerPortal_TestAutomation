@@ -3058,9 +3058,10 @@ public class Reports {
 
 	}
 	@When("user select {string} as monthly")
-	public void user_select_as_monthly(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void user_select_as_monthly(String monthly) {
+		Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbSPLR']", "//*[@class='select2-input select2-focused']", 
+			    monthly, "//*[@class='select2-match']", "user select {string} as monthly", "DROPDOWN", 0);
+			
 	}
 	@Then("user able to view TIRA Reports - Commission IncomeStatement \\(Monthly) in pdf format")
 	public void user_able_to_view_tira_reports_commission_income_statement_monthly_in_pdf_format() {
