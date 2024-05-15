@@ -56,7 +56,12 @@ public class Hookable {
     } 
 	
 	@After(order=1)
+
+	public void browserClose() {
+		SeleniumOperations.browserClose();
+
 	public void browserColse() {
 		SeleniumOperations.browserColse();
+
 	}
 }

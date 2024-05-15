@@ -67,15 +67,16 @@ public class Reports {
 	}
 	@When("user click on show report button")
 	public void user_click_on_show_report_button() throws InterruptedException {
-		 Object[] input1 = new Object[2];
+		/* Object[] input1 = new Object[1];
 		 input1[0] = "//*[@id='MainContent_btnShowReports']";
-		 SeleniumOperations.clickOnElement(input1);
+		 SeleniumOperations.wait(input1);*/
 		 Object[] input = new Object[2];
 		 input[0] = "//*[@id='MainContent_btnShowReports']";
 		 Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click on show report button", output.get("MESSAGE").toString());
 		 
-		 Thread.sleep(10000);
+		 
+		 Thread.sleep(50000);
 	}
 	@Then ("^user able to view admin fee report in pdf format$")
 	public void pdfReport() throws IOException{
@@ -2172,7 +2173,11 @@ public class Reports {
 		 Assertion assertion = new Assertion();
 		assertion.assertEquals(output, "test");
 	}*/
+
+	/*@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
+
 	@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
+
 	public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format() {
 		try{
 			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
@@ -2184,7 +2189,7 @@ public class Reports {
 			System.out.println(e);
 		}
 		
-	}
+	}*/
 
 	@Then("user click to select Financial Statement - Profit and Loss account\\(Summarized) as report")
 	public void user_click_to_select_financial_statement_profit_and_loss_account_summarized_as_report1() throws InterruptedException {
@@ -2449,8 +2454,47 @@ public class Reports {
 		}
 	}
 	
+	@Then("user click to select Mobile Money Transaction as report")
+	public void user_click_to_select_mobile_money_transaction_as_report() throws InterruptedException {
+		Object[] input = new Object[2];
+		 input[0] = "//*[@value='REPORT120']";
+		 Hashtable<String, Object> output = SeleniumOperations.doubleClickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click to select Mobile Money Transaction as report", output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	}
+	@Then("user able to view Mobile Money Transaction in pdf format")
+	public void user_able_to_view_mobile_money_transaction_in_pdf_format() {
+		try{
+			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Mobile Money Transaction in pdf format", output.get("MESSAGE").toString());
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
 
-	
+	@Then("user click to select Mobile Money Transaction \\(User Wise)as report")
+	public void user_click_to_select_mobile_money_transaction_user_wise_as_report() throws InterruptedException {
+		Object[] input = new Object[2];
+		 input[0] = "//*[@value='REPORT156']";
+		 Hashtable<String, Object> output = SeleniumOperations.doubleClickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click to select Mobile Money Transaction \\\\(User Wise)as report", output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	}
+	@Then("user able to view Mobile Money Transaction \\(User Wise)in pdf format")
+	public void user_able_to_view_mobile_money_transaction_user_wise_in_pdf_format() {
+		try{
+			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Mobile Money Transaction \\\\(User Wise)in pdf format", output.get("MESSAGE").toString());
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
 	
 
 
