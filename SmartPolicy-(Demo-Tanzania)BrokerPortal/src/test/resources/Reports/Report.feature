@@ -1296,6 +1296,7 @@ When user select "2024" as year
 And user click on show report button
 Then user able to view MIS - Performance Report (Yearly) in pdf format
 
+
 @106
 Scenario: Verify user able to view Mobile Money Transaction Report successfully
 When user search "Mobile Money Transaction" as report name in search box
@@ -2014,6 +2015,7 @@ When user select "Inventory" as account
 And user select "01/01/2024" as from date
 And user click on show report button
 Then user able to view Vouchers Report in pdf format
+
 
 
 

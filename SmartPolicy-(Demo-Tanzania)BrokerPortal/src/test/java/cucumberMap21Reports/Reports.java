@@ -2174,7 +2174,11 @@ public class Reports {
 		 Assertion assertion = new Assertion();
 		assertion.assertEquals(output, "test");
 	}*/
+
 	/*@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
+
+	@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
+
 	public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format() {
 		try{
 			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
@@ -2196,7 +2200,7 @@ public class Reports {
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click to select Financial Statement - Profit and Loss account\\\\(Summarized) as report", output.get("MESSAGE").toString());
 		 Thread.sleep(2000);
 	}
-	@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
+	/*@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
 	public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format1() {
 		try{
 			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
@@ -2207,7 +2211,7 @@ public class Reports {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-	}
+	}*/
 	@Then("user click to select Financial Statement - Trial Balance as report")
 	public void user_click_to_select_financial_statement_trial_balance_as_report() throws InterruptedException {
 		Object[] input = new Object[2];

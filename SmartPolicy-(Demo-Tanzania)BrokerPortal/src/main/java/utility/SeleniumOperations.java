@@ -514,6 +514,9 @@ public class SeleniumOperations
      public static void wait(Object[] inputparameters) throws InterruptedException {
     	String input=(String)inputparameters[0];
     	 WebElement waitTill= driver.findElement(By.xpath(input));
+
+ 		Thread.sleep(5000);
+
  		WebDriverWait wait1 = new WebDriverWait(driver, 20);
  		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
      }
@@ -522,12 +525,16 @@ public class SeleniumOperations
      
      public static Hashtable<String, Object> switchWindow() throws IOException {
     	try {
+
     		driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
     		WebDriverWait wait1 = new WebDriverWait(driver, 30);
      		wait1.until(ExpectedConditions.visibilityOfElementLocated( By.xpath("//*[text()='Demo Insurance Brokers (T) Limited.']")));
     		Set<String> ids = driver.getWindowHandles();
+
+    	Set<String> ids1 = driver.getWindowHandles();
+
     	
-    	Iterator<String> values = ids.iterator();    
+    	Iterator<String> values = ids1.iterator();    
     	
     	String one = values.next();
     	String two = values.next();
@@ -560,6 +567,7 @@ public class SeleniumOperations
         System.out.println("==========End==========");
       
        outputparameters.put("STATUS","Pass");
+
 	   outputparameters.put("MESSAGE","Method Used:switchWindow, Input Given:");
     	}
     	catch(Exception e) {
@@ -567,10 +575,14 @@ public class SeleniumOperations
  		   outputparameters.put("MESSAGE","Method Used:switchWindow, Input Given:");
  		 	 
    	 }
+
+	   
 		return outputparameters;
-    	
-    	 
-    	 
+     
+     }
+     
+     public static void browserColse() {
+    	 driver.quit();
      }
      
      public static void browserClose() {
