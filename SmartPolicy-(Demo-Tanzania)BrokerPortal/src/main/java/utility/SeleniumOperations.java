@@ -366,6 +366,23 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
+     
+   //Clear
+     public static Hashtable<String,Object> clear(Object[]inputparameters) {   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+	       WebElement remove=driver.findElement(By.xpath(strXpath));
+	       remove.clear();
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:clear, Input Given:"+inputparameters[1]);
+	     }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:clear, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     }
 		 
 //Iframe
      public static Hashtable<String,Object> iFrameEnter(Object[]inputparameters) {   
@@ -376,10 +393,12 @@ public class SeleniumOperations
 		   driver.switchTo().frame(0);
 	       WebElement send=driver.findElement(By.xpath(strXpath));
 	       send.clear();
-	       Thread.sleep(1000);
+	       Thread.sleep(2000);
+	       send.click();
 	       send.sendKeys(strvalue);
 	       Thread.sleep(2000);
 	       driver.switchTo().defaultContent();
+	       Thread.sleep(2000);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
 	     }

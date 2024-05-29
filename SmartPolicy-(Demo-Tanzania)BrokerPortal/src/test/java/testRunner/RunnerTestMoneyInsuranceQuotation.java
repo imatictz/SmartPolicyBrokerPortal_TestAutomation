@@ -5,11 +5,11 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Reports/Report.feature",     
-                   tags= "@154", 
+                   tags= "@176", 
                    glue={"cucumberMap21Reports","MyHooks"}, 
                    monochrome=true,   
                    plugin= {"pretty",   	
-                           "html:target/CucumberTest/CucumbetReport.html"},  
+                           "html:target/CucumberTest/CucumbetReport.html"},   
                    dryRun=false  
                  )
 

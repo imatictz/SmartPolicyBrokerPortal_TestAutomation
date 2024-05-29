@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -643,16 +644,8 @@ public class RiskNoteDebitNote {
 
 	@Then ("^user click on accept button$")
 	public void user_select_accept() throws Throwable {
-		Object[] input2=new Object[1];
-	    input2[0]="//*[@id='btnApprove']";
-		SeleniumOperations.clickOnElement(input2);
-		
-		Object[] input1=new Object[1];
-		input1[0]="//*[@id='btnApprove']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input1);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on accept button",output.get("MESSAGE").toString());  
-		Thread.sleep(5000);
-	    SeleniumOperations.transfer();
+	    Itl.CustomClickEvent("//*[@id='btnApprove']", "user click on accept button", "CLICK", 5000);
+        SeleniumOperations.transfer();
 	}
 	
 	@When("^user click on display icon insurer$")

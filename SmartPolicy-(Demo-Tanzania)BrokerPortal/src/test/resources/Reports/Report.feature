@@ -1811,8 +1811,209 @@ When user select "January" as monthly
 And user click on show report button
 Then user able to view TIRA Reports - Commission IncomeStatement (Monthly) in pdf format
 
+@155
+Scenario: Verify user able to view TIRA Reports - Payables Outstanding to Insurers[REPORT38] Report successfully
+When user search "TIRA Reports - Payables Outstanding to Insurers" as report name in search box
+Then user click to select TIRA Reports - Payables Outstanding to Insurers as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user select "2024" as year
+And user click on show report button
+Then user able to view TIRA Reports - Payables Outstanding to Insurers in pdf format
 
+@156
+Scenario: Verify user able to view TIRA Reports - Payables Outstanding to Insurers (Quaterly)[REPORT115] Report successfully
+When user search "TIRA Reports - Payables Outstanding to Insurers (Quaterly)" as report name in search box
+Then user click to select TIRA Reports - Payables Outstanding to Insurers (Quaterly) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user select "2024" as year
+When user select "January to March" as quarter
+And user click on show report button
+Then user able to view TIRA Reports - Payables Outstanding to Insurers (Quaterly) in pdf format
 
+@157
+Scenario: Verify user able to view TIRA Reports - Premium Booked Statement (Monthly))[REPORT148] Report successfully
+When user search "TIRA Reports - Premium Booked Statement (Monthly)" as report name in search box
+Then user click to select TIRA Reports - Premium Booked Statement (Monthly) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user select "2024" as year
+When user select "January" as monthly
+And user click on show report button
+Then user able to view TIRA Reports - Premium Booked Statement (Monthly) in pdf format
+
+@158
+Scenario: Verify user able to view TIRA Reports - Premium Booked Statement (Quarterly)[REPORT115] Report successfully
+When user search "TIRA Reports - Premium Booked Statement (Quarterly)" as report name in search box
+Then user click to select TIRA Reports - Premium Booked Statement (Quarterly) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user select "2024" as year
+When user select "January to March" as quarter
+And user click on show report button
+Then user able to view TIRA Reports - Premium Booked Statement (Quarterly) in pdf format
+
+@159
+Scenario: Verify user able to view TIRA Reports - Premium Booked Statement (Yearly)[REPORT35] Report successfully
+When user search "TIRA Reports - Premium Booked Statement (Yearly)" as report name in search box
+Then user click to select TIRA Reports - Premium Booked Statement (Yearly) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user select "2024" as year
+And user click on show report button
+Then user able to view TIRA Reports - Premium Booked Statement (Yearly) in pdf format
+
+@160
+Scenario: Verify user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly)[REPORT39] Report successfully
+When user search "TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly)" as report name in search box
+Then user click to select TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user select "2024" as year
+When user select "January to March" as quarter
+And user click on show report button
+Then user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly) in pdf format
+
+@161
+Scenario: Verify user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Yearly)[REPORT37] Report successfully
+When user search "TIRA Reports - Premium Booked Statement-Life Assurance (Yearly)" as report name in search box
+Then user click to select TIRA Reports - Premium Booked Statement-Life Assurance (Yearly) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user select "2024" as year
+And user click on show report button
+Then user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Yearly) in pdf format
+
+@162
+Scenario: Verify user able to view TIRA Sticker Inventory[REPORT93] Report successfully
+When user search "TIRA Sticker Inventory" as report name in search box
+Then user click to select TIRA Sticker Inventory as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view TIRA Sticker Inventory in pdf format
+
+@163
+Scenario: Verify user able to view Total Outstanding Payments (Client wise)[REPORT214] Report successfully
+When user search "Total Outstanding Payments (Client wise)" as report name in search box
+Then user click to select Total Outstanding Payments (Client wise) as report
+And user click on show report button
+Then user able to view Total Outstanding Payments (Client wise) in pdf format
+
+@164
+Scenario: Verify user able to view Total Outstanding Payments (Detailed)[REPORT29] Report successfully
+When user search "Total Outstanding Payments (Detailed)" as report name in search box
+Then user click to select Total Outstanding Payments (Detailed) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user enter "Pravin Testing Broker" as client name
+And user select Pravin Testing Broker as client name
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Total Outstanding Payments (Detailed) in pdf format
+
+@165
+Scenario: Verify user able to view Total Outstanding Payments (Summarized)[REPORT22] Report successfully
+When user search "Total Outstanding Payments (Summarized)" as report name in search box
+Then user click to select Total Outstanding Payments (Summarized) as report
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Total Outstanding Payments (Summarized) in pdf format
+
+@166
+Scenario: Verify user able to view Total Outstanding Receipts (Detailed)[REPORT28] Report successfully
+When user search "Total Outstanding Receipts (Detailed)" as report name in search box
+Then user click to select Total Outstanding Receipts (Detailed) as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user enter "Pravin Testing Broker" as client name
+And user select Pravin Testing Broker as client name
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Total Outstanding Receipts (Detailed) in pdf format
+
+@167
+Scenario: Verify user able to view Total Outstanding Receipts (Summarized)[REPORT21] Report successfully
+When user search "Total Outstanding Receipts (Summarized)" as report name in search box
+Then user click to select Total Outstanding Receipts (Summarized) as report
+And user click on show report button
+Then user able to view Total Outstanding Receipts (Summarized) in pdf format
+
+@168
+Scenario: Verify user able to view Unallocated Credit Note[REPORT236] Report successfully
+When user search "Unallocated Credit Note" as report name in search box
+Then user click to select Unallocated Credit Note as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Unallocated Credit Note in pdf format
+
+@169
+Scenario: Verify user able to view Unallocated Payments[REPORT24] Report successfully
+When user search "Unallocated Payments" as report name in search box
+Then user click to select Unallocated Payments as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Unallocated Payments in pdf format
+
+@170
+Scenario: Verify user able to view Unallocated Receipts[REPORT23] Report successfully
+When user search "Unallocated Receipts" as report name in search box
+Then user click to select Unallocated Receipts as report
+When user enter "Pravin Testing Broker" as client name
+And user select Pravin Testing Broker as client name
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Unallocated Receipts in pdf format
+
+@171
+Scenario: Verify user able to view Unrequested Customer Tax Invoice Transactions[REPORT133] Report successfully
+When user search "Unrequested Customer Tax Invoice Transactions" as report name in search box
+Then user click to select Unrequested Customer Tax Invoice Transactions as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+When user enter "Pravin Testing Broker" as client name
+And user select Pravin Testing Broker as client name
+When user select "PravinS" as user name
+When user select "Demo User" as business By
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Unrequested Customer Tax Invoice Transactions in pdf format
+
+@172
+Scenario: Verify user able to view User Details[REPORT219] Report successfully
+When user search "User Details" as report name in search box
+Then user click to select User Details as report
+And user click on show report button
+Then user able to view User Details in pdf format
+
+@173
+Scenario: Verify user able to view VAT submission Report[REPORT109] Report successfully
+When user search "VAT submission Report" as report name in search box
+Then user click to select VAT submission Report as report
+And user click on show report button
+Then user able to view VAT submission Report in pdf format
+
+@174
+Scenario: Verify user able to view VAT submission Report for Insurance Companies[REPORT49] Report successfully
+When user search "VAT submission Report for Insurance Companies" as report name in search box
+Then user click to select VAT submission Report for Insurance Companies as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view VAT submission Report for Insurance Companies in pdf format
+
+@175
+Scenario: Verify user able to view VAT submission Report for Insurance Companies 1[REPORT54] Report successfully
+When user search "VAT submission Report for Insurance Companies 1" as report name in search box
+Then user click to select VAT submission Report for Insurance Companies one as report
+When user select "Alliance Insurance Company (T) Ltd." as insurer
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view VAT submission Report for Insurance Companies one in pdf format
+
+@176
+Scenario: Verify user able to view Vouchers Report[REPORT106] Report successfully
+When user search "Vouchers Report" as report name in search box
+Then user click to select Vouchers Report as report
+When user enter "Pravin Testing Broker" as client name
+And user select Pravin Testing Broker as client name
+When user select "Inventory" as account
+And user select "01/01/2024" as from date
+And user click on show report button
+Then user able to view Vouchers Report in pdf format
 
 
 

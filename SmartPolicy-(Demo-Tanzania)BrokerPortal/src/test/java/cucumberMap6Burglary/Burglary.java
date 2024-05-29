@@ -383,7 +383,7 @@ public class Burglary
 		public void user_able_to_view_as_status(String awaitingReceipt) throws Throwable 
 		{
 			Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_repIQNM_lblStatus_0']";
+		    input[0]="//*[@id='MainContent_repICNM_lblstatus_0']";
 		    input[1]=awaitingReceipt;
 		    Hashtable<String,Object> output= SeleniumOperations.validation(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \"Awaiting Receipt\" as status",output.get("MESSAGE").toString());  

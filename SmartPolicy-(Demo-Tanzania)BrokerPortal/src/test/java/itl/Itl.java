@@ -49,7 +49,7 @@ public class Itl {
 				Object[] input = new Object[2];
 				input[0]=strElementId;
 				input[1]=strInputText;
-				Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+				Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
 				Thread.sleep(intThreadSleepTime);	
 			}
@@ -103,6 +103,30 @@ public class Itl {
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),stepName,output.get("MESSAGE").toString());
 		}
 	}
+	
+	public static void CustomNavigateAction(String strElementId, String stepName,String strElementType, 
+            Integer intThreadSleepTime) throws Throwable {
+         if (strElementType == "NAVIGATE") {
+        	 Object[] input2=new Object[2];
+     	    input2[0]=strElementId;
+     	    Hashtable<String, Object> output2 = SeleniumOperations.actionClass(input2);
+     	    HTMLReportGenerator.StepDetails(output2.get("STATUS").toString(),stepName,output2.get("MESSAGE").toString());
+     	}
+    }
+	
+	public static void CustomClear(String strElementId,String strElementType, 
+            Integer intThreadSleepTime) throws Throwable {
+         if (strElementType == "CLICK") {
+        	 Object[] input2=new Object[2];
+     	    input2[0]=strElementId;
+     	    SeleniumOperations.clear(input2);
+     	    //HTMLReportGenerator.StepDetails(output2.get("STATUS").toString(),stepName,output2.get("MESSAGE").toString());
+     	}
+    }
+	
+	
+	
+	
 }
 	
 
