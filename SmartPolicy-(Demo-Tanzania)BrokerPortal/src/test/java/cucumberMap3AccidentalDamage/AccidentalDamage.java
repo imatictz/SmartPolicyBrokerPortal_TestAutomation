@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -110,6 +111,7 @@ public class AccidentalDamage
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"([^\\\"]*)\\\" as insurance class",output.get("MESSAGE").toString());
 		}
+		
 		
 		
 
@@ -229,27 +231,20 @@ public class AccidentalDamage
 			   Thread.sleep(2000);
 		}
 
+		
+		
 		@When("^user click on save button$")
-		public void clickOnSaveButton() throws Throwable 
-		{
-			
-		   Object[] input=new Object[1];
-		   input[0]="//*[@id='btnSave']";
-		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
-		   Object[] input1=new Object[1];
-		   input1[0]="//*[@id='btnSave']";
-		  SeleniumOperations.clickOnElement(input1);
-		  Thread.sleep(2000);
+		public void clickOnSaveButton() throws InterruptedException {
+		    Itl.CustomDoubleClickEvent("//*[@id='btnSave']",  "user click on save button","CLICK", 2000);
+
 		}
 
-		/*@When("^user click on Ok button to accept commission alert$")
+		@When("^user click on Ok button to accept commission alert$")
 		public void clickOnOKButton() throws Throwable 
 		{
 			Hashtable<String,Object> output= SeleniumOperations.alert();
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
-		}*/
+		}
 
 		@Then("^user able to view \"([^\"]*)\" as status$")
 		public void user_able_to_view_as_status(String awaitingReceipt) throws Throwable 

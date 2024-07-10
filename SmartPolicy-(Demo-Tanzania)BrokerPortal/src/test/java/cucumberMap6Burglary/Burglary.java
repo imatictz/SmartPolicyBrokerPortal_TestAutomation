@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -75,6 +76,7 @@ public class Burglary
 			Object[] input11=new Object[1];
 			input11[0]="//*[@class='select2-match']";
 			SeleniumOperations.clickOnElement(input11);
+			Thread.sleep(5000);
 		}
 
 		@When("^user enter \"([^\"]*)\" as client name in quotation$")
@@ -134,42 +136,13 @@ public class Burglary
 		   Thread.sleep(2000);
 		}
 
-		@When("^user click on insurance class dropdown$")
-		public void clickOnInsuranceClassDropdown() throws Throwable 
-		{
-			Object[] input12=new Object[1];
-			input12[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
-			SeleniumOperations.clickOnElement(input12);
-			Thread.sleep(2000);
-		    Object[] input=new Object[1];
-		    input[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
-		    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurance class dropdown",output.get("MESSAGE").toString());
-		    Thread.sleep(2000);
-		    
-		}
+		
+		@When ("user select {string} as insurance class")
+		public void user_select_as_insuranceClass(String insuranceClass) {
+		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsuranceClass']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 2000);
 
-		@When("^user enter \"([^\"]*)\" as insurance class$")
-		public void enterInsuranceClass(String insuranceClass) throws Throwable 
-		{
-		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
-		    input[1]=insuranceClass;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Standard Rate\" as insurance class",output.get("MESSAGE").toString());
-		    Thread.sleep(2000);
 		}
-
-		@When("^user select Standard Rate as insurance class$")
-		public void selectInsuranceClass() throws Throwable 
-		{
-		    Object[] input=new Object[1];
-		    input[0]="//*[@class='select2-match']";
-		    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Standard Rate as insurance class",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
-		}
-
+		
 		@When("^user enter \"([^\"]*)\" as sum insured$")
 		public void enterSumInsured(String sumInsured) throws Throwable 
 		{
@@ -178,7 +151,7 @@ public class Burglary
 		   input[1]=sumInsured;
 		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"2500000\" as sum insured",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
+		   Thread.sleep(2000);
 		}
 
 		
@@ -356,37 +329,28 @@ public class Burglary
 			   Thread.sleep(2000);
 		}
 
-		@When("^user click on save button$")
-		public void clickOnSaveButton() throws Throwable 
-		{
-			Object[] input1=new Object[1];
-			   input1[0]="//*[@id='btnSave']";
-			  SeleniumOperations.clickOnElement(input1);
-			  Thread.sleep(2000);
-		   Object[] input=new Object[1];
-		   input[0]="//*[@id='btnSave']";
-		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString());
-		   Thread.sleep(4000);
-		}
-		
+		@When("user click on save button")
+		public void user_click_on_save_button() throws InterruptedException {
+		    Itl.CustomClickEvent("//*[@id='btnSave']", "user click on save button", "CLICK", 4000);
+
+		}		
 		@When("^user click on Ok button to accept commission rate alert message$")
 		public void clickOnOKbuttonCommission() throws Throwable 
 		{
 
 			   Hashtable<String,Object> output= SeleniumOperations.alert();
 			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission rate alert message",output.get("MESSAGE").toString());
-			   Thread.sleep(2000);
+			   Thread.sleep(3000);
 		}
 		
 		@Then("^user able to view \"([^\"]*)\" as status$")
 		public void user_able_to_view_as_status(String awaitingReceipt) throws Throwable 
 		{
 			Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_repICNM_lblstatus_0']";
+		    input[0]="//*[@id='MainContent_repIQNM_lblStatus_0']";
 		    input[1]=awaitingReceipt;
 		    Hashtable<String,Object> output= SeleniumOperations.validation(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \"Awaiting Receipt\" as status",output.get("MESSAGE").toString());  
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} as status",output.get("MESSAGE").toString());  
 		}
 
 		@When ("^user click on business by dropdown$")

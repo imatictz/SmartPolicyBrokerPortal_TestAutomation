@@ -4,11 +4,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Reports/Report.feature",     
-
-                   tags= "@176", 
-
-                   glue={"cucumberMap21Reports","MyHooks"}, 
+		           features="src/test/resources/Quotations/MoneyInsuranceCover.feature",     
+                   tags= "@MandatoryFields", 
+                   glue={"cucumberMap1MoneyInsuranceCover","MyHooks"}, 
                    monochrome=true,   
                    plugin= {"pretty",   	
                            "html:target/CucumberTest/CucumbetReport.html"},   
@@ -44,7 +42,7 @@ public class RunnerTestMoneyInsuranceQuotation extends AbstractTestNGCucumberTes
 // 21)Payment                                    | cucumberMap19Payment             | @AllFields
 // 22)RenewPolicy   (Enter RiskNoteNo)           | cucumberMap20RenewPolicy         | @All
 // 23)Reports                                    | cucumberMap21Reports             | @All
-
+// 24)ProvisionalBatchTaxInvoices                | cucumberMap22ProvisionalBatchTaxInvoices| @All
 
 //NO compute button present in travel insurance quotation   - which Insurer to select 
 //Group Life when user click on recompute button it get stuck 

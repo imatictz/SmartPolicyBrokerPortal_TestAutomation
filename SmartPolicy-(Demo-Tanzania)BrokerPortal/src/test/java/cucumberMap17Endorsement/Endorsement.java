@@ -441,7 +441,7 @@ public class Endorsement {
 		}
 		@Then("user click on approve endorsement button")
 		public void user_click_on_approve_endorsement_button() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='btnApprove']", "user click on approve endorsement button", "CLICK", 2000);
+		    Itl.CustomClickEvent("//*[@id='btnApproveEndorse']", "user click on approve endorsement button", "CLICK", 2000);
             SeleniumOperations.transfer();
 		}
 		@When ("^user enter \"(.*)\" as change value of sum assured$")

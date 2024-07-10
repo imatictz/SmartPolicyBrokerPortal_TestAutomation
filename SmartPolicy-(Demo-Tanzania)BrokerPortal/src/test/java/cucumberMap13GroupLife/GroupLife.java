@@ -78,6 +78,7 @@ public class GroupLife {
 		input[0]="//*[@id='MainContent_txtClientName']";
 		Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Pravin Testing as client name",output.get("MESSAGE").toString());
+	    Thread.sleep(2000);
 	}
 	
 	@When("^user click on insurer dropdown$")  

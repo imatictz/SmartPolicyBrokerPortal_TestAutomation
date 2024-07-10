@@ -124,6 +124,17 @@ public class Itl {
      	}
     }
 	
+	public static void CustomGstPercentValidation(String TotalPremium,String VattGstAmount,String TotalPremiumWithTax,String strElementType,Integer intThreadSleepTime) throws InterruptedException {
+		if (strElementType =="GSTVALIDATION") {
+			Object[] input = new Object[3];
+	        input[0] = TotalPremium;
+	        input[1] =VattGstAmount;
+	        input[2] = TotalPremiumWithTax;
+	        SeleniumOperations.gstPercentCalculationValidation(input);
+	        Thread.sleep(intThreadSleepTime);
+		}
+	}
+	
 	
 	
 	

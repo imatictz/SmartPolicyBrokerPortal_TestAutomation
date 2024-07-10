@@ -64,7 +64,7 @@ public class RenewPolicy {
 	      input4[0]="//*[@id='MainContent_btnSearch']";
 	  Hashtable<String, Object>output=SeleniumOperations.clickOnElement(input4);
 	  HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click on search button", output.get("MESSAGE").toString());
-	Thread.sleep(2000);
+	Thread.sleep(5000);
  	}
 
  	@When ("^user click on renew option$")
@@ -94,7 +94,7 @@ public class RenewPolicy {
 	      input4[0]="//*[@id='MNU_WFFIQNM_2']";
 	  Hashtable<String, Object>output=SeleniumOperations.clickOnElement(input4);
 	  HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click on quotations menu", output.get("MESSAGE").toString());
-	Thread.sleep(2000);
+	Thread.sleep(4000);
  	}
  	
  	
@@ -363,16 +363,17 @@ public class RenewPolicy {
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Yes button for confirmation",output.get("MESSAGE").toString());  
 	}
 
+	
+ 	
 	@Then("^user able to view \"([^\"]*)\" as status$")
-	public void user_able_to_view_as_status(String riskNoteIssued) throws Throwable 
+	public void user_able_to_view_as_status1(String awaitingReceipt) throws Throwable 
 	{
 		Object[] input=new Object[2];
-	    input[0]="(//*[@style='padding-left: 0%;text-align: left'])[8]";
-	    input[1]=riskNoteIssued;
+	    input[0]="//*[@id='MainContent_repIQNM_lblStatus_0']";
+	    input[1]=awaitingReceipt;
 	    Hashtable<String,Object> output= SeleniumOperations.validation(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \"Risk Note Issued\" as status",output.get("MESSAGE").toString());  
+	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \"Awaiting Receipt\" as status",output.get("MESSAGE").toString());  
 	}
- 	
  	
  	
 }

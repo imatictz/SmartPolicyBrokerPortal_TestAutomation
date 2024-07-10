@@ -3,11 +3,14 @@
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -183,6 +186,7 @@ public class SeleniumOperations
 		   String xpath=(String)inputparameters[0];
 		   String givenText=(String)inputparameters[1];
 		   String findText=driver.findElement(By.xpath(xpath)).getText();
+		   System.out.println(findText);
 		   
 		   if(givenText.equalsIgnoreCase(findText)){
 			 System.out.println("Test Case Pass");
@@ -356,6 +360,8 @@ public class SeleniumOperations
 	       WebElement remove=driver.findElement(By.xpath(strXpath));
 	       remove.clear();
 	       Thread.sleep(2000);
+	       remove.click();
+	       Thread.sleep(2000);
 	       remove.sendKeys(strvalue);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
@@ -436,11 +442,11 @@ public class SeleniumOperations
 		   String selectXpath = (String)inputparameters[3];
 		   driver.findElement(By.xpath(selectXpath)).click();
 	       outputparameters.put("STATUS","PASS");
-		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[2]);
+		   outputparameters.put("MESSAGE","Method Used:Dropdown, Input Given:"+inputparameters[2]);
 	     }
 	     catch(Exception e) {
 	       outputparameters.put("STATUS","FAIL");
-		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[2]);
+		   outputparameters.put("MESSAGE","Method Used:Dropdown, Input Given:"+inputparameters[2]);
 	     }
 	     return outputparameters;
      }
@@ -597,6 +603,90 @@ public class SeleniumOperations
     	 }
      }
           
+     
+     //Calculations
+     public static void calculate(Object[] inputparameters) {
+    	try { 
+    	 String output = (String)inputparameters[0];
+    	WebElement text = driver.findElement(By.xpath(output));
+    	String pass =text.getText();
+    	System.out.println(pass); 
+    	}
+    	catch(Exception e) {
+    		System.out.println(e);
+    	}
+    	/*List<WebElement> test = driver.findElements(By.xpath(output));
+        
+        for(WebElement i:test) {
+        	
+        	String pass = i.getText();
+        	System.out.println(pass);
+        }
+         
+         }*/
+
+    	 
+     } 
+     
+     public static void gstPercentCalculationValidation(Object[] inputparameters) {
+    	try {
+    		
+    	 //VATT on commission calculate by percent
+    		String output = (String)inputparameters[0];
+    	WebElement commissionValue = driver.findElement(By.xpath(output));
+    	String CommissionStringValue =commissionValue.getAttribute("value");
+    	String commissionClearValue=CommissionStringValue.replaceAll(",", "");
+    	System.out.println(commissionClearValue);
+    	double commissionClearValue0 =Double.parseDouble(commissionClearValue);
+        double percentage = Double.parseDouble(commissionClearValue)*18/100;
+        
+        DecimalFormat df = new DecimalFormat("0.0");
+         df.setRoundingMode(RoundingMode.DOWN);
+         String finalCommission = df.format(percentage);
+        double calculatedFinalPercent = Double.parseDouble(finalCommission);
+        //System.out.println(df.format(percentage));
+        
+        //Get Vatt on commission for equal or check
+        
+        String output1 = (String)inputparameters[1];
+    	WebElement vattOnCommssionValue = driver.findElement(By.xpath(output1));
+    	String vattOnCommssionStringValue = vattOnCommssionValue.getAttribute("value");
+    	String clearValue1=vattOnCommssionStringValue.replaceAll(",", "");
+    	//System.out.println(clearValue1);
+        double percentage1 = Double.parseDouble(clearValue1);
+        System.out.println(percentage1);
+        if(calculatedFinalPercent==percentage1) {
+        	System.out.println("Percentage Is Right");
+        }
+        else {
+        	System.out.println("Percentage Is Wrong");
+        }
+    	//System.out.println("VATT/GST Is : "+(calculatedFinalPercent==percentage1));
+    	
+    	//Get Total Commission
+    	//commission+vatt on commission
+    	 double calculatedTotalCommission = Double.sum(commissionClearValue0, percentage1);
+    	 System.out.println(calculatedTotalCommission);
+    	 
+    	 //Get Total Commission for equal or check
+    	 String output2 = (String)inputparameters[2];
+     	WebElement totalCommissionValue = driver.findElement(By.xpath(output2));
+     	String totalCommissionStringValue =totalCommissionValue.getAttribute("value");
+     	String clearValue2=totalCommissionStringValue.replaceAll(",", "");
+     	//System.out.println(clearValue2);
+        double finalValue = Double.parseDouble(clearValue2);
+        System.out.println("Total Premium/Commission Is :"+(calculatedTotalCommission==finalValue));
+    	 
+    	
+    	
+        
+        
+        
+    	}
+    	catch(Exception e){
+    		System.out.println(e);
+    	}     
+    	}
  }		 
 	
 	

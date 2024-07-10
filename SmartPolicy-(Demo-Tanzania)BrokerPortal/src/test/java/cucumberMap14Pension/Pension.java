@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -225,18 +226,10 @@ public class Pension {
 		Thread.sleep(2000);
 	}
 	
-	@When("^user click on save button$")
-	public void clickOnSaveButton() throws Throwable {
-		
-		Object[] input1=new Object[1];
-		input1[0]="//*[@id='btnSave']";
-	    SeleniumOperations.clickOnElement(input1);
-	    Thread.sleep(2000);
-	    Object[] input=new Object[1];
-	    input[0]="//*[@id='btnSave']";
-	    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString());
-	    
+	@When("user click on save button")
+	public void user_click_on_save_button() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='btnSave']", "user click on save button", "CLICK", 3000);
+
 	}
 	
 	@When("^user click on Ok button to accept commission alert message$")

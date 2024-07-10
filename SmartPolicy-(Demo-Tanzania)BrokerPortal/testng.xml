@@ -3,7 +3,21 @@
 <suite name="SmartPoilcy" >
   <test  name="Test1">
     <classes>
+     <packages> <class name="testRunner.RunnerTestAccidentalDamageQuotation"/> </>
+    <exclude>  <class name="testRunner.RunnerTestBondsQuotation"/>
+      <class name="testRunner.RunnerTestBurglaryQuotation"/>
+      <class name="testRunner.RunnerTestCreditLifeQuotation"/> </exclude>
+      <class name="testRunner.RunnerTestEduCareLifeInsuranceQuotation"/> 
+     <exclude> <class name="testRunner.RunnerTestFidelityQuotation"/>
+      <class name="testRunner.RunnerTestFireAndBurglaryQuotation"/>
+      <class name="testRunner.RunnerTestFireClassIQuotation"/>
+      <class name="testRunner.RunnerTestGATravelInsuranceQuotation"/>
+      <class name="testRunner.RunnerTestGroupLifeQuotation"/>
+      <class name="testRunner.RunnerTestMedicalQuotation"/>
       <class name="testRunner.RunnerTestMoneyInsuranceQuotation"/>
+      <class name="testRunner.RunnerTestPackagePolicyQuotation"/> </exclude></packages>
+      
+      
     </classes>
   </test> 
    

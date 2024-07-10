@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -57,7 +58,7 @@ public class Medical {
 	@When ("^user select Medical as insurance type from dropdown$")
 	public void selectInsuranceTypeResult() throws Throwable {
 		Object[] input11=new Object[1];
-		input11[0]="(//*[@class='select2-match'])[2]";
+		input11[0]="(//*[@class='select2-match'])[4]";
 		SeleniumOperations.clickOnElement(input11);
 		Thread.sleep(2000);
 	}
@@ -116,47 +117,19 @@ public class Medical {
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"01/01/2000\" as date of birth",output.get("MESSAGE").toString()); 
 	}
 
-	@When("^user click on relationship dropdown$")
-	public void clickOnRelationshipDropdown() throws Throwable {
-		Object[]input1=new Object[1];
-		input1[0]="//*[@id='s2id_MainContent_cmbRelationship']";
-		SeleniumOperations.clickOnElement(input1);
-		
-		Object[]input=new Object[1];
-		input[0]="//*[@id='s2id_MainContent_cmbRelationship']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on relationship dropdown",output.get("MESSAGE").toString());
+	@When ("user select {string} as insurance class")
+	public void user_select_as_insuranceClass(String insuranceClass) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsuranceClass']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 2000);
+
 	}
 	
-	@When ("^user click on relationship dropdown1$")
-	public void clickOnRelationshipDropdown1() throws Throwable {
-		Object[]input=new Object[1];
-		input[0]="//*[@id='s2id_MainContent_cmbRelationship']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on relationship dropdown",output.get("MESSAGE").toString());
-		   
-		Object[]input1=new Object[1];
-		input1[0]="//*[@id='s2id_MainContent_cmbRelationship']";
-		SeleniumOperations.clickOnElement(input1);
-	}
+	@When ("user select {string} as relationship")
+	public void user_select_as_relationship(String relationship) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbRelationship']", "//*[@class='select2-input select2-focused']", relationship , "//*[@class='select2-match']", "user select {string} as relationship", "DROPDOWN", 2000);
 
-	@When("^user enter \"([^\"]*)\" as relationship$")
-	public void enterRelationship(String relationship) throws Throwable {
-		Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
-	    input[1]=relationship;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Self\" as relationship",output.get("MESSAGE").toString()); 
 	}
-
-	@When("^user select self as relationship$")
-	public void selectRelationshipResult() throws Throwable{
-		Object[]input=new Object[1];
-		input[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select self as relationship",output.get("MESSAGE").toString());
-	}
-
+	
+	
 	@When("^user enter \"([^\"]*)\" as total premium$")
 	public void enterTotalPremium(String totalPremium) throws Throwable {
 		Object[] input=new Object[2];
@@ -254,18 +227,10 @@ public class Medical {
 		Thread.sleep(2000);
 	}
 	
-	@When("^user click on save button$")
-	public void clickOnSaveButton() throws Throwable {
-		Object[] input1=new Object[1];
-		input1[0]="//*[@id='btnSave']";
-		SeleniumOperations.clickOnElement(input1);
-		Thread.sleep(2000);
-	   
-		Object[] input=new Object[1];
-	    input[0]="//*[@id='btnSave']";
-	    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString());
-	    Thread.sleep(2000);
+	@When("user click on save button")
+	public void user_click_on_save_button() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='btnSave']", "user click on save button", "CLICK", 3000);
+
 	}
 	
 	@When("^user click on Ok button to accept commission alert message$")
@@ -486,38 +451,7 @@ public class Medical {
 		Thread.sleep(2000);
 	}
 
-	@When("^user click on insurance class dropdown$")
-	public void clickOnInsurance() throws Throwable {
-		Object[] input1=new Object[1];
-	    input1[0]="(//*[@class='select2-chosen'])[14]";
-	    SeleniumOperations.clickOnElement(input1);
-		   
-	    Object[] input50=new Object[1];
-		input50[0]="(//*[@class='select2-chosen'])[14]";
-		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on insurance class dropdown",output50.get("MESSAGE").toString());
-		Thread.sleep(2000);
-	}
-
-	@When("^user enter \"([^\"]*)\" as insurance class$")
-	public void enterInsuranceClass(String name) throws Throwable {
-		Object[] input50=new Object[2];
-		input50[0]="//*[@class='select2-input select2-focused']";
-		input50[1]=name;
-		Hashtable<String, Object> output50 =SeleniumOperations.sendKeys(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user enter \"Standard Rate\" as insurance class",output50.get("MESSAGE").toString());
-		Thread.sleep(2000);
-	}
-
-	@When("^user click to select standard rate as insurance class$")
-	public void clickToSelect() throws Throwable {
-		Object[] input50=new Object[1];
-		input50[0]="//*[@class='select2-match']";
-		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click to select standard rate as insurance class",output50.get("MESSAGE").toString());
-		Thread.sleep(2000);
-	}
-	
+		
 	@When("^user enter \"([^\"]*)\" as sum assured$")
 	public void user_enter_as_sum_assured(String sumAssured) throws Throwable {
 	    Object[] input50=new Object[2];
