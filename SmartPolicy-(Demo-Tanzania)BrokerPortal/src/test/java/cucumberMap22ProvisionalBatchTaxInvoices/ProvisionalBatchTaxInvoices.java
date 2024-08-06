@@ -37,6 +37,7 @@ public class ProvisionalBatchTaxInvoices {
 	@When("user enter {string} as date from")
 	public void user_enter_as_date_from(String dateFrom) throws InterruptedException {
 	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtFromDate']", dateFrom, "user enter {string} as date from", "TEXTBOX", 0);
+
 	}
 	@When("user select {string} as category")
 	public void user_select_as_category(String category) {
@@ -45,8 +46,12 @@ public class ProvisionalBatchTaxInvoices {
 	}
 	@Then("user click on fetch button")
 	public void user_click_on_fetch_button() throws InterruptedException {
-	    Itl.CustomClickEvent("//*[@id='BtnFetch']", "user click on fetch button", "CLICK", 2000);
-	/*Object[] input = new Object[2]; selectall BtnFetch
+	    Itl.CustomClickEvent("//*[@id='BtnFetch']", "user click on fetch button", "CLICK", 3000);
+	Thread.sleep(3000);
+	    Object[] input = new Object[1];
+	    input[0]="//*[@id='grdBatchTaxInvoice']/tbody/tr/td[10]";
+	    SeleniumOperations.CalculateSumOfColumn(input);
+	    /*Object[] input = new Object[2]; selectall BtnFetch
 	input[0] = "//*[@id='MainContent_txtGrossCommission']";
 			//"//*[@id='grdBatchTaxInvoice']/tbody//td[10]";
 			 * MainContent_grdBatchTaxInvoice_chkUnAllocateRecpt_11
@@ -56,8 +61,8 @@ public class ProvisionalBatchTaxInvoices {
 	
 	@When("user click on checkbox to select commission")
 	public void user_click_on_checkbox_to_select_commission() throws InterruptedException {
-	    Itl.CustomClickEvent("//*[@id='grdBatchTaxInvoice']/tbody/tr[1]/td[13]", "user click on checkbox to select commission", "CLICK", 7000);
-	    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtGrossCommission']", "//*[@id='MainContent_txtVATonCommission']", "//*[@id='MainContent_txtTotalCommission']", "GSTVALIDATION", 0);
+	    Itl.CustomClickEvent("//*[@id='grdBatchTaxInvoice']/tbody/tr[1]/td[13]", "user click on checkbox to select commission", "CLICK", 8000);
+	    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATonCommission']", "//*[@id='MainContent_txtGrossCommission']", "//*[@id='MainContent_txtTotalCommission']", "GSTVALIDATION", 0);
         
 	}
 	

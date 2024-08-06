@@ -51,7 +51,6 @@ public class RiskNoteDebitNote {
 	public void user_click_on_mode_dropdown() throws Throwable {
 		Object[] input=new Object[1];
 		input[0]="//*[@id='s2id_MainContent_cmbMode']";
-		SeleniumOperations.wait(input);
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on mode dropdown",output.get("MESSAGE").toString());
 	    Thread.sleep(2000);

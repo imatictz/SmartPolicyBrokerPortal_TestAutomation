@@ -221,6 +221,8 @@ public class GATravelInsurance {
 	    input[0]="//*[@id='btnInsert']";
 	    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button",output.get("MESSAGE").toString());
+	    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
+
 	    Thread.sleep(2000);
 	}
 

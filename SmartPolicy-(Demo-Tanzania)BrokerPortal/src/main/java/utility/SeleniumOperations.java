@@ -11,12 +11,11 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -30,8 +29,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.asserts.Assertion;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -43,6 +40,7 @@ public class SeleniumOperations
     public static WebDriver driver=null;
 	public static Hashtable<String,Object> outputparameters=new Hashtable<String,Object>();
 	public static ConfigReader config;
+	public static WebDriverWait wait1;
 
   //BrowserLaunch
 	public static Hashtable<String,Object>  browserLaunch(){  
@@ -87,6 +85,14 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		// driver.manage().timeouts().pageLoadTimeout(50,TimeUnit.SECONDS);
 		   driver.navigate().to(config.getApplicationUrl());
+		  /* String textValue = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
+		   String pass ="Session Expired.";
+		   if(textValue==pass) {
+			   driver.findElement(By.xpath("//a[@href='wfLogin.aspx']")).click();
+               driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys("PravinS");
+               driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Sp@12345");
+               driver.findElement(By.xpath("//*[text()='Login']")).click();
+		   }*/
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
 	      }
@@ -125,6 +131,30 @@ public class SeleniumOperations
 	     catch(Exception e){
 	   	   outputparameters.put("STATUS","FAIL");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendPassword());
+	     }
+	     return outputparameters;
+     }
+     
+     //ClickOnLoginButton
+     public static Hashtable<String,Object> clickOnLogin(Object[] inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   driver.findElement(By.xpath(strXpath)).click();
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
+	   /*  String test = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
+		   System.out.println(test);
+	     if(test.equalsIgnoreCase("Session Expired.")) {
+			   driver.findElement(By.xpath("//*[@href='wfLogin.aspx']")).click();
+			   driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys(config.sendUserId());
+			   driver.findElement(By.xpath("//*[@id='password']")).sendKeys(config.sendPassword());
+			   driver.findElement(By.xpath("//*[text()='Login']")).click();
+		   }*/
+		 }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
 	     }
 	     return outputparameters;
      }
@@ -340,7 +370,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   JavascriptExecutor down=(JavascriptExecutor) driver;
-		   down.executeScript("window.scrollBy(0,1000)");
+		   down.executeScript("window.scrollBy(0,1050)");
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
 		 }
@@ -435,6 +465,9 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String clickXpath = (String)inputparameters[0];
 		   driver.findElement(By.xpath(clickXpath)).click();
+	 		//wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
+
+		 
 		   Thread.sleep(2000);
 		   String sendXpath = (String)inputparameters[1];
 		   String sendValue = (String)inputparameters[2];
@@ -517,15 +550,15 @@ public class SeleniumOperations
      }
      
 // Explicit Wait
-     public static void wait(Object[] inputparameters) throws InterruptedException {
+    /* public static void wait(Object[] inputparameters) throws InterruptedException {
     	String input=(String)inputparameters[0];
     	 WebElement waitTill= driver.findElement(By.xpath(input));
 
  		Thread.sleep(5000);
 
- 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+ 		
  		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
-     }
+     }*/
      
 //SwitchWindow     
      
@@ -631,54 +664,62 @@ public class SeleniumOperations
      public static void gstPercentCalculationValidation(Object[] inputparameters) {
     	try {
     		
-    	 //VATT on commission calculate by percent
-    		String output = (String)inputparameters[0];
+    		//Get Vatt on commission for equal or check
+    	       
+    	       String output1 = (String)inputparameters[0];
+    	   	WebElement vattOnCommssionValue = driver.findElement(By.xpath(output1));
+    	   	String vattOnCommssionStringValue = vattOnCommssionValue.getAttribute("value");
+    	   	String clearValue1=vattOnCommssionStringValue.replaceAll(",", "");
+    	   	//System.out.println(clearValue1);
+    	       double percentage1 = Double.parseDouble(clearValue1);
+    	       System.out.println("Percentage Value"+" "+percentage1);
+    	       if(percentage1!=0) {
+    		//VATT on commission calculate by percent
+    		String output = (String)inputparameters[1];
     	WebElement commissionValue = driver.findElement(By.xpath(output));
     	String CommissionStringValue =commissionValue.getAttribute("value");
     	String commissionClearValue=CommissionStringValue.replaceAll(",", "");
-    	System.out.println(commissionClearValue);
     	double commissionClearValue0 =Double.parseDouble(commissionClearValue);
-        double percentage = Double.parseDouble(commissionClearValue)*18/100;
-        
-        DecimalFormat df = new DecimalFormat("0.0");
-         df.setRoundingMode(RoundingMode.DOWN);
-         String finalCommission = df.format(percentage);
-        double calculatedFinalPercent = Double.parseDouble(finalCommission);
-        //System.out.println(df.format(percentage));
-        
-        //Get Vatt on commission for equal or check
-        
-        String output1 = (String)inputparameters[1];
-    	WebElement vattOnCommssionValue = driver.findElement(By.xpath(output1));
-    	String vattOnCommssionStringValue = vattOnCommssionValue.getAttribute("value");
-    	String clearValue1=vattOnCommssionStringValue.replaceAll(",", "");
-    	//System.out.println(clearValue1);
-        double percentage1 = Double.parseDouble(clearValue1);
-        System.out.println(percentage1);
-        if(calculatedFinalPercent==percentage1) {
-        	System.out.println("Percentage Is Right");
-        }
-        else {
-        	System.out.println("Percentage Is Wrong");
-        }
-    	//System.out.println("VATT/GST Is : "+(calculatedFinalPercent==percentage1));
+    	System.out.println(commissionClearValue0);
     	
-    	//Get Total Commission
-    	//commission+vatt on commission
-    	 double calculatedTotalCommission = Double.sum(commissionClearValue0, percentage1);
-    	 System.out.println(calculatedTotalCommission);
+       
+    		double percentage = Double.parseDouble(commissionClearValue)*18/100;
+       DecimalFormat df = new DecimalFormat("0.0");
+       df.setRoundingMode(RoundingMode.DOWN);
+       String finalCommission = df.format(percentage);
+      double calculatedFinalPercent = Double.parseDouble(finalCommission);
     	 
-    	 //Get Total Commission for equal or check
-    	 String output2 = (String)inputparameters[2];
-     	WebElement totalCommissionValue = driver.findElement(By.xpath(output2));
-     	String totalCommissionStringValue =totalCommissionValue.getAttribute("value");
-     	String clearValue2=totalCommissionStringValue.replaceAll(",", "");
-     	//System.out.println(clearValue2);
-        double finalValue = Double.parseDouble(clearValue2);
-        System.out.println("Total Premium/Commission Is :"+(calculatedTotalCommission==finalValue));
-    	 
-    	
-    	
+     
+        
+    	   if(calculatedFinalPercent==percentage1) {
+       	       System.out.println("Percentage Is Right");
+           }
+           else {
+               System.out.println("Percentage Is Wrong");
+           }
+   	//System.out.println("VATT/GST Is : "+(calculatedFinalPercent==percentage1));
+     
+   	
+   	//Get Total Commission
+   	//commission+vatt on commission
+   	 double calculatedTotalCommission = Double.sum(commissionClearValue0, percentage1);
+   	 System.out.println(calculatedTotalCommission);
+   	 
+   	 //Get Total Commission for equal or check
+   	 String output2 = (String)inputparameters[2];
+    	WebElement totalCommissionValue = driver.findElement(By.xpath(output2));
+    	String totalCommissionStringValue =totalCommissionValue.getAttribute("value");
+    	String clearValue2=totalCommissionStringValue.replaceAll(",", "");
+    	//System.out.println(clearValue2);
+       double finalValue = Double.parseDouble(clearValue2);
+       System.out.println("Total Premium/Commission Is :"+(calculatedTotalCommission==finalValue));
+   	
+    	}
+    	else {
+    		System.out.println("No GST/VATT On Quotation");
+    	}
+        
+        
         
         
         
@@ -687,6 +728,43 @@ public class SeleniumOperations
     		System.out.println(e);
     	}     
     	}
+     
+     
+     public static void CalculateSumOfColumn(Object[] inputparameters) {
+    	 String input = (String)inputparameters[0];
+    	// WebElement colunmValues = (WebElement) driver.findElements(By.xpath(input));
+    	 List<WebElement> colunmValues = driver.findElements(By.xpath(input));
+    	int t = colunmValues.size();
+    	for(int i = 0;i<t;i++) {
+        String finalValues = colunmValues.get(i).getText();
+        
+        System.out.println("Values"+" "+finalValues);
+    	
+    	
+    	}
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+     }
+     
  }		 
 	
+
+
 	

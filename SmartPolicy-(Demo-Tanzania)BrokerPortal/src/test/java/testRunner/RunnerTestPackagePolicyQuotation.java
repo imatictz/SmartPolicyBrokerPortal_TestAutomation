@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/PackagePolicy.feature", 
-                   tags= "@All", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap9PackagePolicy","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/FireClassI.feature", 
-                   tags= "@AllFields", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap10FireClassI","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

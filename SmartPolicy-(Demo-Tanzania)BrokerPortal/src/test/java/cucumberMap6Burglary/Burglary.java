@@ -85,7 +85,7 @@ public class Burglary
 			Thread.sleep(6000);
 			Object[] input=new Object[1];
 			input[0]="//*[@id='MainContent_txtClientName']";
-			SeleniumOperations.wait(input);
+			//SeleniumOperations.wait(input);
 			
 			Object[] input50=new Object[2];
 			input50[0]="//*[@id='MainContent_txtClientName']";
@@ -183,7 +183,9 @@ public class Burglary
 		   input[0]="//*[@id='btnInsert']";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
+		    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
+
+		   Thread.sleep(2000);
 		SeleniumOperations.scrollUp450();
 		Thread.sleep(4000);
 		}

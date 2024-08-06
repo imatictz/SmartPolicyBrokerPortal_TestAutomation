@@ -52,7 +52,7 @@ public class Hookable {
     public void clickOnLoginButton(){
 	    Object[] input4=new Object[1];
 		input4[0]="//*[text()='Login']";
-		SeleniumOperations.clickOnElement(input4);
+		SeleniumOperations.clickOnLogin(input4);
     } 
 	
 

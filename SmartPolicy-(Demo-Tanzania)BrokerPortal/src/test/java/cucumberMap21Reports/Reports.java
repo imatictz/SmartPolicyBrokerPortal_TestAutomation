@@ -68,9 +68,9 @@ public class Reports {
 	}
 	@When("user click on show report button")
 	public void user_click_on_show_report_button() throws InterruptedException {
-		 Object[] input1 = new Object[1];
+		/* Object[] input1 = new Object[1];
 		 input1[0] = "//*[@id='MainContent_btnShowReports']";
-		 SeleniumOperations.wait(input1);
+		 SeleniumOperations.wait(input1);*/
 		 Object[] input = new Object[2];
 		 input[0] = "//*[@id='MainContent_btnShowReports']";
 		 Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input);

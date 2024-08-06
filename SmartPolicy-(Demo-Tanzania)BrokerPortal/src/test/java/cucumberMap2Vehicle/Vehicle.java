@@ -406,27 +406,25 @@ public class Vehicle
 			input[1]=sumInsured;
 			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"100000\" as sum insured",output.get("MESSAGE").toString());
+	 Thread.sleep(2000);
 	 }
 
 	 @When("^user click on compute button$")
 	 public void clickOnComputeButton() throws Throwable
 	 {
+		    Itl.CustomClickEvent("//*[@id='btnCompute']", "user click on compute button", "CLICK", 2000);
+		    Itl.CustomClickEvent("//*[@id='btnCompute']", "user click on compute button", "CLICK", 2000);
 
-		 Object[] input1=new Object[1];
-		   input1[0]="//*[@id='btnCompute']";
-		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on compute button",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
 	 }
 
 	 @When ("^user click on insert button \\(Policy Information\\)$")
 	 public void clickOnInsertButton() throws Throwable
 	 {
-		 Object[] input1=new Object[1];
-		   input1[0]="//*[@id='btnInsert']";
-		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button (Policy Information)",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
+		 
+		    Itl.CustomClickEvent("//*[@id='btnInsert']", "user click on insert button \\\\(Policy Information\\\\)", "CLICK", 2000);
+ 
+		 //  Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
+
 		   
 	 }
 	 
@@ -443,11 +441,8 @@ public class Vehicle
 	 public void clickOnComputeButtonUpdate() throws Throwable 
 	 {
 
-		 Object[] input1=new Object[1];
-		   input1[0]="//*[@id='btnCompute']";
-		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on compute button to update record",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
+		    Itl.CustomClickEvent("//*[@id='btnCompute']", "user click on compute button to update record", "CLICK", 2000);
+
 		   SeleniumOperations.scrollUp();
 		   Thread.sleep(2000);
 	 }

@@ -2,46 +2,46 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-09T14:03:17Z" name="Default suite" finished-at="2024-07-09T14:05:39Z" duration-ms="141738">
+  <suite started-at="2024-08-06T09:16:50Z" name="Default suite" finished-at="2024-08-06T09:18:02Z" duration-ms="71607">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@8c3619e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-07-09T14:03:17Z" name="Default test" finished-at="2024-07-09T14:05:39Z" duration-ms="141738">
-      <class name="testRunner.RunnerTestBondsQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestBondsQuotation@8c3619e]" started-at="2024-07-09T17:03:17Z" name="setUpClass" finished-at="2024-07-09T17:03:19Z" duration-ms="1885" status="PASS">
+    <test started-at="2024-08-06T09:16:50Z" name="Default test" finished-at="2024-08-06T09:18:02Z" duration-ms="71607">
+      <class name="testRunner.RunnerTestClaims">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" started-at="2024-08-06T12:16:50Z" name="setUpClass" finished-at="2024-08-06T12:16:53Z" duration-ms="2152" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@52856ff9]]>
+                <![CDATA[org.testng.TestRunner@147efd9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@8c3619e]" started-at="2024-07-09T17:03:19Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-09T17:05:39Z" duration-ms="139721" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" started-at="2024-08-06T12:16:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-06T12:18:02Z" duration-ms="69384" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["(Bonds Quotation) Verify user able to enter all fields and save quotation successfully"]]>
+                <![CDATA["(Report Vehicle Claim) Verify user able to report claim successfully"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Bonds Quotation"]]>
+                <![CDATA["Claims"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestBondsQuotation@8c3619e]" started-at="2024-07-09T17:05:39Z" name="tearDownClass" finished-at="2024-07-09T17:05:39Z" duration-ms="92" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" started-at="2024-08-06T12:18:02Z" name="tearDownClass" finished-at="2024-08-06T12:18:02Z" duration-ms="45" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestBondsQuotation -->
+      </class> <!-- testRunner.RunnerTestClaims -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

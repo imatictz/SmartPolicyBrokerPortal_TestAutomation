@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/GATravelInsurance.feature", 
-                   tags= "@AllFields", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap11GATravelInsurance","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

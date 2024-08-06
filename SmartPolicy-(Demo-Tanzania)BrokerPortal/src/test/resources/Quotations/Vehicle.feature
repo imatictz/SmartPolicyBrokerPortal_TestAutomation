@@ -24,7 +24,7 @@ When user click on Registered as motor type
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
-When user enter "TESTA202" as registration number
+When user enter "TESTA203" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
@@ -50,10 +50,8 @@ When user enter "100000" as sum insured
 When user click on compute button
 When user click on insert button (Policy Information)
 When user click on OK button for commission alert
+#When user click on compute button
 When user click on compute button to update record
-#When user click on broker partner name dropdown
-#When user select FinalTester as broker partner name
-When user scroll up to click on addon
 When user click on addon button
 When user select "Earthquake"as extension
 When user enter sum insured as "100000"
@@ -63,6 +61,27 @@ When user click on insert button
 When user click on save button
 #When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @AllFields
@@ -177,3 +196,41 @@ When user click on insert button
 When user click on save button
 #When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -188,7 +188,7 @@ public class Bonds
 			Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input11);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button",output.get("MESSAGE").toString());
 			 Thread.sleep(2000);
-			    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
+			    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
 
 		}
 

@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/ProvisionalBatchTaxInvoices/ProvisionalBatchTaxInvoices.feature", 
-                   tags= "@All", 
+                   tags= "@Test", 
                    glue={"cucumberMap22ProvisionalBatchTaxInvoices","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

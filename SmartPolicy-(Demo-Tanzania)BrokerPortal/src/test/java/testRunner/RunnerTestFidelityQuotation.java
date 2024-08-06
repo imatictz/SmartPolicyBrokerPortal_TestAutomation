@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/Fidelity.feature", 
-                   tags= "@All", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap7Fidelity","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	
