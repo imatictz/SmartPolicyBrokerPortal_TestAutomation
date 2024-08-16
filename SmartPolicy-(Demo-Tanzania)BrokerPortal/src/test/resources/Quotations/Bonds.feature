@@ -19,7 +19,9 @@ When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer
 When user select Alliance Insurance Company (T) Ltd. as insurer
 When user enter "123459876501234" as cover note
-When user select "Advance Payment Bond 1" as insurance class
+When user click on insurance class dropdown
+When user enter "Advance Payment Bond 1" as insurance class
+When user select Advance Payment Bond one as insurance class
 When user enter "2000000" as contract value
 When user enter "Bonds Quotation" as description
 When user click on compute button
@@ -35,7 +37,7 @@ When user click on insert button (AddOn)
 #When user click on broker partner name dropdown
 #When user select FinalTester as broker partner name
 When user click on save button
-When user click on Ok button to accept commission rate alert message
+#When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt" as status
 
 
@@ -67,7 +69,9 @@ When user enter "Profit making" as loss ratio forecast
 Then user select Profit making as loss ratio forecast
 When user enter "123459876501234" as cover note
 #Policy Information
-When user select "Advance Payment Bond 1" as insurance class
+When user click on insurance class dropdown
+When user enter "Advance Payment Bond 1" as insurance class
+When user select Advance Payment Bond one as insurance class
 When user enter "2000000" as contract value
 When user enter "50" as override% for sum assured
 When user enter "5" as override% for premium
@@ -90,5 +94,5 @@ When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
-When user click on Ok button to accept commission rate alert message
+#When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt" as status

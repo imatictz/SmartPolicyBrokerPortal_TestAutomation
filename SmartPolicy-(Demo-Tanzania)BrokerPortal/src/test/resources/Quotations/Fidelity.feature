@@ -19,7 +19,9 @@ When user select Pravin Testing as client name
 When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer
 When user select Alliance Insurance Company (T) Ltd. as insurer
-When user select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user select Standard Rate as insurance class
 When user enter "4500000" as sum insured
 When user enter "11" as No of employees
 When user enter "Fidelity Quotation Testing" as description
@@ -63,7 +65,9 @@ When user enter "Profit making" as loss ratio forecast
 Then user select Profit making as loss ratio forecast
 When user enter "123459876501234" as cover note
 #Policy Information
-When user select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user select Standard Rate as insurance class
 When user enter "4500000" as sum insured
 When user enter "11" as No of employees
 When user enter "Fidelity Quotation Testing" as description

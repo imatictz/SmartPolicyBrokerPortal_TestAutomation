@@ -18,7 +18,9 @@ When user select Pravin Testing as client name
 When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer
 When user select Alliance Insurance Company (T) Ltd. as insurer
-When user select "Industrial/Manufacturing risks-Electronic software parks" as insurance class
+When user click on insurance class dropdown
+When user enter "Industrial/Manufacturing risks-Electronic software parks" as insurance class
+When user select Industrial/Manufacturing risks-Electronic software parks as insurance class
 When user enter "5000000" as sum insured
 When user enter "Fire Class I Quotation Testing" as description
 When user click on compute button
@@ -66,7 +68,9 @@ Then user select Profit making as loss ratio forecast
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
-When user select "Industrial/Manufacturing risks-Electronic software parks" as insurance class
+When user click on insurance class dropdown
+When user enter "Industrial/Manufacturing risks-Electronic software parks" as insurance class
+When user select Industrial/Manufacturing risks-Electronic software parks as insurance class
 When user enter "5000000" as sum insured
 When user enter "12" as override%
 When user enter "500" as adjust premium
@@ -89,4 +93,4 @@ When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status

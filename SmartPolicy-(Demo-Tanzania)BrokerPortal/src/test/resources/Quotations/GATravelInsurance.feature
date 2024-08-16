@@ -8,24 +8,25 @@ When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
 When user click on select insurance type dropdown
-When user enter "GA Travel Insurance" to search insurance type in search box
+When user enter "Travel Insurance" to search insurance type in search box
 When user select GA Travel Insurance as insurance type from dropdown
 
 @MandatoryFields
 Scenario: (GA Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
+When user Select "Alliance Insurance Company (T) Ltd." as insurer
 When user click on country travelling to dropdown
 When user enter "South Africa" as country travelling to
 When user select Sounth Africa as country travelling to
 When user click on plan dropdown
-When user enter "Plan Africa" as plan
+When user enter "Medical Only" as plan
 When user select Plan Africa as plan
 When user enter "25428Af111" as passport number
 When user enter "01/01/2000" as date of birth
-When user enter "25/11/2024" as expiry date
+When user enter "25/04/2024" as expiry date
 When user click on relationship dropdown
-When user enter "self" as relationship
+When user enter "Direct" as relationship
 When user select self as realtionship
 #When user click on compute button
 When user click on insert button
@@ -47,12 +48,13 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (GA Travel Insurance Quotation) Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
+When user Select "Alliance Insurance Company (T) Ltd." as insurer
 When user click on country travelling to dropdown
 When user enter "South Africa" as country travelling to
 When user select Sounth Africa as country travelling to
 When user enter "ByAIR1025-BUS842@#$1206" as route information
 When user click on plan dropdown
-When user enter "Plan Africa" as plan
+When user enter "Medical Only" as plan
 When user select Plan Africa as plan
 When user click on business by dropdown
 Then user select Demo User as business by
@@ -71,9 +73,9 @@ Then user select Profit making as loss ratio forecast
 #Policy Information
 When user enter "25428Af111" as passport number
 When user enter "01/01/2000" as date of birth
-When user enter "25/12/2024" as expiry date
+When user enter "25/04/2024" as expiry date
 When user click on relationship dropdown
-When user enter "self" as relationship
+When user enter "Direct" as relationship
 When user select self as realtionship
 When user enter "TravellingTOAFrica12032" as pre existing condition
 When user enter "-962.3" as adjust premium
@@ -94,4 +96,4 @@ When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
 When user click on Ok button to accept commission alert message
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status

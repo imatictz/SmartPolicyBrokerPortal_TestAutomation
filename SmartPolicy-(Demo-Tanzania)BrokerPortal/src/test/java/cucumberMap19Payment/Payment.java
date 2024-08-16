@@ -27,7 +27,6 @@ public class Payment {
  	    Object[] input4=new Object[1];
 	    input4[0]="//*[@id='MNU_wfCTXN_PAY']";
 	    SeleniumOperations.clickOnElement(input4);
-	    Thread.sleep(2000);
  	}
 
  	@When("^user click on add button to enter payment details$")
@@ -35,13 +34,12 @@ public class Payment {
  	    Object[] input4=new Object[1];
 	    input4[0]="//*[@id='MainContent_btnAdd']";
 	    SeleniumOperations.clickOnElement(input4);
-	    Thread.sleep(2000);
  	}
 
  	@When("^user click on insurer name dropdown$")
  	public void user_click_on_insurer_name_dropdown() throws Throwable {
  	    Object[] input=new Object[1];
-		input[0]="//*[@id='s2id_MainContent_cmbInsurerName']";
+		input[0]="(//*[@class='select2-chosen'])[2]";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurer name dropdown",output.get("MESSAGE").toString());
 		Thread.sleep(2000);

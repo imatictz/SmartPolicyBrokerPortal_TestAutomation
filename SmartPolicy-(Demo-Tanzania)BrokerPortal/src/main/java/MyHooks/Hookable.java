@@ -12,7 +12,7 @@ import utility.SeleniumOperations;
 public class Hookable {
 	@Before(order=0)
 	public void before(Scenario Scenario) throws UnknownHostException{   
-		HTMLReportGenerator.TestSuiteStart("C:\\TestResult\\ReportsReTesting100.html","SmartPolicy");
+		HTMLReportGenerator.TestSuiteStart("C:\\TestResult\\Demo-Broker-April.html","SmartPolicy");
 		HTMLReportGenerator.TestCaseStart(Scenario.getName(),Scenario.getStatus().toString());
 		System.out.println("--------------------Scenario Start---------------------");
 	}
@@ -52,13 +52,16 @@ public class Hookable {
     public void clickOnLoginButton(){
 	    Object[] input4=new Object[1];
 		input4[0]="//*[text()='Login']";
-		SeleniumOperations.clickOnLogin(input4);
+		SeleniumOperations.clickOnElement(input4);
     } 
 	
+	@After(order=1)
 
-	/*@After(order=1)
+	public void browserClose() {
+		SeleniumOperations.browserClose();
+
 	public void browserColse() {
 		SeleniumOperations.browserColse();
 
-	}*/
+	}
 }

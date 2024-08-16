@@ -19,7 +19,9 @@ When user select client name as Pravin Testing
 When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer
 When user select Alliance Insurance Company (T) Ltd. as insurer
-When user select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user select Standard Rate as insurance class
 When user enter "2500000" as sum insured
 When user enter "Burglary/Theft Quotation Testing" as description
 When user click on compute button
@@ -67,7 +69,9 @@ When user enter "Profit making" as loss ratio forecast
 Then user select Profit making as loss ratio forecast
 When user enter "123459876501234" as cover note
 #Policy Information
-When user select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user select Standard Rate as insurance class
 When user enter "2500000" as sum insured
 When user enter "2" as sum insured rate %
 When user enter "2" as override %
@@ -92,5 +96,5 @@ Then user click on Re-Compute premium
 #When user enter "FinalTester" as broker partner name
 #When user select FinalTester as broker partner name
 When user click on save button
-#When user click on Ok button to accept commission rate alert message
+When user click on Ok button to accept commission rate alert message
 Then user able to view "Required Approval" as status

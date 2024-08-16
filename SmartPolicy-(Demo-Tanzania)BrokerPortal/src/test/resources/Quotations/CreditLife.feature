@@ -37,7 +37,6 @@ When user enter "2.5" as rate%
 When user enter "Credit Life Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
-When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt" as status
 
 
@@ -100,5 +99,4 @@ When user click on insert button (AddOn)
 When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 When user click on save button
-When user click on Ok button to accept commission rate alert message
 Then user able to view "Required Approval" as status

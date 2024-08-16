@@ -88,22 +88,34 @@ When user enter "Female" as gender (For Guardian Four)
 When user select Female as gender (For Guardian Four)
 When user enter "659544202" as telephone (For Guardian Four)
 When user enter "Guardian Address 4" as address (For Guardian Four)
-When user select "Life Beneficiary One" as life beneficiary (For Beneficiary One)
+When user click on life beneficiary dropdown (For Beneficiary One)
+When user enter "Life Beneficiary One" as life beneficiary (For Beneficiary One)
+When user select Life Beneficiary One as life beneficiary (For Beneficiary One)
 When user enter "25" as percent of savings benefit given (For Beneficiary One)
-When user select "Life Beneficiary Two" as life beneficiary (For Beneficiary Two)
+When user click on life beneficiary dropdown (For Beneficiary Two)
+When user enter "Life Beneficiary Two" as life beneficiary (For Beneficiary Two)
+When user select Life Beneficiary Two as life beneficiary (For Beneficiary Two)
 When user enter "25" as percent of savings benefit given (For Beneficiary Two)
-When user select "Life Beneficiary Three" as life beneficiary (For Beneficiary Three)
+When user click on life beneficiary dropdown (For Beneficiary Three)
+When user enter "Life Beneficiary Three" as life beneficiary (For Beneficiary Three)
+When user select Life Beneficiary Three as life beneficiary (For Beneficiary Three)
 When user enter "25" as percent of savings benefit given (For Beneficiary Three)
-When user select "Life Beneficiary Four" as life beneficiary (For Beneficiary Four)
+When user click on life beneficiary dropdown (For Beneficiary Four)
+When user enter "Life Beneficiary Four" as life beneficiary (For Beneficiary Four)
+When user select Life Beneficiary Four as life beneficiary (For Beneficiary Four)
 When user enter "25" as percent of savings benefit given (For Beneficiary Four)
 When user click on next button (Second Page)
 When user click on plan dropdown
 When user enter "Option 5" as plan
 When user click on option Five as plan 
 When user enter "10" as terms(Year)
-When user select "Cash" as payment method
+When user click on payment method dropdown
+When user enter "Cash" as payment method
+When user click on cash as payment method
 When user enter "594200" as saving premium
 When user click on compute button
-When user select "Yearly" as payment frequency
+When user click on payment frequency dropdown
+When user enter "Yearly" as payment frequency
+When user click on yearly as payment frequency
 When user click on calculate schedule button
 When user click on save button

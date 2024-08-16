@@ -19,13 +19,15 @@ When user select Pravin Testing as client name
 When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer
 When user select Alliance Insurance Company (T) Ltd. as insurer
-When user select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user select Standard Rate as insurance class
 When user enter "200000" as sum insured
 When user enter "Fire & Burglary Quotation Testing" as description
 When user click on compute button
 When user click on insert button
-When user click on broker partner name dropdown
-When user select FinalTester as broker partner name
+#When user click on broker partner name dropdown
+#When user select FinalTester as broker partner name
 When user click on addOn button
 When user click on extension dropdown
 When user enter "All Risk Cover" as extension
@@ -35,7 +37,7 @@ When user enter "5" as rate%
 When user enter "Fire & Burglary Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
-#When user click on Ok button to accept commission rate alert message
+When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt" as status
 
 
@@ -68,15 +70,15 @@ Then user select Profit making as loss ratio forecast
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
-When user select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user select Standard Rate as insurance class
 When user enter "200000" as sum insured
 When user enter "12" as override%
 When user enter "500" as adjust premium
 When user enter "Fire & Burglary Quotation Testing" as description
 When user click on compute button
 When user click on insert button
-When user click on broker partner name dropdown
-When user select FinalTester as broker partner name
 #AddOn
 When user click on addOn button
 When user click on extension dropdown
@@ -91,5 +93,5 @@ When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
-#When user click on Ok button to accept commission rate alert message
-Then user able to view "Required Approval" as status
+When user click on Ok button to accept commission rate alert message
+Then user able to view "Awaiting Receipt" as status

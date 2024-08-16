@@ -1,15 +1,51 @@
-package cucumberMap6Burglary;
+package MapTwoQuotations;
 
 import java.util.Hashtable;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
-public class Burglary 
-{
+public class AccidentalDamage {
+
+	@Given ("^user provide browser name and exe location$")
+	public void bLaunch()
+	{
+	     SeleniumOperations.browserLaunch();   
+	}
 	
+	@Given ("^user enter url$")
+	public void openApp()
+	{
+	  SeleniumOperations.openApplication(); 
+	}
+	
+	@When ("^user enter username$")
+	public void enterUserName()
+	{
+		 Object[] input2=new Object[2];
+	      input2[0]="//*[@id='usercode']";
+	SeleniumOperations.sendUserId(input2);
+	}
+	
+	@When ("^user enter password$")
+	public void enterPassword()
+	{
+		Object[] input3=new Object[2];
+	      input3[0]="//*[@id='password']";
+    SeleniumOperations.sendPassword(input3);
+	} 
+	  
+	 @And ("^user click on login button$")
+	 public void clickOnLoginButton()
+	 {
+		 Object[] input4=new Object[1];
+	      input4[0]="//*[text()='Login']";
+	  SeleniumOperations.clickOnElement(input4);
+	 }
 	 
 	 @When("^user navigate on operation dropdown menu$")
 		public void user_navigate_on_operation_dropdown_menu() 
@@ -43,8 +79,7 @@ public class Burglary
 		{Object[] input10=new Object[1];
 		input10[0]="//*[@class='bold'][text()='Add']";
 		SeleniumOperations.clickOnElement(input10);
-		Thread.sleep(8000);
-		
+		Thread.sleep(3000);
 		    
 		}
 
@@ -68,40 +103,35 @@ public class Burglary
 		    SeleniumOperations.sendKeys(input);
 		    Thread.sleep(2000);
 		}
-		
-		@When("^user select Burglary/Theft as insurance type from dropdown$")
-		public void selectInsuranceTypeResult() throws Throwable 
+
+		@When("^user select Accidental Damage as insurance type from dropdown$")
+		public void clickOnInsuranceTypeResult() throws Throwable 
 		{
-			Object[] input11=new Object[1];
-			input11[0]="//*[@class='select2-match']";
-			SeleniumOperations.clickOnElement(input11);
+		    Object[] input=new Object[1];
+		    input[0]="//*[@class='select2-match']";
+		    SeleniumOperations.clickOnElement(input);
+		    Thread.sleep(3000);
 		}
 
-		@When("^user enter \"([^\"]*)\" as client name in quotation$")
-		public static void enterClientName(String name) throws InterruptedException  
+		@When("^user enter \"([^\"]*)\" as client name$")
+		public void enterClientName(String clientName) throws Throwable 
 		{
-			Thread.sleep(6000);
+		   Object[] input=new Object[2];
+		   input[0]="//*[@id='MainContent_txtClientName']";
+		   input[1]=clientName;
+		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name",output.get("MESSAGE").toString());
+		   Thread.sleep(3000);
+		}
+
+		@When("^user select Pravin Testing as client name$")
+		public void clickOnClientName() throws Throwable 
+		{
 			Object[] input=new Object[1];
 			input[0]="//*[@id='MainContent_txtClientName']";
-			SeleniumOperations.wait(input);
-			
-			Object[] input50=new Object[2];
-			input50[0]="//*[@id='MainContent_txtClientName']";
-			input50[1]=name;
-			Hashtable<String, Object> output50 = SeleniumOperations.sendKeys(input50);
-			HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name in quotation",output50.get("MESSAGE").toString());
-			
-		}
-
-		@When("^user select client name as Pravin Testing$")
-		public static void selectClientName() throws InterruptedException
-		{
-			Thread.sleep(4000);
-			Object[] input50=new Object[2];
-			input50[0]="//*[@name='ctl00$MainContent$txtClientName']";
-			Hashtable<String, Object> output50 =SeleniumOperations.actionDownEnter();
-			HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select client name as Pravin Testing",output50.get("MESSAGE").toString());
-		    Thread.sleep(2000);
+			Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Pravin Testing as client name",output.get("MESSAGE").toString());
+			Thread.sleep(2000);
 		}
 
 		@When("^user click on insurer dropdown$")
@@ -111,7 +141,7 @@ public class Burglary
 		   input[0]="(//*[@class='select2-chosen'])[1]";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurer dropdown",output.get("MESSAGE").toString());
-		   Thread.sleep(3000);
+		   Thread.sleep(2000);
 		}
 
 		@When("^user enter \"([^\"]*)\" as insurer$")
@@ -122,6 +152,7 @@ public class Burglary
 		    input[1]=insurer;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Alliance Insurance Company (T) Ltd.\" as insurer",output.get("MESSAGE").toString());
+		    Thread.sleep(2000);
 		}
 
 		@When("^user select Alliance Insurance Company \\(T\\) Ltd\\. as insurer$")
@@ -137,16 +168,14 @@ public class Burglary
 		@When("^user click on insurance class dropdown$")
 		public void clickOnInsuranceClassDropdown() throws Throwable 
 		{
-			Object[] input12=new Object[1];
-			input12[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
-			SeleniumOperations.clickOnElement(input12);
-			Thread.sleep(2000);
+			 Object[] input1=new Object[1];
+			    input1[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
+			   SeleniumOperations.clickOnElement(input1);
 		    Object[] input=new Object[1];
 		    input[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
 		    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurance class dropdown",output.get("MESSAGE").toString());
 		    Thread.sleep(2000);
-		    
 		}
 
 		@When("^user enter \"([^\"]*)\" as insurance class$")
@@ -167,7 +196,6 @@ public class Burglary
 		    input[0]="//*[@class='select2-match']";
 		    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Standard Rate as insurance class",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
 		}
 
 		@When("^user enter \"([^\"]*)\" as sum insured$")
@@ -177,11 +205,19 @@ public class Burglary
 		   input[0]="//*[@id='txtSumInsured']";
 		   input[1]=sumInsured;
 		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"2500000\" as sum insured",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
+		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"100000\" as sum insured",output.get("MESSAGE").toString());
 		}
 
-		
+		@When ("^user enter \"(.*)\" % as override%$")
+		public void enterOverride(String overRide)
+		{
+			Object[] input=new Object[2];
+			input[0]="//*[@id='txtOverride']";
+			input[1]=overRide;
+			Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"5\" % as override%",output.get("MESSAGE").toString());
+			
+		}
 		
 		@When("^user enter \"([^\"]*)\" as description$")
 		public void enterDescription(String description) throws Throwable 
@@ -190,7 +226,7 @@ public class Burglary
 		    input[0]="//*[@id='MainContent_txtDescription']";
 		    input[1]=description;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Burglary/Theft Quotation Testing\" as description",output.get("MESSAGE").toString());
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Accidental Damage Quotation Testing\" as description",output.get("MESSAGE").toString());
 		}
 
 		@When("^user click on compute button$")
@@ -200,7 +236,6 @@ public class Burglary
 		 input[0]="//*[@id='btnCompute']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on compute button",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
 		}
 
 		@When("^user click on insert button$")
@@ -210,54 +245,33 @@ public class Burglary
 		   input[0]="//*[@id='btnInsert']";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
-		SeleniumOperations.scrollUp450();
-		Thread.sleep(4000);
 		}
 
 		@When("^user click on addOn button$")
 		public void clickOnAddon() throws Throwable 
 		{
 		    Object[] input=new Object[1];
-		    input[0]="//*[@id='li2']";
+		    input[0]="//*[text()='Add-ons']";
 		    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on addOn button",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
 		}
-		
 
 		@When("^user click on extension dropdown$")
 		public void clickOnExtensionDropdown() throws Throwable 
 		{
-			
 		   Object[] input=new Object[1];
-		   input[0]="//*[@id='s2id_MainContent_cmbAddons']";
+		   input[0]="(//*[@class='select2-chosen'])[15]";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
-		   Object[] input1=new Object[1];
-		   input1[0]="//*[@id='s2id_MainContent_cmbAddons']";
-		   SeleniumOperations.clickOnElement(input1);
-		Thread.sleep(2000);
+		   
 		}
 
-		@When ("^user click on extension dropdown1$")
-		 public void clickOnExtensionDropdown1() throws Throwable 
-		 {
-			 
-			 Object[] input1=new Object[1];
-			   input1[0]="//*[@id='s2id_MainContent_cmbAddons']";
-			   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
-			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
-			   Object[] input2=new Object[1];
-			   input2[0]="//*[@id='s2id_MainContent_cmbAddons']";
-			   SeleniumOperations.clickOnElement(input2);
-		 }
 		@When("^user enter \"([^\"]*)\" as extension$")
 		public void enterExtension(String extension) throws Throwable
 		{
 		    Object[] input=new Object[2];
 		    input[0]="//*[@class='select2-input select2-focused']";
-		    input[1]=extension;
+		    input[1]="All Risk Cover";
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
 		}
@@ -278,8 +292,7 @@ public class Burglary
 		   input[0]="//*[@id='txtSumInsuredAddons']";
 		   input[1]=sumInsuredAddOn;
 		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"630000\" as sum insured (AddOn)",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
+		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"200000\" as sum insured (AddOn)",output.get("MESSAGE").toString());
 		}
 
 		
@@ -290,7 +303,7 @@ public class Burglary
 		   input[0]="//*[@id='txtRateAddons']";
 		   input[1]=rate;
 		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"2\" as rate%",output.get("MESSAGE").toString());
+		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"5\" as rate%",output.get("MESSAGE").toString());
 		   Thread.sleep(2000);
 		}
 
@@ -303,7 +316,7 @@ public class Burglary
 			input[0]="//*[@id='MainContent_txtDescriptionAddons']";
 			input[1]=description;
 			Hashtable<String,Object> output= SeleniumOperations.sendKeys(input); 
-			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Burglary/Theft Quotation AddOn\" as description (AddOn)",output.get("MESSAGE").toString());
+			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Accidental Damage Quotation AddOn\" as description (AddOn)",output.get("MESSAGE").toString());
 			   Thread.sleep(2000);
 		}
 
@@ -314,45 +327,6 @@ public class Burglary
 		    input[0]="//*[@id='btnInsertAddons']";
 		    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
 			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button (AddOn)",output.get("MESSAGE").toString());
-			   Thread.sleep(2000);
-		}
-
-		
-		@When("^user click on broker partner name dropdown$")
-		public void clickOnBrokerPartnerDropdown() throws InterruptedException
-		{
-			Object[] input=new Object[1];
-		    input[0]="(//*[@class='select2-chosen'])[16]";
-		    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
-			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on broker partner name dropdown",output.get("MESSAGE").toString());
-			   Thread.sleep(2000); 
-		}
-		
-		@When ("^user enter \"(.*)\" as broker partner name$")
-		public void enterBrokerPartner(String brokerPartner) throws Throwable 
-		{
-		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
-		    input[1]=brokerPartner;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"FinalTester\" as broker partner name",output.get("MESSAGE").toString());
-		    Thread.sleep(2000);
-		}
-		@When("^user select FinalTester as broker partner name$")
-		public void selectBrokerPartnerResult() throws InterruptedException
-		{
-			Object[] input=new Object[1];
-		    input[0]="(//*[@value='571'])[2]";
-		    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
-			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select FinalTester as broker partner name",output.get("MESSAGE").toString());
-			   Thread.sleep(2000);  
-		}
-		@When("^user click on Ok button to accept broker partner alert message$")
-		public void clickOnOKButtonBrokerPartner() throws Throwable 
-		{
-			
-			   Hashtable<String,Object> output= SeleniumOperations.alert();
-			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept broker partner alert message",output.get("MESSAGE").toString());
 			   Thread.sleep(2000);
 		}
 
@@ -367,18 +341,16 @@ public class Burglary
 		   input[0]="//*[@id='btnSave']";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString());
-		   Thread.sleep(4000);
+		   Thread.sleep(2000);
 		}
-		
-		@When("^user click on Ok button to accept commission rate alert message$")
-		public void clickOnOKbuttonCommission() throws Throwable 
-		{
 
-			   Hashtable<String,Object> output= SeleniumOperations.alert();
-			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission rate alert message",output.get("MESSAGE").toString());
-			   Thread.sleep(2000);
+		@When("^user click on Ok button to accept commission alert$")
+		public void clickOnOKButton() throws Throwable 
+		{
+			Hashtable<String,Object> output= SeleniumOperations.alert();
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
 		}
-		
+
 		@Then("^user able to view \"([^\"]*)\" as status$")
 		public void user_able_to_view_as_status(String awaitingReceipt) throws Throwable 
 		{
@@ -388,7 +360,8 @@ public class Burglary
 		    Hashtable<String,Object> output= SeleniumOperations.validation(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \"Awaiting Receipt\" as status",output.get("MESSAGE").toString());  
 		}
-
+		
+		
 		@When ("^user click on business by dropdown$")
 		public void clickOnBusinessDropdown() throws InterruptedException
 		{
@@ -411,7 +384,21 @@ public class Burglary
 
 
 
-		
+		@When("^user enter \"([^\"]*)\" as unique property identification$")
+		public void user_enter_as_unique_property_identification(String uniqueProperty) throws Throwable {
+		   
+			
+			Object[] input50=new Object[1];
+			   input50[0]="//*[@id='MainContent_txtUniquePropertyIdenty']";
+			  SeleniumOperations.clickOnElement(input50);
+			  Thread.sleep(2000);
+			Object[] input=new Object[2];
+		    input[0]="//*[@id='MainContent_txtUniquePropertyIdenty']";
+		    input[1]=uniqueProperty;
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as unique property identification",output.get("MESSAGE").toString());  
+		Thread.sleep(2000);
+		}
 
 		@When("^user select on non-renewabale checkbox$")
 		public void user_select_on_non_renewabale_checkbox() throws Throwable {
@@ -444,7 +431,25 @@ public class Burglary
 		       Thread.sleep(2000);
 		}
 
-		
+		@When("^user select on limit of liability amount checkbox$")
+		public void user_select_on_limit_of_liability_amount_checkbox() throws Throwable {
+		    
+			Object[] input50=new Object[1];
+			   input50[0]="//*[@id='MainContent_chkHighSuminsured']";
+			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
+			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select on limit of liability amount checkbox",output50.get("MESSAGE").toString());
+		       Thread.sleep(2000);
+		}
+
+		@Then("^user enter \"([^\"]*)\" as limit of liability amount$")
+		public void user_enter_as_limit_of_liability_amount(String limitLiability) throws Throwable {
+		    
+			Object[] input=new Object[2];
+		    input[0]="//*[@id='MainContent_txtLOLAmount']";
+		    input[1]=limitLiability;
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as limit of liability amount",output.get("MESSAGE").toString());  
+		}
 
 		@When("^user Select on first loss payee checkbox$")
 		public void user_Select_on_first_loss_payee_checkbox() throws Throwable {
@@ -480,7 +485,7 @@ public class Burglary
 		public void user_click_on_borrower_type_dropdown() throws Throwable {
 		   
 			Object[] input50=new Object[1];
-			   input50[0]="//*[@id='s2id_MainContent_cmbBorrower']";
+			   input50[0]="(//*[@class='select2-chosen'])[5]";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on borrower type dropdown",output50.get("MESSAGE").toString());
 		}
@@ -506,13 +511,23 @@ public class Burglary
 			   Thread.sleep(2000);
 		}
 
+		@When("^user enter \"([^\"]*)\" as cover note number$")
+		public void user_enter_as_cover_note_number(String coverNoteNumber) throws Throwable {
+		   
+			Object[] input=new Object[2];
+		    input[0]="//*[@id='MainContent_txtGridICN']";
+		    input[1]=coverNoteNumber;
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as cover note number",output.get("MESSAGE").toString());  
 		
+		
+		}
 
 		@When("^user click on loss ratio forecast dropdown$")
 		public void user_click_on_loss_ratio_forecast_dropdown() throws Throwable {
 		 
 			Object[] input50=new Object[1];
-			   input50[0]="//*[@id='s2id_MainContent_cmbLRF']";
+			   input50[0]="(//*[@class='select2-chosen'])[9]";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on loss ratio forecast dropdown",output50.get("MESSAGE").toString());
 		
@@ -557,9 +572,20 @@ public class Burglary
 		    input[1]=descriptionOfRisk;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as description of risk",output.get("MESSAGE").toString());  
+		    
 		}
-
 		
+
+		@When("^user enter \"([^\"]*)\" as override%$")
+		public void user_enter_as_override(String override) throws Throwable {
+		   
+			Object[] input=new Object[2];
+		    input[0]="//*[@id='txtOverride']";
+		    input[1]=override;
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as override%",output.get("MESSAGE").toString());  
+		
+		}
 
 		@When("^user enter \"([^\"]*)\" as adjust premium$")
 		public void user_enter_as_adjust_premium(String adjustPremium) throws Throwable {
@@ -567,7 +593,7 @@ public class Burglary
 			Object[] input=new Object[2];
 		    input[0]="//*[@id='txtAddPremium']";
 		    input[1]=adjustPremium;
-		    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as adjust premium",output.get("MESSAGE").toString());  
 		}
 
@@ -614,60 +640,7 @@ public class Burglary
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on Re-Compute premium",output50.get("MESSAGE").toString());
 			   Thread.sleep(2000);
 			   
+			  
 			
-		}
-
-		@When("^user enter \"([^\"]*)\" as sum insured rate %$")
-		public void user_enter_as_sum_insured_rate(String sumInsuredRate) throws Throwable {
-		    
-			Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtSumAssuredRate']";
-		    input[1]=sumInsuredRate;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as sum insured rate %",output.get("MESSAGE").toString());  
-            Thread.sleep(3000);
-	    }
-
-		
-
-		@When ("^user enter \"(.*)\" as cover note$")
-		public void enterCoverNote(String coverNote) throws Throwable
-		{
-			Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtGridICN']";
-		    input[1]=coverNote;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"123459876501234\" as cover note",output.get("MESSAGE").toString());
-			Thread.sleep(2000);
-		}
-
-		@When("^user enter \"([^\"]*)\" as unique property identification$")
-		public void user_enter_as_unique_property_identification(String uniqueProperty) throws Throwable {
-		   
-			
-			Object[] input50=new Object[1];
-			   input50[0]="//*[@id='MainContent_txtUniquePropertyIdenty']";
-			  SeleniumOperations.clickOnElement(input50);
-			  Thread.sleep(2000);
-			Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtUniquePropertyIdenty']";
-		    input[1]=uniqueProperty;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as unique property identification",output.get("MESSAGE").toString());  
-		Thread.sleep(2000);
-		}
-
-		@When("^user enter \"([^\"]*)\" as override %$")
-		public void user_enter_as_override(String override) throws Throwable {
-		 
-			Thread.sleep(2000);
-			Object[] input=new Object[2];
-		    input[0]="//*[@id='txtOverride']";
-		    input[1]=override;
-		    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as override%",output.get("MESSAGE").toString());  
-			Thread.sleep(2000);
-		}
-
-
+		} 
 }

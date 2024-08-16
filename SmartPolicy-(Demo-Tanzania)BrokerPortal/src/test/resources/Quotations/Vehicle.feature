@@ -21,10 +21,16 @@ When user click on Alliance Insurance Company (T) Ltd. as insurer
 When user click on motor type dropdown
 When user enter "Registered" as motor type 
 When user click on Registered as motor type
-When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "2 Wheel Comprehensive (Private)" as insurance class
-When user select "sole Propriator" as owner category
-When user enter "TESTA203" as registration number
+When user click on insurance type dropdown
+When user enter "2 Wheelers/ 3 Wheelers" as insurance type
+When user click on two Wheelers/ three Wheelers as insurance type
+When user click on insurance class dropdown
+When user enter "2 Wheel Comprehensive (Private)" as insurance class
+When user click on two Wheel Comprehensive (Private) as insurance class
+When user click on owner category dropdown
+When user enter "sole Propriator" as owner category
+When user click on sole Propriator as owner category
+When user enter "TESTA201" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
@@ -50,38 +56,21 @@ When user enter "100000" as sum insured
 When user click on compute button
 When user click on insert button (Policy Information)
 When user click on OK button for commission alert
-#When user click on compute button
 When user click on compute button to update record
+#When user click on broker partner name dropdown
+#When user select FinalTester as broker partner name
+When user scroll up to click on addon
 When user click on addon button
-When user select "Earthquake"as extension
+When user click on extension dropdown
+When user enter "Earthquake"as extension
+When user click on earthquake as extension
 When user enter sum insured as "100000"
 When user enter "10" as rate%
 When user enter "Testing Vehicle" as description
 When user click on insert button
 When user click on save button
-#When user click on OK button to accept commission rate alert
+When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @AllFields
@@ -139,9 +128,15 @@ When user click on by percent/amount dropdown
 And user enter "By Percent" as by percent/amount
 Then user select By Percent as by percent/amount
 When user enter "1200" as stamp duty
-When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "2 Wheel Comprehensive (Private)" as insurance class
-When user select "sole Propriator" as owner category
+When user click on insurance type dropdown
+When user enter "2 Wheelers/ 3 Wheelers" as insurance type
+When user click on two Wheelers/ three Wheelers as insurance type
+When user click on insurance class dropdown
+When user enter "2 Wheel Comprehensive (Private)" as insurance class
+When user click on two Wheel Comprehensive (Private) as insurance class
+When user click on owner category dropdown
+When user enter "sole Propriator" as owner category
+When user click on sole Propriator as owner category
 When user enter "TESTA302" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
@@ -187,50 +182,14 @@ When user click on compute button to update record
 #AddOn
 When user scroll up to click on addon
 When user click on addon button
-When user select "Earthquake"as extension
+When user click on extension dropdown1
+When user enter "Earthquake"as extension
+When user click on earthquake as extension
 When user enter sum insured as "100000"
 When user enter "10" as rate%
 When user enter "5" as commission rate%
 When user enter "Testing Vehicle" as description
 When user click on insert button
 When user click on save button
-#When user click on OK button to accept commission rate alert
+When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

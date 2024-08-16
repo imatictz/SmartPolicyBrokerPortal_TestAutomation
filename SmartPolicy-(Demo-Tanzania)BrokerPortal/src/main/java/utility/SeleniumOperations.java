@@ -3,19 +3,17 @@
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.math.RoundingMode;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -29,6 +27,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.asserts.Assertion;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -40,7 +40,6 @@ public class SeleniumOperations
     public static WebDriver driver=null;
 	public static Hashtable<String,Object> outputparameters=new Hashtable<String,Object>();
 	public static ConfigReader config;
-	public static WebDriverWait wait1;
 
   //BrowserLaunch
 	public static Hashtable<String,Object>  browserLaunch(){  
@@ -85,14 +84,6 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		// driver.manage().timeouts().pageLoadTimeout(50,TimeUnit.SECONDS);
 		   driver.navigate().to(config.getApplicationUrl());
-		  /* String textValue = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
-		   String pass ="Session Expired.";
-		   if(textValue==pass) {
-			   driver.findElement(By.xpath("//a[@href='wfLogin.aspx']")).click();
-               driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys("PravinS");
-               driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Sp@12345");
-               driver.findElement(By.xpath("//*[text()='Login']")).click();
-		   }*/
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
 	      }
@@ -131,30 +122,6 @@ public class SeleniumOperations
 	     catch(Exception e){
 	   	   outputparameters.put("STATUS","FAIL");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendPassword());
-	     }
-	     return outputparameters;
-     }
-     
-     //ClickOnLoginButton
-     public static Hashtable<String,Object> clickOnLogin(Object[] inputparameters){   
-		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   String strXpath=(String)inputparameters[0];
-		   driver.findElement(By.xpath(strXpath)).click();
-		   outputparameters.put("STATUS","PASS");
-		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
-	   /*  String test = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
-		   System.out.println(test);
-	     if(test.equalsIgnoreCase("Session Expired.")) {
-			   driver.findElement(By.xpath("//*[@href='wfLogin.aspx']")).click();
-			   driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys(config.sendUserId());
-			   driver.findElement(By.xpath("//*[@id='password']")).sendKeys(config.sendPassword());
-			   driver.findElement(By.xpath("//*[text()='Login']")).click();
-		   }*/
-		 }
-	     catch(Exception e) {
-	       outputparameters.put("STATUS","FAIL");
-		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
 	     }
 	     return outputparameters;
      }
@@ -216,21 +183,16 @@ public class SeleniumOperations
 		   String xpath=(String)inputparameters[0];
 		   String givenText=(String)inputparameters[1];
 		   String findText=driver.findElement(By.xpath(xpath)).getText();
-		   System.out.println(findText);
 		   
 		   if(givenText.equalsIgnoreCase(findText)){
 			 System.out.println("Test Case Pass");
-			 outputparameters.put("STATUS","PASS");
-			   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
-		     
 		   }
 		   else {
 			 System.out.println("Test Case Fail");
-			 outputparameters.put("STATUS","FAIL");
-			   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
 		   }
-		   }
-		   
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
+	     }
 	     catch(Exception e) {
 		   outputparameters.put("STATUS","FAIL");
 		   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
@@ -370,7 +332,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   JavascriptExecutor down=(JavascriptExecutor) driver;
-		   down.executeScript("window.scrollBy(0,1050)");
+		   down.executeScript("window.scrollBy(0,1000)");
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
 		 }
@@ -390,8 +352,6 @@ public class SeleniumOperations
 	       WebElement remove=driver.findElement(By.xpath(strXpath));
 	       remove.clear();
 	       Thread.sleep(2000);
-	       remove.click();
-	       Thread.sleep(2000);
 	       remove.sendKeys(strvalue);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
@@ -399,23 +359,6 @@ public class SeleniumOperations
 	     catch(Exception e) {
 	       outputparameters.put("STATUS","FAIL");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
-	     }
-	     return outputparameters;
-     }
-     
-   //Clear
-     public static Hashtable<String,Object> clear(Object[]inputparameters) {   
-		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   String strXpath=(String)inputparameters[0];
-	       WebElement remove=driver.findElement(By.xpath(strXpath));
-	       remove.clear();
-	       outputparameters.put("STATUS","PASS");
-		   outputparameters.put("MESSAGE","Method Used:clear, Input Given:"+inputparameters[1]);
-	     }
-	     catch(Exception e) {
-	       outputparameters.put("STATUS","FAIL");
-		   outputparameters.put("MESSAGE","Method Used:clear, Input Given:"+inputparameters[1]);
 	     }
 	     return outputparameters;
      }
@@ -429,12 +372,10 @@ public class SeleniumOperations
 		   driver.switchTo().frame(0);
 	       WebElement send=driver.findElement(By.xpath(strXpath));
 	       send.clear();
-	       Thread.sleep(2000);
-	       send.click();
+	       Thread.sleep(1000);
 	       send.sendKeys(strvalue);
 	       Thread.sleep(2000);
 	       driver.switchTo().defaultContent();
-	       Thread.sleep(2000);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
 	     }
@@ -465,9 +406,6 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String clickXpath = (String)inputparameters[0];
 		   driver.findElement(By.xpath(clickXpath)).click();
-	 		//wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
-
-		 
 		   Thread.sleep(2000);
 		   String sendXpath = (String)inputparameters[1];
 		   String sendValue = (String)inputparameters[2];
@@ -475,11 +413,11 @@ public class SeleniumOperations
 		   String selectXpath = (String)inputparameters[3];
 		   driver.findElement(By.xpath(selectXpath)).click();
 	       outputparameters.put("STATUS","PASS");
-		   outputparameters.put("MESSAGE","Method Used:Dropdown, Input Given:"+inputparameters[2]);
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[2]);
 	     }
 	     catch(Exception e) {
 	       outputparameters.put("STATUS","FAIL");
-		   outputparameters.put("MESSAGE","Method Used:Dropdown, Input Given:"+inputparameters[2]);
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[2]);
 	     }
 	     return outputparameters;
      }
@@ -550,15 +488,15 @@ public class SeleniumOperations
      }
      
 // Explicit Wait
-    /* public static void wait(Object[] inputparameters) throws InterruptedException {
-    	String input=(String)inputparameters[0];
+     public static void wait(Object[]Inputparameters) throws InterruptedException {
+    	String input=(String)Inputparameters[0];
     	 WebElement waitTill= driver.findElement(By.xpath(input));
 
  		Thread.sleep(5000);
 
- 		
+ 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
  		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
-     }*/
+     }
      
 //SwitchWindow     
      
@@ -570,10 +508,10 @@ public class SeleniumOperations
      		wait1.until(ExpectedConditions.visibilityOfElementLocated( By.xpath("//*[text()='Demo Insurance Brokers (T) Limited.']")));
     		Set<String> ids = driver.getWindowHandles();
 
-    	Set<String> ids1 = driver.getWindowHandles();
+    	Set<String> ids = driver.getWindowHandles();
 
     	
-    	Iterator<String> values = ids1.iterator();    
+    	Iterator<String> values = ids.iterator();    
     	
     	String one = values.next();
     	String two = values.next();
@@ -615,7 +553,14 @@ public class SeleniumOperations
  		 	 
    	 }
 
-	   
+	   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+    	}
+    	catch(Exception e) {
+ 		   outputparameters.put("STATUS","Fail");
+ 		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+ 		 }
+	     
+
 		return outputparameters;
      
      }
@@ -636,135 +581,6 @@ public class SeleniumOperations
     	 }
      }
           
-     
-     //Calculations
-     public static void calculate(Object[] inputparameters) {
-    	try { 
-    	 String output = (String)inputparameters[0];
-    	WebElement text = driver.findElement(By.xpath(output));
-    	String pass =text.getText();
-    	System.out.println(pass); 
-    	}
-    	catch(Exception e) {
-    		System.out.println(e);
-    	}
-    	/*List<WebElement> test = driver.findElements(By.xpath(output));
-        
-        for(WebElement i:test) {
-        	
-        	String pass = i.getText();
-        	System.out.println(pass);
-        }
-         
-         }*/
-
-    	 
-     } 
-     
-     public static void gstPercentCalculationValidation(Object[] inputparameters) {
-    	try {
-    		
-    		//Get Vatt on commission for equal or check
-    	       
-    	       String output1 = (String)inputparameters[0];
-    	   	WebElement vattOnCommssionValue = driver.findElement(By.xpath(output1));
-    	   	String vattOnCommssionStringValue = vattOnCommssionValue.getAttribute("value");
-    	   	String clearValue1=vattOnCommssionStringValue.replaceAll(",", "");
-    	   	//System.out.println(clearValue1);
-    	       double percentage1 = Double.parseDouble(clearValue1);
-    	       System.out.println("Percentage Value"+" "+percentage1);
-    	       if(percentage1!=0) {
-    		//VATT on commission calculate by percent
-    		String output = (String)inputparameters[1];
-    	WebElement commissionValue = driver.findElement(By.xpath(output));
-    	String CommissionStringValue =commissionValue.getAttribute("value");
-    	String commissionClearValue=CommissionStringValue.replaceAll(",", "");
-    	double commissionClearValue0 =Double.parseDouble(commissionClearValue);
-    	System.out.println(commissionClearValue0);
-    	
-       
-    		double percentage = Double.parseDouble(commissionClearValue)*18/100;
-       DecimalFormat df = new DecimalFormat("0.0");
-       df.setRoundingMode(RoundingMode.DOWN);
-       String finalCommission = df.format(percentage);
-      double calculatedFinalPercent = Double.parseDouble(finalCommission);
-    	 
-     
-        
-    	   if(calculatedFinalPercent==percentage1) {
-       	       System.out.println("Percentage Is Right");
-           }
-           else {
-               System.out.println("Percentage Is Wrong");
-           }
-   	//System.out.println("VATT/GST Is : "+(calculatedFinalPercent==percentage1));
-     
-   	
-   	//Get Total Commission
-   	//commission+vatt on commission
-   	 double calculatedTotalCommission = Double.sum(commissionClearValue0, percentage1);
-   	 System.out.println(calculatedTotalCommission);
-   	 
-   	 //Get Total Commission for equal or check
-   	 String output2 = (String)inputparameters[2];
-    	WebElement totalCommissionValue = driver.findElement(By.xpath(output2));
-    	String totalCommissionStringValue =totalCommissionValue.getAttribute("value");
-    	String clearValue2=totalCommissionStringValue.replaceAll(",", "");
-    	//System.out.println(clearValue2);
-       double finalValue = Double.parseDouble(clearValue2);
-       System.out.println("Total Premium/Commission Is :"+(calculatedTotalCommission==finalValue));
-   	
-    	}
-    	else {
-    		System.out.println("No GST/VATT On Quotation");
-    	}
-        
-        
-        
-        
-        
-    	}
-    	catch(Exception e){
-    		System.out.println(e);
-    	}     
-    	}
-     
-     
-     public static void CalculateSumOfColumn(Object[] inputparameters) {
-    	 String input = (String)inputparameters[0];
-    	// WebElement colunmValues = (WebElement) driver.findElements(By.xpath(input));
-    	 List<WebElement> colunmValues = driver.findElements(By.xpath(input));
-    	int t = colunmValues.size();
-    	for(int i = 0;i<t;i++) {
-        String finalValues = colunmValues.get(i).getText();
-        
-        System.out.println("Values"+" "+finalValues);
-    	
-    	
-    	}
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-     }
-     
  }		 
 	
-
-
 	

@@ -18,7 +18,9 @@ When user select client name as Pravin Testing
 When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer name
 When user click to select Alliance Insurance Company (T) Ltd.as insurer name
-When user Select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user click to select standard rate as insurance class
 When user enter "100000" as sum insured amount in policy information
 When user enter "Money Insurance Cover Testing" as description in policy information
 When user click on compute button
@@ -33,7 +35,6 @@ When user enter "10" as rate%
 When user enter "Money Insurance Cover Testing " as description in addOn
 When user click on insert button addon
 When user click on save button
-When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt" as status
 
 
@@ -65,7 +66,9 @@ Then user select Profit making as loss ratio forecast
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information-01
-When user Select "Standard Rate" as insurance class
+When user click on insurance class dropdown
+When user enter "Standard Rate" as insurance class
+When user click to select standard rate as insurance class
 When user enter "100000" as sum insured amount in policy information
 When user enter "Main Branch" as branch name
 When user enter "Money Insurance Cover Testing" as description in policy information
@@ -74,7 +77,9 @@ When user enter "500" as adjust premium
 When user click on compute button
 When user click on insert button 
 #Policy Information-02
-When user Select "Standard Rate" as insurance class2
+When user click on insurance class dropdown2
+When user enter "Annual Cash Carrying" as insurance class
+When user click to select Annual Cash Carrying as insurance class
 When user enter "200000" as sum insured amount in policy information
 When user enter "Main Branch" as branch name
 When user enter "Money Insurance Cover Testing" as description in policy information
@@ -105,5 +110,4 @@ When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
-When user click on Ok button to accept commission rate alert message
 Then user able to view "Required Approval" as status

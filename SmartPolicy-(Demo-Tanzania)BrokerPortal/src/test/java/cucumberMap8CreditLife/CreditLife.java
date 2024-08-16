@@ -4,7 +4,6 @@ import java.util.Hashtable;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -74,7 +73,7 @@ public class CreditLife
 		public void selectInsuranceTypeResult() throws Throwable 
 		{
 			Object[] input11=new Object[1];
-			input11[0]="(//*[@class='select2-match'])[2]";
+			input11[0]="//*[@class='select2-match']";
 			SeleniumOperations.clickOnElement(input11);
 			Thread.sleep(5000);
 		}
@@ -220,16 +219,28 @@ public class CreditLife
 		@When("^user click on compute button$")
 		public void clickOnComputeButton() throws Throwable 
 		{
-		    Itl.CustomClickEvent("//*[@id='btnCompute']", "user click on compute button", "CLICK", 2000);
+			Object[] input1=new Object[1];
+			 input1[0]="//*[@id='btnCompute']";
+			 SeleniumOperations.clickOnElement(input1);
+			 Thread.sleep(2000);
+		 Object[] input=new Object[1];
+		 input[0]="//*[@id='btnCompute']";
+		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on compute button",output.get("MESSAGE").toString());
+		  	 
 
 		}
 
 		@When("^user click on insert button$")
-		public void clickOnInsertButton() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='btnInsert']", "user click on insert button", "CLICK", 2000);
-
+		public void clickOnInsertButton() throws Throwable
+		{
+		   Object[] input=new Object[1];
+		   input[0]="//*[@id='btnInsert']";
+		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button",output.get("MESSAGE").toString());
+		Thread.sleep(2000);
 		}
-		
+
 		@When("^user click on addOn button$")
 		public void clickOnAddon() throws Throwable 
 		{
@@ -314,21 +325,20 @@ public class CreditLife
 			   Thread.sleep(2000);
 		}
 
-		@When("user click on save button")
-		public void user_click_on_save_button() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='btnSave']", "user click on save button", "CLICK", 4000);
-
+		@When("^user click on save button$")
+		public void clickOnSaveButton() throws Throwable 
+		{
+			Object[] input1=new Object[1];
+			   input1[0]="//*[@id='btnSave']";
+			  SeleniumOperations.clickOnElement(input1);
+			  Thread.sleep(2000);
+		   Object[] input=new Object[1];
+		   input[0]="//*[@id='btnSave']";
+		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString());
+		   Thread.sleep(2000);
 		}
 	
-		@When("^user click on Ok button to accept commission rate alert message$")
-		public void clickOnOKbuttonCommission() throws Throwable 
-		{
-
-			   Hashtable<String,Object> output= SeleniumOperations.alert();
-			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission rate alert message",output.get("MESSAGE").toString());
-			   Thread.sleep(4000);
-		}
-		
 		@Then("^user able to view \"([^\"]*)\" as status$")
 		public void user_able_to_view_as_status(String awaitingReceipt) throws Throwable 
 		{
@@ -336,9 +346,8 @@ public class CreditLife
 		    input[0]="//*[@id='MainContent_repIQNM_lblStatus_0']";
 		    input[1]=awaitingReceipt;
 		    Hashtable<String,Object> output= SeleniumOperations.validation(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} as status",output.get("MESSAGE").toString());  
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \"Awaiting Receipt\" as status",output.get("MESSAGE").toString());  
 		}
-		
 		
 		@When ("^user click on business by dropdown$")
 		public void clickOnBusinessDropdown() throws InterruptedException

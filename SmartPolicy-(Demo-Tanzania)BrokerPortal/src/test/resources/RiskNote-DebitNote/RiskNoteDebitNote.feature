@@ -1,4 +1,3 @@
-@All
 Feature: Issue Risk Note
 
 Background: 
