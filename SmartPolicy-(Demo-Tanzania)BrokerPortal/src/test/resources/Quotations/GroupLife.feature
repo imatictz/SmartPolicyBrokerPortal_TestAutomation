@@ -15,15 +15,12 @@ When user select Group Life as insurance type from dropdown
 Scenario: (Group Life Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
 When user enter "Pravin Testing" as insured name
 When user enter "01/01/2000" as date of birth
 When user enter "5000000" as sum assured
 When user enter "620000" as premium
 When user click on relationship dropdown
-When user enter "Direct" as relationship
+When user enter "self" as relationship
 When user select self as realtionship
 When user click on insert button
 When user click on addOn button
@@ -43,9 +40,6 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (Group Life Quotation) Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
 When user click on business by dropdown
 Then user select Demo User as business by
 When user select on non-renewabale checkbox
@@ -65,9 +59,7 @@ When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
 
-When user click on insurance class dropdown
-When user enter "Standard Rate" as insurance class
-When user click to select standard rate as insurance class
+When user select "Standard Rate" as insurance class
 When user enter "Pravin Testing" as insured name
 When user enter "01/01/2000" as date of birth
 When user enter "Birth Certificate" as ID type
@@ -79,7 +71,7 @@ When user enter "02/08/2023" as transaction date
 When user enter "5000000" as sum assured
 #When user enter "620000" as premium
 When user click on relationship dropdown
-When user enter "Direct" as relationship
+When user enter "self" as relationship
 When user select self as realtionship
 When user enter "2300" as monthly fee
 When user enter "152620"as premium

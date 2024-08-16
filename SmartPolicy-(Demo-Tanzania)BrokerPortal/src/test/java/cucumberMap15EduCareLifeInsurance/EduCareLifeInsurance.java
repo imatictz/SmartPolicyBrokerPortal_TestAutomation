@@ -2,7 +2,9 @@ package cucumberMap15EduCareLifeInsurance;
 
 import java.util.Hashtable;
 
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -713,34 +715,15 @@ public class EduCareLifeInsurance {
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Guardian Address 4\" as address (For Guardian Four)",output.get("MESSAGE").toString());     
 	}
 
-	@When("^user click on life beneficiary dropdown \\(For Beneficiary One\\)$")
-	public void user_click_on_life_beneficiary_dropdown_For_Beneficiary_One() throws Throwable{
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef1']";
-		SeleniumOperations.clickOnElement(input12);
-		
-		Object[] input11=new Object[1];
-		input11[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef1']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on life beneficiary dropdown (For Beneficiary One)",output.get("MESSAGE").toString()); 	 
+	
+	
+	@When ("user select {string} as life beneficiary \\(For Beneficiary One)")
+	public void selectLifeBeneficiary(String lifeBeneficiary) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef1']", "//*[@class='select2-input select2-focused']", 
+	    		lifeBeneficiary, "//*[@class='select2-match']", "user select {string} as life beneficiary \\\\(For Beneficiary One)", "DROPDOWN", 0);
 	}
-
-	@When("^user enter \"([^\"]*)\" as life beneficiary \\(For Beneficiary One\\)$")
-	public void user_enter_as_life_beneficiary_For_Beneficiary_One(String LifeB1) throws Throwable {
-		Object[] input=new Object[2];
-		input[0]="//*[@class='select2-input select2-focused']";
-		input[1]=LifeB1;
-		Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Life Beneficiary One\" as life beneficiary (For Beneficiary One)",output.get("MESSAGE").toString());     
-	}
-
-	@When("^user select Life Beneficiary One as life beneficiary \\(For Beneficiary One\\)$")
-	public void user_select_Life_Beneficiary_One_as_life_beneficiary_For_Beneficiary_One() throws Throwable {
-		Object[] input11=new Object[1];
-		input11[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Life Beneficiary One as life beneficiary (For Beneficiary One)",output.get("MESSAGE").toString()); 	 
-	}
+	
+	
 
 	@When("^user enter \"([^\"]*)\" as percent of savings benefit given \\(For Beneficiary One\\)$")
 	public void user_enter_as_percent_of_savings_benefit_given_For_Beneficiary_One(String percentOfSavingBenefit1) throws Throwable {
@@ -751,34 +734,15 @@ public class EduCareLifeInsurance {
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"25\" as percent of savings benefit given (For Beneficiary One)",output.get("MESSAGE").toString());     
 	}
 	
-	@When("^user click on life beneficiary dropdown \\(For Beneficiary Two\\)$")
-	public void user_click_on_life_beneficiary_dropdown_For_Beneficiary_Two() throws Throwable {
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef2']";
-		SeleniumOperations.clickOnElement(input12);
-		
-		Object[] input11=new Object[1];
-		input11[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef2']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on life beneficiary dropdown (For Beneficiary Two)",output.get("MESSAGE").toString()); 	 
+	
+	
+	@When("user select {string} as life beneficiary \\(For Beneficiary Two)")
+	public void user_select_as_supplier_name(String supplierName) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef2']", "//*[@class='select2-input select2-focused']", 
+	    supplierName, "//*[@class='select2-match']", "user select {string} as life beneficiary (For Beneficiary Two)", "DROPDOWN", 0);
 	}
 
-	@When("^user enter \"([^\"]*)\" as life beneficiary \\(For Beneficiary Two\\)$")
-	public void user_enter_as_life_beneficiary_For_Beneficiary_Two(String LifeB2) throws Throwable{
-		Object[] input=new Object[2];
-		input[0]="//*[@class='select2-input select2-focused']";
-		input[1]=LifeB2;
-		Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Life Beneficiary Two\" as life beneficiary (For Beneficiary Two)",output.get("MESSAGE").toString());      
-	}
-
-	@When("^user select Life Beneficiary Two as life beneficiary \\(For Beneficiary Two\\)$")
-	public void user_select_Life_Beneficiary_Two_as_life_beneficiary_For_Beneficiary_Two() throws Throwable {
-		Object[] input11=new Object[1];
-		input11[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Life Beneficiary Two as life beneficiary (For Beneficiary Two)",output.get("MESSAGE").toString()); 	 
-	}
+	
 
 	@When("^user enter \"([^\"]*)\" as percent of savings benefit given \\(For Beneficiary Two\\)$")
 	public void user_enter_as_percent_of_savings_benefit_given_For_Beneficiary_Two(String percentOfSavingBenefit2) throws Throwable {
@@ -789,34 +753,15 @@ public class EduCareLifeInsurance {
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"25\" as percent of savings benefit given (For Beneficiary Two)",output.get("MESSAGE").toString());     
 	}
 	
-	@When("^user click on life beneficiary dropdown \\(For Beneficiary Three\\)$")
-	public void user_click_on_life_beneficiary_dropdown_For_Beneficiary_Three() throws Throwable {
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef3']";
-		SeleniumOperations.clickOnElement(input12);
-		
-		Object[] input11=new Object[1];
-		input11[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef3']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on life beneficiary dropdown (For Beneficiary Three)",output.get("MESSAGE").toString()); 	 
+	
+	
+	@When ("user select {string} as life beneficiary \\(For Beneficiary Three)")
+	public void user_select_as_supplier_name_Three(String supplierName) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef3']", "//*[@class='select2-input select2-focused']", 
+	    supplierName, "//*[@class='select2-match']", "user select {string} as life beneficiary (For Beneficiary Three)", "DROPDOWN", 0);
 	}
 
-	@When("^user enter \"([^\"]*)\" as life beneficiary \\(For Beneficiary Three\\)$")
-	public void user_enter_as_life_beneficiary_For_Beneficiary_Three(String LifeB3) throws Throwable {
-		Object[] input=new Object[2];
-		input[0]="//*[@class='select2-input select2-focused']";
-	    input[1]=LifeB3;
-		Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Life Beneficiary Three\" as life beneficiary (For Beneficiary Three)",output.get("MESSAGE").toString());       
-	}
-
-	@When("^user select Life Beneficiary Three as life beneficiary \\(For Beneficiary Three\\)$")
-	public void user_select_Life_Beneficiary_Three_as_life_beneficiary_For_Beneficiary_Three() throws Throwable {
-		Object[] input11=new Object[1];
-		input11[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Life Beneficiary Three as life beneficiary (For Beneficiary Three)",output.get("MESSAGE").toString()); 	 
-	}
+	
 
 	@When("^user enter \"([^\"]*)\" as percent of savings benefit given \\(For Beneficiary Three\\)$")
 	public void user_enter_as_percent_of_savings_benefit_given_For_Beneficiary_Three(String percentOfSavingBenefit3) throws Throwable {
@@ -827,35 +772,15 @@ public class EduCareLifeInsurance {
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"25\" as percent of savings benefit given (For Beneficiary Three)",output.get("MESSAGE").toString());     
 	}
 	
-	@When("^user click on life beneficiary dropdown \\(For Beneficiary Four\\)$")
-	public void user_click_on_life_beneficiary_dropdown_For_Beneficiary_Four() throws Throwable {
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef4']";
-	    SeleniumOperations.clickOnElement(input12);
-		
-	    Object[] input11=new Object[1];
-		input11[0]="//*[@id='s2id_MainContent_cmbCopyLifeBenef4']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on life beneficiary dropdown (For Beneficiary Four)",output.get("MESSAGE").toString()); 	 
-	}
+	
 
-	@When("^user enter \"([^\"]*)\" as life beneficiary \\(For Beneficiary Four\\)$")
-	public void user_enter_as_life_beneficiary_For_Beneficiary_Four(String LifeB4) throws Throwable {
-		Object[] input=new Object[2];
-		input[0]="//*[@class='select2-input select2-focused']";
-		input[1]=LifeB4;
-		Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Life Beneficiary Four\" as life beneficiary (For Beneficiary Four)",output.get("MESSAGE").toString());       
+	@When ("user select {string} as life beneficiary \\(For Beneficiary Four)")
+	public void user_select_as_supplier_name_Four(String supplierName) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef4']", "//*[@class='select2-input select2-focused']", 
+	    supplierName, "//*[@class='select2-match']", "user select {string} as life beneficiary (For Beneficiary Four)", "DROPDOWN", 0);
 	}
-
-	@When("^user select Life Beneficiary Four as life beneficiary \\(For Beneficiary Four\\)$")
-	public void user_select_Life_Beneficiary_Four_as_life_beneficiary_For_Beneficiary_Four() throws Throwable {
-		Object[] input11=new Object[1];
-		input11[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Life Beneficiary Four as life beneficiary (For Beneficiary Four)",output.get("MESSAGE").toString()); 	 
-		Thread.sleep(2000);
-	}
+	
+	
 
 	@When("^user enter \"([^\"]*)\" as percent of savings benefit given \\(For Beneficiary Four\\)$")
 	public void user_enter_as_percent_of_savings_benefit_given_For_Beneficiary_Four(String percentOfSavingBenefit4) throws Throwable {
@@ -867,19 +792,13 @@ public class EduCareLifeInsurance {
 	    Thread.sleep(2000);
 	}
 	
-	@When ("^user click on next button \\(Second Page\\)$")
-	public void clickOnNextButtonSecond() throws InterruptedException{
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='btnNextScrn2']";
-		SeleniumOperations.clickOnElement(input12);
-		
-		Object[] input11=new Object[1];
-		input11[0]="//*[@id='btnNextScrn2']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on next button (Second Page)",output.get("MESSAGE").toString()); 	
-		Thread.sleep(2000);
-	}
+	
 
+	@When ("^user click on next button \\(Second Page\\)$")
+	public void clickOnNextButtonSecond() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='btnNextScrn2']",  "user click on next button \\\\(Second Page\\\\)","CLICK", 2000);
+
+	}
 	@When("^user click on plan dropdown$")
 	public void user_click_on_plan_dropdown() throws Throwable {
 		Object[] input11=new Object[1];
@@ -914,34 +833,14 @@ public class EduCareLifeInsurance {
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"10\" as terms(Year)",output.get("MESSAGE").toString());       
 	}
 
-	@When("^user click on payment method dropdown$")
-	public void user_click_on_payment_method_dropdown() throws Throwable {
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='s2id_MainContent_cmbPaymentMode']";
-		SeleniumOperations.clickOnElement(input12);
-		
-		Object[] input11=new Object[1];
-		input11[0]="//*[@id='s2id_MainContent_cmbPaymentMode']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on payment method dropdown",output.get("MESSAGE").toString()); 	
-	}
+	
 
-	@When("^user enter \"([^\"]*)\" as payment method$")
-	public void user_enter_as_payment_method(String paymentMethod) throws Throwable {
-		Object[] input=new Object[2];
-		input[0]="//*[@class='select2-input select2-focused']";
-		input[1]=paymentMethod;
-		Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Cash\" as payment method",output.get("MESSAGE").toString());       
+	@When ("^user select \"(.*)\" as payment method$")
+	public void paymnetMethod(String supplierName) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbPaymentMode']", "//*[@class='select2-input select2-focused']", 
+	    supplierName, "//*[@class='select2-match']", "user select \\\"(.*)\\\" as payment method", "DROPDOWN", 0);
 	}
-
-	@When("^user click on cash as payment method$")
-	public void user_click_on_cash_as_payment_method() throws Throwable {
-		Object[] input11=new Object[1];
-		input11[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on cash as payment method",output.get("MESSAGE").toString()); 	 
-	}
+	
 
 	@When("^user enter \"([^\"]*)\" as saving premium$")
 	public void user_enter_as_saving_premium(String savingPremium) throws Throwable{
@@ -962,34 +861,15 @@ public class EduCareLifeInsurance {
 	    Thread.sleep(2000);
 	}
 
-	@When("^user click on payment frequency dropdown$")
-	public void user_click_on_payment_frequency_dropdown() throws Throwable {
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='s2id_MainContent_cmbFrequency']";
-		SeleniumOperations.clickOnElement(input12);
-		
-		Object[] input11=new Object[1];
-		input11[0]="//*[@id='s2id_MainContent_cmbFrequency']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on payment frequency dropdown",output.get("MESSAGE").toString()); 	
+	
+	
+	@When ("^user select \"(.*)\" as payment frequency$")
+	public void paymentFrequency(String supplierName) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFrequency']", "//*[@class='select2-input select2-focused']", 
+	    supplierName, "//*[@class='select2-match']", "user select \\\"(.*)\\\" as payment frequency", "DROPDOWN", 0);
 	}
 
-	@When("^user enter \"([^\"]*)\" as payment frequency$")
-	public void user_enter_as_payment_frequency(String paymentFrequency) throws Throwable {
-		Object[] input=new Object[2];
-		input[0]="//*[@class='select2-input select2-focused']";
-		input[1]=paymentFrequency;
-		Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Yearly\" as payment frequency",output.get("MESSAGE").toString());       
-	}
-
-	@When("^user click on yearly as payment frequency$")
-	public void user_click_on_yearly_as_payment_frequency() throws Throwable {
-		Object[] input11=new Object[1];
-		input11[0]="(//*[@class='select2-match'])[2]";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on yearly as payment frequency",output.get("MESSAGE").toString()); 	 
-	}
+	
 
 	@When("^user click on calculate schedule button$")
 	public void user_click_on_calculate_schedule_button() throws Throwable{
@@ -1004,15 +884,11 @@ public class EduCareLifeInsurance {
 		Thread.sleep(2000);
 	}
 
+	
+	
 	@When("^user click on save button$")
-	public void user_click_on_save_button() throws Throwable {
-		Object[] input12=new Object[1];
-		input12[0]="//*[@id='MainContent_btnSave']";
-	    SeleniumOperations.clickOnElement(input12);
-		
-	    Object[] input11=new Object[1];
-		input11[0]="//*[@id='MainContent_btnSave']";
-		Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input11);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on save button",output.get("MESSAGE").toString()); 	  
+	public void clickOnSaveButton() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='MainContent_btnSave']",  "user click on save button","CLICK", 2000);
+
 	}
 }

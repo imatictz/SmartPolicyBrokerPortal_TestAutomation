@@ -10,6 +10,7 @@ import org.testng.asserts.Assertion;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -76,7 +77,7 @@ public class Reports {
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click on show report button", output.get("MESSAGE").toString());
 		 
 		 
-		 Thread.sleep(50000);
+		 Thread.sleep(10000);
 	}
 	@Then ("^user able to view admin fee report in pdf format$")
 	public void pdfReport() throws IOException{
@@ -165,7 +166,7 @@ public class Reports {
 	@When ("^user select \"(.*)\" as curreny$")
 	public void user_select_as_curreny(String curreny) throws Throwable {
 		Object[] input= new Object[4];
-		input[0]="(//*[@class='select2-chosen'])[13]";
+		input[0]="//*[@id='s2id_MainContent_cmbCurrency']";
 		input[1]="//*[@class='select2-input select2-focused']";
 		input[2]=curreny;
 		input[3]="//*[@class='select2-match']";
@@ -680,10 +681,10 @@ public class Reports {
 	}
 	@When("user select {string} as product")
 	public void user_select_as_product(String product) throws InterruptedException {
-		Object[] input1 = new Object[2];
+		/*Object[] input1 = new Object[2];
 		 input1[0] = "//*[@id='s2id_MainContent_cmbProduct']";
 		 SeleniumOperations.clickOnElement(input1);
-		 Thread.sleep(2000);
+		 Thread.sleep(2000);*/
 		Object[] input= new Object[4];
 		input[0]="//*[@id='s2id_MainContent_cmbProduct']";
 		input[1]="//*[@class='select2-input select2-focused']";
@@ -2496,7 +2497,821 @@ public class Reports {
 		}
 	}
 	
-
-
+	@Then("user click to select Modified \\/ Endorsed Cover Notes as report")
+	public void user_click_to_select_modified_endorsed_cover_notesas_report() throws InterruptedException {
+		Object[] input = new Object[2];
+		 input[0] = "//*[@value='REPORT61']";
+		 Hashtable<String, Object> output = SeleniumOperations.doubleClickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click to select Modified \\\\/ Endorsed Cover Notesas report", output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	}
+	@Then("user able to view Modified \\/ Endorsed Cover Notes in pdf format")
+	public void user_able_to_view_modified_endorsed_cover_notesin_pdf_format() {
+		try{
+			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Modified \\\\/ Endorsed Cover Notesin pdf format", output.get("MESSAGE").toString());
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
 	
+	@Then("user click to select Motor Schedule as report")
+	public void user_click_to_select_motor_schedule_as_report() throws InterruptedException {
+		Object[] input = new Object[2];
+		 input[0] = "//*[@value='REPORT17']";
+		 Hashtable<String, Object> output = SeleniumOperations.doubleClickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click to select Motor Schedule as report", output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	}
+	@Then("user able to view Motor Schedule in pdf format")
+	public void user_able_to_view_motor_schedule_in_pdf_format() {
+		try{
+			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Motor Schedule in pdf format", output.get("MESSAGE").toString());
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	@Then("user click to select Multi Policies Quotation as report")
+	public void user_click_to_select_multi_policies_quotation_as_report() throws InterruptedException {
+		Object[] input = new Object[2];
+		 input[0] = "//*[@value='REPORT51']";
+		 Hashtable<String, Object> output = SeleniumOperations.doubleClickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click to select Multi Policies Quotation as report", output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	}
+	@Then("user able to view Multi Policies Quotation in pdf format")
+	public void user_able_to_view_multi_policies_quotation_in_pdf_format() {
+		try{
+			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Multi Policies Quotation in pdf format", output.get("MESSAGE").toString());
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	@Then("user click to select Not Renewed Policies as report")
+	public void user_click_to_select_not_renewed_policies_as_report() throws InterruptedException {
+		Object[] input = new Object[2];
+		 input[0] = "//*[@value='REPORT146']";
+		 Hashtable<String, Object> output = SeleniumOperations.doubleClickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click to select Not Renewed Policies as report", output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	}
+	@Then("user able to view Not Renewed Policies in pdf format")
+	public void user_able_to_view_not_renewed_policies_in_pdf_format() {
+		try{
+			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Not Renewed Policies in pdf format", output.get("MESSAGE").toString());
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	@Then("user click to select Outstanding Commission Ageing Report as report")
+	public void user_click_to_select_outstanding_commission_ageing_report_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT124']",  "user click to select Outstanding Commission Ageing Report as report","CLICK", 2000);
+	}
+	
+	@Then("user able to view Outstanding Commission Ageing Report in pdf format")
+	public void user_able_to_view_outstanding_commission_ageing_report_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Outstanding Commission Ageing Report in pdf format","SWITCHWINDOW");
+	}
+	
+	@Then("user click to select Outstanding Commission Statement as report")
+	public void user_click_to_select_outstanding_commission_statement_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT123']",  "user click to select Outstanding Commission Statement as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Outstanding Commission Statement in pdf format")
+	public void user_able_to_view_outstanding_commission_statement_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Outstanding Commission Statement in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Outstanding Premium Ageing Report\\(Details) as report")
+	public void user_click_to_select_outstanding_premium_ageing_report_details_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT216']",  "user click to select Outstanding Premium Ageing Report\\\\(Details) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Outstanding Premium Ageing Report\\(Details) in pdf format")
+	public void user_able_to_view_outstanding_premium_ageing_report_details_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Outstanding Premium Ageing Report\\\\(Details) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Outstanding Premium Report\\(Business Group) as report")
+	public void user_click_to_select_outstanding_premium_report_business_group_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT209']",  "user click to select Outstanding Premium Report\\\\(Business Group) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Outstanding Premium Report\\(Business Group) in pdf format")
+	public void user_able_to_view_outstanding_premium_report_business_group_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Outstanding Premium Report\\\\(Business Group) in pdf format","SWITCHWINDOW");
+	}
+
+	@Then("user click to select Payment Cheque Register as report")
+	public void user_click_to_select_payment_cheque_register_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT108']",  "user click to select Payment Cheque Register as report","CLICK", 2000);
+
+	}
+	@When("user select {string} as Supplier Name")
+	public void user_select_as_supplier_name(String supplierName) {
+	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbSPLR']", "//*[@class='select2-input select2-focused']", 
+	    supplierName, "//*[@class='select2-match']", "user select {string} as Supplier Name", "DROPDOWN", 0);
+	}
+	
+	@Then ("user able to view Payment Cheque Register in pdf format")
+	public void paymentChequeRegister() {
+	    Itl.CustomswitchWindowEvent("user able to view Payment Cheque Register in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Pending Quotation as report")
+	public void user_click_to_select_pending_quotation_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT98']",  "user click to select Pending Quotation as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Pending Quotation in pdf format")
+	public void user_able_to_view_pending_quotation_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Pending Quotation in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Performance Incentive Report as report")
+	public void user_click_to_select_performance_incentive_report_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT64']",  "user click to select Performance Incentive Report as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Performance Incentive Report in pdf format")
+	public void user_able_to_view_performance_incentive_reportin_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Performance Incentive Reportin pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Policy Cancellation as report")
+	public void user_click_to_select_policy_cancellation_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT56']",  "user click to select Policy Cancellation as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Policy Cancellation in pdf format")
+	public void user_able_to_view_policy_cancellation_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Policy Cancellation in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Policy Push Error Records as report")
+	public void user_click_to_select_policy_push_error_records_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT196']",  "user click to select Policy Push Error Records as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Policy Push Error Records in pdf format")
+	public void user_able_to_view_policy_push_error_records_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Policy Push Error Records in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Policy Renewable as report")
+	public void user_click_to_select_policy_renewable_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT169']",  "user click to select Policy Renewable as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Policy Renewable in pdf format")
+	public void user_able_to_view_policy_renewable_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Policy Renewable in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Policy Retention Report \\(Quarterly) as report")
+	public void user_click_to_select_policy_retention_report_quarterly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT167']",  "user click to select Policy Retention Report \\\\(Quarterly)) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Policy Retention Report \\(Quarterly) in pdf format")
+	public void user_able_to_view_policy_retention_report_quarterly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Policy Retention Report \\\\(Quarterly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Policy Retention Report \\(Yearly) as report")
+	public void user_click_to_select_policy_retention_report_yearly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT168']",  "user click to select Policy Retention Report \\\\(Yearly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Policy Retention Report \\(Yearly) in pdf format")
+	public void user_able_to_view_policy_retention_report_yearly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Policy Retention Report \\\\(Yearly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Premium Financed Risk Notes as report")
+	public void user_click_to_select_premium_financed_risk_notes_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT68']",  "user click to select Premium Financed Risk Notes as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Premium Financed Risk Notes in pdf format")
+	public void user_able_to_view_premium_financed_risk_notes_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Premium Financed Risk Notes in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Print Multiple Certificate as report")
+	public void user_click_to_select_print_multiple_certificate_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT229']",  "user click to select Print Multiple Certificate as report","CLICK", 2000);
+
+	}
+	@When("user enter {string} as risk note from")
+	public void user_enter_as_risk_note_from(String riskNoteFrom) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtRiskNoteFrom']",riskNoteFrom ,"user enter {string} as risk note from", "TEXTBOX", 2000);
+
+	}
+	@When("user enter {string} as To")
+	public void user_enter_as_to(String riskNoteTo) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtRiskNoteTo']",riskNoteTo , "user enter {string} as risk note from","TEXTBOX", 2000);
+
+	}
+	@Then("user able to view Print Multiple Certificate in pdf format")
+	public void user_able_to_view_print_multiple_certificate_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Print Multiple Certificate in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Print Multiple Policy Documents as report")
+	public void user_click_to_select_print_multiple_policy_documents_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT_PD']",  "user click to select Print Multiple Policy Documents as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Print Multiple Policy Documents in pdf format")
+	public void user_able_to_view_print_multiple_policy_documents_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Print Multiple Policy Documents in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Print Multiple Risk Notes as report")
+	public void user_click_to_select_print_multiple_risk_notes_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT02']",  "user click to select Print Multiple Risk Notes as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Print Multiple Risk Notes in pdf format")
+	public void user_able_to_view_print_multiple_risk_notes_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Print Multiple Risk Notes in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Print Multiple TIRA Stickers \\(New) as report")
+	public void user_click_to_select_print_multiple_tira_stickers_new_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT147']",  "user click to select Print Multiple TIRA Stickers \\\\(New) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Print Multiple TIRA Stickers \\(New) in pdf format")
+	public void user_able_to_view_print_multiple_tira_stickers_new_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Print Multiple TIRA Stickers \\\\(New) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Regulatory Document Inventory as report")
+	public void user_click_to_select_regulatory_document_inventory_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT189']",  "user click to select Regulatory Document Inventory as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Regulatory Document Inventory in pdf format")
+	public void user_able_to_view_regulatory_document_inventory_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Regulatory Document Inventory in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Renewal List as report")
+	public void user_click_to_select_renewal_list_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT14']",  "user click to select Renewal List as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Renewal List in pdf format")
+	public void user_able_to_view_renewal_list_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Renewal List in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Renewal List \\(User wise) as report")
+	public void user_click_to_select_renewal_list_user_wise_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT221']",  "user click to select Renewal List \\\\(User wise) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Renewal List \\(User wise) in pdf format")
+	public void user_able_to_view_renewal_list_user_wise_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Renewal List \\\\(User wise) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Renewal Reminder Letter as report")
+	public void user_click_to_select_renewal_reminder_letter_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT15']",  "user click to select Renewal Reminder Letter as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Renewal Reminder Letter in pdf format")
+	public void user_able_to_view_renewal_reminder_letter_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Renewal Reminder Letter in pdf format","SWITCHWINDOW");
+	}
+	
+	@Then("user click to select Show Expired, Active or Renewed Risk Notes. as report")
+	public void user_click_to_select_show_expired_active_or_renewed_risk_notes_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT62']",  "user click to select Show Expired, Active or Renewed Risk Notes. as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Show Expired, Active or Renewed Risk Notes. in pdf format")
+	public void user_able_to_view_show_expired_active_or_renewed_risk_notes_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Show Expired, Active or Renewed Risk Notes. in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Statement \\(Client-wise) as report")
+	public void user_click_to_select_statement_client_wise_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT09']",  "user click to select Statement \\\\(Client-wise) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Statement \\(Client-wise) in pdf format")
+	public void user_able_to_view_statement_client_wise_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Statement \\\\(Client-wise) in pdf forma","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Statement \\(Insurer-wise) Comprehensive as report")
+	public void user_click_to_select_statement_insurer_wise_comprehensive_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT59']",  "user click to select Statement \\\\(Insurer-wise) Comprehensive as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Statement \\(Insurer-wise) Comprehensive in pdf format")
+	public void user_able_to_view_statement_insurer_wise_comprehensive_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Statement \\\\(Insurer-wise) Comprehensive in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Statement \\(Insurer-wise) Kenya as report")
+	public void user_click_to_select_statement_insurer_wise_kenya_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT97']",  "user click to select Statement \\\\(Insurer-wise) Kenya as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Statement \\(Insurer-wise) Kenya in pdf format")
+	public void user_able_to_view_statement_insurer_wise_kenya_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Statement \\\\(Insurer-wise) Kenya in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Statement \\(Insurer-wise)Type one as report")
+	public void user_click_to_select_statement_insurer_wise_type_one_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT08']",  "user click to select Statement \\\\(Insurer-wise)Type one as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Statement \\(Insurer-wise)Type one in pdf format")
+	public void user_able_to_view_statement_insurer_wise_type_one_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Statement \\\\(Insurer-wise)Type one in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Statement \\(Insurer-wise)Type two as report")
+	public void user_click_to_select_statement_insurer_wise_type_two_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT44']",  "user click to select Statement \\\\(Insurer-wise)Type two as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Statement \\(Insurer-wise)Type two in pdf format")
+	public void user_able_to_view_statement_insurer_wise_type_two_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Statement \\\\(Insurer-wise)Type two in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Statement \\(Insurer-wise)Type three as report")
+	public void user_click_to_select_statement_insurer_wise_type_three_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT44']",  "user click to select Statement \\\\(Insurer-wise)Type three as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Statement \\(Insurer-wise)Type three in pdf format")
+	public void user_able_to_view_statement_insurer_wise_type_three_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Statement \\\\(Insurer-wise)Type three in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Statement Statement \\(Client-wise) - on Risk Note as report")
+	public void user_click_to_select_statement_statement_client_wise_on_risk_note_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT217']",  "user click to select Statement Statement \\\\(Client-wise) - on Risk Note as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Statement Statement \\(Client-wise) - on Risk Note in pdf format")
+	public void user_able_to_view_statement_statement_client_wise_on_risk_note_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Statement Statement \\\\(Client-wise) - on Risk Note in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Sticker Replacement as report")
+	public void user_click_to_select_sticker_replacement_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT186']",  "user click to select Sticker Replacement as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Sticker Replacement in pdf format")
+	public void user_able_to_view_sticker_replacement_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Sticker Replacement in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Supplier Invoice Ageing Report as report")
+	public void user_click_to_select_supplier_invoice_ageing_report_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT105']",  "user click to select Supplier Invoice Ageing Report as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Supplier Invoice Ageing Report in pdf format")
+	public void user_able_to_view_supplier_invoice_ageing_report_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Supplier Invoice Ageing Report in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Supplier Statement as report")
+	public void user_click_to_select_supplier_statement_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT104']",  "user click to select Supplier Statement as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Supplier Statement in pdf format")
+	public void user_able_to_view_supplier_statement_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Supplier Statement in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Targets as report")
+	public void user_click_to_select_targets_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT117']",  "user click to select Targets as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Targets in pdf format")
+	public void user_able_to_view_targets_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Targets in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Targets \\(Zone wise) as report")
+	public void user_click_to_select_targets_zone_wise_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT159']",  "user click to select Targets \\\\(Zone wise) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Targets \\(Zone wise) in pdf format")
+	public void user_able_to_view_targets_zone_wise_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Targets \\\\(Zone wise) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Targets \\(Zone wise) BY Policy Count as report")
+	public void user_click_to_select_targets_zone_wise_by_policy_count_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT166']",  "user click to select Targets \\\\(Zone wise) BY Policy Count as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Targets \\(Zone wise) BY Policy Count in pdf format")
+	public void user_able_to_view_targets_zone_wise_by_policy_count_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Targets \\\\(Zone wise) BY Policy Count in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Targets By Policy Count as report")
+	public void user_click_to_select_targets_by_policy_count_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT165']",  "user click to select Targets By Policy Count as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Targets By Policy Count in pdf format")
+	public void user_able_to_view_targets_by_policy_count_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Targets By Policy Count in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA MIS Report as report")
+	public void user_click_to_select_tira_mis_report_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT79']",  "user click to select TIRA MIS Report as report","CLICK", 2000);
+;
+	}
+	@Then("user able to view TIRA MIS Report in pdf format")
+	public void user_able_to_view_tira_mis_reportnt_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA MIS Reportnt in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Broker Premium Remittance Statement as report")
+	public void user_click_to_select_tira_reports_broker_premium_remittance_statement_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT40']",  "user click to select TIRA Reports - Broker Premium Remittance Statement as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Broker Premium Remittance Statement in pdf format")
+	public void user_able_to_view_tira_reports_broker_premium_remittance_statement_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Broker Premium Remittance Statement in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Broker Premium Remittance Statement\\(Quarterly) as report")
+	public void user_click_to_select_tira_reports_broker_premium_remittance_statement_quarterly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT80']",  "user click to select TIRA Reports - Broker Premium Remittance Statement\\\\(Quarterly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Broker Premium Remittance Statement\\(Quarterly) in pdf format")
+	public void user_able_to_view_tira_reports_broker_premium_remittance_statement_quarterly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Broker Premium Remittance Statement\\\\(Quarterly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Brokers Premium Collection Report \\(Quarterly) as report")
+	public void user_click_to_select_tira_reports_brokers_premium_collection_report_quarterly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT48']",  "user click to select TIRA Reports - Brokers Premium Collection Report \\\\(Quarterly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Brokers Premium Collection Report \\(Quarterly) in pdf format")
+	public void user_able_to_view_tira_reports_brokers_premium_collection_report_quarterly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Brokers Premium Collection Report \\\\(Quarterly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Commission Income Statemnt \\(Quarterly) as report")
+	public void user_click_to_select_tira_reports_commission_income_statemnt_quarterly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT42']",  "user click to select TIRA Reports - Commission Income Statemnt \\\\(Quarterly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Commission Income Statemnt \\(Quarterly) in pdf format")
+	public void user_able_to_view_tira_reports_commission_income_statemnt_quarterly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Commission Income Statemnt \\\\(Quarterly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Commission Income Statemnt \\(Yearly) as report")
+	public void user_click_to_select_tira_reports_commission_income_statemnt_yearly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT41']",  "user click to select TIRA Reports - Commission Income Statemnt \\\\(Yearly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Commission Income Statemnt \\(Yearly) in pdf format")
+	public void user_able_to_view_tira_reports_commission_income_statemnt_yearly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Commission Income Statemnt \\\\(Yearly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Commission IncomeStatement \\(Monthly) as report")
+	public void user_click_to_select_tira_reports_commission_income_statement_monthly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT100']",  "user click to select TIRA Reports - Commission IncomeStatement \\\\(Monthly) as report","CLICK", 2000);
+
+	}
+	@When("user select {string} as monthly")
+	public void user_select_as_monthly(String monthly) {
+		Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbMonthly']", "//*[@class='select2-input select2-focused']", 
+			    monthly, "//*[@class='select2-match']", "user select {string} as monthly", "DROPDOWN", 0);
+			
+	}
+	@Then("user able to view TIRA Reports - Commission IncomeStatement \\(Monthly) in pdf format")
+	public void user_able_to_view_tira_reports_commission_income_statement_monthly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Commission IncomeStatement \\\\(Monthly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Payables Outstanding to Insurers as report")
+	public void user_click_to_select_tira_reports_payables_outstanding_to_insurers_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT38']",  "user click to select TIRA Reports - Payables Outstanding to Insurers as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Payables Outstanding to Insurers in pdf format")
+	public void user_able_to_view_tira_reports_payables_outstanding_to_insurers_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Payables Outstanding to Insurers in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Payables Outstanding to Insurers \\(Quaterly) as report")
+	public void user_click_to_select_tira_reports_payables_outstanding_to_insurers_quaterly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT115']",  "user click to select TIRA Reports - Payables Outstanding to Insurers \\\\(Quaterly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Payables Outstanding to Insurers \\(Quaterly) in pdf format")
+	public void user_able_to_view_tira_reports_payables_outstanding_to_insurers_quaterly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Payables Outstanding to Insurers \\\\(Quaterly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Premium Booked Statement \\(Monthly) as report")
+	public void user_click_to_select_tira_reports_premium_booked_statement_monthly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT148']",  "user click to select TIRA Reports - Premium Booked Statement \\\\(Monthly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Premium Booked Statement \\(Monthly) in pdf format")
+	public void user_able_to_view_tira_reports_premium_booked_statement_monthly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Premium Booked Statement \\\\(Monthly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Premium Booked Statement \\(Quarterly) as report")
+	public void user_click_to_select_tira_reports_premium_booked_statement_quarterly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT36']",  "user click to select TIRA Reports - Premium Booked Statement \\\\(Quarterly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Premium Booked Statement \\(Quarterly) in pdf format")
+	public void user_able_to_view_tira_reports_premium_booked_statement_quarterly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Premium Booked Statement \\\\(Quarterly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Premium Booked Statement \\(Yearly) as report")
+	public void user_click_to_select_tira_reports_premium_booked_statement_yearly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT35']",  "user click to select TIRA Reports - Premium Booked Statement \\\\(Yearly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Premium Booked Statement \\(Yearly) in pdf format")
+	public void user_able_to_view_tira_reports_premium_booked_statement_yearly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Premium Booked Statement \\\\(Yearly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Premium Booked Statement-Life Assurance \\(Quarterly) as report")
+	public void user_click_to_select_tira_reports_premium_booked_statement_life_assurance_quarterly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT39']",  "user click to select TIRA Reports - Premium Booked Statement-Life Assurance \\\\(Quarterly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Premium Booked Statement-Life Assurance \\(Quarterly) in pdf format")
+	public void user_able_to_view_tira_reports_premium_booked_statement_life_assurance_quarterly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Premium Booked Statement-Life Assurance \\\\(Quarterly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Reports - Premium Booked Statement-Life Assurance \\(Yearly) as report")
+	public void user_click_to_select_tira_reports_premium_booked_statement_life_assurance_yearly_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT37']",  "user click to select TIRA Reports - Premium Booked Statement-Life Assurance \\\\(Yearly) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Reports - Premium Booked Statement-Life Assurance \\(Yearly) in pdf format")
+	public void user_able_to_view_tira_reports_premium_booked_statement_life_assurance_yearly_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Premium Booked Statement-Life Assurance \\\\(Yearly) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select TIRA Sticker Inventory as report")
+	public void user_click_to_select_tira_sticker_inventory_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT93']",  "user click to select TIRA Sticker Inventory as report","CLICK", 2000);
+
+	}
+	@Then("user able to view TIRA Sticker Inventory in pdf format")
+	public void user_able_to_view_tira_sticker_inventory_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view TIRA Sticker Inventory in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Total Outstanding Payments \\(Client wise) as report")
+	public void user_click_to_select_total_outstanding_payments_client_wise_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT214']",  "user click to select Total Outstanding Payments \\\\(Client wise) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Total Outstanding Payments \\(Client wise) in pdf format")
+	public void user_able_to_view_total_outstanding_payments_client_wise_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Total Outstanding Payments \\\\(Client wise) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Total Outstanding Payments \\(Detailed) as report")
+	public void user_click_to_select_total_outstanding_payments_detailed_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT29']",  "user click to select Total Outstanding Payments \\\\(Detailed) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Total Outstanding Payments \\(Detailed) in pdf format")
+	public void user_able_to_view_total_outstanding_payments_detailed_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Total Outstanding Payments \\\\(Detailed) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Total Outstanding Payments \\(Summarized) as report")
+	public void user_click_to_select_total_outstanding_payments_summarized_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT22']",  "user click to select Total Outstanding Payments \\\\(Summarized) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Total Outstanding Payments \\(Summarized) in pdf format")
+	public void user_able_to_view_total_outstanding_payments_summarized_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Total Outstanding Payments \\\\(Summarized) in pdf format","SWITCHWINDOW");
+
+	}
+	
+	@Then("user click to select Total Outstanding Receipts \\(Detailed) as report")
+	public void user_click_to_select_total_outstanding_receipts_detailed_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT28']",  "user click to select Total Outstanding Receipts \\\\(Detailed) as report","CLICK", 2000);
+
+	}
+	@Then("user able to view Total Outstanding Receipts \\(Detailed) in pdf format")
+	public void user_able_to_view_total_outstanding_receipts_detailed_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Total Outstanding Receipts \\\\(Detailed) in pdf format","SWITCHWINDOW");
+
+	}
+	
+
+    @Then("user click to select Total Outstanding Receipts \\(Summarized) as report")
+    public void user_click_to_select_total_outstanding_receipts_summarized_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT21']",  "user click to select Total Outstanding Receipts \\\\(Summarized) as report","CLICK", 2000);
+
+    }
+    @Then("user able to view Total Outstanding Receipts \\(Summarized) in pdf format")
+    public void user_able_to_view_total_outstanding_receipts_summarized_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Total Outstanding Receipts \\\\(Summarized) in pdf format","SWITCHWINDOW");
+
+    }
+    
+    @Then("user click to select Unallocated Credit Note as report")
+    public void user_click_to_select_unallocated_credit_note_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT236']",  "user click to select Unallocated Credit Note as report","CLICK", 2000);
+
+    }
+    @Then("user able to view Unallocated Credit Note in pdf format")
+    public void user_able_to_view_unallocated_credit_note_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Unallocated Credit Note in pdf format","SWITCHWINDOW");
+
+    }
+    
+    @Then("user click to select Unallocated Payments as report")
+    public void user_click_to_select_unallocated_payments_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT24']",  "user click to select Unallocated Payments as report","CLICK", 2000);
+
+    }
+    @Then("user able to view Unallocated Payments in pdf format")
+    public void user_able_to_view_unallocated_payments_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Unallocated Payments in pdf format","SWITCHWINDOW");
+
+    }
+    
+    @Then("user click to select Unallocated Receipts as report")
+    public void user_click_to_select_unallocated_receipts_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT23']",  "user click to select Unallocated Receipts as report","CLICK", 2000);
+
+    }
+    @Then("user able to view Unallocated Receipts in pdf format")
+    public void user_able_to_view_unallocated_receipts_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Unallocated Receipts in pdf format","SWITCHWINDOW");
+    }
+    
+    @Then("user click to select Unrequested Customer Tax Invoice Transactions as report")
+    public void user_click_to_select_unrequested_customer_tax_invoice_transactions_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT133']",  "user click to select Unrequested Customer Tax Invoice Transactions as report","CLICK", 2000);
+
+    }
+    @Then("user able to view Unrequested Customer Tax Invoice Transactions in pdf format")
+    public void user_able_to_view_unrequested_customer_tax_invoice_transactions_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Unrequested Customer Tax Invoice Transactions in pdf format","SWITCHWINDOW");
+
+    }
+    
+    @Then("user click to select User Details as report")
+    public void user_click_to_select_user_details_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT219']",  "user click to select User Details as report","CLICK", 2000);
+
+    }
+    @Then("user able to view User Details in pdf format")
+    public void user_able_to_view_user_details_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view User Details in pdf format","SWITCHWINDOW");
+    }
+    
+    @Then("user click to select VAT submission Report as report")
+    public void user_click_to_select_vat_submission_report_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT109']",  "user click to select VAT submission Report as report","CLICK", 2000);
+
+    }
+    @Then("user able to view VAT submission Report in pdf format")
+    public void user_able_to_view_vat_submission_report_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view VAT submission Report in pdf format","SWITCHWINDOW");
+
+    }
+    
+    @Then("user click to select VAT submission Report for Insurance Companies as report")
+    public void user_click_to_select_vat_submission_report_for_insurance_companies_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT49']",  "user click to select VAT submission Report for Insurance Companies as report","CLICK", 2000);
+
+    }
+    @Then("user able to view VAT submission Report for Insurance Companies in pdf format")
+    public void user_able_to_view_vat_submission_report_for_insurance_companies_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view VAT submission Report for Insurance Companies in pdf format","SWITCHWINDOW");
+
+    }
+    
+    @Then("user click to select VAT submission Report for Insurance Companies one as report")
+    public void user_click_to_select_vat_submission_report_for_insurance_companies_one_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT54']",  "user click to select VAT submission Report for Insurance Companies one as report","CLICK", 2000);
+
+    }
+    @Then("user able to view VAT submission Report for Insurance Companies one in pdf format")
+    public void user_able_to_view_vat_submission_report_for_insurance_companiesone_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view VAT submission Report for Insurance Companies one in pdf format","SWITCHWINDOW");
+
+    }
+    
+    @Then("user click to select Vouchers Report as report")
+    public void user_click_to_select_vouchers_report_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT106']",  "user click to select Vouchers Report as report","CLICK", 2000);
+
+    }
+    @Then("user able to view Vouchers Report in pdf format")
+    public void user_able_to_view_vouchers_report_in_pdf_format() {
+	    Itl.CustomswitchWindowEvent("user able to view Vouchers Report in pdf format","SWITCHWINDOW");
+    }
+
+
 }
