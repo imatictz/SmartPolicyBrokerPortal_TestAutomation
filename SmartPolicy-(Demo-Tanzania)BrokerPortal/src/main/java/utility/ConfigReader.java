@@ -75,7 +75,7 @@ public class ConfigReader{
 		String url = properties.getProperty("password");
 		if(url != null) return url;
 		else throw new RuntimeException("password not specified in the Configuration.properties file.");
-	}
+	}	
 }
 
 

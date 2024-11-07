@@ -500,8 +500,6 @@ public class SeleniumOperations
      public static Hashtable<String, Object> switchWindow() throws IOException {
     	try {
     		driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-    		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-     		wait1.until(ExpectedConditions.visibilityOfElementLocated( By.xpath("//*[text()='Demo Insurance Brokers (T) Limited.']")));
     		Set<String> ids = driver.getWindowHandles();
     	
     	Iterator<String> values = ids.iterator();    

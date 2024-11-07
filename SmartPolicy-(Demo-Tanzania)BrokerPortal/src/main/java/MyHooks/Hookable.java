@@ -34,7 +34,7 @@ public class Hookable {
 	 	SeleniumOperations.openApplication(); 
 	}
 	 	
-    @Before(order=3)
+   /* @Before(order=3)
 	public void enterUserName(){
 	    Object[] input2=new Object[2];
 	 	input2[0]="//*[@id='usercode']";
@@ -58,5 +58,5 @@ public class Hookable {
 	@After(order=1)
 	public void browserClose() {
 		SeleniumOperations.browserClose();
-	}
+	}*/
 }

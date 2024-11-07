@@ -67,16 +67,16 @@ public class Reports {
 	}
 	@When("user click on show report button")
 	public void user_click_on_show_report_button() throws InterruptedException {
-		/* Object[] input1 = new Object[1];
-		 input1[0] = "//*[@id='MainContent_btnShowReports']";
-		 SeleniumOperations.wait(input1);*/
-		 Object[] input = new Object[2];
+		 
+		 Object[] input = new Object[1];
 		 input[0] = "//*[@id='MainContent_btnShowReports']";
 		 Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click on show report button", output.get("MESSAGE").toString());
+		 Object[] input1 = new Object[1];
+		 input1[0] = "//*[@id='MainContent_btnShowReports']";
+		 SeleniumOperations.clickOnElement(input1); 
 		 
-		 
-		 Thread.sleep(50000);
+		 Thread.sleep(20000);
 	}
 	@Then ("^user able to view admin fee report in pdf format$")
 	public void pdfReport() throws IOException{

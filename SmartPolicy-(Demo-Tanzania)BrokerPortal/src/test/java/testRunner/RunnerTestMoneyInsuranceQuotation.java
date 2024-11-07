@@ -4,9 +4,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Reports/Report.feature",     
-                   tags= "@All", 
-                   glue={"cucumberMap21Reports","MyHooks"}, 
+		           features="src/test/resources/Business_Logic/Login.feature",     
+                   tags= "@RegressionTest1", 
+                   glue={"cucumberMap","MyHooks"}, 
                    monochrome=true,   
                    plugin= {"pretty",   	
                            "html:target/CucumberTest/CucumbetReport.html"},  

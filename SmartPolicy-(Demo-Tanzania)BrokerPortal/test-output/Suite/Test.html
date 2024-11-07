@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Mar 26 11:52:10 IST 2024</td>
+<td>Started on:</td><td>Thu May 16 18:42:03 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>472 seconds (472043 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (906 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,15 +76,27 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testRunner.RunnerTestMoneyInsuranceQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMoneyInsuranceQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Money Insurance Cover)Verify user able to enter mandatory fields and save quotation successfully", "Money Insurance Cover Quotation"</td>
-<td></td>
-<td>156</td>
-<td>testRunner.RunnerTestMoneyInsuranceQuotation@78691363</td></tr>
-<tr>
-<td title='testRunner.RunnerTestAccidentalDamageQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestAccidentalDamageQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully", "AccidentalDamage Quotation"</td>
-<td></td>
-<td>315</td>
-<td>testRunner.RunnerTestAccidentalDamageQuotation@765d7657</td></tr>
+<td title='testRunner.RunnerTestMoneyInsuranceQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMoneyInsuranceQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Test", "Vehicle Quotation"</td>
+<td><div><pre>java.lang.Error: Unresolved compilation problems: 
+	The import java.io.BufferedReader cannot be resolved
+	BufferedReader cannot be resolved to a type
+	BufferedReader cannot be resolved to a type
+
+	at utility.ConfigReader.&lt;init&gt;(ConfigReader.java:3)
+	at utility.HTMLReportGenerator.TestSuiteStart(HTMLReportGenerator.java:33)
+	at MyHooks.Hookable.before(Hookable.java:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1124288521", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1124288521'><pre>java.lang.Error: Unresolved compilation problems: 
+	The import java.io.BufferedReader cannot be resolved
+	BufferedReader cannot be resolved to a type
+	BufferedReader cannot be resolved to a type
+
+	at utility.ConfigReader.&lt;init&gt;(ConfigReader.java:3)
+	at utility.HTMLReportGenerator.TestSuiteStart(HTMLReportGenerator.java:33)
+	at MyHooks.Hookable.before(Hookable.java:15)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.RunnerTestMoneyInsuranceQuotation@4b45dcb8</td></tr>
 </table><p>
 </body>
 </html>

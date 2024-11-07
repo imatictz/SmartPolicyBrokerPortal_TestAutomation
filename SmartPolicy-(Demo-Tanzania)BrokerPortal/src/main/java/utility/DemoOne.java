@@ -13,7 +13,7 @@ public class DemoOne {
        //System.setProperty("webdriver.chrome.driver","C:\\Users\\91993\\Downloads\\driver\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
 		
 		
-		WebDriverManager.chromedriver().setup();
+		/*WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		
 		
@@ -26,7 +26,21 @@ public class DemoOne {
 		WebElement id = driver.findElement(By.xpath("//*[@id='usercode']"));
 		id.sendKeys("PravinS");
 		String pass = id.getAttribute("value");
-		System.out.println(pass);
+		System.out.println(pass);*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}	
 }

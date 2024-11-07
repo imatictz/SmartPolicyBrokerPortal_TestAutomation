@@ -1,7 +1,9 @@
 package cucumberMap2Vehicle;
 
 import java.util.Hashtable;
+import java.util.Map;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utility.HTMLReportGenerator;
@@ -207,6 +209,7 @@ public class Vehicle
 		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurance class dropdown",output.get("MESSAGE").toString());
 		   Thread.sleep(2000);
+		   
 	 }
 
 	 @When("^user enter \"([^\"]*)\" as insurance class$")
@@ -1384,7 +1387,11 @@ public class Vehicle
 		}
 		
 
-
+		@When("user enter details")
+		public void user_enter_details(DataTable dataTable) {
+		   Map<String, String> dataMap = dataTable.asMap(String.class,String.class);
+		   SeleniumOperations.sendKeys(null);
+		}
 	
 	
 	
