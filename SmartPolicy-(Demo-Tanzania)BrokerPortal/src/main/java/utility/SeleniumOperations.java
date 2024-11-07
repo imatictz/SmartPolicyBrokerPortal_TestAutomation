@@ -487,13 +487,13 @@ public class SeleniumOperations
     	 
      }
      
-// Explicit Wait
+/*// Explicit Wait
      public static void wait(Object[]Inputparameters) throws InterruptedException {
     	String input=(String)Inputparameters[0];
     	 WebElement waitTill= driver.findElement(By.xpath(input));
  		WebDriverWait wait1 = new WebDriverWait(driver, 20);
  		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
-     }
+     }*/
      
 //SwitchWindow     
      

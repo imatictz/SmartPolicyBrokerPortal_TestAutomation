@@ -83,7 +83,7 @@ public class Burglary
 			Thread.sleep(6000);
 			Object[] input=new Object[1];
 			input[0]="//*[@id='MainContent_txtClientName']";
-			SeleniumOperations.wait(input);
+			//SeleniumOperations.wait(input);
 			
 			Object[] input50=new Object[2];
 			input50[0]="//*[@id='MainContent_txtClientName']";
