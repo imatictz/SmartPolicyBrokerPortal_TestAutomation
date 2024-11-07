@@ -4,6 +4,7 @@
   <test  name="Test1">
     <classes>
       <class name="testRunner.RunnerTestMoneyInsuranceQuotation"/>
+      <class name="testRunner.RunnerTestAccidentalDamageQuotation"/>
     </classes>
   </test> 
    
