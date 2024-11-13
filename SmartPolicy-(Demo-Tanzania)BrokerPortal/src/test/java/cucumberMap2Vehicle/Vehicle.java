@@ -1249,7 +1249,7 @@ public class Vehicle
 		@When("user enter details")
 		public void user_enter_details(DataTable dataTable) {
 		   Map<String, String> dataMap = dataTable.asMap(String.class,String.class);
-		   SeleniumOperations.sendKeys(null);
+		   SeleniumOperations.sendKeys(dataMap);
 		}
 
 			   Hashtable<String,Object> output= SeleniumOperations.alert();
