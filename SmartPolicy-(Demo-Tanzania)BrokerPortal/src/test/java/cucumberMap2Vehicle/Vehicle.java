@@ -1246,11 +1246,11 @@ public class Vehicle
 		{
 
 
-		@When("user enter details")
+		/*@When("user enter details")
 		public void user_enter_details(DataTable dataTable) {
 		   Map<String, String> dataMap = dataTable.asMap(String.class,String.class);
 		   SeleniumOperations.sendKeys(dataMap);
-		}
+		}*/
 
 			   Hashtable<String,Object> output= SeleniumOperations.alert();
 			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission rate alert message",output.get("MESSAGE").toString());
