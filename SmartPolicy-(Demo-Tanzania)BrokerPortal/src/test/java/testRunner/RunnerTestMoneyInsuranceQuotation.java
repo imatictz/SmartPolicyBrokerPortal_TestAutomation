@@ -5,9 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 
-		           features="src/test/resources/Business_Logic/Login.feature",     
-                   tags= "@RegressionTest1", 
-                   glue={"cucumberMap","MyHooks"}, 
+		           
 
 		           features="src/test/resources/Quotations/MoneyInsuranceCover.feature",     
                    tags= "@All", 
