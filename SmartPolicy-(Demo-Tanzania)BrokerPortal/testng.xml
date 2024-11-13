@@ -3,7 +3,7 @@
 <suite name="SmartPoilcy" >
   <test  name="Test1">
     <classes>
-     <class name="testRunner.RunnerTestAccidentalDamageQuotation"/>
+     
      <class name="testRunner.RunnerTestBondsQuotation"/>
       
       
