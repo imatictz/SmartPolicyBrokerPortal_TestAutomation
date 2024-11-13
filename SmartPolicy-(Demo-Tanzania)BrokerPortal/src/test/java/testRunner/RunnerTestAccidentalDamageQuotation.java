@@ -5,9 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 
-		           features="src/test/resources/Quotations/Bonds.feature", 
-                   tags= "@MandatoryFields", 
-                   glue={"cucumberMap5Bonds","MyHooks"}, 
+		            
 
 		           features="src/test/resources/Quotations/AccidentalDamage.feature", 
                    tags= "@All", 
