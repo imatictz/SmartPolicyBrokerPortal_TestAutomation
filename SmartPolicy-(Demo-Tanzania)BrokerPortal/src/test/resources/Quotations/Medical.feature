@@ -18,10 +18,9 @@ When user select Pravin Testing as client name
 When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer
 When user select Alliance Insurance Company (T) Ltd. as insurer
+When user select "Standard Rate" as insurance class
 When user enter "01/01/2000" as date of birth
-When user click on relationship dropdown
-When user enter "Self" as relationship
-When user select self as relationship
+When user select "Self" as relationship
 When user enter "160000" as total premium
 When user click on insert button
 When user click on addOn button
@@ -33,7 +32,7 @@ When user enter "1.5" as rate%
 When user enter "Medical Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
-When user click on Ok button to accept commission alert message
+#When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt" as status
 
 
@@ -55,22 +54,18 @@ When user select on borrower type check box
 When user click on borrower type dropdown
 And user enter "Retail Banking" as borrower type
 Then user select Retail Banking as borrower type
-When user enter "15244-51654-84125" as cover note number
+#When user enter "15244-51654-84125" as cover note number
 When user click on loss ratio forecast dropdown
 When user enter "Profit making" as loss ratio forecast
 Then user select Profit making as loss ratio forecast
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
-When user click on insurance class dropdown
-When user enter "Standard Rate" as insurance class
-When user click to select standard rate as insurance class
+When user select "Standard Rate" as insurance class
 When user enter "01/01/2000" as date of birth
 When user enter "Birth Certificate" as ID type
 When user enter "YTG1220S02" as ID number
-When user click on relationship dropdown1
-When user enter "Self" as relationship
-When user select self as relationship
+When user select "Self" as relationship
 When user enter "600000" as sum assured
 When user enter "TravellingTOAFrica12032" as pre existing condition
 #Limits & Premiums
@@ -102,5 +97,5 @@ When user click on insert button (AddOn)
 When user enter "702.3" as other fee
 When user enter "10" as discount on commission %
 When user click on save button
-When user click on Ok button to accept commission alert message
+#When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt" as status

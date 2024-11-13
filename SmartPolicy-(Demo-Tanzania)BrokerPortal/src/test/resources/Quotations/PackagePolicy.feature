@@ -18,20 +18,14 @@ When user select Pravin Testing as client name
 When user click on insurer dropdown
 When user enter "Alliance Insurance Company (T) Ltd." as insurer
 When user select Alliance Insurance Company (T) Ltd. as insurer
-When user click on insurance type dropdown
-When user enter "2 Wheelers/ 3 Wheelers" as insurance type
-When user select two wheelers/ three wheelers as insurance type
+When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user enter " Pravin Testing" as insured name
-When user click on insurance class dropdown
-When user enter "2 Wheel Comprehensive (Private)" as insurance class
-When user select two Wheel Comprehensive (Private) as insurance class
+When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user enter "15641A56BIKE" as registration number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
 When user enter "SCOOTY" as vehicle model
-When user click on vehicle type dropdown
-When user enter "BIKE" as vehicle type
-When user select BIKE as vehicle type
+When user select "BIKE" as vehicle type
 When user enter "2015" as manufacture year
 When user enter "WHITE" as color
 When user enter "1200000" as sum insured
@@ -77,9 +71,7 @@ Then user select Profit making as loss ratio forecast
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
-When user click on insurance type dropdown
-When user enter "2 Wheelers/ 3 Wheelers" as insurance type
-When user select two wheelers/ three wheelers as insurance type
+When user select "2 Wheelers/ 3 Wheelers" as insurance type
 #(EXCESS/BENEFITS)
 #When user select excess buy-back checkbox
 Then user enter "5" as excess buy-back
@@ -103,17 +95,13 @@ Then user enter "4.5" as GPS tracking installed
 When user enter "1" as fleet/claim%
 Then user enter "2.1" as additional discount%
 When user enter " Pravin Testing" as insured name
-When user click on insurance class dropdown
-When user enter "2 Wheel Comprehensive (Private)" as insurance class
-When user select two Wheel Comprehensive (Private) as insurance class
+When user select "2 Wheel Comprehensive (Private)" as insurance class
 Then user enter "Vehicle DETAILS-215ASDD020sd" as other description
 When user enter "15641A56BIKE" as registration number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
 When user enter "SCOOTY" as vehicle model
-When user click on vehicle type dropdown
-When user enter "BIKE" as vehicle type
-When user select BIKE as vehicle type
+When user select "BIKE" as vehicle type
 Then user enter "412ENGINEnoteAE33" as engine No
 When user enter "REFDF55615jpYT2" as chassis No
 Then user enter "510kg" as gross weight

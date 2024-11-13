@@ -84,4 +84,4 @@ When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
 When user click on Ok button to accept commission alert
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Required Approval" as status

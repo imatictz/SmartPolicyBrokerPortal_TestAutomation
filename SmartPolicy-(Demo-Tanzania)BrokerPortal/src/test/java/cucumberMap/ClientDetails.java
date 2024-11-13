@@ -465,7 +465,7 @@ public class ClientDetails {
 	@When ("user select \"(.*)\" as relationship$")
 	public void relationship(String relationship) throws InterruptedException{
 		Object[] input=new Object[5];
-		input[0]="//*[@id='s2id_MainContent_cmbRelationship']";
+		input[0]="//*[@id='s2id_MainContent_cmbCLNTRelationship']";
 		input[1]="//*[@class='select2-input select2-focused']";
 		input[2]=relationship;
 		input[3]="//*[@class='select2-match']";
