@@ -62,9 +62,9 @@ public class Hookable {
 	}
 	
 
-	@After(order=1)
+	/*@After(order=1)
 	public void browserColse() {
 		SeleniumOperations.browserColse();
 
-	}
+	}*/
 }
