@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="2" passed="2" failed="0" skipped="0">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-13T07:01:40Z" name="SmartPoilcy" finished-at="2024-11-13T07:04:04Z" duration-ms="144096">
+  <suite started-at="2024-11-13T11:35:32Z" name="SmartPoilcy" finished-at="2024-11-13T11:36:46Z" duration-ms="74217">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@8c3619e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@4331d187]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@3ad2e17]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-11-13T07:01:40Z" name="Test1" finished-at="2024-11-13T07:04:04Z" duration-ms="144096">
+    <test started-at="2024-11-13T11:35:32Z" name="Test1" finished-at="2024-11-13T11:36:46Z" duration-ms="74217">
       <class name="testRunner.RunnerTestBondsQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestBondsQuotation@4331d187]" started-at="2024-11-13T10:02:52Z" name="setUpClass" finished-at="2024-11-13T10:02:53Z" duration-ms="172" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestBondsQuotation@3ad2e17]" started-at="2024-11-13T14:35:32Z" name="setUpClass" finished-at="2024-11-13T14:35:33Z" duration-ms="972" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@70169464]]>
+                <![CDATA[org.testng.TestRunner@42cc420b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@4331d187]" started-at="2024-11-13T10:02:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-13T10:04:04Z" duration-ms="71353" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@3ad2e17]" started-at="2024-11-13T14:35:33Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-13T14:36:46Z" duration-ms="73139" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,44 +37,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestBondsQuotation@4331d187]" started-at="2024-11-13T10:04:04Z" name="tearDownClass" finished-at="2024-11-13T10:04:04Z" duration-ms="38" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestBondsQuotation@3ad2e17]" started-at="2024-11-13T14:36:46Z" name="tearDownClass" finished-at="2024-11-13T14:36:46Z" duration-ms="87" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- testRunner.RunnerTestBondsQuotation -->
-      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@8c3619e]" started-at="2024-11-13T10:01:40Z" name="setUpClass" finished-at="2024-11-13T10:01:41Z" duration-ms="891" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@70169464]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@8c3619e]" started-at="2024-11-13T10:01:41Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-13T10:02:52Z" duration-ms="71559" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["AccidentalDamage Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@8c3619e]" started-at="2024-11-13T10:02:52Z" name="tearDownClass" finished-at="2024-11-13T10:02:52Z" duration-ms="48" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
     </test> <!-- Test1 -->
   </suite> <!-- SmartPoilcy -->
 </testng-results>
