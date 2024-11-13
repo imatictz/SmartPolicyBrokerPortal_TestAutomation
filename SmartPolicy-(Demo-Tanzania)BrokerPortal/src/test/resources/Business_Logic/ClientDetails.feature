@@ -7,9 +7,7 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "Money Insurance Cover" to search insurance type in search box
-When user select money insurance cover as insurance type from dropdown
+When user select "Money Insurance Cover" as insurance type 
 When user click on Click here for New Client link
 
 @RegressionTest       @MandatoryFields
@@ -18,13 +16,13 @@ Scenario: (ClientDetails) Enter new client details with mandatory fields
 When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
-When user enter "TestAutomation102" as client name
+When user enter "TestAutomation103" as client name
 When user click in account number field
-When user enter "5412502145021002" as account number
+When user enter "5412502145021003" as account number
 When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
-When user enter "5412502145021002" as ID number
+When user enter "5412502145021003" as ID number
 When user click on date of birth icon
 When user click on previous button
 When user select year from calender
@@ -49,7 +47,7 @@ When user enter "House No.12 XYZ World" as address
 When user enter "659544202" as mobile No One
 When user enter "xxxxxxx503@gmail.com" as email id one
 When user click on save button to save client details
-Then user able to view "Money Insurance Cover Quotation"
+Then user able to view "Money Insurance Cover Quotation" as quotation
 
 @AllFields
 Scenario: (ClientDetails) Enter new client details with all fields
@@ -57,13 +55,13 @@ Scenario: (ClientDetails) Enter new client details with all fields
 When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
-When user enter "TestAutomation202" as client name
+When user enter "TestAutomation203" as client name
 When user click in account number field
-When user enter "564548465468482002" as account number
+When user enter "564548465468482003" as account number
 When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
-When user enter "564548465468482002" as ID number
+When user enter "564548465468482003" as ID number
 When user enter "215112165151115" as TIN/PAN
 When user enter "32189412349515" as ZRB No
 When user click on date of birth icon
@@ -121,7 +119,7 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "Money Insurance Cover Quotation"
+Then user able to view "Money Insurance Cover Quotation" as quotation
 
 
 @Corporate
@@ -130,13 +128,13 @@ Scenario: (ClientDetails) Enter new client details with all fields for corporate
 When user click on title dropdown
 When user enter "M/S" as title in search box
 When user click on Mr from dropdown
-When user enter "TestAutomation302" as client name
+When user enter "TestAutomation303" as client name
 When user click in account number field
-When user enter "654851846543002" as account number
+When user enter "654851846543003" as account number
 When user click on ID type dropdown
 When user enter "Company Incorporation Certificate Number" to search ID type in search box
 When user click on Company Incorporation Certificate Number as ID type from dropdown
-When user enter "654851846543002" as ID number
+When user enter "654851846543003" as ID number
 When user enter "215112165151162" as TIN/PAN
 When user enter "321894123495" as ZRB No
 When user select "None" as Disability Status 
@@ -188,5 +186,5 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "Money Insurance Cover Quotation"
+Then user able to view "Money Insurance Cover Quotation" as quotation
 

@@ -31,51 +31,34 @@ public class Burglary
 		}
 
 		@When("^user click on current quotations$")
-		public void user_click_on_current_quotations() 
+		public void user_click_on_current_quotations() throws InterruptedException 
 		{
 			Object[] input9=new Object[1];
 		     input9[0]="(//*[text()='Current Quotations'])[1]";
 		     SeleniumOperations.clickOnElement(input9);
+		     Thread.sleep(2000);
 		    
 		}
 
 		@When("^user click on add button$")
 		public void user_click_on_add_button() throws InterruptedException  
 		{Object[] input10=new Object[1];
-		input10[0]="//*[@class='bold'][text()='Add']";
+		input10[0]="//*[@id='MainContent_btnAdd']";
 		SeleniumOperations.clickOnElement(input10);
 		Thread.sleep(8000);
 		
 		    
 		}
 
-		@When("^user click on select insurance type dropdown$")
-		public void user_click_on_select_insurance_type_dropdown() throws InterruptedException  
-		{    
-			
-			Object[] input11=new Object[1];
-			input11[0]="(//*[text()='Select Insurance Type'])[1]";
-			SeleniumOperations.clickOnElement(input11);  
-			Thread.sleep(3000);
-		    
-		}
-
-		@When("^user enter \"([^\"]*)\" to search insurance type in search box$")
-		public void enterInsuranceType(String insuranceType) throws Throwable 
-		{
-		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
-		    input[1]=insuranceType;
-		    SeleniumOperations.sendKeys(input);
-		    Thread.sleep(2000);
-		}
-		
-		@When("^user select Burglary/Theft as insurance type from dropdown$")
-		public void selectInsuranceTypeResult() throws Throwable 
-		{
-			Object[] input11=new Object[1];
-			input11[0]="//*[@class='select2-match']";
-			SeleniumOperations.clickOnElement(input11);
+		@When("^user select \"([^\"]*)\" as insurance type$")
+		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+			Object[] input= new Object[4];
+			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
+			input[1]="//*[@class='select2-input select2-focused']";
+			input[2]=insuranceType;
+			input[3]="//*[@class='select2-match']";
+			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);
 		}
 
@@ -106,34 +89,16 @@ public class Burglary
 		    Thread.sleep(2000);
 		}
 
-		@When("^user click on insurer dropdown$")
-		public void clickOnInsurerDropdown() throws Throwable 
-		{
-		   Object[] input=new Object[1];
-		   input[0]="(//*[@class='select2-chosen'])[1]";
-		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurer dropdown",output.get("MESSAGE").toString());
-		   Thread.sleep(3000);
-		}
+		@When("user select {string} as insurer")
+		public void user_select_as_insurer(String insurerName) {
+		    Object[] input = new Object[4];
+		    input[0] = "//*[@id='s2id_MainContent_cmbInsurer']";
+		    input[1] = "//*[@class='select2-input select2-focused']";
+		    input[2] = insurerName;
+		    input[3] = "(//*[@class='select2-match'])[1]";
+		    Hashtable<String, Object> output = SeleniumOperations.dropdown(input);
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select {string} as insurer", output.get("MESSAGE").toString());
 
-		@When("^user enter \"([^\"]*)\" as insurer$")
-		public void enterInsurer(String insurer) throws Throwable 
-		{
-		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
-		    input[1]=insurer;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Alliance Insurance Company (T) Ltd.\" as insurer",output.get("MESSAGE").toString());
-		}
-
-		@When("^user select Alliance Insurance Company \\(T\\) Ltd\\. as insurer$")
-		public void selectInsurer() throws Throwable 
-		{
-		   Object[]input=new Object[1];
-		   input[0]="//*[@class='select2-match']";
-		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Alliance Insurance Company (T) Ltd. as insurer",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
 		}
 
 		

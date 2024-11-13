@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
         features="src/test/resources/Business_Logic/ClientDetails.feature",     
-        tags= "@Corporate", 
+        tags= "@All", 
         glue={"cucumberMap","MyHooks"}, 
         monochrome=true,   
         plugin= {"pretty",   	

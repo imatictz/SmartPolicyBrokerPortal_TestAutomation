@@ -30,11 +30,11 @@ public class MoneyInsuranceCoverQuotation
 	}
 
 	@When("^user click on current quotations$")
-	public void user_click_on_current_quotations() 
+	public void user_click_on_current_quotations() throws InterruptedException 
 	{Object[] input9=new Object[1];
 	input9[0]="(//*[text()='Current Quotations'])[1]";
 	SeleniumOperations.clickOnElement(input9);
-	    
+	    Thread.sleep(2000);
 	}
 
 	@When("^user click on add button$")
@@ -46,33 +46,16 @@ public class MoneyInsuranceCoverQuotation
 	    
 	}
 
-	@When("^user click on select insurance type dropdown$")
-	public void user_click_on_select_insurance_type_dropdown() throws InterruptedException  
-	{    
-		
-		Object[] input11=new Object[1];
-		input11[0]="(//*[text()='Select Insurance Type'])[1]";
-		SeleniumOperations.clickOnElement(input11);  
-		Thread.sleep(4000);
-	    
-	}
-
-	@When("^user enter \"([^\"]*)\" to search insurance type in search box$")
-	public void user_enter_to_search_insurance_type_in_search_box(String insuranceType) throws InterruptedException 
-	{Object[] input12=new Object[2];
-	input12[0]="//*[@class='select2-input select2-focused']";
-	input12[1]=insuranceType;
-	SeleniumOperations.sendKeys(input12);
-	Thread.sleep(2000);
-	    
-	}
-
-	@When("^user select money insurance cover as insurance type from dropdown$")
-	public void user_select_money_insurance_cover_as_insurance_type_from_dropdown() 
-	{Object[] input13=new Object[1];
-	input13[0]="//*[@class='select2-result-label']";
-	SeleniumOperations.clickOnElement(input13);
-	    
+	@When("^user select \"([^\"]*)\" as insurance type$")
+	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+		Object[] input= new Object[4];
+		input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
+		input[1]="//*[@class='select2-input select2-focused']";
+		input[2]=insuranceType;
+		input[3]="//*[@class='select2-match']";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
+		Thread.sleep(5000);
 	}
 	
 	@When("^user enter \"([^\"]*)\" as client name in quotation$")
@@ -99,43 +82,20 @@ public class MoneyInsuranceCoverQuotation
 	}
 	
 	@When("^user click on insurer dropdown$")
-	public void clickOnInsurer() throws Throwable 
+	@When ("^user Select \"(.*)\" as insurer$")
+	public void selectInsurer(String insurer) throws Throwable 
 	{
-		Object[] input50=new Object[1];
-		input50[0]="(//*[@class='select2-chosen'])[1]";
-		             
-		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on insurer dropdown",output50.get("MESSAGE").toString());
-	    Thread.sleep(2000);
-	}
-
-	@When("^user enter \"([^\"]*)\" as insurer name$")
-	public void enterInsurer(String insurerName) throws Throwable 
-	{
-	   Object[] input50=new Object[2];
-	   input50[0]="//*[@class='select2-input select2-focused']";
-	   input50[1]=insurerName;
-	   Hashtable<String, Object> output50 = SeleniumOperations.sendKeys(input50);
-	   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user enter \"Alliance Insurance Company (T) Ltd.\" as insurer name",output50.get("MESSAGE").toString());
-	   Thread.sleep(2000);
+		Object[] input= new Object[4];
+		input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
+		input[1]="//*[@class='select2-input select2-focused']";
+		input[2]=insurer;
+		input[3]="//*[@class='select2-match']";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
 		
 	}
 
-	@When("^user click to select Alliance Insurance Company \\(T\\) Ltd\\.as insurer name$")
-	public void clickToInsurer() throws Throwable
-	{
-		   Object[] input50=new Object[1];
-		   input50[0]="//*[@class='select2-match']";
-		   Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
-		   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click to select Alliance Insurance Company (T) Ltd.as insurer name",output50.get("MESSAGE").toString());
-		   Thread.sleep(2000);
-	}
 
-
-	
-
-	
-	
 	@When("^user Select \"([^\"]*)\" as insurance class$")
 	public void user_Select_as_insurance_class(String insuranceClass) throws Throwable {
 		

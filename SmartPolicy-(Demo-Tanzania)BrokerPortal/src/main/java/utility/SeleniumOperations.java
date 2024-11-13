@@ -12,6 +12,7 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -27,8 +28,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -41,6 +45,7 @@ public class SeleniumOperations
 	public static Hashtable<String,Object> outputparameters=new Hashtable<String,Object>();
 	public static ConfigReader config;
 	public static WebDriverWait wait1;
+	static Properties langProperties;
 
   //BrowserLaunch
 	public static Hashtable<String,Object>  browserLaunch(){  
@@ -69,6 +74,13 @@ public class SeleniumOperations
 	         driver=new EdgeDriver();*/
 	         driver.manage().window().maximize();
 	      }
+	      else if(config.getBrowserName().equalsIgnoreCase("Safari")){ 
+		        WebDriverManager.safaridriver().setup();
+		        driver = new SafariDriver();
+		    	  /* System.setProperty("webdriver.edge.driver", config.getDriverPathMicroSoft() );
+		         driver=new EdgeDriver();*/
+		         driver.manage().window().maximize();
+		      }
 	         outputparameters.put("STATUS","PASS");
 	         outputparameters.put("MESSAGE","Method Used:browserLaunch,Input Given:"+config.getBrowserName().toString());
 	    }
@@ -78,7 +90,66 @@ public class SeleniumOperations
 		}
 	    return outputparameters;
      }
-
+//SelectLanguage
+	public static void selectLanguage() throws InterruptedException {
+		if(config.getLanguageName().equalsIgnoreCase("En")){		
+		    
+			Object[] input4=new Object[1];
+			input4[0]="//*[@id='languageDropdownContainer']";
+			SeleniumOperations.actionClass(input4);
+			
+			Object[] input5=new Object[1];
+			input5[0]="//*[@data-language='En']";
+			SeleniumOperations.clickOnLogin(input5);
+			
+			Object[] input6=new Object[1];
+			input6[0]="//*[@id='btnYesLocal']";
+			SeleniumOperations.clickOnLogin(input6);
+			Thread.sleep(2000);
+			Object[] input7 = new Object[2];
+			input7[0] ="//*[@id='span_lblHi_lc']";
+			input7[1]="Hi";
+			SeleniumOperations.validation(input7);
+	      }
+	      else if(config.getLanguageName().equalsIgnoreCase("Fr")) { 
+	    	  Object[] input4=new Object[1];
+	  		input4[0]="//*[@id='languageDropdownContainer']";
+	  		SeleniumOperations.actionClass(input4);
+	  		
+	  		Object[] input5=new Object[1];
+	  		input5[0]="//*[@data-language='Fr']";
+	  		SeleniumOperations.clickOnLogin(input5);
+	  		
+	  		Object[] input6=new Object[1];
+	  		input6[0]="//*[@id='btnYesLocal']";
+	  		SeleniumOperations.clickOnLogin(input6);
+	  		Thread.sleep(2000);
+	  		Object[] input7 = new Object[2];
+	  		input7[0] ="//*[@id='span_lblHi_lc']";
+	  		input7[1]="Salut";
+	  		SeleniumOperations.validation(input7);
+	     
+	      }
+	      else if(config.getLanguageName().equalsIgnoreCase("Sw")) { 
+	    	  Object[] input4=new Object[1];
+	  		input4[0]="//*[@id='languageDropdownContainer']";
+	  		SeleniumOperations.actionClass(input4);
+	  		
+	  		Object[] input5=new Object[1];
+	  		input5[0]="//*[@data-language='Sw']";
+	  		SeleniumOperations.clickOnLogin(input5);
+	  		
+	  		Object[] input6=new Object[1];
+	  		input6[0]="//*[@id='btnYesLocal']";
+	  		SeleniumOperations.clickOnLogin(input6);
+	  		Thread.sleep(2000);
+	  		Object[] input7 = new Object[2];
+	  		input7[0] ="//*[@id='span_lblHi_lc']";
+	  		input7[1]="Habari";
+	  		SeleniumOperations.validation(input7);
+	     
+	      }
+	}
 //OpenApplication
 	 public static Hashtable<String,Object> openApplication(){   
 		 try {  
@@ -566,9 +637,9 @@ public class SeleniumOperations
     	try {
 
     		driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-    		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-     		wait1.until(ExpectedConditions.visibilityOfElementLocated( By.xpath("//*[text()='Demo Insurance Brokers (T) Limited.']")));
-    		Set<String> ids = driver.getWindowHandles();
+    		/*WebDriverWait wait1 = new WebDriverWait(driver, 30);
+     		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@dir='ltr'])[2]")));
+    		//Set<String> ids = driver.getWindowHandles();*/
 
     	Set<String> ids1 = driver.getWindowHandles();
 
@@ -684,10 +755,11 @@ public class SeleniumOperations
     	
        
     		double percentage = Double.parseDouble(commissionClearValue)*18/100;
-       DecimalFormat df = new DecimalFormat("0.0");
+       DecimalFormat df = new DecimalFormat("0.00");
        df.setRoundingMode(RoundingMode.DOWN);
        String finalCommission = df.format(percentage);
       double calculatedFinalPercent = Double.parseDouble(finalCommission);
+      System.out.println(calculatedFinalPercent);
     	 
      
         
@@ -710,7 +782,7 @@ public class SeleniumOperations
     	WebElement totalCommissionValue = driver.findElement(By.xpath(output2));
     	String totalCommissionStringValue =totalCommissionValue.getAttribute("value");
     	String clearValue2=totalCommissionStringValue.replaceAll(",", "");
-    	//System.out.println(clearValue2);
+    	System.out.println(clearValue2);
        double finalValue = Double.parseDouble(clearValue2);
        System.out.println("Total Premium/Commission Is :"+(calculatedTotalCommission==finalValue));
    	
@@ -743,26 +815,20 @@ public class SeleniumOperations
     	
     	}
     	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
-    	 
+    	
      }
      
+     public static void swahiliElement(Object[] inputparameters) {
+    	SoftAssert SoftAssert = new SoftAssert();
+    	 String xpath = (String) inputparameters[0];
+    	 String text = (String) inputparameters[1];
+    	 WebElement dashboardTitle = driver.findElement(By.xpath(xpath)); // replace with actual ID
+         //System.out.println(dashboardTitle.getText());
+         //SoftAssert.assertEquals(dashboardTitle.getText(), text);
+         SoftAssert.assertEquals(dashboardTitle.getText(), text, "fail");
+         SoftAssert.assertAll();
+ 	
+     }
  }		 
 	
 

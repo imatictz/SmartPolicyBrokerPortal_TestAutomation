@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/RiskNote-DebitNote/RiskNoteDebitNote.feature", 
-                   tags= "@All", 
+                   tags= "@IssueRiskNote", 
                    glue={"cucumberMap16RiskNoteDebitNote","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

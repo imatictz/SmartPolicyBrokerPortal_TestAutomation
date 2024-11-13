@@ -60,20 +60,31 @@ public class ConfigReader{
 	}
 		
 	public String getBrowserName() {
-	    String url = properties.getProperty("browserName");
-		if(url != null) return url;
+	    String browserName = properties.getProperty("browserName");
+		if(browserName != null) return browserName;
 		else throw new RuntimeException("browserName not specified in the Configuration.properties file.");
 	}
-		
+	
+	public String getLanguageName() {
+		String languageName = properties.getProperty("languageName");
+		if(languageName != null) return languageName;
+		else throw new RuntimeException("languageName not specified in the Configuration.properties file.");
+	}
 	public String sendUserId() {
-		String url = properties.getProperty("userId");
-		if(url != null) return url;
+		String userId = properties.getProperty("userId");
+		if(userId != null) return userId;
 		else throw new RuntimeException("userId not specified in the Configuration.properties file.");
 	}
 		
 	public String sendPassword() {
-		String url = properties.getProperty("password");
-		if(url != null) return url;
+		String password = properties.getProperty("password");
+		if(password != null) return password;
+		else throw new RuntimeException("password not specified in the Configuration.properties file.");
+	}
+	
+	public String Swahili() {
+		String password = properties.getProperty("dashboard");
+		if(password != null) return password;
 		else throw new RuntimeException("password not specified in the Configuration.properties file.");
 	}
 }

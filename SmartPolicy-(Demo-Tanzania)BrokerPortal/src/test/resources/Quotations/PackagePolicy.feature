@@ -7,17 +7,13 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "Package Policy" to search insurance type in search box
-When user select Package Policy as insurance type from dropdown
+When user select "Package Policy" as insurance types 
 
 @MandatoryFields
 Scenario: (Package Policy Quotation)Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
+When user Select "Automated Testing Company" as insurer
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user enter " Pravin Testing" as insured name
 When user select "2 Wheel Comprehensive (Private)" as insurance class
@@ -41,7 +37,8 @@ When user enter "3" as rate %
 When user enter "Testing Package Policy" as description
 When user click on insert button (AddOn)
 When user click on save button
-Then user able to view "Awaiting Receipt" as status
+When user click on Ok button to accept commission alert message
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 
@@ -49,11 +46,9 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (Package Policy Quotation)Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
-When user click on business by dropdown
-Then user select Demo User as business by
+When user Select "Automated Testing Company" as insurer
+#When user click on business by dropdown
+#Then user select Demo User as business by
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
 When user select highest sum insured checkbox
@@ -140,4 +135,5 @@ When user click on insert button (AddOn)
 When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 When user click on save button
+When user click on Ok button to accept commission alert message
 Then user able to view "Required Approval" as status

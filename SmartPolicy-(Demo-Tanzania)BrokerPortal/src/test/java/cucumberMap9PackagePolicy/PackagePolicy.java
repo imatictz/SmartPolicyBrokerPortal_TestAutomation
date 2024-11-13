@@ -31,12 +31,12 @@ public class PackagePolicy
 		}
 
 		@When("^user click on current quotations$")
-		public void user_click_on_current_quotations() 
+		public void user_click_on_current_quotations() throws InterruptedException 
 		{
 			Object[] input9=new Object[1];
 		     input9[0]="(//*[text()='Current Quotations'])[1]";
 		     SeleniumOperations.clickOnElement(input9);
-		    
+		    Thread.sleep(2000);
 		}
 
 		@When("^user click on add button$")
@@ -44,7 +44,7 @@ public class PackagePolicy
 		{Object[] input10=new Object[1];
 		input10[0]="//*[@class='bold'][text()='Add']";
 		SeleniumOperations.clickOnElement(input10);
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		
 		    
 		}
@@ -54,32 +54,15 @@ public class PackagePolicy
 		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltClassType']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 2000);
 
 		}
-		@When("^user click on select insurance type dropdown$")
-		public void user_click_on_select_insurance_type_dropdown() throws InterruptedException  
-		{    
-			
-			Object[] input11=new Object[1];
-			input11[0]="(//*[text()='Select Insurance Type'])[1]";
-			SeleniumOperations.clickOnElement(input11);  
-			Thread.sleep(3000);
-		    
-		}
-
-		@When("^user enter \"([^\"]*)\" to search insurance type in search box$")
-		public void enterInsuranceType(String insuranceType) throws Throwable 
-		{
-		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
-		    input[1]=insuranceType;
-		    SeleniumOperations.sendKeys(input);
-		    Thread.sleep(2000);
-		}
-		
-		@When ("^user select Package Policy as insurance type from dropdown$")
-		public void selectInsuranceTypeResult() throws Throwable 
-		{
-		  
-			SeleniumOperations.actionDownEnter();
+		@When("^user select \"([^\"]*)\" as insurance types$")
+		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+			Object[] input= new Object[4];
+			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
+			input[1]="//*[@class='select2-input select2-focused']";
+			input[2]=insuranceType;
+			input[3]="//*[@class='select2-match']";
+			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);
 		}
 
@@ -104,38 +87,21 @@ public class PackagePolicy
 			Thread.sleep(2000);
 		}
 
-		@When("^user click on insurer dropdown$")  
-		public void clickOnInsurerDropdown() throws Throwable 
+		@When ("^user Select \"(.*)\" as insurer$")
+		public void selectInsurer(String insurer) throws Throwable 
 		{
-		   Object[] input=new Object[1];
-		   input[0]="(//*[@class='select2-chosen'])[1]";
-		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurer dropdown",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
-		}
-
-		@When("^user enter \"([^\"]*)\" as insurer$")
-		public void enterInsurer(String insurer) throws Throwable 
-		{
-		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
-		    input[1]=insurer;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Alliance Insurance Company (T) Ltd.\" as insurer",output.get("MESSAGE").toString());
-		}
-
-		@When("^user select Alliance Insurance Company \\(T\\) Ltd\\. as insurer$")
-		public void selectInsurer() throws Throwable 
-		{
-		   Object[]input=new Object[1];
-		   input[0]="//*[@class='select2-match']";
-		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Alliance Insurance Company (T) Ltd. as insurer",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
+			Object[] input= new Object[4];
+			input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
+			input[1]="//*[@class='select2-input select2-focused']";
+			input[2]=insurer;
+			input[3]="//*[@class='select2-match']";
+			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
+			
 		}
 		
 		@When ("user select {string} as insurance type")
-		public void user_select_as_insuranceType(String insuranceType) {
+		public void user_select_as_insuranceType1(String insuranceType) {
 		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsuranceType']", "//*[@class='select2-input select2-focused']", insuranceType , "//*[@class='select2-match']", "user select {String} as insurance type", "DROPDOWN", 2000);
 
 		}
@@ -248,6 +214,7 @@ public class PackagePolicy
 			    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
 
 			   Thread.sleep(2000);
+			   SeleniumOperations.scrolldown();
 		}
 
 		@When("^user scroll up to click on addOn button$")
@@ -1017,7 +984,12 @@ public class PackagePolicy
 		    Thread.sleep(1000);
 		}
 
-
+		@When("^user click on Ok button to accept commission alert message$")
+		public void clickOnOKbuttonCommission() throws Throwable {
+	        Hashtable<String,Object> output= SeleniumOperations.alert();
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission rate alert message",output.get("MESSAGE").toString());
+			Thread.sleep(2000);
+		}
 		
 		
 		

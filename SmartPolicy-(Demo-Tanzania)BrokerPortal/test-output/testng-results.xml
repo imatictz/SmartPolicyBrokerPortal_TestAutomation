@@ -1,47 +1,2903 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="176" passed="175" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-06T09:16:50Z" name="Default suite" finished-at="2024-08-06T09:18:02Z" duration-ms="71607">
+  <suite started-at="2024-11-11T10:04:49Z" name="Default suite" finished-at="2024-11-11T12:46:25Z" duration-ms="9695654">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-08-06T09:16:50Z" name="Default test" finished-at="2024-08-06T09:18:02Z" duration-ms="71607">
-      <class name="testRunner.RunnerTestClaims">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" started-at="2024-08-06T12:16:50Z" name="setUpClass" finished-at="2024-08-06T12:16:53Z" duration-ms="2152" status="PASS">
+    <test started-at="2024-11-11T10:04:49Z" name="Default test" finished-at="2024-11-11T12:46:25Z" duration-ms="9695654">
+      <class name="testRunner.RunnerTestReports">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:04:49Z" name="setUpClass" finished-at="2024-11-11T13:04:51Z" duration-ms="1351" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@147efd9]]>
+                <![CDATA[org.testng.TestRunner@7bcdd15]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" started-at="2024-08-06T12:16:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-06T12:18:02Z" duration-ms="69384" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:04:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:05:31Z" duration-ms="40432" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["(Report Vehicle Claim) Verify user able to report claim successfully"]]>
+                <![CDATA["Verify user able to view Admin Fee Report successfully"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Claims"]]>
+                <![CDATA["Reports"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestClaims@8c3619e]" started-at="2024-08-06T12:18:02Z" name="tearDownClass" finished-at="2024-08-06T12:18:02Z" duration-ms="45" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:05:31Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:06:07Z" duration-ms="36062" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary by Charts Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:06:07Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:06:58Z" duration-ms="51059" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view AON Reports Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:06:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:07:50Z" duration-ms="51502" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Branch wise with Risk Note) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:07:50Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:08:40Z" duration-ms="50510" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Branch wise with Type) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:08:40Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:09:36Z" duration-ms="55403" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Branch wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:09:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:10:26Z" duration-ms="50104" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (by Cover Period start date) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:10:26Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:11:01Z" duration-ms="35062" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (By total premium booked for each customer) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:11:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:11:35Z" duration-ms="34446" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (By total premium booked for each insurance company cover Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:11:35Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:12:09Z" duration-ms="33655" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (By total premium booked for each insurance company) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:12:09Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:13:00Z" duration-ms="50994" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Class wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:13:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:13:48Z" duration-ms="48027" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Client type) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:13:48Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:14:36Z" duration-ms="47742" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Client wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:14:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:15:22Z" duration-ms="46662" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Client wise-Cover Period start date) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:15:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:16:17Z" duration-ms="55019" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Customer Segment) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:16:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:16:57Z" duration-ms="39808" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Insurer wise with type) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:16:57Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:17:51Z" duration-ms="53936" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Insurer wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:17:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:18:42Z" duration-ms="51428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Insurer wise-Cover Period start date)Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:18:42Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:19:36Z" duration-ms="53374" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Region wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:19:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:20:32Z" duration-ms="55683" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary (Zone) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:20:32Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:21:09Z" duration-ms="37350" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary by insurer/category (Base Currency) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:21:09Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:21:42Z" duration-ms="32988" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Business Summary(User wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:21:42Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:22:16Z" duration-ms="34603" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view claim Payment Request Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:22:16Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:23:08Z" duration-ms="51526" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Incured but not reported on time (IBNR)Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:23:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:24:05Z" duration-ms="57126" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending (Assessor wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:24:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:25:08Z" duration-ms="62712" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending (by Assigned users) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:25:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:26:09Z" duration-ms="61327" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending (Status wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:26:09Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:27:12Z" duration-ms="62558" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:27:12Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:29:45Z" duration-ms="153135" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending Report (Branch Wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:29:45Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:30:46Z" duration-ms="61004" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending Report (Covering Branch) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:30:46Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:31:49Z" duration-ms="62927" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending Report (Time taken between Accident & Reporting) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:31:49Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:32:51Z" duration-ms="61763" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending Report - no activity for last 7 Days Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:32:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:33:52Z" duration-ms="61083" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending Report(Covering Branch) Not Initiated To Insurer Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:33:52Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:34:54Z" duration-ms="62299" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Pending Report(Covering Branch) Time Taken to Initiate to Insurer Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:34:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:35:44Z" duration-ms="50035" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Ratio Report(Branch wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:35:44Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:36:35Z" duration-ms="51187" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Ratio Report(Client wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:36:35Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:37:25Z" duration-ms="49529" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Ratio Report(Insurer wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:37:25Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:38:15Z" duration-ms="50559" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Ratio Report(Region wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:38:15Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:39:07Z" duration-ms="51296" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Ratio Report(Zone wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:39:07Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:40:08Z" duration-ms="61380" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Register (Branch Wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:40:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:41:10Z" duration-ms="62198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Register Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:41:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:41:57Z" duration-ms="47217" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Rejected Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:41:57Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:43:00Z" duration-ms="62639" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Report (Retrenchment wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:43:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:44:02Z" duration-ms="61741" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to viewClaims Settled Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:44:02Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:45:04Z" duration-ms="61906" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Settled Report (Branch Wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:45:04Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:46:05Z" duration-ms="61687" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Settled Report (Time Taken between DV & Settlement) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:46:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:47:03Z" duration-ms="57481" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Settled Report - Life Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:47:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:48:02Z" duration-ms="59616" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Claims Settlement beyond 45 Days Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:48:02Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:49:03Z" duration-ms="60683" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Comesa Booking Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:49:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:49:59Z" duration-ms="55432" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commision Rebate Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:49:59Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:50:38Z" duration-ms="39487" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Allocated Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:50:38Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:51:13Z" duration-ms="35412" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Receivable Ageing Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:51:13Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:51:55Z" duration-ms="41247" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Receivable Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:51:55Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:52:35Z" duration-ms="40673" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Receivable Report (With VAT Commission) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:52:35Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:53:16Z" duration-ms="40451" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Receivable Report(WH TAX) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:53:16Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:54:08Z" duration-ms="52092" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Refundable Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:54:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:54:59Z" duration-ms="51068" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Statement Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:54:59Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T13:55:50Z" duration-ms="50592" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Commission Statement Report 1 Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T13:55:50Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:02:40Z" duration-ms="410549" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view CSV Data Extraction Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:02:40Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:08:34Z" duration-ms="354190" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Customer Sales Statistics Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:08:34Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:09:39Z" duration-ms="65000" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:09:39Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:10:41Z" duration-ms="61905" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (Borrower Wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:10:41Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:11:46Z" duration-ms="64924" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (Broker Partner Business) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:11:46Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:12:52Z" duration-ms="65610" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (Business By) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:12:52Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:14:55Z" duration-ms="123165" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (Cover Period start date) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:14:55Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:15:41Z" duration-ms="46171" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (Different Policy Issued Date & TIRA Issued Date) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:15:41Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:16:43Z" duration-ms="62291" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (Insurer wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:16:43Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:17:44Z" duration-ms="61068" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (User wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:17:44Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:18:48Z" duration-ms="63072" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (With First Loss Payee) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:18:48Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:19:49Z" duration-ms="61795" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (With Levy) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:19:49Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:20:51Z" duration-ms="61198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (With Reg No.) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:20:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:21:53Z" duration-ms="62547" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes (With Stamp Duty) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:21:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:22:58Z" duration-ms="64856" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes Online Channels) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:22:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:24:00Z" duration-ms="62029" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes(Lien Clause) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:24:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:25:02Z" duration-ms="61631" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover Notes(New business & renewals Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:25:02Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:26:10Z" duration-ms="68045" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Cover/Notes (Expiry Date wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:26:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:26:59Z" duration-ms="49693" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Credit Note Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:26:59Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:27:58Z" duration-ms="58597" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Debit Notes/ Tax Invoices Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:27:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:28:51Z" duration-ms="53555" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Debit Notes/ Tax Invoices(Un-Allocated/Allocated Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:28:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:29:49Z" duration-ms="57884" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Debit Notes/ Tax Invoices(with Levy) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:29:49Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:30:27Z" duration-ms="37951" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Payments Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:30:27Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:31:17Z" duration-ms="49711" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Receipts Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:31:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:32:09Z" duration-ms="51915" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Receipts (Business Type) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:32:09Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:33:00Z" duration-ms="51199" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Receipts (Insurer wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:33:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:34:05Z" duration-ms="64696" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Daily Remittance Report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:34:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:34:42Z" duration-ms="37197" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Debit Note Ageing Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:34:42Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:35:22Z" duration-ms="39560" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Debtors Age Analysis report Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:35:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:36:08Z" duration-ms="46360" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Debtors Analysis Report(by date) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:36:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:36:56Z" duration-ms="47626" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Details of the Policy issued on Credit Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:36:56Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:37:31Z" duration-ms="35909" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Exchange Rate Report For Insurer Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:37:31Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:38:14Z" duration-ms="42784" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Expired Risk Notes Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:38:14Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:38:42Z" duration-ms="27806" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Financial Statement - Balance Sheet Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:38:42Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:39:10Z" duration-ms="27487" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Financial Statement - Balance Sheet(Summarized) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:39:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:39:37Z" duration-ms="27306" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Financial Statement - Profit and Loss account Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:39:37Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:40:03Z" duration-ms="26260" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Financial Statement - Profit and Loss account(Summarized) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'user able to view Financial Statement - Profit and Loss account(Summarized) in pdf format' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
+public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'user able to view Financial Statement - Profit and Loss account(Summarized) in pdf format' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
+public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at jdk.internal.reflect.GeneratedMethodAccessor116.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:40:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:41:33Z" duration-ms="90236" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Financial Statement - Trial Balance Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:41:33Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:42:01Z" duration-ms="27664" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Front Office - Daily Performance Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:42:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:42:37Z" duration-ms="35861" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Front Office - Overall Performance Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:42:37Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:43:10Z" duration-ms="32845" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view General Ledger Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:43:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:44:00Z" duration-ms="49967" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Ledger (Client/Supplier) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:44:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:44:40Z" duration-ms="40578" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Ledger (Insurer) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:44:40Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:45:25Z" duration-ms="44644" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view List of Policies Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:45:25Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:46:03Z" duration-ms="37862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view List Policies (Customer wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:46:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:46:37Z" duration-ms="33693" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view MIS - Performance Report (Quarterly) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:46:37Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:47:07Z" duration-ms="30564" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view MIS - Performance Report (Yearly) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:47:07Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:47:48Z" duration-ms="40814" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Mobile Money Transaction Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:47:48Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:48:34Z" duration-ms="46191" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Mobile Money Transaction (User Wise) Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:48:34Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:49:08Z" duration-ms="34394" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Modified / Endorsed Cover Notes Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:49:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:49:37Z" duration-ms="28734" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Motor Schedule Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:49:37Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:50:23Z" duration-ms="45884" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Multi Policies Quotation[REPORT51] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:50:23Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:51:09Z" duration-ms="46111" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Not Renewed Policies[REPORT146] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:51:09Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:51:39Z" duration-ms="30212" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Outstanding Commission Ageing Report[REPORT124] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:51:39Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:52:32Z" duration-ms="52735" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Outstanding Commission Statement[REPORT123] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:52:32Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:53:02Z" duration-ms="29652" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Outstanding Premium Ageing Report(Details)[REPORT216] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:53:02Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:53:31Z" duration-ms="29557" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Outstanding Premium Report(Business Group)[REPORT209] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:53:31Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:54:24Z" duration-ms="52653" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Payment Cheque Register[REPORT108] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:54:24Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:55:10Z" duration-ms="45696" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Pending Quotation[REPORT98] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:55:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:55:58Z" duration-ms="48243" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Performance Incentive Report[REPORT64] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:55:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:56:58Z" duration-ms="60144" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Policy Cancellation[REPORT56] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:56:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:58:03Z" duration-ms="65317" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Policy Push Error Records[REPORT196] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:58:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:59:10Z" duration-ms="66337" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Policy Renewable[REPORT169] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:59:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T14:59:43Z" duration-ms="33513" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Policy Retention Report (Quarterly)[REPORT167] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T14:59:43Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:00:18Z" duration-ms="34226" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Policy Retention Report (Yearly)[REPORT168] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:00:18Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:01:13Z" duration-ms="55584" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Premium Financed Risk Notes[REPORT68] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:01:13Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:01:45Z" duration-ms="32293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Print Multiple Certificate[REPORT229] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:01:45Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:02:16Z" duration-ms="30956" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Print Multiple Policy Documents[REPORT_PD] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:02:16Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:02:48Z" duration-ms="31717" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Print Multiple Risk Notes[REPORT02] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:02:48Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:03:24Z" duration-ms="35909" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Print Multiple TIRA Stickers (New)[REPORT147] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:03:24Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:04:03Z" duration-ms="38640" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Regulatory Document Inventory[REPORT189] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:04:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:05:01Z" duration-ms="58855" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Renewal List[REPORT14] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:05:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:06:02Z" duration-ms="60776" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Renewal List (User wise)[REPORT221] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:06:02Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:06:47Z" duration-ms="44494" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Renewal Reminder Letter[REPORT15] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:06:47Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:07:43Z" duration-ms="56734" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Show Expired, Active or Renewed Risk Notes.[REPORT62] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:07:43Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:08:33Z" duration-ms="49355" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Statement (Client-wise)[REPORT09] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:08:33Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:18:33Z" duration-ms="600337" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Statement (Insurer-wise) Comprehensive[REPORT59] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:18:33Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:20:13Z" duration-ms="100085" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Statement (Insurer-wise) Kenya[REPORT59] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:20:13Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:20:51Z" duration-ms="38031" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Statement (Insurer-wise)Type 1[REPORT08] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:20:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:21:31Z" duration-ms="39854" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Statement (Insurer-wise)Type 2[REPORT44] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:21:31Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:22:10Z" duration-ms="38857" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Statement (Insurer-wise)Type 3[REPORT44] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:22:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:23:00Z" duration-ms="50018" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Statement Statement (Client-wise) - on Risk Note[REPORT217] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:23:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:23:53Z" duration-ms="52827" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Sticker Replacement[REPORT186] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:23:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:24:22Z" duration-ms="29200" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Supplier Invoice Ageing Report[REPORT105] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:24:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:25:01Z" duration-ms="39176" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Supplier Statement[REPORT104] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:25:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:25:46Z" duration-ms="44801" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Targets[REPORT117] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:25:46Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:26:29Z" duration-ms="42736" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Targets (Zone wise)[REPORT159] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:26:29Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:27:11Z" duration-ms="42142" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Targets (Zone wise) BY Policy Count[REPORT166] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:27:11Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:27:54Z" duration-ms="43369" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Targets By Policy Count[REPORT165] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:27:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:28:33Z" duration-ms="38691" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA MIS Report[REPORT79] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:28:33Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:29:11Z" duration-ms="38265" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Broker Premium Remittance Statement[REPORT40] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:29:11Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:29:50Z" duration-ms="38790" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Broker Premium Remittance Statement(Quarterly)[REPORT80] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:29:50Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:30:26Z" duration-ms="36077" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Brokers Premium Collection Report (Quarterly)[REPORT48] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:30:26Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:31:04Z" duration-ms="38172" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Commission Income Statemnt (Quarterly)[REPORT42] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:31:04Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:31:38Z" duration-ms="33908" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Commission Income Statemnt (Yearly)[REPORT41] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:31:38Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:32:17Z" duration-ms="38877" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Commission IncomeStatement (Monthly)[REPORT100] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:32:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:32:53Z" duration-ms="36308" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Payables Outstanding to Insurers[REPORT38] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:32:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:33:31Z" duration-ms="37559" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Payables Outstanding to Insurers (Quaterly)[REPORT115] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:33:31Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:34:10Z" duration-ms="38948" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Premium Booked Statement (Monthly))[REPORT148] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:34:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:34:49Z" duration-ms="39188" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Premium Booked Statement (Quarterly)[REPORT115] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:34:49Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:35:25Z" duration-ms="35819" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Premium Booked Statement (Yearly)[REPORT35] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:35:25Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:36:05Z" duration-ms="40515" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly)[REPORT39] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:36:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:36:43Z" duration-ms="37649" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Yearly)[REPORT37] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:36:43Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:37:23Z" duration-ms="39798" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view TIRA Sticker Inventory[REPORT93] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:37:23Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:37:50Z" duration-ms="27447" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Total Outstanding Payments (Client wise)[REPORT214] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:37:50Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:38:37Z" duration-ms="47183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Total Outstanding Payments (Detailed)[REPORT29] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:38:37Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:39:12Z" duration-ms="34552" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Total Outstanding Payments (Summarized)[REPORT22] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:39:12Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:40:01Z" duration-ms="48814" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Total Outstanding Receipts (Detailed)[REPORT28] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:40:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:40:28Z" duration-ms="27658" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Total Outstanding Receipts (Summarized)[REPORT21] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:40:28Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:41:07Z" duration-ms="38432" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Unallocated Credit Note[REPORT236] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:41:07Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:41:47Z" duration-ms="40060" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Unallocated Payments[REPORT24] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:41:47Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:42:31Z" duration-ms="43818" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Unallocated Receipts[REPORT23] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:42:31Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:43:26Z" duration-ms="54717" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Unrequested Customer Tax Invoice Transactions[REPORT133] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:43:26Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:43:54Z" duration-ms="28469" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view User Details[REPORT219] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:43:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:44:21Z" duration-ms="26989" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view VAT submission Report[REPORT109] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:44:21Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:44:58Z" duration-ms="37476" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view VAT submission Report for Insurance Companies[REPORT49] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:44:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:45:37Z" duration-ms="38680" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view VAT submission Report for Insurance Companies 1[REPORT54] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:45:37Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:46:25Z" duration-ms="47663" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user able to view Vouchers Report[REPORT106] Report successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Reports"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestReports@3ad2e17]" started-at="2024-11-11T15:46:25Z" name="tearDownClass" finished-at="2024-11-11T15:46:25Z" duration-ms="25" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestClaims -->
+      </class> <!-- testRunner.RunnerTestReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

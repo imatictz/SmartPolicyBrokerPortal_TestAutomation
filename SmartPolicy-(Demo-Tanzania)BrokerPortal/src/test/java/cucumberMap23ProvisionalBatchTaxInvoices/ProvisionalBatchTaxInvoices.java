@@ -1,13 +1,11 @@
-package cucumberMap22ProvisionalBatchTaxInvoices;
+package cucumberMap23ProvisionalBatchTaxInvoices;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import itl.Itl;
 import utility.SeleniumOperations;
 
 public class ProvisionalBatchTaxInvoices {
-
 	@When("user navigate on operation dropdown menu")
 	public void user_navigate_on_operation_dropdown_menu() throws Throwable {
 	    
@@ -48,7 +46,7 @@ public class ProvisionalBatchTaxInvoices {
 	public void user_click_on_fetch_button() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='BtnFetch']", "user click on fetch button", "CLICK", 3000);
 	Thread.sleep(3000);
-	    Object[] input = new Object[1];
+	  /*  Object[] input = new Object[1];
 	    input[0]="//*[@id='grdBatchTaxInvoice']/tbody/tr/td[10]";
 	    SeleniumOperations.CalculateSumOfColumn(input);
 	    /*Object[] input = new Object[2]; selectall BtnFetch
@@ -114,7 +112,4 @@ public class ProvisionalBatchTaxInvoices {
 	}
 
 
-
-
-	
 }

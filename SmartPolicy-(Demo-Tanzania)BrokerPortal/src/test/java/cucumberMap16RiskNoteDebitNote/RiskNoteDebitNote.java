@@ -44,7 +44,7 @@ public class RiskNoteDebitNote {
 		input[0]="//*[@id='MainContent_repIQNM_btnAppTeller_0']";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on capture receipt icon",output.get("MESSAGE").toString());
-		
+		Thread.sleep(3000);
 	}
 	
 	@When("^user click on mode dropdown$")
@@ -143,6 +143,7 @@ public class RiskNoteDebitNote {
 	    input[0]="//*[@id='btnProceed']";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on proceed button",output.get("MESSAGE").toString()); 
+	    Thread.sleep(2000);
 	}
 
 	@When("^user click on issue risk note option$")
@@ -151,6 +152,7 @@ public class RiskNoteDebitNote {
 		input[0]="//*[@id='btnRisknote']";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on issue risk note option",output.get("MESSAGE").toString()); 
+		Thread.sleep(2000);
 	}
 
 	@When("^user click on Yes button for confirmation$")
@@ -159,6 +161,7 @@ public class RiskNoteDebitNote {
 		input[0]="//*[@id='btnProcedeRiskNote']";
 	    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Yes button for confirmation",output.get("MESSAGE").toString());  
+		Thread.sleep(2000);
 	}
 
 	@Then("^user able to view \"([^\"]*)\" as status$")
@@ -705,6 +708,20 @@ public class RiskNoteDebitNote {
 	public void user_able_to_view_Cancel_Advice_to_Insurer_report() throws Throwable {
 	   
 	}
+	
+	@When("user enter {string} as quote number")
+	public void user_enter_as_quote_number(String quoteNo) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
+	}
+	
+	@When("^user click on search button$")
+	 public void user_click_on_search_button_quoteNo() throws Throwable {
+		 Object[] input=new Object[1];
+		 input[0]="//*[@id='button_btnSearch_lc']";
+		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	 }
 }
 
 	 

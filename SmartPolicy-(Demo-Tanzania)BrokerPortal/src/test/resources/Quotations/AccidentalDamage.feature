@@ -7,15 +7,15 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user select "accidental Damage" as insurance type 
+When user select "Accidental Damage" as insurance type 
 
 @MandatoryFields
 Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing as client name
-When user Select "Alliance Insurance Company (T) Ltd." as insurer
+When user Select "Automated Testing Company" as insurer
 When user Select "Standard Rate" as insurance class
-When user enter "100000" as sum insured
+When user enter "100000" as sum insured               
 When user enter "5" % as override%
 When user enter "Accidental Damage Quotation Testing" as description
 When user click on compute button
@@ -29,16 +29,16 @@ When user enter "Accidental Damage Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission alert
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 @AllFields
 Scenario: (Accidental Damage Quotation) Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing as client name
-When user Select "Alliance Insurance Company (T) Ltd." as insurer
-When user click on business by dropdown
-Then user select Demo User as business by
+When user Select "Automated Testing Company" as insurer
+#When user click on business by dropdown
+#Then user select Demo User as business by
 When user enter "1425DT10" as unique property identification
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
