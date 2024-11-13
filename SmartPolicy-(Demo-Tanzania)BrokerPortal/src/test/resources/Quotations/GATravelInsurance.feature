@@ -7,9 +7,7 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "GA Travel Insurance" to search insurance type in search box
-When user select GA Travel Insurance as insurance type from dropdown
+When user select "GA Travel Insurance" as insurance type 
 
 @MandatoryFields
 Scenario: (GA Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
@@ -39,7 +37,7 @@ When user enter "GA Travel Insurance Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission alert message
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 

@@ -25,10 +25,11 @@ public class GATravelInsurance {
 	}
 
 	@When("^user click on current quotations$")
-	public void user_click_on_current_quotations() {
+	public void user_click_on_current_quotations() throws InterruptedException {
 		Object[] input9=new Object[1];
 	    input9[0]="(//*[text()='Current Quotations'])[1]";
 	    SeleniumOperations.clickOnElement(input9);
+	    Thread.sleep(2000);
 	}
 
 	@When("^user click on add button$")
@@ -39,28 +40,15 @@ public class GATravelInsurance {
 	    Thread.sleep(8000);
 	}
 
-	@When("^user click on select insurance type dropdown$")
-	public void user_click_on_select_insurance_type_dropdown() throws InterruptedException  {    
-		Object[] input11=new Object[1];
-		input11[0]="(//*[text()='Select Insurance Type'])[1]";
-		SeleniumOperations.clickOnElement(input11);  
-		Thread.sleep(3000);
-	}
-
-	@When("^user enter \"([^\"]*)\" to search insurance type in search box$")
-	public void enterInsuranceType(String insuranceType) throws Throwable {
-	    Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
-	    input[1]=insuranceType;
-	    SeleniumOperations.sendKeys(input);
-	    Thread.sleep(2000);
-	}
-	
-	@When ("^user select GA Travel Insurance as insurance type from dropdown$")
-	public void selectInsuranceTypeResult() throws Throwable {
-		Object[] input11=new Object[1];
-		input11[0]="(//*[@class='select2-match'])";
-		SeleniumOperations.clickOnElement(input11);
+	@When("^user select \"([^\"]*)\" as insurance type$")
+	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+		Object[] input= new Object[4];
+		input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
+		input[1]="//*[@class='select2-input select2-focused']";
+		input[2]=insuranceType;
+		input[3]="//*[@class='select2-match']";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 		Thread.sleep(5000);
 	}
 

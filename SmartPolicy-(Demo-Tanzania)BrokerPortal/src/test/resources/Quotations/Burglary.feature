@@ -7,18 +7,14 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "Burglary/Theft" to search insurance type in search box
-When user select Burglary/Theft as insurance type from dropdown
+When user select "Burglary/Theft" as insurance type 
 
 @MandatoryFields
 Scenario: (Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user enter "Pravin Testing Broker" as client name in quotation
 When user select client name as Pravin Testing
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
+When user select "Automated Testing Company" as insurer
 When user select "Standard Rate" as insurance class
 When user enter "2500000" as sum insured
 When user enter "Burglary/Theft Quotation Testing" as description
@@ -37,7 +33,7 @@ When user click on insert button (AddOn)
 #When user select FinalTester as broker partner name
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 @AllFields
@@ -45,11 +41,9 @@ Scenario: (Burglary Quotation) Verify user able to enter all fields and save quo
 
 When user enter "Pravin Testing Broker" as client name in quotation
 When user select client name as Pravin Testing
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
-When user click on business by dropdown
-Then user select Demo User as business by
+When user select "Automated Testing Company" as insurer
+#When user click on business by dropdown
+#Then user select Demo User as business by
 When user enter "1425DT10" as unique property identification
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
@@ -92,5 +86,5 @@ Then user click on Re-Compute premium
 #When user enter "FinalTester" as broker partner name
 #When user select FinalTester as broker partner name
 When user click on save button
-#When user click on Ok button to accept commission rate alert message
+When user click on Ok button to accept commission rate alert message
 Then user able to view "Required Approval" as status

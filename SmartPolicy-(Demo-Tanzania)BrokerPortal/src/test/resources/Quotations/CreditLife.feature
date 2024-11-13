@@ -7,17 +7,13 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "Credit life" to search insurance type in search box
-When user select Credit life as insurance type from dropdown
+When user select "Credit life" as insurance type 
 
 @MandatoryFields
 Scenario: (Credit Life Quotation)Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing" as insured name
 When user select date of birth
 When user enter "2000000" as loan amount
@@ -38,18 +34,16 @@ When user enter "Credit Life Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 @AllFields
 Scenario: (Credit Life Quotation)Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
-When user click on business by dropdown
-Then user select Demo User as business by
+When user select "Automated Testing Company" as insurer
+#When user click on business by dropdown
+#Then user select Demo User as business by
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
 When user select on RI per class checkbox
@@ -82,7 +76,7 @@ When user enter "180" as period in month
 When user click on client type dropdown
 When user enter "Business Banking" as client type
 When user select Business Banking as client type
-When user enter "2.25" as override% 
+#When user enter "2.25" as override% 
 When user enter "5" as override% for Retrenchment Rate %
 When user enter "1200" as adjust premium
 When user click on compute button

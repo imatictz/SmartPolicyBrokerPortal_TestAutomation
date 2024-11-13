@@ -4,6 +4,9 @@
   <test  name="Test1">
     <classes>
 
+     <class name="testRunner.RunnerTestAccidentalDamageQuotation"/>
+
+
      <!-- <class name="testRunner.RunnerTestMoneyInsuranceQuotation"/>-->
       <class name="testRunner.RunnerTestAccidentalDamageQuotation"/>
 
@@ -20,6 +23,7 @@
       <class name="testRunner.RunnerTestMedicalQuotation"/>
       <class name="testRunner.RunnerTestMoneyInsuranceQuotation"/>
       <class name="testRunner.RunnerTestPackagePolicyQuotation"/> </exclude></packages>
+
       
       
 

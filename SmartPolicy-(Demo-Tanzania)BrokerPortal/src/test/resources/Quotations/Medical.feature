@@ -7,17 +7,13 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "Medical" to search insurance type in search box
-When user select Medical as insurance type from dropdown
+When user select "Medical" as insurance type 
 
 @MandatoryFields
 Scenario: (Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
+When user Select "Automated Testing Company" as insurer
 When user select "Standard Rate" as insurance class
 When user enter "01/01/2000" as date of birth
 When user select "Self" as relationship
@@ -32,19 +28,15 @@ When user enter "1.5" as rate%
 When user enter "Medical Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
-#When user click on Ok button to accept commission alert message
-Then user able to view "Awaiting Receipt" as status
+When user click on Ok button to accept commission alert message
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 @AllFields
 Scenario: (Medical Quotation) Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user select Alliance Insurance Company (T) Ltd. as insurer
-When user click on business by dropdown
-Then user select Demo User as business by
+When user Select "Automated Testing Company" as insurer
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
 When user select on RI per class checkbox
@@ -63,7 +55,7 @@ When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
 When user select "Standard Rate" as insurance class
 When user enter "01/01/2000" as date of birth
-When user enter "Birth Certificate" as ID type
+When user select "Birth Certificate" as ID type
 When user enter "YTG1220S02" as ID number
 When user select "Self" as relationship
 When user enter "600000" as sum assured
@@ -97,5 +89,5 @@ When user click on insert button (AddOn)
 When user enter "702.3" as other fee
 When user enter "10" as discount on commission %
 When user click on save button
-#When user click on Ok button to accept commission alert message
-Then user able to view "Awaiting Receipt" as status
+When user click on Ok button to accept commission alert message
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status

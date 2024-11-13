@@ -135,6 +135,16 @@ public class Itl {
 		}
 	}
 	
+	public static void CustomUiElementValidation(String xpath,String text,String strElementType,Integer intThreadSleepTime) throws InterruptedException {
+		if (strElementType =="UiEleVALIDATION") {
+			Object[] input = new Object[2];
+	        input[0] = xpath;
+	        input[1] =text;
+	        SeleniumOperations.swahiliElement(input);
+	        Thread.sleep(intThreadSleepTime);
+		}
+	}
+	
 	
 	
 	

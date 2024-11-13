@@ -67,7 +67,7 @@ public class Claims {
 	 public void user_click_on_report_claim_umbrella_like_button() throws Throwable {
 		    Itl.CustomClickEvent("//*[@id='MainContent_repICNM_btnClaim_0']", "user click on report claim umbrella like button", "CLICK", 5000);
 	        SeleniumOperations.scrolldown();
-	        Thread.sleep(2000);
+	        Thread.sleep(4000);
 	 }
 
 	 @When("user enter {string} as date of loss\\/Accident")
@@ -142,5 +142,36 @@ public class Claims {
 		    Itl.CustomSendEvent("//*[@id='MainContent_txtAcciDate']", dateOfDeathIllnesOthers, "user enter {string} as date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);	
 
      }
+     @When("user click on save button")
+     public void user_click_on_save_button() throws InterruptedException {
+         Itl.CustomClickEvent("//*[@id='MainContent_btnSave']", "user click on save button", "CLICK", 2000);
+     }
+     @Then("user able to view {string} as status")
+     public void user_able_to_view_as_status(String status) throws InterruptedException {
+         Itl.CustomValidationEvent("//*[@id='MainContent_gridCLMGDetails_Label2_1']", status, "user able to view {string} as status", "VALIDATION", 0);
+     }
+     @When("user click on options menu")
+     public void user_click_on_options_menu() throws InterruptedException {
+         Itl.CustomClickEvent("(//*[@class='btn default dropdown-toggle'])[1]", "user click on options menu", "CLICK", 2000);
+
+     }
+     @When("user click on report to insurer option")
+     public void user_click_on_report_to_insurer_option() throws InterruptedException {
+         Itl.CustomClickEvent("(//*[@class='IntimateToInsurer'])[1]", "user click on report to insurer option", "CLICK", 2000);
+
+     }
+     @When("user click on yes,report button for confirmation")
+     public void user_click_on_yes_report_button_for_confirmation() throws InterruptedException {
+         Itl.CustomClickEvent("//*[@id='btnIntimateToInsurer']", "user click on yes,report button for confirmation", "CLICK", 2000);
+
+     }
+     @When("^user click on fetch button$")
+	 public void user_click_on_fetch_button() throws Throwable {
+		 Object[] input7=new Object[1];
+		 input7[0]="//*[@id='btnFetch']";
+		 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on fetch button",output.get("MESSAGE").toString());
+		 Thread.sleep(4000);
+	 }
 
 }

@@ -33,10 +33,11 @@ public class Vehicle
 		}
 
 		@When("^user click on current quotations$")
-		public void user_click_on_current_quotations() 
+		public void user_click_on_current_quotations() throws InterruptedException 
 		{Object[] input9=new Object[1];
 		input9[0]="(//*[text()='Current Quotations'])[1]";
 		SeleniumOperations.clickOnElement(input9);
+		Thread.sleep(2000);
 		    
 		}
 
@@ -49,34 +50,16 @@ public class Vehicle
 		    
 		}
 
-		@When("^user click on select insurance type dropdown$")
-		public void user_click_on_select_insurance_type_dropdown() throws InterruptedException  
-		{    
-		
-			Object[] input11=new Object[1];
-			input11[0]="(//*[text()='Select Insurance Type'])[1]";
-			SeleniumOperations.clickOnElement(input11);  
-			Thread.sleep(4000);
-			
-		    
-		}
-
-		@When("^user enter \"([^\"]*)\" to search insurance type in search box$")
-		public void user_enter_to_search_insurance_type_in_search_box(String insuranceType) throws InterruptedException 
-		{Object[] input12=new Object[2];
-		input12[0]="//*[@class='select2-input select2-focused']";
-		input12[1]=insuranceType;
-		SeleniumOperations.sendKeys(input12);
-		Thread.sleep(4000);
-		}
-	 @When("^user select vehicle as insurance type from dropdown$")
-		public void selectVehicleAsInsuranceType() throws Throwable
-		{
-		   Object[] input1=new Object[1];
-		   input1[0]="(//*[@class='select2-match'])[1]";
-		   SeleniumOperations.clickOnElement(input1);
-			
-			
+		@When("^user select \"([^\"]*)\" as insurance types$")
+		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+			Object[] input= new Object[4];
+			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
+			input[1]="//*[@class='select2-input select2-focused']";
+			input[2]=insuranceType;
+			input[3]="//*[@class='select2-match']";
+			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
+			Thread.sleep(5000);
 		}
 
 	 @When("^user enter \"([^\"]*)\" as client name in vehicle quotation$")
@@ -98,50 +81,31 @@ public class Vehicle
 			   input1[0]="//*[@id='MainContent_txtClientName']";
 			   Hashtable<String, Object> output = SeleniumOperations.actionDownEnter();
 			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Pravin Testing as client name",output.get("MESSAGE").toString());
-			   Thread.sleep(2000);
+			   Thread.sleep(4000);
 		}
 
-	 @When ("^user click on insurer dropdown$")
-	 public void selectInsurer() throws InterruptedException
-	 {
-		 Object[] input1=new Object[1];
-		   input1[0]="(//*[@class='select2-chosen'])[2]";
-		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurer dropdown",output.get("MESSAGE").toString());
-		   Thread.sleep(5000);
-			 
-	 }
-	
-	 @When("^user enter \"([^\"]*)\" as insurer$")
-	 public void enterInsurer(String insurer) throws Throwable 
-	 {
-		 Object[] input=new Object[2];
-			input[0]="(//*[@class='select2-input select2-focused'])";
-			input[1]=insurer;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
-			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Alliance Insurance Company (T) Ltd.\" as insurer",output.get("MESSAGE").toString());
+	 @When ("^user Select \"(.*)\" as insurer$")
+		public void selectInsurer(String insurer) throws Throwable 
+		{
+			Object[] input= new Object[4];
+			input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
+			input[1]="//*[@class='select2-input select2-focused']";
+			input[2]=insurer;
+			input[3]="//*[@class='select2-match']";
+			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
 			Thread.sleep(2000);
-	 }
+		}
 
-	 @When("^user click on Alliance Insurance Company \\(T\\) Ltd\\. as insurer$")
-	 public void clickOnInsurerCompany() throws Throwable
-	 {
-		 Object[] input1=new Object[1];
-		   input1[0]="//*[@class='select2-match']";
-		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Alliance Insurance Company (T) Ltd. as insurer",output.get("MESSAGE").toString());
-		   Thread.sleep(2000);
-	 }
-
-	 @When("^user click on motor type dropdown$")
-	 public void clickOnMotorTypeDropdown() throws Throwable
+	 @When ("^user click on motor type dropdown$")
+	 public void clickOnMotorType() throws Throwable 
 	 {
 		 Object[] input1=new Object[1];
 		   input1[0]="//*[@id='s2id_MainContent_cmbMotorType']";
 		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on motor type dropdown",output.get("MESSAGE").toString());
 	 }
-
+	 
 	 @When("^user enter \"([^\"]*)\" as motor type$")
 	 public void enterMotorType(String motorType) throws Throwable 
 	 {
@@ -163,7 +127,7 @@ public class Vehicle
 
 	    @When ("user select {string} as insurance type")
 		public void user_select_as_insuranceType(String insuranceType) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltCoverType']", "//*[@class='select2-input select2-focused']", insuranceType , "//*[@class='select2-match']", "user select {String} as insurance type", "DROPDOWN", 3000);
+		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltCoverType']", "//*[@class='select2-input select2-focused']", insuranceType , "//*[@class='select2-match']", "user select {String} as insurance type", "DROPDOWN", 5000);
 
 		}
 	
@@ -196,7 +160,7 @@ public class Vehicle
 
 	 @When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltClassType']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 3000);
+		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltClassType']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 4000);
 
 
 		}
@@ -269,7 +233,7 @@ public class Vehicle
 	 public void clickOnVehicleTypeDropdown() throws Throwable 
 	 {
 		 Object[] input1=new Object[1];
-		   input1[0]="(//*[@class='select2-chosen'])[25]";
+		   input1[0]="//*[@id='s2id_MainContent_cmbFltType']";
 		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on vehicle type dropdown",output.get("MESSAGE").toString());
 	 }
@@ -320,7 +284,7 @@ public class Vehicle
 	 public void clickOnFuelTypeDropdown() throws Throwable 
 	 {
 		 Object[] input1=new Object[1];
-		   input1[0]="(//*[@class='select2-chosen'])[27]";
+		   input1[0]="//*[@id='s2id_MainContent_cmbFuelType']";
 		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on fuel type dropdown",output.get("MESSAGE").toString());
 		   Thread.sleep(2000);
@@ -452,9 +416,9 @@ public class Vehicle
 		 
 		    Itl.CustomClickEvent("//*[@id='btnInsert']", "user click on insert button \\\\(Policy Information\\\\)", "CLICK", 2000);
  
-		 //  Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
+		  // Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
 
-		   
+		  // SeleniumOperations.scrollUp();
 	 }
 	 
 	 @When ("^user click on OK button for commission alert$")

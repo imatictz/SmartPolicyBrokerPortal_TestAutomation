@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
                    glue={"cucumberMap","MyHooks"}, 
 
 		           features="src/test/resources/Quotations/MoneyInsuranceCover.feature",     
-                   tags= "@MandatoryFields", 
+                   tags= "@All", 
                    glue={"cucumberMap1MoneyInsuranceCover","MyHooks"}, 
 
                    monochrome=true,   

@@ -12,7 +12,7 @@ import utility.SeleniumOperations;
 public class Hookable {
 	@Before(order=0)
 	public void before(Scenario Scenario) throws UnknownHostException{   
-		HTMLReportGenerator.TestSuiteStart("C:\\TestResult\\ReportsReTesting100.html","SmartPolicy");
+		HTMLReportGenerator.TestSuiteStart("C:\\TestResult\\TestReport-Demo.html","SmartPolicy");
 		HTMLReportGenerator.TestCaseStart(Scenario.getName(),Scenario.getStatus().toString());
 		System.out.println("--------------------Scenario Start---------------------");
 	}
@@ -49,12 +49,26 @@ public class Hookable {
 	}
 	 	
 	@Before(order=5)
-    public void clickOnLoginButton(){
+    public void clickOnLoginButton() throws InterruptedException{
 	    Object[] input4=new Object[1];
 		input4[0]="//*[text()='Login']";
 		SeleniumOperations.clickOnLogin(input4);
-    } 
+		Thread.sleep(2000);
+	} 
 	
+	@Before(order=6)
+	public void selectLanguage() throws InterruptedException {
+		SeleniumOperations.selectLanguage();
+	}
+	
+
+
+	@After(order=1)
+	public void browserColse() {
+		SeleniumOperations.browserColse();
+
+	}
+
 
 	/*@After(order=1)
 	public void browserClose() {
@@ -67,4 +81,5 @@ public class Hookable {
 
 
 	}*/
+
 }

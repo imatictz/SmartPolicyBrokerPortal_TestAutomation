@@ -31,12 +31,12 @@ public class AccidentalDamage
 		}
 
 		@When("^user click on current quotations$")
-		public void user_click_on_current_quotations() 
+		public void user_click_on_current_quotations() throws InterruptedException 
 		{
 			Object[] input9=new Object[1];
 		    input9[0]="(//*[text()='Current Quotations'])[1]";
 		    SeleniumOperations.clickOnElement(input9);
-		    
+		    Thread.sleep(2000);
 		}
 
 		@When("^user click on add button$")
@@ -45,21 +45,20 @@ public class AccidentalDamage
 			Object[] input10=new Object[1];
 		    input10[0]="//*[@class='bold'][text()='Add']";
 		    SeleniumOperations.clickOnElement(input10);
-		    Thread.sleep(4000);
+		    Thread.sleep(5000);
 		    
 		}
 
 		@When("^user select \"([^\"]*)\" as insurance type$")
 		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 			Object[] input= new Object[4];
-			input[0]="(//*[text()='Select Insurance Type'])[1]";
+			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
 			input[1]="//*[@class='select2-input select2-focused']";
 			input[2]=insuranceType;
 			input[3]="//*[@class='select2-match']";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
-			
-			Thread.sleep(18000);
+			Thread.sleep(5000);
 		}
 
 	
@@ -91,7 +90,7 @@ public class AccidentalDamage
 		public void selectInsurer(String insurer) throws Throwable 
 		{
 			Object[] input= new Object[4];
-			input[0]="(//*[@class='select2-chosen'])[1]";
+			input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
 			input[1]="//*[@class='select2-input select2-focused']";
 			input[2]=insurer;
 			input[3]="//*[@class='select2-match']";

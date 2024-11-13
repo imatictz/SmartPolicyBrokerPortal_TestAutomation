@@ -7,24 +7,20 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "Vehicle" to search insurance type in search box
-When user select vehicle as insurance type from dropdown
+When user select "Vehicle" as insurance types
  
 @MandatoryFields
 Scenario: (Vehicle)Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user click on Alliance Insurance Company (T) Ltd. as insurer
+When user Select "Automated Testing Company" as insurer
 When user click on motor type dropdown
 When user enter "Registered" as motor type 
 When user click on Registered as motor type
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
-When user enter "TESTA203" as registration number
+When user enter "TEST205" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
@@ -50,37 +46,17 @@ When user enter "100000" as sum insured
 When user click on compute button
 When user click on insert button (Policy Information)
 When user click on OK button for commission alert
-#When user click on compute button
-When user click on compute button to update record
-When user click on addon button
-When user select "Earthquake"as extension
-When user enter sum insured as "100000"
-When user enter "10" as rate%
-When user enter "Testing Vehicle" as description
-When user click on insert button
+When user click on compute button
+#When user click on compute button to update record
+#When user click on addon button
+#When user select "Earthquake"as extension
+#When user enter sum insured as "100000"
+#When user enter "10" as rate%
+#When user enter "Testing Vehicle" as description
+#When user click on insert button
 When user click on save button
-#When user click on OK button to accept commission rate alert
+When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -88,17 +64,15 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (Vehicle)Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer
-When user click on Alliance Insurance Company (T) Ltd. as insurer
+When user Select "Automated Testing Company" as insurer
 When user click on period dropdown
 And user enter "90 days" as period
 Then user select days 
 When user click on motor type dropdown
 When user enter "Registered" as motor type 
 When user click on Registered as motor type
-When user click on business by dropdown
-Then user select Demo User as business by
+#When user click on business by dropdown
+#Then user select Demo User as business by
 When user enter "FILE50@ty20" as file No
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as business contact person
@@ -142,7 +116,7 @@ When user enter "1200" as stamp duty
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
-When user enter "TESTA302" as registration number
+When user enter "TESTA306" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
@@ -185,14 +159,14 @@ When user click on compute button to update record
 #When user select FinalTester as broker partner name
 
 #AddOn
-When user scroll up to click on addon
-When user click on addon button
-When user select "Earthquake"as extension
-When user enter sum insured as "100000"
-When user enter "10" as rate%
-When user enter "5" as commission rate%
-When user enter "Testing Vehicle" as description
-When user click on insert button
+#When user scroll up to click on addon
+#When user click on addon button
+#When user select "Earthquake"as extension
+#When user enter sum insured as "100000"
+#When user enter "10" as rate%
+#When user enter "5" as commission rate%
+#When user enter "Testing Vehicle" as description
+#When user click on insert button
 When user click on save button
 
 When user click on OK button to accept commission rate alert
@@ -206,6 +180,8 @@ When user enter details
 
 #When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
+
+
 
 
 

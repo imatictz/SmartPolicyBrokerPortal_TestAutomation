@@ -9,8 +9,8 @@ Then user select risk note menu
 
 @MotorPolicyCancel					
 Scenario: (Motor Policy Cancellation) Verify user able to cancel policy successfully
-When user select "01/01/2023" as from date
-And user enter "37152" as risk note number
+When user select "01/01/2024" as from date
+And user enter "27" as risk note number
 Then user click on search button for the respective Risk Note for cancellation
 When user click on options button
 Then user click on cancel button to cancel the Risk note

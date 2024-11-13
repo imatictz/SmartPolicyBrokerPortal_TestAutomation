@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -24,10 +25,11 @@ public class ClientDetails {
 	}
 
 	@When("^user click on current quotations$")
-	public void user_click_on_current_quotations() {
+	public void user_click_on_current_quotations() throws InterruptedException {
 		Object[] input9=new Object[1];
 	    input9[0]="(//*[text()='Current Quotations'])[1]";
 	    SeleniumOperations.clickOnElement(input9);
+	    Thread.sleep(2000);
 	}
 
 	@When("^user click on add button$")
@@ -38,28 +40,16 @@ public class ClientDetails {
 	    Thread.sleep(4000);
 	}
 
-	@When("^user click on select insurance type dropdown$")
-	public void user_click_on_select_insurance_type_dropdown() throws InterruptedException  {    
-		Object[] input11=new Object[1];
-		input11[0]="(//*[text()='Select Insurance Type'])[1]";
-		SeleniumOperations.clickOnElement(input11);  
+	@When("^user select \"([^\"]*)\" as insurance type$")
+	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+		Object[] input= new Object[4];
+		input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
+		input[1]="//*[@class='select2-input select2-focused']";
+		input[2]=insuranceType;
+		input[3]="//*[@class='select2-match']";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 		Thread.sleep(5000);
-	}
-
-	@When("^user enter \"([^\"]*)\" to search insurance type in search box$")
-	public void user_enter_to_search_insurance_type_in_search_box(String insuranceType) throws InterruptedException {
-		Object[] input12=new Object[2];
-	    input12[0]="//*[@class='select2-input select2-focused']";
-	    input12[1]=insuranceType;
-	    SeleniumOperations.sendKeys(input12);
-	    Thread.sleep(2000);
-	}
-
-	@When("^user select money insurance cover as insurance type from dropdown$")
-	public void user_select_money_insurance_cover_as_insurance_type_from_dropdown() {
-		Object[] input13=new Object[1];
-	    input13[0]="//*[@class='select2-result-label']";
-	    SeleniumOperations.clickOnElement(input13);
 	}
 
 	@When("^user click on Click here for New Client link$")
@@ -354,14 +344,12 @@ public class ClientDetails {
 
 	@When ("^user click on save button to save client details$")
 	public void user_click_on_save_button() throws InterruptedException {
-		Object[] input49=new Object[1];
-		input49[0]="//*[@id='btnSavePopup']";
-		Hashtable<String, Object>  output49 =SeleniumOperations.clickOnElement(input49); 
-		HTMLReportGenerator.StepDetails(output49.get("STATUS").toString(),"user click on save button to save client details",output49.get("MESSAGE").toString());
-	    Thread.sleep(2000);
+		
+	    Itl.CustomClickEvent("//*[@id='btnSavePopup']", "user click on save button to save client details", "CLICK", 2000);
+
 	}
 	
-	@Then ("^user able to view \"(.*)\"$")
+	@Then ("^user able to view \"(.*)\" as quotation$")
 	public void validation(String validation) throws InterruptedException{
 		Object[] input=new Object[2];
 		input[0]="//*[@id='MainContent_lblQuoteHeader']";

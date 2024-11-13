@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
                    glue={"cucumberMap5Bonds","MyHooks"}, 
 
 		           features="src/test/resources/Quotations/AccidentalDamage.feature", 
-                   tags= "@AllFields", 
+                   tags= "@All", 
                    glue={"cucumberMap3AccidentalDamage","MyHooks"}, 
 
                    monochrome=true,   

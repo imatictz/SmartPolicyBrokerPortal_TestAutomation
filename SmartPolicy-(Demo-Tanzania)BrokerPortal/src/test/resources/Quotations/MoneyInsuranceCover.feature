@@ -7,17 +7,13 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user click on select insurance type dropdown
-When user enter "Money Insurance Cover" to search insurance type in search box
-When user select money insurance cover as insurance type from dropdown
+When user select "Money Insurance Cover" as insurance type 
 
 @MandatoryFields
 Scenario: (Money Insurance Cover)Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name in quotation
 When user select client name as Pravin Testing
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer name
-When user click to select Alliance Insurance Company (T) Ltd.as insurer name
+When user Select "Automated Testing Company" as insurer
 When user Select "Standard Rate" as insurance class
 When user enter "100000" as sum insured amount in policy information
 When user enter "Money Insurance Cover Testing" as description in policy information
@@ -34,18 +30,16 @@ When user enter "Money Insurance Cover Testing " as description in addOn
 When user click on insert button addon
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 @AllFields
 Scenario: (Money Insurance Cover)Verify user able to enter all fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name in quotation
 When user select client name as Pravin Testing
-When user click on insurer dropdown
-When user enter "Alliance Insurance Company (T) Ltd." as insurer name
-When user click to select Alliance Insurance Company (T) Ltd.as insurer name
-When user click on business by dropdown
-Then user select Demo User as business by
+When user Select "Automated Testing Company" as insurer
+#When user click on business by dropdown
+#Then user select Demo User as business by
 When user enter "1425DT10" as unique property identification
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
