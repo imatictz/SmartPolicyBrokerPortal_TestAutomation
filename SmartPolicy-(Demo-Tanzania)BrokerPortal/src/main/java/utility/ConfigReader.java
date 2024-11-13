@@ -86,7 +86,7 @@ public class ConfigReader{
 		String password = properties.getProperty("dashboard");
 		if(password != null) return password;
 		else throw new RuntimeException("password not specified in the Configuration.properties file.");
-	}
+	}	
 }
 
 

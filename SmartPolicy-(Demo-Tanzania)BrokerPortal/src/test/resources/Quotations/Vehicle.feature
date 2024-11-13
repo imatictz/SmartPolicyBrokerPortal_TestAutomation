@@ -168,7 +168,56 @@ When user click on compute button to update record
 #When user enter "Testing Vehicle" as description
 #When user click on insert button
 When user click on save button
+
+When user click on OK button to accept commission rate alert
+Then user able to view "Awaiting Receipt" as status
+
+@Test
+Scenario: Test
+When user enter details
+  |Username|PravinS|
+  |Password|It@12345|
+
 #When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

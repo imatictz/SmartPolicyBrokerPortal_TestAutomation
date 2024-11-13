@@ -620,9 +620,15 @@ public class SeleniumOperations
     	 
      }
      
+
+/*// Explicit Wait
+     public static void wait(Object[]Inputparameters) throws InterruptedException {
+    	String input=(String)Inputparameters[0];
+
 // Explicit Wait
     /* public static void wait(Object[] inputparameters) throws InterruptedException {
     	String input=(String)inputparameters[0];
+
     	 WebElement waitTill= driver.findElement(By.xpath(input));
 
  		Thread.sleep(5000);
@@ -637,9 +643,13 @@ public class SeleniumOperations
     	try {
 
     		driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+
     		/*WebDriverWait wait1 = new WebDriverWait(driver, 30);
      		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@dir='ltr'])[2]")));
     		//Set<String> ids = driver.getWindowHandles();*/
+
+    		Set<String> ids = driver.getWindowHandles();
+
 
     	Set<String> ids1 = driver.getWindowHandles();
 

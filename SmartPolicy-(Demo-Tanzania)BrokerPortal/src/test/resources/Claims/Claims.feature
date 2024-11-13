@@ -7,10 +7,21 @@ When user navigate on operation dropdown menu
 When user Click on risk note menu
 
 
+
 @reportBondsClaims
 Scenario: (Report Bond Claim) Verify user able to report claim successfully
 When user select "01/01/2024" as from date
 When user enter "57" as risk note number
+
+@ReportClaims
+Scenario: (Report Claims) Verify user able to report claim successfully
+When user select "01/01/2023" as from date
+When user enter "34074" as risk note number
+
+When user select "01/01/2024" as from date
+When user enter "37701" as risk note number
+
+
 When user click on search button
 When user click on options button
 When user click on report claim umbrella like button

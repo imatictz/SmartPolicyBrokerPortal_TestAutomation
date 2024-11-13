@@ -14,7 +14,7 @@ Then application shows home page to user
 @RegressionTest1  
 Scenario: To check Authentication and Authorization functionality by providing valid user id and invalid password
 When user enter "PravinS" as username
-When user enter "Kp@254" as password
+When user enter "Ps@12345" as password
 And user click on login button
 Then application shows error message as 2031-Invalid User / Password entered
 

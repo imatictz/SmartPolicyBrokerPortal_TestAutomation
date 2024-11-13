@@ -1,7 +1,9 @@
 package cucumberMap2Vehicle;
 
 import java.util.Hashtable;
+import java.util.Map;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import itl.Itl;
@@ -130,9 +132,36 @@ public class Vehicle
 		}
 	
 
+
+	 @When("^user click on insurance class dropdown$")
+	 public void clickOnInsuranceClassDropdown() throws Throwable 
+	 {
+		 Object[] input2=new Object[1];
+		   input2[0]="//*[@id='s2id_MainContent_cmbFltClassType']";
+		   SeleniumOperations.clickOnElement(input2);
+		   Thread.sleep(2000);
+		 Object[] input1=new Object[1];
+		   input1[0]="//*[@id='s2id_MainContent_cmbFltClassType']";
+		   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
+		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurance class dropdown",output.get("MESSAGE").toString());
+		   Thread.sleep(2000);
+		   
+	 }
+
+	 @When("^user enter \"([^\"]*)\" as insurance class$")
+	 public void enterInsuranceClass(String insuranceClass) throws Throwable 
+	 {
+		 Object[] input=new Object[2];
+			input[0]="//*[@class='select2-input select2-focused']";
+			input[1]=insuranceClass;
+			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"2 Wheel Comprehensive (Private)\" as insurance class",output.get("MESSAGE").toString());
+	 }
+
 	 @When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) {
 		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltClassType']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 4000);
+
 
 		}
 	 
@@ -1216,10 +1245,18 @@ public class Vehicle
 		public void clickOnOKbuttonCommission() throws Throwable 
 		{
 
+
+		@When("user enter details")
+		public void user_enter_details(DataTable dataTable) {
+		   Map<String, String> dataMap = dataTable.asMap(String.class,String.class);
+		   SeleniumOperations.sendKeys(null);
+		}
+
 			   Hashtable<String,Object> output= SeleniumOperations.alert();
 			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission rate alert message",output.get("MESSAGE").toString());
 			   Thread.sleep(3000);
 		}
+
 
 	
 	
