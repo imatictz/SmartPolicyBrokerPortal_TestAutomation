@@ -35,7 +35,7 @@ public class CreditLife
 		public void user_click_on_current_quotations() throws InterruptedException 
 		{
 			Object[] input9=new Object[1];
-		     input9[0]="(//*[text()='Current Quotations'])[1]";
+		     input9[0]="//*[@id='MNU_wfFIQNM']";
 		     SeleniumOperations.clickOnElement(input9);
 		     Thread.sleep(2000);
 		    
@@ -44,7 +44,7 @@ public class CreditLife
 		@When("^user click on add button$")
 		public void user_click_on_add_button() throws InterruptedException  
 		{Object[] input10=new Object[1];
-		input10[0]="//*[@class='bold'][text()='Add']";
+		input10[0]="//*[@id='MainContent_btnAdd']";
 		SeleniumOperations.clickOnElement(input10);
 		Thread.sleep(5000);
 		
@@ -57,7 +57,7 @@ public class CreditLife
 			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
 			input[1]="//*[@class='select2-input select2-focused']";
 			input[2]=insuranceType;
-			input[3]="//*[@class='select2-match']";
+			input[3]="(//*[@class='select2-match'])[2]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);

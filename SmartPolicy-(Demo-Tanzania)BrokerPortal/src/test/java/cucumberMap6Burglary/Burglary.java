@@ -34,7 +34,7 @@ public class Burglary
 		public void user_click_on_current_quotations() throws InterruptedException 
 		{
 			Object[] input9=new Object[1];
-		     input9[0]="(//*[text()='Current Quotations'])[1]";
+		     input9[0]="//*[@id='MNU_wfFIQNM']";
 		     SeleniumOperations.clickOnElement(input9);
 		     Thread.sleep(2000);
 		    

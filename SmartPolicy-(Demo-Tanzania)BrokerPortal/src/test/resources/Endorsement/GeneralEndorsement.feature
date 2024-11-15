@@ -16,7 +16,7 @@ When user select General Endorsements as endorsement type
 Scenario: (Motor Quotation Endorsement-UpgradePolicy)Verify user able to do policy upgrading for general financial endorsement
 
 #BrokerPortal
-When user enter "37429" risk note number
+When user enter "44" risk note number
 When user click on fetch button
 When user enter "45000000" as change value of sum insured
 When user click on compute button
@@ -26,7 +26,7 @@ When user click on OK button to process endorsement
 #Insurer Portal
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
-When user enter "AL-5" as username
+When user enter "Auto-1" as username
 When user enter "Sp@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
@@ -34,7 +34,7 @@ And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user click on display icon
 Then user click on approve endorsement button
-When user enter "37429" as risk note 
+When user enter "44" as risk note 
 Then user click on search button
 When user click on process endorsement icon
 When user click on YES button for confirmation

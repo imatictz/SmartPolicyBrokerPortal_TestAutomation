@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/Vehicle.feature", 
-                   tags= "@All", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap2Vehicle","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

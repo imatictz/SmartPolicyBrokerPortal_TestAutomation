@@ -20,8 +20,8 @@ When user enter "200000" as sum insured
 When user enter "Fire & Burglary Quotation Testing" as description
 When user click on compute button
 When user click on insert button
-#When user click on broker partner name dropdown
-#When user select FinalTester as broker partner name
+When user click on broker partner name dropdown
+When user select FinalTester as broker partner name
 When user click on addOn button
 When user click on extension dropdown
 When user enter "All Risk Cover" as extension
@@ -69,8 +69,8 @@ When user enter "500" as adjust premium
 When user enter "Fire & Burglary Quotation Testing" as description
 When user click on compute button
 When user click on insert button
-#When user click on broker partner name dropdown
-#When user select FinalTester as broker partner name
+When user click on broker partner name dropdown
+When user select FinalTester as broker partner name
 #AddOn
 When user click on addOn button
 When user click on extension dropdown

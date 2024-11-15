@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/MoneyInsuranceCover.feature",     
-                   tags= "@All", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap1MoneyInsuranceCover","MyHooks"}, 
                    monochrome=true,   
                    plugin= {"pretty",   	

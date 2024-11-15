@@ -33,7 +33,7 @@ public class Vehicle
 		@When("^user click on current quotations$")
 		public void user_click_on_current_quotations() throws InterruptedException 
 		{Object[] input9=new Object[1];
-		input9[0]="(//*[text()='Current Quotations'])[1]";
+		input9[0]="//*[@id='MNU_wfFIQNM']";
 		SeleniumOperations.clickOnElement(input9);
 		Thread.sleep(2000);
 		    
@@ -42,7 +42,7 @@ public class Vehicle
 		@When("^user click on add button$")
 		public void user_click_on_add_button() throws InterruptedException  
 		{Object[] input10=new Object[1];
-		input10[0]="//*[@class='bold'][text()='Add']";
+		input10[0]="//*[@id='MainContent_btnAdd']";
 		SeleniumOperations.clickOnElement(input10);
 		Thread.sleep(5000);
 		    
