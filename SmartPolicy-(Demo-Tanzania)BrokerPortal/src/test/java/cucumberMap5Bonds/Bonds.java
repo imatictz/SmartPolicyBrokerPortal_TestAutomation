@@ -102,7 +102,7 @@ public class Bonds
 		    input[1]=coverNote;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"123459876501234\" as cover note",output.get("MESSAGE").toString());
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		}
 		
 
