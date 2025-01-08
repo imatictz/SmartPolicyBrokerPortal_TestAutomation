@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [SmartPoilcy]" guice-stage="DEVELOPMENT">
+  <test parallel="none" name="Test1(failed)">
+    <classes>
+      <class name="testRunner.RunnerTestBurglaryQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestBurglaryQuotation -->
+      <class name="testRunner.RunnerTestGroupLifeQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestGroupLifeQuotation -->
+      <class name="testRunner.RunnerTestFireClassIQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestFireClassIQuotation -->
+      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
+      <class name="testRunner.RunnerTestMoneyInsuranceQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestMoneyInsuranceQuotation -->
+      <class name="testRunner.RunnerTestBondsQuotation">
+        <methods>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestBondsQuotation -->
+      <class name="testRunner.RunnerTestFidelityQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestFidelityQuotation -->
+      <class name="testRunner.RunnerTestFireAndBurglaryQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestFireAndBurglaryQuotation -->
+      <class name="testRunner.RunnerTestPackagePolicyQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestPackagePolicyQuotation -->
+      <class name="testRunner.RunnerTestMedicalQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestMedicalQuotation -->
+      <class name="testRunner.RunnerTestVehicleQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestVehicleQuotation -->
+      <class name="testRunner.RunnerTestPensionQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestPensionQuotation -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [SmartPoilcy] -->
