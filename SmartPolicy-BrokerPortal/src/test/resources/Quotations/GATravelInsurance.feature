@@ -19,6 +19,7 @@ When user select Sounth Africa as country travelling to
 When user click on plan dropdown
 When user enter "Plan Africa" as plan
 When user select Plan Africa as plan
+When user enter "15244-51654-84125" as cover note number
 When user enter "25428Af111" as passport number
 When user enter "01/01/2000" as date of birth
 When user enter "25/11/2024" as expiry date

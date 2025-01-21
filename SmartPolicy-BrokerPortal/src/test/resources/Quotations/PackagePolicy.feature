@@ -14,6 +14,7 @@ Scenario: (Package Policy Quotation)Verify user able to enter mandatory fields a
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user enter " Pravin Testing" as insured name
 When user select "2 Wheel Comprehensive (Private)" as insurance class

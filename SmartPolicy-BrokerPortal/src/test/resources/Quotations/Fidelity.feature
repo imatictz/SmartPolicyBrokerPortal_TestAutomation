@@ -15,6 +15,7 @@ Scenario: (Fidelity Quotation) Verify user able to enter mandatory fields and sa
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
 When user select "Standard Rate" as insurance class
 When user enter "4500000" as sum insured
 When user enter "11" as No of employees

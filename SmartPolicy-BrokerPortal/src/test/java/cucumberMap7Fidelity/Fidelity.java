@@ -480,7 +480,7 @@ public class Fidelity
 
 		}
 		
-		@When ("^user enter \"(.*)\" as cover note$")
+		@When("user enter {string} as cover note number")
 		public void enterCoverNote(String coverNote) throws Throwable
 		{
 			Object[] input=new Object[2];

@@ -14,6 +14,7 @@ Scenario: (Group Life Quotation) Verify user able to enter mandatory fields and 
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
 When user Select "Standard Rate" as insurance class
 When user enter "Pravin Testing" as insured name
 When user enter "01/01/2000" as date of birth

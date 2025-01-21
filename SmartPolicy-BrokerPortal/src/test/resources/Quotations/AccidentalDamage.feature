@@ -14,6 +14,7 @@ Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fiel
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
 When user Select "Standard Rate" as insurance class
 When user enter "100000" as sum insured               
 When user enter "5" % as override%

@@ -14,6 +14,7 @@ Scenario: (Fire Class I Quotation) Verify user able to enter mandatory fields an
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
 When user select "Industrial/Manufacturing risks-Electronic software parks" as insurance class
 When user enter "5000000" as sum insured
 When user enter "Fire Class I Quotation Testing" as description

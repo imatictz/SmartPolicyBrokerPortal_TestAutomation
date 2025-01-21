@@ -1,421 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="12" passed="12" failed="0" skipped="0">
+<testng-results total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-11T08:24:35Z" name="SmartPoilcy" finished-at="2024-12-11T08:41:20Z" duration-ms="1004411">
+  <suite started-at="2025-01-17T11:26:41Z" name="Default suite" finished-at="2025-01-17T11:34:10Z" duration-ms="449403">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@2766ca9d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@5460cf3a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBurglaryQuotation@65a15628]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestFidelityQuotation@2e6a5539]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestFireAndBurglaryQuotation@3fc9504b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestFireClassIQuotation@6d025197]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestGroupLifeQuotation@27d4a09]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMedicalQuotation@7e4204e2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@b7c4869]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestPackagePolicyQuotation@740d2e78]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestPensionQuotation@1c481ff2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestVehicleQuotation@72437d8d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClientDetails@3ad2e17]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-12-11T08:24:35Z" name="Test1" finished-at="2024-12-11T08:41:20Z" duration-ms="1004411">
-      <class name="testRunner.RunnerTestFireClassIQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestFireClassIQuotation@6d025197]" started-at="2024-12-11T11:31:12Z" name="setUpClass" finished-at="2024-12-11T11:31:12Z" duration-ms="82" status="PASS">
+    <test started-at="2025-01-17T11:26:41Z" name="Default test" finished-at="2025-01-17T11:34:10Z" duration-ms="449403">
+      <class name="testRunner.RunnerTestClientDetails">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestClientDetails@3ad2e17]" started-at="2025-01-17T14:26:41Z" name="setUpClass" finished-at="2025-01-17T14:26:41Z" duration-ms="880" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
+                <![CDATA[org.testng.TestRunner@72d7afff]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestFireClassIQuotation@6d025197]" started-at="2024-12-11T11:31:12Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:32:26Z" duration-ms="73617" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClientDetails@3ad2e17]" started-at="2025-01-17T14:26:41Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-17T14:28:36Z" duration-ms="115018" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["(Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
+                <![CDATA["(ClientDetails) Enter new client details with mandatory fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Fire Class I Quotation"]]>
+                <![CDATA["New Client details"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestFireClassIQuotation@6d025197]" started-at="2024-12-11T11:32:26Z" name="tearDownClass" finished-at="2024-12-11T11:32:26Z" duration-ms="19" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestFireClassIQuotation -->
-      <class name="testRunner.RunnerTestVehicleQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestVehicleQuotation@72437d8d]" started-at="2024-12-11T11:39:29Z" name="setUpClass" finished-at="2024-12-11T11:39:29Z" duration-ms="108" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClientDetails@3ad2e17]" started-at="2025-01-17T14:28:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-17T14:31:21Z" duration-ms="164699" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestVehicleQuotation@72437d8d]" started-at="2024-12-11T11:39:29Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:41:20Z" duration-ms="110865" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Vehicle)Verify user able to enter mandatory fields and save quotation successfully"]]>
+                <![CDATA["(ClientDetails) Enter new client details with all fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Vehicle Quotation"]]>
+                <![CDATA["New Client details"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestVehicleQuotation@72437d8d]" started-at="2024-12-11T11:41:20Z" name="tearDownClass" finished-at="2024-12-11T11:41:20Z" duration-ms="16" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestVehicleQuotation -->
-      <class name="testRunner.RunnerTestMoneyInsuranceQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@b7c4869]" started-at="2024-12-11T11:35:01Z" name="setUpClass" finished-at="2024-12-11T11:35:01Z" duration-ms="74" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestClientDetails@3ad2e17]" started-at="2025-01-17T14:31:21Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-17T14:34:10Z" duration-ms="168732" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@b7c4869]" started-at="2024-12-11T11:35:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:36:39Z" duration-ms="98217" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Money Insurance Cover)Verify user able to enter mandatory fields and save quotation successfully"]]>
+                <![CDATA["(ClientDetails) Enter new client details with all fields for corporate"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Money Insurance Cover Quotation"]]>
+                <![CDATA["New Client details"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestMoneyInsuranceQuotation@b7c4869]" started-at="2024-12-11T11:36:39Z" name="tearDownClass" finished-at="2024-12-11T11:36:39Z" duration-ms="17" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestClientDetails@3ad2e17]" started-at="2025-01-17T14:34:10Z" name="tearDownClass" finished-at="2025-01-17T14:34:10Z" duration-ms="39" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestMoneyInsuranceQuotation -->
-      <class name="testRunner.RunnerTestBondsQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestBondsQuotation@5460cf3a]" started-at="2024-12-11T11:26:01Z" name="setUpClass" finished-at="2024-12-11T11:26:01Z" duration-ms="80" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBondsQuotation@5460cf3a]" started-at="2024-12-11T11:26:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:27:24Z" duration-ms="82942" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Bonds Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestBondsQuotation@5460cf3a]" started-at="2024-12-11T11:27:24Z" name="tearDownClass" finished-at="2024-12-11T11:27:24Z" duration-ms="22" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestBondsQuotation -->
-      <class name="testRunner.RunnerTestFidelityQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestFidelityQuotation@2e6a5539]" started-at="2024-12-11T11:28:53Z" name="setUpClass" finished-at="2024-12-11T11:28:54Z" duration-ms="66" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestFidelityQuotation@2e6a5539]" started-at="2024-12-11T11:28:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:30:01Z" duration-ms="67902" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Fidelity Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Fidelity Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestFidelityQuotation@2e6a5539]" started-at="2024-12-11T11:30:01Z" name="tearDownClass" finished-at="2024-12-11T11:30:01Z" duration-ms="19" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestFidelityQuotation -->
-      <class name="testRunner.RunnerTestBurglaryQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestBurglaryQuotation@65a15628]" started-at="2024-12-11T11:27:24Z" name="setUpClass" finished-at="2024-12-11T11:27:24Z" duration-ms="73" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestBurglaryQuotation@65a15628]" started-at="2024-12-11T11:27:24Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:28:53Z" duration-ms="89649" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Burglary Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestBurglaryQuotation@65a15628]" started-at="2024-12-11T11:28:53Z" name="tearDownClass" finished-at="2024-12-11T11:28:53Z" duration-ms="27" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestBurglaryQuotation -->
-      <class name="testRunner.RunnerTestGroupLifeQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestGroupLifeQuotation@27d4a09]" started-at="2024-12-11T11:32:26Z" name="setUpClass" finished-at="2024-12-11T11:32:26Z" duration-ms="80" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestGroupLifeQuotation@27d4a09]" started-at="2024-12-11T11:32:26Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:33:37Z" duration-ms="71162" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Group Life Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Group Life Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestGroupLifeQuotation@27d4a09]" started-at="2024-12-11T11:33:37Z" name="tearDownClass" finished-at="2024-12-11T11:33:37Z" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestGroupLifeQuotation -->
-      <class name="testRunner.RunnerTestPackagePolicyQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestPackagePolicyQuotation@740d2e78]" started-at="2024-12-11T11:36:39Z" name="setUpClass" finished-at="2024-12-11T11:36:39Z" duration-ms="79" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestPackagePolicyQuotation@740d2e78]" started-at="2024-12-11T11:36:39Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:38:22Z" duration-ms="102728" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Package Policy Quotation)Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Package Policy Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestPackagePolicyQuotation@740d2e78]" started-at="2024-12-11T11:38:22Z" name="tearDownClass" finished-at="2024-12-11T11:38:22Z" duration-ms="14" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestPackagePolicyQuotation -->
-      <class name="testRunner.RunnerTestMedicalQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestMedicalQuotation@7e4204e2]" started-at="2024-12-11T11:33:37Z" name="setUpClass" finished-at="2024-12-11T11:33:37Z" duration-ms="69" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMedicalQuotation@7e4204e2]" started-at="2024-12-11T11:33:37Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:35:01Z" duration-ms="83704" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Medical Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestMedicalQuotation@7e4204e2]" started-at="2024-12-11T11:35:01Z" name="tearDownClass" finished-at="2024-12-11T11:35:01Z" duration-ms="21" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestMedicalQuotation -->
-      <class name="testRunner.RunnerTestPensionQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestPensionQuotation@1c481ff2]" started-at="2024-12-11T11:38:22Z" name="setUpClass" finished-at="2024-12-11T11:38:22Z" duration-ms="56" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestPensionQuotation@1c481ff2]" started-at="2024-12-11T11:38:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:39:29Z" duration-ms="66965" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Pension Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Pension Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestPensionQuotation@1c481ff2]" started-at="2024-12-11T11:39:29Z" name="tearDownClass" finished-at="2024-12-11T11:39:29Z" duration-ms="16" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestPensionQuotation -->
-      <class name="testRunner.RunnerTestFireAndBurglaryQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestFireAndBurglaryQuotation@3fc9504b]" started-at="2024-12-11T11:30:01Z" name="setUpClass" finished-at="2024-12-11T11:30:02Z" duration-ms="68" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestFireAndBurglaryQuotation@3fc9504b]" started-at="2024-12-11T11:30:02Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:31:12Z" duration-ms="70355" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Fire & Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Fire & Burglary Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestFireAndBurglaryQuotation@3fc9504b]" started-at="2024-12-11T11:31:12Z" name="tearDownClass" finished-at="2024-12-11T11:31:12Z" duration-ms="18" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestFireAndBurglaryQuotation -->
-      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@2766ca9d]" started-at="2024-12-11T11:24:35Z" name="setUpClass" finished-at="2024-12-11T11:24:36Z" duration-ms="976" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5c47ef5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@2766ca9d]" started-at="2024-12-11T11:24:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-11T11:26:01Z" duration-ms="84171" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["AccidentalDamage Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@2766ca9d]" started-at="2024-12-11T11:26:01Z" name="tearDownClass" finished-at="2024-12-11T11:26:01Z" duration-ms="48" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
-    </test> <!-- Test1 -->
-  </suite> <!-- SmartPoilcy -->
+      </class> <!-- testRunner.RunnerTestClientDetails -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

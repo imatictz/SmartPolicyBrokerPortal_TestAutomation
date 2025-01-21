@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>12/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>11/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 11 11:24:35 EAT 2024</td>
+<td>Started on:</td><td>Fri Jan 17 11:53:13 EAT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>1004 seconds (1004411 ms)</td>
+<tr><td>Total time:</td><td>1038 seconds (1038221 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,78 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.RunnerTestPensionQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPensionQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Pension Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Pension Quotation"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user enter &quot;15244-51654-84125&quot; as cover note number&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@When(&quot;user enter {string} as cover note number&quot;)
+public void user_enter_as_cover_note_number(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace906606834", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace906606834'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user enter &quot;15244-51654-84125&quot; as cover note number&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@When(&quot;user enter {string} as cover note number&quot;)
+public void user_enter_as_cover_note_number(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>43</td>
+<td>testRunner.RunnerTestPensionQuotation@1c481ff2</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -77,62 +149,57 @@ function toggleAllBoxes() {
 <tr>
 <td title='testRunner.RunnerTestAccidentalDamageQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestAccidentalDamageQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully", "AccidentalDamage Quotation"</td>
 <td></td>
-<td>84</td>
+<td>79</td>
 <td>testRunner.RunnerTestAccidentalDamageQuotation@2766ca9d</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBondsQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBondsQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Bonds Quotation"</td>
 <td></td>
-<td>82</td>
+<td>81</td>
 <td>testRunner.RunnerTestBondsQuotation@5460cf3a</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Burglary Quotation"</td>
 <td></td>
-<td>89</td>
+<td>93</td>
 <td>testRunner.RunnerTestBurglaryQuotation@65a15628</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFidelityQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFidelityQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fidelity Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fidelity Quotation"</td>
 <td></td>
-<td>67</td>
+<td>68</td>
 <td>testRunner.RunnerTestFidelityQuotation@2e6a5539</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireAndBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireAndBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire & Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire & Burglary Quotation"</td>
 <td></td>
-<td>70</td>
+<td>69</td>
 <td>testRunner.RunnerTestFireAndBurglaryQuotation@3fc9504b</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireClassIQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireClassIQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire Class I Quotation"</td>
 <td></td>
-<td>73</td>
+<td>72</td>
 <td>testRunner.RunnerTestFireClassIQuotation@6d025197</td></tr>
 <tr>
 <td title='testRunner.RunnerTestGroupLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestGroupLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Group Life Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Group Life Quotation"</td>
 <td></td>
-<td>71</td>
+<td>72</td>
 <td>testRunner.RunnerTestGroupLifeQuotation@27d4a09</td></tr>
 <tr>
 <td title='testRunner.RunnerTestMedicalQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMedicalQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Medical Quotation"</td>
 <td></td>
-<td>83</td>
+<td>140</td>
 <td>testRunner.RunnerTestMedicalQuotation@7e4204e2</td></tr>
 <tr>
 <td title='testRunner.RunnerTestMoneyInsuranceQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMoneyInsuranceQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Money Insurance Cover)Verify user able to enter mandatory fields and save quotation successfully", "Money Insurance Cover Quotation"</td>
 <td></td>
-<td>98</td>
+<td>93</td>
 <td>testRunner.RunnerTestMoneyInsuranceQuotation@b7c4869</td></tr>
 <tr>
 <td title='testRunner.RunnerTestPackagePolicyQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPackagePolicyQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Package Policy Quotation)Verify user able to enter mandatory fields and save quotation successfully", "Package Policy Quotation"</td>
 <td></td>
-<td>102</td>
+<td>105</td>
 <td>testRunner.RunnerTestPackagePolicyQuotation@740d2e78</td></tr>
-<tr>
-<td title='testRunner.RunnerTestPensionQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPensionQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Pension Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Pension Quotation"</td>
-<td></td>
-<td>66</td>
-<td>testRunner.RunnerTestPensionQuotation@1c481ff2</td></tr>
 <tr>
 <td title='testRunner.RunnerTestVehicleQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestVehicleQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Vehicle)Verify user able to enter mandatory fields and save quotation successfully", "Vehicle Quotation"</td>
 <td></td>
-<td>110</td>
+<td>115</td>
 <td>testRunner.RunnerTestVehicleQuotation@72437d8d</td></tr>
 </table><p>
 </body>

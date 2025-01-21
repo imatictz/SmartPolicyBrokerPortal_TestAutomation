@@ -14,6 +14,7 @@ Scenario: (Credit Life Quotation)Verify user able to enter mandatory fields and 
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
 When user enter "Pravin Testing" as insured name
 When user select date of birth
 When user enter "2000000" as loan amount

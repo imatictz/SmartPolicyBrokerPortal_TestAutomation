@@ -90,7 +90,7 @@ public class Burglary
 		}
 
 		@When("user select {string} as insurer")
-		public void user_select_as_insurer(String insurerName) {
+		public void user_select_as_insurer(String insurerName) throws InterruptedException {
 		    Object[] input = new Object[4];
 		    input[0] = "//*[@id='s2id_MainContent_cmbInsurer']";
 		    input[1] = "//*[@class='select2-input select2-focused']";
@@ -98,8 +98,10 @@ public class Burglary
 		    input[3] = "(//*[@class='select2-match'])[1]";
 		    Hashtable<String, Object> output = SeleniumOperations.dropdown(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select {string} as insurer", output.get("MESSAGE").toString());
-
+            Thread.sleep(2000);
 		}
+		
+		
 
 		
 		@When ("user select {string} as insurance class")
@@ -561,7 +563,7 @@ public class Burglary
 
 		
 
-		@When ("^user enter \"(.*)\" as cover note$")
+		@When("user enter {string} as cover note number")
 		public void enterCoverNote(String coverNote) throws Throwable
 		{
 			Object[] input=new Object[2];
