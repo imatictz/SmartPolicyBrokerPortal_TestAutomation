@@ -1,0 +1,1048 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>175/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jul 08 10:45:40 EAT 2025</td>
+</tr>
+<tr><td>Total time:</td><td>14393 seconds (14393039 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Financial Statement - Profit and Loss account(Summarized) Report successfully", "Reports"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user able to view Financial Statement - Profit and Loss account(Summarized) in pdf format&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format&quot;)
+public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at jdk.internal.reflect.GeneratedMethodAccessor123.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1222966185", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1222966185'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user able to view Financial Statement - Profit and Loss account(Summarized) in pdf format&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format&quot;)
+public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at jdk.internal.reflect.GeneratedMethodAccessor123.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Admin Fee Report successfully", "Reports"</td>
+<td></td>
+<td>66</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary by Charts Report successfully", "Reports"</td>
+<td></td>
+<td>59</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view AON Reports Report successfully", "Reports"</td>
+<td></td>
+<td>78</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Branch wise with Risk Note) Report successfully", "Reports"</td>
+<td></td>
+<td>77</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Branch wise with Type) Report successfully", "Reports"</td>
+<td></td>
+<td>77</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Branch wise) Report successfully", "Reports"</td>
+<td></td>
+<td>80</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (by Cover Period start date) Report successfully", "Reports"</td>
+<td></td>
+<td>78</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (By total premium booked for each customer) Report successfully", "Reports"</td>
+<td></td>
+<td>49</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (By total premium booked for each insurance company cover Report successfully", "Reports"</td>
+<td></td>
+<td>50</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (By total premium booked for each insurance company) Report successfully", "Reports"</td>
+<td></td>
+<td>50</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Class wise) Report successfully", "Reports"</td>
+<td></td>
+<td>76</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Client type) Report successfully", "Reports"</td>
+<td></td>
+<td>69</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Client wise) Report successfully", "Reports"</td>
+<td></td>
+<td>69</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Client wise-Cover Period start date) Report successfully", "Reports"</td>
+<td></td>
+<td>69</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Customer Segment) Report successfully", "Reports"</td>
+<td></td>
+<td>80</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Insurer wise with type) Report successfully", "Reports"</td>
+<td></td>
+<td>61</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Insurer wise) Report successfully", "Reports"</td>
+<td></td>
+<td>80</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Insurer wise-Cover Period start date)Report successfully", "Reports"</td>
+<td></td>
+<td>77</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Region wise) Report successfully", "Reports"</td>
+<td></td>
+<td>80</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary (Zone) Report successfully", "Reports"</td>
+<td></td>
+<td>80</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary by insurer/category (Base Currency) Report successfully", "Reports"</td>
+<td></td>
+<td>58</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Business Summary(User wise) Report successfully", "Reports"</td>
+<td></td>
+<td>50</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view claim Payment Request Report Report successfully", "Reports"</td>
+<td></td>
+<td>55</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Incured but not reported on time (IBNR)Report successfully", "Reports"</td>
+<td></td>
+<td>80</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending (Assessor wise) Report successfully", "Reports"</td>
+<td></td>
+<td>84</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending (by Assigned users) Report successfully", "Reports"</td>
+<td></td>
+<td>87</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending (Status wise) Report successfully", "Reports"</td>
+<td></td>
+<td>88</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending Report Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending Report (Branch Wise) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending Report (Covering Branch) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending Report (Time taken between Accident & Reporting) Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending Report - no activity for last 7 Days Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending Report(Covering Branch) Not Initiated To Insurer Report successfully", "Reports"</td>
+<td></td>
+<td>87</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Pending Report(Covering Branch) Time Taken to Initiate to Insurer Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Ratio Report(Branch wise) Report successfully", "Reports"</td>
+<td></td>
+<td>76</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Ratio Report(Client wise) Report successfully", "Reports"</td>
+<td></td>
+<td>76</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Ratio Report(Insurer wise) Report successfully", "Reports"</td>
+<td></td>
+<td>77</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Ratio Report(Region wise) Report successfully", "Reports"</td>
+<td></td>
+<td>77</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Ratio Report(Zone wise) Report successfully", "Reports"</td>
+<td></td>
+<td>116</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Register (Branch Wise) Report successfully", "Reports"</td>
+<td></td>
+<td>920</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Register Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Rejected Report Report successfully", "Reports"</td>
+<td></td>
+<td>66</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Report (Retrenchment wise) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to viewClaims Settled Report Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Settled Report (Branch Wise) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Settled Report (Time Taken between DV & Settlement) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Settled Report - Life Report successfully", "Reports"</td>
+<td></td>
+<td>82</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Claims Settlement beyond 45 Days Report successfully", "Reports"</td>
+<td></td>
+<td>82</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Comesa Booking Report successfully", "Reports"</td>
+<td></td>
+<td>88</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commision Rebate Report Report successfully", "Reports"</td>
+<td></td>
+<td>79</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Allocated Report Report successfully", "Reports"</td>
+<td></td>
+<td>60</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Receivable Ageing Report Report successfully", "Reports"</td>
+<td></td>
+<td>57</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Receivable Report Report successfully", "Reports"</td>
+<td></td>
+<td>60</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Receivable Report (With VAT Commission) Report successfully", "Reports"</td>
+<td></td>
+<td>61</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Receivable Report(WH TAX) Report successfully", "Reports"</td>
+<td></td>
+<td>60</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Refundable Report Report successfully", "Reports"</td>
+<td></td>
+<td>76</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Statement Report Report successfully", "Reports"</td>
+<td></td>
+<td>76</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Commission Statement Report 1 Report successfully", "Reports"</td>
+<td></td>
+<td>77</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view CSV Data Extraction Report successfully", "Reports"</td>
+<td></td>
+<td>934</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Customer Sales Statistics Report Report successfully", "Reports"</td>
+<td></td>
+<td>381</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes Report successfully", "Reports"</td>
+<td></td>
+<td>90</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (Borrower Wise) Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (Broker Partner Business) Report successfully", "Reports"</td>
+<td></td>
+<td>98</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (Business By) Report successfully", "Reports"</td>
+<td></td>
+<td>89</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (Cover Period start date) Report successfully", "Reports"</td>
+<td></td>
+<td>147</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (Different Policy Issued Date & TIRA Issued Date) Report successfully", "Reports"</td>
+<td></td>
+<td>70</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (Insurer wise) Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (User wise) Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (With First Loss Payee) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (With Levy) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (With Reg No.) Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes (With Stamp Duty) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes Online Channels) Report successfully", "Reports"</td>
+<td></td>
+<td>88</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes(Lien Clause) Report successfully", "Reports"</td>
+<td></td>
+<td>85</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover Notes(New business & renewals Report successfully", "Reports"</td>
+<td></td>
+<td>86</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Cover/Notes (Expiry Date wise) Report successfully", "Reports"</td>
+<td></td>
+<td>88</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Credit Note Report successfully", "Reports"</td>
+<td></td>
+<td>77</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Debit Notes/ Tax Invoices Report successfully", "Reports"</td>
+<td></td>
+<td>82</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Debit Notes/ Tax Invoices(Un-Allocated/Allocated Report successfully", "Reports"</td>
+<td></td>
+<td>79</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Debit Notes/ Tax Invoices(with Levy) Report successfully", "Reports"</td>
+<td></td>
+<td>82</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Payments Report successfully", "Reports"</td>
+<td></td>
+<td>58</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Receipts Report successfully", "Reports"</td>
+<td></td>
+<td>71</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Receipts (Business Type) Report successfully", "Reports"</td>
+<td></td>
+<td>71</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Receipts (Insurer wise) Report successfully", "Reports"</td>
+<td></td>
+<td>71</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Daily Remittance Report Report successfully", "Reports"</td>
+<td></td>
+<td>88</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Debit Note Ageing Report successfully", "Reports"</td>
+<td></td>
+<td>52</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Debtors Age Analysis report Report successfully", "Reports"</td>
+<td></td>
+<td>59</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Debtors Analysis Report(by date) Report successfully", "Reports"</td>
+<td></td>
+<td>68</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Details of the Policy issued on Credit Report successfully", "Reports"</td>
+<td></td>
+<td>73</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Exchange Rate Report For Insurer Report successfully", "Reports"</td>
+<td></td>
+<td>58</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Expired Risk Notes Report successfully", "Reports"</td>
+<td></td>
+<td>65</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Financial Statement - Balance Sheet Report successfully", "Reports"</td>
+<td></td>
+<td>41</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Financial Statement - Balance Sheet(Summarized) Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Financial Statement - Profit and Loss account Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Financial Statement - Trial Balance Report successfully", "Reports"</td>
+<td></td>
+<td>100</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Front Office - Daily Performance Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Front Office - Overall Performance Report successfully", "Reports"</td>
+<td></td>
+<td>46</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view General Ledger Report successfully", "Reports"</td>
+<td></td>
+<td>100</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Ledger (Client/Supplier) Report successfully", "Reports"</td>
+<td></td>
+<td>68</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Ledger (Insurer) Report successfully", "Reports"</td>
+<td></td>
+<td>61</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view List of Policies Report successfully", "Reports"</td>
+<td></td>
+<td>65</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view List Policies (Customer wise) Report successfully", "Reports"</td>
+<td></td>
+<td>57</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view MIS - Performance Report (Quarterly) Report successfully", "Reports"</td>
+<td></td>
+<td>46</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view MIS - Performance Report (Yearly) Report successfully", "Reports"</td>
+<td></td>
+<td>43</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Mobile Money Transaction Report successfully", "Reports"</td>
+<td></td>
+<td>58</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Mobile Money Transaction (User Wise) Report successfully", "Reports"</td>
+<td></td>
+<td>63</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Modified / Endorsed Cover Notes Report successfully", "Reports"</td>
+<td></td>
+<td>50</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Motor Schedule Report successfully", "Reports"</td>
+<td></td>
+<td>42</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Multi Policies Quotation[REPORT51] Report successfully", "Reports"</td>
+<td></td>
+<td>67</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Not Renewed Policies[REPORT146] Report successfully", "Reports"</td>
+<td></td>
+<td>74</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Outstanding Commission Ageing Report[REPORT124] Report successfully", "Reports"</td>
+<td></td>
+<td>44</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Outstanding Commission Statement[REPORT123] Report successfully", "Reports"</td>
+<td></td>
+<td>78</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Outstanding Premium Ageing Report(Details)[REPORT216] Report successfully", "Reports"</td>
+<td></td>
+<td>44</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Outstanding Premium Report(Business Group)[REPORT209] Report successfully", "Reports"</td>
+<td></td>
+<td>44</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Payment Cheque Register[REPORT108] Report successfully", "Reports"</td>
+<td></td>
+<td>189</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Pending Quotation[REPORT98] Report successfully", "Reports"</td>
+<td></td>
+<td>64</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Performance Incentive Report[REPORT64] Report successfully", "Reports"</td>
+<td></td>
+<td>62</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Policy Cancellation[REPORT56] Report successfully", "Reports"</td>
+<td></td>
+<td>83</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Policy Push Error Records[REPORT196] Report successfully", "Reports"</td>
+<td></td>
+<td>90</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Policy Renewable[REPORT169] Report successfully", "Reports"</td>
+<td></td>
+<td>88</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Policy Retention Report (Quarterly)[REPORT167] Report successfully", "Reports"</td>
+<td></td>
+<td>47</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Policy Retention Report (Yearly)[REPORT168] Report successfully", "Reports"</td>
+<td></td>
+<td>48</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Premium Financed Risk Notes[REPORT68] Report successfully", "Reports"</td>
+<td></td>
+<td>82</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Print Multiple Certificate[REPORT229] Report successfully", "Reports"</td>
+<td></td>
+<td>51</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Print Multiple Policy Documents[REPORT_PD] Report successfully", "Reports"</td>
+<td></td>
+<td>52</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Print Multiple Risk Notes[REPORT02] Report successfully", "Reports"</td>
+<td></td>
+<td>52</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Print Multiple TIRA Stickers (New)[REPORT147] Report successfully", "Reports"</td>
+<td></td>
+<td>52</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Regulatory Document Inventory[REPORT189] Report successfully", "Reports"</td>
+<td></td>
+<td>59</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Renewal List[REPORT14] Report successfully", "Reports"</td>
+<td></td>
+<td>83</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Renewal List (User wise)[REPORT221] Report successfully", "Reports"</td>
+<td></td>
+<td>82</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Renewal Reminder Letter[REPORT15] Report successfully", "Reports"</td>
+<td></td>
+<td>66</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Show Expired, Active or Renewed Risk Notes.[REPORT62] Report successfully", "Reports"</td>
+<td></td>
+<td>79</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Statement (Client-wise)[REPORT09] Report successfully", "Reports"</td>
+<td></td>
+<td>69</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Statement (Insurer-wise) Comprehensive[REPORT59] Report successfully", "Reports"</td>
+<td></td>
+<td>78</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Statement (Insurer-wise) Kenya[REPORT59] Report successfully", "Reports"</td>
+<td></td>
+<td>121</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Statement (Insurer-wise)Type 1[REPORT08] Report successfully", "Reports"</td>
+<td></td>
+<td>60</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Statement (Insurer-wise)Type 2[REPORT44] Report successfully", "Reports"</td>
+<td></td>
+<td>59</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Statement (Insurer-wise)Type 3[REPORT44] Report successfully", "Reports"</td>
+<td></td>
+<td>59</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Statement Statement (Client-wise) - on Risk Note[REPORT217] Report successfully", "Reports"</td>
+<td></td>
+<td>69</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Sticker Replacement[REPORT186] Report successfully", "Reports"</td>
+<td></td>
+<td>74</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Supplier Invoice Ageing Report[REPORT105] Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Supplier Statement[REPORT104] Report successfully", "Reports"</td>
+<td></td>
+<td>112</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Targets[REPORT117] Report successfully", "Reports"</td>
+<td></td>
+<td>55</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Targets (Zone wise)[REPORT159] Report successfully", "Reports"</td>
+<td></td>
+<td>55</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Targets (Zone wise) BY Policy Count[REPORT166] Report successfully", "Reports"</td>
+<td></td>
+<td>55</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Targets By Policy Count[REPORT165] Report successfully", "Reports"</td>
+<td></td>
+<td>56</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA MIS Report[REPORT79] Report successfully", "Reports"</td>
+<td></td>
+<td>57</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Broker Premium Remittance Statement[REPORT40] Report successfully", "Reports"</td>
+<td></td>
+<td>57</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Broker Premium Remittance Statement(Quarterly)[REPORT80] Report successfully", "Reports"</td>
+<td></td>
+<td>54</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Brokers Premium Collection Report (Quarterly)[REPORT48] Report successfully", "Reports"</td>
+<td></td>
+<td>46</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Commission Income Statemnt (Quarterly)[REPORT42] Report successfully", "Reports"</td>
+<td></td>
+<td>55</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Commission Income Statemnt (Yearly)[REPORT41] Report successfully", "Reports"</td>
+<td></td>
+<td>51</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Commission IncomeStatement (Monthly)[REPORT100] Report successfully", "Reports"</td>
+<td></td>
+<td>54</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Payables Outstanding to Insurers[REPORT38] Report successfully", "Reports"</td>
+<td></td>
+<td>51</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Payables Outstanding to Insurers (Quaterly)[REPORT115] Report successfully", "Reports"</td>
+<td></td>
+<td>54</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Premium Booked Statement (Monthly))[REPORT148] Report successfully", "Reports"</td>
+<td></td>
+<td>54</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Premium Booked Statement (Quarterly)[REPORT115] Report successfully", "Reports"</td>
+<td></td>
+<td>54</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Premium Booked Statement (Yearly)[REPORT35] Report successfully", "Reports"</td>
+<td></td>
+<td>51</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly)[REPORT39] Report successfully", "Reports"</td>
+<td></td>
+<td>54</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Yearly)[REPORT37] Report successfully", "Reports"</td>
+<td></td>
+<td>51</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view TIRA Sticker Inventory[REPORT93] Report successfully", "Reports"</td>
+<td></td>
+<td>58</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Total Outstanding Payments (Client wise)[REPORT214] Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Total Outstanding Payments (Detailed)[REPORT29] Report successfully", "Reports"</td>
+<td></td>
+<td>73</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Total Outstanding Payments (Summarized)[REPORT22] Report successfully", "Reports"</td>
+<td></td>
+<td>50</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Total Outstanding Receipts (Detailed)[REPORT28] Report successfully", "Reports"</td>
+<td></td>
+<td>73</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Total Outstanding Receipts (Summarized)[REPORT21] Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Unallocated Credit Note[REPORT236] Report successfully", "Reports"</td>
+<td></td>
+<td>57</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Unallocated Payments[REPORT24] Report successfully", "Reports"</td>
+<td></td>
+<td>58</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Unallocated Receipts[REPORT23] Report successfully", "Reports"</td>
+<td></td>
+<td>66</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Unrequested Customer Tax Invoice Transactions[REPORT133] Report successfully", "Reports"</td>
+<td></td>
+<td>79</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view User Details[REPORT219] Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view VAT submission Report[REPORT109] Report successfully", "Reports"</td>
+<td></td>
+<td>40</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view VAT submission Report for Insurance Companies[REPORT49] Report successfully", "Reports"</td>
+<td></td>
+<td>58</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view VAT submission Report for Insurance Companies 1[REPORT54] Report successfully", "Reports"</td>
+<td></td>
+<td>57</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+<tr>
+<td title='testRunner.RunnerTestReports.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestReports<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user able to view Vouchers Report[REPORT106] Report successfully", "Reports"</td>
+<td></td>
+<td>126</td>
+<td>testRunner.RunnerTestReports@76954a33</td></tr>
+</table><p>
+</body>
+</html>

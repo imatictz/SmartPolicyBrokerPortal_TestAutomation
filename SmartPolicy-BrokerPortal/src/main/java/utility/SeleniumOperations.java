@@ -1,0 +1,1107 @@
+    package utility;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.math.RoundingMode;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Properties;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class SeleniumOperations 
+{
+	
+  //private static final String[] String = null;
+    public static WebDriver driver=null;
+	public static Hashtable<String,Object> outputparameters=new Hashtable<String,Object>();
+	public static ConfigReader config;
+	public static WebDriverWait wait1;
+	static Properties langProperties;
+
+  //BrowserLaunch
+	public static Hashtable<String,Object>  browserLaunch(){  
+		try {
+		  config=new ConfigReader();
+	      if(config.getBrowserName().equalsIgnoreCase("Chrome")){		
+		    
+	    	  WebDriverManager.chromedriver().setup();
+	    	  driver = new ChromeDriver();
+	    	  /*System.setProperty("webdriver.chrome.driver", config.getDriverPathChrome());
+		     driver=new ChromeDriver();*/
+		     driver.manage().window().maximize();
+	      }
+	      else if(config.getBrowserName().equalsIgnoreCase("FireFox")) { 
+	        WebDriverManager.firefoxdriver().setup();
+	        driver = new FirefoxDriver();
+	    	  /* System.setProperty("webdriver.gecko.driver", config.getDriverPathFF());
+	         driver=new FirefoxDriver();*/
+	         driver.manage().window().maximize();
+	     
+	      }
+	      else if(config.getBrowserName().equalsIgnoreCase("MicroSoftEdge")){ 
+	        WebDriverManager.edgedriver().setup();
+	        driver = new EdgeDriver();
+	    	  /* System.setProperty("webdriver.edge.driver", config.getDriverPathMicroSoft() );
+	         driver=new EdgeDriver();*/
+	         driver.manage().window().maximize();
+	      }
+	      else if(config.getBrowserName().equalsIgnoreCase("Safari")){ 
+		        WebDriverManager.safaridriver().setup();
+		        driver = new SafariDriver();
+		    	  /* System.setProperty("webdriver.edge.driver", config.getDriverPathMicroSoft() );
+		         driver=new EdgeDriver();*/
+		         driver.manage().window().maximize();
+		      }
+	         outputparameters.put("STATUS","PASS");
+	         outputparameters.put("MESSAGE","Method Used:browserLaunch,Input Given:"+config.getBrowserName().toString());
+	    }
+	    catch(Exception e){
+	    	 outputparameters.put("STATUS","FAIL");
+	    	 outputparameters.put("MESSAGE","Method Used:browserLaunch,Input Given:"+config.getBrowserName().toString());
+		}
+	    return outputparameters;
+     }
+//SelectLanguage
+	public static void selectLanguage() throws InterruptedException {
+		if(config.getLanguageName().equalsIgnoreCase("En")){		
+		    
+			Object[] input4=new Object[1];
+			input4[0]="(//*[@class='menu-arrow'])[18]";
+			SeleniumOperations.actionClass(input4);
+			
+			
+			Object[] input5=new Object[1];
+			input5[0]="//*[@data-language='En']";
+			SeleniumOperations.clickOnLogin(input5);
+			
+			Object[] input6=new Object[1];
+			input6[0]="//*[@id='btnYesLocal']";
+			SeleniumOperations.clickOnLogin(input6);
+			Thread.sleep(2000);
+			Object[] input7 = new Object[2];
+			input7[0] ="//*[@id='span_lblHi_lc']";
+			input7[1]="Hi";
+			SeleniumOperations.validation(input7);
+	      }
+	      else if(config.getLanguageName().equalsIgnoreCase("Fr")) { 
+	    	  Object[] input4=new Object[1];
+	  		input4[0]="(//*[@class='menu-arrow'])[18]";
+	  		SeleniumOperations.actionClass(input4);
+	  		
+	  		Object[] input5=new Object[1];
+	  		input5[0]="//*[@data-language='Fr']";
+	  		SeleniumOperations.clickOnLogin(input5);
+	  		
+	  		Object[] input6=new Object[1];
+	  		input6[0]="//*[@id='btnYesLocal']";
+	  		SeleniumOperations.clickOnLogin(input6);
+	  		Thread.sleep(2000);
+	  		Object[] input7 = new Object[2];
+	  		input7[0] ="//*[@id='span_lblHi_lc']";
+	  		input7[1]="Salut";
+	  		SeleniumOperations.validation(input7);
+	     
+	      }
+	      else if(config.getLanguageName().equalsIgnoreCase("Sw")) { 
+	    	  Object[] input4=new Object[1];
+	  		input4[0]="(//*[@class='menu-arrow'])[18]";
+	  		SeleniumOperations.actionClass(input4);
+	  		
+	  		Object[] input5=new Object[1];
+	  		input5[0]="//*[@data-language='Sw']";
+	  		SeleniumOperations.clickOnLogin(input5);
+	  		
+	  		Object[] input6=new Object[1];
+	  		input6[0]="//*[@id='btnYesLocal']";
+	  		SeleniumOperations.clickOnLogin(input6);
+	  		Thread.sleep(2000);
+	  		Object[] input7 = new Object[2];
+	  		input7[0] ="//*[@id='span_lblHi_lc']";
+	  		input7[1]="Habari";
+	  		SeleniumOperations.validation(input7);
+	     
+	      }
+	}
+//OpenApplication
+	 public static Hashtable<String,Object> openApplication(){   
+		 try {  
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		// driver.manage().timeouts().pageLoadTimeout(50,TimeUnit.SECONDS);
+		   driver.navigate().to(config.getApplicationUrl());
+		  /* String textValue = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
+		   String pass ="Session Expired.";
+		   if(textValue==pass) {
+			   driver.findElement(By.xpath("//a[@href='wfLogin.aspx']")).click();
+               driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys("PravinS");
+               driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Sp@12345");
+               driver.findElement(By.xpath("//*[text()='Login']")).click();
+		   }*/
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
+	      }
+	      catch(Exception e){
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
+	      }
+	      return outputparameters;
+     }
+	 
+//SendUserID
+     public static Hashtable<String,Object> sendUserId(Object[]inputparameters){   
+	    try {
+	      driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+	      String strXpath=(String)inputparameters[0];
+          driver.findElement(By.xpath(strXpath)).sendKeys(config.sendUserId());
+          outputparameters.put("STATUS","PASS");
+	      outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendUserId());
+	    }
+        catch(Exception e){
+   	      outputparameters.put("STATUS","FAIL");
+		  outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendUserId());
+        }
+        return outputparameters;
+     }
+	 
+//SendPassword
+     public static Hashtable<String,Object> sendPassword(Object[]inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+	       driver.findElement(By.xpath(strXpath)).sendKeys(config.sendPassword());
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendPassword());
+	     }
+	     catch(Exception e){
+	   	   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendPassword());
+	     }
+	     return outputparameters;
+     }
+     
+     //ClickOnLoginButton
+     public static Hashtable<String,Object> clickOnLogin(Object[] inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   driver.findElement(By.xpath(strXpath)).click();
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
+	   /*  String test = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
+		   System.out.println(test);
+	     if(test.equalsIgnoreCase("Session Expired.")) {
+			   driver.findElement(By.xpath("//*[@href='wfLogin.aspx']")).click();
+			   driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys(config.sendUserId());
+			   driver.findElement(By.xpath("//*[@id='password']")).sendKeys(config.sendPassword());
+			   driver.findElement(By.xpath("//*[text()='Login']")).click();
+		   }*/
+		 }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
+	     }
+	     return outputparameters;
+     }
+
+//SendKeys
+     public static Hashtable<String,Object> sendKeys(Object[] inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   String strvalue=(String)inputparameters[1];
+	       driver.findElement(By.xpath(strXpath)).sendKeys(strvalue);
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     catch(Exception e){
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     }
+     
+   //SendKeysVehRegistration
+     public static Hashtable<String,Object> sendKeysVehRes(Object[] inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   String strvalue=(String)inputparameters[1];
+		   String vehicleNumber = strvalue; // Initial value
+	        int number = Integer.parseInt(vehicleNumber.replaceAll("\\D", "")); // Extract the numeric part
+
+	        number++; // Increment the number
+	        vehicleNumber = "VEHICLE" + number; // Combine the prefix with the new number
+		    
+	       driver.findElement(By.xpath(strXpath)).sendKeys(vehicleNumber);
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     catch(Exception e){
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     }
+     
+	
+//Click
+     public static Hashtable<String,Object> clickOnElement(Object[] inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   driver.findElement(By.xpath(strXpath)).click();
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
+	     }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
+	     }
+	     return outputparameters;
+     }
+     
+ //DoubleClick
+     public static Hashtable<String,Object> doubleClickOnElement(Object[] inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   driver.findElement(By.xpath(strXpath)).click();
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:doubleClickOnElement, Input Given:"+inputparameters[0]);
+	     }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:doubleClickOnElement, Input Given:"+inputparameters[0]);
+	     }
+	     return outputparameters;
+     }   
+     
+	
+//Validation
+     public static Hashtable<String,Object> validation(Object[] inputparameters){  
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String xpath=(String)inputparameters[0];
+		   String givenText=(String)inputparameters[1];
+		  // String statusText =(String)inputparameters[2];
+		   String findText=driver.findElement(By.xpath(xpath)).getText();
+		   //System.out.println(findText);
+		   
+		   if(givenText.equalsIgnoreCase(findText)){
+			 System.out.println("Test Case Pass");
+			 outputparameters.put("STATUS","PASS");
+			   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
+		     
+		   }
+		   else {
+			 System.out.println("Test Case Fail");
+			 outputparameters.put("STATUS","FAIL");
+			   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
+		   }
+		   }
+		   
+	     catch(Exception e) {
+		   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:validation, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     }
+	 
+//Actions Class	 
+	 public static Hashtable<String,Object> actionClass(Object[] inputparameters) {
+	     try {
+		   String xpath=(String) inputparameters[0];
+		   //driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   Actions act=new Actions(driver);
+		   WebElement move = driver.findElement(By.xpath(xpath));
+		   act.moveToElement(move).build().perform();
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:actionClass, Input Given:"+inputparameters[0]);
+		 }
+		 catch(Exception e) {
+		   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:actionClass, Input Given:"+inputparameters[0]);
+		 }
+		 return outputparameters;
+     }
+		
+//ActionsDownEnter
+	 public static Hashtable<String,Object> actionDownEnter() {
+		 try { 
+		 //String xpath=(String) inputparameters[0];
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		 //driver.findElement(By.xpath(xpath));
+		   Actions act=new Actions(driver);
+		   Thread.sleep(2000);
+		   act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		   Thread.sleep(2000);
+		   act.sendKeys(Keys.ENTER).build().perform();
+		   Thread.sleep(2000);
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:actionDownEnter, Input Given:");
+		 }
+		 catch(Exception e) {
+		   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:actionDownEnter, Input Given:");
+		 }
+		 return outputparameters;
+     }  
+
+//ActionsDoubleDownEnter	 
+	 public static Hashtable<String,Object> actionDoubleDownEnter() {
+		 try { 
+		 //String xpath=(String) inputparameters[0];
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		 //driver.findElement(By.xpath(xpath));
+		   Actions act=new Actions(driver);
+		   Thread.sleep(2000);
+		   act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		   Thread.sleep(2000);
+		   act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		   act.sendKeys(Keys.ENTER).build().perform();
+		   Thread.sleep(2000);
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:actionDownEnter, Input Given:");
+		 }
+		 catch(Exception e) {
+		   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:actionDownEnter, Input Given:");
+		 }
+		 return outputparameters;
+     }  
+	
+//HandleAlertMessage		 
+     public static Hashtable<String,Object> alert() {   
+    	 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   Alert pass=driver.switchTo().alert();
+		   pass.accept();
+		 }
+		 catch(Exception e) {
+		   System.out.println(e);
+		 }
+		 return outputparameters;
+     }
+		 
+//ScrollUp
+     public static Hashtable<String,Object> scrollUp() {
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   JavascriptExecutor js = (JavascriptExecutor) driver;
+		   js.executeScript("window.scrollBy(0,-750)");
+		   js.executeScript("window.scrollBy(0,250");
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+		 }
+		 catch(Exception e) {
+		   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+		 }
+	     return outputparameters;
+     }
+		 
+//Select date
+     public static Hashtable<String, Object> date (Object[] inputParameters) {
+		 try {
+		   String xpath1=(String) inputParameters[0];
+		   String xpath2=(String) inputParameters[1];
+		   String xpath3=(String) inputParameters[2];
+		   String xpath4=(String) inputParameters[3];
+		   String xpath5=(String) inputParameters[4];
+		   String xpath6=(String) inputParameters[5];
+		 //Click on calender symbol
+		   driver.findElement(By.xpath(xpath1)).click();
+		 //Select Date of birth
+		   driver.findElement(By.xpath(xpath2)).click();
+		   Thread.sleep(2000);
+		   driver.findElement(By.xpath(xpath3)).click();
+		 //Click On Year
+		   driver.findElement(By.xpath(xpath4)).click();
+		   Thread.sleep(2000);
+		 //Select month
+		   driver.findElement(By.xpath(xpath5)).click();
+		   Thread.sleep(2000);
+		 //Select Day
+		   driver.findElement(By.xpath(xpath6)).click();
+		   Thread.sleep(2000);
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
+		 }
+		 catch(Exception e) {
+		   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
+		 }
+		 return outputparameters;
+     }
+		 
+//Scrolldown		 
+     public static Hashtable<String,Object> scrolldown() {
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   JavascriptExecutor down=(JavascriptExecutor) driver;
+		   down.executeScript("window.scrollBy(0,1500)");//1050
+		   Thread.sleep(2000);
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
+		 }
+		 catch(Exception e) {
+		   outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
+		 }
+		 return outputparameters;
+     }
+     
+     public static void enter() {
+    	 Actions actions = new Actions(driver);
+    	 WebElement element = driver.findElement(By.xpath("//*[@id='btnSave']"));
+    	 actions.moveToElement(element).click().perform();
+
+     }
+		 
+//ClearAndEnter
+     public static Hashtable<String,Object> clearAndEnter(Object[]inputparameters) {   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   String strvalue=(String)inputparameters[1];
+	       WebElement remove=driver.findElement(By.xpath(strXpath));
+	       remove.clear();
+	       Thread.sleep(2000);
+	       remove.click();
+	       Thread.sleep(2000);
+	       remove.sendKeys(strvalue);
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     }
+     
+   //Clear
+     public static Hashtable<String,Object> clear(Object[]inputparameters) {   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+	       WebElement remove=driver.findElement(By.xpath(strXpath));
+	       remove.clear();
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:clear, Input Given:"+inputparameters[1]);
+	     }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:clear, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     }
+		 
+//Iframe
+     public static Hashtable<String,Object> iFrameEnter(Object[]inputparameters) {   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   String strvalue=(String)inputparameters[1];
+		   driver.switchTo().frame(0);
+	       WebElement send=driver.findElement(By.xpath(strXpath));
+	       send.clear();
+	       Thread.sleep(2000);
+	       send.click();
+	       send.sendKeys(strvalue);
+	       Thread.sleep(2000);
+	       driver.switchTo().defaultContent();
+	       Thread.sleep(2000);
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     } 
+		 
+//Switch Window 		
+     public static void transfer() {
+		 ((JavascriptExecutor)driver).executeScript("window.open()");
+         ArrayList<String> tab=new ArrayList<String>(driver.getWindowHandles());
+         driver.switchTo().window(tab.get(0));
+     }	
+
+//Open New Tab
+     public static void tab() {
+		 ((JavascriptExecutor)driver).executeScript("window.open()");
+		  ArrayList<String> tab=new ArrayList<String>(driver.getWindowHandles());
+			driver.switchTo().window(tab.get(1));
+     }
+
+//DropDown
+     public static Hashtable<String,Object> dropdown(Object[] inputparameters) {   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String clickXpath = (String)inputparameters[0];
+		   driver.findElement(By.xpath(clickXpath)).click();
+	 		//wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
+
+		 
+		   Thread.sleep(2000);
+		   String sendXpath = (String)inputparameters[1];
+		   String sendValue = (String)inputparameters[2];
+		   driver.findElement(By.xpath(sendXpath)).sendKeys(sendValue);
+		   String selectXpath = (String)inputparameters[3];
+		   driver.findElement(By.xpath(selectXpath)).click();
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:Dropdown, Input Given:"+inputparameters[2]);
+	     }
+	     catch(Exception e) {
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:Dropdown, Input Given:"+inputparameters[2]);
+	     }
+	     return outputparameters;
+     }
+     
+//Navigate Back		 
+     public static Hashtable<String,Object> navigateBack() {   
+   		 try {
+   		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+   		   driver.navigate().back();
+   	    // outputparameters.put("STATUS","Pass");
+   		// outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+   	     }
+   	     catch(Exception e) {
+   	     //outputparameters.put("STATUS","Fail");
+   	     //outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+   	     }
+   	     return outputparameters;
+     } 
+     
+//OpenApplicationOfInsurer
+     public static Hashtable<String,Object> openApplicationinsurer(Object[]inputparameters) {   
+	     try {  
+	       driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+	       String strXpath=(String)inputparameters[0]; 
+	       driver.navigate().to(strXpath);
+	       outputparameters.put("STATUS","Pass");
+	       outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
+         }
+         catch(Exception e) {
+    	   outputparameters.put("STATUS","Fail");
+		   outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
+         }
+         return outputparameters;
+     }
+     
+//ScrollUp450
+     public static Hashtable<String,Object> scrollUp450() {
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   JavascriptExecutor js = (JavascriptExecutor) driver;
+	       js.executeScript("window.scrollBy(0,-150)");
+	       outputparameters.put("STATUS","Pass");
+		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+		 }
+		 catch(Exception e) {
+		   outputparameters.put("STATUS","Fail");
+		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
+		 }
+		 return outputparameters;
+	 }
+     
+     
+     
+     public static Hashtable<String, Object> calculations(Object[]inputparameters){
+    	
+    	String input1 = (String)inputparameters[0];
+    	String input2 = (String)inputparameters[1]; 
+    	
+    	String  sumInsuredValue=driver.findElement(By.xpath(input1)).getText();
+    	 System.out.println(sumInsuredValue);
+    	 
+    	 String  rateValue=driver.findElement(By.xpath(input2)).getText();
+    	 System.out.println(rateValue);
+    	// Assertions.assertEquals(sumInsuredValue, rateValue);
+		return outputparameters; 
+    	 
+    	 
+     }
+     
+// Explicit Wait
+    /* public static void wait(Object[] inputparameters) throws InterruptedException {
+    	String input=(String)inputparameters[0];
+    	 WebElement waitTill= driver.findElement(By.xpath(input));
+
+ 		Thread.sleep(5000);
+
+ 		
+ 		wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
+     }*/
+     
+//SwitchWindow     
+     
+     public static Hashtable<String, Object> switchWindow() throws IOException {
+    	try {
+
+    		driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+    		/*WebDriverWait wait1 = new WebDriverWait(driver, 30);
+     		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@dir='ltr'])[2]")));
+    		//Set<String> ids = driver.getWindowHandles();*/
+
+    	Set<String> ids1 = driver.getWindowHandles();
+
+    	
+    	Iterator<String> values = ids1.iterator();    
+    	
+    	String one = values.next();
+    	String two = values.next();
+    	
+        driver.switchTo().window(two);
+    	
+    	
+    	String url = driver.getCurrentUrl();
+    	System.out.println(url);
+    	 
+    	URL pdfUrl = new URL(url);
+    	
+    	URLConnection urlConnection = pdfUrl.openConnection();
+    	urlConnection.addRequestProperty("User-Agent", "Chrome");
+    	InputStream id = urlConnection.getInputStream();
+    	
+		   
+    	BufferedInputStream bufferedInput = new BufferedInputStream(id);
+    	
+    	System.out.println("==========Print Page Number Of Pdf==========");
+    	PDDocument pdDocument = PDDocument.load(bufferedInput);
+    	int pages = pdDocument.getNumberOfPages();
+    	System.out.println("Number Of Pages In PDF"+" "+pages);
+        System.out.println("==========End==========");
+        //.load(bufferedInput);
+        PDFTextStripper text = new PDFTextStripper();
+        String printText = text.getText(pdDocument);
+        System.out.println("==========Print PDF Text==========");
+        System.out.println("PDF Text" +" "+printText);
+        System.out.println("==========End==========");
+      
+       outputparameters.put("STATUS","Pass");
+
+	   outputparameters.put("MESSAGE","Method Used:switchWindow, Input Given:");
+    	}
+    	catch(Exception e) {
+   		 outputparameters.put("STATUS","Fail");
+ 		   outputparameters.put("MESSAGE","Method Used:switchWindow, Input Given:");
+ 		 	 
+   	 }
+
+	   
+		return outputparameters;
+     
+     }
+     
+     public static void browserColse() {
+    	 driver.quit();
+     }
+     
+     public static void browserClose() {
+    	 try {
+    		 driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+    	 driver.quit();
+    	 }
+    	 catch(Exception e) {
+    		 outputparameters.put("STATUS","Fail");
+  		   outputparameters.put("MESSAGE","Method Used:browserColse, Input Given:");
+  		 	 
+    	 }
+     }
+          
+     
+     //Calculations
+     public static void calculate(Object[] inputparameters) {
+    	try { 
+    	 String output = (String)inputparameters[0];
+    	WebElement text = driver.findElement(By.xpath(output));
+    	String pass =text.getText();
+    	System.out.println(pass); 
+    	}
+    	catch(Exception e) {
+    		System.out.println(e);
+    	}
+    	/*List<WebElement> test = driver.findElements(By.xpath(output));
+        
+        for(WebElement i:test) {
+        	
+        	String pass = i.getText();
+        	System.out.println(pass);
+        }
+         
+         }*/
+
+    	 
+     } 
+     
+     public static void gstPercentCalculationValidation(Object[] inputparameters) {
+    	try {
+    		
+    		//Get Vatt on commission for equal or check
+    	       
+    	       String output1 = (String)inputparameters[0];
+    	   	WebElement vattOnCommssionValue = driver.findElement(By.xpath(output1));
+    	   	String vattOnCommssionStringValue = vattOnCommssionValue.getAttribute("value");
+    	   	String clearValue1=vattOnCommssionStringValue.replaceAll(",", "");
+    	   	//System.out.println(clearValue1);
+    	       double percentage1 = Double.parseDouble(clearValue1);
+    	       System.out.println("Percentage Value"+" "+percentage1);
+    	       if(percentage1!=0) {
+    		//VATT on commission calculate by percent
+    		String output = (String)inputparameters[1];
+    	WebElement commissionValue = driver.findElement(By.xpath(output));
+    	String CommissionStringValue =commissionValue.getAttribute("value");
+    	String commissionClearValue=CommissionStringValue.replaceAll(",", "");
+    	double commissionClearValue0 =Double.parseDouble(commissionClearValue);
+    	System.out.println(commissionClearValue0);
+    	
+       
+    		double percentage = Double.parseDouble(commissionClearValue)*18/100;
+       DecimalFormat df = new DecimalFormat("0.00");
+       df.setRoundingMode(RoundingMode.DOWN);
+       String finalCommission = df.format(percentage);
+      double calculatedFinalPercent = Double.parseDouble(finalCommission);
+      System.out.println(calculatedFinalPercent);
+    	 
+     
+        
+    	   if(calculatedFinalPercent==percentage1) {
+       	       System.out.println("Percentage Is Right");
+           }
+           else {
+               System.out.println("Percentage Is Wrong");
+           }
+   	//System.out.println("VATT/GST Is : "+(calculatedFinalPercent==percentage1));
+     
+   	
+   	//Get Total Commission
+   	//commission+vatt on commission
+   	 double calculatedTotalCommission = Double.sum(commissionClearValue0, percentage1);
+   	 System.out.println(calculatedTotalCommission);
+   	 
+   	 //Get Total Commission for equal or check
+   	 String output2 = (String)inputparameters[2];
+    	WebElement totalCommissionValue = driver.findElement(By.xpath(output2));
+    	String totalCommissionStringValue =totalCommissionValue.getAttribute("value");
+    	String clearValue2=totalCommissionStringValue.replaceAll(",", "");
+    	System.out.println(clearValue2);
+       double finalValue = Double.parseDouble(clearValue2);
+       System.out.println("Total Premium/Commission Is :"+(calculatedTotalCommission==finalValue));
+   	
+    	}
+    	else {
+    		System.out.println("No GST/VATT On Quotation");
+    	}
+        
+        
+        
+        
+        
+    	}
+    	catch(Exception e){
+    		System.out.println(e);
+    	}     
+    	}
+     
+     
+     public static void CalculateSumOfColumn(Object[] inputparameters) {
+    	 String input = (String)inputparameters[0];
+    	// WebElement colunmValues = (WebElement) driver.findElements(By.xpath(input));
+    	 List<WebElement> colunmValues = driver.findElements(By.xpath(input));
+    	int t = colunmValues.size();
+    	for(int i = 0;i<t;i++) {
+        String finalValues = colunmValues.get(i).getText();
+        
+        System.out.println("Values"+" "+finalValues);
+    	
+    	
+    	}
+    	 
+    	
+     }
+     
+     public static void swahiliElement(Object[] inputparameters) {
+    	SoftAssert SoftAssert = new SoftAssert();
+    	 String xpath = (String) inputparameters[0];
+    	 String text = (String) inputparameters[1];
+    	 WebElement dashboardTitle = driver.findElement(By.xpath(xpath)); // replace with actual ID
+         //System.out.println(dashboardTitle.getText());
+         //SoftAssert.assertEquals(dashboardTitle.getText(), text);
+         SoftAssert.assertEquals(dashboardTitle.getText(), text, "fail");
+         SoftAssert.assertAll();
+ 	
+     }
+     
+     public static void getRiskNo1() {
+    	     
+         // Locate the table or list containing quote
+         WebElement quoteTable = driver.findElement(By.id("sort_table")); // Adjust the locator as needed
+         List<WebElement> rows = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
+
+         // Iterate through the rows to find quotes
+         for (WebElement row : rows) {
+             // Locate the quote name and status columns
+        	/*String quoteName = row.getText();
+        	System.out.println(quoteName);*/
+        	 List<WebElement> colQuote = row.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")); // Adjust XPath index as needed
+            for (WebElement passQuote : colQuote ) {
+            	String quoteName = passQuote.getText();
+            	//System.out.println(quoteName);
+            	if (quoteName.equalsIgnoreCase("Bonds")) {
+                    // Check the status
+                    List<WebElement> colStatus = row.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]")); // Adjust XPath index as needed
+                    for (WebElement passStatus : colStatus ) {
+                    	String status = passStatus.getText();
+                    	//System.out.println(status);
+                    if (status.equalsIgnoreCase("Awaiting Receipt")) {
+                        // Get the quote number
+                    	List<WebElement> quoteNumber = row.findElements(By.xpath("//*[contains(@id,'MainContent_repIQNM_lblSrchQuoteNb')]")); // Adjust XPath index as needed
+                    	for (WebElement passNo : quoteNumber ) {
+                        	String quoteNo = passNo.getText();
+                    	System.out.println("Quote Number: " + quoteNo);
+                        ///*quoteNumber = true;
+                        break; // Exit loop since the active quote is found
+                    }
+                    	// Handle the case where no active quote is found
+                        /* if (!isQuoteFound) {
+                             System.out.println("No active 'medical' quote found.");
+                         }*/
+                    
+            }
+            	}
+            }
+         }
+     }
+         
+         
+         
+        
+}
+
+     public static void getRiskNo2() {
+    	 
+    	 
+    	// Locate the table or list containing quote
+         WebElement quoteTable = driver.findElement(By.id("sort_table")); // Adjust the locator as needed
+         List<WebElement> rows = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
+                rows.size();
+         // Iterate through the rows to find quotes
+         for (WebElement row : rows) {
+             // Locate the quote name and status columns
+        	String rowsDetails = row.getText();
+        	//System.out.println(rowsDetails);
+        	
+    	 
+        	}
+         List<WebElement> colQuote = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]"));
+     	for(WebElement quoteList : colQuote) {
+     		String quoteNames = quoteList.getText();
+     		//System.out.println(quoteNames);
+     	
+     	
+     	if(quoteNames.equalsIgnoreCase("Bonds")) {
+     		System.out.println("Bonds quote found");
+     		
+     			
+     		}
+     	
+     	}
+     	List<WebElement> colStatus = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]"));
+ 		for(WebElement statusList : colStatus) {
+ 			String statusUpdate = statusList.getText();
+ 			System.out.println(statusUpdate);
+ 			
+ 			if(statusUpdate.equalsIgnoreCase("Awaiting Receipt")){
+ 				System.out.println("Status is Right");
+ 			}
+ 			
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+     }
+         
+       		
+        		
+     }
+     
+    /* public static void getRiskNo() {
+    	// User-provided quotename
+         String userProvidedQuotename = "Bonds";
+    	 // Locate the table
+         WebElement table = driver.findElement(By.id("sort_table")); // Replace with your table's ID or locator
+
+         // Get all rows of the table (excluding the header row, if present)
+         List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
+
+         // Iterate through each row
+         for (int i = 0; i < rows.size(); i++) { // Assuming first row is a header
+             WebElement row = rows.get(i);
+            //System.out.println(row.getText()); 
+
+             // Get the quotename, status, and quotenumber columns
+             WebElement quotenameElement = row.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")); // Adjust index based on your table
+             System.out.println(quotenameElement.getText());
+             WebElement statusElement = row.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]"));   // Adjust index based on your table
+             System.out.println(statusElement.getText());
+             WebElement quotenumberElement = row.findElement(By.xpath("//*[contains(@id,'MainContent_repIQNM_lblSrchQuoteNb')]")); // Adjust index based on your table
+             System.out.println(quotenumberElement.getText()+" "+"NEXT QUOTE DETAILS");
+          // Get text of the columns
+             String quotename = quotenameElement.getText();
+             String status = statusElement.getText();   
+
+             
+          // Get all cells in the current row
+             List<WebElement> cells = row.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td"));)
+
+             // Ensure the row has enough cells (at least 3)
+             if (cells.size() >= 3) {
+                 // Extract values dynamically
+                 String quotename = cells.get(0).getText(); // First cell (adjust index if necessary)
+                 String status = cells.get(1).getText();   // Second cell (adjust index if necessary)
+                 String quotenumber = cells.get(2).getText(); // Third cell (adjust index if necessary)
+             // Check if the quotename matches the user-provided value
+             if (quotename.equalsIgnoreCase(userProvidedQuotename)) {
+                 // Check the status
+                 if (status.equalsIgnoreCase("Awaiting Receipt")) {
+                    // String quotenumber1 = quotenumber.getText();
+                     System.out.println("Quotename: " + quotename + ", Status: " + status + ", Quotenumber: " + quotenumber);
+                     break; // Exit the loop as we found the matching quotename with Active status
+                 } else {
+                     System.out.println("Quotename: " + quotename + ", Status: " + status + " - Moving to next row.");
+                 }
+             }
+         }
+     } 
+     }*/
+     
+     
+
+     public static void InsuranceStatusCheck (){
+          
+             
+             
+             try {
+                 
+                 // Locate the insurance table
+                 WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+                 
+                 // Get all rows of the table
+                 List<WebElement> rows1 = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]"));
+                 List<WebElement> rows2 = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]"));
+                // System.out.println(rows.size());
+                // boolean pendingFound = false;
+                 for (WebElement cell1 : rows1) {
+                     //System.out.println(cell1.getText().trim()); // Print each insurance type
+                     if (cell1.getText().trim().equalsIgnoreCase("Bonds")) { // First column: Insurance Type
+                       // System.out.println("Right");
+                        for (WebElement cell2 : rows2) {
+                        	//System.out.println(cell2.getText().trim());
+                        	if (cell2.getText().trim().equalsIgnoreCase("Awaiting Receipt")) {
+                                System.out.println("Pending status found for Bonds in row: " );
+                               // pendingFound = true;
+                                break; // Stop when the first "Pending" status is found
+                            }
+                        	
+                        }
+                    	 
+                     }
+                 }
+                
+                 
+             } catch (Exception e) {
+                 e.printStackTrace();
+             } 
+         }
+     public static String getriskNote(String quoteName) {
+    	 try {
+    		    // Locate the insurance table
+    		    WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+
+    		    // Get all rows of the table
+    		    List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr")); // Get all rows
+    		    boolean found = false;
+    		    for (WebElement row : rows) {
+    		        WebElement cell1 = row.findElement(By.xpath("./td[4]")); // Get the 4th column
+    		        WebElement cell2 = row.findElement(By.xpath("./td[8]")); // Get the 8th column
+
+    		        if (cell1.getText().trim().equalsIgnoreCase(quoteName) && 
+    		            cell2.getText().trim().equalsIgnoreCase("Awaiting Receipt")) {
+    		            //System.out.println("Pending status found for Bonds in row.");
+    		            WebElement quoteCell = row.findElement(By.xpath("./td[2]/*[1]"));
+    		            String quoteNumber = quoteCell.getText().trim();
+    		            
+    		            
+    		            //System.out.println("Pending status found for Bonds. Quote Number: " + quoteNumber);
+    		            return quoteNumber;
+    		        }
+    		    }
+    		    if (!found) {
+                    Object quoteNumber = null;
+                    System.out.println("No Quote with 'Awaiting Receipt' status found.");
+                }
+
+    		} catch (Exception e) {
+    		    e.printStackTrace();
+    		}
+		return null;
+		
+
+     }
+     
+     }
+
+
+             
+                      
+
+         
+
+    	 
+    	 
+    	 
+    	 
+         
+    	 
+    	 
+     
+ 	 
+	
+
+
+	
