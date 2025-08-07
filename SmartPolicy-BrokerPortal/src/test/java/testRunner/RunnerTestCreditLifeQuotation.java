@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/CreditLife.feature", 
-                   tags= "@MandatoryFieldsNoAddon", 
+                   tags= "@PrintQuote", 
                    glue={"cucumberMap8CreditLife","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

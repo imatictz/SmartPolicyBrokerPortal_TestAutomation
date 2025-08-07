@@ -53,13 +53,7 @@ public class EditClientDetails {
 	public void user_select_edit_icon() throws InterruptedException {
 		Itl.CustomClickEvent("(//*[@class='DisplayData fa fa-edit'])[1]", "CLICK","user select edit icon", 2000);
 	}
-	/*@When("user select edit icon")
-	public void user_select_edit_icon() throws InterruptedException {
-		Object[] input = new Object[2];
-		   input[0]="(//*[@class='DisplayData fa fa-edit'])[1]";
-		   SeleniumOperations.clickOnElement(input);
-		   Thread.sleep(2000);
-	}*/
+	
 	
 	@When("user enter {string} as address")
 	public void user_enter_as_address(String address) throws InterruptedException {
@@ -77,12 +71,7 @@ public class EditClientDetails {
 	public void user_click_on_update_button() throws InterruptedException {
 		Itl.CustomClickEvent("//*[@id='btnSave']", "CLICK","user click on update button", 0);
 	}
-	/*@When("user click on update button")
-	public void user_click_on_update_button() {
-		Object[] input = new Object[2];
-		   input[0]="//*[@id='btnSave']";
-		   SeleniumOperations.clickOnElement(input);
-	}*/
+	
 	
 	@Then("user navigate on client screen")
 	public void user_navigate_on_client_screen() throws InterruptedException {

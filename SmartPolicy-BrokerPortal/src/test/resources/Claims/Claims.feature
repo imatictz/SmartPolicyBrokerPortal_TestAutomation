@@ -10,7 +10,7 @@ When user Click on risk note menu
 @reportBondsClaims
 Scenario: (Report Bond Claim) Verify user able to report claim successfully
 When user select "01/01/2024" as from date
-When user enter "284" as risk note number
+When user enter "382" as risk note number
 When user click on search button
 When user click on actions button
 When user click on report claim umbrella like button
@@ -20,7 +20,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
-When user enter "08/04/2025" as date of loss/Accident
+When user enter date of loss/Accident
 And user select "Accident" as cause of loss/Accident
 Then user enter "Near new street" as place of loss/Accident
 

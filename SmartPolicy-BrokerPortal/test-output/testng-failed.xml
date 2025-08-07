@@ -3,13 +3,13 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="testRunner.RunnerTestReports">
+      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
         <methods>
-          <include name="runScenario" invocation-numbers="94"/>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
-      </class> <!-- testRunner.RunnerTestReports -->
+      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

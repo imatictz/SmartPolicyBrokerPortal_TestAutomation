@@ -153,18 +153,23 @@ public class Vehicle
 			Object[] input=new Object[2];
 		    input[0]="//*[@id='txtFltRegno']";
 		    input[1]=registrationNumber;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeysVehRes(input);
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"15641A56BIKE\" as registration number",output.get("MESSAGE").toString());   
+		Thread.sleep(4000);
 		}
 
 	 @When("^user enter \"([^\"]*)\" as chasis number$")
 	 public void enterChasisNumber(String chasisNumber) throws Throwable 
 	 {
+		 Object[] input1=new Object[1];
+		   input1[0]="//*[@id='txtChasisNo']";
+		   SeleniumOperations.clickOnElement(input1);
+		   Thread.sleep(2000);
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtChasisNo']";
 			input[1]=chasisNumber;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
-			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"632541A\" as chasis number",output.get("MESSAGE").toString());
+			Hashtable<String, Object> output1 = SeleniumOperations.sendKeys(input);
+			HTMLReportGenerator.StepDetails(output1.get("STATUS").toString(),"user enter \"632541A\" as chasis number",output1.get("MESSAGE").toString());
 	 }
 
 	 @When("^user enter \"([^\"]*)\" as vehicle make$")

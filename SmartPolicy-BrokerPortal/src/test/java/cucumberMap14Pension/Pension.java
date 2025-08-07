@@ -278,16 +278,19 @@ public class Pension {
 
 	@When("^user click on loss ratio forecast dropdown$")
 	public void user_click_on_loss_ratio_forecast_dropdown() throws Throwable {
-	    Object[] input50=new Object[1];
-		input50[0]="//*[@id='s2id_MainContent_cmbLRF']";
-		Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on loss ratio forecast dropdown",output50.get("MESSAGE").toString());
+	 
+		Object[] input50=new Object[1];
+		   input50[0]="//*[contains(@aria-controls,'MainContent_cmbLRF')]";
+		   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
+		   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on loss ratio forecast dropdown",output50.get("MESSAGE").toString());
+	
 	}
 
 	@When("^user enter \"([^\"]*)\" as loss ratio forecast$")
 	public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
-	    Object[] input=new Object[2];
-	    input[0]="(//*[@class='select2-input select2-focused'])";
+	   
+		Object[] input=new Object[2];
+	    input[0]="//*[@Class='select2-search__field']";
 	    input[1]=lossRatioForecast;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
@@ -295,11 +298,12 @@ public class Pension {
 
 	@Then("^user select Profit making as loss ratio forecast$")
 	public void user_select_Profit_making_as_loss_ratio_forecast() throws Throwable {
-	    Object[] input50=new Object[1];
-		input50[0]="//*[@class='select2-match']";
-		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select Profit making as loss ratio forecast",output50.get("MESSAGE").toString());
-	    Thread.sleep(2000);
+	   
+		Object[] input50=new Object[1];
+		   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbLRF-result')])";
+		   Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
+		   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select Profit making as loss ratio forecast",output50.get("MESSAGE").toString());
+		   Thread.sleep(2000);
 	}
 
 	@When("^user enter \"([^\"]*)\" as covering details$")
@@ -396,5 +400,44 @@ public class Pension {
 		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
 		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on Re-Compute premium",output50.get("MESSAGE").toString());
 		Thread.sleep(2000);
+	}
+	@When("^user click on extension dropdown$")
+	public void clickOnExtensionDropdown()
+	{
+		Object[] input11=new Object[1];
+		input11[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
+		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input11);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
+	}
+
+	@When("^user enter \"([^\"]*)\" as extension$")
+	public void enterExtension(String extension)
+	{
+		Object[] input=new Object[2];
+	    input[0]="//*[@class='select2-search__field']";
+	    input[1]=extension;
+	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
+	}
+
+	@When("^user select on Others as extension$")
+	public void selectExtension() throws Throwable 
+	{
+	   Object[] input=new Object[1];
+	   input[0]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
+	   Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
+	   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select on Others as extension",output.get("MESSAGE").toString());
+	}
+	
+	@When("user enter {string} as cover note")
+	public void user_enter_as_cover_note_number(String coverNoteNumber) throws Throwable {
+	   
+		Object[] input=new Object[2];
+	    input[0]="//*[@id='MainContent_txtGridICN']";
+	    input[1]=coverNoteNumber;
+	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as cover note number",output.get("MESSAGE").toString());  
+	
+	
 	}
 }

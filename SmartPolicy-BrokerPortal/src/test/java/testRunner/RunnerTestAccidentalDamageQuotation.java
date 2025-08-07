@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/AccidentalDamage.feature", 
-                   tags= "@MandatoryFieldsNoAddon", 
+                   tags= "@PrintQuote", 
                    glue={"cucumberMap3AccidentalDamage","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	
@@ -16,4 +16,5 @@ import io.cucumber.testng.CucumberOptions;
 
 
 public class RunnerTestAccidentalDamageQuotation extends AbstractTestNGCucumberTests{
+	
 }

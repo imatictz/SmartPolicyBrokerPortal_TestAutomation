@@ -1,5 +1,6 @@
 package itl;
 
+import java.io.IOException;
 import java.util.Hashtable;
 
 import utility.HTMLReportGenerator;
@@ -14,6 +15,16 @@ public class Itl {
 			input[0]=strElementId;
 			Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+			Thread.sleep(intThreadSleepTime);
+		}
+	}
+	
+	public static void ClickEvent(String strElementId,String strElementType, Integer intThreadSleepTime) throws InterruptedException {
+		if (strElementType == "CLICK") 
+		{
+			Object[] input = new Object[2];
+			input[0]=strElementId;
+			SeleniumOperations.clickOnElement(input);
 			Thread.sleep(intThreadSleepTime);
 		}
 	}
@@ -42,6 +53,44 @@ public class Itl {
 		}
 	}
 	
+	public static void CustomSendTodaysDateEvent(String strElementId,String stepName,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbox, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "TEXTBOX") {
+				Object[] input = new Object[2];
+				input[0]=strElementId;
+				Hashtable<String, Object> output = SeleniumOperations.sendDate(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+		}
+	
+	public static void CustomDropdownOptionsEvent(String strElementId,String strInputText,String stepName,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbox, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "DROPDOWN") {
+				Object[] input = new Object[2];
+				input[0]=strElementId;
+				input[1]=strInputText;
+				Hashtable<String, Object> output = SeleniumOperations.dropdownOptions(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+		}
+	
+	public static void CustomValidateDobEvent(String strElementId,String strInputText,String stepName,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbox, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "Textbox") {
+				Object[] input = new Object[2];
+				input[0]=strElementId;
+				input[1]=strInputText;
+				Hashtable<String, Object> output = SeleniumOperations.validateDob(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+		}
+	
 	public static void CustomClearSendEvent(String strElementId,String strInputText,String stepName,
 			String strElementType, int intThreadSleepTime ) throws InterruptedException {
 			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox*/
@@ -69,10 +118,60 @@ public class Itl {
 			}
 	}
 	
+	public static void CustomValidationAlertEvent(String strInputText,String stepName,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "VALIDATION") {
+				Object[] input = new Object[2];
+				input[0]=strInputText;
+				Hashtable<String, Object> output = SeleniumOperations.validationForAlert(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+	}
+	
+	public static void CustomValidationEnabledFields(String strInputText,String stepName,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "VALIDATION") {
+				Object[] input = new Object[2];
+				input[0]=strInputText;
+				Hashtable<String, Object> output = SeleniumOperations.validationForEnabledFields(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+	}
+	
+	public static void CustomValidationDisabledFields(String strInputText,String stepName,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "VALIDATION") {
+				Object[] input = new Object[2];
+				input[0]=strInputText;
+				Hashtable<String, Object> output = SeleniumOperations.validationForDisabledFields(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+	}
+	
+	public static void CustomPrintQuote(String fieldName,String stepName,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException, IOException {
+			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox*/
+		if ("PRINT".equalsIgnoreCase(strElementType)) {
+	        Object[] input = new Object[1];
+	        input[0] = fieldName;
+
+	        System.out.println("📤 Sending to printQuote(): " + fieldName); // Confirm here
+				Hashtable<String, Object> output = SeleniumOperations.printQuote(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+	}
+	
 	public static void CustomswitchWindowEvent(String stepName ,String strElementType) {
 		if(strElementType =="SWITCHWINDOW")
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
 		

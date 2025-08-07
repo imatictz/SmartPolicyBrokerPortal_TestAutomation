@@ -70,10 +70,9 @@ public class Claims {
 	        Thread.sleep(4000);
 	 }
 
-	 @When("user enter {string} as date of loss\\/Accident")
-	 public void user_enter_as_date_of_loss_accident(String dateFrom) throws InterruptedException {
-		    Itl.CustomSendEvent("//*[@id='MainContent_txtAcciDate']", dateFrom, "user enter {string} as date of loss\\\\/Accident", "TEXTBOX", 0);	
-
+	 @When("user enter date of loss\\/Accident")
+	 public void user_enter_as_date_of_loss_accident() throws InterruptedException {
+           Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of loss\\\\/Accident", "TEXTBOX", 0);
 	 }
 	 @When("user select {string} as country")
 	 public void user_select_as_country(String country) {

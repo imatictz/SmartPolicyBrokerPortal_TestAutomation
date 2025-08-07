@@ -6,11 +6,12 @@ Background:
 When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
-When user click on add button
-When user select "Credit life" as insurance type 
+ 
 
 @MandatoryFields
 Scenario: (Credit Life Quotation)Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user select "Credit life" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -22,6 +23,7 @@ When user enter "180" as period in month
 When user click on client type dropdown
 When user enter "Business Banking" as client type
 When user select Business Banking as client type
+When user enter "1200" as adjust premium
 When user click on compute button
 When user click on insert button
 #AddOn
@@ -29,27 +31,30 @@ When user click on addOn button
 When user click on extension dropdown
 When user enter "Terrorism" as extension
 When user select on Terrorism as extension
+When user enter "Credit Life Quotation AddOn" as description (AddOn)
 When user enter "100000" as sum insured (AddOn)
 When user enter "2.5" as rate%
-When user enter "Credit Life Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+Then user able to view "Awaiting Receipt" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Credit Life Quotation)Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user select "Credit life" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user enter "Pravin Testing" as insured name
-When user select date of birth
+When user select "01/01/2000"date of birth
 When user enter "2000000" as loan amount
 When user enter "180" as period in month
 When user click on client type dropdown
 When user enter "Business Banking" as client type
 When user select Business Banking as client type
+When user enter "1200" as adjust premium
 When user click on compute button
 When user click on insert button
 When user click on save button
@@ -59,6 +64,8 @@ Then user able to view "Awaiting Receipt" as status
 
 @AllFields
 Scenario: (Credit Life Quotation)Verify user able to enter all fields and save quotation successfully
+When user click on add button
+When user select "Credit life" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -81,7 +88,7 @@ Then user select Profit making as loss ratio forecast
 When user enter "123459876501234" as cover note
 #Policy Information
 When user enter "Pravin Testing" as insured name
-When user select date of birth
+When user select "01/01/2000"date of birth
 When user enter "YES" as collateral given
 When user enter "Bahi" as branch name
 When user enter "Birth Certificate" as ID type
@@ -115,4 +122,16 @@ When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@PrintQuote
+ Scenario: User prints the Credit Life & Retrenchment quote
+   When user select "01/01/2025" as from date
+   When user enter "Credit Life & Retrenchment" as Insurance Type
+   When user click on search button to find "Credit Life & Retrenchment" quote
+   When user enter quote number to search "Credit Life & Retrenchment" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on print quotation option
+   And the quote should include all relevant details like client name, quote number,amount,and insurance type
+  # And the user should be able to send the quote to the printer

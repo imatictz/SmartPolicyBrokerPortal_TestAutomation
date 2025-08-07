@@ -9,7 +9,7 @@ When user click on current quotations
 When user click on add button
 When user select "Fidelity" as insurance type 
 
-@MandatoryFields
+@MandatoryFields @one
 Scenario: (Fidelity Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user enter "Pravin Testing Broker" as client name
@@ -35,7 +35,7 @@ When user click on save button
 When user click on Ok button to accept commission alert
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
-@MandatoryFieldsNoAddon
+@MandatoryFieldsNoAddon @one
 Scenario: (Fidelity Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user enter "Pravin Testing Broker" as client name

@@ -13,7 +13,7 @@ public class FireAndBurglary
 	
 	 
 	 @When("^user navigate on operation dropdown menu$")
-		public void user_navigate_on_operation_dropdown_menu() 
+		public void user_navigate_on_operation_dropdown_menu() throws InterruptedException 
 		{
 			Object[] input7=new Object[1];
 		input7[0]="//*[@id='MOD_OPERATIONS']";
@@ -22,11 +22,12 @@ public class FireAndBurglary
 		}
 
 		@When("^user navigate on quotations menu$")
-		public void user_navigate_on_quotations_menu() 
+		public void user_navigate_on_quotations_menu() throws InterruptedException 
 		{
 			Object[] input8=new Object[1];
-		input8[0]="(//*[text()='Quotations '])[1]";
+		input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 		SeleniumOperations.actionClass(input8);
+		
 		   
 		}
 
@@ -52,13 +53,13 @@ public class FireAndBurglary
 		@When("^user select \"([^\"]*)\" as insurance type$")
 		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 			Object[] input= new Object[4];
-			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
-			input[1]="//*[@class='select2-input select2-focused']";
+			input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
+			input[1]="//*[@class='select2-search__field']";
 			input[2]=insuranceType;
-			input[3]="//*[@class='select2-match']";
+			input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
-			Thread.sleep(5000);
+			Thread.sleep(8000);
 		}
 		
 		@When("^user enter \"([^\"]*)\" as client name$")
@@ -82,22 +83,21 @@ public class FireAndBurglary
 			  Thread.sleep(3000);
 		}
 
-		@When ("^user Select \"(.*)\" as insurer$")
-		public void selectInsurer(String insurer) throws Throwable 
-		{
-			Object[] input= new Object[4];
-			input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
-			input[1]="//*[@class='select2-input select2-focused']";
-			input[2]=insurer;
-			input[3]="//*[@class='select2-match']";
-			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
-			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
-			
+		@When("user select {string} as insurer")
+		public void user_select_as_insurer(String insurerName) {
+		    Object[] input = new Object[4];
+		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
+		    input[1] = "//*[@class='select2-search__field']";
+		    input[2] = insurerName;
+		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
+		    Hashtable<String, Object> output = SeleniumOperations.dropdown(input);
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select {string} as insurer", output.get("MESSAGE").toString());
+
 		}
 
 		@When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsuranceClass']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]", "//*[@class='select2-search__field']", insuranceClass , "(//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result')])[2]", "user select {String} as insurance class", "DROPDOWN", 5000);
 
 		}
 
@@ -185,30 +185,29 @@ public class FireAndBurglary
 		}
 
 		@When("^user click on extension dropdown$")
-		public void clickOnExtensionDropdown() throws Throwable 
+		public void clickOnExtensionDropdown()
 		{
-		   Object[] input=new Object[1];
-		   input[0]="(//*[@class='select2-chosen'])[15]";
-		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
-		   
+			Object[] input11=new Object[1];
+			input11[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
+			Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input11);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
 		}
 
 		@When("^user enter \"([^\"]*)\" as extension$")
-		public void enterExtension(String extension) throws Throwable
+		public void enterExtension(String extension)
 		{
-		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
+			Object[] input=new Object[2];
+		    input[0]="//*[@class='select2-search__field']";
 		    input[1]=extension;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
 		}
 
 		@When("^user select on All Risk Cover as extension$")
 		public void selectExtension() throws Throwable 
 		{
 		   Object[] input=new Object[1];
-		   input[0]="//*[@class='select2-match']";
+		   input[0]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
 		   Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select on All Risk Cover as extension",output.get("MESSAGE").toString());
 		}
@@ -415,7 +414,7 @@ public class FireAndBurglary
 		public void user_click_on_borrower_type_dropdown() throws Throwable {
 		   
 			Object[] input50=new Object[1];
-			   input50[0]="//*[@id='s2id_MainContent_cmbBorrower']";
+			   input50[0]="//*[contains(@aria-controls,'MainContent_cmbBorrower')]";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on borrower type dropdown",output50.get("MESSAGE").toString());
 		}
@@ -424,7 +423,7 @@ public class FireAndBurglary
 		public void user_enter_as_borrower_type(String borrowerType) throws Throwable {
 		  
 			Object[] input=new Object[2];
-		    input[0]="(//*[@class='select2-input select2-focused'])";
+		    input[0]="//*[@Class='select2-search__field']";
 		    input[1]=borrowerType;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -435,7 +434,7 @@ public class FireAndBurglary
 		public void user_select_Retail_Banking_as_borrower_type() throws Throwable {
 		   
 			Object[] input50=new Object[1];
-			   input50[0]="//*[@class='select2-match']";
+			   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbBorrower-result')])";
 			   Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select Retail Banking as borrower type",output50.get("MESSAGE").toString());
 			   Thread.sleep(2000);
@@ -457,7 +456,7 @@ public class FireAndBurglary
 		public void user_click_on_loss_ratio_forecast_dropdown() throws Throwable {
 		 
 			Object[] input50=new Object[1];
-			   input50[0]="//*[@id='s2id_MainContent_cmbLRF']";
+			   input50[0]="//*[contains(@aria-controls,'MainContent_cmbLRF')]";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on loss ratio forecast dropdown",output50.get("MESSAGE").toString());
 		
@@ -466,8 +465,9 @@ public class FireAndBurglary
 		@When("^user enter \"([^\"]*)\" as loss ratio forecast$")
 		public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
 		   
+			
 			Object[] input=new Object[2];
-		    input[0]="(//*[@class='select2-input select2-focused'])";
+		    input[0]="//*[@Class='select2-search__field']";
 		    input[1]=lossRatioForecast;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
@@ -477,7 +477,7 @@ public class FireAndBurglary
 		public void user_select_Profit_making_as_loss_ratio_forecast() throws Throwable {
 		   
 			Object[] input50=new Object[1];
-			   input50[0]="//*[@class='select2-match']";
+			   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbLRF-result')])";
 			   Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select Profit making as loss ratio forecast",output50.get("MESSAGE").toString());
 			   Thread.sleep(2000);

@@ -75,7 +75,7 @@ public class Reports {
 	@Then ("^user able to view admin fee report in pdf format$")
 	public void pdfReport() throws IOException{
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view admin fee report in pdf format", output.get("MESSAGE").toString());
 		
@@ -96,7 +96,7 @@ public class Reports {
 	@Then("user able to view Business Summary by Charts report in pdf format")
 	public void user_able_to_view_business_summary_by_charts_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary by Charts report in pdf format", output.get("MESSAGE").toString());
 		
@@ -136,7 +136,7 @@ public class Reports {
 	@Then("user able to view AON Reports in pdf format")
 	public void user_able_to_view_aon_reports_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view AON Reports in pdf formats", output.get("MESSAGE").toString());
 		
@@ -179,7 +179,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Branch wise with Risk Note) in pdf format")
 	public void user_able_to_view_business_summary_branch_wise_with_risk_note_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Branch wise with Risk Note) in pdf format", output.get("MESSAGE").toString());
 		
@@ -200,7 +200,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Branch wise with Type) in pdf format")
 	public void user_able_to_view_business_summary_branch_wise_with_type_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Branch wise with Type) in pdf format", output.get("MESSAGE").toString());
 		
@@ -221,7 +221,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Branch wise) in pdf format")
 	public void user_able_to_view_business_summary_branch_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Branch wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -242,7 +242,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(by Cover Period start date) in pdf format")
 	public void user_able_to_view_business_summary_by_cover_period_start_date_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(by Cover Period start date) in pdf format", output.get("MESSAGE").toString());
 		
@@ -263,7 +263,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(By total premium booked for each customer) in pdf format")
 	public void user_able_to_view_business_summary_by_total_premium_booked_for_each_customer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(By total premium booked for each customer) in pdf format", output.get("MESSAGE").toString());
 		
@@ -284,7 +284,7 @@ public class Reports {
 	@Then("^user able to view Business Summary \\(By total premium booked for each insurance company cover in pdf format$")
 	public void user_able_to_view_business_summary_by_total_premium_booked_for_each_insurance_company_cover_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(By total premium booked for each insurance company cover in pdf format", output.get("MESSAGE").toString());
 		
@@ -305,7 +305,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(By total premium booked for each insurance company) in pdf format")
 	public void user_able_to_view_business_summary_by_total_premium_booked_for_each_insurance_company_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(By total premium booked for each insurance company) in pdf format", output.get("MESSAGE").toString());
 		
@@ -326,7 +326,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Class wise) in pdf format")
 	public void user_able_to_view_business_summary_class_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Class wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -347,7 +347,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Client type) in pdf format")
 	public void user_able_to_view_business_summary_client_type_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Client type) in pdf format", output.get("MESSAGE").toString());
 		
@@ -368,7 +368,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Client wise) in pdf format")
 	public void user_able_to_view_business_summary_client_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Client wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -389,7 +389,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Client wise-Cover Period start date) in pdf format")
 	public void user_able_to_view_business_summary_client_wise_cover_period_start_date_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Client wise-Cover Period start date) in pdf format", output.get("MESSAGE").toString());
 		
@@ -421,7 +421,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Customer Segment)in pdf format")
 	public void user_able_to_view_business_summary_customer_segment_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Customer Segment)in pdf format", output.get("MESSAGE").toString());
 		
@@ -442,7 +442,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Insurer wise with type)in pdf format")
 	public void user_able_to_view_business_summary_insurer_wise_with_type_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Insurer wise with type)in pdf format", output.get("MESSAGE").toString());
 		
@@ -463,7 +463,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Insurer wise)in pdf format")
 	public void user_able_to_view_business_summary_insurer_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Insurer wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -484,7 +484,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Insurer wise-Cover Period start date)in pdf format")
 	public void user_able_to_view_business_summary_insurer_wise_cover_period_start_date_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Insurer wise-Cover Period start date)in pdf format", output.get("MESSAGE").toString());
 		
@@ -505,7 +505,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Region wise) in pdf format")
 	public void user_able_to_view_business_summary_region_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Region wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -526,7 +526,7 @@ public class Reports {
 	@Then("user able to view Business Summary \\(Zone)in pdf format")
 	public void user_able_to_view_business_summary_zone_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary \\\\(Zone)in pdf format", output.get("MESSAGE").toString());
 		
@@ -547,7 +547,7 @@ public class Reports {
 	@Then("user able to view Business Summary by insurer\\/category \\(Base Currency) report in pdf format")
 	public void user_able_to_view_business_summary_by_insurer_category_base_currency_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary by insurer\\\\/category \\\\(Base Currency) report in pdf format", output.get("MESSAGE").toString());
 		
@@ -568,7 +568,7 @@ public class Reports {
 	@Then("user able to view Business Summary\\(User wise) report in pdf format")
 	public void user_able_to_view_business_summary_user_wise_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Business Summary\\\\(User wise) report in pdf format", output.get("MESSAGE").toString());
 		
@@ -589,7 +589,7 @@ public class Reports {
 	@Then("user able to view claim Payment Request Report in pdf format")
 	public void user_able_to_view_claim_payment_request_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view claim Payment Request Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -610,7 +610,7 @@ public class Reports {
 	@Then("user able to view Claims Incured but not reported on time \\(IBNR)in pdf format")
 	public void user_able_to_view_claims_incured_but_not_reported_on_time_ibnr_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Incured but not reported on time \\\\(IBNR)in pdf format", output.get("MESSAGE").toString());
 		
@@ -632,7 +632,7 @@ public class Reports {
 	@Then("user able to view Claims Pending \\(Assessor wise)in pdf format")
 	public void user_able_to_view_claims_pending_assessor_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending \\\\(Assessor wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -688,7 +688,7 @@ public class Reports {
 	@Then("user able to view Claims Pending \\(by Assigned users)in pdf format")
 	public void user_able_to_view_claims_pending_by_assigned_users_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending \\\\(by Assigned users)in pdf format", output.get("MESSAGE").toString());
 		
@@ -710,7 +710,7 @@ public class Reports {
 	@Then("user able to view Claims Pending \\(Status wise)in pdf format")
 	public void user_able_to_view_claims_pending_status_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending \\\\(Status wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -731,7 +731,7 @@ public class Reports {
 	@Then("user able to view Claims Pending Report in pdf format")
 	public void user_able_to_view_claims_pending_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -752,7 +752,7 @@ public class Reports {
 	@Then("user able to view Claims Pending Report \\(Branch Wise) in pdf format")
 	public void user_able_to_view_claims_pending_report_branch_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending Report \\\\(Branch Wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -773,7 +773,7 @@ public class Reports {
 	@Then("user able to view Claims Pending Report \\(Covering Branch)in pdf format")
 	public void user_able_to_view_claims_pending_report_covering_branch_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending Report \\\\(Covering Branch)in pdf format", output.get("MESSAGE").toString());
 		
@@ -795,7 +795,7 @@ public class Reports {
 	@Then("user able to view Claims Pending Report \\(Time taken between Accident & Reporting)in pdf format")
 	public void user_able_to_view_claims_pending_report_time_taken_between_accident_reporting_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending Report \\\\(Time taken between Accident & Reporting)in pdf format", output.get("MESSAGE").toString());
 		
@@ -817,7 +817,7 @@ public class Reports {
 	@Then("user able to view Claims Pending Report no activity for last seven Days in pdf format")
     public void user_able_to_view_claims_pending_report_no_activity_for_last_days_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending Report {double} no activity for last {int} Days in pdf format", output.get("MESSAGE").toString());
 		
@@ -838,7 +838,7 @@ public class Reports {
 	@Then("user able to view Claims Pending Report\\(Covering Branch) Not Initiated To Insurer in pdf format")
 	public void user_able_to_view_claims_pending_report_covering_branch_not_initiated_to_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending Report\\\\(Covering Branch) Not Initiated To Insurer in pdf format", output.get("MESSAGE").toString());
 		
@@ -860,7 +860,7 @@ public class Reports {
 	@Then("user able to view Claims Pending Report\\(Covering Branch) Time Taken to Initiate to Insurer in pdf format")
 	public void user_able_to_view_claims_pending_report_covering_branch_time_taken_to_initiate_to_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Pending Report\\\\(Covering Branch) Time Taken to Initiate to Insurer in pdf format", output.get("MESSAGE").toString());
 		
@@ -882,7 +882,7 @@ public class Reports {
 	@Then("user able to view Claims Ratio Report\\(Branch wise) to Insurer in pdf format")
 	public void user_able_to_view_claims_ratio_report_branch_wise_to_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Ratio Report\\\\(Branch wise) to Insurer in pdf format", output.get("MESSAGE").toString());
 		
@@ -903,7 +903,7 @@ public class Reports {
 	@Then("user able to view Claims Ratio Report\\(Client wise)in pdf format")
 	public void user_able_to_view_claims_ratio_report_client_wise_to_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Ratio Report\\\\(Client wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -924,7 +924,7 @@ public class Reports {
 	@Then("user able to view Claims Ratio Report\\(Insurer wise)in pdf format")
 	public void user_able_to_view_claims_ratio_report_insurer_wise_to_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Ratio Report\\\\(Insurer wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -946,7 +946,7 @@ public class Reports {
 	@Then("user able to view Claims Ratio Report\\(Region wise)in pdf format")
 	public void user_able_to_view_claims_ratio_report_region_wise_to_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Ratio Report\\\\(Region wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -967,7 +967,7 @@ public class Reports {
 	@Then("user able to view Claims Ratio Report\\(Zone wise)in pdf format")
 	public void user_able_to_view_claims_ratio_report_zone_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Ratio Report\\\\(Zone wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -988,7 +988,7 @@ public class Reports {
 	@Then("user able to view Claims Register \\(Branch Wise) in pdf format")
 	public void user_able_to_view_claims_register_branch_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Register \\\\(Branch Wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1009,7 +1009,7 @@ public class Reports {
 	@Then("user able to view Claims Register in pdf format")
 	public void user_able_to_view_claims_register_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Register in pdf format", output.get("MESSAGE").toString());
 		
@@ -1030,7 +1030,7 @@ public class Reports {
 	@Then("user able to view Claims Rejected Report in pdf format")
 	public void user_able_to_view_claims_rejected_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Rejected Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1051,7 +1051,7 @@ public class Reports {
 	@Then("user able to view Claims Report \\(Retrenchment wise) in pdf format")
 	public void user_able_to_view_claims_report_retrenchment_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Report \\\\(Retrenchment wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1072,7 +1072,7 @@ public class Reports {
 	@Then("user able to view Claims Settled Report in pdf format")
 	public void user_able_to_view_claims_settled_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Settled Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1093,7 +1093,7 @@ public class Reports {
 	@Then("user able to view Claims Settled Report \\(Branch Wise) in pdf format")
 	public void user_able_to_view_claims_settled_report_branch_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Settled Report \\\\(Branch Wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1114,7 +1114,7 @@ public class Reports {
 	@Then("user able to view Claims Settled Report \\(Time Taken between DV & Settlement) in pdf format")
 	public void user_able_to_view_claims_settled_report_time_taken_between_dv_settlement_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Settled Report \\\\(Time Taken between DV & Settlement) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1135,7 +1135,7 @@ public class Reports {
 	@Then("user able to view Claims Settled Report Life in pdf format")
 	public void user_able_to_view_claims_settled_report_life_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Settled Report Life in pdf format", output.get("MESSAGE").toString());
 		
@@ -1156,7 +1156,7 @@ public class Reports {
 	@Then("user able to view Claims Settlement beyond fourty five Days in pdf format")
 	public void user_able_to_view_claims_settlement_beyond_fouty_five_days_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Claims Settlement beyond fouty five Days in pdf format", output.get("MESSAGE").toString());
 		
@@ -1188,7 +1188,7 @@ public class Reports {
 	@Then("user able to view Comesa Booking in pdf format")
 	public void user_able_to_view_comesa_booking_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Comesa Booking in pdf format", output.get("MESSAGE").toString());
 		
@@ -1209,7 +1209,7 @@ public class Reports {
 	@Then("user able to view Commision Rebate Report in pdf format")
 	public void user_able_to_view_commision_rebate_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commision Rebate Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1231,7 +1231,7 @@ public class Reports {
 	@Then("user able to view Commission Allocated Report in pdf format")
 	public void user_able_to_view_commission_allocated_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Allocated Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1252,7 +1252,7 @@ public class Reports {
 	@Then("user able to view Commission Receivable Ageing Report in pdf format")
 	public void user_able_to_view_commission_receivable_ageing_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Receivable Ageing Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1273,7 +1273,7 @@ public class Reports {
 	@Then("user able to view Commission Receivable Report in pdf format")
 	public void user_able_to_view_commission_receivable_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Receivable Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1294,7 +1294,7 @@ public class Reports {
 	@Then("user able to view Commission Receivable Report \\(With VAT Commission) in pdf format")
 	public void user_able_to_view_commission_receivable_report_with_vat_commission_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Receivable Report \\\\(With VAT Commission) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1315,7 +1315,7 @@ public class Reports {
 	@Then("user able to view Commission Receivable Report\\(WH TAX) in pdf format")
 	public void user_able_to_view_commission_receivable_report_wh_tax_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Receivable Report\\\\(WH TAX) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1336,7 +1336,7 @@ public class Reports {
 	@Then("user able to view Commission Refundable Report in pdf format")
 	public void user_able_to_view_commission_refundable_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Refundable Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1357,7 +1357,7 @@ public class Reports {
 	@Then("user able to view Commission Statement Report in pdf format")
 	public void user_able_to_view_commission_statement_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Statement Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1378,7 +1378,7 @@ public class Reports {
 	@Then("user able to view Commission Statement Report one in pdf format")
 	public void user_able_to_view_commission_statement_report_one_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Commission Statement Report one in pdf format", output.get("MESSAGE").toString());
 		
@@ -1399,7 +1399,7 @@ public class Reports {
 	@Then("user able to view CSV Data Extraction in pdf format")
 	public void user_able_to_view_csv_data_extraction_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view CSV Data Extraction in pdf format", output.get("MESSAGE").toString());
 		
@@ -1420,7 +1420,7 @@ public class Reports {
 	@Then("user able to view Customer Sales Statistics Report in pdf format")
 	public void user_able_to_view_customer_sales_statistics_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Customer Sales Statistics Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1441,7 +1441,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes Report in pdf format")
 	public void user_able_to_view_daily_cover_notes_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1471,7 +1471,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(Borrower Wise) in pdf format")
 	public void user_able_to_view_daily_cover_notes_borrower_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(Borrower Wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1492,7 +1492,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(Broker Partner Business) in pdf format")
 	public void user_able_to_view_daily_cover_notes_broker_partner_business_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(Broker Partner Business) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1513,7 +1513,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(Business By) in pdf format")
 	public void user_able_to_view_daily_cover_notes_business_by_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(Business By) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1534,7 +1534,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(Cover Period start date) in pdf format")
 	public void user_able_to_view_daily_cover_notes_cover_period_start_date_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(Cover Period start date) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1555,7 +1555,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(Different Policy Issued Date & TIRA Issued Date) in pdf format")
 	public void user_able_to_view_daily_cover_notes_different_policy_issued_date_tira_issued_date_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(Different Policy Issued Date & TIRA Issued Date) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1576,7 +1576,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(Insurer wise) in pdf format")
 	public void user_able_to_view_daily_cover_notes_insurer_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(Insurer wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1597,7 +1597,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(User wise) in pdf format")
 	public void user_able_to_view_daily_cover_notes_user_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(User wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1618,7 +1618,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(With First Loss Payee) in pdf format")
 	public void user_able_to_view_daily_cover_notes_with_first_loss_payee_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(With First Loss Payee) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1639,7 +1639,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(With Levy) in pdf format")
 	public void user_able_to_view_daily_cover_notes_with_levy_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(With Levy) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1661,7 +1661,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(With Reg No) in pdf format")
 	public void user_able_to_view_daily_cover_notes_with_reg_no_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(With Reg No.) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1682,7 +1682,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes \\(With Stamp Duty) in pdf format")
 	public void user_able_to_view_daily_cover_notes_with_stamp_duty_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes \\\\(With Stamp Duty) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1703,7 +1703,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes Online Channels in pdf format")
 	public void user_able_to_view_daily_cover_notes_online_channels_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes Online Channels in pdf format", output.get("MESSAGE").toString());
 		
@@ -1724,7 +1724,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes\\(Lien Clause) in pdf format")
 	public void user_able_to_view_daily_cover_notes_lien_clause_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes\\\\(Lien Clause) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1745,7 +1745,7 @@ public class Reports {
 	@Then("user able to view Daily Cover Notes\\(New business & renewals) in pdf format")
 	public void user_able_to_view_daily_cover_notes_new_business_renewals_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover Notes\\\\(New business & renewals) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1766,7 +1766,7 @@ public class Reports {
 	@Then("user able to view Daily Cover\\/Notes \\(Expiry Date wise) in pdf format")
 	public void user_able_to_view_daily_cover_notes_expiry_date_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Cover\\\\/Notes \\\\(Expiry Date wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1787,7 +1787,7 @@ public class Reports {
 	@Then("user able to view Daily Credit Note in pdf format")
 	public void user_able_to_view_daily_credit_note_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Credit Note in pdf format", output.get("MESSAGE").toString());
 		
@@ -1808,7 +1808,7 @@ public class Reports {
 	@Then("user able to view Daily Debit Notes\\/ Tax Invoices in pdf format")
 	public void user_able_to_view_daily_debit_notes_tax_invoices_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Debit Notes\\\\/ Tax Invoices in pdf format", output.get("MESSAGE").toString());
 		
@@ -1829,7 +1829,7 @@ public class Reports {
 	@Then("user able to view Daily Debit Notes\\/ Tax Invoices\\(Un-Allocated\\/Allocated in pdf format")
 	public void user_able_to_view_daily_debit_notes_tax_invoices_un_allocated_allocated_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Debit Notes\\\\/ Tax Invoices\\\\(Un-Allocated\\\\/Allocated in pdf format", output.get("MESSAGE").toString());
 		
@@ -1850,7 +1850,7 @@ public class Reports {
 	@Then("user able to view Daily Debit Notes\\/ Tax Invoices\\(with Levy) in pdf format")
 	public void user_able_to_view_daily_debit_notes_tax_invoices_with_levy_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Debit Notes\\\\/ Tax Invoices\\\\(with Levy) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1871,7 +1871,7 @@ public class Reports {
 	@Then("user able to view Daily Payments in pdf format")
 	public void user_able_to_view_daily_payments_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Payments in pdf format", output.get("MESSAGE").toString());
 		
@@ -1892,7 +1892,7 @@ public class Reports {
 	@Then("user able to view Daily Receipts in pdf format")
 	public void user_able_to_view_daily_receipts_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Receipts in pdf format", output.get("MESSAGE").toString());
 		
@@ -1913,7 +1913,7 @@ public class Reports {
 	@Then("user able to view Daily Receipts \\(Business Type) in pdf format")
 	public void user_able_to_view_daily_receipts_business_type_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Receipts \\\\(Business Type) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1934,7 +1934,7 @@ public class Reports {
 	@Then("user able to view Daily Receipts \\(Insurer wise) in pdf format")
 	public void user_able_to_view_daily_receipts_insurer_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Receipts \\\\(Insurer wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -1955,7 +1955,7 @@ public class Reports {
 	@Then("user able to view Daily Remittance Report in pdf format")
 	public void user_able_to_view_daily_remittance_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Daily Remittance Report in pdf format", output.get("MESSAGE").toString());
 		
@@ -1976,7 +1976,7 @@ public class Reports {
 	@Then("user able to view Debit Note Ageing in pdf format")
 	public void user_able_to_view_debit_note_ageing_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Debit Note Ageing in pdf format", output.get("MESSAGE").toString());
 		
@@ -1997,7 +1997,7 @@ public class Reports {
 	@Then("user able to view Debtors Age Analysis report in pdf format")
 	public void user_able_to_view_debtors_age_analysis_report_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Debtors Age Analysis report in pdf format", output.get("MESSAGE").toString());
 		
@@ -2018,7 +2018,7 @@ public class Reports {
 	@Then("user able to view Debtors Analysis Report\\(by date) in pdf format")
 	public void user_able_to_view_debtors_analysis_report_by_date_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Debtors Analysis Report\\\\(by date) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2039,7 +2039,7 @@ public class Reports {
 	@Then ("^user able to view Details of the Policy issued on credit in pdf format$")
 	public void user_able_to_view_details_of_the_policy_issued_on_credit_daily_payments_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Details of the Policy issued on CreditDaily Payments in pdf format", output.get("MESSAGE").toString());
 		
@@ -2060,7 +2060,7 @@ public class Reports {
 	@Then("user able to view Exchange Rate Report For Insurer in pdf format")
 	public void user_able_to_view_exchange_rate_report_for_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Exchange Rate Report For Insurer in pdf format", output.get("MESSAGE").toString());
 		
@@ -2081,7 +2081,7 @@ public class Reports {
 	@Then("user able to view Expired Risk Notes in pdf format")
 	public void user_able_to_view_expired_risk_notes_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Expired Risk Notes in pdf format", output.get("MESSAGE").toString());
 		
@@ -2102,7 +2102,7 @@ public class Reports {
 	@Then("user able to view Financial Statement - Balance Sheet in pdf format")
 	public void user_able_to_view_financial_statement_balance_sheet_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Financial Statement - Balance Sheet in pdf format", output.get("MESSAGE").toString());
 		
@@ -2123,7 +2123,7 @@ public class Reports {
 	@Then("user able to view Financial Statement - Balance Sheet\\(Summarized) in pdf format")
 	public void user_able_to_view_financial_statement_balance_sheet_summarized_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Financial Statement - Balance Sheet\\\\(Summarized) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2144,7 +2144,7 @@ public class Reports {
 	@Then("user able to view Financial Statement - Profit and Loss account in pdf format")
 	public void user_able_to_view_financial_statement_profit_and_loss_account_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Financial Statement - Profit and Loss account in pdf format", output.get("MESSAGE").toString());
 		
@@ -2171,7 +2171,7 @@ public class Reports {
 
 	public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Financial Statement - Profit and Loss account\\\\(Summarized) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2193,7 +2193,7 @@ public class Reports {
 	/*@Then("user able to view Financial Statement - Profit and Loss account\\(Summarized) in pdf format")
 	public void user_able_to_view_financial_statement_profit_and_loss_account_summarized_in_pdf_format1() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Financial Statement - Profit and Loss account\\\\(Summarized) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2213,7 +2213,7 @@ public class Reports {
 	@Then("user able to view Financial Statement - Trial Balance in pdf format")
 	public void user_able_to_view_financial_statement_trial_balance_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Financial Statement - Trial Balance in pdf format", output.get("MESSAGE").toString());
 		
@@ -2234,7 +2234,7 @@ public class Reports {
 	@Then("user able to view Front Office - Daily Performance in pdf format")
 	public void user_able_to_view_front_office_daily_performance_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Front Office - Daily Performance in pdf format", output.get("MESSAGE").toString());
 		
@@ -2255,7 +2255,7 @@ public class Reports {
 	@Then("user able to view Front Office - Overall Performance in pdf format")
 	public void user_able_to_view_front_office_overall_performance_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Front Office - Overall Performance in pdf formatuser able to view Front Office - Daily Performance in pdf format", output.get("MESSAGE").toString());
 		
@@ -2287,7 +2287,7 @@ public class Reports {
 	@Then("user able to view General Ledger in pdf format")
 	public void user_able_to_view_general_ledger_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view General Ledger in pdf format", output.get("MESSAGE").toString());
 		
@@ -2308,7 +2308,7 @@ public class Reports {
 	@Then("user able to view Ledger \\(Client\\/Supplier) in pdf format")
 	public void user_able_to_view_ledger_client_supplier_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Ledger \\\\(Client\\\\/Supplier) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2329,7 +2329,7 @@ public class Reports {
 	@Then("user able to view Ledger \\(Insurer) in pdf format")
 	public void user_able_to_view_ledger_insurer_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Ledger \\\\(Insurer) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2350,7 +2350,7 @@ public class Reports {
 	@Then("user able to view List of Policies in pdf format")
 	public void user_able_to_view_list_of_policies_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view List of Policies in pdf format", output.get("MESSAGE").toString());
 		
@@ -2371,7 +2371,7 @@ public class Reports {
 	@Then("user able to view List Policies \\(Customer wise) in pdf format")
 	public void user_able_to_view_list_policies_customer_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view List Policies \\\\(Customer wise) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2414,7 +2414,7 @@ public class Reports {
 	@Then("user able to view MIS - Performance Report \\(Quarterly) in pdf format")
 	public void user_able_to_view_mis_performance_report_quarterly_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view MIS - Performance Report \\\\(Quarterly) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2435,7 +2435,7 @@ public class Reports {
 	@Then("user able to view MIS - Performance Report \\(Yearly) in pdf format")
 	public void user_able_to_view_mis_performance_report_yearly_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view MIS - Performance Report \\\\(Yearly) in pdf format", output.get("MESSAGE").toString());
 		
@@ -2456,7 +2456,7 @@ public class Reports {
 	@Then("user able to view Mobile Money Transaction in pdf format")
 	public void user_able_to_view_mobile_money_transaction_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Mobile Money Transaction in pdf format", output.get("MESSAGE").toString());
 		
@@ -2477,7 +2477,7 @@ public class Reports {
 	@Then("user able to view Mobile Money Transaction \\(User Wise)in pdf format")
 	public void user_able_to_view_mobile_money_transaction_user_wise_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Mobile Money Transaction \\\\(User Wise)in pdf format", output.get("MESSAGE").toString());
 		
@@ -2498,7 +2498,7 @@ public class Reports {
 	@Then("user able to view Modified \\/ Endorsed Cover Notes in pdf format")
 	public void user_able_to_view_modified_endorsed_cover_notesin_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Modified \\\\/ Endorsed Cover Notesin pdf format", output.get("MESSAGE").toString());
 		
@@ -2519,7 +2519,7 @@ public class Reports {
 	@Then("user able to view Motor Schedule in pdf format")
 	public void user_able_to_view_motor_schedule_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Motor Schedule in pdf format", output.get("MESSAGE").toString());
 		
@@ -2540,7 +2540,7 @@ public class Reports {
 	@Then("user able to view Multi Policies Quotation in pdf format")
 	public void user_able_to_view_multi_policies_quotation_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Multi Policies Quotation in pdf format", output.get("MESSAGE").toString());
 		
@@ -2561,7 +2561,7 @@ public class Reports {
 	@Then("user able to view Not Renewed Policies in pdf format")
 	public void user_able_to_view_not_renewed_policies_in_pdf_format() {
 		try{
-			Hashtable<String,Object> output = SeleniumOperations.switchWindow();
+			Hashtable<String,Object> output = SeleniumOperations.printReport();
 			
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user able to view Not Renewed Policies in pdf format", output.get("MESSAGE").toString());
 		

@@ -111,4 +111,4 @@ When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status

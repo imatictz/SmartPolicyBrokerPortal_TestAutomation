@@ -6,19 +6,19 @@ Background:
 When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
-When user click on add button
-When user select "Burglary/Theft" as insurance type 
+ 
 
 @MandatoryFields
 Scenario: (Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully
-
-When user enter "Pravin Testing Broker" as client name in quotation
-When user select client name as Pravin Testing
+When user click on add button
+When user select "Burglary/Theft" as insurance type
+When user enter "Pravin Testing Broker" as client name
+When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Standard Rate" as insurance class
-When user enter "2500000" as sum insured
 When user enter "Burglary/Theft Quotation Testing" as description
+When user enter "2500000" as sum insured
 When user click on compute button
 When user click on insert button
 #Addon
@@ -39,14 +39,15 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully
-
-When user enter "Pravin Testing Broker" as client name in quotation
-When user select client name as Pravin Testing
+When user click on add button
+When user select "Burglary/Theft" as insurance type
+When user enter "Pravin Testing Broker" as client name
+When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Standard Rate" as insurance class
-When user enter "2500000" as sum insured
 When user enter "Burglary/Theft Quotation Testing" as description
+When user enter "2500000" as sum insured
 When user click on compute button
 When user click on insert button
 When user click on save button
@@ -56,9 +57,10 @@ Then user able to view "Awaiting Receipt" as status
 
 @AllFields
 Scenario: (Burglary Quotation) Verify user able to enter all fields and save quotation successfully
-
-When user enter "Pravin Testing Broker" as client name in quotation
-When user select client name as Pravin Testing
+When user click on add button
+When user select "Burglary/Theft" as insurance type
+When user enter "Pravin Testing Broker" as client name
+When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 #When user click on business by dropdown
 #Then user select Demo User as business by
@@ -80,16 +82,16 @@ Then user select Profit making as loss ratio forecast
 When user enter "123459876501234" as cover note
 #Policy Information
 When user select "Standard Rate" as insurance class
+When user enter "Burglary/Theft Quotation Testing" as description
 When user enter "2500000" as sum insured
 When user enter "2" as sum insured rate %
 When user enter "2" as override %
 When user enter "500" as adjust premium
-When user enter "Burglary/Theft Quotation Testing" as description
 When user click on compute button
 When user click on insert button
 #AddOn
 When user click on addOn button
-When user click on extension dropdown1
+When user click on extension dropdown
 When user enter "All Risk Cover" as extension
 When user select on All Risk Cover as extension
 When user enter "630000" as sum insured (AddOn)
@@ -105,4 +107,16 @@ Then user click on Re-Compute premium
 #When user select FinalTester as broker partner name
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@PrintQuote
+ Scenario: User prints the Burglary/Theft quote
+   When user select "01/01/2025" as from date
+   When user enter "Burglary/Theft" as Insurance Type
+   When user click on search button to find "Burglary/Theft" quote
+   When user enter quote number to search "Burglary/Theft" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on print quotation option
+   And the quote should include all relevant details like client name, quote number,amount,and insurance type
+  # And the user should be able to send the quote to the printer

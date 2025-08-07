@@ -69,8 +69,8 @@ When user click on Registered as motor type
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
-#When user select "Private" as motor usage
-When user enter "5011" as registration number
+When user select "Private" as motor usage
+When user enter "Veh5020" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make

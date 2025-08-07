@@ -1,65 +1,35 @@
 package cucumberMap;
 
 import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
+import static org.testng.Assert.*;
 
 public class ClientDetails {
 	
-	@When("^user navigate on operation dropdown menu$")
-	public void user_navigate_on_operation_dropdown_menu() {
-		Object[] input7=new Object[1];
-	    input7[0]="//*[@id='MOD_OPERATIONS']";
-	    SeleniumOperations.actionClass(input7);
-	}
+	@When("user click on client icon from quick menu")
+	public void i_save_the_examination() throws InterruptedException {
+		Thread.sleep(2000);
+		Itl.CustomClickEvent("//*[@id='MNU_WFCLNT_2']", "user click on client icon from quick menu", "CLICK", 2000);
 
-	@When("^user navigate on quotations menu$")
-	public void user_navigate_on_quotations_menu() {
-		Object[] input8=new Object[1];
-	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
-	    SeleniumOperations.actionClass(input8);
-	}
-
-	@When("^user click on current quotations$")
-	public void user_click_on_current_quotations() throws InterruptedException {
-		Object[] input9=new Object[1];
-	    input9[0]="//*[@id='MNU_wfFIQNM']";
-	    SeleniumOperations.clickOnElement(input9);
-	    Thread.sleep(2000);
 	}
 
 	@When("^user click on add button$")
 	public void user_click_on_add_button() throws InterruptedException  {
 		Object[] input10=new Object[1];
-	    input10[0]="//*[@class='bold'][text()='Add']";
+	    input10[0]="//*[@id='MainContent_btnAdd']";
 	    SeleniumOperations.clickOnElement(input10);
-	    Thread.sleep(4000);
+	    Thread.sleep(5000);
 	}
 
-	@When("user select {string} as insurance type")
-	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
-		Object[] input= new Object[4];
-		input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
-		input[1]="//*[@class='select2-search__field']";
-		input[2]=insuranceType;
-		input[3]="(//*[contains(@data-select2-id,'-MainContent_cmbPopInsuranceType')])[2]";	
-		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
-		Thread.sleep(5000);
-	}
-
-	@When("^user click on Click here for New Client link$")
-	public void user_click_on_Click_here_for_New_Client_link() throws InterruptedException {   
-		Thread.sleep(4000);
-		Object[] input14=new Object[1];
-		input14[0]="//*[@id='client']";
-		SeleniumOperations.clickOnElement(input14);
-		Thread.sleep(3000);
-	}
+	
 
 	@When("^user click on title dropdown$")
 	public void user_click_on_title_dropdown() throws InterruptedException {
@@ -82,6 +52,16 @@ public class ClientDetails {
 
 	@When("^user click on Mr from dropdown$")
 	public void user_click_on_Mr_from_dropdown() throws InterruptedException {
+		Thread.sleep(5000);
+	    Object[] input17=new Object[1];
+	    input17[0]="(//*[contains(@data-select2-id,'-MainContent_cmbTitle')])[2]";
+	    Hashtable<String, Object> output17 =SeleniumOperations.clickOnElement(input17);
+	    HTMLReportGenerator.StepDetails(output17.get("STATUS").toString(),"user click on Mr from dropdown",output17.get("MESSAGE").toString());
+	    Thread.sleep(2000);
+	}
+	
+	@When("^user click on MS from dropdown$")
+	public void user_click_on_MS_from_dropdown() throws InterruptedException {
 		Thread.sleep(5000);
 	    Object[] input17=new Object[1];
 	    input17[0]="(//*[contains(@data-select2-id,'-MainContent_cmbTitle')])[2]";
@@ -345,7 +325,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" as address$")
 	public void user_enter_as_address(String address) throws InterruptedException {
 		Object[] input45=new Object[2];
-		input45[0]="//*[@id='MainContent_txtClientAddress']";
+		input45[0]="//*[@id='MainContent_txtAddress']";
 		input45[1]=address;
 		Hashtable<String, Object> output45 =SeleniumOperations.sendKeys(input45);
 		HTMLReportGenerator.StepDetails(output45.get("STATUS").toString(),"user enter \"House No.12 XYZ World\" as address",output45.get("MESSAGE").toString());
@@ -355,7 +335,7 @@ public class ClientDetails {
 	@When ("^user click on save button to save client details$")
 	public void user_click_on_save_button() throws InterruptedException {
 		
-	    Itl.CustomClickEvent("//*[@id='btnSavePopup']", "user click on save button to save client details", "CLICK", 2000);
+	    Itl.CustomClickEvent("//*[@id='btnSave']", "user click on save button to save client details", "CLICK", 2000);
 
 	}
 	
@@ -795,5 +775,149 @@ public class ClientDetails {
 		input42[1]=contactPerson;
 		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as contact person",output42.get("MESSAGE").toString());
+	}
+	
+	@Then ("user able to view {string} error message")
+	public void errorMesg(String errorMsg) throws InterruptedException{
+	    
+		SeleniumOperations.alert();
+		Thread.sleep(2000);
+		SeleniumOperations.scrolldown();
+		Thread.sleep(2000);
+		Itl.CustomValidationEvent("//*[@id='MainContent_lblerrforClient']/text()[1]", errorMsg, "user able to view {string} error message", "VALIDATION", 0);
+
+	}
+	
+	@Then ("user select gender dropdown to view options")
+	public void dropdownOptions() throws InterruptedException{
+	    Itl.CustomDropdownOptionsEvent("//*[contains(@aria-controls,'MainContent_cmbclntGender')]", "//*[@class='select2-results']//li", "user select gender dropdown to view options", "DROPDOWN", 0);
+	}
+	
+	@When("I enter {string} into the Date of Birth field")
+	public void i_enter_into_the_date_of_birth_field(String dob) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtDOB']",dob, "I enter {string} into the Date of Birth field", "TEXTBOX", 2000);
+        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbNationality')]", "CLICK", 2000);
+	}
+	
+	@Then("the system should {string} in the Date of Birth field")
+	public void the_system_should_in_the_date_of_birth_field(String expectedDate) throws InterruptedException {
+	    Itl.CustomValidateDobEvent("//*[@id='MainContent_txtDOB']",expectedDate, "the system should {string} in the Date of Birth field", "Textbox", 0);
+	}
+	
+	@When("I enter {string} into the Mobile No field one")
+	public void i_enter_into_the_mobile_no_field1(String mob) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtmobileno1']",mob, "I enter {string} into the Mobile No field one", "TEXTBOX", 2000);
+        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
+
+	}
+	
+	@When("I enter {string} into the Mobile No field two")
+	public void i_enter_into_the_mobile_no_field2(String mob) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtmobileno2']",mob, "I enter {string} into the Mobile No field two", "TEXTBOX", 2000);
+        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
+
+	}
+
+	@When("I enter {string} into the Mobile No field three")
+	public void i_enter_into_the_mobile_no_field3(String mob) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtmobileno3']",mob, "I enter {string} into the Mobile No field three", "TEXTBOX", 2000);
+        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
+
+	}
+	@Then("I should see the validation result as {string}")
+	public void i_should_see_the_validation_result_as(String result) throws InterruptedException {
+	    Itl.CustomValidationAlertEvent(result, "I should see the validation result as {string}", "VALIDATION", 0);
+	}
+	
+	@Then("user able to view {string} as client status")
+	public void user_able_to_view_as_client_status(String clientStatus) throws InterruptedException {
+		Itl.CustomValidationEvent("//*[contains(@aria-controls,'MainContent_cmbClntType')]", clientStatus, "user able to view {string} as client status", "VALIDATION", 0);
+
+	}
+	@Then("following Individual fields should be enabled")
+	public void individual_fields_should_be_enabled(DataTable dataTable) throws InterruptedException {
+	 	   
+	    //Date of Birth
+		Itl.CustomValidationEnabledFields("//*[@id='MainContent_txtDOB']", "Date of Birth field is enabled", "VALIDATION", 0);
+		//Nationality
+	    Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbNationality')]", "Nationality field is enabled", "VALIDATION", 0);
+	    //Place Of Birth
+	    Itl.CustomValidationEnabledFields("//*[@id='txtPOB']", "Place Of Birth field is enabled", "VALIDATION", 0);
+	    //Gender
+	    Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbclntGender')]", "Gender field is enabled", "VALIDATION", 0);
+	    //Marital Status
+	  	Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbMrSts')]", "Marital Status field is enabled", "VALIDATION", 0);
+	    //Occupation
+	  	Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbOccupation')]", "Occupation field is enabled", "VALIDATION", 0);
+	    //Disability Status
+	  	Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbDisbSts')]", "Disability Status field is enabled", "VALIDATION", 0);
+   
+	
+	
+	}
+	@Then("following Corporate fields should be disabled")
+	public void corporate_fields_should_be_disabled(DataTable dataTable) throws InterruptedException {
+	    //Business Type
+        Itl.CustomValidationDisabledFields("//*[contains(@aria-controls,'MainContent_cmbClntBusType')]", "Business Type field is disabled", "VALIDATION", 0);
+		//Country Of Registration
+		Itl.CustomValidationDisabledFields("//*[contains(@aria-controls,'MainContent_cmbCOR')]", "Country Of Registration field is disabled", "VALIDATION", 0);
+	    //Registration Date
+		Itl.CustomValidationDisabledFields("//*[@id='MainContent_txtRegDate']", "Registration Date field is disabled", "VALIDATION", 0);
+		//Contact Person
+		Itl.CustomValidationDisabledFields("//*[@id='txtContactPerson']", "Contact Person field is disabled", "VALIDATION", 0);
+		//Registration Number
+		Itl.CustomValidationDisabledFields("//*[@id='txtRegNo']", "Registration Number field is disabled", "VALIDATION", 0);
+	}
+	
+	@Then("following Corporate fields should be enabled")
+	public void Corporate_fields_should_be_enabled(DataTable dataTable) throws InterruptedException {
+	 	   
+		//Business Type 
+        Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbClntBusType')]", "Business Type field is enabled", "VALIDATION", 0);
+		//Country Of Registration
+		Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbCOR')]", "Country Of Registration field is enabled", "VALIDATION", 0);
+	    //Registration Date
+		Itl.CustomValidationEnabledFields("//*[@id='MainContent_txtRegDate']", "Registration Date field is enabled", "VALIDATION", 0);
+		//Contact Person
+		Itl.CustomValidationEnabledFields("//*[@id='txtContactPerson']", "Contact Person field is enabled", "VALIDATION", 0);
+	
+	}
+	
+	@Then("following Individual fields should be disabled")
+	public void Individual_fields_should_be_disabled(DataTable dataTable) throws InterruptedException {
+		//Date of Birth
+		Itl.CustomValidationDisabledFields("//*[@id='MainContent_txtDOB']", "Date of Birth field is disabled", "VALIDATION", 0);
+		//Nationality
+		Itl.CustomValidationDisabledFields("//*[contains(@aria-controls,'MainContent_cmbNationality')]", "Nationality field is disabled", "VALIDATION", 0);
+		//Place Of Birth
+		Itl.CustomValidationDisabledFields("//*[@id='txtPOB']", "Place Of Birth field is disabled", "VALIDATION", 0);
+		//Gender
+		Itl.CustomValidationDisabledFields("//*[contains(@aria-controls,'MainContent_cmbclntGender')]", "Gender field is disabled", "VALIDATION", 0);
+		//Registration Number
+		Itl.CustomValidationDisabledFields("//*[@id='txtRegNo']", "Registration Number field is disabled", "VALIDATION", 0);
+	}
+	
+	
+	@When("the user submits the following email addresses")
+	public void the_user_submits_the_following_email_addresses(DataTable dataTable) {
+		 List<Map<String, String>> emailData = dataTable.asMaps();
+
+	        for (Map<String, String> row : emailData) {
+	            String email = row.get("email");
+	            String expected = row.get("expectedResult");
+	            Object[] input = new Object[5];
+	            input[0]="//*[@id='txtEmail1']";
+				input[1]=email;
+				input[2]="//*[@id='btnSave']";
+				input[3]="//*[@id='MainContent_lblErrmsg']";
+				input[4]=expected;
+				Hashtable<String, Object> output = SeleniumOperations.validationForEmail(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "the user submits the following email addresses", output.get("MESSAGE").toString());
+	        }
+	}
+	@Then("each email should return the expected result")
+	public void each_email_should_return_the_expected_result() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 }

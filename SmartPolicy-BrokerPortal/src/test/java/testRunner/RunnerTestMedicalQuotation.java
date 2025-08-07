@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/Medical.feature", 
-		           tags= "@MandatoryFieldsNoAddon", 
+		           tags= "@All", 
                    glue={"cucumberMap12Medical","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

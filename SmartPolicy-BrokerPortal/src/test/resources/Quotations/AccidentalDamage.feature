@@ -6,11 +6,12 @@ Background:
 When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
-When user click on add button
-When user select "Individual Personal Accident" as insurance type 
+ 
 
 @MandatoryFields
 Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user select "Individual Personal Accident" as insurance type
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -34,6 +35,8 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user select "Individual Personal Accident" as insurance type
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -51,6 +54,8 @@ Then user able to view "Awaiting Receipt" as status
 
 @AllFields
 Scenario: (Accidental Damage Quotation) Verify user able to enter all fields and save quotation successfully
+When user click on add button
+When user select "Individual Personal Accident" as insurance type
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -75,11 +80,10 @@ Then user select Profit making as loss ratio forecast
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
-When user Select "Standard Rate" as insurance class
-When user enter "100000" as sum insured
+When user Select "Category 1" as insurance class
+When user enter "1000000" as sum insured
 When user enter "5" % as override%
 When user enter "Accidental Damage Quotation Testing" as description
-When user enter "12" as override%
 When user enter "500" as adjust premium
 When user click on compute button
 When user click on insert button
@@ -101,4 +105,27 @@ When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
 When user click on Ok button to accept commission alert
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@PrintQuote
+ Scenario: User prints the Individual Personal Accident quote
+   When user select "01/01/2025" as from date
+   When user enter "Individual Personal Accident" as Insurance Type
+   When user click on search button to find "Individual Personal Accident" quote
+   When user enter quote number to search "Individual Personal Accident" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on print quotation option
+   And the quote should include all relevant details like
+      | Field           | 
+      | Client Name     |
+      | Quote Number    | 
+      | Premium Amount  | 
+      | Insurance Type  | 
+  # And the user should be able to send the quote to the printer
+    
+    
+    
+    
+    
+    

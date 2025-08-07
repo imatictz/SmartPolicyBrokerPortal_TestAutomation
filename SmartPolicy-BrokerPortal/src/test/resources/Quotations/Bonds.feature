@@ -6,18 +6,19 @@ Background:
 When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
-When user click on add button
-When user select "Bonds" as insurance type 
+ 
 
 @MandatoryFields
 Scenario: (Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user select "Bonds" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "123459876501234" as cover note
 When user select "Advance Payment Bond 1" as insurance class
-When user enter "2000000" as contract value
 When user enter "Bonds Quotation" as description
+When user enter "2000000" as contract value
 When user click on compute button
 When user click on insert button
 #Addon
@@ -37,13 +38,15 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user select "Bonds" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "123459876501234" as cover note
 When user select "Advance Payment Bond 1" as insurance class
-When user enter "2000000" as contract value
 When user enter "Bonds Quotation" as description
+When user enter "2000000" as contract value
 When user click on compute button
 When user click on insert button
 When user click on save button
@@ -54,6 +57,8 @@ Then user able to view "Awaiting Receipt" as status
 
 @AllFields
 Scenario: (Bonds Quotation) Verify user able to enter all fields and save quotation successfully
+When user click on add button
+When user select "Bonds" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -78,10 +83,10 @@ Then user select Profit making as loss ratio forecast
 When user enter "123459876501234" as cover note
 #Policy Information
 When user select "Advance Payment Bond 1" as insurance class
+When user enter "Bonds Quotation" as description
 When user enter "2000000" as contract value
 When user enter "50" as override% for sum assured
 When user enter "5" as override% for premium
-When user enter "Bonds Quotation" as description
 When user click on compute button
 When user click on insert button
 #AddOn
@@ -101,7 +106,20 @@ When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+   @PrintQuote
+   Scenario: User prints the Bonds quote
+   When user select "01/01/2025" as from date
+   When user enter "Bonds" as Insurance Type
+   When user click on search button to find "Bonds" quote
+   When user enter quote number to search "Bonds" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on print quotation option
+   And the quote should include all relevant details like client name, quote number,amount,and insurance type
+  # And the user should be able to send the quote to the printer
+
 
 @alertMessage
 Scenario: Validate sequential alert messages and provide inputs

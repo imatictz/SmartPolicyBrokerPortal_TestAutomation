@@ -9,7 +9,7 @@ When user click on current quotations
 
 
 
-@IssueRiskNote
+@IssueRiskNote100
 Scenario: (Issue Risk Note-AccidentalDamageQuote) Verify user able to issue risk note of accidental damage quotation successfully
 When user select "01/01/2024" as from date
 When user enter "Individual Personal Accident" as Insurance Type
@@ -82,7 +82,7 @@ When user click on issue risk note option
 When user click on Yes button for confirmation
 Then user able to view "Risk Note Issued" as status
 
-@IssueRiskNote1
+@IssueRiskNote
 Scenario: (Issue Risk Note-CreditLifeQuote) Verify user able to issue risk note of creditlife quotation successfully
 When user select "01/01/2024" as from date
 When user enter "Credit Life Insurance" as Insurance Type
@@ -105,7 +105,7 @@ When user click on issue risk note option
 When user click on Yes button for confirmation
 Then user able to view "Risk Note Issued" as status
 
-@IssueRiskNote2
+@IssueRiskNote
 Scenario: (Issue Risk Note-FidelityQuote) Verify user able to issue risk note of fidelity quotation successfully
 When user select "01/01/2024" as from date
 When user enter "Fidelity" as Insurance Type
@@ -128,7 +128,7 @@ When user click on issue risk note option
 When user click on Yes button for confirmation
 Then user able to view "Risk Note Issued" as status
 
-@IssueRiskNote1
+@IssueRiskNote
 Scenario: (Issue Risk Note-FireAndBurglaryQuote) Verify user able to issue risk note of fire and burglary quotation successfully
 When user select "01/01/2024" as from date
 When user enter "Fire and Burglary" as Insurance Type
@@ -218,7 +218,7 @@ When user click on issue risk note option
 When user click on Yes button for confirmation
 Then user able to view "Risk Note Issued" as status
 
-@IssueRiskNote2
+@IssueRiskNote
 Scenario: (Issue Risk Note-MedicalQuote) Verify user able to issue risk note of medical quotation successfully
 When user select "01/01/2024" as from date
 When user enter "medical" as Insurance Type

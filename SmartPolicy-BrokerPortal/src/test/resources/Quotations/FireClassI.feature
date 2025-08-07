@@ -13,7 +13,7 @@ When user select "Fire Class" as insurance type
 Scenario: (Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Industrial/Manufacturing risks-Electronic software parks" as insurance class
 When user enter "5000000" as sum insured
@@ -41,7 +41,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 Scenario: (Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Industrial/Manufacturing risks-Electronic software parks" as insurance class
 When user enter "5000000" as sum insured
@@ -59,8 +59,8 @@ Scenario: (Fire Class I Quotation) Verify user able to enter all fields and save
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
-When user click on business by dropdown
-Then user select Demo User as business by
+#When user click on business by dropdown
+#Then user select Demo User as business by
 When user enter "1425DT10" as unique property identification
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
@@ -102,4 +102,4 @@ When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status

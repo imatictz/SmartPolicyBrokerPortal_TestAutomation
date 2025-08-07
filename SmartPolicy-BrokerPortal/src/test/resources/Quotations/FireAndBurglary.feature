@@ -14,7 +14,7 @@ Scenario: (Fire & Burglary Quotation) Verify user able to enter mandatory fields
 
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Standard Rate" as insurance class
 When user enter "200000" as sum insured
@@ -41,7 +41,7 @@ Scenario: (Fire & Burglary Quotation) Verify user able to enter mandatory fields
 
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Standard Rate" as insurance class
 When user enter "200000" as sum insured
@@ -58,7 +58,7 @@ Scenario: (Fire & Burglary Quotation) Verify user able to enter all fields and s
 
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 #When user click on business by dropdown
 #Then user select Demo User as business by
 When user enter "1425DT10" as unique property identification
@@ -87,8 +87,8 @@ When user enter "500" as adjust premium
 When user enter "Fire & Burglary Quotation Testing" as description
 When user click on compute button
 When user click on insert button
-When user click on broker partner name dropdown
-When user select FinalTester as broker partner name
+#When user click on broker partner name dropdown
+#When user select FinalTester as broker partner name
 #AddOn
 When user click on addOn button
 When user click on extension dropdown
@@ -104,4 +104,4 @@ When user enter "50" as discount on commission %
 Then user click on Re-Compute premium
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Required Approval" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status

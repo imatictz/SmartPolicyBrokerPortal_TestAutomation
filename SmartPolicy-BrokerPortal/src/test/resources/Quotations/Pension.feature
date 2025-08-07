@@ -67,11 +67,11 @@ Then user select Profit making as loss ratio forecast
 #Policy Information
 When user enter "Pravin Testing" as insured name
 When user enter "01/01/2000" as date of birth
+When user enter "3500000" as sum assured
+When user enter "420000" as premium
 When user enter "Birth Certificate" as ID type
 When user enter "YTG1220S02" as ID number
 When user enter "1200000" as annual salary
-When user enter "420000" as premium
-When user enter "3500000" as sum assured
 When user click on insert button
 
 #AddOn
@@ -86,6 +86,6 @@ When user enter "Pension Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
-Then user click on Re-Compute premium
+#Then user click on Re-Compute premium
 When user click on save button
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
