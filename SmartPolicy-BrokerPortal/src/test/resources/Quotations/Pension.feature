@@ -6,11 +6,13 @@ Background:
 When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
-When user click on add button
-When user select "Pension" as insurance type 
+ 
 
 @MandatoryFields
 Scenario: (Pension Quotation) Verify user able to enter mandatory fields and save quotation successfully
+
+When user click on add button
+When user select "Pension" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -32,6 +34,9 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Pension Quotation) Verify user able to enter mandatory fields and save quotation successfully
+
+When user click on add button
+When user select "Pension" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -47,6 +52,9 @@ Then user able to view "Awaiting Receipt" as status
 
 @AllFields
 Scenario: (Pension Quotation) Verify user able to enter all fields and save quotation successfully
+
+When user click on add button
+When user select "Pension" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -89,3 +97,20 @@ When user enter "50" as discount on commission %
 #Then user click on Re-Compute premium
 When user click on save button
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@PrintQuote
+ Scenario: User prints the Pension quote
+   When user select "01/01/2025" as from date
+   When user enter "Pension" as Insurance Type
+   When user click on search button to find "Pension" quote
+   When user enter quote number to search "Pension" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on print quotation option
+   And the quote should include all relevant details like
+      | Field           | 
+      | Client Name     |
+      | Quote Number    | 
+      | Premium Amount  | 
+      | Insurance Type  | 
+  # And the user should be able to send the quote to the printer

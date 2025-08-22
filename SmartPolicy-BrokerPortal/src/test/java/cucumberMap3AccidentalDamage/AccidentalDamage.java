@@ -2,6 +2,7 @@ package cucumberMap3AccidentalDamage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
@@ -568,13 +569,13 @@ public class AccidentalDamage
 			 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
 			 Thread.sleep(2000);
-			 SeleniumOperations.getriskNote(quoteName);
+			 SeleniumOperations.getQuote(quoteName);
 			 Thread.sleep(4000);
 		 }
 		
 		@When ("user enter quote number to search {string} quote")
 		public void user_enter_as_quote_number(String quoteName) throws InterruptedException {
-			String quoteNo = SeleniumOperations.getriskNote(quoteName);
+			String quoteNo = SeleniumOperations.getQuote(quoteName);
 			Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
 			Thread.sleep(4000);
 		}
@@ -599,24 +600,21 @@ public class AccidentalDamage
 
 		}
 		@When("the quote should include all relevant details like")
-		public void the_quote_should_include_all_relevant_details_like_client_name_quote_number_amount_and_validity(DataTable dataTable) throws IOException, InterruptedException {
-			
-			List<Map<String, String>> fieldList = dataTable.asMaps(String.class, String.class);
+		public void the_quote_should_include_all_relevant_details(DataTable dataTable) throws IOException, InterruptedException {
+			 List<String> rawFields = dataTable.asList(String.class);
+			    List<String> fields = new ArrayList<>(rawFields); // ✅ make it modifiable
 
-			for (Map<String, String> map : fieldList) {
-			    System.out.println("🔍 Row Map: " + map);
-			    String fieldName = map.get("Field");
-
-			    if (fieldName == null) {
-			        System.out.println("❌ Field name is null! Check your Cucumber table header.");
-			        continue;
+			    // Remove header row if present
+			    if (!fields.isEmpty() && fields.get(0).equalsIgnoreCase("Field")) {
+			        fields.remove(0);
 			    }
-
-			    fieldName = fieldName.trim();
-			    System.out.println("\n🔁 Validating: " + fieldName);
-			    Itl.CustomPrintQuote(fieldName, "PDF Validation - " + fieldName, "PRINT", 0);
-			}
-		     
+		    for (String field : fields) {
+		        Object[] input = new Object[1];
+		        input[0] = field.trim();
+		        Hashtable<String, Object> output = SeleniumOperations.printQuote(input);
+				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "the quote should include all relevant details like", output.get("MESSAGE").toString());
+				Thread.sleep(2000);
+		    }
 		    
 		}
 

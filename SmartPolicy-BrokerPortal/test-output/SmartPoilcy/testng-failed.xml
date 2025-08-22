@@ -9,6 +9,13 @@
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestGroupLifeQuotation -->
+      <class name="testRunner.RunnerTestBondsQuotation">
+        <methods>
+          <include name="runScenario" invocation-numbers="4"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestBondsQuotation -->
       <class name="testRunner.RunnerTestFidelityQuotation">
         <methods>
           <include name="runScenario" invocation-numbers="2"/>
@@ -16,12 +23,6 @@
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestFidelityQuotation -->
-      <class name="testRunner.RunnerTestBondsQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestBondsQuotation -->
       <class name="testRunner.RunnerTestAccidentalDamageQuotation">
         <methods>
           <include name="tearDownClass"/>
@@ -34,18 +35,18 @@
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestVehicleQuotation -->
-      <class name="testRunner.RunnerTestBurglaryQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestBurglaryQuotation -->
       <class name="testRunner.RunnerTestFireClassIQuotation">
         <methods>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestFireClassIQuotation -->
+      <class name="testRunner.RunnerTestBurglaryQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestBurglaryQuotation -->
       <class name="testRunner.RunnerTestFireAndBurglaryQuotation">
         <methods>
           <include name="tearDownClass"/>

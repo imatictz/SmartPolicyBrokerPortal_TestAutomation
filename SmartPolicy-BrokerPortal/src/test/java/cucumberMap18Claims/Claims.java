@@ -1,6 +1,7 @@
 package cucumberMap18Claims;
 
 import java.util.Hashtable;
+import java.util.concurrent.TimeoutException;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,15 +26,7 @@ public class Claims {
 		Thread.sleep(2000);
 	}
 
-	@When("^user select \"([^\"]*)\" as from date$")
-	public void user_select_as_date_from(String dateFrom) throws Throwable {
-		Object[] input=new Object[2];
-		input[0]="//*[@id='MainContent_txtSrchFromDate']";
-		input[1]=dateFrom;
-		Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \"01/01/2023\" as from date",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
-	}
+	
 	
 	@When("^user enter \"([^\"]*)\" as risk note number$")
 	public void user_enter_as_risk_note_number(String riskNote) throws Throwable {
@@ -45,14 +38,14 @@ public class Claims {
 		 Thread.sleep(2000);
 	 }
 
-	 @When("^user click on search button$")
+	 /*@When("^user click on search button$")
 	 public void user_click_on_search_button() throws Throwable {
 		 Object[] input=new Object[1];
 		 input[0]="//*[@id='MainContent_btnSearch']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
 		 Thread.sleep(2000);
-	 }
+	 }*/
 
 	 @When("^user click on actions button$")
 	 public void user_click_on_options_button() throws Throwable {
@@ -73,6 +66,10 @@ public class Claims {
 	 @When("user enter date of loss\\/Accident")
 	 public void user_enter_as_date_of_loss_accident() throws InterruptedException {
            Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of loss\\\\/Accident", "TEXTBOX", 0);
+	 }
+	 @When("user enter date of death\\/illnes\\/others")
+	 public void user_enter_as_date_of_death_illnes_others() throws InterruptedException {
+           Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);
 	 }
 	 @When("user select {string} as country")
 	 public void user_select_as_country(String country) {
@@ -147,16 +144,16 @@ public class Claims {
      }
      @Then("user able to view {string} as status")
      public void user_able_to_view_as_status(String status) throws InterruptedException {
-         Itl.CustomValidationEvent("//*[@id='MainContent_gridCLMGDetails_Label2_1']", status, "user able to view {string} as status", "VALIDATION", 0);
+         Itl.CustomValidationEvent("//*[@id='sort_table']/tbody/tr[1]/td[8]", status, "user able to view {string} as status", "VALIDATION", 0);
      }
-     @When("user click on options menu")
-     public void user_click_on_options_menu() throws InterruptedException {
-         Itl.CustomClickEvent("(//*[@class='removeclass btn btn-light btn-active-light-primary btn-center btn-sm'])[1]", "user click on options menu", "CLICK", 2000);
+     @When("user clicks on the actions dropdown")
+ 	public void user_clicks_on_the_actions_dropdown() throws InterruptedException {
+ 	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[2]", "user clicks on the actions dropdown", "CLICK", 2000);
 
-     }
+ 	}
      @When("user click on report to insurer option")
      public void user_click_on_report_to_insurer_option() throws InterruptedException {
-         Itl.CustomClickEvent("//*[@id='MainContent_gridCLMGDetails_btnReqIns_1']", "user click on report to insurer option", "CLICK", 2000);
+         Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[2]/*[2]/*[8]", "user click on report to insurer option", "CLICK", 2000);
 
      }
      @When("user click on yes,report button for confirmation")
@@ -172,6 +169,47 @@ public class Claims {
 	 public void user_click_on_fetch_button() throws Throwable {
          Itl.CustomClickEvent("//*[@id='btnFetch']", "user click on fetch button", "CLICK", 4000);
 
+	 }
+     @When("^user select \"([^\"]*)\" as from date$")
+	 public void user_select_as_date_from(String dateFrom) throws Throwable {
+		 Object[] input=new Object[2];
+		 input[0]="//*[@id='MainContent_txtSrchFromDate']";
+		 input[1]=dateFrom;
+		 Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \"01/01/2023\" as from date",output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	 }
+	
+	@When("user enter {string} as Insurance Type")
+	public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+	}
+	
+	@When ("user click on search button to find {string} risk note")
+	 public void user_click_on_search_button_quoteNo1(String risknote) throws Throwable {
+		 Object[] input=new Object[1];
+		 input[0]="//*[@id='button_btnSearch_lc']";
+		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button to find {string} risk note",output.get("MESSAGE").toString());
+		 Thread.sleep(3000);
+		 SeleniumOperations.getClaim(risknote);
+		 Thread.sleep(5000);
+	 }
+	
+	@When ("user enter risk note number to search {string} risk note")
+	public void user_enter_as_quote_number(String risknote) throws InterruptedException, TimeoutException {
+		String risknoteNo = SeleniumOperations.getClaim(risknote);
+		Itl.CustomSendEvent("//*[@id='MainContent_txtRiskNote']", risknoteNo, "user enter {string} as risk note number", "TEXTBOX", 0);
+		Thread.sleep(4000);
+	}
+	
+	@When ("user click on search button")
+	 public void user_click_on_search_button_quoteNo() throws Throwable {
+		 Object[] input=new Object[1];
+		 input[0]="//*[@id='button_btnSearch_lc']";
+		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
 	 }
 
 }

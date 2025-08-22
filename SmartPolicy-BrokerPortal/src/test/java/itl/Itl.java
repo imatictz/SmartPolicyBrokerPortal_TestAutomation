@@ -154,19 +154,20 @@ public class Itl {
 			}
 	}
 	
-	public static void CustomPrintQuote(String fieldName,String stepName,
+	/*public static void CustomPrintQuote(String input,String stepName,
 			String strElementType, int intThreadSleepTime ) throws InterruptedException, IOException {
-			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox*/
+			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox
 		if ("PRINT".equalsIgnoreCase(strElementType)) {
-	        Object[] input = new Object[1];
-	        input[0] = fieldName;
+			
 
-	        System.out.println("📤 Sending to printQuote(): " + fieldName); // Confirm here
-				Hashtable<String, Object> output = SeleniumOperations.printQuote(input);
-				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
-				Thread.sleep(intThreadSleepTime);	
-			}
-	}
+		    // Pass the full array to printQuote
+		    Hashtable<String, Object> output = SeleniumOperations.printQuote(input);
+
+		    // Generate report for all fields
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+			Thread.sleep(intThreadSleepTime);	
+		}
+	}*/
 	
 	public static void CustomswitchWindowEvent(String stepName ,String strElementType) {
 		if(strElementType =="SWITCHWINDOW")

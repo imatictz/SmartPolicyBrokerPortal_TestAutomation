@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/AccidentalDamage.feature", 
-                   tags= "@PrintQuote", 
+                   tags= "@All", 
                    glue={"cucumberMap3AccidentalDamage","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

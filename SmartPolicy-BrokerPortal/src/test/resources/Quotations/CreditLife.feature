@@ -133,5 +133,10 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
    When user click on search button
    And user clicks on the actions dropdown
    And user clicks on print quotation option
-   And the quote should include all relevant details like client name, quote number,amount,and insurance type
+   And the quote should include all relevant details like
+      | Field           | 
+      | Client Name     |
+      | Quote Number    | 
+      | Premium Amount  | 
+      | Insurance Type  |
   # And the user should be able to send the quote to the printer

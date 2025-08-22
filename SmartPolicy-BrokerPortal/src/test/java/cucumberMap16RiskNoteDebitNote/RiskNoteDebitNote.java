@@ -713,7 +713,7 @@ public class RiskNoteDebitNote {
 	
 	@When ("user enter quote number to search {string} quote")
 	public void user_enter_as_quote_number(String quoteName) throws InterruptedException {
-		String quoteNo = SeleniumOperations.getriskNote(quoteName);
+		String quoteNo = SeleniumOperations.getQuote(quoteName);
 		Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
 		Thread.sleep(4000);
 	}
@@ -725,7 +725,7 @@ public class RiskNoteDebitNote {
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
 		 Thread.sleep(2000);
-		 SeleniumOperations.getriskNote(quoteName);
+		 SeleniumOperations.getQuote(quoteName);
 		 Thread.sleep(4000);
 	 }
 	

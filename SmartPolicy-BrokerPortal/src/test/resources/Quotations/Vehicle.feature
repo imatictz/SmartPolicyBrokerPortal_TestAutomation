@@ -6,11 +6,13 @@ Background:
 When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
-When user click on add button
-When user select "Vehicle" as insurance types
+
  
 @MandatoryFields
 Scenario: (Vehicle)Verify user able to enter mandatory fields and save quotation successfully
+
+When user click on add button
+When user select "Vehicle" as insurance types
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -20,7 +22,8 @@ When user click on Registered as motor type
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
-When user enter "TESTVEHICLE101" as registration number
+When user select "Private" as motor usage
+When user enter "CODE" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
@@ -42,7 +45,7 @@ When user enter "101" as gross weight
 When user enter "97" as tare weight
 When user enter "2" as number of axel
 When user enter "1" as axel distance
-When user enter "100000" as sum insured
+When user enter "1500000" as sum insured
 When user click on compute button
 When user click on insert button (Policy Information)
 When user click on OK button for commission alert
@@ -60,6 +63,9 @@ Then user able to view "Awaiting Receipt" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Vehicle)Verify user able to enter mandatory fields and save quotation successfully
+
+When user click on add button
+When user select "Vehicle" as insurance types
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
 When user Select "Automated Testing Company" as insurer
@@ -70,8 +76,8 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
 When user select "Private" as motor usage
-When user enter "Veh5020" as registration number
-When user enter "632541A" as chasis number
+When user enter "CODE" as registration number
+When user enter "632541Al" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
 When user enter "SCOOTY" as vehicle model
@@ -105,12 +111,13 @@ Then user able to view "Awaiting Receipt" as status
 
 @AllFields
 Scenario: (Vehicle)Verify user able to enter all fields and save quotation successfully
+
+When user click on add button
+When user select "Vehicle" as insurance types
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
-#When user Select "Automated Testing Company" as insurer
-When user click on period dropdown
-And user enter "90 days" as period
-Then user select days 
+When user Select "Automated Testing Company" as insurer
+And user select "90 days" as period
 When user click on motor type dropdown
 When user enter "Registered" as motor type 
 When user click on Registered as motor type
@@ -159,7 +166,7 @@ When user enter "1200" as stamp duty
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
-When user enter "TESTA306" as registration number
+When user enter "CODE" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
 When user select TVS as vehicle make
@@ -213,5 +220,22 @@ When user click on compute button to update record
 When user click on save button
 #When user click on OK button to accept commission rate alert
 Then user able to view "Awaiting Receipt" as status
+
+@PrintQuote
+ Scenario: User prints the Motor quote
+   When user select "01/01/2025" as from date
+   When user enter "Motor" as Insurance Type
+   When user click on search button to find "Motor" quote
+   When user enter quote number to search "Motor" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on print quotation option
+   And the quote should include all relevant details like
+      | Field           | 
+      | Client Name     |
+      | Quote Number    | 
+      | Premium Amount  | 
+      | Insurance Type  | 
+  # And the user should be able to send the quote to the printer
 
 
