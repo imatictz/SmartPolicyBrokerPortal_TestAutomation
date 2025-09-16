@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Endorsement/GeneralEndorsement.feature", 
-                   tags= "@UpgradeBondPolicy", 
+                   tags= "@NonFinancialFidelityPolicy", 
                    glue={"cucumberMap17Endorsement","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

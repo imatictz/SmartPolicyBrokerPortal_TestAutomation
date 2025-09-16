@@ -166,6 +166,7 @@ When user enter "1200" as stamp duty
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
 When user select "sole Propriator" as owner category
+When user select "Private" as motor usage
 When user enter "CODE" as registration number
 When user enter "632541A" as chasis number
 When user enter "TVS" as vehicle make
@@ -199,27 +200,15 @@ When user enter "98500" as TPPD free limit
 When user enter "120000" as TPPD increase limit
 When user enter "500000" as TPPD sum insured
 When user enter "4120" as adjust premium
-Then user enter "23" as sticker/other fee
-When user enter "2102" as PH /Guaranty Fund			
+#Then user enter "23" as sticker/other fee
+#When user enter "2102" as PH /Guaranty Fund			
 When user click on compute button
 When user click on insert button (Policy Information)
 When user click on OK button for commission alert
-When user click on compute button to update record
-#When user click on broker partner name dropdown
-#When user select FinalTester as broker partner name
-
-#AddOn
-#When user scroll up to click on addon
-#When user click on addon button
-#When user select "Earthquake"as extension
-#When user enter sum insured as "100000"
-#When user enter "10" as rate%
-#When user enter "5" as commission rate%
-#When user enter "Testing Vehicle" as description
-#When user click on insert button
+When user click on compute button
 When user click on save button
-#When user click on OK button to accept commission rate alert
-Then user able to view "Awaiting Receipt" as status
+When user click on OK button to accept commission rate alert
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Motor quote

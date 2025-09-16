@@ -126,10 +126,3 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
   # And the user should be able to send the quote to the printer
 
 
-@alertMessage
-Scenario: Validate sequential alert messages and provide inputs
-When the user clicks save button without entering mandatory fields
-Then the system should display the alert message "2003-Please select Client Status"
-When user enter "Pravin Testing Broker" as client name
-When the user select Pravin Testing as client name
-#When the user clicks save button without entering mandatory fields

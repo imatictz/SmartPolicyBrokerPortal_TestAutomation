@@ -41,7 +41,7 @@ public class Fidelity
 			Object[] input9=new Object[1];
 		     input9[0]="//*[@id='MNU_wfFIQNM']";
 		     SeleniumOperations.clickOnElement(input9);
-		     Thread.sleep(2000);
+		     Thread.sleep(3000);
 
 		    
 		}
@@ -574,7 +574,14 @@ public class Fidelity
 		}
 
 
-
+		@Then("^user click on Re-Compute premium$")
+		public void user_click_on_Re_Compute_premium() throws Throwable {
+			Object[] input50=new Object[1];
+		    input50[0]="//*[@id='btnReCompute']";
+		    Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
+		    HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on Re-Compute premium",output50.get("MESSAGE").toString());
+		    Thread.sleep(4000);
+		}
 
 
 

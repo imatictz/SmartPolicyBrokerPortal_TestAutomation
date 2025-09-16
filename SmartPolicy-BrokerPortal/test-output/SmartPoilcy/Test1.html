@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>43/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>78/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Aug 22 12:26:23 EAT 2025</td>
+<td>Started on:</td><td>Mon Sep 01 17:22:20 EAT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>7715 seconds (7715629 ms)</td>
+<tr><td>Total time:</td><td>12690 seconds (12690225 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,126 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='testRunner.RunnerTestBondsQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBondsQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate sequential alert messages and provide inputs", "Bonds Quotation"</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLButtonElement] has no size and location
-  (Session info: chrome=139.0.7258.138)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AUTOMATIONTEST&apos;, ip: &apos;192.168.87.7&apos;, os.name: &apos;Windows Server 2019&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.138, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59988}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e69f78f605697ccd6292db3fb162c5ec
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
-	at utility.SeleniumOperations.enter(SeleniumOperations.java:657)
-	at cucumberMap5Bonds.Bonds.selectClientName1(Bonds.java:615)
-	at ✽.the user select Pravin Testing as client name(file:///C:/Users/Administrator/git/repository/SmartPolicy-BrokerPortal/src/test/resources/Quotations/Bonds.feature:134)
-... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace735020399", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace735020399'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLButtonElement] has no size and location
-  (Session info: chrome=139.0.7258.138)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AUTOMATIONTEST&apos;, ip: &apos;192.168.87.7&apos;, os.name: &apos;Windows Server 2019&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.138, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59988}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e69f78f605697ccd6292db3fb162c5ec
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
-	at utility.SeleniumOperations.enter(SeleniumOperations.java:657)
-	at cucumberMap5Bonds.Bonds.selectClientName1(Bonds.java:615)
-	at ✽.the user select Pravin Testing as client name(file:///C:/Users/Administrator/git/repository/SmartPolicy-BrokerPortal/src/test/resources/Quotations/Bonds.feature:134)
-</pre></div></td>
-<td>221</td>
-<td>testRunner.RunnerTestBondsQuotation@61a91912</td></tr>
-<tr>
-<td title='testRunner.RunnerTestFidelityQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFidelityQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fidelity Quotation) Verify user able to enter all fields and save quotation successfully", "Fidelity Quotation"</td>
-<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user enter &quot;123459876501234&quot; as cover note&apos; is undefined.
-You can implement this step using the snippet(s) below:
-
-@When(&quot;user enter {string} as cover note&quot;)
-public void user_enter_as_cover_note(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace748517748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace748517748'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;user enter &quot;123459876501234&quot; as cover note&apos; is undefined.
-You can implement this step using the snippet(s) below:
-
-@When(&quot;user enter {string} as cover note&quot;)
-public void user_enter_as_cover_note(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at jdk.internal.reflect.GeneratedMethodAccessor157.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.run(TestNG.java:1024)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>998</td>
-<td>testRunner.RunnerTestFidelityQuotation@659925f4</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -195,220 +75,395 @@ public void user_enter_as_cover_note(String string) {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testRunner.RunnerTestAccidentalDamageQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestAccidentalDamageQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully", "AccidentalDamage Quotation"</td>
+<td title='testRunner.RunnerTestClientDetails.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClientDetails<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(ClientDetails) Enter new client details with mandatory fields", "New Client details"</td>
 <td></td>
-<td>133</td>
-<td>testRunner.RunnerTestAccidentalDamageQuotation@8a62297</td></tr>
+<td>96</td>
+<td>testRunner.RunnerTestClientDetails@5b022357</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClientDetails.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClientDetails<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(ClientDetails) Enter new client details with all fields", "New Client details"</td>
+<td></td>
+<td>136</td>
+<td>testRunner.RunnerTestClientDetails@5b022357</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClientDetails.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClientDetails<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(ClientDetails) Enter new client details with all fields for corporate", "New Client details"</td>
+<td></td>
+<td>193</td>
+<td>testRunner.RunnerTestClientDetails@5b022357</td></tr>
 <tr>
 <td title='testRunner.RunnerTestAccidentalDamageQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestAccidentalDamageQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully", "AccidentalDamage Quotation"</td>
 <td></td>
-<td>61</td>
-<td>testRunner.RunnerTestAccidentalDamageQuotation@8a62297</td></tr>
+<td>73</td>
+<td>testRunner.RunnerTestAccidentalDamageQuotation@6f8e0cee</td></tr>
+<tr>
+<td title='testRunner.RunnerTestAccidentalDamageQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestAccidentalDamageQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully", "AccidentalDamage Quotation"</td>
+<td></td>
+<td>72</td>
+<td>testRunner.RunnerTestAccidentalDamageQuotation@6f8e0cee</td></tr>
 <tr>
 <td title='testRunner.RunnerTestAccidentalDamageQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestAccidentalDamageQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Accidental Damage Quotation) Verify user able to enter all fields and save quotation successfully", "AccidentalDamage Quotation"</td>
 <td></td>
-<td>100</td>
-<td>testRunner.RunnerTestAccidentalDamageQuotation@8a62297</td></tr>
+<td>126</td>
+<td>testRunner.RunnerTestAccidentalDamageQuotation@6f8e0cee</td></tr>
 <tr>
 <td title='testRunner.RunnerTestAccidentalDamageQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestAccidentalDamageQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Individual Personal Accident quote", "AccidentalDamage Quotation"</td>
 <td></td>
-<td>57</td>
-<td>testRunner.RunnerTestAccidentalDamageQuotation@8a62297</td></tr>
+<td>58</td>
+<td>testRunner.RunnerTestAccidentalDamageQuotation@6f8e0cee</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBondsQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBondsQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Bonds Quotation"</td>
 <td></td>
-<td>78</td>
-<td>testRunner.RunnerTestBondsQuotation@61a91912</td></tr>
+<td>82</td>
+<td>testRunner.RunnerTestBondsQuotation@614aeccc</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBondsQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBondsQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Bonds Quotation"</td>
 <td></td>
-<td>69</td>
-<td>testRunner.RunnerTestBondsQuotation@61a91912</td></tr>
+<td>70</td>
+<td>testRunner.RunnerTestBondsQuotation@614aeccc</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBondsQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBondsQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Bonds Quotation) Verify user able to enter all fields and save quotation successfully", "Bonds Quotation"</td>
 <td></td>
-<td>110</td>
-<td>testRunner.RunnerTestBondsQuotation@61a91912</td></tr>
+<td>109</td>
+<td>testRunner.RunnerTestBondsQuotation@614aeccc</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBondsQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBondsQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Bonds quote", "Bonds Quotation"</td>
 <td></td>
-<td>58</td>
-<td>testRunner.RunnerTestBondsQuotation@61a91912</td></tr>
+<td>59</td>
+<td>testRunner.RunnerTestBondsQuotation@614aeccc</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Burglary Quotation"</td>
 <td></td>
 <td>82</td>
-<td>testRunner.RunnerTestBurglaryQuotation@1763992e</td></tr>
+<td>testRunner.RunnerTestBurglaryQuotation@5116ac09</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Burglary Quotation"</td>
 <td></td>
-<td>70</td>
-<td>testRunner.RunnerTestBurglaryQuotation@1763992e</td></tr>
+<td>74</td>
+<td>testRunner.RunnerTestBurglaryQuotation@5116ac09</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Burglary Quotation) Verify user able to enter all fields and save quotation successfully", "Burglary Quotation"</td>
 <td></td>
-<td>123</td>
-<td>testRunner.RunnerTestBurglaryQuotation@1763992e</td></tr>
+<td>125</td>
+<td>testRunner.RunnerTestBurglaryQuotation@5116ac09</td></tr>
 <tr>
 <td title='testRunner.RunnerTestBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Burglary/Theft quote", "Burglary Quotation"</td>
 <td></td>
-<td>52</td>
-<td>testRunner.RunnerTestBurglaryQuotation@1763992e</td></tr>
+<td>57</td>
+<td>testRunner.RunnerTestBurglaryQuotation@5116ac09</td></tr>
 <tr>
-<td title='testRunner.RunnerTestCreditLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestCreditLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Credit Life Quotation)Verify user able to enter mandatory fields and save quotation successfully", "Credit Life Quotation"</td>
-<td></td>
-<td>92</td>
-<td>testRunner.RunnerTestCreditLifeQuotation@5c92166b</td></tr>
-<tr>
-<td title='testRunner.RunnerTestCreditLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestCreditLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Credit Life Quotation)Verify user able to enter mandatory fields and save quotation successfully", "Credit Life Quotation"</td>
-<td></td>
-<td>81</td>
-<td>testRunner.RunnerTestCreditLifeQuotation@5c92166b</td></tr>
-<tr>
-<td title='testRunner.RunnerTestCreditLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestCreditLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Credit Life Quotation)Verify user able to enter all fields and save quotation successfully", "Credit Life Quotation"</td>
-<td></td>
-<td>135</td>
-<td>testRunner.RunnerTestCreditLifeQuotation@5c92166b</td></tr>
-<tr>
-<td title='testRunner.RunnerTestCreditLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestCreditLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Credit Life & Retrenchment quote", "Credit Life Quotation"</td>
+<td title='testRunner.RunnerTestCreditLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestCreditLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Credit life Insurance quote", "Credit Life Quotation"</td>
 <td></td>
 <td>56</td>
-<td>testRunner.RunnerTestCreditLifeQuotation@5c92166b</td></tr>
+<td>testRunner.RunnerTestCreditLifeQuotation@1bc425e7</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFidelityQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFidelityQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fidelity Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fidelity Quotation"</td>
 <td></td>
-<td>63</td>
-<td>testRunner.RunnerTestFidelityQuotation@659925f4</td></tr>
+<td>66</td>
+<td>testRunner.RunnerTestFidelityQuotation@4b2a30d</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFidelityQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFidelityQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fidelity Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fidelity Quotation"</td>
 <td></td>
-<td>54</td>
-<td>testRunner.RunnerTestFidelityQuotation@659925f4</td></tr>
+<td>56</td>
+<td>testRunner.RunnerTestFidelityQuotation@4b2a30d</td></tr>
+<tr>
+<td title='testRunner.RunnerTestFidelityQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFidelityQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fidelity Quotation) Verify user able to enter all fields and save quotation successfully", "Fidelity Quotation"</td>
+<td></td>
+<td>93</td>
+<td>testRunner.RunnerTestFidelityQuotation@4b2a30d</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFidelityQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFidelityQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Fidelity quote", "Fidelity Quotation"</td>
 <td></td>
-<td>54</td>
-<td>testRunner.RunnerTestFidelityQuotation@659925f4</td></tr>
+<td>58</td>
+<td>testRunner.RunnerTestFidelityQuotation@4b2a30d</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireAndBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireAndBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire & Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire & Burglary Quotation"</td>
 <td></td>
-<td>69</td>
-<td>testRunner.RunnerTestFireAndBurglaryQuotation@4cd1c1dc</td></tr>
+<td>70</td>
+<td>testRunner.RunnerTestFireAndBurglaryQuotation@322803db</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireAndBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireAndBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire & Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire & Burglary Quotation"</td>
 <td></td>
-<td>60</td>
-<td>testRunner.RunnerTestFireAndBurglaryQuotation@4cd1c1dc</td></tr>
+<td>61</td>
+<td>testRunner.RunnerTestFireAndBurglaryQuotation@322803db</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireAndBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireAndBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire & Burglary Quotation) Verify user able to enter all fields and save quotation successfully", "Fire & Burglary Quotation"</td>
 <td></td>
-<td>2202</td>
-<td>testRunner.RunnerTestFireAndBurglaryQuotation@4cd1c1dc</td></tr>
+<td>100</td>
+<td>testRunner.RunnerTestFireAndBurglaryQuotation@322803db</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireAndBurglaryQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireAndBurglaryQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Fire and Burglary quote", "Fire & Burglary Quotation"</td>
 <td></td>
-<td>55</td>
-<td>testRunner.RunnerTestFireAndBurglaryQuotation@4cd1c1dc</td></tr>
-<tr>
-<td title='testRunner.RunnerTestFireClassIQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireClassIQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire Class I Quotation"</td>
-<td></td>
-<td>68</td>
-<td>testRunner.RunnerTestFireClassIQuotation@47f08b81</td></tr>
-<tr>
-<td title='testRunner.RunnerTestFireClassIQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireClassIQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire Class I Quotation"</td>
-<td></td>
 <td>58</td>
-<td>testRunner.RunnerTestFireClassIQuotation@47f08b81</td></tr>
+<td>testRunner.RunnerTestFireAndBurglaryQuotation@322803db</td></tr>
+<tr>
+<td title='testRunner.RunnerTestFireClassIQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireClassIQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire Class I Quotation"</td>
+<td></td>
+<td>69</td>
+<td>testRunner.RunnerTestFireClassIQuotation@56ba8773</td></tr>
+<tr>
+<td title='testRunner.RunnerTestFireClassIQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireClassIQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire Class I Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Fire Class I Quotation"</td>
+<td></td>
+<td>59</td>
+<td>testRunner.RunnerTestFireClassIQuotation@56ba8773</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireClassIQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireClassIQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Fire Class I Quotation) Verify user able to enter all fields and save quotation successfully", "Fire Class I Quotation"</td>
 <td></td>
-<td>105</td>
-<td>testRunner.RunnerTestFireClassIQuotation@47f08b81</td></tr>
+<td>108</td>
+<td>testRunner.RunnerTestFireClassIQuotation@56ba8773</td></tr>
 <tr>
 <td title='testRunner.RunnerTestFireClassIQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestFireClassIQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Fire Class quote", "Fire Class I Quotation"</td>
 <td></td>
-<td>53</td>
-<td>testRunner.RunnerTestFireClassIQuotation@47f08b81</td></tr>
+<td>60</td>
+<td>testRunner.RunnerTestFireClassIQuotation@56ba8773</td></tr>
 <tr>
 <td title='testRunner.RunnerTestGroupLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestGroupLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Group Life Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Group Life Quotation"</td>
 <td></td>
-<td>67</td>
-<td>testRunner.RunnerTestGroupLifeQuotation@b9dfc5a</td></tr>
+<td>68</td>
+<td>testRunner.RunnerTestGroupLifeQuotation@6ceb7b5e</td></tr>
 <tr>
 <td title='testRunner.RunnerTestGroupLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestGroupLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Group Life Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Group Life Quotation"</td>
 <td></td>
-<td>54</td>
-<td>testRunner.RunnerTestGroupLifeQuotation@b9dfc5a</td></tr>
+<td>57</td>
+<td>testRunner.RunnerTestGroupLifeQuotation@6ceb7b5e</td></tr>
 <tr>
 <td title='testRunner.RunnerTestGroupLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestGroupLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Group Life Quotation) Verify user able to enter all fields and save quotation successfully", "Group Life Quotation"</td>
 <td></td>
-<td>105</td>
-<td>testRunner.RunnerTestGroupLifeQuotation@b9dfc5a</td></tr>
+<td>107</td>
+<td>testRunner.RunnerTestGroupLifeQuotation@6ceb7b5e</td></tr>
 <tr>
 <td title='testRunner.RunnerTestGroupLifeQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestGroupLifeQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Group Life quote", "Group Life Quotation"</td>
 <td></td>
-<td>54</td>
-<td>testRunner.RunnerTestGroupLifeQuotation@b9dfc5a</td></tr>
+<td>59</td>
+<td>testRunner.RunnerTestGroupLifeQuotation@6ceb7b5e</td></tr>
 <tr>
 <td title='testRunner.RunnerTestMedicalQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMedicalQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Medical Quotation"</td>
 <td></td>
-<td>78</td>
-<td>testRunner.RunnerTestMedicalQuotation@2787de58</td></tr>
+<td>80</td>
+<td>testRunner.RunnerTestMedicalQuotation@7dd00705</td></tr>
 <tr>
 <td title='testRunner.RunnerTestMedicalQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMedicalQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Medical Quotation"</td>
 <td></td>
-<td>66</td>
-<td>testRunner.RunnerTestMedicalQuotation@2787de58</td></tr>
+<td>68</td>
+<td>testRunner.RunnerTestMedicalQuotation@7dd00705</td></tr>
 <tr>
 <td title='testRunner.RunnerTestMedicalQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMedicalQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Medical Quotation) Verify user able to enter all fields and save quotation successfully", "Medical Quotation"</td>
 <td></td>
 <td>126</td>
-<td>testRunner.RunnerTestMedicalQuotation@2787de58</td></tr>
+<td>testRunner.RunnerTestMedicalQuotation@7dd00705</td></tr>
 <tr>
 <td title='testRunner.RunnerTestMedicalQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMedicalQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Medical quote", "Medical Quotation"</td>
 <td></td>
-<td>55</td>
-<td>testRunner.RunnerTestMedicalQuotation@2787de58</td></tr>
+<td>58</td>
+<td>testRunner.RunnerTestMedicalQuotation@7dd00705</td></tr>
 <tr>
 <td title='testRunner.RunnerTestPensionQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPensionQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Pension Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Pension Quotation"</td>
 <td></td>
-<td>64</td>
-<td>testRunner.RunnerTestPensionQuotation@659a2455</td></tr>
+<td>65</td>
+<td>testRunner.RunnerTestPensionQuotation@f14e5bf</td></tr>
 <tr>
 <td title='testRunner.RunnerTestPensionQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPensionQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Pension Quotation) Verify user able to enter mandatory fields and save quotation successfully", "Pension Quotation"</td>
 <td></td>
 <td>53</td>
-<td>testRunner.RunnerTestPensionQuotation@659a2455</td></tr>
+<td>testRunner.RunnerTestPensionQuotation@f14e5bf</td></tr>
 <tr>
 <td title='testRunner.RunnerTestPensionQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPensionQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Pension Quotation) Verify user able to enter all fields and save quotation successfully", "Pension Quotation"</td>
 <td></td>
-<td>85</td>
-<td>testRunner.RunnerTestPensionQuotation@659a2455</td></tr>
+<td>84</td>
+<td>testRunner.RunnerTestPensionQuotation@f14e5bf</td></tr>
 <tr>
 <td title='testRunner.RunnerTestPensionQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPensionQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Pension quote", "Pension Quotation"</td>
 <td></td>
-<td>55</td>
-<td>testRunner.RunnerTestPensionQuotation@659a2455</td></tr>
+<td>59</td>
+<td>testRunner.RunnerTestPensionQuotation@f14e5bf</td></tr>
 <tr>
 <td title='testRunner.RunnerTestVehicleQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestVehicleQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Vehicle)Verify user able to enter mandatory fields and save quotation successfully", "Vehicle Quotation"</td>
 <td></td>
-<td>115</td>
-<td>testRunner.RunnerTestVehicleQuotation@267517e4</td></tr>
+<td>301</td>
+<td>testRunner.RunnerTestVehicleQuotation@d176a31</td></tr>
 <tr>
 <td title='testRunner.RunnerTestVehicleQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestVehicleQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Vehicle)Verify user able to enter mandatory fields and save quotation successfully", "Vehicle Quotation"</td>
 <td></td>
-<td>117</td>
-<td>testRunner.RunnerTestVehicleQuotation@267517e4</td></tr>
+<td>303</td>
+<td>testRunner.RunnerTestVehicleQuotation@d176a31</td></tr>
 <tr>
 <td title='testRunner.RunnerTestVehicleQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestVehicleQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Vehicle)Verify user able to enter all fields and save quotation successfully", "Vehicle Quotation"</td>
 <td></td>
-<td>1124</td>
-<td>testRunner.RunnerTestVehicleQuotation@267517e4</td></tr>
+<td>5344</td>
+<td>testRunner.RunnerTestVehicleQuotation@d176a31</td></tr>
 <tr>
 <td title='testRunner.RunnerTestVehicleQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestVehicleQuotation<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints the Motor quote", "Vehicle Quotation"</td>
 <td></td>
-<td>53</td>
-<td>testRunner.RunnerTestVehicleQuotation@267517e4</td></tr>
+<td>76</td>
+<td>testRunner.RunnerTestVehicleQuotation@d176a31</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-AccidentalDamageQuote) Verify user able to issue risk note of accidental damage quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>127</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-BondQuote) Verify user able to issue risk note of bonds quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>74</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-BurglaryQuote) Verify user able to issue risk note of burglary quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-CreditLifeQuote) Verify user able to issue risk note of creditlife quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>63</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-FidelityQuote) Verify user able to issue risk note of fidelity quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>126</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-FireAndBurglaryQuote) Verify user able to issue risk note of fire and burglary quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>121</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-FireClassIQuote) Verify user able to issue risk note of fire class I quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>66</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-GroupLifeQuote) Verify user able to issue risk note of group life quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>63</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-MedicalQuote) Verify user able to issue risk note of medical quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>64</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-PensionQuote) Verify user able to issue risk note of pension quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>126</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNote_DebitNote.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNote_DebitNote<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Issue Risk Note-VehicleQuote) Verify user able to issue risk note of vehicle quotation successfully", "Issue Risk Note"</td>
+<td></td>
+<td>124</td>
+<td>testRunner.RunnerTestRiskNote_DebitNote@3a91d146</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Individual Personal Accident", "Risk note screen"</td>
+<td></td>
+<td>127</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Bonds", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Burglary/Theft", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Credit life Insurance", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Fidelity Insurance", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Fire and Burglary Insurance", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Fire Class Insurance", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Group Life Insurance", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Medical Insurance", "Risk note screen"</td>
+<td></td>
+<td>122</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Pension Insurance", "Risk note screen"</td>
+<td></td>
+<td>121</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestRiskNoteScreen.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestRiskNoteScreen<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User prints risk note for Motor Insurance", "Risk note screen"</td>
+<td></td>
+<td>121</td>
+<td>testRunner.RunnerTestRiskNoteScreen@4784013e</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Accidental Damage Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>73</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Bond Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>63</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Burglary Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>66</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Credit Life Insurance Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>63</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Fidelity Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>68</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Fire and Burglary Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>64</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Fire Class Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>63</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Group Life Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>64</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Medical Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>63</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Pension Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>64</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestClaims.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestClaims<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Report Vehicle Claim) Verify user able to report claim successfully", "Claims"</td>
+<td></td>
+<td>243</td>
+<td>testRunner.RunnerTestClaims@6f952d6c</td></tr>
+<tr>
+<td title='testRunner.RunnerTestPayment.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestPayment<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Payment)Verify user able to enter all fields and save payment details successfully", "Payment"</td>
+<td></td>
+<td>101</td>
+<td>testRunner.RunnerTestPayment@5965844d</td></tr>
 </table><p>
 </body>
 </html>

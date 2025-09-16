@@ -339,13 +339,13 @@ public class ClientDetails {
 
 	}
 	
-	@Then ("^user able to view \"(.*)\" as quotation$")
+	@Then ("^user able to view \"(.*)\" screen$")
 	public void validation(String validation) throws InterruptedException{
 		Object[] input=new Object[2];
 		input[0]="//*[contains(@id,'small_lbl')]";
 		input[1]=validation;
 		Hashtable<String,Object> output=SeleniumOperations.validation(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user is redirected to selected quotation page",output.get("MESSAGE").toString());
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user is redirected to client screen",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
 

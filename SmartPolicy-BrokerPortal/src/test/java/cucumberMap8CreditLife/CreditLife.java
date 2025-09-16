@@ -62,7 +62,7 @@ public class CreditLife
 			input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
 			input[1]="//*[@class='select2-search__field']";
 			input[2]=insuranceType;
-			input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";
+			input[3]="(//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')])[3]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);

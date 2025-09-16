@@ -1299,7 +1299,8 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        Map<String, String> expectedValues = new HashMap<>();
     	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText().toUpperCase());
     	        expectedValues.put("Cover Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[3]")).getText());
-    	        expectedValues.put("Date Of Issue", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
+    	        expectedValues.put("Date Of Issue", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]/*[1]")).getText());
+    	        expectedValues.put("Policy No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]/*[3]")).getText());
     	        expectedValues.put("Insurer", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]")).getText());
     	        expectedValues.put("Insured Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
     	        expectedValues.put("Insurance Type", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
@@ -1433,78 +1434,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	                System.out.println("⚠️ Expected value for " + fieldName + " not found in map");
     	            }
 
-    	            /*  // ✅ Compare current field (PDF vs Expected Value)
-    	            String expectedValue = expectedValues.get(fieldName);
-
-    	            if (expectedValue != null) {
-    	                // Normalize expected value (remove extra spaces, unify case, remove special chars for fuzzy match)
-    	                String normalizedExpected = expectedValue.trim()
-    	                                                         .replaceAll("\\s+", " ")   // collapse multiple spaces
-    	                                                         .toUpperCase();
-
-    	                // 🔥 CHANGED: Split PDF into lines
-    	                String[] pdfLines = printText.split("\\r?\\n");
-    	                boolean matchFound = false;
-
-    	                for (String line : pdfLines) {
-    	                    // Normalize PDF line
-    	                    String normalizedLine = line.trim()
-    	                                                .replaceAll("\\s+", " ")   // collapse spaces
-    	                                                .toUpperCase();
-
-    	                    // Debug print
-    	                   // System.out.println("📄 PDF Line: [" + line + "]");
-
-    	                    // 1️⃣ Exact match
-    	                    if (normalizedLine.equals(normalizedExpected)) {
-    	                        matchFound = true;
-    	                        break;
-    	                    }
-
-    	                    // 2️⃣ Contains match (handles multi-line or label+value cases)
-    	                    if (normalizedLine.contains(normalizedExpected)) {
-    	                        matchFound = true;
-    	                        break;
-    	                    }
-
-    	                    // 3️⃣ Regex whole word match (avoid partial matches like "1234" inside "123456")
-    	                    if (normalizedLine.matches(".*\\b" + java.util.regex.Pattern.quote(normalizedExpected) + "\\b.*")) {
-    	                        matchFound = true;
-    	                        break;
-    	                    }
-
-    	                    // 4️⃣ Number-only comparison (ignore commas, decimals, currency symbols)
-    	                    String digitsExpected = normalizedExpected.replaceAll("[^0-9A-Za-z]", "");
-    	                    String digitsLine = normalizedLine.replaceAll("[^0-9A-Za-z]", "");
-    	                    if (!digitsExpected.isEmpty() && digitsExpected.equalsIgnoreCase(digitsLine)) {
-    	                        matchFound = true;
-    	                        break;
-    	                    }
-    	                }
-
-    	                if (matchFound) {
-    	                    System.out.println("✅ " + fieldName + " found in PDF: " + expectedValue);
-    	                    outputparameters.put("STATUS", "Pass");
-    	                    outputparameters.put("MESSAGE", "Field '" + fieldName + "' is present in PDF with value: " + expectedValue);
-    	                } else {
-    	                    System.out.println("❌ " + fieldName + " NOT found in PDF (all match strategies failed)");
-    	                    outputparameters.put("STATUS", "Fail");
-    	                    outputparameters.put("MESSAGE", "Field '" + fieldName + "' is missing or mismatch in PDF. Expected: " + expectedValue);
-    	                }
-    	            } else {
-    	                System.out.println("⚠️ Expected value for " + fieldName + " not found in map");
-    	            }*/
-    	          /*  // ✅ Compare current field
-    	            String expectedValue = expectedValues.get(fieldName);
-    	            if (expectedValue != null && printText.contains(expectedValue)) {
-    	                System.out.println("✅ " + fieldName + " found in PDF: " + expectedValue);
-    	                outputparameters.put("STATUS", "Pass");
-    	                outputparameters.put("MESSAGE", "Field '" + fieldName + "' is present in PDF with value: " + expectedValue);
-    	            } else {
-    	                System.out.println("❌ " + fieldName + " NOT found in PDF");
-    	                outputparameters.put("STATUS", "Fail");
-    	                outputparameters.put("MESSAGE", "Field '" + fieldName + "' is missing or value mismatch in PDF");
-    	            }*/
+    	            
     	        }
 
     	        // ✅ Switch back to main tab
@@ -1518,8 +1448,149 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	    return outputparameters;
     	}
+     
+     public static Hashtable<String, Object> printClaimReport(Object[] inputparameters) throws IOException {
+ 	    Hashtable<String, Object> outputparameters = new Hashtable<>();
 
+ 	    try {
+ 	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
+ 	        String fieldName = ((String) inputparameters[0]).trim();
+ 	        String typeOfPolicyXpath = ((String)inputparameters[1]);
+ 	        String policyNoXpath = ((String)inputparameters[2]);
+ 	       String sumInsuredXpath = ((String)inputparameters[3]);
+
+ 	        // ✅ Store current (main) window
+ 	        String mainWindow = driver.getWindowHandle();
+
+ 	        // ✅ Get expected values from UI BEFORE switching to PDF
+ 	        Map<String, String> expectedValues = new HashMap<>();
+ 	        expectedValues.put("System Claim No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[1]")).getText().toUpperCase());
+ 	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
+ 	        expectedValues.put("CoverNote No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
+ 	        expectedValues.put("Claimant Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+
+ 	        Thread.sleep(2000);
+ 	        // ✅ Step 1: Click on Display icon
+ 	        WebElement displayIcon = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[1]")); 
+ 	        displayIcon.click();
+ 	        Thread.sleep(5000);
+ 	        
+ 	       JavascriptExecutor down=(JavascriptExecutor) driver;
+		   down.executeScript("window.scrollBy(0,1000)");//1050
+
+ 	        // ✅ Step 2: Capture values from Display screen
+ 	        String typeOfPolicy = driver.findElement(By.xpath(typeOfPolicyXpath)).getAttribute("value");
+	        expectedValues.put("Type Of Policy", typeOfPolicy);
+	        System.out.println(typeOfPolicy);
+ 	        String policyNo = driver.findElement(By.xpath(policyNoXpath)).getAttribute("value");
+ 	        expectedValues.put("Policy No", policyNo);
+ 	        String sumInsured = driver.findElement(By.xpath(sumInsuredXpath)).getAttribute("value");
+ 	        expectedValues.put("Sum Insured", sumInsured);
+ 	        
+ 	        Thread.sleep(2000);
+ 	        // ✅ Step 3: Close the display popup
+ 	        WebElement closeBtn = driver.findElement(By.xpath("//*[@id='btnCancel']"));
+ 	        closeBtn.click();
+
+ 	        // ✅ Step 4: Switch to PDF tab
+ 	        Set<String> ids = driver.getWindowHandles();
+ 	        for (String id : ids) {
+ 	            if (!id.equals(mainWindow)) {
+ 	                driver.switchTo().window(id);
+ 	                break;
+ 	            }
+ 	        }
+
+ 	        // ✅ Read PDF
+ 	        URL pdfUrl = new URL(driver.getCurrentUrl());
+ 	        URLConnection urlConnection = pdfUrl.openConnection();
+ 	        urlConnection.addRequestProperty("User-Agent", "Chrome");
+
+ 	        try (InputStream id = urlConnection.getInputStream();
+ 	             BufferedInputStream bufferedInput = new BufferedInputStream(id);
+ 	             PDDocument pdDocument = PDDocument.load(bufferedInput)) {
+
+ 	            String printText = new PDFTextStripper().getText(pdDocument);
+ 	         // ✅ Compare current field (PDF vs Expected Value)
+ 	            String expectedValue = expectedValues.get(fieldName);
+
+ 	         
+ 	            if (expectedValue != null) {
+ 	                // Normalize expected value (remove extra spaces, unify case, remove special chars for fuzzy match)
+ 	                String normalizedExpected = expectedValue.trim()
+ 	                                                         .replaceAll("\\s+", " ")   // collapse multiple spaces
+ 	                                                         .toUpperCase();
+
+ 	                // 🔥 Split PDF into lines
+ 	                String[] pdfLines = printText.split("\\r?\\n");
+ 	                boolean matchFound = false;
+
+ 	                for (String line : pdfLines) {
+ 	                    // Normalize PDF line
+ 	                    String normalizedLine = line.trim()
+ 	                                                .replaceAll("\\s+", " ")   // collapse spaces
+ 	                                                .toUpperCase();
+
+ 	                    // Debug print
+ 	                   // System.out.println("📄 PDF Line: [" + line + "]");
+
+ 	                    // 1️⃣ Exact match
+ 	                    if (normalizedLine.equals(normalizedExpected)) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+
+ 	                    // 2️⃣ Contains match (handles multi-line or label+value cases)
+ 	                    if (normalizedLine.contains(normalizedExpected)) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+
+ 	                    // 3️⃣ Regex whole word match (avoid partial matches like "1234" inside "123456")
+ 	                    if (normalizedLine.matches(".*\\b" + java.util.regex.Pattern.quote(normalizedExpected) + "\\b.*")) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+
+ 	                    // 4️⃣ Number-only comparison (ignore commas, decimals, currency symbols)
+ 	                    String digitsExpected = normalizedExpected.replaceAll("[^0-9A-Za-z]", "");
+ 	                    String digitsLine = normalizedLine.replaceAll("[^0-9A-Za-z]", "");
+ 	                    if (!digitsExpected.isEmpty() && digitsExpected.equalsIgnoreCase(digitsLine)) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+ 	                }
+
+ 	                if (matchFound) {
+ 	                    System.out.println("✅ " + fieldName + " found in PDF: " + expectedValue);
+ 	                    outputparameters.put("STATUS", "Pass");
+ 	                    outputparameters.put("MESSAGE", "Field '" + fieldName + "' is present in PDF with value: " + expectedValue);
+ 	                } else {
+ 	                    System.out.println("❌ " + fieldName + " NOT found in PDF (all match strategies failed)");
+ 	                    outputparameters.put("STATUS", "Fail");
+ 	                    outputparameters.put("MESSAGE", "Field '" + fieldName + "' is missing or mismatch in PDF. Expected: " + expectedValue);
+ 	                }
+ 	            } else {
+ 	                System.out.println("⚠️ Expected value for " + fieldName + " not found in map");
+ 	            }
+
+ 	            
+ 	        }
+
+ 	        // ✅ Switch back to main tab
+ 	        driver.switchTo().window(mainWindow);
+
+ 	    } catch (Exception e) {
+ 	        e.printStackTrace();
+ 	        outputparameters.put("STATUS", "Fail");
+ 	        outputparameters.put("MESSAGE", "Exception in printQuote: " + e.getMessage());
+ 	    }
+
+ 	    return outputparameters;
+ 	}
+
+   
      
      public static void browserClose() {
     	 try {
@@ -1710,7 +1781,8 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     		        if (cell1.getText().trim().contains(quoteName) && 
     		            cell2.getText().trim().equalsIgnoreCase("Active")) {
     		            WebElement quoteCell = row.findElement(By.xpath("./td[2]/*[1]"));
-    		            String riskNoteNumber = quoteCell.getText().trim();
+    		            riskNoteNumber = quoteCell.getText().trim();
+    		            System.out.println(riskNoteNumber);
     		            return riskNoteNumber;
     		        }
     		    }
@@ -1726,6 +1798,44 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 		
 
      }
+     private static String riskNoteNumber;
+  // ✅ Getter method to reuse later
+     public static String getStoredRiskNote() {
+         return riskNoteNumber;
+     }
+     
+     public static String getClaimId(String quoteName) {
+    	 try {
+    		    // Locate the insurance table
+    		    WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+
+    		    // Get all rows of the table
+    		    List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr")); // Get all rows
+    		    boolean found = false;
+    		    for (WebElement row : rows) {
+    		        WebElement cell1 = row.findElement(By.xpath("./td[6]")); // Get the 5th column
+    		        WebElement cell2 = row.findElement(By.xpath("./td[9]")); // Get the 8th column
+
+    		        if (cell1.getText().trim().contains(quoteName) && 
+    		            cell2.getText().trim().equalsIgnoreCase("Active")) {
+    		            WebElement quoteCell = row.findElement(By.xpath("./td[1]"));
+    		            String claimId = quoteCell.getText().trim();
+    		            return claimId;
+    		        }
+    		    }
+    		    if (!found) {
+                    Object claimId = null;
+                    System.out.println("No Claim ID with 'Active' status found.");
+                }
+
+    		} catch (Exception e) {
+    		    e.printStackTrace();
+    		}
+		return null;
+		
+
+     }
+
 
      
      

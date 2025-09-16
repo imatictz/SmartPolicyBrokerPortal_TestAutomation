@@ -125,11 +125,11 @@ When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
- Scenario: User prints the Credit Life & Retrenchment quote
+ Scenario: User prints the Credit life Insurance quote
    When user select "01/01/2025" as from date
-   When user enter "Credit Life & Retrenchment" as Insurance Type
-   When user click on search button to find "Credit Life & Retrenchment" quote
-   When user enter quote number to search "Credit Life & Retrenchment" quote
+   When user enter "Credit life Insurance" as Insurance Type
+   When user click on search button to find "Credit life Insurance" quote
+   When user enter quote number to search "Credit life Insurance" quote
    When user click on search button
    And user clicks on the actions dropdown
    And user clicks on print quotation option

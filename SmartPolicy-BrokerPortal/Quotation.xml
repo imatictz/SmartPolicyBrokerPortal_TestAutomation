@@ -4,6 +4,7 @@
   <test  name="Test1">
     <classes>
      
+     <class name="testRunner.RunnerTestClientDetails"/>
      <class name="testRunner.RunnerTestAccidentalDamageQuotation"/> 
      <class name="testRunner.RunnerTestBondsQuotation"/>
      <class name="testRunner.RunnerTestBurglaryQuotation"/>
@@ -17,6 +18,12 @@
     <!-- <class name="testRunner.RunnerTestPackagePolicyQuotation"/>-->
      <class name="testRunner.RunnerTestPensionQuotation"/>
      <class name="testRunner.RunnerTestVehicleQuotation"/> 
+     <class name="testRunner.RunnerTestRiskNote_DebitNote"/>
+     <class name="testRunner.RunnerTestRiskNoteScreen"/>
+     <class name="testRunner.RunnerTestClaims"/>
+     <class name="testRunner.RunnerTestPayment"/>
+     <!-- <class name="testRunner.RunnerTestEndorsement"/>-->
+     <class name="testRunner.RunnerTestReports"/>
       
       
     </classes>

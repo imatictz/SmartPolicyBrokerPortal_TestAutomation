@@ -160,7 +160,7 @@ public class Vehicle
 		    input[1]=registrationNumber;
 		    Hashtable<String,Object> output= SeleniumOperations.DynamicValuessendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"15641A56BIKE\" as registration number",output.get("MESSAGE").toString());   
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		}
 
 	 @When("^user enter \"([^\"]*)\" as chasis number$")
@@ -1111,17 +1111,17 @@ public class Vehicle
 		public void user_click_on_claim_excess_type_dropdown() throws Throwable {
 		    
 			Object[] input50=new Object[1];
-			   input50[0]="(//*[@class='select2-chosen'])[14]";
+			   input50[0]="//*[contains(@aria-controls,'MainContent_cmbCET')]";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on claim excess type dropdown",output50.get("MESSAGE").toString());
-		
+			   Thread.sleep(2000);
 		}
 
 		@When("^user enter \"([^\"]*)\" as claim excess$")
 		public void user_enter_as_claim_excess(String claimExcess) throws Throwable {
 		    
 			Object[] input=new Object[2];
-			input[0]="//*[@class='select2-input select2-focused']";
+			input[0]="//*[@Class='select2-search__field']";
 			input[1]=claimExcess;
 			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as claim excess",output.get("MESSAGE").toString());
@@ -1132,7 +1132,7 @@ public class Vehicle
 		public void user_select_ON_SUM_ASSURED_as_claim_excess() throws Throwable {
 		 
 			Object[] input50=new Object[1];
-			   input50[0]="(//*[@class='select2-match'])";
+			   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbCET-result')])";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select ON SUM ASSURED as claim excess",output50.get("MESSAGE").toString());
 		
@@ -1153,17 +1153,17 @@ public class Vehicle
 		public void user_click_on_by_percent_amount_dropdown() throws Throwable {
 		   
 			Object[] input50=new Object[1];
-			   input50[0]="(//*[@class='select2-chosen'])[15]";
+			   input50[0]="//*[contains(@aria-controls,'MainContent_cmbByPerAmt')]";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on by percent/amount dropdown",output50.get("MESSAGE").toString());
-		
+			   Thread.sleep(2000);
 		}
 
 		@When("^user enter \"([^\"]*)\" as by percent/amount$")
 		public void user_enter_as_by_percent_amount(String percentAmount) throws Throwable {
 		   
 			Object[] input=new Object[2];
-			input[0]="//*[@class='select2-search__field']";
+			input[0]="//*[@Class='select2-search__field']";
 			input[1]=percentAmount;
 			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as by percent/amount",output.get("MESSAGE").toString());
@@ -1174,7 +1174,7 @@ public class Vehicle
 		public void user_select_By_Percent_as_by_percent_amount() throws Throwable {
 		    
 			Object[] input50=new Object[1];
-			   input50[0]="(//*[@class='select2-match'])";
+			   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbByPerAmt-result')])";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select By Percent as by percent/amount",output50.get("MESSAGE").toString());
 		

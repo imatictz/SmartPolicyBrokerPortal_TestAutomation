@@ -19,6 +19,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -40,6 +41,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -61,6 +63,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -82,6 +85,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -103,6 +107,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -124,6 +129,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -145,6 +151,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -166,6 +173,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -187,6 +195,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -208,6 +217,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -229,6 +239,7 @@ Then user select risk note menu
       | Risk Note No    |
       | Cover Note No   |
       | Date Of Issue   |
+      | Policy No       |
       | Insurer         |
       | Insured Name    | 
       | Insurance Type  | 
@@ -237,14 +248,7 @@ Then user select risk note menu
       | Total Receivable| 
   # And the user should be able to send the risk note to the printer
  
-Scenario: RiskNote Screen Icons
-When user click on display icon
-Then user able to view bonds risk note screen
-When user click on GoTo Quotation button
-Then user able to navigate on quotation screen and view quote
-When user click on GoTo DebitNote button
-Then user able to navigate on debitnote screen and view debit No
-When user click on print icon
+
 
 
 				

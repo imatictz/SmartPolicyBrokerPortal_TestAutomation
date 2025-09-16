@@ -19,6 +19,13 @@ public class Endorsement {
 		 Thread.sleep(2000);
 	 }
 	 
+	 @Then("^user select risk note menu$")
+		public void user_select_risk_note_menu() throws Throwable {
+		    Object[] input9=new Object[1];
+			input9[0]="//*[@id='span6']";
+			SeleniumOperations.clickOnElement(input9);
+		}
+	 
 	 @When("^user navigate on endorsement menu$")
 	 public void user_navigate_on_endorsement_menu() throws Throwable {
 		 Object[] input7=new Object[1];
@@ -171,7 +178,7 @@ public class Endorsement {
 	 @When("^user click on actions button$")
 	 public void user_click_on_options_button() throws Throwable {
 		 Object[] input=new Object[1];
-		 input[0]="(//*[@class='removeclass btn btn-light btn-active-light-primary btn-center btn-sm'])[3]";
+		 input[0]="//*[@id='sort_table']/tbody/tr[1]/td[11]/*[2]";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on options button",output.get("MESSAGE").toString());
 		 Thread.sleep(2000);
@@ -180,7 +187,7 @@ public class Endorsement {
 	 @When("^user click on capture receipt icon$")
 		public void user_click_on_capture_receipt_icon() throws Throwable {
 			Object[] input=new Object[1];
-			input[0]="(//*[@class='Approve grid_btnSpace'])[3]";
+			input[0]="//*[@id='sort_table']/tbody/tr[1]/td[11]/*[2]/*[2]/*[2]";
 			Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on capture receipt icon",output.get("MESSAGE").toString());
 			Thread.sleep(3000);
@@ -242,25 +249,17 @@ public class Endorsement {
 		 input[0]="//*[@id='btnProcedeRiskNote']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on YES button for confirmation",output.get("MESSAGE").toString()); 
-		 Thread.sleep(2000);
+		 Thread.sleep(5000);
 	 }
 
-	 @Then("^user able to view \"([^\"]*)\" as status$")
-	 public void user_able_to_view_as_status(String riskNoteIssued) throws Throwable {
-		 Object[] input=new Object[2];
-		 input[0]="(//*[text()='Issued'])[1]";
-		 input[1]=riskNoteIssued;
-		 Hashtable<String,Object> output= SeleniumOperations.validation(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \"Issued\" as status",output.get("MESSAGE").toString());  
-		 Thread.sleep(2000);
-	 }
+	 
 
 	 //Non Financial Endorsement
 	 
 	 @When ("^user select non-financial endorsement$")
 	 public void selectNonFinancialEndorsement() throws InterruptedException {
 		 Itl.CustomClickEvent("//*[@id='chkNofinancial']", "user select non-financial endorsement", "CLICK", 2000);
-		 
+		 SeleniumOperations.scrollUp();
 	 }
 	 
 	 @When("^user enter \"([^\"]*)\" to make change in insured name$")
@@ -301,7 +300,8 @@ public class Endorsement {
 		 Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Payeee name\" to make change in firstloss payee",output.get("MESSAGE").toString());   
 		 Thread.sleep(2000);
-	 }
+		 
+		 }
 
 	 @When("^user enter \"([^\"]*)\" as cover note number$")
 	 public void enterCoverNote(String coverNote) throws Throwable {
@@ -368,17 +368,6 @@ public class Endorsement {
 		Thread.sleep(2000);
 	 	}
 		
-		@Then("^user click on search button$")
-	 	public void user_click_on_search_button() throws Throwable {
-	 	    
-	 		Object[] input4=new Object[1];
-		      input4[0]="//*[@id='MainContent_btnSearch']";
-		  Hashtable<String, Object>output=SeleniumOperations.clickOnElement(input4);
-		  HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user click on search button", output.get("MESSAGE").toString());
-		Thread.sleep(2000);
-	 	}
-		
-		
 		
 		@When("user navigate on pending approvals option")
 		public void user_navigate_on_pending_approvals_option() throws Throwable {
@@ -387,7 +376,7 @@ public class Endorsement {
 		}
 		@Then("user click on endorsement approval option")
 		public void user_click_on_endorsement_approval_option() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='span_endorApprv_lc']", "user click on endorsement approval option", "CLICK", 2000);
+		    Itl.CustomClickEvent("//*[@id='span_endorApprv_lc']", "user click on endorsement approval option", "CLICK", 4000);
 		}
 		@When("user click on display icon")
 		public void user_click_on_display_icon() throws InterruptedException {
@@ -396,8 +385,8 @@ public class Endorsement {
 		}
 		@Then("user click on approve endorsement button")
 		public void user_click_on_approve_endorsement_button() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='btnApproveEndorse']", "user click on approve endorsement button", "CLICK", 2000);
-            SeleniumOperations.transfer();
+		    Itl.CustomClickEvent("//*[@id='btnApproveEndorse']", "user click on approve endorsement button", "CLICK", 5000);
+            
 		}
 		@When ("^user enter \"(.*)\" as change value of sum assured$")
 		public void enterSumAssured(String sumAssured) throws InterruptedException {
@@ -413,5 +402,81 @@ public class Endorsement {
 		@When ("^user enter \"(.*)\" as change value of total premium$")
 		public void enterTotalPremium(String totalPremium) throws InterruptedException {
             Itl.CustomClearSendEvent("//*[@id='MainContent_txtGrossPremium']",totalPremium ,"user enter \\\"(.*)\\\" as change value of total premium", "TEXTBOX", 2000);
+		}
+		
+		@When("^user select \"([^\"]*)\" as from date$")
+		 public void user_select_as_date_from(String dateFrom) throws Throwable {
+			 Object[] input=new Object[2];
+			 input[0]="//*[@id='MainContent_txtSrchFromDate']";
+			 input[1]=dateFrom;
+			 Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \"01/01/2023\" as from date",output.get("MESSAGE").toString());
+			 Thread.sleep(2000);
+		 }
+		
+		@When("user enter {string} as Insurance Type")
+		public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
+		    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+		}
+		
+		@When ("user click on search button to find {string} risk note")
+		 public void user_click_on_search_button_quoteNo1(String risknote) throws Throwable {
+			 Object[] input=new Object[1];
+			 input[0]="//*[@id='button_btnSearch_lc']";
+			 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
+			 Thread.sleep(3000);
+			 SeleniumOperations.getRiskNote(risknote);
+			 Thread.sleep(4000);
+		 }
+		
+		@When ("user click on search button")
+		 public void user_click_on_search_button_quoteNo() throws Throwable {
+			 Object[] input=new Object[1];
+			 input[0]="//*[@id='span_btnSearch_lc']";
+			 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
+			 Thread.sleep(3000);
+		 }
+		
+		@When ("user click on search button\\(Insurer)")
+		public void user_click_on_search_button() throws Throwable {
+			 Object[] input=new Object[1];
+			 input[0]="//*[@id='button_btnSearch_lc']";
+			 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
+			 Thread.sleep(3000);
+		 }
+		
+		@When ("user enter risk note number to search policy")
+		public void user_enter_as_quote_number() throws InterruptedException {
+			String risknoteNo = SeleniumOperations.getStoredRiskNote();
+			Itl.CustomSendEvent("//*[@id='txtRiskNote']", risknoteNo, "user enter risk note number to search policy", "TEXTBOX", 0);
+			Thread.sleep(4000);
+		}
+		
+		@When ("user enter risk note number")
+		public void user_enter_as_risk_number() throws InterruptedException {
+			String risknoteNo = SeleniumOperations.getStoredRiskNote();
+			Itl.CustomSendEvent("//*[@id='MainContent_txtRiskNote']", risknoteNo, "user enter risk note number", "TEXTBOX", 0);
+			Thread.sleep(4000);
+		}
+		
+		@Then ("user able to view {string} as status")
+		public void statusAtInsurer(String status) throws InterruptedException {
+			Itl.CustomValidationEvent("//*[@id='sort_table']/tbody/tr[1]/td[10]",status , "user able to view {string} as status","VALIDATION", 2000);
+		}
+		
+		@Then("user able to view {string} as status\\(Insurer)")
+		public void user_able_to_view_as_status_insurer(String status) throws InterruptedException {
+			Itl.CustomValidationEvent("//*[@id='sort_table']/tbody/tr[1]/td[10]",status , "user able to view {string} as status\\\\(Insurer)","VALIDATION", 2000);
+
+		}
+		
+		@Then ("user navigate on Endorsement Approval screen")
+		public void user_navigate_on_screen() throws InterruptedException {
+			Itl.CustomValidationEvent("//*[@id='h4_lblEndorsement_lc']", "Endorsement", "user navigate on Endorsement Approval screen", "VALIDATION", 2000);
+			SeleniumOperations.transfer();
+			Thread.sleep(4000);
 		}
 }

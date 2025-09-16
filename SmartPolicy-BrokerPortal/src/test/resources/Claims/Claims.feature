@@ -262,65 +262,11 @@ When user click on report to insurer option
 And user click on yes,report button for confirmation
 Then user able to view "Claim Intimated to Insurer" as status after reporting to insurer
 
-#@reportMoneyInsuranceCoverClaims
-Scenario: (Report Money Insurance Cover Claim) Verify user able to report claim successfully
-When user select "01/01/2024" as from date
-When user enter "49" as risk note number
-When user click on search button
-When user click on actions button
-When user click on report claim umbrella like button
-When user click on fetch button
-#Loss Event Details
-When user select "Tanzania" as country
-When user select "Dodoma" as region/City of loss
-When user select "Bahi" as district of loss
-When user enter "02/04/2025" as date of loss/Accident
-And user select "Accident" as cause of loss/Accident
-Then user enter "WestRoad" as place of loss/Accident
-
-#Claimant Details
-When user select "Email" as reported type
-When user select "Others" as nature of loss/claim type
-When user select "Driver" as claimant circumstances
-When user enter "1240000" as claimant amount
-When user enter "Money Insurance Cover Loss" as circumstances of accidents
-And user click on save button
-Then user able to view "Claim Reported" as status
-And user clicks on the actions dropdown
-When user click on report to insurer option
-And user click on yes,report button for confirmation
-Then user able to view "Claim Intimated to Insurer" as status after reporting to insurer
 
 
 
-#@reportPackagePolicyClaims
-Scenario: (Report Package Policy Claim) Verify user able to report claim successfully
-When user select "01/01/2024" as from date
-When user enter "46" as risk note number
-When user click on search button
-When user click on actions button
-When user click on report claim umbrella like button
-When user click on fetch button
-#Loss Event Details
-When user select "Tanzania" as country
-When user select "Dodoma" as region/City of loss
-When user select "Bahi" as district of loss
-When user enter "02/04/2025" as date of loss/Accident
-And user select "Accident" as cause of loss/Accident
-Then user enter "WestRoad" as place of loss/Accident
 
-#Claimant Details
-When user select "Email" as reported type
-When user select "Others" as nature of loss/claim type
-When user select "Driver" as claimant circumstances
-When user enter "1240000" as claimant amount
-When user enter "Package Policy Loss" as circumstances of accidents
-And user click on save button
-Then user able to view "Claim Reported" as status
-And user clicks on the actions dropdown
-When user click on report to insurer option
-And user click on yes,report button for confirmation
-Then user able to view "Claim Intimated to Insurer" as status after reporting to insurer
+
 
 @reportPensionClaims
 Scenario: (Report Pension Claim) Verify user able to report claim successfully

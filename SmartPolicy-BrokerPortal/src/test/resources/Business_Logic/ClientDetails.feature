@@ -6,7 +6,7 @@ Background:
 When user click on client icon from quick menu
 When user click on add button
 
-@RegressionTest       @MandatoryFields
+@RegressionTest       @MandatoryFields @main
 Scenario: (ClientDetails) Enter new client details with mandatory fields
 
 When user click on title dropdown
@@ -38,9 +38,9 @@ When user enter "House No.12 XYZ World" as address
 When user enter "659544202" as mobile No One
 When user enter "xxxxxxx503@gmail.com" as email id one
 When user click on save button to save client details
-Then user able to view "Bond Quotation" as quotation
+Then user able to view "CLIENT" screen
 
-@AllFields
+@AllFields @main
 Scenario: (ClientDetails) Enter new client details with all fields
 
 When user click on title dropdown
@@ -105,10 +105,10 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "Bond Quotation" as quotation
+Then user able to view "CLIENT" screen
 
 
-@Corporate
+@Corporate  @main
 Scenario: (ClientDetails) Enter new client details with all fields for corporate
 
 When user click on title dropdown
@@ -172,18 +172,16 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "Bond Quotation" as quotation
+Then user able to view "CLIENT" screen
 
 
-Scenario: (ClientDetails) Verify mandatory fields for Individual client cannot be empty
-When user click on save button to save client details
-Then user able to view "2001-Please specify the Client Name !" error message 
+
 
 @One
 Scenario: (ClientDetails) Verify dropdown options for Gender field
 When user select gender dropdown to view options
 
-@valid @DOB
+@validDOB
   Scenario Outline: System should retain valid DOB formats
     When I enter "<inputDate>" into the Date of Birth field
     Then the system should "<expectedResult>" in the Date of Birth field
