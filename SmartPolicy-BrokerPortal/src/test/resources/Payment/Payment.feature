@@ -10,7 +10,7 @@ When user click on add button to enter payment details
 
 @AllFields
 Scenario: (Payment)Verify user able to enter all fields and save payment details successfully
-When user select "Alliance Insurance Company (T) Ltd" as insurer name 
+When user select "Automated Testing Company" as insurer name 
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user enter "210000" as amount

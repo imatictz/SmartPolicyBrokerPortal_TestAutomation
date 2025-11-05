@@ -110,7 +110,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
    @PrintQuote
    Scenario: User prints the Bonds quote
-   When user select "01/01/2025" as from date
+   When user select "01/09/2025" as from date
    When user enter "Bonds" as Insurance Type
    When user click on search button to find "Bonds" quote
    When user enter quote number to search "Bonds" quote
@@ -124,5 +124,30 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
       | Premium Amount  | 
       | Insurance Type  |
   # And the user should be able to send the quote to the printer
+  
+@EditQuote
+ Scenario: Verify user able to edit an existing Bonds quote successfully
+   When user select "15/09/2025" as from date
+   When user enter "Bonds" as Insurance Type
+   When user click on search button to find "Bonds" quote
+   When user enter quote number to search "Bonds" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on edit option
+   
+   #Non-Financial Change
+   When user enter "Pravin Edit Test" as client name
+   And user select "Pravin Edit Test" as client name
+   When user select "Automated Testing Company" as insurer
+   
+   #Financial Change
+   When user click on select icon to edit details
+   When user select "Customs Bond 1" as insurance class
+   When user enter "Bonds Quotation" as description
+   When user enter "2000000" as contract value
+   When user click on compute button
+   When user click on update button to save policy information
+   When user click on update button
+   When user click on Ok button to accept commission alert
 
 

@@ -325,7 +325,20 @@ public class RiskNoteScreen {
 	        input[2] = "//*[@id='txtTotalReceivable']";
 	        input[3] = "//*[@id='txtNonVehicleVATAmt']";
 	        Hashtable<String, Object> output = SeleniumOperations.printRiskNote(input);
-			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "the risk note should include all relevant details like", output.get("MESSAGE").toString());
+	        String status = output.get("STATUS").toString();
+	        String message = output.get("MESSAGE").toString();
+
+	        // 🧠 Build more descriptive step name and message
+	        String stepName = "Verify Credit Note field: '" + field.trim() + "'";
+	        String detailedMessage =
+	                "Field Verified: <b>" + field + "</b><br>" +
+	                "Result: " + message + "<br>" +
+	                "Status: " + status + "<br>" +
+	                "Timestamp: " + new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new java.util.Date());
+
+	        // ✅ Log richer details in HTML report
+	        HTMLReportGenerator.StepDetails(status, stepName, detailedMessage);
+			//HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "the risk note should include all relevant details like", output.get("MESSAGE").toString());
 			Thread.sleep(2000);
 	    }
 	    

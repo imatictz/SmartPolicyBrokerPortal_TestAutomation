@@ -15,7 +15,7 @@ When user click on add button
 When user select "Group Life" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user Select "Standard Rate" as insurance class
 When user enter "Pravin Testing" as insured name
@@ -45,7 +45,7 @@ When user click on add button
 When user select "Group Life" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user Select "Standard Rate" as insurance class
 When user enter "Pravin Testing" as insured name
@@ -68,7 +68,7 @@ When user click on add button
 When user select "Group Life" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 #When user click on business by dropdown
 #Then user select Demo User as business by
 When user select on non-renewabale checkbox
@@ -123,7 +123,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Group Life quote
-   When user select "01/01/2025" as from date
+   When user select "01/09/2025" as from date
    When user enter "Group Life" as Insurance Type
    When user click on search button to find "Group Life" quote
    When user enter quote number to search "Group Life" quote
@@ -137,3 +137,32 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
       | Premium Amount  | 
       | Insurance Type  | 
   # And the user should be able to send the quote to the printer
+  
+@EditQuote
+ Scenario: Verify user able to edit an existing Group Life quote successfully
+   When user select "15/09/2025" as from date
+   When user enter "Group Life" as Insurance Type
+   When user click on search button to find "Group Life" quote
+   When user enter quote number to search "Group Life" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on edit option
+   
+   #Non-Financial Change
+   When user enter "Pravin Edit Test" as client name
+   And user select "Pravin Edit Test" as client name
+   When user select "Automated Testing Company" as insurer
+   
+   #Financial Change
+   When user click on select icon to edit details
+   When user Select "Standard Rate" as insurance class
+   When user enter "Pravin Edit Testing" as insured name
+   When user enter "01/01/2001" as date of birth
+   When user enter "4000000" as sum assured
+   When user enter "520000" as premium
+   When user click on relationship dropdown
+   When user enter "self" as relationship
+   When user select self as realtionship
+   When user click on update button to save policy information
+   When user click on update button
+   When user click on Ok button to accept commission alert

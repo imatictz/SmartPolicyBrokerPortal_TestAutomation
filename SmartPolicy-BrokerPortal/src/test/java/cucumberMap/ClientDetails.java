@@ -10,7 +10,6 @@ import io.cucumber.java.en.When;
 import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
-import static org.testng.Assert.*;
 
 public class ClientDetails {
 	
@@ -76,7 +75,7 @@ public class ClientDetails {
 		Object[] input18=new Object[2];
 		input18[0]="//*[@id='MainContent_txtCltName']";
 		input18[1]=clientName;
-		Hashtable<String, Object> output18 =SeleniumOperations.sendKeys(input18);
+		Hashtable<String, Object> output18 =SeleniumOperations.clearAndEnter(input18);
 		HTMLReportGenerator.StepDetails(output18.get("STATUS").toString(),"user enter \"Automation3\" as client name",output18.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -97,7 +96,7 @@ public class ClientDetails {
 		Object[] input20=new Object[2];
 		input20[0]="//*[@class='form-control'][@id='txtCltRefID']";
 		input20[1]=accNumber;
-		Hashtable<String, Object> output20 =SeleniumOperations.sendKeys(input20);
+		Hashtable<String, Object> output20 =SeleniumOperations.clearAndEnter(input20);
 		HTMLReportGenerator.StepDetails(output20.get("STATUS").toString(),"user enter \"12345678901\" as account number",output20.get("MESSAGE").toString());
 		Thread.sleep(4000);
 	}
@@ -116,7 +115,7 @@ public class ClientDetails {
 		Object[] input22=new Object[2];
 	    input22[0]="//*[@class='select2-search__field']";
 	    input22[1]=idType;
-	    Hashtable<String, Object> output22 =SeleniumOperations.sendKeys(input22);
+	    Hashtable<String, Object> output22 =SeleniumOperations.clearAndEnter(input22);
 	    HTMLReportGenerator.StepDetails(output22.get("STATUS").toString(),"user enter \"Birth certificate\" to search ID type in search box",output22.get("MESSAGE").toString());
 	    Thread.sleep(3000);   
 	}
@@ -135,7 +134,7 @@ public class ClientDetails {
 		Object[] input24=new Object[2];
 	    input24[0]="//*[@id='txtIDNumber']";
 	    input24[1]=idNumber;
-	    Hashtable<String, Object> output24 =SeleniumOperations.sendKeys(input24);
+	    Hashtable<String, Object> output24 =SeleniumOperations.clearAndEnter(input24);
 	    HTMLReportGenerator.StepDetails(output24.get("STATUS").toString(),"user enter \"12345678901\" as ID number",output24.get("MESSAGE").toString());    
 	    Thread.sleep(2000);
 	}
@@ -145,7 +144,7 @@ public class ClientDetails {
 		Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtDOB']";
 	    input[1]=dateOfBirth;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+	    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"01/01/2000\" as date of birth",output.get("MESSAGE").toString()); 
 	    Thread.sleep(2000);
 	}
@@ -212,7 +211,7 @@ public class ClientDetails {
 		Object[] input32=new Object[2];
 		input32[0]="//*[@class='select2-search__field']";
 		input32[1]=nationality;
-		Hashtable<String, Object> output32 =SeleniumOperations.sendKeys(input32);
+		Hashtable<String, Object> output32 =SeleniumOperations.clearAndEnter(input32);
 		HTMLReportGenerator.StepDetails(output32.get("STATUS").toString(),"user enter \"Tanzania\" to search nationality in search box",output32.get("MESSAGE").toString());
 	}
 
@@ -230,7 +229,7 @@ public class ClientDetails {
 		Object[] input34=new Object[2];
 		input34[0]="//*[@id='txtPOB']";
 		input34[1]=pBirth;
-		Hashtable<String, Object> output34 =SeleniumOperations.sendKeys(input34);
+		Hashtable<String, Object> output34 =SeleniumOperations.clearAndEnter(input34);
 		HTMLReportGenerator.StepDetails(output34.get("STATUS").toString(),"user enter \"Bahi\" as place of birth",output34.get("MESSAGE").toString());
 	}
 
@@ -248,7 +247,7 @@ public class ClientDetails {
 		Object[] input36=new Object[2];
 		input36[0]="//*[@class='select2-search__field']";
 		input36[1]=gender;
-		Hashtable<String, Object> output36 =SeleniumOperations.sendKeys(input36); 
+		Hashtable<String, Object> output36 =SeleniumOperations.clearAndEnter(input36); 
 		HTMLReportGenerator.StepDetails(output36.get("STATUS").toString(),"user enter \"Male\" to search gender in search box",output36.get("MESSAGE").toString());
 	}
 
@@ -274,7 +273,7 @@ public class ClientDetails {
 		Object[] input39=new Object[2];
 		input39[0]="//*[@class='select2-search__field']";
 		input39[1]=region;
-		Hashtable<String, Object> output39 =SeleniumOperations.sendKeys(input39);
+		Hashtable<String, Object> output39 =SeleniumOperations.clearAndEnter(input39);
 		HTMLReportGenerator.StepDetails(output39.get("STATUS").toString(),"user enter \"Dodoma\" to search region/province in search box",output39.get("MESSAGE").toString());
 	}
 
@@ -301,7 +300,7 @@ public class ClientDetails {
 		Object[] input42=new Object[2];
 		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=district;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \"Bahi\" to search district in search box",output42.get("MESSAGE").toString());
 	}
 
@@ -318,7 +317,7 @@ public class ClientDetails {
 		Object[] input44=new Object[2];
 		input44[0]="//*[@id='txtStreet']";
 		input44[1]=cell;
-		Hashtable<String, Object> output44 =SeleniumOperations.sendKeys(input44);
+		Hashtable<String, Object> output44 =SeleniumOperations.clearAndEnter(input44);
 		HTMLReportGenerator.StepDetails(output44.get("STATUS").toString(),"user enter \"Tree\" as cell/street",output44.get("MESSAGE").toString());
 	}
 
@@ -327,7 +326,7 @@ public class ClientDetails {
 		Object[] input45=new Object[2];
 		input45[0]="//*[@id='MainContent_txtAddress']";
 		input45[1]=address;
-		Hashtable<String, Object> output45 =SeleniumOperations.sendKeys(input45);
+		Hashtable<String, Object> output45 =SeleniumOperations.clearAndEnter(input45);
 		HTMLReportGenerator.StepDetails(output45.get("STATUS").toString(),"user enter \"House No.12 XYZ World\" as address",output45.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -339,13 +338,13 @@ public class ClientDetails {
 
 	}
 	
-	@Then ("^user able to view \"(.*)\" screen$")
+	@Then ("user able to view {string} as message")
 	public void validation(String validation) throws InterruptedException{
 		Object[] input=new Object[2];
-		input[0]="//*[contains(@id,'small_lbl')]";
+		input[0]="//*[@class='messenger-message-inner']";
 		input[1]=validation;
 		Hashtable<String,Object> output=SeleniumOperations.validation(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user is redirected to client screen",output.get("MESSAGE").toString());
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} as message",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
 
@@ -354,7 +353,7 @@ public class ClientDetails {
 	    Object[] input=new Object[2];
 		input[0]="//*[@id='txtIndTINNb']";
 		input[1]=TIN;
-		Hashtable<String,Object> output=SeleniumOperations.sendKeys(input);
+		Hashtable<String,Object> output=SeleniumOperations.clearAndEnter(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as TIN/PAN$",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -364,7 +363,7 @@ public class ClientDetails {
 	    Object[] input=new Object[2];
 		input[0]="//*[@id='txtZRBNb']";
 		input[1]=ZRBNo;
-		Hashtable<String,Object> output=SeleniumOperations.sendKeys(input);
+		Hashtable<String,Object> output=SeleniumOperations.clearAndEnter(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"ser enter \\\"([^\\\"]*)\\\" as ZRB No",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -383,7 +382,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=occupation;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as occupation",output42.get("MESSAGE").toString());
 	}
 
@@ -460,7 +459,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtVRNNb']";
 		input42[1]=VRNGST;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as VRN/GST",output42.get("MESSAGE").toString());
 	}
 
@@ -469,7 +468,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtSector']";
 		input42[1]=sector;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as sector",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -479,7 +478,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtVillage']";
 		input42[1]=village;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as village",output42.get("MESSAGE").toString());
 	}
 
@@ -488,7 +487,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtFax']";
 		input42[1]=fax;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as fax",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -498,7 +497,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtProfileID']";
 		input42[1]=profileId;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as profile ID",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -517,7 +516,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=profileCategory;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as profile category",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -535,7 +534,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtScreeningGrpID']";
 		input42[1]=groupId;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as screening group ID",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -545,7 +544,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtTelephone1']";
 		input42[1]=TelephoneOne;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as Telephone No One",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -555,7 +554,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtTelephone2']";
 		input42[1]=TelephoneTwo;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as Telephone No Two",output42.get("MESSAGE").toString());
 	}
 
@@ -564,7 +563,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtTelephone3']";
 		input42[1]=TelephoneThree;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as Telephone No Three",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -574,7 +573,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='MainContent_txtmobileno1']";
 		input42[1]=mobileOne;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as mobile No One",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -584,7 +583,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='MainContent_txtmobileno2']";
 		input42[1]=mobileTwo;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as mobile No Two",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -594,7 +593,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='MainContent_txtmobileno3']";
 		input42[1]=mobileThree;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as mobile No Three",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -604,7 +603,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtEmail1']";
 		input42[1]=emailId;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as email id one",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -614,7 +613,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtEmail2']";
 		input42[1]=emailId;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as email id Two",output42.get("MESSAGE").toString());
 	}
 
@@ -623,7 +622,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtEmail3']";
 		input42[1]=emailId;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as email id Three",output42.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
@@ -668,7 +667,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=amlRiskCategory;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as AML risk category",output42.get("MESSAGE").toString());
 	}
 
@@ -685,7 +684,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='MainContent_txtAppointDate']";
 		input42[1]=appointmentDate;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as appointment date",output42.get("MESSAGE").toString());
 	}
 
@@ -694,7 +693,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='MainContent_txtExpiryDate']";
 		input42[1]=mandateExpiry;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as mandate expiry",output42.get("MESSAGE").toString());
 	}
 
@@ -721,7 +720,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=businessType;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as business type",output42.get("MESSAGE").toString());
 	}
 
@@ -747,7 +746,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=countryOfRegistration;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as country of registration",output42.get("MESSAGE").toString());
 	}
 
@@ -764,7 +763,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='MainContent_txtRegDate']";
 		input42[1]=registrationDate;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as registration date",output42.get("MESSAGE").toString());
 	}
 
@@ -773,7 +772,7 @@ public class ClientDetails {
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='txtContactPerson']";
 		input42[1]=contactPerson;
-		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
+		Hashtable<String, Object> output42 =SeleniumOperations.clearAndEnter(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as contact person",output42.get("MESSAGE").toString());
 	}
 	
@@ -795,7 +794,7 @@ public class ClientDetails {
 	
 	@When("I enter {string} into the Date of Birth field")
 	public void i_enter_into_the_date_of_birth_field(String dob) throws InterruptedException {
-	    Itl.CustomSendEvent("//*[@id='MainContent_txtDOB']",dob, "I enter {string} into the Date of Birth field", "TEXTBOX", 2000);
+	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtDOB']",dob, "I enter {string} into the Date of Birth field", "TEXTBOX", 2000);
         Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbNationality')]", "CLICK", 2000);
 	}
 	
@@ -806,21 +805,21 @@ public class ClientDetails {
 	
 	@When("I enter {string} into the Mobile No field one")
 	public void i_enter_into_the_mobile_no_field1(String mob) throws InterruptedException {
-	    Itl.CustomSendEvent("//*[@id='MainContent_txtmobileno1']",mob, "I enter {string} into the Mobile No field one", "TEXTBOX", 2000);
+	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtmobileno1']",mob, "I enter {string} into the Mobile No field one", "TEXTBOX", 2000);
         Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
 
 	}
 	
 	@When("I enter {string} into the Mobile No field two")
 	public void i_enter_into_the_mobile_no_field2(String mob) throws InterruptedException {
-	    Itl.CustomSendEvent("//*[@id='MainContent_txtmobileno2']",mob, "I enter {string} into the Mobile No field two", "TEXTBOX", 2000);
+	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtmobileno2']",mob, "I enter {string} into the Mobile No field two", "TEXTBOX", 2000);
         Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
 
 	}
 
 	@When("I enter {string} into the Mobile No field three")
 	public void i_enter_into_the_mobile_no_field3(String mob) throws InterruptedException {
-	    Itl.CustomSendEvent("//*[@id='MainContent_txtmobileno3']",mob, "I enter {string} into the Mobile No field three", "TEXTBOX", 2000);
+	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtmobileno3']",mob, "I enter {string} into the Mobile No field three", "TEXTBOX", 2000);
         Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
 
 	}
@@ -920,4 +919,203 @@ public class ClientDetails {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
+	@When("the user enters the client name {string} in Name field")
+	public void the_user_enters_the_client_name_in_name_field(String clientName) throws InterruptedException {
+	    Itl.CustomClearSendEvent("//*[@id='txtSrchName']",clientName, "the user enters the client name {string} in Name field", "TEXTBOX", 2000);
+
+	}
+	@When("clicks on the search button")
+	public void clicks_on_the_button() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='MainContent_btnSearch']", "clicks on the search button", "CLICK", 2000);
+	}
+	@Then("the system should display client\\(s) with the name {string}")
+	public void the_system_should_display_client_s_with_the_name(String clientName) throws InterruptedException {
+		Object[] input=new Object[3];
+		input[0]=clientName;
+		input[1]="clientName";
+		input[2]="3";
+		Hashtable<String, Object> output42 =SeleniumOperations.verifyClientSearchByColumn(input);
+		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"the system should display client(s) with the name {string}",output42.get("MESSAGE").toString());
+		Thread.sleep(2000);
+	}
+	@Then("the displayed client details should include {string}, {string}, {string}, and {string}")
+	public void the_displayed_client_details_should_include_and(String string, String string2, String string3, String string4) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@When("the user enters the mobile number {string} in mobile number field")
+	public void the_user_enters_the_mobile_number_in_mobile_number_field(String mobileNo) throws InterruptedException {
+	    Itl.CustomClearSendEvent("//*[@id='txtSrchMobile']",mobileNo, "the user enters the mobile number {string} in mobile number field", "TEXTBOX", 2000);
+
+	}
+	@Then("the system should display client\\(s) whose mobile number is {string}")
+	public void the_system_should_display_client_s_whose_mobile_number_is(String mobileNo) throws InterruptedException {
+		Object[] input=new Object[3];
+		input[0]=mobileNo;
+		input[1]="mobileNo";
+		input[2]="6";
+		Hashtable<String, Object> output42 =SeleniumOperations.verifyClientSearchByColumn(input);
+		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"the system should display client(s) whose mobile number is {string}",output42.get("MESSAGE").toString());
+		Thread.sleep(2000);
+	}
+	@When("the user enters the client email {string} in the Email ID field")
+	public void the_user_enters_the_client_email_in_the_email_id_field(String emailId) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='txtSrchEmail']",emailId, "the user enters the client email {string} in the Email ID field", "TEXTBOX", 2000);
+
+	}
+	@Then("the system should display client\\(s) whose email is {string}")
+	public void the_system_should_display_client_s_whose_email_is(String emailId) throws InterruptedException {
+		Object[] input=new Object[3];
+		input[0]=emailId;
+		input[1]="email";
+		input[2]="0";
+		Hashtable<String, Object> output42 =SeleniumOperations.verifyClientSearchByColumn(input);
+		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"the system should display client(s) whose email is {string}",output42.get("MESSAGE").toString());
+		Thread.sleep(2000);
+		}
+	@Then("the displayed details should include {string}, {string}, and {string}")
+	public void the_displayed_details_should_include_and(String string, String string2, String string3) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@When("the user enters the client ID {string} in the Client ID field")
+	public void the_user_enters_the_client_id_in_the_client_id_field(String clientId) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='txtSrchClntId']",clientId, "the user enters the client ID {string} in the Client ID field", "TEXTBOX", 2000);
+	}
+	@Then("the system should display the client with Client ID {string}")
+	public void the_system_should_display_the_client_with_client_id(String clientId) throws InterruptedException {
+		Object[] input=new Object[3];
+		input[0]=clientId;
+		input[1]="clientId";
+		input[2]="1";
+		Hashtable<String, Object> output42 =SeleniumOperations.verifyClientSearchByColumn(input);
+		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"the system should display the client with Client ID {string}",output42.get("MESSAGE").toString());
+		Thread.sleep(2000);
+	}
+	@When("the user enters the account number {string} in the Account Number field")
+	public void the_user_enters_the_account_number_in_the_account_number_field(String accNo) throws InterruptedException {
+	    Itl.CustomClearSendEvent("//*[@id='txtSrchOtherId']",accNo, "the user enters the account number {string} in the Account Number field", "TEXTBOX", 2000);
+
+	}
+	@Then("the system should display the client\\(s) linked with account number {string}")
+	public void the_system_should_display_the_client_s_linked_with_account_number(String accNo) throws InterruptedException {
+		Object[] input=new Object[3];
+		input[0]=accNo;
+		input[1]="accountNumber";
+		input[2]="0";
+		Hashtable<String, Object> output42 =SeleniumOperations.verifyClientSearchByColumn(input);
+		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"the system should display the client(s) linked with account number {string}",output42.get("MESSAGE").toString());
+		Thread.sleep(2000);
+	}
+	@When("the user enters the date of birth {string} in the Date of Birth field")
+	public void the_user_enters_the_date_of_birth_in_the_date_of_birth_field(String dob) throws InterruptedException {
+	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtSrchDob']",dob, "the user enters the date of birth {string} in the Date of Birth field", "TEXTBOX", 2000);
+
+	}
+	@Then("the system should display client\\(s) date of birth {string}")
+	public void the_system_should_display_client_s_date_of_birth(String dob) throws InterruptedException {
+		Object[] input=new Object[3];
+		input[0]=dob;
+		input[1]="dateofbirth";
+		input[2]="0";
+		Hashtable<String, Object> output42 =SeleniumOperations.verifyClientSearchByColumn(input);
+		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"the system should display client(s) date of birth {string}",output42.get("MESSAGE").toString());
+		Thread.sleep(2000);
+	}
+	@When("the user enters the following search criteria:")
+	public void the_user_enters_the_following_search_criteria(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+		List<Map<String, String>> userList =  (List<Map<String, String>>) dataTable.asMaps(String.class, String.class);
+	 	   
+	    //Name
+	    Itl.CustomSendEvent("//*[@id='txtSrchName']",userList.get(0).get("Value"), "user enter {string} as Name", "TEXTBOX", 0);
+	    //Mobile
+	    Itl.CustomSendEvent("//*[@id='txtSrchMobile']",userList.get(1).get("Value"), "user enter {string} as Mobile", "TEXTBOX", 0);
+	    //Email ID
+	    Itl.CustomSendEvent("//*[@id='txtSrchEmail']",userList.get(2).get("Value"), "user enter {string} as Email ID", "TEXTBOX", 0);
+	    //Client ID
+	    Itl.CustomSendEvent("//*[@id='txtSrchClntId']",userList.get(3).get("Value"), "user enter {string} as Client ID", "TEXTBOX", 0);
+	    //Account No
+	    Itl.CustomSendEvent("//*[@id='txtSrchOtherId']",userList.get(4).get("Value"), "user enter {string} as Account No", "TEXTBOX", 0);
+	    //Date Of Birth
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtSrchDob']",userList.get(5).get("Value"), "user enter {string} as Date Of Birth", "TEXTBOX", 0);
+	    
+	}
+	@Then("the system should display the exact client record matching all entered criteria")
+	public void the_system_should_display_exact_client_record_matching_all_entered_criteria(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+	    List<Map<String, String>> criteriaList = dataTable.asMaps(String.class, String.class);
+	    boolean allMatched = true;
+	    StringBuilder combinedMessage = new StringBuilder();
+
+	    for (Map<String, String> criteria : criteriaList) {
+	        String fieldName = criteria.get("Field Name").trim().toLowerCase();
+	        String expectedValue = criteria.get("Value").trim();
+	        String searchType = "";
+	        String columnIndex = "0"; // default for popup validations
+
+	        switch (fieldName) {
+	            case "name":
+	                searchType = "name";
+	                columnIndex = "3"; // Assuming Name is 3rd column
+	                break;
+	            case "mobile":
+	                searchType = "mobile";
+	                columnIndex = "6"; // Assuming Mobile is 5th column
+	                break;
+	            case "email id":
+	                searchType = "email";
+	                columnIndex = "0"; // Popup validation
+	                break;
+	            case "client id":
+	                searchType = "clientid";
+	                columnIndex = "1"; // Assuming Client ID is 2nd column
+	                break;
+	            case "account no":
+	                searchType = "accountnumber";
+	                columnIndex = "0"; // Popup validation
+	                break;
+	            case "date of birth":
+	                searchType = "dateofbirth";
+	                columnIndex = "0"; // Popup validation
+	                break;
+	            default:
+	                System.out.println("⚠️ Unsupported field: " + fieldName);
+	                continue;
+	        }
+
+	        Object[] input = new Object[3];
+	        input[0] = expectedValue;
+	        input[1] = searchType;
+	        input[2] = columnIndex;
+
+	        Hashtable<String, Object> result = SeleniumOperations.verifyClientSearchByColumn(input);
+	        String status = result.get("STATUS").toString();
+	        String message = result.get("MESSAGE").toString();
+
+	        combinedMessage.append("\n").append(message);
+
+	        if (!status.equalsIgnoreCase("PASS")) {
+	            allMatched = false;
+	        }
+
+	        // Optional: delay between validations
+	        Thread.sleep(1000);
+	    }
+
+	    // Final combined validation summary
+	    if (allMatched) {
+	        HTMLReportGenerator.StepDetails("PASS",
+	                "the system should display the exact client record matching all entered criteria",
+	                "✅ All search fields matched successfully: " + combinedMessage.toString());
+	    } else {
+	        HTMLReportGenerator.StepDetails("FAIL",
+	                "the system should display the exact client record matching all entered criteria",
+	                "❌ One or more search fields did not match: " + combinedMessage.toString());
+	    }
+	}
+	@When("user click on edit icon")
+	public void clicks_on_the_editIcon() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[8]/*[2]", "user click on edit icon", "CLICK", 2000);
+	}
+
+
 }

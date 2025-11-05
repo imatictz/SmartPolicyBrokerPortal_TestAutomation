@@ -4,15 +4,16 @@ Feature: New Client details
 Background:
 
 When user click on client icon from quick menu
-When user click on add button
+
 
 @RegressionTest       @MandatoryFields @main
 Scenario: (ClientDetails) Enter new client details with mandatory fields
 
+When user click on add button
 When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
-When user enter "TestAutomation104" as client name
+When user enter "Pravin Test Client" as client name
 When user click in account number field
 When user enter "5412502145021004" as account number
 When user click on ID type dropdown
@@ -38,11 +39,12 @@ When user enter "House No.12 XYZ World" as address
 When user enter "659544202" as mobile No One
 When user enter "xxxxxxx503@gmail.com" as email id one
 When user click on save button to save client details
-Then user able to view "CLIENT" screen
+Then user able to view "1001-New information recorded successfully" as message
 
 @AllFields @main
 Scenario: (ClientDetails) Enter new client details with all fields
 
+When user click on add button
 When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
@@ -105,12 +107,13 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "CLIENT" screen
+Then user able to view "1001-New information recorded successfully" as message
 
 
 @Corporate  @main
 Scenario: (ClientDetails) Enter new client details with all fields for corporate
 
+When user click on add button
 When user click on title dropdown
 When user enter "M/S" as title in search box
 When user click on Mr from dropdown
@@ -172,17 +175,19 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "CLIENT" screen
+Then user able to view "1001-New information recorded successfully" as message
 
 
 
 
 @One
 Scenario: (ClientDetails) Verify dropdown options for Gender field
+When user click on add button
 When user select gender dropdown to view options
 
 @validDOB
   Scenario Outline: System should retain valid DOB formats
+  When user click on add button
     When I enter "<inputDate>" into the Date of Birth field
     Then the system should "<expectedResult>" in the Date of Birth field
 
@@ -195,6 +200,7 @@ When user select gender dropdown to view options
 
   @invalid @DOB
   Scenario Outline: System should replace invalid DOB with today's date
+  When user click on add button
     When I enter "<inputDate>" into the Date of Birth field
     Then the system should "<expectedResult>" in the Date of Birth field
 
@@ -209,6 +215,7 @@ When user select gender dropdown to view options
 
   @special @DOB
   Scenario Outline: System should reject special characters in DOB
+  When user click on add button
     When I enter "<inputDate>" into the Date of Birth field
     Then the system should "<expectedResult>" in the Date of Birth field
 
@@ -220,6 +227,7 @@ When user select gender dropdown to view options
 
   @range @DOB
   Scenario Outline: System should validate logical DOB range
+  When user click on add button
     When I enter "<inputDate>" into the Date of Birth field
     Then the system should "<expectedResult>" in the Date of Birth field
 
@@ -230,6 +238,7 @@ When user select gender dropdown to view options
 
   @boundary @DOB
   Scenario Outline: System should accept edge valid DOBs
+  When user click on add button
     When I enter "<inputDate>" into the Date of Birth field
     Then the system should "<expectedResult>" in the Date of Birth field
 
@@ -241,6 +250,7 @@ When user select gender dropdown to view options
       
 @MobileNumber @MOB1
   Scenario Outline: (Mobile No Field 1)Validate Mobile Number field accepts only 9 digits starting with 62 after +255
+    When user click on add button
     When I enter "<mobileDigits>" into the Mobile No field one
     Then I should see the validation result as "<expectedAlert>"
 
@@ -252,6 +262,7 @@ When user select gender dropdown to view options
       
 @MobileNumber @MOB2
   Scenario Outline: (Mobile No Field 2)Validate Mobile Number field accepts only 9 digits starting with 62 after +255
+    When user click on add button
     When I enter "<mobileDigits>" into the Mobile No field two
     Then I should see the validation result as "<expectedAlert>"
 
@@ -263,6 +274,7 @@ When user select gender dropdown to view options
       
 @MobileNumber @MOB3
   Scenario Outline: (Mobile No Field 3)Validate Mobile Number field accepts only 9 digits starting with 62 after +255
+    When user click on add button
     When I enter "<mobileDigits>" into the Mobile No field three
     Then I should see the validation result as "<expectedAlert>"
 
@@ -274,6 +286,7 @@ When user select gender dropdown to view options
  
  @Individual   @FieldsCorInd
  Scenario: When Individual is selected, Corporate fields should be disabled
+    When user click on add button
     When user click on title dropdown
     When user enter "Mr" as title in search box
     When user click on Mr from dropdown
@@ -298,6 +311,7 @@ When user select gender dropdown to view options
 
 @Corporate1 @FieldsCorInd
   Scenario: When Corporate is selected, Individual fields should be disabled
+    When user click on add button
     When user click on title dropdown
     When user enter "M/S" as title in search box
     When user click on MS from dropdown
@@ -318,9 +332,11 @@ When user select gender dropdown to view options
       | Registration Number     |
       
       
-    @email
-    Scenario: Verify multiple email inputs in one test
-    When user click on title dropdown
+@email
+Scenario: Verify multiple email inputs in one test
+
+When user click on add button
+When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
 When user enter "TestAutomation104" as client name
@@ -356,8 +372,108 @@ When user enter "659544202" as mobile No One
       | user%@example.com   | 2009-Invalid email address !     |
       
          
-      
-      
+    @SearchByName     @Search
+    Scenario: Search client by valid Name
+    When the user enters the client name "TestAutomation104" in Name field
+    And clicks on the search button
+    Then the system should display client(s) with the name "TestAutomation104"
+    And the displayed client details should include "Client ID", "Email", "Mobile", and "Account Number"     
+    
+    @SearchByMobile     @Search
+    Scenario: Search client by valid Mobile Number
+    When the user enters the mobile number "+255659544202" in mobile number field
+    And clicks on the search button
+    Then the system should display client(s) whose mobile number is "+255659544202"
+    And the displayed client details should include "Name", "Email", and "Client ID" 
+    
+    @SearchByEmail    @Search
+    Scenario: Search client by valid Email ID
+    When the user enters the client email "xxxxxxx102@gmail.com" in the Email ID field
+    And clicks on the search button
+    Then the system should display client(s) whose email is "xxxxxxx102@gmail.com"
+    And the displayed details should include "Name", "Mobile", and "Client ID"
 
+    @SearchByClientID    @Search
+    Scenario: Search client by valid Client ID
+    When the user enters the client ID "140" in the Client ID field
+    And clicks on the search button
+    Then the system should display the client with Client ID "140"
+    And the displayed details should include "Name", "Email", and "Mobile"
+
+    @SearchByAccountNumber    @Search
+    Scenario: Search client by valid Account Number
+    When the user enters the account number "5412502145021004" in the Account Number field
+    And clicks on the search button
+    Then the system should display the client(s) linked with account number "5412502145021004"
+    And the displayed details should include "Name", "Email", and "Client ID"
+
+    @SearchByDateOfBirth  @Search
+    Scenario: Search client by valid Date of Birth
+    When the user enters the date of birth "01-Jan-2000" in the Date of Birth field
+    And clicks on the search button
+    Then the system should display client(s) date of birth "01-Jan-2000"
+    And the displayed details should include "Name", "Email", and "Client ID"
+
+    @CombinedSearch    @Search
+    Scenario: Search client by multiple valid fields
+    When the user enters the following search criteria:
+      | Field Name     | Value                 |
+      | Name           | TestAutomation204     |
+      | Mobile         | +255659544202         |
+      | Email ID       | xxxxxxx102@gmail.com  |
+      | Client ID      | 141                   |
+      | Account No     | 564548465468482004    |
+      | Date Of Birth  | 01-Jan-2000           |
+    And clicks on the search button
+    Then the system should display the exact client record matching all entered criteria
+      | Field Name     | Value                 |
+      | Name           | TestAutomation204     |
+      | Mobile         | +255659544202         |
+      | Email ID       | xxxxxxx102@gmail.com  |
+      | Client ID      | 141                   |
+      | Account No     | 564548465468482004    |
+      | Date Of Birth  | 01-Jan-2000           |
+    And the displayed details should include "Client ID", "Account Number", and "Date of Birth"     
+      
+    @EditClientDetails     
+    Scenario: Verify user able to edit an existing client details successfully
+    #Search client
+    When the user enters the client name "TestAutomation104" in Name field
+    And clicks on the search button
+    
+    #Select And Edit Details
+    When user click on edit icon
+    When user click on title dropdown
+    When user enter "Mr" as title in search box
+    When user click on Mr from dropdown
+    When user enter "Pravin Test Client Edit" as client name
+    When user click in account number field
+    When user enter "5412502145021004" as account number
+    When user click on ID type dropdown
+    When user enter "Birth certificate" to search ID type in search box
+    When user click on birth certificate as ID type from dropdown
+    When user enter "5412502145021004" as ID number
+    When user enter "01/01/2000" as date of birth
+    When user click on nationality dropdown
+    When user enter "Tanzania" to search nationality in search box
+    When user click on tanzania as nationality
+    When user enter "Bahi" as place of birth
+    When user click on gender dropdown
+    When user enter "Male" to search gender in search box
+    When user click on male as gender
+    When user click on region/province dropdown
+    When user enter "Dodoma" to search region/province in search box
+    When user click on dodoma as region/province
+    When user click on district dropdown
+    When user enter "Bahi" to search district in search box
+    When user click on bahi as district
+    When user enter "Tree" as cell/street
+    When user enter "House No.12 XYZ World" as address
+    When user enter "659544202" as mobile No One
+    When user enter "xxxxxxx503@gmail.com" as email id one
+    When user click on save button to save client details
+    Then user able to view "1003-Information modified successfully" as message
+    
+    
 
 

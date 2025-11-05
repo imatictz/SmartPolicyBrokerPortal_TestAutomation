@@ -15,7 +15,7 @@ When user click on add button
 When user select "Medical" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Standard Rate" as insurance class
 When user enter "01/01/2000" as date of birth
@@ -40,7 +40,7 @@ When user click on add button
 When user select "Medical" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Standard Rate" as insurance class
 When user enter "01/01/2000" as date of birth
@@ -59,7 +59,7 @@ When user click on add button
 When user select "Medical" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user Select "Automated Testing Company" as insurer
+When user select "Automated Testing Company" as insurer
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
 When user select on RI per class checkbox
@@ -117,7 +117,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Medical quote
-   When user select "01/01/2025" as from date
+   When user select "01/09/2025" as from date
    When user enter "Medical" as Insurance Type
    When user click on search button to find "Medical" quote
    When user enter quote number to search "Medical" quote
@@ -131,3 +131,28 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
       | Premium Amount  | 
       | Insurance Type  | 
   # And the user should be able to send the quote to the printer
+  
+@EditQuote
+ Scenario: Verify user able to edit an existing Medical quote successfully
+   When user select "15/09/2025" as from date
+   When user enter "Medical" as Insurance Type
+   When user click on search button to find "Medical" quote
+   When user enter quote number to search "Medical" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on edit option
+   
+   #Non-Financial Change
+   When user enter "Pravin Edit Test" as client name
+   And user select "Pravin Edit Test" as client name
+   When user select "Automated Testing Company" as insurer
+   
+   #Financial Change
+   When user click on select icon to edit details
+   When user select "Standard Rate" as insurance class
+   When user enter "01/01/2005" as date of birth
+   When user select "Self" as relationship
+   When user enter "120000" as total premium
+   When user click on update button to save policy information
+   When user click on update button
+   When user click on Ok button to accept commission alert

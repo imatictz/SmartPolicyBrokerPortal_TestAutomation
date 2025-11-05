@@ -72,7 +72,7 @@ public class Vehicle
 			Object[] input=new Object[2];
 			input[0]="//*[@id='MainContent_txtClientName']";
 			input[1]=name;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name in vehicle quotation",output.get("MESSAGE").toString());
 		}
 		
@@ -86,8 +86,59 @@ public class Vehicle
 			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Pravin Testing as client name",output.get("MESSAGE").toString());
 			   Thread.sleep(4000);
 		}
+	 @When("^user click on update button$")
+	 public void user_click_on_update_button() throws Throwable
+	 {
+		 Object[] input7=new Object[1];
+			input7[0]="//*[@id='btnSave']";
+			 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on update button",output.get("MESSAGE").toString());
+			 Thread.sleep(4000);
+	 }
+	@When("user click on update button to save policy information")
+	 public void user_click_on_update_button_policyInformation() throws Throwable
+	 {
+		 Object[] input7=new Object[1];
+			input7[0]="//*[@id='btnInsert']";
+			 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on update button to save policy information",output.get("MESSAGE").toString());
+	     
+	 }
+	@When("user click on select icon to edit details")
+	 public void user_click_on_selectIcon() throws Throwable
+	 {
+		 Object[] input7=new Object[1];
+			input7[0]="//*[@id='sort_table_Vehicle']/tbody/tr[1]/td[11]";
+			 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
+			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on select icon to edit details",output.get("MESSAGE").toString());
+	         Thread.sleep(2000);
+	 }
+	@When("user clicks on edit option")
+	public void user_clicks_on_edit_option() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[1]", "user clicks on edit option", "CLICK", 2000);
+	}
+	@When("user clicks on attach documents option")
+	public void user_clicks_on_attach_documents_option() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[14]", "user clicks on attach documents option", "CLICK", 0);
+	    Thread.sleep(5000);
+	}
+	@When("user select {string} as client name")
+	public void clickOnClientName(String clientName) throws Throwable 
+	{
+		Object[] input=new Object[1];
+		input[0]="//*[@id='MainContent_txtClientName']";
+		Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select "+clientName+" as client name",output.get("MESSAGE").toString());
+		Thread.sleep(2000);
+	}
+	@When("^user click on Ok button to accept commission alert$")
+	public void clickOnOKButton() throws Throwable 
+	{
+		Hashtable<String,Object> output= SeleniumOperations.alert();
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
+	}
 
-	 @When ("^user Select \"(.*)\" as insurer$")
+	 @When ("user select {string} as insurer")
 		public void selectInsurer(String insurer) throws Throwable 
 		{
 		 Object[] input = new Object[4];
@@ -96,7 +147,7 @@ public class Vehicle
 		    input[2] = insurer;
 		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
-			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as insurer",output.get("MESSAGE").toString());
 			Thread.sleep(2000);
 		}
 
@@ -115,7 +166,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@class='select2-search__field']";
 			input[1]=motorType; 
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Registered\" as motor type",output.get("MESSAGE").toString());
 	 }
 
@@ -173,7 +224,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtChasisNo']";
 			input[1]=chasisNumber;
-			Hashtable<String, Object> output1 = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output1 = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output1.get("STATUS").toString(),"user enter \"632541A\" as chasis number",output1.get("MESSAGE").toString());
 	 }
 
@@ -183,7 +234,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='MainContent_txtFltMake']";
 			input[1]=vehicleMake;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"TVS\" as vehicle make",output.get("MESSAGE").toString());
 			
 	 }
@@ -202,7 +253,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='MainContent_txtFltModel']";
 			input[1]=vehicleModel;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"SCOOTY\" as vehicle model",output.get("MESSAGE").toString());
 
 	 }
@@ -251,7 +302,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='MainContent_txtModelNum']";
 			input[1]=modelNumber;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"6523SCOOTY125\" as model number",output.get("MESSAGE").toString());
 	 }
 
@@ -261,7 +312,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtEngineNo']";
 			input[1]=engineNumber;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"524789931EN\" as engine number",output.get("MESSAGE").toString());
 			Thread.sleep(2000);
 			SeleniumOperations.scrollUp();
@@ -303,8 +354,9 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtFltYear']";
 			input[1]=manufactureYear;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"2015\" as manufacture year",output.get("MESSAGE").toString());
+	       Thread.sleep(3000);
 	 }
 
 	 @When("^user enter \"([^\"]*)\" as seat$")
@@ -313,7 +365,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtFltSeat']";
 			input[1]=seat;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"2\" as seat",output.get("MESSAGE").toString());
 	 }
 
@@ -323,7 +375,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtFltCC']";
 			input[1]=CC;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"125\" as CC",output.get("MESSAGE").toString());
 	 }
 
@@ -333,7 +385,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtColor']";
 			input[1]=color;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"White\" as color",output.get("MESSAGE").toString());
 	 }
 
@@ -343,7 +395,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='MainContent_txtGrossWeight']";
 			input[1]=grossWeight;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"101\" as gross weight",output.get("MESSAGE").toString());
 	 }
 
@@ -353,7 +405,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='MainContent_txtTareWeeight']";
 			input[1]=tareWeight;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"97\" as tare weight",output.get("MESSAGE").toString());
 	 Thread.sleep(2000);
 	 }
@@ -364,7 +416,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtNoOfAxel']";
 			input[1]=numberOfAxel;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input); 
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input); 
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"2\" as number of axel",output.get("MESSAGE").toString());
 	 }
 
@@ -374,7 +426,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtAxelDistance']";
 			input[1]=axelDistance;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input); 
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input); 
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"1\" as axel distance",output.get("MESSAGE").toString());
 	 }
 
@@ -384,7 +436,7 @@ public class Vehicle
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtFltSumInsured']";
 			input[1]=sumInsured;
-			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
+			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"100000\" as sum insured",output.get("MESSAGE").toString());
 	 Thread.sleep(2000);
 	 }
@@ -393,8 +445,8 @@ public class Vehicle
 	 public void clickOnComputeButton() throws Throwable
 	 {
 		    Itl.CustomClickEvent("//*[@id='btnCompute']", "user click on compute button", "CLICK", 2000);
-		    Itl.CustomClickEvent("//*[@id='btnCompute']", "user click on compute button", "CLICK", 2000);
-
+		    Itl.CustomClickEvent("//*[@id='btnCompute']", "user click on compute button", "CLICK", 0);
+		    Thread.sleep(5000);
 	 }
 
 	 @When ("^user click on insert button \\(Policy Information\\)$")
@@ -414,7 +466,7 @@ public class Vehicle
 	 {
 		 Hashtable<String, Object> output = SeleniumOperations.alert();
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on OK button for commission alert",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
+		 Thread.sleep(4000);
 	 }
 
 	 @When("^user click on compute button to update record$")
@@ -970,7 +1022,7 @@ public class Vehicle
 			Object[] input=new Object[2];
 		    input[0]="//*[@id='txtRegYear']";
 		    input[1]=registrationYear;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as registration year",output.get("MESSAGE").toString());   
 		
 		}
@@ -1283,6 +1335,42 @@ public class Vehicle
 		    }
 		    
 		}
+		@When("the user selects a file {string} of size {int} KB")
+		public void the_user_selects_a_file_of_size(String fileName, int sizeInKB) throws IOException, InterruptedException {
+		    Object[] input = new Object[2];
+		    input[0] = fileName;
+		    input[1] = sizeInKB;
+
+		    Hashtable<String, Object> output = SeleniumOperations.createDummyPDF2(input);
+
+		    HTMLReportGenerator.StepDetails(
+		            output.get("STATUS").toString(),
+		            "the user selects a file of size " + sizeInKB + " KB",
+		            output.get("MESSAGE").toString()
+		    );
+		    Thread.sleep(2000);
+		}
+		@Then("the selected file {string} should be displayed in the upload field")
+		public void the_selected_file_should_be_displayed_in_the_upload_field(String status) throws InterruptedException {
+			Itl.CustomValidationEvent("//*[@class='file-name']", status, "the selected file {string} should be displayed in the upload field", "VALIDATION", 2000);
+
+		}
+		@Then("clicks on the Upload button")
+		public void clicks_on_the_upload_button() throws InterruptedException {
+	        Itl.CustomClickEvent("//*[@id='btnUpload']", "clicks on the Upload button", "CLICK", 5000);
+
+		}
+		@Then("the uploaded file {string} should be displayed in the uploaded files list")
+		public void the_uploaded_file_should_be_displayed_in_the_uploaded_files_list(String status) throws InterruptedException {
+			Itl.CustomValidationEvent("//*[@id='MainContent_rptUploadImage_lblAttchmentFN_0']", status, "the uploaded file {string} should be displayed in the uploaded files list", "VALIDATION", 2000);
+
+		}
+		@Then("the user able to view {string} as upload status")
+		public void the_file_should_be_uploaded_successfully(String status) throws InterruptedException {
+			Itl.CustomValidationEvent("//*[@id='uploadStatus']", status, "the user able to view {string} as upload status", "VALIDATION", 2000);
+
+		}
+
 	
 	
 	

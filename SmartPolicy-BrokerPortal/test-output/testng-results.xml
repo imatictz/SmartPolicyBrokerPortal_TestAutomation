@@ -2,46 +2,46 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-16T16:19:53Z" name="Default suite" finished-at="2025-09-16T16:22:58Z" duration-ms="185108">
+  <suite started-at="2025-11-05T14:03:01Z" name="Default suite" finished-at="2025-11-05T14:05:40Z" duration-ms="158960">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestEndorsement@76954a33]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@7bef452c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-09-16T16:19:53Z" name="Default test" finished-at="2025-09-16T16:22:58Z" duration-ms="185108">
-      <class name="testRunner.RunnerTestEndorsement">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestEndorsement@76954a33]" started-at="2025-09-16T19:19:53Z" name="setUpClass" finished-at="2025-09-16T19:19:54Z" duration-ms="977" status="PASS">
+    <test started-at="2025-11-05T14:03:01Z" name="Default test" finished-at="2025-11-05T14:05:40Z" duration-ms="158960">
+      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@7bef452c]" started-at="2025-11-05T17:03:01Z" name="setUpClass" finished-at="2025-11-05T17:03:01Z" duration-ms="736" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@484302ee]]>
+                <![CDATA[org.testng.TestRunner@3d8bd881]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestEndorsement@76954a33]" started-at="2025-09-16T19:19:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-16T19:22:58Z" duration-ms="183926" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@7bef452c]" started-at="2025-11-05T17:03:01Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-05T17:05:39Z" duration-ms="157939" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["(Fidelity Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement"]]>
+                <![CDATA["Verify user able to edit an existing Individual Personal Accident quote successfully"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["General Endorsement"]]>
+                <![CDATA["AccidentalDamage Quotation"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestEndorsement@76954a33]" started-at="2025-09-16T19:22:58Z" name="tearDownClass" finished-at="2025-09-16T19:22:58Z" duration-ms="45" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@7bef452c]" started-at="2025-11-05T17:05:39Z" name="tearDownClass" finished-at="2025-11-05T17:05:40Z" duration-ms="65" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestEndorsement -->
+      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

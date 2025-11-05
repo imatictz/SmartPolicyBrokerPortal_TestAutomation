@@ -3,92 +3,111 @@
 <suite parallel="none" name="Failed suite [SmartPoilcy]" guice-stage="DEVELOPMENT">
   <test parallel="none" name="Test1(failed)">
     <classes>
-      <class name="testRunner.RunnerTestBondsQuotation">
+      <class name="testRunner.RunnerTestPayment">
         <methods>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
-      </class> <!-- testRunner.RunnerTestBondsQuotation -->
-      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
-      <class name="testRunner.RunnerTestVehicleQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestVehicleQuotation -->
-      <class name="testRunner.RunnerTestBurglaryQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestBurglaryQuotation -->
-      <class name="testRunner.RunnerTestClaims">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestClaims -->
+      </class> <!-- testRunner.RunnerTestPayment -->
       <class name="testRunner.RunnerTestFireAndBurglaryQuotation">
         <methods>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestFireAndBurglaryQuotation -->
-      <class name="testRunner.RunnerTestCreditLifeQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestCreditLifeQuotation -->
-      <class name="testRunner.RunnerTestPensionQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestPensionQuotation -->
-      <class name="testRunner.RunnerTestGroupLifeQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestGroupLifeQuotation -->
-      <class name="testRunner.RunnerTestFidelityQuotation">
-        <methods>
-          <include name="runScenario" invocation-numbers="2"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestFidelityQuotation -->
-      <class name="testRunner.RunnerTestFireClassIQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestFireClassIQuotation -->
       <class name="testRunner.RunnerTestRiskNoteScreen">
         <methods>
-          <include name="runScenario" invocation-numbers="11"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestRiskNoteScreen -->
-      <class name="testRunner.RunnerTestRiskNote_DebitNote">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestRiskNote_DebitNote -->
       <class name="testRunner.RunnerTestMedicalQuotation">
         <methods>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestMedicalQuotation -->
+      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
+        <methods>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
+      <class name="testRunner.RunnerTestPensionQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestPensionQuotation -->
+      <class name="testRunner.RunnerTestClientDetails">
+        <methods>
+          <include name="runScenario" invocation-numbers="31 32 33 34 35 36 37"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestClientDetails -->
+      <class name="testRunner.RunnerTestFidelityQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestFidelityQuotation -->
+      <class name="testRunner.RunnerTestVehicleQuotation">
+        <methods>
+          <include name="runScenario" invocation-numbers="7"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestVehicleQuotation -->
+      <class name="testRunner.RunnerTestEndorsement">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestEndorsement -->
+      <class name="testRunner.RunnerTestBurglaryQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestBurglaryQuotation -->
+      <class name="testRunner.RunnerTestRiskNote_DebitNote">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestRiskNote_DebitNote -->
+      <class name="testRunner.RunnerTestBondsQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestBondsQuotation -->
+      <class name="testRunner.RunnerTestFireClassIQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestFireClassIQuotation -->
+      <class name="testRunner.RunnerTestGroupLifeQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestGroupLifeQuotation -->
+      <class name="testRunner.RunnerTestClaims">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestClaims -->
+      <class name="testRunner.RunnerTestCreditLifeQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestCreditLifeQuotation -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [SmartPoilcy] -->

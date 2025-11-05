@@ -40,7 +40,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -101,7 +101,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -156,7 +156,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -216,7 +216,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -280,7 +280,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -337,7 +337,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -398,7 +398,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -462,7 +462,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -519,7 +519,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -575,7 +575,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -638,7 +638,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -694,7 +694,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -751,7 +751,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -815,7 +815,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -872,7 +872,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -898,15 +898,6 @@ Then user able to view "Issued" as status
 @UpgradeFirePolicy
 Scenario: (Fire and Burglary Quotation Endorsement-UpgradePolicy)Verify user able to do policy upgrading for general financial endorsement
 
-#BrokerPortal
-When user enter "37153" risk note number
-When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "45000000" as change value of sum assured
-When user click on compute button
-When user click on update button 
-When user enter "Upgrading Policy" as endorsement details
 When user select "01/01/2025" as from date
 When user enter "Fire and Burglary" as Insurance Type
 When user click on search button to find "Fire and Burglary" risk note
@@ -922,14 +913,14 @@ When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user click on edit icon to make financial changes
-When user enter "45000000" as change value of contract value
+When user enter "45000000" as change value of sum assured
 When user click on compute button
-When user click on update button
+When user click on update button 
 When user enter "Upgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Fire and Burglary" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -938,7 +929,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -970,14 +961,7 @@ Then user able to view "Issued" as status
 
 @DownGradeFirePolicy
 Scenario: (Fire and Burglary Quotation Endorsement-DownGradePolicy)Verify user able to do policy downgrading for general financial endorsement
-When user enter "37154" risk note number
-When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "25000" as change value of sum assured
-When user click on compute button 
-When user click on update button 
-When user enter "Downgrading Policy" as endorsement details
+
 When user select "01/01/2025" as from date
 When user enter "Fire and Burglary" as Insurance Type
 When user click on search button to find "Fire and Burglary" risk note
@@ -993,9 +977,9 @@ When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user click on edit icon to make financial changes
-When user enter "25000" as change value of contract value
-When user click on compute button
-When user click on update button
+When user enter "25000" as change value of sum assured
+When user click on compute button 
+When user click on update button 
 When user enter "Downgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
@@ -1009,7 +993,65 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user select "01/01/2025" as from date
+When user enter "Fire and Burglary" as Insurance Type
+When user enter risk note number
+When user click on search button(Insurer)
+Then user able to view "Insurer Approval Required" as status(Insurer)
+When user click on display icon
+Then user click on approve endorsement button
+Then user navigate on Endorsement Approval screen
+#Return To Broker Portal
+
+When user click on search button
+Then user able to view "Pending" as status
+When user click on actions button
+When user click on process endorsement icon
+When user click on YES button for confirmation
+Then user able to view "Issued" as status
+
+
+@NonFinancialFirePolicy
+Scenario: (Fire and Burglary Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement
+
+When user select "01/01/2025" as from date
+When user enter "Fire and Burglary" as Insurance Type
+When user click on search button to find "Fire and Burglary" risk note
+When user navigate on operation dropdown menu
+When user navigate on endorsement menu
+When user click on endorsement option
+When user click on add button
+When user click on endorsement type dropdown
+When user enter "General Endorsements" as endorsement type
+When user select General Endorsements as endorsement type
+#BrokerPortal
+When user enter risk note number to search policy
+When user click on fetch button
+When user enter "46548-12446-54984" as cover note number
+When user select non-financial endorsement
+When user enter "Pravin Testing Non Financial Change1" to make change in insured name
+When user enter "Testing cover details" to make change in covering details
+When user enter "Testing description of risk" to make change in description of risk
+When user enter "Payeee name" to make change in firstloss payee
+When user enter "Non Financial endorsement" as endorsement details
+When user click on process endorsement button
+When user click on OK button to process endorsement 
+When user select "01/01/2025" as from date
+When user enter "Fire and Burglary" as Insurance Type
+When user enter risk note number
+When user click on search button
+Then user able to view "Insurer Approval Required" as status
+
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1035,18 +1077,9 @@ Then user able to view "Issued" as status
 @UpgradePensionPolicy
 Scenario: (Pension Quotation Endorsement-UpgradePolicy)Verify user able to do policy upgrading for general financial endorsement
 
-#BrokerPortal
-When user enter "37239" risk note number
-When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "45000000" as change value of sum assured
-When user click on compute button
-When user click on update button 
-When user enter "Upgrading Policy" as endorsement details
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
-When user click on search button to find "Bonds" risk note
+When user enter "Pension" as Insurance Type
+When user click on search button to find "Pension" risk note
 When user navigate on operation dropdown menu
 When user navigate on endorsement menu
 When user click on endorsement option
@@ -1059,14 +1092,14 @@ When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user click on edit icon to make financial changes
-When user enter "45000000" as change value of contract value
+When user enter "45000000" as change value of sum assured
 When user click on compute button
-When user click on update button
+When user click on update button 
 When user enter "Upgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Pension" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -1075,13 +1108,13 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Pension" as Insurance Type
 When user enter risk note number
 When user click on search button(Insurer)
 Then user able to view "Insurer Approval Required" as status(Insurer)
@@ -1107,17 +1140,10 @@ Then user able to view "Issued" as status
 
 @DownGradePensionPolicy
 Scenario: (Pension Quotation Endorsement-DownGradePolicy)Verify user able to do policy downgrading for general financial endorsement
-When user enter "37240" risk note number
-When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "25000" as change value of sum assured
-When user click on compute button 
-When user click on update button 
-When user enter "Downgrading Policy" as endorsement details
+
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
-When user click on search button to find "Bonds" risk note
+When user enter "Pension" as Insurance Type
+When user click on search button to find "Pension" risk note
 When user navigate on operation dropdown menu
 When user navigate on endorsement menu
 When user click on endorsement option
@@ -1130,14 +1156,14 @@ When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user click on edit icon to make financial changes
-When user enter "25000" as change value of contract value
-When user click on compute button
-When user click on update button
+When user enter "25000" as change value of sum assured
+When user click on compute button 
+When user click on update button 
 When user enter "Downgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Pension" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -1146,13 +1172,13 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Pension" as Insurance Type
 When user enter risk note number
 When user click on search button(Insurer)
 Then user able to view "Insurer Approval Required" as status(Insurer)
@@ -1170,7 +1196,19 @@ Then user able to view "Issued" as status
 
 @NonFinancialPensionPolicy
 Scenario: (Pension Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement
-When user enter "37242" risk note number
+
+When user select "01/01/2025" as from date
+When user enter "Pension" as Insurance Type
+When user click on search button to find "Pension" risk note
+When user navigate on operation dropdown menu
+When user navigate on endorsement menu
+When user click on endorsement option
+When user click on add button
+When user click on endorsement type dropdown
+When user enter "General Endorsements" as endorsement type
+When user select General Endorsements as endorsement type
+#BrokerPortal
+When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user select non-financial endorsement
@@ -1180,29 +1218,46 @@ When user enter "Testing description of risk" to make change in description of r
 When user enter "Payeee name" to make change in firstloss payee
 When user enter "Non Financial endorsement" as endorsement details
 When user click on process endorsement button
-When user click on OK button to process endorsement
-When user enter "37242" as risk note 
-Then user click on search button
+When user click on OK button to process endorsement 
+When user select "01/01/2025" as from date
+When user enter "Pension" as Insurance Type
+When user enter risk note number
+When user click on search button
+Then user able to view "Insurer Approval Required" as status
+
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Qa@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user select "01/01/2025" as from date
+When user enter "Pension" as Insurance Type
+When user enter risk note number
+When user click on search button(Insurer)
+Then user able to view "Insurer Approval Required" as status(Insurer)
+When user click on display icon
+Then user click on approve endorsement button
+Then user navigate on Endorsement Approval screen
+#Return To Broker Portal
+
+When user click on search button
+Then user able to view "Pending" as status
+When user click on actions button
 When user click on process endorsement icon
 When user click on YES button for confirmation
 Then user able to view "Issued" as status
 
 #Credit Life Quotation
-@UpgradeCreditLifePolicy
+@UpgradeCreditLifePolicy @one
 Scenario: (Credit Life Quotation Endorsement-UpgradePolicy)Verify user able to do policy upgrading for general financial endorsement
 
-#BrokerPortal
-When user enter "37243" risk note number
-When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "45000000" as change value of sum assured
-When user click on compute button
-When user click on update button 
-When user enter "Upgrading Policy" as endorsement details
-When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
-When user click on search button to find "Bonds" risk note
+When user select "01/10/2025" as from date
+When user enter "Credit Life Insurance" as Insurance Type
+When user click on search button to find "Credit Life Insurance" risk note
 When user navigate on operation dropdown menu
 When user navigate on endorsement menu
 When user click on endorsement option
@@ -1215,14 +1270,14 @@ When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user click on edit icon to make financial changes
-When user enter "45000000" as change value of contract value
+When user enter "45000000" as change value of sum assured
 When user click on compute button
-When user click on update button
+When user click on update button 
 When user enter "Upgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Credit Life Insurance" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -1231,13 +1286,13 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Credit Life Insurance" as Insurance Type
 When user enter risk note number
 When user click on search button(Insurer)
 Then user able to view "Insurer Approval Required" as status(Insurer)
@@ -1261,19 +1316,12 @@ When user click on YES button for confirmation
 Then user able to view "Issued" as status
 
 
-@DownGradeCreditLifePolicy
+@DownGradeCreditLifePolicy   @one
 Scenario: (Credit Life Quotation Endorsement-DownGradePolicy)Verify user able to do policy downgrading for general financial endorsement
-When user enter "37244" risk note number
-When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "25000" as change value of sum assured
-When user click on compute button 
-When user click on update button 
-When user enter "Downgrading Policy" as endorsement details
+
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
-When user click on search button to find "Bonds" risk note
+When user enter "Credit Life Insurance" as Insurance Type
+When user click on search button to find "Credit Life Insurance" risk note
 When user navigate on operation dropdown menu
 When user navigate on endorsement menu
 When user click on endorsement option
@@ -1286,14 +1334,14 @@ When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user click on edit icon to make financial changes
-When user enter "25000" as change value of contract value
-When user click on compute button
-When user click on update button
+When user enter "25000" as change value of sum assured
+When user click on compute button 
+When user click on update button 
 When user enter "Downgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Credit Life Insurance" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -1302,13 +1350,13 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "As@12345" as password
+When user enter "Qa@12345" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user select "01/01/2025" as from date
-When user enter "Bonds" as Insurance Type
+When user enter "Credit Life Insurance" as Insurance Type
 When user enter risk note number
 When user click on search button(Insurer)
 Then user able to view "Insurer Approval Required" as status(Insurer)
@@ -1324,9 +1372,21 @@ When user click on process endorsement icon
 When user click on YES button for confirmation
 Then user able to view "Issued" as status
 
-@NonFinancialCreditLifePolicy
+@NonFinancialCreditLifePolicy @one
 Scenario: (Credit Life Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement
-When user enter "37245" risk note number
+
+When user select "01/01/2025" as from date
+When user enter "Credit Life Insurance" as Insurance Type
+When user click on search button to find "Credit Life Insurance" risk note
+When user navigate on operation dropdown menu
+When user navigate on endorsement menu
+When user click on endorsement option
+When user click on add button
+When user click on endorsement type dropdown
+When user enter "General Endorsements" as endorsement type
+When user select General Endorsements as endorsement type
+#BrokerPortal
+When user enter risk note number to search policy
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user select non-financial endorsement
@@ -1336,9 +1396,35 @@ When user enter "Testing description of risk" to make change in description of r
 When user enter "Payeee name" to make change in firstloss payee
 When user enter "Non Financial endorsement" as endorsement details
 When user click on process endorsement button
-When user click on OK button to process endorsement
-When user enter "37245" as risk note 
-Then user click on search button
+When user click on OK button to process endorsement 
+When user select "01/01/2025" as from date
+When user enter "Credit Life Insurance" as Insurance Type
+When user enter risk note number
+When user click on search button
+Then user able to view "Insurer Approval Required" as status
+
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Qa@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user select "01/01/2025" as from date
+When user enter "Credit Life Insurance" as Insurance Type
+When user enter risk note number
+When user click on search button(Insurer)
+Then user able to view "Insurer Approval Required" as status(Insurer)
+When user click on display icon
+Then user click on approve endorsement button
+Then user navigate on Endorsement Approval screen
+#Return To Broker Portal
+
+When user click on search button
+Then user able to view "Pending" as status
+When user click on actions button
 When user click on process endorsement icon
 When user click on YES button for confirmation
 Then user able to view "Issued" as status

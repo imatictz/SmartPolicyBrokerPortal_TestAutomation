@@ -72,7 +72,7 @@ public class FireAndBurglary
 		   Object[] input=new Object[2];
 		   input[0]="//*[@id='MainContent_txtClientName']";
 		   input[1]=clientName;
-		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		   Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name",output.get("MESSAGE").toString());
 		   Thread.sleep(4000);
 		}
@@ -85,6 +85,52 @@ public class FireAndBurglary
 			Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Pravin Testing as client name",output.get("MESSAGE").toString());
 			  Thread.sleep(3000);
+		}
+		@When("^user click on update button$")
+		 public void user_click_on_update_button() throws Throwable
+		 {
+			 Object[] input7=new Object[1];
+				input7[0]="//*[@id='btnSave']";
+				 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
+				 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on update button",output.get("MESSAGE").toString());
+				 Thread.sleep(4000);
+		 }
+		@When("user click on update button to save policy information")
+		 public void user_click_on_update_button_policyInformation() throws Throwable
+		 {
+			 Object[] input7=new Object[1];
+				input7[0]="//*[@id='btnInsert']";
+				 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
+				 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on update button to save policy information",output.get("MESSAGE").toString());
+		     
+		 }
+		@When("user click on select icon to edit details")
+		 public void user_click_on_selectIcon() throws Throwable
+		 {
+			 Object[] input7=new Object[1];
+				input7[0]="//*[@id='sort_table_Bond']/tbody/tr[1]/td[8]";
+				 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
+				 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on select icon to edit details",output.get("MESSAGE").toString());
+		         Thread.sleep(2000);
+		 }
+		@When("user clicks on edit option")
+		public void user_clicks_on_edit_option() throws InterruptedException {
+		    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[1]", "user clicks on edit option", "CLICK", 2000);
+		}
+		@When("user select {string} as client name")
+		public void clickOnClientName(String clientName) throws Throwable 
+		{
+			Object[] input=new Object[1];
+			input[0]="//*[@id='MainContent_txtClientName']";
+			Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select "+clientName+" as client name",output.get("MESSAGE").toString());
+			Thread.sleep(2000);
+		}
+		@When("^user click on Ok button to accept commission alert$")
+		public void clickOnOKButton() throws Throwable 
+		{
+			Hashtable<String,Object> output= SeleniumOperations.alert();
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
 		}
 
 		@When("user select {string} as insurer")
@@ -111,7 +157,7 @@ public class FireAndBurglary
 		   Object[] input=new Object[2];
 		   input[0]="//*[@id='txtSumInsured']";
 		   input[1]=sumInsured;
-		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		   Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"200000\" as sum insured",output.get("MESSAGE").toString());
 		}
 
@@ -123,7 +169,7 @@ public class FireAndBurglary
 		    Object[] input=new Object[2];
 		    input[0]="//*[@id='MainContent_txtDescription']";
 		    input[1]=description;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Fire & Burglary Quotation Testing\" as description",output.get("MESSAGE").toString());
 		}
 
@@ -575,12 +621,6 @@ public class FireAndBurglary
 			
 		}
 		
-		@When("^user click on Ok button to accept commission alert$")
-		public void clickOnOKButton() throws Throwable 
-		{
-			Hashtable<String,Object> output= SeleniumOperations.alert();
-			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
-		}
 		
 		@When("^user select \"([^\"]*)\" as from date$")
 		 public void user_select_as_date_from(String dateFrom) throws Throwable {

@@ -20,9 +20,7 @@ When user enter "Pravin Testing" as insured name
 When user select "01/01/2000"date of birth
 When user enter "2000000" as loan amount
 When user enter "180" as period in month
-When user click on client type dropdown
-When user enter "Business Banking" as client type
-When user select Business Banking as client type
+When user select "Business Banking" as client type
 When user enter "1200" as adjust premium
 When user click on compute button
 When user click on insert button
@@ -51,9 +49,7 @@ When user enter "Pravin Testing" as insured name
 When user select "01/01/2000"date of birth
 When user enter "2000000" as loan amount
 When user enter "180" as period in month
-When user click on client type dropdown
-When user enter "Business Banking" as client type
-When user select Business Banking as client type
+When user select "Business Banking" as client type
 When user enter "1200" as adjust premium
 When user click on compute button
 When user click on insert button
@@ -100,9 +96,7 @@ When user enter "2000000" as loan amount
 When user enter "10" as interest%
 When user enter "Active" as loan status
 When user enter "180" as period in month
-When user click on client type dropdown
-When user enter "Business Banking" as client type
-When user select Business Banking as client type
+When user select "Business Banking" as client type
 #When user enter "2.25" as override% 
 When user enter "5" as override% for Retrenchment Rate %
 When user enter "1200" as adjust premium
@@ -126,7 +120,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Credit life Insurance quote
-   When user select "01/01/2025" as from date
+   When user select "01/09/2025" as from date
    When user enter "Credit life Insurance" as Insurance Type
    When user click on search button to find "Credit life Insurance" quote
    When user enter quote number to search "Credit life Insurance" quote
@@ -140,3 +134,31 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
       | Premium Amount  | 
       | Insurance Type  |
   # And the user should be able to send the quote to the printer
+  
+@EditQuote
+ Scenario: Verify user able to edit an existing Credit life Insurance quote successfully
+   When user select "15/09/2025" as from date
+   When user enter "Credit life Insurance" as Insurance Type
+   When user click on search button to find "Credit life Insurance" quote
+   When user enter quote number to search "Credit life Insurance" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on edit option
+   
+   #Non-Financial Change
+   When user enter "Pravin Edit Test" as client name
+   And user select "Pravin Edit Test" as client name
+   When user select "Automated Testing Company" as insurer
+   
+   #Financial Change
+   When user click on select icon to edit details
+   When user enter "Pravin Testing" as insured name
+   When user select "01/01/2000"date of birth
+   When user enter "1000000" as loan amount
+   When user enter "120" as period in month
+   When user select "Commercial Banking" as client type
+   When user enter "1500" as adjust premium
+   When user click on compute button
+   When user click on update button to save policy information
+   When user click on update button
+   When user click on Ok button to accept commission alert

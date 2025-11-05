@@ -142,7 +142,7 @@ public class Payment {
  	@Then("^user able to view \"([^\"]*)\" as status$")
 	public void user_able_to_view_as_status(String status) throws Throwable {
 	    Object[] input=new Object[2];
-		input[0]="(//*[text()='Pending'])[2]";
+		input[0]="//*[@id='sort_table']/tbody/tr[1]/td[8]";
 		input[1]=status;
 		Hashtable<String,Object> output= SeleniumOperations.validation(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view \\\"([^\\\"]*)\\\" as status",output.get("MESSAGE").toString());

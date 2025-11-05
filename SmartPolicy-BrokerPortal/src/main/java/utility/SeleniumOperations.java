@@ -1,11 +1,14 @@
     package utility;
 
 import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.RoundingMode;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +26,8 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.ElementNotInteractableException;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -44,6 +49,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.relevantcodes.extentreports.ExtentTest;
+
+import io.cucumber.messages.types.Duration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -543,6 +554,30 @@ public class SeleniumOperations
 		 }
 		 return outputparameters;
      }  
+	 
+	//SendActionsDownEnter
+		 public static Hashtable<String,Object> SendActionDownEnter(Object[] inputparameters) {
+			 try { 
+			   String xpath=(String) inputparameters[0];
+			   String value=(String) inputparameters[1];
+			   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+			 WebElement sendxpath = driver.findElement(By.xpath(xpath));
+			 sendxpath.sendKeys(value);
+			   Actions act=new Actions(driver);
+			   Thread.sleep(2000);
+			   act.sendKeys(Keys.ARROW_DOWN).build().perform();
+			   Thread.sleep(2000);
+			   act.sendKeys(Keys.ENTER).build().perform();
+			   Thread.sleep(2000);
+			   outputparameters.put("STATUS","PASS");
+			   outputparameters.put("MESSAGE","Method Used:actionDownEnter, Input Given:");
+			 }
+			 catch(Exception e) {
+			   outputparameters.put("STATUS","FAIL");
+			   outputparameters.put("MESSAGE","Method Used:actionDownEnter, Input Given:");
+			 }
+			 return outputparameters;
+	     }  
 
 //ActionsDoubleDownEnter	 
 	 public static Hashtable<String,Object> actionDoubleDownEnter() {
@@ -748,7 +783,9 @@ public class SeleniumOperations
 		   Thread.sleep(2000);
 		   String sendXpath = (String)inputparameters[1];
 		   String sendValue = (String)inputparameters[2];
-		   driver.findElement(By.xpath(sendXpath)).sendKeys(sendValue);
+		   WebElement sendText = driver.findElement(By.xpath(sendXpath));
+		   sendText.clear();
+		   sendText.sendKeys(sendValue);
 		   String selectXpath = (String)inputparameters[3];
 		   driver.findElement(By.xpath(selectXpath)).click();
 	       outputparameters.put("STATUS","PASS");
@@ -1731,7 +1768,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
      
      
-     public static String getQuote(String quoteName) {
+     public static String getQuote1(String quoteName) {
     	 try {
     		    // Locate the insurance table
     		    WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
@@ -1752,6 +1789,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     		            //System.out.println("Pending status found for Bonds. Quote Number: " + quoteNumber);
     		            return quoteNumber;
     		        }
+    		        
     		    }
     		    if (!found) {
                     Object quoteNumber = null;
@@ -1765,44 +1803,117 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 		
 
      }
+
+     public static String getQuote(String quoteName) {
+    	    try {
+    	        boolean found = false;
+    	        String quoteNumber = null;
+
+    	        while (true) {
+    	            // Locate table and rows
+    	            WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']"));
+    	            List<WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
+
+    	            for (WebElement row : rows) {
+    	                WebElement cell1 = row.findElement(By.xpath("./td[4]")); // 4th column
+    	                WebElement cell2 = row.findElement(By.xpath("./td[8]")); // 8th column
+
+    	                if (cell1.getText().trim().equalsIgnoreCase(quoteName)
+    	                        && cell2.getText().trim().equalsIgnoreCase("Awaiting Receipt")) {
+
+    	                    WebElement quoteCell = row.findElement(By.xpath("./td[2]/*[1]"));
+    	                    quoteNumber = quoteCell.getText().trim();
+    	                    found = true;
+
+    	                    System.out.println("✅ Found 'Awaiting Receipt' for " + quoteName + ". Quote Number: " + quoteNumber);
+    	                    return quoteNumber; // stop immediately
+    	                }
+    	            }
+
+    	            // Check for pagination only if not found yet
+    	            if (!found) {
+    	                WebElement nextButton = driver.findElement(By.xpath("//*[@id='sort_table_next']"));
+    	                String nextClass = nextButton.getAttribute("class");
+
+    	                if (nextClass != null && nextClass.contains("disabled")) {
+    	                    System.out.println("🚫 Reached last page. No 'Awaiting Receipt' found for: " + quoteName);
+    	                    break;
+    	                } else {
+    	                    System.out.println("➡️ Moving to next page...");
+    	                    nextButton.click();
+    	                    Thread.sleep(1500); // Wait for next page to load
+    	                }
+    	            } else {
+    	                break; // safety exit (redundant but safe)
+    	            }
+    	        }
+
+    	        return quoteNumber; // null if not found
+
+    	    } catch (Exception e) {
+    	        e.printStackTrace();
+    	        return null;
+    	    }
+    	}
+
+
+    
+     
      
      public static String getRiskNote(String quoteName) {
-    	 try {
-    		    // Locate the insurance table
-    		    WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+    	    try {
+    	        while (true) {
+    	            // Locate the insurance table
+    	            WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']"));
 
-    		    // Get all rows of the table
-    		    List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr")); // Get all rows
-    		    boolean found = false;
-    		    for (WebElement row : rows) {
-    		        WebElement cell1 = row.findElement(By.xpath("./td[5]")); // Get the 5th column
-    		        WebElement cell2 = row.findElement(By.xpath("./td[8]")); // Get the 8th column
+    	            // Get all rows of the table
+    	            List<WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
 
-    		        if (cell1.getText().trim().contains(quoteName) && 
-    		            cell2.getText().trim().equalsIgnoreCase("Active")) {
-    		            WebElement quoteCell = row.findElement(By.xpath("./td[2]/*[1]"));
-    		            riskNoteNumber = quoteCell.getText().trim();
-    		            System.out.println(riskNoteNumber);
-    		            return riskNoteNumber;
-    		        }
-    		    }
-    		    if (!found) {
-                    Object riskNoteNumber = null;
-                    System.out.println("No Risk Note with 'Active' status found.");
-                }
+    	            for (WebElement row : rows) {
+    	                WebElement cell1 = row.findElement(By.xpath("./td[5]")); // Quote name column
+    	                WebElement cell2 = row.findElement(By.xpath("./td[8]")); // Status column
 
-    		} catch (Exception e) {
-    		    e.printStackTrace();
-    		}
-		return null;
-		
+    	                if (cell1.getText().trim().contains(quoteName) &&
+    	                    cell2.getText().trim().equalsIgnoreCase("Active")) {
 
-     }
-     private static String riskNoteNumber;
-  // ✅ Getter method to reuse later
-     public static String getStoredRiskNote() {
-         return riskNoteNumber;
-     }
+    	                    WebElement quoteCell = row.findElement(By.xpath("./td[2]/*[1]"));
+    	                    riskNoteNumber = quoteCell.getText().trim();
+
+    	                    System.out.println("✅ Found Risk Note: " + riskNoteNumber);
+    	                    return riskNoteNumber; // return immediately when found
+    	                }
+    	            }
+
+    	            // Check for pagination
+    	            WebElement nextButton = driver.findElement(By.xpath("//*[@id='sort_table_next']"));
+    	            String nextClass = nextButton.getAttribute("class");
+
+    	            if (nextClass != null && nextClass.contains("disabled")) {
+    	                System.out.println("🚫 Reached last page. No 'Active' quote found for: " + quoteName);
+    	                break;
+    	            } else {
+    	                System.out.println("➡️ Moving to next page...");
+    	                nextButton.click();
+    	                Thread.sleep(1500); // Wait for page to load
+    	            }
+    	        }
+
+    	    } catch (Exception e) {
+    	        e.printStackTrace();
+    	    }
+
+    	    return null;
+    	}
+
+    	// ✅ Store and reuse the latest risk note
+    	private static String riskNoteNumber;
+
+    	// ✅ Getter method to reuse later
+    	public static String getStoredRiskNote() {
+    	    return riskNoteNumber;
+    	}
+
+
      
      public static String getClaimId(String quoteName) {
     	 try {
@@ -1895,8 +2006,430 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
  	    return lastRiskNoteNumber; // return the last one found
  	}
+     public static Hashtable<String, Object> createDummyPDF(Object[] inputparameters) throws IOException {
+    	    Hashtable<String, Object> output = new Hashtable<>();
+    	    try {
+    	        // Extract parameters
+    	        String fileName = (String) inputparameters[0];
+    	        int sizeInKB = Integer.parseInt(inputparameters[1].toString());
+
+    	        // Create folder if not exists
+    	        String folderPath = System.getProperty("user.dir") + "/src/test/resources/Files/";
+    	        File folder = new File(folderPath);
+    	        if (!folder.exists()) folder.mkdirs();
+
+    	        // Generate PDF
+    	        File file = new File(folderPath + fileName);
+    	        try (FileOutputStream fos = new FileOutputStream(file)) {
+    	            String content = "PDF Test Content - " + fileName + "\n";
+    	            byte[] bytes = content.getBytes(StandardCharsets.UTF_8);
+    	            while (file.length() < sizeInKB * 1024) {
+    	                fos.write(bytes);
+    	            }
+    	        }
+
+    	        // Upload via Selenium
+    	        WebElement uploadInput = driver.findElement(By.xpath("//*[@id='files']"));
+    	        uploadInput.sendKeys(file.getAbsolutePath());
+    	        Thread.sleep(2000); // optional wait for upload to register
+
+    	        // Report success
+    	        double actualSizeKB = (double) file.length() / 1024;
+    	        output.put("STATUS", "PASS");
+    	        output.put("MESSAGE", "PDF created and uploaded successfully: " + file.getAbsolutePath()
+    	                + " | Size: " + String.format("%.2f KB", actualSizeKB));
+    	        output.put("FILE_PATH", file.getAbsolutePath());
+
+    	    } catch (Exception e) {
+    	        output.put("STATUS", "FAIL");
+    	        output.put("MESSAGE", "Error creating/uploading PDF: " + e.getMessage());
+    	    }
+
+    	    return output;
+    	}
+
      
-     
+
+    
+     public static Hashtable<String, Object> verifyClientSearchByColumn(Object[] inputparameters) throws InterruptedException {
+    	    Hashtable<String, Object> output = new Hashtable<>();
+    	    boolean matchFound = false;
+    	    int totalMatches = 0;
+    	    int totalEntriesFromUI = 0;
+
+    	    try {
+    	        // Input parameters
+    	        String expectedValue = (String) inputparameters[0]; // e.g. "John Doe" or "ACC1234"
+    	        String searchType = (String) inputparameters[1];    // e.g. "name", "email", "acc no"
+    	        String columnIndexStr = (String) inputparameters[2];
+    	        int columnIndex = 0;
+
+    	        try {
+    	            columnIndex = Integer.parseInt(columnIndexStr);
+    	        } catch (Exception e) {
+    	            System.out.println("⚠️ Invalid column index format, defaulting to 0");
+    	        }
+
+    	        System.out.println("🔍 Starting validation for searchType: " + searchType + " | Value: " + expectedValue);
+
+    	        // Step 1: Capture total entries
+    	        WebElement entriesTextElement = driver.findElement(By.xpath("//*[@id='sort_table_info']"));
+    	        String entriesText = entriesTextElement.getText().trim();
+    	        System.out.println("📊 Pagination info: " + entriesText);
+
+    	        Pattern pattern = Pattern.compile("of\\s+(\\d+)\\s+entries");
+    	        Matcher matcher = pattern.matcher(entriesText);
+    	        if (matcher.find()) {
+    	            totalEntriesFromUI = Integer.parseInt(matcher.group(1));
+    	            System.out.println("📈 Total entries from UI: " + totalEntriesFromUI);
+    	        } else {
+    	            System.out.println("⚠️ Unable to extract total entries count from UI text.");
+    	        }
+    	     // 🚨 Stop early if no records found
+    	        if (totalEntriesFromUI == 0) {
+    	            System.out.println("❌ No records found for searchType: " + searchType + " | Value: " + expectedValue);
+    	            output.put("STATUS", "FAIL");
+    	            output.put("MESSAGE", "❌ No records found for " + searchType + ": " + expectedValue);
+    	            output.put("TOTAL_ENTRIES_UI", 0);
+    	            output.put("SEARCH_TYPE", searchType);
+    	            output.put("SEARCHED_VALUE", expectedValue);
+    	            return output;
+    	        }
+    	        // Step 2: Define popup-based search types
+    	        List<String> popupBasedFields = Arrays.asList("email", "accountnumber", "dateofbirth");
+
+    	        // Step 3: Start pagination loop
+    	        while (true) {
+    	            WebElement resultsTable = driver.findElement(By.xpath("//*[@id='sort_table']"));
+    	            List<WebElement> rows = resultsTable.findElements(By.xpath(".//tbody/tr"));
+    	            System.out.println("📄 Found " + rows.size() + " rows on this page.");
+
+    	            if (rows.isEmpty()) {
+    	                System.out.println("⚠️ No rows found on current page.");
+    	                break;
+    	            }
+
+    	            for (int i = 0; i < rows.size(); i++) {
+    	                WebElement row = rows.get(i);
+
+    	                // ✅ If field requires popup validation
+    	                if (popupBasedFields.contains(searchType.toLowerCase())) {
+    	                    try {
+    	                        WebElement viewBtn = row.findElement(By.xpath("//*[@id='sort_table']/tbody/tr[1]/td[8]/*[1]"));
+    	                        viewBtn.click();
+    	                        Thread.sleep(3000);
+
+    	                        String actualPopupValue = "";
+
+    	                        if (searchType.equalsIgnoreCase("email")) {
+    	                            WebElement emailField = driver.findElement(By.xpath("//*[@id='txtEmail1']"));
+    	                            actualPopupValue = emailField.getAttribute("value").trim();
+
+    	                        } else if (searchType.equalsIgnoreCase("accountnumber")) {
+    	                            WebElement accField = driver.findElement(By.xpath("//*[@id='txtCltRefID']"));
+    	                            actualPopupValue = accField.getAttribute("value").trim();
+
+    	                        } else if (searchType.equalsIgnoreCase("dateofbirth")) {
+    	                            WebElement clientField = driver.findElement(By.xpath("//*[@id='MainContent_txtDOB']"));
+    	                            actualPopupValue = clientField.getAttribute("value").trim();
+    	                        }
+
+    	                        System.out.println("🔎 Value found in popup (" + searchType + "): " + actualPopupValue);
+
+    	                        if (actualPopupValue.equalsIgnoreCase(expectedValue)) {
+    	                            totalMatches++;
+    	                            matchFound = true;
+    	                            System.out.println("✅ Match found for " + searchType + ": " + actualPopupValue);
+    	                        }
+
+    	                        // Close popup safely
+    	                        try {
+    	                            WebElement closeBtn = driver.findElement(By.xpath("//*[@id='btnCancel']"));
+    	                            closeBtn.click();
+    	                            Thread.sleep(500);
+    	                            break;
+    	                        } catch (Exception ignore) {}
+
+    	                    } catch (Exception e) {
+    	                        System.out.println("⚠️ Could not validate popup for row " + (i + 1) + ": " + e.getMessage());
+    	                    }
+    	                }
+
+    	                // ✅ Normal table-based validation (only if column index > 0)
+    	                else if (columnIndex > 0) {
+    	                    try {
+    	                        WebElement cell = row.findElement(By.xpath(".//td[" + columnIndex + "]"));
+    	                        String actualValue = cell.getText().trim();
+
+    	                        if (actualValue.equalsIgnoreCase(expectedValue)) {
+    	                            totalMatches++;
+    	                            matchFound = true;
+    	                            System.out.println("✅ Match found: " + actualValue);
+    	                        }
+    	                    } catch (Exception e) {
+    	                        System.out.println("⚠️ Could not read value from column " + columnIndex + ": " + e.getMessage());
+    	                    }
+    	                }
+    	            }
+
+    	            // Step 4: Handle pagination
+    	            WebElement nextButton = driver.findElement(By.xpath("//*[@id='sort_table_next']"));
+    	            String nextClass = nextButton.getAttribute("class");
+
+    	            if (nextClass != null && nextClass.contains("disabled")) {
+    	                System.out.println("🚫 Reached last page. Stopping pagination.");
+    	                break;
+    	            } else {
+    	                System.out.println("➡️ Moving to next page...");
+    	                nextButton.click();
+    	                Thread.sleep(1500);
+    	            }
+    	        }
+
+    	        // Step 5: Final output summary
+    	        if (matchFound) {
+    	            output.put("STATUS", "PASS");
+    	            output.put("MESSAGE", "✅ Match(es) found for " + searchType + ": " + expectedValue +
+    	                    " | Total Matches: " + totalMatches + " | Total Entries: " + totalEntriesFromUI);
+    	        } else {
+    	            output.put("STATUS", "FAIL");
+    	            output.put("MESSAGE", "❌ No matches found for " + searchType + ": " + expectedValue);
+    	        }
+
+    	        output.put("TOTAL_MATCHES", totalMatches);
+    	        output.put("TOTAL_ENTRIES_UI", totalEntriesFromUI);
+    	        output.put("SEARCH_TYPE", searchType);
+    	        output.put("SEARCHED_VALUE", expectedValue);
+
+    	    } catch (Exception e) {
+    	        String errorMsg = "⚠️ Exception during validation: " + e.getMessage();
+    	        System.out.println(errorMsg);
+    	        output.put("STATUS", "ERROR");
+    	        output.put("MESSAGE", errorMsg);
+    	    }
+
+    	    return output;
+    	}
+
+     public static Hashtable<String, Object> createDummyPDF1(Object[] inputparameters) throws IOException {
+    	    Hashtable<String, Object> output = new Hashtable<>();
+    	    try {
+    	        String fileName = (String) inputparameters[0];
+    	        int sizeInKB = Integer.parseInt(inputparameters[1].toString());
+
+    	        // Define folder path
+    	        String folderPath = System.getProperty("user.dir") + "/src/test/resources/Files/";
+    	        File folder = new File(folderPath);
+    	        if (!folder.exists()) folder.mkdirs();
+
+    	        // Create PDF file
+    	        File file = new File(folderPath + fileName);
+    	        Document document = new Document();
+    	        PdfWriter.getInstance(document, new FileOutputStream(file));
+    	        document.open();
+
+    	        // Add repeated content until file size target is met
+    	        String baseText = "This is a dummy PDF for testing file upload in Cucumber automation.\n";
+    	        while (file.length() < sizeInKB * 1024) {
+    	            document.add(new Paragraph(baseText));
+    	        }
+
+    	        document.close();
+
+    	        // Upload file using Selenium
+    	        WebElement uploadInput = driver.findElement(By.xpath("//*[@id='files']"));
+    	        uploadInput.sendKeys(file.getAbsolutePath());
+    	        Thread.sleep(2000);
+
+    	        // Calculate actual file size
+    	        double actualSizeKB = (double) file.length() / 1024;
+
+    	        output.put("STATUS", "PASS");
+    	        output.put("MESSAGE", "PDF created and uploaded successfully: " + file.getAbsolutePath()
+    	                + " | Size: " + String.format("%.2f KB", actualSizeKB));
+    	        output.put("FILE_PATH", file.getAbsolutePath());
+
+    	    } catch (Exception e) {
+    	        output.put("STATUS", "FAIL");
+    	        output.put("MESSAGE", "Error creating/uploading PDF: " + e.getMessage());
+    	    }
+
+    	    return output;
+    	}
+
+     public static Hashtable<String, Object> createDummyPDF2(Object[] inputparameters) throws IOException {
+    	    Hashtable<String, Object> output = new Hashtable<>();
+    	    try {
+    	        String fileName = (String) inputparameters[0];
+    	        int targetSizeKB = Integer.parseInt(inputparameters[1].toString());
+    	        String folderPath = System.getProperty("user.dir") + "/src/test/resources/Files/";
+    	        File folder = new File(folderPath);
+    	        if (!folder.exists()) folder.mkdirs();
+
+    	        File file = new File(folderPath + fileName);
+
+    	        // Step 1: Create valid minimal PDF
+    	        Document document = new Document();
+    	        PdfWriter.getInstance(document, new FileOutputStream(file));
+    	        document.open();
+    	        document.add(new Paragraph("This is a valid test PDF file for upload testing."));
+    	        document.add(new Paragraph("File Name: " + fileName));
+    	        document.add(new Paragraph("Target Size: " + targetSizeKB + " KB"));
+    	        document.add(new Paragraph("Generated at: " + new java.util.Date()));
+    	        document.close();
+
+    	        // Step 2: Add binary padding until near target size
+    	        long targetBytes = targetSizeKB * 1024L;
+    	        long currentSize = file.length();
+
+    	        if (currentSize < targetBytes) {
+    	            try (FileOutputStream fos = new FileOutputStream(file, true)) {
+    	                byte[] padding = new byte[1024]; // 1 KB block
+    	                while (file.length() + padding.length < targetBytes) {
+    	                    fos.write(padding);
+    	                }
+    	                // Write exact remaining bytes
+    	                long remaining = targetBytes - file.length();
+    	                if (remaining > 0) fos.write(new byte[(int) remaining]);
+    	            }
+    	        }
+
+    	        double finalSizeKB = (double) file.length() / 1024.0;
+
+    	        // Step 3: Upload file using Selenium
+    	        WebElement uploadInput = driver.findElement(By.xpath("//*[@id='files']"));
+    	        uploadInput.sendKeys(file.getAbsolutePath());
+    	        Thread.sleep(1500);
+
+    	        output.put("STATUS", "PASS");
+    	        output.put("MESSAGE", String.format("PDF created and uploaded successfully: %s | Final Size: %.2f KB",
+    	                file.getAbsolutePath(), finalSizeKB));
+    	        output.put("FILE_PATH", file.getAbsolutePath());
+
+    	    } catch (Exception e) {
+    	        output.put("STATUS", "FAIL");
+    	        output.put("MESSAGE", "Error creating/uploading PDF: " + e.getMessage());
+    	    }
+    	    return output;
+    	}
+     public static Hashtable<String, Object> printCreditNote(Object[] inputparameters) throws IOException {
+ 	    Hashtable<String, Object> outputparameters = new Hashtable<>();
+
+ 	    try {
+ 	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+
+ 	        String fieldName = ((String) inputparameters[0]).trim();
+ 	        
+
+ 	        // ✅ Store current (main) window
+ 	        String mainWindow = driver.getWindowHandle();
+
+ 	        // ✅ Get expected values from UI BEFORE switching to PDF
+ 	        Map<String, String> expectedValues = new HashMap<>();
+ 	        expectedValues.put("Credit No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]")).getText().toUpperCase());
+ 	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
+ 	        expectedValues.put("Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+ 	        expectedValues.put("Amount", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]")).getText());
+
+ 	        Thread.sleep(2000);
+ 	        
+
+ 	        // ✅ Step 4: Switch to PDF tab
+ 	        Set<String> ids = driver.getWindowHandles();
+ 	        for (String id : ids) {
+ 	            if (!id.equals(mainWindow)) {
+ 	                driver.switchTo().window(id);
+ 	                break;
+ 	            }
+ 	        }
+
+ 	        // ✅ Read PDF
+ 	        URL pdfUrl = new URL(driver.getCurrentUrl());
+ 	        URLConnection urlConnection = pdfUrl.openConnection();
+ 	        urlConnection.addRequestProperty("User-Agent", "Chrome");
+
+ 	        try (InputStream id = urlConnection.getInputStream();
+ 	             BufferedInputStream bufferedInput = new BufferedInputStream(id);
+ 	             PDDocument pdDocument = PDDocument.load(bufferedInput)) {
+
+ 	            String printText = new PDFTextStripper().getText(pdDocument);
+ 	         // ✅ Compare current field (PDF vs Expected Value)
+ 	            String expectedValue = expectedValues.get(fieldName);
+
+ 	         
+ 	            if (expectedValue != null) {
+ 	                // Normalize expected value (remove extra spaces, unify case, remove special chars for fuzzy match)
+ 	                String normalizedExpected = expectedValue.trim()
+ 	                                                         .replaceAll("\\s+", " ")   // collapse multiple spaces
+ 	                                                         .toUpperCase();
+
+ 	                // 🔥 Split PDF into lines
+ 	                String[] pdfLines = printText.split("\\r?\\n");
+ 	                boolean matchFound = false;
+
+ 	                for (String line : pdfLines) {
+ 	                    // Normalize PDF line
+ 	                    String normalizedLine = line.trim()
+ 	                                                .replaceAll("\\s+", " ")   // collapse spaces
+ 	                                                .toUpperCase();
+
+ 	                    // Debug print
+ 	                   // System.out.println("📄 PDF Line: [" + line + "]");
+
+ 	                    // 1️⃣ Exact match
+ 	                    if (normalizedLine.equals(normalizedExpected)) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+
+ 	                    // 2️⃣ Contains match (handles multi-line or label+value cases)
+ 	                    if (normalizedLine.contains(normalizedExpected)) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+
+ 	                    // 3️⃣ Regex whole word match (avoid partial matches like "1234" inside "123456")
+ 	                    if (normalizedLine.matches(".*\\b" + java.util.regex.Pattern.quote(normalizedExpected) + "\\b.*")) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+
+ 	                    // 4️⃣ Number-only comparison (ignore commas, decimals, currency symbols)
+ 	                    String digitsExpected = normalizedExpected.replaceAll("[^0-9A-Za-z]", "");
+ 	                    String digitsLine = normalizedLine.replaceAll("[^0-9A-Za-z]", "");
+ 	                    if (!digitsExpected.isEmpty() && digitsExpected.equalsIgnoreCase(digitsLine)) {
+ 	                        matchFound = true;
+ 	                        break;
+ 	                    }
+ 	                }
+
+ 	                if (matchFound) {
+ 	                    System.out.println("✅ " + fieldName + " found in PDF: " + expectedValue);
+ 	                    outputparameters.put("STATUS", "Pass");
+ 	                    outputparameters.put("MESSAGE", "Field '" + fieldName + "' is present in PDF with value: " + expectedValue);
+ 	                } else {
+ 	                    System.out.println("❌ " + fieldName + " NOT found in PDF (all match strategies failed)");
+ 	                    outputparameters.put("STATUS", "Fail");
+ 	                    outputparameters.put("MESSAGE", "Field '" + fieldName + "' is missing or mismatch in PDF. Expected: " + expectedValue);
+ 	                }
+ 	            } else {
+ 	                System.out.println("⚠️ Expected value for " + fieldName + " not found in map");
+ 	            }
+
+ 	            
+ 	        }
+
+ 	        // ✅ Switch back to main tab
+ 	        driver.switchTo().window(mainWindow);
+
+ 	    } catch (Exception e) {
+ 	        e.printStackTrace();
+ 	        outputparameters.put("STATUS", "Fail");
+ 	        outputparameters.put("MESSAGE", "Exception in printQuote: " + e.getMessage());
+ 	    }
+
+ 	    return outputparameters;
+ 	}
 
 
      

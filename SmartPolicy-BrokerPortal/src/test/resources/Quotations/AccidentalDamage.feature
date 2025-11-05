@@ -109,7 +109,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Individual Personal Accident quote
-   When user select "01/01/2025" as from date
+   When user select "01/09/2025" as from date
    When user enter "Individual Personal Accident" as Insurance Type
    When user click on search button to find "Individual Personal Accident" quote
    When user enter quote number to search "Individual Personal Accident" quote
@@ -123,6 +123,33 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
       | Premium Amount  | 
       | Insurance Type  | 
   # And the user should be able to send the quote to the printer
+  
+@EditQuote
+ Scenario: Verify user able to edit an existing Individual Personal Accident quote successfully
+   When user select "01/09/2025" as from date
+   When user enter "Individual Personal Accident" as Insurance Type
+   When user click on search button to find "Individual Personal Accident" quote
+   When user enter quote number to search "Individual Personal Accident" quote
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on edit option
+   
+   #Non-Financial Change
+   When user enter "Pravin Edit Test" as client name
+   And user select "Pravin Edit Test" as client name
+   When user Select "Automated Testing Company" as insurer
+   
+   #Financial Change
+   When user click on select icon to edit details
+   When user Select "Category 2" as insurance class
+   When user enter "200000" as sum insured               
+   When user enter "4" % as override%
+   When user enter "Accidental Damage Quotation Testing" as description
+   When user click on compute button
+   When user click on update button to save policy information
+   When user click on update button
+   When user click on Ok button to accept commission alert
+   Then user able to view "1003-Information modified successfully" as message
     
     
     
