@@ -76,7 +76,7 @@ public class AccidentalDamage
 		   Object[] input=new Object[2];
 		   input[0]="//*[@id='MainContent_txtClientName']";
 		   input[1]=clientName;
-		   Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
+		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name",output.get("MESSAGE").toString());
 		   Thread.sleep(8000);
 		}

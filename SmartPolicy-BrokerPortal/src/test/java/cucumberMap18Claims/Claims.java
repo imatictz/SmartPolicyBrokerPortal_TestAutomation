@@ -27,7 +27,6 @@ public class Claims {
 	}
 
 	
-	
 	@When("^user enter \"([^\"]*)\" as risk note number$")
 	public void user_enter_as_risk_note_number(String riskNote) throws Throwable {
 		 Object[] input=new Object[2];
@@ -93,7 +92,7 @@ public class Claims {
 	 }
 	 @Then("user enter {string} as place of loss\\/Accident")
 	 public void user_enter_as_place_of_loss_accident(String placeOfLossAccident) throws InterruptedException {
-		    Itl.CustomSendEvent("//*[@id='MainContent_txtAcciPlace']", placeOfLossAccident, "user enter {string} as place of loss\\\\/Accident", "TEXTBOX", 0);	
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAcciPlace']", placeOfLossAccident, "user enter {string} as place of loss\\\\/Accident", "TEXTBOX", 0);	
 
 	 }
 	 @When("user select {string} as reported type")
@@ -113,16 +112,14 @@ public class Claims {
 	 }
 	 @When("user enter {string} as claimant amount")
 	 public void user_enter_as_claimant_amount(String claimantAmount) throws InterruptedException {
-		    Itl.CustomSendEvent("//*[@id='txtClaimantAmount']", claimantAmount, "user enter {string} as claimant amount", "TEXTBOX", 0);	
+		    Itl.CustomClearSendEvent("//*[@id='txtClaimantAmount']", claimantAmount, "user enter {string} as claimant amount", "TEXTBOX", 0);	
 
 	 }
 	 @When("user enter {string} as circumstances of accidents")
 	 public void user_enter_as_circumstances_of_accidents(String circumstancesOfAccidents) throws InterruptedException {
-		    Itl.CustomSendEvent("//*[@id='MainContent_txtCircums']", circumstancesOfAccidents, "user enter {string} as circumstances of accidents", "TEXTBOX", 0);	
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtCircums']", circumstancesOfAccidents, "user enter {string} as circumstances of accidents", "TEXTBOX", 0);	
 
 	 }
-
-
      @When("user select {string} as cause of claim")
      public void user_select_as_cause_of_claim(String causeOfClaim) {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbClmmCauses')])[1]", "(//*[@class='select2-search__field'])[2]", causeOfClaim , "(//*[contains(@data-select2-id,'MainContent_cmbClmmCauses')])[2]", "user select {string} as cause of claim", "DROPDOWN", 2000);
@@ -130,12 +127,12 @@ public class Claims {
      }
      @Then("user enter {string} as place of death\\/illnes\\/others")
      public void user_enter_as_place_of_death_illnes_others(String placeOfDeath) throws InterruptedException {
-		    Itl.CustomSendEvent("//*[@id='MainContent_txtAcciPlace']", placeOfDeath, "user enter {string} as place of death\\\\/illnes\\\\/others", "TEXTBOX", 0);	
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAcciPlace']", placeOfDeath, "user enter {string} as place of death\\\\/illnes\\\\/others", "TEXTBOX", 0);	
 
      }
      @When("user enter {string} as date of death\\/illnes\\/others")
      public void user_enter_as_date_of_death_illnes_others(String dateOfDeathIllnesOthers) throws InterruptedException {
-		    Itl.CustomSendEvent("//*[@id='MainContent_txtAcciDate']", dateOfDeathIllnesOthers, "user enter {string} as date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);	
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAcciDate']", dateOfDeathIllnesOthers, "user enter {string} as date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);	
 
      }
      @When("user click on save button")
@@ -182,7 +179,7 @@ public class Claims {
 	
 	@When("user enter {string} as Insurance Type")
 	public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
-	    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
 	}
 	
 	@When ("user click on search button to find {string} risk note")
@@ -199,7 +196,7 @@ public class Claims {
 	@When ("user enter risk note number to search {string} risk note")
 	public void user_enter_as_quote_number(String risknote) throws InterruptedException, TimeoutException {
 		String risknoteNo = SeleniumOperations.getClaim(risknote);
-		Itl.CustomSendEvent("//*[@id='MainContent_txtRiskNote']", risknoteNo, "user enter {string} as risk note number", "TEXTBOX", 0);
+		Itl.CustomClearSendEvent("//*[@id='MainContent_txtRiskNote']", risknoteNo, "user enter {string} as risk note number", "TEXTBOX", 0);
 		Thread.sleep(4000);
 	}
 	

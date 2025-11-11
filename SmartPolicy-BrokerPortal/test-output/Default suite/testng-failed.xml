@@ -3,13 +3,13 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="testRunner.RunnerTestCreditNote">
+      <class name="testRunner.RunnerTestClaimsTracking">
         <methods>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
-      </class> <!-- testRunner.RunnerTestCreditNote -->
+      </class> <!-- testRunner.RunnerTestClaimsTracking -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

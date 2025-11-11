@@ -98,4 +98,107 @@ public class ClaimsTracking {
 	    }
 	    
 	}
+	 @When("user enter date of loss\\/Accident")
+	 public void user_enter_as_date_of_loss_accident() throws InterruptedException {
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of loss\\\\/Accident", "TEXTBOX", 0);
+	 }
+	 @When("user enter reported date")
+	 public void user_enter_as_reportDate() throws InterruptedException {
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtReportedDate']", "user enter reported date", "TEXTBOX", 0);
+	 }
+	 @When("user enter police reported date")
+	 public void user_enter_as_policereportDate() throws InterruptedException {
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtPSPD']", "user enter police reported date", "TEXTBOX", 0);
+	 }
+	 @When("user enter date of death\\/illnes\\/others")
+	 public void user_enter_as_date_of_death_illnes_others() throws InterruptedException {
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);
+	 }
+	 @When("user select {string} as country")
+	 public void user_select_as_country(String country) {
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbCountryofLoss')]", "(//*[@class='select2-search__field'])[2]", country , "(//*[contains(@data-select2-id,'MainContent_cmbCountryofLoss')])[2]", "user select {string} as country", "DROPDOWN", 3000);
+
+	 }
+	 @When("user select {string} as region\\/City of loss")
+	 public void user_select_as_region_city_of_loss(String cityOfLoss) throws InterruptedException {
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbRegion')])[1]", "(//*[@class='select2-search__field'])[2]", cityOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbRegion')])[3]", "user select {string} as region\\\\/City of loss", "DROPDOWN", 0);
+            Thread.sleep(3000);
+	 }
+	 @When("user select {string} as district of loss")
+	 public void user_select_as_district_of_loss(String districtOfLoss) {
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbDistrict')])[1]", "(//*[@class='select2-search__field'])[2]", districtOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbDistrict')])[3]", "user select {string} as district of loss", "DROPDOWN", 2000);
+
+	 }
+	 @When("user select {string} as cause of loss\\/Accident")
+	 public void user_select_as_cause_of_loss_accident(String causeOfLossAccident) {
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbClmmCauses')])[1]", "(//*[@class='select2-search__field'])[2]", causeOfLossAccident , "(//*[contains(@data-select2-id,'MainContent_cmbClmmCauses')])[2]", "user select {string} as cause of loss\\\\/Accident", "DROPDOWN", 2000);
+
+	 }
+	 @Then("user enter {string} as place of loss\\/Accident")
+	 public void user_enter_as_place_of_loss_accident(String placeOfLossAccident) throws InterruptedException {
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAcciPlace']", placeOfLossAccident, "user enter {string} as place of loss\\\\/Accident", "TEXTBOX", 0);	
+
+	 }
+	 @When("user select {string} as reported type")
+	 public void user_select_as_reported_type(String reportedType) {
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbIntimationType')])[1]", "(//*[@class='select2-search__field'])[2]", reportedType , "(//*[contains(@data-select2-id,'MainContent_cmbIntimationType')])[2]", "user select {string} as reported type", "DROPDOWN", 2000);
+
+	 }
+	 @When("user select {string} as nature of loss\\/claim type")
+	 public void user_select_as_nature_of_loss_claim_type(String natureOfLossClaimType) {
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbLossType')])[1]", "(//*[@class='select2-search__field'])[2]", natureOfLossClaimType , "(//*[contains(@data-select2-id,'MainContent_cmbLossType')])[2]", "user select {string} as nature of loss\\\\/claim type", "DROPDOWN", 2000);
+
+	 }
+	 @When("user select {string} as claimant circumstances")
+	 public void user_select_as_claimant_circumstances(String claimantCircumstances) {
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbInjured')])[1]", "(//*[@class='select2-search__field'])[2]", claimantCircumstances , "(//*[contains(@data-select2-id,'MainContent_cmbInjured')])[2]", "user select {string} as claimant circumstances", "DROPDOWN", 2000);
+
+	 }
+	 @When("user enter {string} as claimant amount")
+	 public void user_enter_as_claimant_amount(String claimantAmount) throws InterruptedException {
+		    Itl.CustomClearSendEvent("//*[@id='txtClaimantAmount']", claimantAmount, "user enter {string} as claimant amount", "TEXTBOX", 0);	
+
+	 }
+	 @When("user enter {string} as circumstances of accidents")
+	 public void user_enter_as_circumstances_of_accidents(String circumstancesOfAccidents) throws InterruptedException {
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtCircums']", circumstancesOfAccidents, "user enter {string} as circumstances of accidents", "TEXTBOX", 0);	
+
+	 }
+    @When("user select {string} as cause of claim")
+    public void user_select_as_cause_of_claim(String causeOfClaim) {
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbClmmCauses')])[1]", "(//*[@class='select2-search__field'])[2]", causeOfClaim , "(//*[contains(@data-select2-id,'MainContent_cmbClmmCauses')])[2]", "user select {string} as cause of claim", "DROPDOWN", 2000);
+
+    }
+    @Then("user enter {string} as place of death\\/illnes\\/others")
+    public void user_enter_as_place_of_death_illnes_others(String placeOfDeath) throws InterruptedException {
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAcciPlace']", placeOfDeath, "user enter {string} as place of death\\\\/illnes\\\\/others", "TEXTBOX", 0);	
+
+    }
+    @When("user enter {string} as date of death\\/illnes\\/others")
+    public void user_enter_as_date_of_death_illnes_others(String dateOfDeathIllnesOthers) throws InterruptedException {
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAcciDate']", dateOfDeathIllnesOthers, "user enter {string} as date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);	
+
+    }
+    @When("user click on save button")
+    public void user_click_on_save_button() throws InterruptedException {
+        Itl.CustomClickEvent("//*[@id='MainContent_btnSave']", "user click on save button", "CLICK", 2000);
+    }
+    
+    @When("user click on edit option")
+	public void user_click_on_edit_option() throws Throwable {
+        Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[2]/*[2]/*[2]", "user click on edit option", "CLICK", 2000);
+	}
+    @Then ("user able to view {string} as message")
+	public void validation(String status) throws InterruptedException{
+        Itl.CustomValidationEvent("//*[@class='messenger-message-inner']", status, "user able to view {string} as status", "VALIDATION", 0);
+	}
+    @When("user click on update button")
+	 public void user_click_on_update_button() throws Throwable{
+        Itl.CustomClickEvent("//*[@id='MainContent_btnSave']", "user click on update button", "CLICK", 2000);
+	}
+    @Then("user able to view {string} as status")
+    public void user_able_to_view_as_status1(String status) throws InterruptedException {
+        Itl.CustomValidationEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]", status, "user able to view {string} as status", "VALIDATION", 0);
+    }
+
 }

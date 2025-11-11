@@ -918,6 +918,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
   		// Format today's date dynamically
   		 String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"));
   		 String strXpath = (String)inputparameters[0];
+  		 driver.findElement(By.xpath(strXpath)).clear();
   		 driver.findElement(By.xpath(strXpath)).sendKeys(today);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendDate, Input Given:"+inputparameters[1]);

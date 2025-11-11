@@ -15,18 +15,18 @@
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestFireAndBurglaryQuotation -->
-      <class name="testRunner.RunnerTestRiskNoteScreen">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestRiskNoteScreen -->
       <class name="testRunner.RunnerTestMedicalQuotation">
         <methods>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestMedicalQuotation -->
+      <class name="testRunner.RunnerTestRiskNoteScreen">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestRiskNoteScreen -->
       <class name="testRunner.RunnerTestAccidentalDamageQuotation">
         <methods>
           <include name="runScenario" invocation-numbers="0 1 2"/>

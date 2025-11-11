@@ -37,6 +37,7 @@ When user click on report to insurer option
 And user click on yes,report button for confirmation
 Then user able to view "Claim Intimated to Insurer" as status after reporting to insurer
 
+
 @reportBondsClaims
 Scenario: (Report Bond Claim) Verify user able to report claim successfully
 When user select "01/09/2025" as from date
