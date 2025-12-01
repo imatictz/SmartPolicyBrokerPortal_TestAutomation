@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Claims/ClaimsTracking.feature", 
-                   tags= "@editFireBurglaryClaims", 
+                   tags= "@All", 
                    glue={"cucumberMap25ClaimsTracking","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

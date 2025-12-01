@@ -621,6 +621,7 @@ public class AccidentalDamage
 		    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]", "user clicks on the actions dropdown", "CLICK", 2000);
 
 		}
+		
 		@When("user clicks on print quotation option")
 		public void user_clicks_on_print_quotation_option() throws InterruptedException {
 		    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[3]", "user clicks on print quotation option", "CLICK", 2000);

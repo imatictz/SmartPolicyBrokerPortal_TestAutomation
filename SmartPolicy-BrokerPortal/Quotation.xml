@@ -14,16 +14,18 @@
      <class name="testRunner.RunnerTestFireClassIQuotation"/>
      <class name="testRunner.RunnerTestGroupLifeQuotation"/>
      <class name="testRunner.RunnerTestMedicalQuotation"/>
-    <!--   <class name="testRunner.RunnerTestMoneyInsuranceQuotation"/>-->
-    <!--   <class name="testRunner.RunnerTestPackagePolicyQuotation"/>-->
+  <!--  <class name="testRunner.RunnerTestMoneyInsuranceQuotation"/>
+     <class name="testRunner.RunnerTestPackagePolicyQuotation"/>-->
      <class name="testRunner.RunnerTestPensionQuotation"/>
      <class name="testRunner.RunnerTestVehicleQuotation"/> 
      <class name="testRunner.RunnerTestRiskNote_DebitNote"/>
      <class name="testRunner.RunnerTestRiskNoteScreen"/>
      <class name="testRunner.RunnerTestClaims"/>
+     <class name="testRunner.RunnerTestClaimsTracking"/>
      <class name="testRunner.RunnerTestPayment"/>
      <class name="testRunner.RunnerTestEndorsement"/>
-    <!--  <class name="testRunner.RunnerTestReports"/> -->
+     <class name="testRunner.RunnerTestEndorsementScreen"/>
+     <class name="testRunner.RunnerTestReports"/> 
       
       
     </classes>

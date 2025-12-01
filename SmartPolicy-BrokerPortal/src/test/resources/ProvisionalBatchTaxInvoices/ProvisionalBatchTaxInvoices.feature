@@ -4,6 +4,7 @@ Feature: Provisional Batch Tax Invoices
 Background: 
 
 When user navigate on operation dropdown menu
+When user navigate on billing option
 When user click on Provisional Batch Tax Invoices option
 When user click on add button
 
@@ -16,7 +17,7 @@ Then user click on fetch button
 
 #Scenario:
 When user click on checkbox to select commission
-#And user click on save button
+And user click on save button
 Then user able to view "Pending" as status
 When user click on collect cash icon
 When user select "Bank payment" as mode

@@ -13,10 +13,17 @@ public class ProvisionalBatchTaxInvoices {
 	      input[0]="//*[@id='MOD_OPERATIONS']";
 	      SeleniumOperations.actionClass(input);
 	}
+	@When("user navigate on billing option")
+	public void user_navigate_on_billing_menu() throws Throwable {
+	    
+	      Object[] input = new Object[2];
+	      input[0]="//*[@id='span128']";
+	      SeleniumOperations.actionClass(input);
+	}
 	@When("user click on Provisional Batch Tax Invoices option")
 	public void user_click_on_provisional_batch_tax_invoices_option() throws InterruptedException {
 		Object[] input = new Object[2];
-	      input[0]="//*[@id='MNU_wfBCTXN']";
+	      input[0]="//*[@id='span95']";
 	      SeleniumOperations.clickOnElement(input);
 	      Thread.sleep(2000);
 
@@ -30,7 +37,7 @@ public class ProvisionalBatchTaxInvoices {
 	}
 	@When("user select {string} as insurer name")
 	public void user_select_as_insurer_name(String insurerName) {
-	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsurer']", "//*[@class='select2-input select2-focused']", insurerName , "//*[@class='select2-match']", "user select {string} as insurer name", "DROPDOWN", 2000);
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'select2-MainContent_cmbInsurer-container')]", "//*[@class='select2-search__field']", insurerName , "//*[contains(@data-select2-id,'select2-data-select2-MainContent_cmbInsurer-result')]", "user select {string} as insurer name", "DROPDOWN", 2000);
 	}
 	@When("user enter {string} as date from")
 	public void user_enter_as_date_from(String dateFrom) throws InterruptedException {
@@ -39,22 +46,14 @@ public class ProvisionalBatchTaxInvoices {
 	}
 	@When("user select {string} as category")
 	public void user_select_as_category(String category) {
-	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCategory']", "//*[@class='select2-input select2-focused']", category , "//*[@class='select2-match']", "user select {string} as category", "DROPDOWN", 2000);
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'select2-MainContent_cmbCategory-container')]", "//*[@class='select2-search__field']", category , "//*[contains(@data-select2-id,'select2-data-select2-MainContent_cmbCategory-result')]", "user select {string} as category", "DROPDOWN", 2000);
 
 	}
 	@Then("user click on fetch button")
 	public void user_click_on_fetch_button() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='BtnFetch']", "user click on fetch button", "CLICK", 3000);
 	Thread.sleep(3000);
-	  /*  Object[] input = new Object[1];
-	    input[0]="//*[@id='grdBatchTaxInvoice']/tbody/tr/td[10]";
-	    SeleniumOperations.CalculateSumOfColumn(input);
-	    /*Object[] input = new Object[2]; selectall BtnFetch
-	input[0] = "//*[@id='MainContent_txtGrossCommission']";
-			//"//*[@id='grdBatchTaxInvoice']/tbody//td[10]";
-			 * MainContent_grdBatchTaxInvoice_chkUnAllocateRecpt_11
-			 
-	    SeleniumOperations.test(input);*/
+	  
 	}
 	
 	@When("user click on checkbox to select commission")
@@ -81,12 +80,12 @@ public class ProvisionalBatchTaxInvoices {
 	}
 	@When("user select {string} as mode")
 	public void user_select_as_mode(String mode) {
-	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbMode']", "//*[@class='select2-input select2-focused']", mode , "//*[@class='select2-match']", "user select {string} as mode", "DROPDOWN", 2000);
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMode')]", "//*[@class='select2-search__field']", mode , "(//*[contains(@data-select2-id,'MainContent_cmbMode')])[2]", "user select {string} as mode", "DROPDOWN", 2000);
 
 	}
 	@When("user select {string} as issuer bank")
 	public void user_select_as_issuer_bank(String issuerBank) {
-	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbClientBank']", "//*[@class='select2-input select2-focused']", issuerBank , "//*[@class='select2-match']", "user select {string} as issuer bank", "DROPDOWN", 2000);
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientBank')]", "//*[@class='select2-search__field']", issuerBank , "(//*[contains(@data-select2-id,'MainContent_cmbClientBank')])[2]", "user select {string} as issuer bank", "DROPDOWN", 2000);
 
 	}
 	@When("user enter {string} as Cheque\\/ Reference Number")

@@ -91,7 +91,7 @@ public class ClaimsTracking {
 	        input[0] = field.trim();
 	        input[1] = "//*[@id='select2-MainContent_cmbInsuranceType-container']";
 	        input[2] = "//*[@id='MainContent_txtPolicyNb']";
-	        input[3] = "//*[@id='txtClaimantAmount']";
+	        input[3] = "//*[@id='MainContent_txtSumInsured']";
 	        Hashtable<String, Object> output = SeleniumOperations.printClaimReport(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "the claim report should include all relevant details like", output.get("MESSAGE").toString());
 			Thread.sleep(2000);
@@ -122,7 +122,7 @@ public class ClaimsTracking {
 	 @When("user select {string} as region\\/City of loss")
 	 public void user_select_as_region_city_of_loss(String cityOfLoss) throws InterruptedException {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbRegion')])[1]", "(//*[@class='select2-search__field'])[2]", cityOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbRegion')])[3]", "user select {string} as region\\\\/City of loss", "DROPDOWN", 0);
-            Thread.sleep(3000);
+            Thread.sleep(4000);
 	 }
 	 @When("user select {string} as district of loss")
 	 public void user_select_as_district_of_loss(String districtOfLoss) {

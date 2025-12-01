@@ -40,7 +40,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -101,7 +101,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -156,7 +156,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -216,7 +216,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -280,7 +280,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -337,7 +337,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -398,7 +398,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -462,7 +462,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -519,7 +519,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -575,7 +575,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -638,7 +638,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -694,7 +694,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -751,7 +751,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -815,7 +815,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -872,7 +872,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -929,7 +929,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -993,7 +993,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1051,7 +1051,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1108,7 +1108,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1172,7 +1172,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1229,7 +1229,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1286,7 +1286,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1350,7 +1350,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
@@ -1407,7 +1407,7 @@ Then user able to view "Insurer Approval Required" as status
 When user open new tab
 When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
 When user enter "Auto-1" as username
-When user enter "Qa@12345" as password
+When user enter "Sa@123456" as password
 When user click on login button
 When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option

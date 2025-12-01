@@ -144,10 +144,13 @@ public class Claims {
          Itl.CustomValidationEvent("//*[@id='sort_table']/tbody/tr[1]/td[8]", status, "user able to view {string} as status", "VALIDATION", 0);
      }
      @When("user clicks on the actions dropdown")
- 	public void user_clicks_on_the_actions_dropdown() throws InterruptedException {
+ 	 public void user_clicks_on_the_actions_dropdown() throws InterruptedException {
  	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[2]", "user clicks on the actions dropdown", "CLICK", 2000);
-
- 	}
+     }
+     @When("user select time of loss")
+ 	 public void user_select_time_of_loss() throws InterruptedException {
+ 	    Itl.CustomClickEvent("//*[@id='MainContent_txtAccidentTime']", "user select time of loss", "CLICK", 2000);
+     }
      @When("user click on report to insurer option")
      public void user_click_on_report_to_insurer_option() throws InterruptedException {
          Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[2]/*[2]/*[8]", "user click on report to insurer option", "CLICK", 2000);

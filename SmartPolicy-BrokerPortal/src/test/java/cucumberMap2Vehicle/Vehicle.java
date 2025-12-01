@@ -211,7 +211,7 @@ public class Vehicle
 		    input[1]=registrationNumber;
 		    Hashtable<String,Object> output= SeleniumOperations.DynamicValuessendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"15641A56BIKE\" as registration number",output.get("MESSAGE").toString());   
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		}
 
 	 @When("^user enter \"([^\"]*)\" as chasis number$")

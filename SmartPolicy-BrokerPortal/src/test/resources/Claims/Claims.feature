@@ -20,6 +20,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Accident" as cause of loss/Accident
 Then user enter "Near new street" as place of loss/Accident
@@ -49,6 +50,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Accident" as cause of loss/Accident
 Then user enter "Near new street" as place of loss/Accident
@@ -77,6 +79,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Burglary" as cause of loss/Accident
 Then user enter "Near new street" as place of loss/Accident
@@ -134,6 +137,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Accident" as cause of loss/Accident
 And user select "Loss of Rental Income" as cause of claim
@@ -162,6 +166,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Fire" as cause of loss/Accident
 Then user enter "City Mall" as place of loss/Accident
@@ -189,6 +194,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Fire" as cause of loss/Accident
 Then user enter "City Mall" as place of loss/Accident
@@ -263,12 +269,6 @@ When user click on report to insurer option
 And user click on yes,report button for confirmation
 Then user able to view "Claim Intimated to Insurer" as status after reporting to insurer
 
-
-
-
-
-
-
 @reportPensionClaims
 Scenario: (Report Pension Claim) Verify user able to report claim successfully
 When user select "01/09/2025" as from date
@@ -279,6 +279,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Accident" as cause of loss/Accident
 Then user enter "WestRoad" as place of loss/Accident
@@ -307,6 +308,7 @@ When user click on fetch button
 When user select "Tanzania" as country
 When user select "Dodoma" as region/City of loss
 When user select "Bahi" as district of loss
+When user select time of loss
 When user enter date of loss/Accident
 And user select "Accident" as cause of loss/Accident
 Then user enter "WestRoad" as place of loss/Accident
