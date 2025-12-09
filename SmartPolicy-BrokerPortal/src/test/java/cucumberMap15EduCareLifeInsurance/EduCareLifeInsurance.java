@@ -718,7 +718,7 @@ public class EduCareLifeInsurance {
 	
 	
 	@When ("user select {string} as life beneficiary \\(For Beneficiary One)")
-	public void selectLifeBeneficiary(String lifeBeneficiary) {
+	public void selectLifeBeneficiary(String lifeBeneficiary) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef1']", "//*[@class='select2-input select2-focused']", 
 	    		lifeBeneficiary, "//*[@class='select2-match']", "user select {string} as life beneficiary \\\\(For Beneficiary One)", "DROPDOWN", 0);
 	}
@@ -737,7 +737,7 @@ public class EduCareLifeInsurance {
 	
 	
 	@When("user select {string} as life beneficiary \\(For Beneficiary Two)")
-	public void user_select_as_supplier_name(String supplierName) {
+	public void user_select_as_supplier_name(String supplierName) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef2']", "//*[@class='select2-input select2-focused']", 
 	    supplierName, "//*[@class='select2-match']", "user select {string} as life beneficiary (For Beneficiary Two)", "DROPDOWN", 0);
 	}
@@ -756,7 +756,7 @@ public class EduCareLifeInsurance {
 	
 	
 	@When ("user select {string} as life beneficiary \\(For Beneficiary Three)")
-	public void user_select_as_supplier_name_Three(String supplierName) {
+	public void user_select_as_supplier_name_Three(String supplierName) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef3']", "//*[@class='select2-input select2-focused']", 
 	    supplierName, "//*[@class='select2-match']", "user select {string} as life beneficiary (For Beneficiary Three)", "DROPDOWN", 0);
 	}
@@ -775,7 +775,7 @@ public class EduCareLifeInsurance {
 	
 
 	@When ("user select {string} as life beneficiary \\(For Beneficiary Four)")
-	public void user_select_as_supplier_name_Four(String supplierName) {
+	public void user_select_as_supplier_name_Four(String supplierName) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCopyLifeBenef4']", "//*[@class='select2-input select2-focused']", 
 	    supplierName, "//*[@class='select2-match']", "user select {string} as life beneficiary (For Beneficiary Four)", "DROPDOWN", 0);
 	}
@@ -836,7 +836,7 @@ public class EduCareLifeInsurance {
 	
 
 	@When ("^user select \"(.*)\" as payment method$")
-	public void paymnetMethod(String supplierName) {
+	public void paymnetMethod(String supplierName) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbPaymentMode']", "//*[@class='select2-input select2-focused']", 
 	    supplierName, "//*[@class='select2-match']", "user select \\\"(.*)\\\" as payment method", "DROPDOWN", 0);
 	}
@@ -864,7 +864,7 @@ public class EduCareLifeInsurance {
 	
 	
 	@When ("^user select \"(.*)\" as payment frequency$")
-	public void paymentFrequency(String supplierName) {
+	public void paymentFrequency(String supplierName) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFrequency']", "//*[@class='select2-input select2-focused']", 
 	    supplierName, "//*[@class='select2-match']", "user select \\\"(.*)\\\" as payment frequency", "DROPDOWN", 0);
 	}

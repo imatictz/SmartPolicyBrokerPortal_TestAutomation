@@ -155,7 +155,7 @@ public class Medical {
 	}
 	
 	@When ("user select {string} as relationship")
-	public void user_select_as_relationship(String relationship) {
+	public void user_select_as_relationship(String relationship) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbRelationship')]", "//*[@class='select2-search__field']", relationship , "//*[contains(@id,'select2-MainContent_cmbRelationship-result-')]", "user select {string} as relationship", "DROPDOWN", 2000);
 
 	}

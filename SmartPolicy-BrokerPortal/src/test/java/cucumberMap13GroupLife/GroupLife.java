@@ -135,7 +135,7 @@ public class GroupLife {
 	}
 	
 	@When("user Select {string} as insurance class")
-	public void user_select_as_insurance_class(String insuranceClass) {
+	public void user_select_as_insurance_class(String insuranceClass) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]", "//*[@class='select2-search__field']", insuranceClass , "//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]", "user select {String} as insurance class", "DROPDOWN", 3000);
 
 	}

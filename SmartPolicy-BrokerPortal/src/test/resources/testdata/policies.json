@@ -1,0 +1,24 @@
+{
+  "Motor": {
+    "clientName": "Pravin Testing Broker",
+    "insurer": "Automated Testing Company",
+    "motorType": "Registered",
+    "insuranceClass": "2 Wheel Comprehensive (Private)",
+    "coverDetails": "Motor Comprehensive"
+    
+  },
+
+  "Fire": {
+    "clientName": "Alice Smith",
+    "insurer": "Fire Insurance Ltd",
+    "premium": "12000",
+    "coverDetails": "Fire Business"
+  },
+
+  "Health": {
+    "clientName": "Paul Reed",
+    "insurer": "Health Corp",
+    "premium": "8000",
+    "coverDetails": "Health Family Plan"
+  }
+}

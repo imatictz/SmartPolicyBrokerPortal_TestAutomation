@@ -53,6 +53,18 @@ public class Itl {
 		}
 	}
 	
+	public static void SendEvent(String strElementId,String strInputText,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbox, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "TEXTBOX") {
+				Object[] input = new Object[2];
+				input[0]=strElementId;
+				input[1]=strInputText;
+				SeleniumOperations.sendKeys(input);
+				Thread.sleep(intThreadSleepTime);	
+			}
+		}
+	
 	public static void CustomSendTodaysDateEvent(String strElementId,String stepName,
 			String strElementType, int intThreadSleepTime ) throws InterruptedException {
 			/*strElementType can be as follows: Textbox, Dropdown, RadioButton, CheckBox*/
@@ -100,6 +112,18 @@ public class Itl {
 				input[1]=strInputText;
 				Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
+				Thread.sleep(intThreadSleepTime);	
+			}
+	}
+	
+	public static void ClearSendEvent(String strElementId,String strInputText,
+			String strElementType, int intThreadSleepTime ) throws InterruptedException {
+			/*strElementType can be as follows: Textbooks, Dropdown, RadioButton, CheckBox*/
+			if (strElementType == "TEXTBOX") {
+				Object[] input = new Object[2];
+				input[0]=strElementId;
+				input[1]=strInputText;
+				SeleniumOperations.clearAndEnter(input);
 				Thread.sleep(intThreadSleepTime);	
 			}
 	}
@@ -192,8 +216,17 @@ public class Itl {
 	}
   }
 	
+	public static void ActionDownEnterEvent(String strElementId, String strElementType, 
+            Integer intThreadSleepTime) throws Throwable {
+        if (strElementType == "ENTER") {
+        Object[] input=new Object[1];
+        input[0]=strElementId;
+        SeleniumOperations.actionDownEnter();
+     }
+   }
+	
 	public static void CustomDropdownEvent(String strElementId,String searchBoxId,String value,
-			String valueId,String stepName,String strElementType,Integer intThreadSleepTime) {
+			String valueId,String stepName,String strElementType,Integer intThreadSleepTime) throws InterruptedException {
 		if(strElementType =="DROPDOWN") {
 		Object[] input= new Object[4];
 		input[0]=strElementId;
@@ -202,6 +235,20 @@ public class Itl {
 		input[3]=valueId;
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),stepName,output.get("MESSAGE").toString());
+		Thread.sleep(intThreadSleepTime);
+		}
+	}
+	
+	public static void DropdownEvent(String strElementId,String searchBoxId,String value,
+			String valueId,String strElementType,Integer intThreadSleepTime) throws InterruptedException {
+		if(strElementType =="DROPDOWN") {
+		Object[] input= new Object[4];
+		input[0]=strElementId;
+		input[1]=searchBoxId;
+		input[2]=value;
+		input[3]=valueId;
+		SeleniumOperations.dropdown(input);	
+		Thread.sleep(intThreadSleepTime);
 		}
 	}
 	
@@ -212,6 +259,15 @@ public class Itl {
      	    input2[0]=strElementId;
      	    Hashtable<String, Object> output2 = SeleniumOperations.actionClass(input2);
      	    HTMLReportGenerator.StepDetails(output2.get("STATUS").toString(),stepName,output2.get("MESSAGE").toString());
+     	}
+    }
+	
+	public static void NavigateAction(String strElementId, String strElementType, 
+            Integer intThreadSleepTime) throws Throwable {
+         if (strElementType == "NAVIGATE") {
+        	 Object[] input2=new Object[2];
+     	    input2[0]=strElementId;
+     	    SeleniumOperations.actionClass(input2);
      	}
     }
 	

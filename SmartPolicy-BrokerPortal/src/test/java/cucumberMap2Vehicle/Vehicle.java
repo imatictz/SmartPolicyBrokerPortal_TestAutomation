@@ -180,25 +180,25 @@ public class Vehicle
 	 }
 
 	    @When ("user select {string} as insurance type")
-		public void user_select_as_insuranceType(String insuranceType) {
+		public void user_select_as_insuranceType(String insuranceType) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltCoverType')]", "//*[@class='select2-search__field']", insuranceType , "(//*[contains(@data-select2-id,'-MainContent_cmbFltCoverType')])[2]", "user select {String} as insurance type", "DROPDOWN", 5000);
 
 		}
 	
 
 	 @When ("user select {string} as insurance class")
-		public void user_select_as_insuranceClass(String insuranceClass) {
+		public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltClassType')]", "//*[@class='select2-search__field']", insuranceClass , "(//*[contains(@data-select2-id,'-MainContent_cmbFltClassType')])[2]", "user select {String} as insurance class", "DROPDOWN", 4000);
 
 		}
 	 
 	 @When ("user select {string} as owner category")
-		public void user_select_as_ownerCategory(String ownerCategory) {
+		public void user_select_as_ownerCategory(String ownerCategory) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbOwnerCat')]", "//*[@class='select2-search__field']", ownerCategory , "(//*[contains(@data-select2-id,'-MainContent_cmbOwnerCat')])[2]", "user select {string} as owner category", "DROPDOWN", 2000);
 
 		}
 	 @When ("user select {string} as motor usage")
-		public void user_select_as_motorUsage(String motorUsage) {
+		public void user_select_as_motorUsage(String motorUsage) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMotorUsage')]", "//*[@class='select2-search__field']", motorUsage , "(//*[contains(@data-select2-id,'-MainContent_cmbMotorUsage')])[2]", "user select {string} as owner category", "DROPDOWN", 2000);
 
 		}
@@ -522,7 +522,7 @@ public class Vehicle
 	 Thread.sleep(2000);
 	 }
 	 @When ("user select {string}as extension")
-		public void user_select_as_extension(String extension) {
+		public void user_select_as_extension(String extension) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbAddons']", "//*[@class='select2-input select2-focused']", extension , "//*[@class='select2-match']", "user select {string} as extension", "DROPDOWN", 2000);
 
 		}
@@ -745,7 +745,7 @@ public class Vehicle
 	
 	
 		@And ("user select {string} as period")
-		public void select_days(String days) {
+		public void select_days(String days) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbPeriod')]", "//*[@class='select2-search__field']", days, "//*[contains(@id,'select2-MainContent_cmbPeriod-result-')]", "user select {string} as period", "DROPDOWN", 0);
 
 		}

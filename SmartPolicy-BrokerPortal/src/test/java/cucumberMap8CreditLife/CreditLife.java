@@ -206,7 +206,7 @@ public class CreditLife
 
 		
 		@When ("user select {string} as client type")
-		public void user_select_as_insuranceClass(String clientType) {
+		public void user_select_as_insuranceClass(String clientType) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientType')]", "//*[@class='select2-search__field']", clientType , "(//*[contains(@data-select2-id,'MainContent_cmbClientType-result')])[1]", "user select {string} as client type", "DROPDOWN", 5000);
 		}
 

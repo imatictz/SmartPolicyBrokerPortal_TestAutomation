@@ -115,7 +115,7 @@ public class ClaimsTracking {
           Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);
 	 }
 	 @When("user select {string} as country")
-	 public void user_select_as_country(String country) {
+	 public void user_select_as_country(String country) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbCountryofLoss')]", "(//*[@class='select2-search__field'])[2]", country , "(//*[contains(@data-select2-id,'MainContent_cmbCountryofLoss')])[2]", "user select {string} as country", "DROPDOWN", 3000);
 
 	 }
@@ -125,12 +125,12 @@ public class ClaimsTracking {
             Thread.sleep(4000);
 	 }
 	 @When("user select {string} as district of loss")
-	 public void user_select_as_district_of_loss(String districtOfLoss) {
+	 public void user_select_as_district_of_loss(String districtOfLoss) throws InterruptedException {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbDistrict')])[1]", "(//*[@class='select2-search__field'])[2]", districtOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbDistrict')])[3]", "user select {string} as district of loss", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as cause of loss\\/Accident")
-	 public void user_select_as_cause_of_loss_accident(String causeOfLossAccident) {
+	 public void user_select_as_cause_of_loss_accident(String causeOfLossAccident) throws InterruptedException {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbClmmCauses')])[1]", "(//*[@class='select2-search__field'])[2]", causeOfLossAccident , "(//*[contains(@data-select2-id,'MainContent_cmbClmmCauses')])[2]", "user select {string} as cause of loss\\\\/Accident", "DROPDOWN", 2000);
 
 	 }
@@ -140,17 +140,17 @@ public class ClaimsTracking {
 
 	 }
 	 @When("user select {string} as reported type")
-	 public void user_select_as_reported_type(String reportedType) {
+	 public void user_select_as_reported_type(String reportedType) throws InterruptedException {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbIntimationType')])[1]", "(//*[@class='select2-search__field'])[2]", reportedType , "(//*[contains(@data-select2-id,'MainContent_cmbIntimationType')])[2]", "user select {string} as reported type", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as nature of loss\\/claim type")
-	 public void user_select_as_nature_of_loss_claim_type(String natureOfLossClaimType) {
+	 public void user_select_as_nature_of_loss_claim_type(String natureOfLossClaimType) throws InterruptedException {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbLossType')])[1]", "(//*[@class='select2-search__field'])[2]", natureOfLossClaimType , "(//*[contains(@data-select2-id,'MainContent_cmbLossType')])[2]", "user select {string} as nature of loss\\\\/claim type", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as claimant circumstances")
-	 public void user_select_as_claimant_circumstances(String claimantCircumstances) {
+	 public void user_select_as_claimant_circumstances(String claimantCircumstances) throws InterruptedException {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbInjured')])[1]", "(//*[@class='select2-search__field'])[2]", claimantCircumstances , "(//*[contains(@data-select2-id,'MainContent_cmbInjured')])[2]", "user select {string} as claimant circumstances", "DROPDOWN", 2000);
 
 	 }
@@ -165,7 +165,7 @@ public class ClaimsTracking {
 
 	 }
     @When("user select {string} as cause of claim")
-    public void user_select_as_cause_of_claim(String causeOfClaim) {
+    public void user_select_as_cause_of_claim(String causeOfClaim) throws InterruptedException {
 		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbClmmCauses')])[1]", "(//*[@class='select2-search__field'])[2]", causeOfClaim , "(//*[contains(@data-select2-id,'MainContent_cmbClmmCauses')])[2]", "user select {string} as cause of claim", "DROPDOWN", 2000);
 
     }

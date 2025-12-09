@@ -196,12 +196,12 @@ public class Endorsement {
 	
 			
 		@When("user select {string} as mode")
-		public void user_select_as_mode(String mode) {
+		public void user_select_as_mode(String mode) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMode')]", "//*[@class='select2-search__field']", mode , "(//*[contains(@data-select2-id,'MainContent_cmbMode')])[2]", "user select {string} as mode", "DROPDOWN", 2000);
 
 		}
 		@When("user select {string} as issuer bank")
-		public void user_select_as_issuer_bank(String issuerBank) {
+		public void user_select_as_issuer_bank(String issuerBank) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientBank')]", "//*[@class='select2-search__field']", issuerBank , "(//*[contains(@data-select2-id,'MainContent_cmbClientBank')])[2]", "user select {string} as issuer bank", "DROPDOWN", 2000);
 
 		}
@@ -211,7 +211,7 @@ public class Endorsement {
 		    
 		}
 		@When("user select {string} as collecting bank")
-		public void user_select_as_collecting_bank(String collectingBank) {
+		public void user_select_as_collecting_bank(String collectingBank) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsurerBank')]", "//*[@class='select2-search__field']", collectingBank , "(//*[contains(@data-select2-id,'MainContent_cmbInsurerBank')])[2]", "user select {string} as collecting bank", "DROPDOWN", 2000);
 
 		}

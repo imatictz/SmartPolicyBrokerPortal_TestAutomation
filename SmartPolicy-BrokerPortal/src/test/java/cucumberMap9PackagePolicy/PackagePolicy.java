@@ -50,7 +50,7 @@ public class PackagePolicy
 		}
 
 		@When ("user select {string} as insurance class")
-		public void user_select_as_insuranceClass(String insuranceClass) {
+		public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltClassType']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 2000);
 
 		}
@@ -101,7 +101,7 @@ public class PackagePolicy
 		}
 		
 		@When ("user select {string} as insurance type")
-		public void user_select_as_insuranceType1(String insuranceType) {
+		public void user_select_as_insuranceType1(String insuranceType) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsuranceType']", "//*[@class='select2-input select2-focused']", insuranceType , "//*[@class='select2-match']", "user select {String} as insurance type", "DROPDOWN", 2000);
 
 		}
@@ -158,7 +158,7 @@ public class PackagePolicy
 		}
 
 		@When ("user select {string} as vehicle type")
-		public void user_select_as_vehicleType(String vehicleType) {
+		public void user_select_as_vehicleType(String vehicleType) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbFltType']", "//*[@class='select2-input select2-focused']", vehicleType , "//*[@class='select2-match']", "user select {string} as vehicle type", "DROPDOWN", 2000);
 
 		}

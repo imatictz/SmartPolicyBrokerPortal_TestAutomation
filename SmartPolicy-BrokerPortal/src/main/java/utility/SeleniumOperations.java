@@ -11,6 +11,7 @@ import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -2631,9 +2632,58 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	    return outputparameters;
  	}
 
+     public static LocalDate resolveDate(String startDateType) {
 
-     
-     
+    	    if (startDateType.equalsIgnoreCase("Today")) {
+    	        return LocalDate.now();
+    	    } 
+    	    else if (startDateType.equalsIgnoreCase("BackDate")) {
+    	        return LocalDate.now().minusDays(5);
+    	    } 
+    	    else {
+    	        // Parse yyyy-MM-dd from examples
+    	        return LocalDate.parse(startDateType);
+    	    }
+    	}
+
+
+     public static void selectDateFromCalendar(LocalDate targetDate) {
+
+    	    // 1. Open the calendar
+    	    driver.findElement(By.id("MainContent_txtFromDate")).click();
+
+    	    // 2. XPaths based on your DOM
+    	    By monthYearHeader = By.xpath("//th[@class='datepicker-switch']");
+    	    By prevButton = By.xpath("//th[@class='prev']");
+    	    By nextButton = By.xpath("//th[@class='next']");
+
+    	    DateTimeFormatter headerFormatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+
+    	    // 3. Navigate until correct month-year appears
+    	    while (true) {
+
+    	        String displayed = driver.findElement(monthYearHeader).getText().trim();
+    	        YearMonth displayedYM = YearMonth.parse(displayed, headerFormatter);
+    	        YearMonth targetYM = YearMonth.from(targetDate);
+
+    	        if (displayedYM.equals(targetYM)) {
+    	            break;  // Month and year are correct
+    	        }
+
+    	        if (displayedYM.isBefore(targetYM)) {
+    	            // Move forward → 
+    	            driver.findElement(nextButton).click();
+    	        } else {
+    	            // Move backward ←
+    	            driver.findElement(prevButton).click();
+    	        }
+    	    }
+
+    	    // 4. Select day
+    	    String dayXpath = "//td[contains(@class,'day') and text()='" + targetDate.getDayOfMonth() + "']";
+    	    driver.findElement(By.xpath(dayXpath)).click();
+    	}
+
      
 
 }

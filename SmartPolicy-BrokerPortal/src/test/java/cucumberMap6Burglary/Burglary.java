@@ -150,7 +150,7 @@ public class Burglary
 
 		
 		@When ("user select {string} as insurance class")
-		public void user_select_as_insuranceClass(String insuranceClass) {
+		public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
 		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]", "//*[@class='select2-search__field']", insuranceClass , "//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]", "user select {String} as insurance class", "DROPDOWN", 3000);
 
 		}

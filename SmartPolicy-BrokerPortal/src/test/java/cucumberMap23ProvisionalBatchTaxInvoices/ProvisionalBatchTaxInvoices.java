@@ -36,7 +36,7 @@ public class ProvisionalBatchTaxInvoices {
 	      Thread.sleep(2000);
 	}
 	@When("user select {string} as insurer name")
-	public void user_select_as_insurer_name(String insurerName) {
+	public void user_select_as_insurer_name(String insurerName) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'select2-MainContent_cmbInsurer-container')]", "//*[@class='select2-search__field']", insurerName , "//*[contains(@data-select2-id,'select2-data-select2-MainContent_cmbInsurer-result')]", "user select {string} as insurer name", "DROPDOWN", 2000);
 	}
 	@When("user enter {string} as date from")
@@ -45,14 +45,14 @@ public class ProvisionalBatchTaxInvoices {
 
 	}
 	@When("user select {string} as category")
-	public void user_select_as_category(String category) {
+	public void user_select_as_category(String category) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'select2-MainContent_cmbCategory-container')]", "//*[@class='select2-search__field']", category , "//*[contains(@data-select2-id,'select2-data-select2-MainContent_cmbCategory-result')]", "user select {string} as category", "DROPDOWN", 2000);
 
 	}
 	@Then("user click on fetch button")
 	public void user_click_on_fetch_button() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='BtnFetch']", "user click on fetch button", "CLICK", 3000);
-	Thread.sleep(3000);
+	    Thread.sleep(3000);
 	  
 	}
 	
@@ -79,12 +79,12 @@ public class ProvisionalBatchTaxInvoices {
 
 	}
 	@When("user select {string} as mode")
-	public void user_select_as_mode(String mode) {
+	public void user_select_as_mode(String mode) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMode')]", "//*[@class='select2-search__field']", mode , "(//*[contains(@data-select2-id,'MainContent_cmbMode')])[2]", "user select {string} as mode", "DROPDOWN", 2000);
 
 	}
 	@When("user select {string} as issuer bank")
-	public void user_select_as_issuer_bank(String issuerBank) {
+	public void user_select_as_issuer_bank(String issuerBank) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientBank')]", "//*[@class='select2-search__field']", issuerBank , "(//*[contains(@data-select2-id,'MainContent_cmbClientBank')])[2]", "user select {string} as issuer bank", "DROPDOWN", 2000);
 
 	}
@@ -94,7 +94,7 @@ public class ProvisionalBatchTaxInvoices {
 	    
 	}
 	@When("user select {string} as collecting bank")
-	public void user_select_as_collecting_bank(String collectingBank) {
+	public void user_select_as_collecting_bank(String collectingBank) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsurerBank']", "//*[@class='select2-input select2-focused']", collectingBank , "//*[@class='select2-match']", "user select {string} as collecting bank", "DROPDOWN", 2000);
 
 	}

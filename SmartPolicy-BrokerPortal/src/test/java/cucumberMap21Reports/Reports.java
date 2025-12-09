@@ -2619,7 +2619,7 @@ public class Reports {
 
 	}
 	@When("user select {string} as Supplier Name")
-	public void user_select_as_supplier_name(String supplierName) {
+	public void user_select_as_supplier_name(String supplierName) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbSPLR')]", "//*[@class='select2-input select2-focused']", 
 	    supplierName, "//*[@class='select2-match']", "user select {string} as Supplier Name", "DROPDOWN", 0);
 	}
@@ -3052,7 +3052,7 @@ public class Reports {
 
 	}
 	@When("user select {string} as monthly")
-	public void user_select_as_monthly(String monthly) {
+	public void user_select_as_monthly(String monthly) throws InterruptedException {
 		Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMonthly')]", "//*[@class='select2-search__field']", 
 			    monthly, "//*[contains(@id,'select2-MainContent_cmbMonthly-result-')]", "user select {string} as monthly", "DROPDOWN", 0);
 			
