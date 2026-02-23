@@ -1,26 +1,27 @@
-    package utility;
+package utility;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
 import java.math.RoundingMode;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
@@ -29,8 +30,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.openqa.selenium.ElementNotInteractableException;
+import java.io.PrintWriter;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.Alert;
@@ -44,165 +44,96 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.relevantcodes.extentreports.ExtentTest;
 
-import io.cucumber.messages.types.Duration;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 
 
 public class SeleniumOperations 
 {
 	
-  //private static final String[] String = null;
-    public static WebDriver driver=null;
-	public static Hashtable<String,Object> outputparameters=new Hashtable<String,Object>();
+	private static WebDriver d() {
+	    return getDriver();
+	}
+	// Existing fields kept as-is
+	public static WebDriver driver = null;
+	public static Hashtable<String, Object> outputparameters = new Hashtable<String, Object>();
 	public static ConfigReader config;
 	public static WebDriverWait wait1;
 	static Properties langProperties;
 
-  //BrowserLaunch
-	public static Hashtable<String,Object>  browserLaunch(){  
-		try {
-		  config=new ConfigReader();
-	      if(config.getBrowserName().equalsIgnoreCase("Chrome")){		
-		    
-	    	  WebDriverManager.chromedriver().setup();
-	    	  driver = new ChromeDriver();
-	    	  /*System.setProperty("webdriver.chrome.driver", config.getDriverPathChrome());
-		     driver=new ChromeDriver();*/
-		     driver.manage().window().maximize();
-	      }
-	      else if(config.getBrowserName().equalsIgnoreCase("FireFox")) { 
-	        WebDriverManager.firefoxdriver().setup();
-	        driver = new FirefoxDriver();
-	    	  /* System.setProperty("webdriver.gecko.driver", config.getDriverPathFF());
-	         driver=new FirefoxDriver();*/
-	         driver.manage().window().maximize();
-	     
-	      }
-	      else if(config.getBrowserName().equalsIgnoreCase("MicroSoftEdge")){ 
-	        WebDriverManager.edgedriver().setup();
-	        driver = new EdgeDriver();
-	    	  /* System.setProperty("webdriver.edge.driver", config.getDriverPathMicroSoft() );
-	         driver=new EdgeDriver();*/
-	         driver.manage().window().maximize();
-	      }
-	      else if(config.getBrowserName().equalsIgnoreCase("Safari")){ 
-		        WebDriverManager.safaridriver().setup();
-		        driver = new SafariDriver();
-		    	  /* System.setProperty("webdriver.edge.driver", config.getDriverPathMicroSoft() );
-		         driver=new EdgeDriver();*/
-		         driver.manage().window().maximize();
-		      }
-	         outputparameters.put("STATUS","PASS");
-	         outputparameters.put("MESSAGE","Method Used:browserLaunch,Input Given:"+config.getBrowserName().toString());
-	    }
-	    catch(Exception e){
-	    	 outputparameters.put("STATUS","FAIL");
-	    	 outputparameters.put("MESSAGE","Method Used:browserLaunch,Input Given:"+config.getBrowserName().toString());
-		}
-	    return outputparameters;
-     }
-//SelectLanguage
-	public static void selectLanguage() throws InterruptedException {
-		if(config.getLanguageName().equalsIgnoreCase("En")){		
-		    
-			Object[] input4=new Object[1];
-			input4[0]="(//*[@class='menu-arrow'])[18]";
-			SeleniumOperations.actionClass(input4);
-			
-			
-			Object[] input5=new Object[1];
-			input5[0]="//*[@data-language='En']";
-			SeleniumOperations.clickOnLogin(input5);
-			
-			Object[] input6=new Object[1];
-			input6[0]="//*[@id='btnYesLocal']";
-			SeleniumOperations.clickOnLogin(input6);
-			Thread.sleep(2000);
-			Object[] input7 = new Object[2];
-			input7[0] ="//*[@id='span_lblHi_lc']";
-			input7[1]="Hi";
-			SeleniumOperations.validation(input7);
-	      }
-	      else if(config.getLanguageName().equalsIgnoreCase("Fr")) { 
-	    	  Object[] input4=new Object[1];
-	  		input4[0]="(//*[@class='menu-arrow'])[18]";
-	  		SeleniumOperations.actionClass(input4);
-	  		
-	  		Object[] input5=new Object[1];
-	  		input5[0]="//*[@data-language='Fr']";
-	  		SeleniumOperations.clickOnLogin(input5);
-	  		
-	  		Object[] input6=new Object[1];
-	  		input6[0]="//*[@id='btnYesLocal']";
-	  		SeleniumOperations.clickOnLogin(input6);
-	  		Thread.sleep(2000);
-	  		Object[] input7 = new Object[2];
-	  		input7[0] ="//*[@id='span_lblHi_lc']";
-	  		input7[1]="Salut";
-	  		SeleniumOperations.validation(input7);
-	     
-	      }
-	      else if(config.getLanguageName().equalsIgnoreCase("Sw")) { 
-	    	  Object[] input4=new Object[1];
-	  		input4[0]="(//*[@class='menu-arrow'])[18]";
-	  		SeleniumOperations.actionClass(input4);
-	  		
-	  		Object[] input5=new Object[1];
-	  		input5[0]="//*[@data-language='Sw']";
-	  		SeleniumOperations.clickOnLogin(input5);
-	  		
-	  		Object[] input6=new Object[1];
-	  		input6[0]="//*[@id='btnYesLocal']";
-	  		SeleniumOperations.clickOnLogin(input6);
-	  		Thread.sleep(2000);
-	  		Object[] input7 = new Object[2];
-	  		input7[0] ="//*[@id='span_lblHi_lc']";
-	  		input7[1]="Habari";
-	  		SeleniumOperations.validation(input7);
-	     
-	      }
+	// ThreadLocal for parallel execution
+	private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
+	private static ThreadLocal<ConfigReader> threadConfig = new ThreadLocal<>();
+
+	// Get driver for current thread
+	public static WebDriver getDriver() {
+	    return threadDriver.get();
 	}
-//OpenApplication
-	 public static Hashtable<String,Object> openApplication(){   
-		 try {  
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		// driver.manage().timeouts().pageLoadTimeout(50,TimeUnit.SECONDS);
-		   driver.navigate().to(config.getApplicationUrl());
-		  /* String textValue = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
-		   String pass ="Session Expired.";
-		   if(textValue==pass) {
-			   driver.findElement(By.xpath("//a[@href='wfLogin.aspx']")).click();
-               driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys("PravinS");
-               driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Sp@12345");
-               driver.findElement(By.xpath("//*[text()='Login']")).click();
-		   }*/
-		   outputparameters.put("STATUS","PASS");
-		   outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
-	      }
-	      catch(Exception e){
-	       outputparameters.put("STATUS","FAIL");
-		   outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
-	      }
-	      return outputparameters;
-     }
+
+	// Get config for current thread
+	public static ConfigReader getConfig() {
+	    return threadConfig.get();
+	}
+
+	// Launch browser per thread
+	public static void browserLaunch() {
+	    // Initialize config for this thread
+	    ConfigReader cfg = new ConfigReader();
+	    threadConfig.set(cfg);
+
+	    WebDriver wd;
+	    if (cfg.getBrowserName().equalsIgnoreCase("chrome")) {
+	        WebDriverManager.chromedriver().setup();
+	        wd = new ChromeDriver();
+	    } else {
+	        // Default fallback
+	        wd = new ChromeDriver();
+	    }
+	    wd.manage().window().maximize();
+
+	    // Set ThreadLocal driver
+	    threadDriver.set(wd);
+
+	    // For backward compatibility, assign static driver (not recommended for parallel, but kept)
+	    driver = wd;
+
+	    // Assign static config for backward compatibility
+	    config = cfg;
+	}
+
+	// Open application
+	public static void openApplication() {
+	    WebDriver wd = getDriver();    // Thread-safe driver
+	    ConfigReader cfg = getConfig(); // Thread-safe config
+
+	    if (wd == null || cfg == null) {
+	        throw new RuntimeException("Driver or Config not initialized for this thread");
+	    }
+
+	    wd.get(cfg.getApplicationUrl());
+	}
+
+     
 	 
 //SendUserID
      public static Hashtable<String,Object> sendUserId(Object[]inputparameters){   
 	    try {
 	      driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 	      String strXpath=(String)inputparameters[0];
-          driver.findElement(By.xpath(strXpath)).sendKeys(config.sendUserId());
+          d().findElement(By.xpath(strXpath)).sendKeys(config.sendUserId());
           outputparameters.put("STATUS","PASS");
 	      outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendUserId());
 	    }
@@ -218,7 +149,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
-	       driver.findElement(By.xpath(strXpath)).sendKeys(config.sendPassword());
+	       d().findElement(By.xpath(strXpath)).sendKeys(config.sendPassword());
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+config.sendPassword());
 	     }
@@ -234,16 +165,16 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
-		   driver.findElement(By.xpath(strXpath)).click();
+		   d().findElement(By.xpath(strXpath)).click();
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
-	   /*  String test = driver.findElement(By.xpath("//*[text()='Session Expired.']")).getText();
+	   /*  String test = d().findElement(By.xpath("//*[text()='Session Expired.']")).getText();
 		   System.out.println(test);
 	     if(test.equalsIgnoreCase("Session Expired.")) {
-			   driver.findElement(By.xpath("//*[@href='wfLogin.aspx']")).click();
-			   driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys(config.sendUserId());
-			   driver.findElement(By.xpath("//*[@id='password']")).sendKeys(config.sendPassword());
-			   driver.findElement(By.xpath("//*[text()='Login']")).click();
+			   d().findElement(By.xpath("//*[@href='wfLogin.aspx']")).click();
+			   d().findElement(By.xpath("//*[@id='usercode']")).sendKeys(config.sendUserId());
+			   d().findElement(By.xpath("//*[@id='password']")).sendKeys(config.sendPassword());
+			   d().findElement(By.xpath("//*[text()='Login']")).click();
 		   }*/
 		 }
 	     catch(Exception e) {
@@ -259,7 +190,7 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
-	       driver.findElement(By.xpath(strXpath)).sendKeys(strvalue);
+	       d().findElement(By.xpath(strXpath)).sendKeys(strvalue);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
 	     }
@@ -281,7 +212,7 @@ public class SeleniumOperations
 		        String value = code;
 
 
-	       driver.findElement(By.xpath(strXpath)).sendKeys(value);
+	       d().findElement(By.xpath(strXpath)).sendKeys(value);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
 		   }
@@ -307,7 +238,7 @@ public class SeleniumOperations
 	        number++; // Increment the number
 	        vehicleNumber = "VEHICLE" + number; // Combine the prefix with the new number
 		    
-	       driver.findElement(By.xpath(strXpath)).sendKeys(vehicleNumber);
+	       d().findElement(By.xpath(strXpath)).sendKeys(vehicleNumber);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
 	     }
@@ -324,7 +255,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
-		   driver.findElement(By.xpath(strXpath)).click();
+		   d().findElement(By.xpath(strXpath)).click();
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
 	     }
@@ -340,7 +271,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
-		   driver.findElement(By.xpath(strXpath)).click();
+		   d().findElement(By.xpath(strXpath)).click();
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:doubleClickOnElement, Input Given:"+inputparameters[0]);
 	     }
@@ -359,7 +290,7 @@ public class SeleniumOperations
 		   String xpath=(String)inputparameters[0];
 		   String givenText=(String)inputparameters[1];
 		  // String statusText =(String)inputparameters[2];
-		   String findText=driver.findElement(By.xpath(xpath)).getText();
+		   String findText=d().findElement(By.xpath(xpath)).getText();
 		   System.out.println(findText);
 		   
 		   if(givenText.equalsIgnoreCase(findText)){
@@ -418,7 +349,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String Xpath=(String)inputparameters[0];
-		  WebElement status = driver.findElement(By.xpath(Xpath));
+		  WebElement status = d().findElement(By.xpath(Xpath));
 		 boolean result = status.isEnabled();
 		   
 		 if (result) {
@@ -445,7 +376,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String Xpath=(String)inputparameters[0];
-		  WebElement status = driver.findElement(By.xpath(Xpath));
+		  WebElement status = d().findElement(By.xpath(Xpath));
 		// Attribute extraction
 		    String disabledAttr = status.getAttribute("disabled");
 		    String ariaDisabledAttr = status.getAttribute("aria-disabled");
@@ -483,15 +414,15 @@ public class SeleniumOperations
 		   String Xpath3=(String)inputparameters[3];
 		   String givenText=(String)inputparameters[4];
 		   
-		   WebElement emailField = driver.findElement(By.xpath(Xpath1));
+		   WebElement emailField = d().findElement(By.xpath(Xpath1));
 		   emailField.clear();
 	        emailField.sendKeys(email);
 
 	        // Submit the form (update selector if needed)
-	        driver.findElement(By.xpath(Xpath2)).click();
+	        d().findElement(By.xpath(Xpath2)).click();
 
 	        // Wait for error/validation message (optional wait can be added)
-	        String findText=driver.findElement(By.xpath(Xpath3)).getText();
+	        String findText=d().findElement(By.xpath(Xpath3)).getText();
 			   System.out.println(findText);
 			   
 			   if(givenText.equalsIgnoreCase(findText)){
@@ -521,8 +452,8 @@ public class SeleniumOperations
 	     try {
 		   String xpath=(String) inputparameters[0];
 		   //driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   Actions act=new Actions(driver);
-		   WebElement move = driver.findElement(By.xpath(xpath));
+		   Actions act=new Actions(d());
+		   WebElement move = d().findElement(By.xpath(xpath));
 		   act.moveToElement(move).build().perform();
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:actionClass, Input Given:"+inputparameters[0]);
@@ -539,8 +470,8 @@ public class SeleniumOperations
 		 try { 
 		 //String xpath=(String) inputparameters[0];
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		 //driver.findElement(By.xpath(xpath));
-		   Actions act=new Actions(driver);
+		 //d().findElement(By.xpath(xpath));
+		   Actions act=new Actions(d());
 		   Thread.sleep(2000);
 		   act.sendKeys(Keys.ARROW_DOWN).build().perform();
 		   Thread.sleep(2000);
@@ -562,9 +493,9 @@ public class SeleniumOperations
 			   String xpath=(String) inputparameters[0];
 			   String value=(String) inputparameters[1];
 			   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-			 WebElement sendxpath = driver.findElement(By.xpath(xpath));
+			 WebElement sendxpath = d().findElement(By.xpath(xpath));
 			 sendxpath.sendKeys(value);
-			   Actions act=new Actions(driver);
+			   Actions act=new Actions(d());
 			   Thread.sleep(2000);
 			   act.sendKeys(Keys.ARROW_DOWN).build().perform();
 			   Thread.sleep(2000);
@@ -585,8 +516,8 @@ public class SeleniumOperations
 		 try { 
 		 //String xpath=(String) inputparameters[0];
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		 //driver.findElement(By.xpath(xpath));
-		   Actions act=new Actions(driver);
+		 //d().findElement(By.xpath(xpath));
+		   Actions act=new Actions(d());
 		   Thread.sleep(2000);
 		   act.sendKeys(Keys.ARROW_DOWN).build().perform();
 		   Thread.sleep(2000);
@@ -607,8 +538,9 @@ public class SeleniumOperations
      public static Hashtable<String,Object> alert() {   
     	 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   Alert pass=driver.switchTo().alert();
+		   Alert pass=d().switchTo().alert();
 		   pass.accept();
+		   
 		 }
 		 catch(Exception e) {
 		   System.out.println(e);
@@ -620,9 +552,9 @@ public class SeleniumOperations
      public static Hashtable<String,Object> scrollUp() {
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   JavascriptExecutor js = (JavascriptExecutor) driver;
+		   JavascriptExecutor js = (JavascriptExecutor) d();
 		   js.executeScript("window.scrollBy(0,-750)");
-		   js.executeScript("window.scrollBy(0,250");
+		  // js.executeScript("window.scrollBy(0,250");
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
 		 }
@@ -643,19 +575,19 @@ public class SeleniumOperations
 		   String xpath5=(String) inputParameters[4];
 		   String xpath6=(String) inputParameters[5];
 		 //Click on calender symbol
-		   driver.findElement(By.xpath(xpath1)).click();
+		   d().findElement(By.xpath(xpath1)).click();
 		 //Select Date of birth
-		   driver.findElement(By.xpath(xpath2)).click();
+		   d().findElement(By.xpath(xpath2)).click();
 		   Thread.sleep(2000);
-		   driver.findElement(By.xpath(xpath3)).click();
+		   d().findElement(By.xpath(xpath3)).click();
 		 //Click On Year
-		   driver.findElement(By.xpath(xpath4)).click();
+		   d().findElement(By.xpath(xpath4)).click();
 		   Thread.sleep(2000);
 		 //Select month
-		   driver.findElement(By.xpath(xpath5)).click();
+		   d().findElement(By.xpath(xpath5)).click();
 		   Thread.sleep(2000);
 		 //Select Day
-		   driver.findElement(By.xpath(xpath6)).click();
+		   d().findElement(By.xpath(xpath6)).click();
 		   Thread.sleep(2000);
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
@@ -671,9 +603,9 @@ public class SeleniumOperations
      public static Hashtable<String,Object> scrolldown() {
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   WebDriverWait wait = new WebDriverWait(driver, 10);
+		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));;
 	        WebElement popup = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='modal-content'])[3]")));
-		   JavascriptExecutor down=(JavascriptExecutor) driver;
+		   JavascriptExecutor down=(JavascriptExecutor) d();
 		   //down.executeScript("window.scrollBy(0,1500)");//1050
 		   down.executeScript("arguments[0].scrollTop += 300", popup);
 		   Thread.sleep(2000);
@@ -688,8 +620,8 @@ public class SeleniumOperations
      }
      
      public static void enter() {
-    	 Actions actions = new Actions(driver);
-    	 WebElement element = driver.findElement(By.xpath("//*[@id='btnSave']"));
+    	 Actions actions = new Actions(d());
+    	 WebElement element = d().findElement(By.xpath("//*[@id='btnSave']"));
     	 actions.moveToElement(element).click().perform();
 
      }
@@ -700,7 +632,7 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
-	       WebElement remove=driver.findElement(By.xpath(strXpath));
+	       WebElement remove=d().findElement(By.xpath(strXpath));
 	       remove.clear();
 	       Thread.sleep(2000);
 	       remove.click();
@@ -721,7 +653,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
-	       WebElement remove=driver.findElement(By.xpath(strXpath));
+	       WebElement remove=d().findElement(By.xpath(strXpath));
 	       remove.clear();
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:clear, Input Given:"+inputparameters[1]);
@@ -739,14 +671,14 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
-		   driver.switchTo().frame(0);
-	       WebElement send=driver.findElement(By.xpath(strXpath));
+		   d().switchTo().frame(0);
+	       WebElement send=d().findElement(By.xpath(strXpath));
 	       send.clear();
 	       Thread.sleep(2000);
 	       send.click();
 	       send.sendKeys(strvalue);
 	       Thread.sleep(2000);
-	       driver.switchTo().defaultContent();
+	       d().switchTo().defaultContent();
 	       Thread.sleep(2000);
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
@@ -760,16 +692,16 @@ public class SeleniumOperations
 		 
 //Switch Window 		
      public static void transfer() {
-		 ((JavascriptExecutor)driver).executeScript("window.open()");
-         ArrayList<String> tab=new ArrayList<String>(driver.getWindowHandles());
-         driver.switchTo().window(tab.get(0));
+		 ((JavascriptExecutor)d()).executeScript("window.open()");
+         ArrayList<String> tab=new ArrayList<String>(d().getWindowHandles());
+         d().switchTo().window(tab.get(0));
      }	
 
 //Open New Tab
      public static void tab() {
-		 ((JavascriptExecutor)driver).executeScript("window.open()");
-		  ArrayList<String> tab=new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(tab.get(1));
+		 ((JavascriptExecutor)d()).executeScript("window.open()");
+		  ArrayList<String> tab=new ArrayList<String>(d().getWindowHandles());
+		  d().switchTo().window(tab.get(1));
      }
 
 //DropDown
@@ -777,18 +709,18 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String clickXpath = (String)inputparameters[0];
-		   driver.findElement(By.xpath(clickXpath)).click();
+		   d().findElement(By.xpath(clickXpath)).click();
 	 		//wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
 
 		 
 		   Thread.sleep(2000);
 		   String sendXpath = (String)inputparameters[1];
 		   String sendValue = (String)inputparameters[2];
-		   WebElement sendText = driver.findElement(By.xpath(sendXpath));
+		   WebElement sendText = d().findElement(By.xpath(sendXpath));
 		   sendText.clear();
 		   sendText.sendKeys(sendValue);
 		   String selectXpath = (String)inputparameters[3];
-		   driver.findElement(By.xpath(selectXpath)).click();
+		   d().findElement(By.xpath(selectXpath)).click();
 	       outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:Dropdown, Input Given:"+inputparameters[2]);
 	     }
@@ -808,12 +740,12 @@ public class SeleniumOperations
     	 
     	 String sendXpath = (String)inputparameters[1];
     	// Locate the dropdown element
-         WebElement genderDropdown = driver.findElement(By.xpath(clickXpath));
+         WebElement genderDropdown = d().findElement(By.xpath(clickXpath));
          
 
 
          // Hover/click using Actions class (optional interaction)
-         Actions actions = new Actions(driver);
+         Actions actions = new Actions(d());
          actions.moveToElement(genderDropdown).click().perform();
          
     	 // Get all dropdown <option> elements
@@ -871,7 +803,7 @@ public static Hashtable<String, Object> validateDob(Object[] inputparameters) {
     		 String clickXpath = (String)inputparameters[0];
     		 String expectedResult = (String)inputparameters[1];
     		 
-    		 WebElement dobField = driver.findElement(By.xpath(clickXpath)); // Replace with actual locator
+    		 WebElement dobField = d().findElement(By.xpath(clickXpath)); // Replace with actual locator
     		    String fieldValue = dobField.getAttribute("value").trim();
     		    boolean fieldIsToday = fieldValue.equals(today);
 
@@ -914,30 +846,45 @@ public static Hashtable<String, Object> validateDob(Object[] inputparameters) {
 
 //ValidateDOB
 public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
-  	 
-  	 try{
-  		// Format today's date dynamically
-  		 String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"));
-  		 String strXpath = (String)inputparameters[0];
-  		 driver.findElement(By.xpath(strXpath)).clear();
-  		 driver.findElement(By.xpath(strXpath)).sendKeys(today);
-	       outputparameters.put("STATUS","PASS");
-		   outputparameters.put("MESSAGE","Method Used:sendDate, Input Given:"+inputparameters[1]);
-	     
-  		
-  	 }
-  	 catch(Exception e) {
-  	       outputparameters.put("STATUS","FAIL");
-  		   outputparameters.put("MESSAGE","Method Used:sendDate, Input Given:"+inputparameters[0]);
-  	     }
-		return outputparameters;
-  	 }
+
+    Hashtable<String, Object> outputparameters = new Hashtable<>();
+
+    try {
+        String strXpath = (String) inputparameters[0];
+        String dateValue = (String) inputparameters[1];
+
+        String finalDate;
+
+        if ("Today".equalsIgnoreCase(dateValue)) {
+            finalDate = LocalDate.now()
+                    .format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"));
+        } else {
+            finalDate = dateValue;
+        }
+
+        WebElement element = d().findElement(By.xpath(strXpath));
+        element.clear();
+        element.sendKeys(finalDate);
+
+        outputparameters.put("STATUS", "PASS");
+        outputparameters.put("MESSAGE",
+                "Method Used: sendDate, Input Given: " + finalDate);
+
+    } catch (Exception e) {
+        outputparameters.put("STATUS", "FAIL");
+        outputparameters.put("MESSAGE",
+                "Method Used: sendDate, Error: " + e.getMessage());
+    }
+
+    return outputparameters;
+}
+	 
 
 //Navigate Back		 
      public static Hashtable<String,Object> navigateBack() {   
    		 try {
    		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-   		   driver.navigate().back();
+   		d().navigate().back();
    	    // outputparameters.put("STATUS","Pass");
    		// outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
    	     }
@@ -953,7 +900,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 	     try {  
 	       driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 	       String strXpath=(String)inputparameters[0]; 
-	       driver.navigate().to(strXpath);
+	       d().navigate().to(strXpath);
 	       outputparameters.put("STATUS","Pass");
 	       outputparameters.put("MESSAGE","Method Used:openApplication, Input Given:"+config.getApplicationUrl());
          }
@@ -968,8 +915,8 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static Hashtable<String,Object> scrollUp450() {
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   JavascriptExecutor js = (JavascriptExecutor) driver;
-	       js.executeScript("window.scrollBy(0,-150)");
+		   JavascriptExecutor js = (JavascriptExecutor) d();
+	       js.executeScript("window.scrollBy(0,-400)");
 	       outputparameters.put("STATUS","Pass");
 		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");
 		 }
@@ -987,10 +934,10 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	String input1 = (String)inputparameters[0];
     	String input2 = (String)inputparameters[1]; 
     	
-    	String  sumInsuredValue=driver.findElement(By.xpath(input1)).getText();
+    	String  sumInsuredValue=d().findElement(By.xpath(input1)).getText();
     	 System.out.println(sumInsuredValue);
     	 
-    	 String  rateValue=driver.findElement(By.xpath(input2)).getText();
+    	 String  rateValue=d().findElement(By.xpath(input2)).getText();
     	 System.out.println(rateValue);
     	// Assertions.assertEquals(sumInsuredValue, rateValue);
 		return outputparameters; 
@@ -1007,15 +954,15 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 
-    	Set<String> ids1 = driver.getWindowHandles();
+    	Set<String> ids1 = d().getWindowHandles();
     	
     	Iterator<String> values = ids1.iterator();    
     	String one = values.next();
     	String two = values.next();
     	
-        driver.switchTo().window(two);
+    	d().switchTo().window(two);
     	
-    	String url = driver.getCurrentUrl();
+    	String url = d().getCurrentUrl();
     	System.out.println(url);
     	 
     	URL pdfUrl = new URL(url);
@@ -1049,7 +996,140 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 		return outputparameters;
  		 	 
    	 }
-    	
+     public static Hashtable<String, Object> printReport1() {
+
+    	    Hashtable<String, Object> output = new Hashtable<>();
+    	    WebDriver driver = d(); // ThreadLocal driver
+
+    	    try {
+
+    	        String mainWindow = driver.getWindowHandle();
+    	        String pdfWindow = null;
+
+    	        // ======================================
+    	        // STEP 1: Detect new window manually
+    	        // ======================================
+    	        long startTime = System.currentTimeMillis();
+    	        long timeout = 30000; // 30 seconds
+
+    	        while ((System.currentTimeMillis() - startTime) < timeout) {
+
+    	            Set<String> handles = driver.getWindowHandles();
+
+    	            if (handles.size() > 1) {
+
+    	                for (String handle : handles) {
+    	                    if (!handle.equals(mainWindow)) {
+    	                        pdfWindow = handle;
+    	                        break;
+    	                    }
+    	                }
+
+    	                if (pdfWindow != null)
+    	                    break;
+    	            }
+
+    	            Thread.sleep(1000);
+    	        }
+
+    	        if (pdfWindow == null) {
+    	            throw new TimeoutException("PDF window did not open within 30 seconds.");
+    	        }
+
+    	        // ======================================
+    	        // STEP 2: Switch to PDF tab
+    	        // ======================================
+    	        driver.switchTo().window(pdfWindow);
+
+    	        // ======================================
+    	        // STEP 3: Wait until URL is valid
+    	        // ======================================
+    	        startTime = System.currentTimeMillis();
+
+    	        while ((System.currentTimeMillis() - startTime) < timeout) {
+
+    	            String url = driver.getCurrentUrl();
+
+    	            if (url != null &&
+    	                !url.contains("about:blank") &&
+    	                url.length() > 15) {
+
+    	                break;
+    	            }
+
+    	            Thread.sleep(1000);
+    	        }
+
+    	        String pdfUrlString = driver.getCurrentUrl();
+
+    	        if (pdfUrlString == null || pdfUrlString.contains("about:blank")) {
+    	            throw new TimeoutException("PDF URL not loaded properly.");
+    	        }
+
+    	        System.out.println("✅ PDF URL: " + pdfUrlString);
+
+    	        // ======================================
+    	        // STEP 4: Open URL connection
+    	        // ======================================
+    	        URL pdfUrl = new URL(pdfUrlString);
+    	        URLConnection connection = pdfUrl.openConnection();
+
+    	        connection.addRequestProperty("User-Agent", "Mozilla/5.0");
+    	        connection.setConnectTimeout(30000);
+    	        connection.setReadTimeout(120000); // 2 min for large PDFs
+
+    	        // ======================================
+    	        // STEP 5: Load PDF
+    	        // ======================================
+    	        PDDocument pdfDocument;
+
+    	        try (InputStream inputStream = connection.getInputStream();
+    	             BufferedInputStream bufferedStream =
+    	                     new BufferedInputStream(inputStream)) {
+
+    	            pdfDocument = PDDocument.load(bufferedStream);
+    	        }
+
+    	        int totalPages = pdfDocument.getNumberOfPages();
+    	        PDFTextStripper stripper = new PDFTextStripper();
+    	        String pdfText = stripper.getText(pdfDocument);
+
+    	        pdfDocument.close();
+
+    	        // ======================================
+    	        // STEP 6: Store result
+    	        // ======================================
+    	        output.put("PDF_URL", pdfUrlString);
+    	        output.put("PDF_PAGE_COUNT", totalPages);
+    	        output.put("PDF_TEXT_SAMPLE",
+    	                pdfText.substring(0, Math.min(500, pdfText.length())));
+    	        output.put("STATUS", "Pass");
+    	        output.put("MESSAGE", "Report verified successfully. Pages: " + totalPages);
+    	     
+    	        // ======================================
+    	        // STEP 7: Close PDF tab and return
+    	        // ======================================
+    	        driver.close();
+    	        driver.switchTo().window(mainWindow);
+
+    	    } catch (Exception e) {
+
+    	        StringWriter sw = new StringWriter();
+    	        e.printStackTrace(new PrintWriter(sw));
+
+    	        output.put("STATUS", "Fail");
+    	        output.put("MESSAGE", sw.toString());
+    	    }
+
+    	    return output;
+    	}
+
+
+
+
+
+
+
 //printQuote     
         
        /* public static Hashtable<String, Object> printQuote(Object[] inputparameters) throws IOException {
@@ -1059,20 +1139,20 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
        	String fieldName = ((String) inputparameters[0]).trim();
         System.out.println(fieldName);
         // 💡 Step 1: Get Client Name from UI before switching to PDF tab
-       	String getClientName = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText(); 
+       	String getClientName = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText(); 
        	String ClientNameFromUI =getClientName.toUpperCase();
        	//System.out.println("🔍 Client Name from UI: " + ClientNameFromUI);
         
        	// 💡 Step 2: Get quote number from UI before switching to PDF tab
-       	String quoteNumberFromUI = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText(); 
+       	String quoteNumberFromUI = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText(); 
        	//System.out.println("🔍 Quote Number from UI: " + quoteNumberFromUI);
         
        	// 💡 Step 3: Get amount payable from UI before switching to PDF tab
-       	String amountPayableFromUI = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]/*[1]")).getText(); 
+       	String amountPayableFromUI = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]/*[1]")).getText(); 
        	//System.out.println("🔍 Amount Payable from UI: " + amountPayableFromUI);
         
        	// 💡 Step 4: Get insurance type from UI before switching to PDF tab
-       	String getInsuranceType = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText(); 
+       	String getInsuranceType = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText(); 
        	String InsuranceTypeFromUI =getInsuranceType.toUpperCase();
        	//System.out.println("🔍 Insurance Type from UI: " + InsuranceTypeFromUI);
        	
@@ -1200,26 +1280,26 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        //System.out.println("🔍 Checking field: " + fieldName);
 
     	        // ✅ Store current (main) window
-    	        String mainWindow = driver.getWindowHandle();
+    	        String mainWindow = d().getWindowHandle();
 
     	        // ✅ Get expected values from UI BEFORE switching to PDF
     	        Map<String, String> expectedValues = new HashMap<>();
-    	        expectedValues.put("Client Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText().toUpperCase());
-    	        expectedValues.put("Quote Number", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText());
-    	        expectedValues.put("Premium Amount", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]/*[1]")).getText());
-    	        expectedValues.put("Insurance Type", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText().toUpperCase());
+    	        expectedValues.put("Client Name", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText().toUpperCase());
+    	        expectedValues.put("Quote Number", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText());
+    	        expectedValues.put("Premium Amount", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]/*[1]")).getText());
+    	        expectedValues.put("Insurance Type", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText().toUpperCase());
 
     	        // ✅ Now switch to PDF tab
     	        Set<String> ids = driver.getWindowHandles();
     	        for (String id : ids) {
     	            if (!id.equals(mainWindow)) {
-    	                driver.switchTo().window(id);
+    	            	d().switchTo().window(id);
     	                break;
     	            }
     	        }
 
     	        // ✅ Read PDF
-    	        URL pdfUrl = new URL(driver.getCurrentUrl());
+    	        URL pdfUrl = new URL(d().getCurrentUrl());
     	        URLConnection urlConnection = pdfUrl.openConnection();
     	        urlConnection.addRequestProperty("User-Agent", "Chrome");
 
@@ -1243,7 +1323,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        }
 
     	        // ✅ Switch back to main tab for next field
-    	        driver.switchTo().window(mainWindow);
+    	        d().switchTo().window(mainWindow);
 
     	    } catch (Exception e) {
     	        e.printStackTrace();
@@ -1269,10 +1349,10 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	    
  	        // ✅ Get expected values from UI BEFORE switching to PDF
  	        Map<String, String> expectedValues = new HashMap<>();
- 	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText().toUpperCase());
- 	        expectedValues.put("Cover Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[3]")).getText());
- 	        expectedValues.put("Insured Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
- 	        expectedValues.put("Insurance Type", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+ 	        expectedValues.put("Risk Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText().toUpperCase());
+ 	        expectedValues.put("Cover Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[3]")).getText());
+ 	        expectedValues.put("Insured Name", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
+ 	        expectedValues.put("Insurance Type", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
 
  	    
  	        // ✅ Now switch to PDF tab
@@ -1332,47 +1412,47 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        String vatAmountXpath = ((String)inputparameters[3]);
 
     	        // ✅ Store current (main) window
-    	        String mainWindow = driver.getWindowHandle();
+    	        String mainWindow = d().getWindowHandle();
 
     	        // ✅ Get expected values from UI BEFORE switching to PDF
     	        Map<String, String> expectedValues = new HashMap<>();
-    	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText().toUpperCase());
-    	        expectedValues.put("Cover Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[3]")).getText());
-    	        expectedValues.put("Date Of Issue", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]/*[1]")).getText());
-    	        expectedValues.put("Policy No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]/*[3]")).getText());
-    	        expectedValues.put("Insurer", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]")).getText());
-    	        expectedValues.put("Insured Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
-    	        expectedValues.put("Insurance Type", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+    	        expectedValues.put("Risk Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[1]")).getText().toUpperCase());
+    	        expectedValues.put("Cover Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]/*[3]")).getText());
+    	        expectedValues.put("Date Of Issue", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]/*[1]")).getText());
+    	        expectedValues.put("Policy No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]/*[3]")).getText());
+    	        expectedValues.put("Insurer", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]")).getText());
+    	        expectedValues.put("Insured Name", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
+    	        expectedValues.put("Insurance Type", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
 
     	        Thread.sleep(2000);
     	        // ✅ Step 1: Click on Display icon
-    	        WebElement displayIcon = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[10]/*[4]")); 
+    	        WebElement displayIcon = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[10]/*[4]")); 
     	        displayIcon.click();
     	        Thread.sleep(2000);
 
     	        // ✅ Step 2: Capture values from Display screen
-    	        String premiumValue = driver.findElement(By.xpath(premiumXpath)).getAttribute("value");
+    	        String premiumValue = d().findElement(By.xpath(premiumXpath)).getAttribute("value");
     	        expectedValues.put("Premium", premiumValue);
-    	        String totalReceivable = driver.findElement(By.xpath(totalReceivableXpath)).getAttribute("value");
+    	        String totalReceivable = d().findElement(By.xpath(totalReceivableXpath)).getAttribute("value");
     	        expectedValues.put("Total Receivable", totalReceivable);
-    	        String vatAmount = driver.findElement(By.xpath(vatAmountXpath)).getAttribute("value");
+    	        String vatAmount = d().findElement(By.xpath(vatAmountXpath)).getAttribute("value");
     	        expectedValues.put("VAT Amount", vatAmount);
     	        Thread.sleep(2000);
     	        // ✅ Step 3: Close the display popup
-    	        WebElement closeBtn = driver.findElement(By.xpath("//*[@id='btnCancel']"));
+    	        WebElement closeBtn = d().findElement(By.xpath("//*[@id='btnCancel']"));
     	        closeBtn.click();
 
     	        // ✅ Step 4: Switch to PDF tab
-    	        Set<String> ids = driver.getWindowHandles();
+    	        Set<String> ids = d().getWindowHandles();
     	        for (String id : ids) {
     	            if (!id.equals(mainWindow)) {
-    	                driver.switchTo().window(id);
+    	            	d().switchTo().window(id);
     	                break;
     	            }
     	        }
 
     	        // ✅ Read PDF
-    	        URL pdfUrl = new URL(driver.getCurrentUrl());
+    	        URL pdfUrl = new URL(d().getCurrentUrl());
     	        URLConnection urlConnection = pdfUrl.openConnection();
     	        urlConnection.addRequestProperty("User-Agent", "Chrome");
 
@@ -1477,7 +1557,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        }
 
     	        // ✅ Switch back to main tab
-    	        driver.switchTo().window(mainWindow);
+    	        d().switchTo().window(mainWindow);
 
     	    } catch (Exception e) {
     	        e.printStackTrace();
@@ -1500,18 +1580,18 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	        String sumInsuredXpath = ((String)inputparameters[3]);
 
  	        // ✅ Store current (main) window
- 	        String mainWindow = driver.getWindowHandle();
+ 	        String mainWindow = d().getWindowHandle();
 
  	        // ✅ Get expected values from UI BEFORE switching to PDF
  	        Map<String, String> expectedValues = new HashMap<>();
- 	        expectedValues.put("System Claim No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[1]")).getText().toUpperCase());
- 	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
- 	        expectedValues.put("CoverNote No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
- 	        expectedValues.put("Claimant Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+ 	        expectedValues.put("System Claim No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[1]")).getText().toUpperCase());
+ 	        expectedValues.put("Risk Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
+ 	        expectedValues.put("CoverNote No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
+ 	        expectedValues.put("Claimant Name", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
 
  	        Thread.sleep(2000);
  	        // ✅ Step 1: Click on Display icon
- 	        WebElement displayIcon = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[1]")); 
+ 	        WebElement displayIcon = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[1]")); 
  	        displayIcon.click();
  	        Thread.sleep(5000);
  	        
@@ -1519,30 +1599,30 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 		   down.executeScript("window.scrollBy(0,1000)");//1050
 
  	        // ✅ Step 2: Capture values from Display screen
-		   WebElement policyElement = driver.findElement(By.xpath(typeOfPolicyXpath));
+		   WebElement policyElement = d().findElement(By.xpath(typeOfPolicyXpath));
 		   String typeOfPolicy = policyElement.getText().trim();
 		   expectedValues.put("Type Of Policy", typeOfPolicy);
- 	        String policyNo = driver.findElement(By.xpath(policyNoXpath)).getAttribute("value");
+ 	        String policyNo = d().findElement(By.xpath(policyNoXpath)).getAttribute("value");
  	        expectedValues.put("Policy No", policyNo);
- 	        String sumInsured = driver.findElement(By.xpath(sumInsuredXpath)).getAttribute("value");
+ 	        String sumInsured = d().findElement(By.xpath(sumInsuredXpath)).getAttribute("value");
  	        expectedValues.put("Sum Insured", sumInsured);
  	        
  	        Thread.sleep(2000);
  	        // ✅ Step 3: Close the display popup
- 	        WebElement closeBtn = driver.findElement(By.xpath("//*[@id='btnCancel']"));
+ 	        WebElement closeBtn = d().findElement(By.xpath("//*[@id='btnCancel']"));
  	        closeBtn.click();
 
  	        // ✅ Step 4: Switch to PDF tab
- 	        Set<String> ids = driver.getWindowHandles();
+ 	        Set<String> ids = d().getWindowHandles();
  	        for (String id : ids) {
  	            if (!id.equals(mainWindow)) {
- 	                driver.switchTo().window(id);
+ 	            	d().switchTo().window(id);
  	                break;
  	            }
  	        }
 
  	        // ✅ Read PDF
- 	        URL pdfUrl = new URL(driver.getCurrentUrl());
+ 	        URL pdfUrl = new URL(d().getCurrentUrl());
  	        URLConnection urlConnection = pdfUrl.openConnection();
  	        urlConnection.addRequestProperty("User-Agent", "Chrome");
 
@@ -1618,7 +1698,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	        }
 
  	        // ✅ Switch back to main tab
- 	        driver.switchTo().window(mainWindow);
+ 	       d().switchTo().window(mainWindow);
 
  	    } catch (Exception e) {
  	        e.printStackTrace();
@@ -1642,20 +1722,20 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
   	        String totalPremiumXpath = ((String)inputparameters[4]);
 
   	        // ✅ Store current (main) window
-  	        String mainWindow = driver.getWindowHandle();
+  	        String mainWindow = d().getWindowHandle();
 
   	        // ✅ Get expected values from UI BEFORE switching to PDF
   	        Map<String, String> expectedValues = new HashMap<>();
-  	        expectedValues.put("Endorsement No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[1]")).getText().toUpperCase());
-  	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]")).getText());
-  	        expectedValues.put("Branch", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
-  	        expectedValues.put("Date", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
-  	        expectedValues.put("Insured Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
-  	        expectedValues.put("Insurance Company", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]")).getText());
+  	        expectedValues.put("Endorsement No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[1]")).getText().toUpperCase());
+  	        expectedValues.put("Risk Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]")).getText());
+  	        expectedValues.put("Branch", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
+  	        expectedValues.put("Date", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
+  	        expectedValues.put("Insured Name", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+  	        expectedValues.put("Insurance Company", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]")).getText());
 
   	        Thread.sleep(2000);
   	        // ✅ Step 1: Click on Display icon
-  	        WebElement displayIcon = driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr[1]/td[11]/*[1]")); 
+  	        WebElement displayIcon = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr[1]/td[11]/*[1]")); 
   	        displayIcon.click();
   	        Thread.sleep(5000);
   	        
@@ -1663,32 +1743,32 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  		   down.executeScript("window.scrollBy(0,1000)");//1050
 
   	        // ✅ Step 2: Capture values from Display screen
- 		   WebElement policyElement = driver.findElement(By.xpath(newPremiumXpath));
+ 		   WebElement policyElement = d().findElement(By.xpath(newPremiumXpath));
  		   String newPremium = policyElement.getText().trim();
  		   expectedValues.put("New Premium", newPremium);
-  	        String actualPremium = driver.findElement(By.xpath(actualPremiumXpath)).getAttribute("value");
+  	        String actualPremium = d().findElement(By.xpath(actualPremiumXpath)).getAttribute("value");
   	        expectedValues.put("Actual Premium", actualPremium);
-  	        String vatAmount = driver.findElement(By.xpath(vatAmountXpath)).getAttribute("value");
+  	        String vatAmount = d().findElement(By.xpath(vatAmountXpath)).getAttribute("value");
   	        expectedValues.put("VAT Amount", vatAmount);
-  	        String totalPremium = driver.findElement(By.xpath(totalPremiumXpath)).getAttribute("value");
+  	        String totalPremium = d().findElement(By.xpath(totalPremiumXpath)).getAttribute("value");
 	        expectedValues.put("Total Premium", totalPremium);
   	        
   	        Thread.sleep(2000);
   	        // ✅ Step 3: Close the display popup
-  	        WebElement closeBtn = driver.findElement(By.xpath("//*[@id='btnBack']"));
+  	        WebElement closeBtn = d().findElement(By.xpath("//*[@id='btnBack']"));
   	        closeBtn.click();
 
   	        // ✅ Step 4: Switch to PDF tab
-  	        Set<String> ids = driver.getWindowHandles();
+  	        Set<String> ids = d().getWindowHandles();
   	        for (String id : ids) {
   	            if (!id.equals(mainWindow)) {
-  	                driver.switchTo().window(id);
+  	            	d().switchTo().window(id);
   	                break;
   	            }
   	        }
 
   	        // ✅ Read PDF
-  	        URL pdfUrl = new URL(driver.getCurrentUrl());
+  	        URL pdfUrl = new URL(d().getCurrentUrl());
   	        URLConnection urlConnection = pdfUrl.openConnection();
   	        urlConnection.addRequestProperty("User-Agent", "Chrome");
 
@@ -1764,7 +1844,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
   	        }
 
   	        // ✅ Switch back to main tab
-  	        driver.switchTo().window(mainWindow);
+  	      d().switchTo().window(mainWindow);
 
   	    } catch (Exception e) {
   	        e.printStackTrace();
@@ -1780,7 +1860,11 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static void browserClose() {
     	 try {
     		 driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-    	 driver.quit();
+    		 if (getDriver() != null) {
+    		        getDriver().quit();      // Quit only current thread's driver
+    		        threadDriver.remove();   // Clean up ThreadLocal
+    		        threadConfig.remove();   // Clean up ThreadLocal config
+    		    }
     	 }
     	 catch(Exception e) {
     		 outputparameters.put("STATUS","Fail");
@@ -1794,14 +1878,14 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static void calculate(Object[] inputparameters) {
     	try { 
     	 String output = (String)inputparameters[0];
-    	WebElement text = driver.findElement(By.xpath(output));
+    	WebElement text = d().findElement(By.xpath(output));
     	String pass =text.getText();
     	System.out.println(pass); 
     	}
     	catch(Exception e) {
     		System.out.println(e);
     	}
-    	/*List<WebElement> test = driver.findElements(By.xpath(output));
+    	/*List<WebElement> test = d().findElements(By.xpath(output));
         
         for(WebElement i:test) {
         	
@@ -1820,7 +1904,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     		//Get Vatt on commission for equal or check
     	       
     	       String output1 = (String)inputparameters[0];
-    	   	WebElement vattOnCommssionValue = driver.findElement(By.xpath(output1));
+    	   	WebElement vattOnCommssionValue = d().findElement(By.xpath(output1));
     	   	String vattOnCommssionStringValue = vattOnCommssionValue.getAttribute("value");
     	   	String clearValue1=vattOnCommssionStringValue.replaceAll(",", "");
     	   	//System.out.println(clearValue1);
@@ -1829,7 +1913,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	       if(percentage1!=0) {
     		//VATT on commission calculate by percent
     		String output = (String)inputparameters[1];
-    	WebElement commissionValue = driver.findElement(By.xpath(output));
+    	WebElement commissionValue = d().findElement(By.xpath(output));
     	String CommissionStringValue =commissionValue.getAttribute("value");
     	String commissionClearValue=CommissionStringValue.replaceAll(",", "");
     	double commissionClearValue0 =Double.parseDouble(commissionClearValue);
@@ -1861,7 +1945,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
    	 
    	 //Get Total Commission for equal or check
    	 String output2 = (String)inputparameters[2];
-    	WebElement totalCommissionValue = driver.findElement(By.xpath(output2));
+    	WebElement totalCommissionValue = d().findElement(By.xpath(output2));
     	String totalCommissionStringValue =totalCommissionValue.getAttribute("value");
     	String clearValue2=totalCommissionStringValue.replaceAll(",", "");
     	System.out.println(clearValue2);
@@ -1886,8 +1970,8 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      
      public static void CalculateSumOfColumn(Object[] inputparameters) {
     	 String input = (String)inputparameters[0];
-    	// WebElement colunmValues = (WebElement) driver.findElements(By.xpath(input));
-    	 List<WebElement> colunmValues = driver.findElements(By.xpath(input));
+    	// WebElement colunmValues = (WebElement) d().findElements(By.xpath(input));
+    	 List<WebElement> colunmValues = d().findElements(By.xpath(input));
     	int t = colunmValues.size();
     	for(int i = 0;i<t;i++) {
         String finalValues = colunmValues.get(i).getText();
@@ -1904,7 +1988,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	SoftAssert SoftAssert = new SoftAssert();
     	 String xpath = (String) inputparameters[0];
     	 String text = (String) inputparameters[1];
-    	 WebElement dashboardTitle = driver.findElement(By.xpath(xpath)); // replace with actual ID
+    	 WebElement dashboardTitle = d().findElement(By.xpath(xpath)); // replace with actual ID
          //System.out.println(dashboardTitle.getText());
          //SoftAssert.assertEquals(dashboardTitle.getText(), text);
          SoftAssert.assertEquals(dashboardTitle.getText(), text, "fail");
@@ -1919,7 +2003,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static String getQuote1(String quoteName) {
     	 try {
     		    // Locate the insurance table
-    		    WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+    		    WebElement table = d().findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
 
     		    // Get all rows of the table
     		    List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr")); // Get all rows
@@ -1959,7 +2043,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	        while (true) {
     	            // Locate table and rows
-    	            WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']"));
+    	            WebElement table = d().findElement(By.xpath("//*[@id='sort_table']"));
     	            List<WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
 
     	            for (WebElement row : rows) {
@@ -1980,7 +2064,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	            // Check for pagination only if not found yet
     	            if (!found) {
-    	                WebElement nextButton = driver.findElement(By.xpath("//*[@id='sort_table_next']"));
+    	                WebElement nextButton = d().findElement(By.xpath("//*[@id='sort_table_next']"));
     	                String nextClass = nextButton.getAttribute("class");
 
     	                if (nextClass != null && nextClass.contains("disabled")) {
@@ -2012,7 +2096,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	    try {
     	        while (true) {
     	            // Locate the insurance table
-    	            WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']"));
+    	            WebElement table = d().findElement(By.xpath("//*[@id='sort_table']"));
 
     	            // Get all rows of the table
     	            List<WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
@@ -2033,7 +2117,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	            }
 
     	            // Check for pagination
-    	            WebElement nextButton = driver.findElement(By.xpath("//*[@id='sort_table_next']"));
+    	            WebElement nextButton = d().findElement(By.xpath("//*[@id='sort_table_next']"));
     	            String nextClass = nextButton.getAttribute("class");
 
     	            if (nextClass != null && nextClass.contains("disabled")) {
@@ -2065,7 +2149,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	    try {
     	        while (true) {
     	            // Locate the insurance table
-    	            WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']"));
+    	            WebElement table = d().findElement(By.xpath("//*[@id='sort_table']"));
 
     	            // Get all rows of the table
     	            List<WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
@@ -2086,7 +2170,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	            }
 
     	            // Check for pagination
-    	            WebElement nextButton = driver.findElement(By.xpath("//*[@id='sort_table_next']"));
+    	            WebElement nextButton = d().findElement(By.xpath("//*[@id='sort_table_next']"));
     	            String nextClass = nextButton.getAttribute("class");
 
     	            if (nextClass != null && nextClass.contains("disabled")) {
@@ -2119,7 +2203,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static String getClaimId(String quoteName) {
     	 try {
     		    // Locate the insurance table
-    		    WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+    		    WebElement table = d().findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
 
     		    // Get all rows of the table
     		    List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr")); // Get all rows
@@ -2156,7 +2240,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	    String lastRiskNoteNumber = null; // store the latest valid risk note
 
  	    try {
- 	        WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); 
+ 	        WebElement table = d().findElement(By.xpath("//*[@id='sort_table']")); 
  	        List<WebElement> rows = table.findElements(By.xpath("./tbody/tr")); // get all rows
 
  	        for (int i = 1; i <= rows.size(); i++) {
@@ -2182,16 +2266,16 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	                issueClaimBtn.click();
 
  	                // Report Claim
- 	                WebElement reportClaimBtn = driver.findElement(
+ 	                WebElement reportClaimBtn = d().findElement(
  	                    By.xpath("//*[@id='sort_table']/tbody/tr[" + i + "]/td[10]/*[6]/*[2]/*[5]")
  	                );
  	                reportClaimBtn.click();
 
  	                // Exit Claim Page
- 	                WebElement exit = driver.findElement(By.xpath("//*[@id='btnClaimExit']"));
+ 	                WebElement exit = d().findElement(By.xpath("//*[@id='btnClaimExit']"));
  	                exit.click();
  	             // ✅ After exit, table may reload → refresh rows reference
- 	                rows = driver.findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
+ 	                rows = d().findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
  	                // ✅ Continue to check next rows also
  	                //continue;
  	            }
@@ -2230,7 +2314,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        }
 
     	        // Upload via Selenium
-    	        WebElement uploadInput = driver.findElement(By.xpath("//*[@id='files']"));
+    	        WebElement uploadInput = d().findElement(By.xpath("//*[@id='files']"));
     	        uploadInput.sendKeys(file.getAbsolutePath());
     	        Thread.sleep(2000); // optional wait for upload to register
 
@@ -2274,7 +2358,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        System.out.println("🔍 Starting validation for searchType: " + searchType + " | Value: " + expectedValue);
 
     	        // Step 1: Capture total entries
-    	        WebElement entriesTextElement = driver.findElement(By.xpath("//*[@id='sort_table_info']"));
+    	        WebElement entriesTextElement = d().findElement(By.xpath("//*[@id='sort_table_info']"));
     	        String entriesText = entriesTextElement.getText().trim();
     	        System.out.println("📊 Pagination info: " + entriesText);
 
@@ -2301,7 +2385,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	        // Step 3: Start pagination loop
     	        while (true) {
-    	            WebElement resultsTable = driver.findElement(By.xpath("//*[@id='sort_table']"));
+    	            WebElement resultsTable = d().findElement(By.xpath("//*[@id='sort_table']"));
     	            List<WebElement> rows = resultsTable.findElements(By.xpath(".//tbody/tr"));
     	            System.out.println("📄 Found " + rows.size() + " rows on this page.");
 
@@ -2323,15 +2407,15 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	                        String actualPopupValue = "";
 
     	                        if (searchType.equalsIgnoreCase("email")) {
-    	                            WebElement emailField = driver.findElement(By.xpath("//*[@id='txtEmail1']"));
+    	                            WebElement emailField = d().findElement(By.xpath("//*[@id='txtEmail1']"));
     	                            actualPopupValue = emailField.getAttribute("value").trim();
 
     	                        } else if (searchType.equalsIgnoreCase("accountnumber")) {
-    	                            WebElement accField = driver.findElement(By.xpath("//*[@id='txtCltRefID']"));
+    	                            WebElement accField = d().findElement(By.xpath("//*[@id='txtCltRefID']"));
     	                            actualPopupValue = accField.getAttribute("value").trim();
 
     	                        } else if (searchType.equalsIgnoreCase("dateofbirth")) {
-    	                            WebElement clientField = driver.findElement(By.xpath("//*[@id='MainContent_txtDOB']"));
+    	                            WebElement clientField = d().findElement(By.xpath("//*[@id='MainContent_txtDOB']"));
     	                            actualPopupValue = clientField.getAttribute("value").trim();
     	                        }
 
@@ -2345,7 +2429,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	                        // Close popup safely
     	                        try {
-    	                            WebElement closeBtn = driver.findElement(By.xpath("//*[@id='btnCancel']"));
+    	                            WebElement closeBtn = d().findElement(By.xpath("//*[@id='btnCancel']"));
     	                            closeBtn.click();
     	                            Thread.sleep(500);
     	                            break;
@@ -2374,7 +2458,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	            }
 
     	            // Step 4: Handle pagination
-    	            WebElement nextButton = driver.findElement(By.xpath("//*[@id='sort_table_next']"));
+    	            WebElement nextButton = d().findElement(By.xpath("//*[@id='sort_table_next']"));
     	            String nextClass = nextButton.getAttribute("class");
 
     	            if (nextClass != null && nextClass.contains("disabled")) {
@@ -2438,7 +2522,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        document.close();
 
     	        // Upload file using Selenium
-    	        WebElement uploadInput = driver.findElement(By.xpath("//*[@id='files']"));
+    	        WebElement uploadInput = d().findElement(By.xpath("//*[@id='files']"));
     	        uploadInput.sendKeys(file.getAbsolutePath());
     	        Thread.sleep(2000);
 
@@ -2498,7 +2582,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        double finalSizeKB = (double) file.length() / 1024.0;
 
     	        // Step 3: Upload file using Selenium
-    	        WebElement uploadInput = driver.findElement(By.xpath("//*[@id='files']"));
+    	        WebElement uploadInput = d().findElement(By.xpath("//*[@id='files']"));
     	        uploadInput.sendKeys(file.getAbsolutePath());
     	        Thread.sleep(1500);
 
@@ -2527,25 +2611,25 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
  	        // ✅ Get expected values from UI BEFORE switching to PDF
  	        Map<String, String> expectedValues = new HashMap<>();
- 	        expectedValues.put("Credit No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]")).getText().toUpperCase());
- 	        expectedValues.put("Risk Note No", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
- 	        expectedValues.put("Name", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
- 	        expectedValues.put("Amount", driver.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]")).getText());
+ 	        expectedValues.put("Credit No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[2]")).getText().toUpperCase());
+ 	        expectedValues.put("Risk Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
+ 	        expectedValues.put("Name", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+ 	        expectedValues.put("Amount", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[7]")).getText());
 
  	        Thread.sleep(2000);
  	        
 
  	        // ✅ Step 4: Switch to PDF tab
- 	        Set<String> ids = driver.getWindowHandles();
+ 	        Set<String> ids = d().getWindowHandles();
  	        for (String id : ids) {
  	            if (!id.equals(mainWindow)) {
- 	                driver.switchTo().window(id);
+ 	            	d().switchTo().window(id);
  	                break;
  	            }
  	        }
 
  	        // ✅ Read PDF
- 	        URL pdfUrl = new URL(driver.getCurrentUrl());
+ 	        URL pdfUrl = new URL(d().getCurrentUrl());
  	        URLConnection urlConnection = pdfUrl.openConnection();
  	        urlConnection.addRequestProperty("User-Agent", "Chrome");
 
@@ -2621,7 +2705,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	        }
 
  	        // ✅ Switch back to main tab
- 	        driver.switchTo().window(mainWindow);
+ 	       d().switchTo().window(mainWindow);
 
  	    } catch (Exception e) {
  	        e.printStackTrace();
@@ -2632,7 +2716,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	    return outputparameters;
  	}
 
-     public static LocalDate resolveDate(String startDateType) {
+    /* public static LocalDate resolveDate(String startDateType) {
 
     	    if (startDateType.equalsIgnoreCase("Today")) {
     	        return LocalDate.now();
@@ -2650,7 +2734,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static void selectDateFromCalendar(LocalDate targetDate) {
 
     	    // 1. Open the calendar
-    	    driver.findElement(By.id("MainContent_txtFromDate")).click();
+    	    d().findElement(By.id("MainContent_txtFromDate")).click();
 
     	    // 2. XPaths based on your DOM
     	    By monthYearHeader = By.xpath("//th[@class='datepicker-switch']");
@@ -2662,7 +2746,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	    // 3. Navigate until correct month-year appears
     	    while (true) {
 
-    	        String displayed = driver.findElement(monthYearHeader).getText().trim();
+    	        String displayed = d().findElement(monthYearHeader).getText().trim();
     	        YearMonth displayedYM = YearMonth.parse(displayed, headerFormatter);
     	        YearMonth targetYM = YearMonth.from(targetDate);
 
@@ -2672,24 +2756,366 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	        if (displayedYM.isBefore(targetYM)) {
     	            // Move forward → 
-    	            driver.findElement(nextButton).click();
+    	            d().findElement(nextButton).click();
     	        } else {
     	            // Move backward ←
-    	            driver.findElement(prevButton).click();
+    	            d().findElement(prevButton).click();
     	        }
     	    }
 
     	    // 4. Select day
     	    String dayXpath = "//td[contains(@class,'day') and text()='" + targetDate.getDayOfMonth() + "']";
-    	    driver.findElement(By.xpath(dayXpath)).click();
+    	    d().findElement(By.xpath(dayXpath)).click();
+    	}*/
+     
+     public static LocalDate resolveDate(String startDateType) {
+
+    	    if (startDateType.equalsIgnoreCase("Today")) {
+    	        return LocalDate.now();
+    	    } 
+    	    else if (startDateType.equalsIgnoreCase("BackDate")) {
+    	        return LocalDate.now().minusDays(5);
+    	    } 
+    	    else {
+    	        return LocalDate.parse(startDateType); // yyyy-MM-dd
+    	    }
     	}
 
+     public static void selectDateFromCalendar(
+    	        String elementIdToOpenCalendar,
+    	        String monthYearHeaderXpath,
+    	        String prevButtonXpath,
+    	        String nextButtonXpath,
+    	        LocalDate targetDate) {
+
+    	    // 1. Open the calendar
+    	    d().findElement(By.id(elementIdToOpenCalendar)).click();
+
+    	    By monthYearHeader = By.xpath(monthYearHeaderXpath);
+    	    By prevButton = By.xpath(prevButtonXpath);
+    	    By nextButton = By.xpath(nextButtonXpath);
+
+    	    DateTimeFormatter headerFormatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+
+    	    // 2. Loop until correct month-year is displayed
+    	    while (true) {
+    	        String displayed = d().findElement(monthYearHeader).getText().trim();
+    	        YearMonth displayedYM = YearMonth.parse(displayed, headerFormatter);
+    	        YearMonth targetYM = YearMonth.from(targetDate);
+
+    	        if (displayedYM.equals(targetYM)) {
+    	            break; // Found correct month-year
+    	        }
+
+    	        if (displayedYM.isBefore(targetYM)) {
+    	            d().findElement(nextButton).click();    // →
+    	        } else {
+    	            d().findElement(prevButton).click();    // ←
+    	        }
+    	    }
+
+    	    // 3. Select day
+    	    String dayXpath = String.format("//td[contains(@class,'day') and text()='%d']",
+    	            targetDate.getDayOfMonth());
+
+    	    d().findElement(By.xpath(dayXpath)).click();
+    	}
+  // Event wrapper called from step definition
+     public static void selectDateFromCalendarEvent(
+             String elementId,
+             String monthYearHeaderXpath,
+             String prevButtonXpath,
+             String nextButtonXpath,
+             String elementType,
+             String dateValue) {
+
+         if (elementType.equalsIgnoreCase("DATE")) {
+
+             LocalDate targetDate = resolveDate(dateValue);
+
+             selectDateFromCalendar(
+                     elementId,
+                     monthYearHeaderXpath,
+                     prevButtonXpath,
+                     nextButtonXpath,
+                     targetDate
+             );
+         }
+     }
+
+     //PolicyCancellationCalculation
+     public static Hashtable<String, Object> validatePolicyCancellationCalculation() {
+
+    	    Hashtable<String, Object> outputparameters = new Hashtable<>();
+
+    	    String grossPremiumXpath = "//*[@id='txtGrossPremiumCancel']";
+    	    String vatPremiumXpath = "//*[@id='txtVATPremiumCancel']";
+    	    String totalPremiumXpath = "//*[@id='txtTotalPremiumCancel']";
+
+    	    String utilizedDaysXpath = "//*[@id='txtPolicyDays']";
+    	    String prorateAmountXpath = "//*[@id='txtProrateAmount']";
+    	    String prorateVatXpath = "//*[@id='txtProrateAmountVAT']";
+    	    
+    	    String insurerDeductXpath      = "//*[@id='txtDeductAmt']";
+    	    String totalProratePremiumXpath = "//*[@id='txtTotalProrateAmount']";
+    	    
+    	    String refundAmountXpath = "//*[@id='txtRefundtoCustomer']";
+
+    	    // ================== Read UI values ==================
+    	    double grossPremium = Double.parseDouble(
+    	            d().findElement(By.xpath(grossPremiumXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+
+    	    double vatPremium = Double.parseDouble(
+    	            d().findElement(By.xpath(vatPremiumXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+
+    	    double totalPremium = Double.parseDouble(
+    	            d().findElement(By.xpath(totalPremiumXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+
+    	    int utilizedDays = Integer.parseInt(
+    	            d().findElement(By.xpath(utilizedDaysXpath))
+    	                    .getAttribute("value").trim());
+
+    	    double prorateAmount = Double.parseDouble(
+    	            d().findElement(By.xpath(prorateAmountXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+    	    
+    	    double prorateVatAmount = Double.parseDouble(
+    	            d().findElement(By.xpath(prorateVatXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+    	    
+    	    double insurerDeductAmount = Double.parseDouble(
+    	            d().findElement(By.xpath(insurerDeductXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+
+    	    double totalProratePremium = Double.parseDouble(
+    	            d().findElement(By.xpath(totalProratePremiumXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+    	    
+    	    double refundAmount = Double.parseDouble(
+    	            d().findElement(By.xpath(refundAmountXpath))
+    	                    .getAttribute("value").replace(",", "").trim());
+
+
+
+    	    // ================== Calculations ==================
+    	    double calculatedVat = Math.round(grossPremium * 0.18 * 100.0) / 100.0;
+    	    double calculatedTotal = Math.round((grossPremium + calculatedVat) * 100.0) / 100.0;
+
+    	    double calculatedProrate =
+    	            Math.round(((grossPremium / 365) * utilizedDays) * 100.0) / 100.0;
+    	    
+    	    double calculatedProrateVat =
+    	            Math.round((calculatedProrate * 0.18) * 100.0) / 100.0;
+    	    
+    	    double calculatedTotalProratePremium =
+    	            Math.round((insurerDeductAmount + calculatedProrate + calculatedProrateVat) * 100.0) / 100.0;
+    	    
+    	    double calculatedRefund =
+    	            Math.round((totalPremium - calculatedTotalProratePremium) * 100.0) / 100.0;
+    	    
+    	    
+    	 // ================== Formatting ==================
+    	    String grossPremiumStr = String.format("%.2f", grossPremium);
+    	    String vatPremiumStr = String.format("%.2f", vatPremium);
+    	    String totalPremiumStr = String.format("%.2f", totalPremium);
+
+    	    String prorateAmountStr = String.format("%.2f", prorateAmount);
+    	    String prorateVatStr = String.format("%.2f", prorateVatAmount);
+
+    	    String insurerDeductStr = String.format("%.2f", insurerDeductAmount);
+    	    String totalProratePremiumStr = String.format("%.2f", totalProratePremium);
+    	    String refundAmountStr = String.format("%.2f", refundAmount);
+
+    	    String calculatedVatStr = String.format("%.2f", calculatedVat);
+    	    String calculatedTotalStr = String.format("%.2f", calculatedTotal);
+    	    String calculatedProrateStr = String.format("%.2f", calculatedProrate);
+    	    String calculatedProrateVatStr = String.format("%.2f", calculatedProrateVat);
+    	    String calculatedTotalProratePremiumStr = String.format("%.2f", calculatedTotalProratePremium);
+    	    
+    	    String calculatedRefundStr = String.format("%.2f", calculatedRefund);
+
+    	    
+
+    	    // ================== Validation flags ==================
+    	    boolean vatMatch = calculatedVatStr.equals(vatPremiumStr);
+    	    boolean totalMatch = calculatedTotalStr.equals(totalPremiumStr);
+    	    boolean prorateMatch = calculatedProrateStr.equals(prorateAmountStr);
+    	    boolean prorateVatMatch = calculatedProrateVatStr.equals(prorateVatStr);
+    	    boolean totalProrateMatch = calculatedTotalProratePremiumStr.equals(totalProratePremiumStr);
+    	    boolean refundMatch = calculatedRefundStr.equals(refundAmountStr);
+
+    	    // ================== Extent Report Message (VERTICAL) ==================
+    	    String message =
+    	            "<b>Gross Premium:</b> " + grossPremiumStr + "<br><br>" +
+
+    	            "<b>VAT Premium Expected:</b> " + calculatedVatStr + "<br>" +
+    	            "<b>VAT Premium Actual:</b> " + vatPremiumStr + "<br><br>" +
+
+    	            "<b>Total Premium Expected:</b> " + calculatedTotalStr + "<br>" +
+    	            "<b>Total Premium Actual:</b> " + totalPremiumStr + "<br><br>" +
+
+    	            "<b>Policy Utilized Days:</b> " + utilizedDays + "<br>" +
+    	            "<b>Prorate Amount Expected:</b> " + calculatedProrateStr + "<br>" +
+    	            "<b>Prorate Amount Actual:</b> " + prorateAmountStr + "<br><br>" +
+    	    
+    	            "<b>Prorate VAT Expected:</b> " + calculatedProrateVatStr + "<br>" +
+                    "<b>Prorate VAT Actual:</b> " + prorateVatStr + "<br><br>" +
+    	    
+    	            "<b>Insurer Deduct Amount:</b> " + insurerDeductStr + "<br>" +
+                    "<b>Total Deduct Premium Expected:</b> " + calculatedTotalProratePremiumStr + "<br>" +
+                    "<b>Total Deduct Premium Actual:</b> " + totalProratePremiumStr + "<br><br>" +
+    	    
+    	            "<b>Refund Amount Expected:</b> " + calculatedRefundStr + "<br>" +
+                    "<b>Refund Amount Actual:</b> " + refundAmountStr;
+
+    	    // ================== Final Status ==================
+    	    if (vatMatch && totalMatch && prorateMatch 
+    	    	&& prorateVatMatch && totalProrateMatch && refundMatch) {
+    	        outputparameters.put("STATUS", "PASS");
+    	    } else {
+    	        outputparameters.put("STATUS", "FAIL");
+    	    }
+
+    	    outputparameters.put("MESSAGE", message);
+    	    return outputparameters;
+    	}
+
+  // ProvisionalBatchTaxInvoicesCalculation
+     public static Hashtable<String, Object> validateProvisionalBatchTaxInvoicesCalculation() {
+
+    	    Hashtable<String, Object> outputparameters = new Hashtable<>();
+
+    	    List<WebElement> totalPremiumCells = d().findElements(
+    	            By.xpath("//*[@id='grdBatchTaxInvoice']/tbody/tr/td[10]")
+    	    );
+
+    	    double calculatedTotalPremium = 0.0;
+
+    	    for (WebElement cell : totalPremiumCells) {
+    	        calculatedTotalPremium += safeParseAmount(cell.getText());
+    	    }
+
+    	    List<WebElement> commissionCells = d().findElements(
+    	            By.xpath("//*[@id='grdBatchTaxInvoice']/tbody/tr/td[11]")
+    	    );
+
+    	    double calculatedTotalCommission = 0.0;
+
+    	    for (WebElement cell : commissionCells) {
+    	        WebElement input = cell.findElement(By.tagName("input"));
+    	        calculatedTotalCommission += safeParseAmount(input.getAttribute("value"));
+    	    }
+
+    	    String grandTotalPremiumText = d().findElement(
+    	            By.xpath("//*[@id='MainContent_txtPremium']")
+    	    ).getAttribute("value");
+
+    	    String commmissionText = d().findElement(
+    	            By.xpath("//*[@id='MainContent_txtGrossCommission']")
+    	    ).getAttribute("value");
+
+
+    	    double systemGrandTotalPremium = safeParseAmount(grandTotalPremiumText);
+    	    double systemCommission = safeParseAmount(commmissionText);
+
+    	    String calculatedTotalPremiumStr = String.format("%.2f", calculatedTotalPremium);
+    	    String systemGrandTotalPremiumStr = String.format("%.2f", systemGrandTotalPremium);
+
+    	    String calculatedCommissionStr = String.format("%.2f", calculatedTotalCommission);
+    	    String systemCommissionStr = String.format("%.2f", systemCommission);
+
+    	    boolean totalPremiumMatch =
+    	            calculatedTotalPremiumStr.equals(systemGrandTotalPremiumStr);
+
+    	    boolean totalCommissionMatch =
+    	            calculatedCommissionStr.equals(systemCommissionStr);
+
+    	    String message =
+    	            "<b>Total Premium Expected (System):</b> " + systemGrandTotalPremiumStr + "<br>" +
+    	            "<b>Total Premium Actual (Calculated):</b> " + calculatedTotalPremiumStr + "<br><br>" +
+
+    	            "<b>Total Commission Expected (System):</b> " + systemCommissionStr + "<br>" +
+    	            "<b>Total Commission Actual (Calculated):</b> " + calculatedCommissionStr + "<br><br>";
+
+    	    if (totalPremiumMatch && totalCommissionMatch) {
+    	        outputparameters.put("STATUS", "PASS");
+    	    } else {
+    	        outputparameters.put("STATUS", "FAIL");
+    	    }
+
+    	    outputparameters.put("MESSAGE", message);
+    	    return outputparameters;
+    	}
+
+     private static double safeParseAmount(String rawValue) {
+
+    	    if (rawValue == null) {
+    	        return 0.0;
+    	    }
+
+    	    String value = rawValue
+    	            .replace("\u00A0", "")   // handles &nbsp;
+    	            .trim();
+
+    	    if (value.isEmpty() || value.equals("-")) {
+    	        return 0.0;
+    	    }
+
+    	    // UI bug: ",230.14" → "-230.14"
+    	    if (value.startsWith(",")) {
+    	        value = "-" + value.substring(1);
+    	    }
+
+    	    value = value.replace(",", "");
+
+    	    return Double.parseDouble(value);
+    	}
+  // NEW - dynamic methods
+     public static void sendUserIdDynamic(Object[] input) {
+    	    String xpath = (String) input[0];
+    	    String value = (String) input[1];
+
+    	    getDriver().findElement(By.xpath(xpath)).sendKeys(value);
+    	}
+
+     public static void sendPasswordDynamic(Object[] input) {
+    	    String xpath = (String) input[0];
+    	    String value = (String) input[1];
+
+    	    getDriver().findElement(By.xpath(xpath)).sendKeys(value);
+    	}
+
+     public static void waitForPageStability() {
+
+    	    WebDriver driver = getDriver();
+    	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+    	    // 1. DOM Ready
+    	    wait.until(d ->
+    	        ((JavascriptExecutor) d)
+    	            .executeScript("return document.readyState")
+    	            .equals("complete")
+    	    );
+
+    	    // 2. Loader Gone (replace selector)
+    	    By loader = By.cssSelector(".loading-spinner");
+    	    wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
+
+    	    // 3. jQuery Finished (if exists)
+    	    try {
+    	        wait.until(d ->
+    	            ((JavascriptExecutor) d)
+    	                .executeScript("return window.jQuery != undefined && jQuery.active === 0")
+    	                .equals(true)
+    	        );
+    	    } catch (Exception ignored) {}
+    	}
      
 
-}
-
-
-             
+}          
                       
 
          

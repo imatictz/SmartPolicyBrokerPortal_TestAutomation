@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [PHASED_EXECUTION_SUITE]" guice-stage="DEVELOPMENT">
+  <parameter name="cucumber.filter.tags" value="@RISK"/>
+  <test parallel="tests" name="PHASE-1-CLIENT(failed)">
+    <parameter name="cucumber.filter.tags" value="@CLIENT"/>
+    <classes>
+      <class name="testRunner.ParallelRunner">
+        <methods>
+          <include name="runScenario" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+          <include name="setUpClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.ParallelRunner -->
+    </classes>
+  </test> <!-- PHASE-1-CLIENT(failed) -->
+  <test parallel="tests" name="PHASE-2-QUOTE(failed)">
+    <parameter name="cucumber.filter.tags" value="@QUOTE"/>
+    <classes>
+      <class name="testRunner.ParallelRunner">
+        <methods>
+          <include name="runScenario" invocation-numbers="0 1 2 3 4"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+          <include name="setUpClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.ParallelRunner -->
+    </classes>
+  </test> <!-- PHASE-2-QUOTE(failed) -->
+</suite> <!-- Failed suite [PHASED_EXECUTION_SUITE] -->

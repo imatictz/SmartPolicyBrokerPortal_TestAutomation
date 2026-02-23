@@ -19,11 +19,12 @@ public class RiskNoteScreen {
 	
 
 	@When("^user navigate on operation dropdown menu$")
-	public void user_navigate_on_operation_dropdown_menu() 
+	public void user_navigate_on_operation_dropdown_menu() throws InterruptedException 
 	{
 		Object[] input7=new Object[1];
 	    input7[0]="//*[@id='MOD_OPERATIONS']";
 	    SeleniumOperations.actionClass(input7);
+	    Thread.sleep(2000);
 	   
 	}
 	
@@ -50,7 +51,7 @@ public class RiskNoteScreen {
 		 Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as risk note number$",output.get("MESSAGE").toString());  
 		 Thread.sleep(2000);
-		 Itl.CustomClear("//*[@id='MainContent_txtUserId']", "CLICK", 0);
+		 Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLICK", 0);
 	 }
 
 	 @And ("^user enter \"(.*)\" as risk note number \\(BrokerPortal\\)$")
@@ -274,6 +275,7 @@ public class RiskNoteScreen {
 	@When("user enter {string} as Insurance Type")
 	public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
 	    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+	    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 	}
 	
 	@When ("user click on search button to find {string} risk note")
@@ -291,6 +293,7 @@ public class RiskNoteScreen {
 	public void user_enter_as_quote_number(String risknote) throws InterruptedException {
 		String risknoteNo = SeleniumOperations.getRiskNote(risknote);
 		Itl.CustomSendEvent("//*[@id='MainContent_txtRiskNote']", risknoteNo, "user enter {string} as risk note number", "TEXTBOX", 0);
+		//Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 		Thread.sleep(4000);
 	}
 	

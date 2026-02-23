@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/PolicyCancellation/PolicyCancel.feature", 
-                   tags= "@FullPaymentCancel", 
+                   tags= "@Motor", 
                    glue={"cucumberMap28PolicyCancel","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	
@@ -18,4 +18,3 @@ import io.cucumber.testng.CucumberOptions;
 public class RunnerTestPolicyCancellation extends AbstractTestNGCucumberTests {
 
 }
-

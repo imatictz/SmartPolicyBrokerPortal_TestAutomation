@@ -3,16 +3,40 @@
     "clientName": "Pravin Testing Broker",
     "insurer": "Automated Testing Company",
     "motorType": "Registered",
+    "insuranceType": "2 Wheelers/ 3 Wheelers",
     "insuranceClass": "2 Wheel Comprehensive (Private)",
-    "coverDetails": "Motor Comprehensive"
-    
+    "ownerCategory": "sole Propriator",
+    "motorUsage": "Private",
+    "registrationNumber": "CODE",
+    "chasisNumber": "632541Al",
+    "vehicleMake": "TVS",
+    "vehicleModel": "SCOOTY",
+    "vehicleType": "BIKE",
+
+    "modelNumber": "MDL12345",
+    "engineNumber": "ENG987654",
+    "fuelType": "Petrol",
+    "manufactureYear": "2024",
+    "seat": "2",
+    "cc": "110",
+    "color": "Red",
+    "grossWeight": "350",
+    "tareWeight": "150",
+    "numberOfAxel": "2",
+    "axelDistance": "70",
+    "sumInsured": "1000000",
+    "validation": "Awaiting Receipt"
   },
 
   "Fire": {
-    "clientName": "Alice Smith",
-    "insurer": "Fire Insurance Ltd",
-    "premium": "12000",
-    "coverDetails": "Fire Business"
+    "clientName": "Pravin Testing Broker",
+    "insurer": "Automated Testing Company",
+    "coverNoteNumber": "15244-51654-84125",
+    "insuranceClass": "Industrial/Manufacturing risks-Electronic software parks",
+    "sumInsured": "1000000",
+    "description": "Cover note quotation test",
+    "validation": "Awaiting Receipt"
+ 
   },
 
   "Health": {
@@ -20,5 +44,23 @@
     "insurer": "Health Corp",
     "premium": "8000",
     "coverDetails": "Health Family Plan"
+  },
+  
+  "payments": {
+  "Full": {
+    "mode": "Electronic Funds Transfer (EFT)",
+    "issuerBank": "Absa Group Limited",
+    "collectingBank": "Uchumi Commercial Bank",
+    "referenceNo": "1250",
+    "validation": "Risk Note Issued"
+  },
+  "Partial": {
+    "mode": "Draft",
+    "issuerBank": "Absa Group Limited",
+    "referenceNo": "1250",
+    "validation": "Risk Note Issued"
   }
+}
+
+  
 }

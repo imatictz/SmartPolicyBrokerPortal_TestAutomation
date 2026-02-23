@@ -64,11 +64,11 @@ public class Claims {
 
 	 @When("user enter date of loss\\/Accident")
 	 public void user_enter_as_date_of_loss_accident() throws InterruptedException {
-           Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of loss\\\\/Accident", "TEXTBOX", 0);
+           Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "Today","user enter date of loss\\\\/Accident", "TEXTBOX", 0);
 	 }
 	 @When("user enter date of death\\/illnes\\/others")
 	 public void user_enter_as_date_of_death_illnes_others() throws InterruptedException {
-           Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);
+           Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "Today","user enter date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);
 	 }
 	 @When("user select {string} as country")
 	 public void user_select_as_country(String country) throws InterruptedException {
@@ -137,7 +137,7 @@ public class Claims {
      }
      @When("user click on save button")
      public void user_click_on_save_button() throws InterruptedException {
-         Itl.CustomClickEvent("//*[@id='MainContent_btnSave']", "user click on save button", "CLICK", 2000);
+         Itl.CustomClickEvent("//*[@id='MainContent_btnSave']", "user click on save button", "CLICK", 4000);
      }
      @Then("user able to view {string} as status")
      public void user_able_to_view_as_status(String status) throws InterruptedException {
@@ -183,6 +183,7 @@ public class Claims {
 	@When("user enter {string} as Insurance Type")
 	public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
 	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+	    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 	}
 	
 	@When ("user click on search button to find {string} risk note")
@@ -200,6 +201,7 @@ public class Claims {
 	public void user_enter_as_quote_number(String risknote) throws InterruptedException, TimeoutException {
 		String risknoteNo = SeleniumOperations.getClaim(risknote);
 		Itl.CustomClearSendEvent("//*[@id='MainContent_txtRiskNote']", risknoteNo, "user enter {string} as risk note number", "TEXTBOX", 0);
+		
 		Thread.sleep(4000);
 	}
 	

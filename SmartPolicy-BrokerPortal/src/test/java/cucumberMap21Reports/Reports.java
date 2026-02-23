@@ -12,15 +12,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import itl.Itl;
 import utility.HTMLReportGenerator;
+import utility.ReportLinkManager;
 import utility.SeleniumOperations;
 
 public class Reports {
 
 	@Given("user navigate on reports dropdown")
-	public void user_navigate_on_reports_dropdown() {
+	public void user_navigate_on_reports_dropdown() throws InterruptedException {
 	    Object[] input = new Object[2];
 	    input[0] = "//*[@id='MOD_REPORTS']";
 	    SeleniumOperations.actionClass(input);
+	    Thread.sleep(2000);
 	}
 	@Given("user click on all reports")
 	public void user_click_on_all_reports() throws InterruptedException {
@@ -1183,6 +1185,17 @@ public class Reports {
 		input[3]="//*[contains(@id,'select2-MainContent_cmbBusinessType-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as Business type",output.get("MESSAGE").toString());
+		
+	}
+	@When("user select {string} as policy type")
+	public void user_select_as_policy_type(String businessType) {
+		Object[] input= new Object[4];
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbPolicyType')]";
+		input[1]="//*[@class='select2-search__field']";
+		input[2]=businessType;
+		input[3]="//*[contains(@id,'select2-MainContent_cmbPolicyType-result-')]";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as policy type",output.get("MESSAGE").toString());
 		
 	}
 	@Then("user able to view Comesa Booking in pdf format")
@@ -3077,7 +3090,38 @@ public class Reports {
 	@Then("user click to select TIRA Reports - Payables Outstanding to Insurers \\(Quaterly) as report")
 	public void user_click_to_select_tira_reports_payables_outstanding_to_insurers_quaterly_as_report() throws InterruptedException {
 	    Itl.CustomDoubleClickEvent("//*[@value='REPORT115']",  "user click to select TIRA Reports - Payables Outstanding to Insurers \\\\(Quaterly) as report","CLICK", 5000);
-
+	}
+	@Then("user click to select Direct Payment Transaction as report")
+	public void user_click_to_select_directPayment_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT119']",  "user click to select Direct Payment Transaction as report","CLICK", 5000);
+	}
+	@Then("user click to select Insurance Company Fiscal Tax Invoices as report")
+	public void user_click_to_select_fiscalTaxInvoices_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT158']",  "user click to select Insurance Company Fiscal Tax Invoices as report","CLICK", 5000);
+	}
+	@Then("user click to select Insurance Premium Levy Tax Payable as report")
+	public void user_click_to_select_premiumLevyTaxPayable_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT130']",  "user click to select Insurance Premium Levy Tax Payable as report","CLICK", 5000);
+	}
+	@Then("user click to select Insurer Commission Rates as report")
+	public void user_click_to_select_commissionRate_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT149']",  "user click to select Insurer Commission Rates as report","CLICK", 5000);
+	}
+	@Then("user click to select Insurer Remitance Report as report")
+	public void user_click_to_select_insurerRemitanceReport_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT74']",  "user click to select Insurer Remitance Report as report","CLICK", 5000);
+	}
+	@Then("user click to select Insurer Remitance Report 2 as report")
+	public void user_click_to_select_insurerRemitanceReport2_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT157']",  "user click to select Insurer Remitance Report 2 as report","CLICK", 5000);
+	}
+	@Then("user click to select Insurer Remitance Report\\(Kenya) as report")
+	public void user_click_to_select_insurerRemitanceReportKenya_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT96']",  "user click to select Insurer Remitance Report(Kenya) as report","CLICK", 5000);
+	}
+	@Then("user click to select Insurer Tax Invoice as report")
+	public void user_click_to_select_insurerTaxInvoice_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT45']",  "user click to select Insurer Tax Invoice as report","CLICK", 5000);
 	}
 	@Then("user able to view TIRA Reports - Payables Outstanding to Insurers \\(Quaterly) in pdf format")
 	public void user_able_to_view_tira_reports_payables_outstanding_to_insurers_quaterly_in_pdf_format() {
@@ -3101,6 +3145,7 @@ public class Reports {
 	    Itl.CustomDoubleClickEvent("//*[@value='REPORT36']",  "user click to select TIRA Reports - Premium Booked Statement \\\\(Quarterly) as report","CLICK", 5000);
 
 	}
+	
 	@Then("user able to view TIRA Reports - Premium Booked Statement \\(Quarterly) in pdf format")
 	public void user_able_to_view_tira_reports_premium_booked_statement_quarterly_in_pdf_format() {
 	    Itl.CustomswitchWindowEvent("user able to view TIRA Reports - Premium Booked Statement \\\\(Quarterly) in pdf format","SWITCHWINDOW");
@@ -3296,12 +3341,73 @@ public class Reports {
     @Then("user click to select Vouchers Report as report")
     public void user_click_to_select_vouchers_report_as_report() throws InterruptedException {
 	    Itl.CustomDoubleClickEvent("//*[@value='REPORT106']",  "user click to select Vouchers Report as report","CLICK", 5000);
-
+    }
+    @Then("user click to select Client Ledger as report")
+    public void user_click_to_select_ClientLedger_report_as_report() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT10']",  "user click to select Client Ledger as report","CLICK", 5000);
     }
     @Then("user able to view Vouchers Report in pdf format")
     public void user_able_to_view_vouchers_report_in_pdf_format() {
 	    Itl.CustomswitchWindowEvent("user able to view Vouchers Report in pdf format","SWITCHWINDOW");
     }
+    @Then("user click to select Business Summary \\(By total premium booked for each insurance company Cover period start date) as report")
+	public void user_click_to_select_Business_Summary() throws InterruptedException {
+	    Itl.CustomDoubleClickEvent("//*[@value='REPORT218']",  "user click to select Business Summary (By total premium booked for each insurance company Cover period start date) as report","CLICK", 5000);
+
+	}
+    @Then("user able to view {string} report in pdf format")
+	public void user_able_to_view_business_summary_base_currency_report_in_pdf_format(String nameOfReport) throws Throwable {
+	    Hashtable<String, Object> output = SeleniumOperations.printReport1(); // ✅ match method name
+
+	    // Existing basic step log
+	    HTMLReportGenerator.StepDetails(
+	        output.get("STATUS").toString(),
+	        nameOfReport,
+	        output.get("MESSAGE").toString()
+	    );
+
+	    // ✅ Extract key details
+	    String status = output.get("STATUS").toString();
+	    String message = output.get("MESSAGE").toString();
+	    String pdfUrl = String.valueOf(output.getOrDefault("PDF_URL", "N/A"));
+	    String pageCount = String.valueOf(output.getOrDefault("PDF_PAGE_COUNT", "N/A"));
+	    String textSample = String.valueOf(output.getOrDefault("PDF_TEXT_SAMPLE", "No text extracted"));
+
+	    // Escape < and > to avoid HTML breaking
+	    textSample = textSample.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+
+	    // ✅ Print detailed info in console
+	    System.out.println("========== PDF REPORT DETAILS ==========");
+	    System.out.println("📄 PDF URL           : " + pdfUrl);
+	    System.out.println("📑 Total Pages       : " + pageCount);
+	    System.out.println("📝 Text (Preview)    : " + textSample);
+	    System.out.println("📋 Message           : " + message);
+	    System.out.println("========================================");
+
+	    // ✅ Append extended PDF details into HTML report
+	    String detailedHtmlLog =
+	        "<b>PDF URL:</b> " + pdfUrl + "<br>" +
+	        "<b>Total Pages:</b> " + pageCount + "<br>" +
+	        "<b>Extracted Text (Preview):</b><br><pre>" + textSample + "</pre><br>" +
+	        "<b>Message:</b> " + message + "<br>";
+
+	    HTMLReportGenerator.StepDetails(
+	        status,
+	        "Detailed PDF Report Information",
+	        detailedHtmlLog
+	    );
+
+	    // ✅ Summary log
+	    if ("Pass".equalsIgnoreCase(status)) {
+	        System.out.println("✅ [PASS] Report verified successfully in PDF format.");
+	    } else {
+	        System.err.println("❌ [FAIL] Report verification failed: " + message);
+	    }
+	    if ("Pass".equalsIgnoreCase(status)) {
+	        ReportLinkManager.addReportLink(nameOfReport, pdfUrl);
+	    }
+	}
+
 
 
 }

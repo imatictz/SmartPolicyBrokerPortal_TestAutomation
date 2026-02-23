@@ -1,22 +1,53 @@
 package testRunner;
 
+import io.cucumber.testng.*;
+import org.testng.Assert;
+import org.testng.annotations.*;
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+@CucumberOptions(
+    features = "src/test/resources/Quotations/Medical.feature",
+    tags = "@All",
+    glue = {
+        "cucumberMap12Medical",
+        "MyHooks"
+    },
+    monochrome = true,
+    dryRun = false,
+    plugin = {
+        "pretty",
+        "summary",
+        "html:target/CucumberTest/CucumberReport.html"
+    }
+)
+@Listeners(listeners.ForceFailListener.class)
+public class RunnerTestMedicalQuotation {
 
-@CucumberOptions(  
-		           features="src/test/resources/Quotations/Medical.feature", 
-		           tags= "@All", 
-                   glue={"cucumberMap12Medical","MyHooks"}, 
-                   monochrome=true,   
-                   plugin= { "pretty",   	
-                           "html:target/CucumberTest/CucumbetReport.html"},
-                   dryRun=false  
-                 )
+    private TestNGCucumberRunner testNGCucumberRunner;
 
+    @BeforeClass(alwaysRun = true)
+    public void setUpClass() {
+        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+    }
 
+    @Test(dataProvider = "scenarios")
+    public void runScenario(PickleWrapper pickle, FeatureWrapper feature) {
+        try {
+            testNGCucumberRunner.runScenario(pickle.getPickle());
+        } catch (Throwable t) {
+            Assert.fail("Cucumber framework failure: " + t.getMessage(), t);
+        }
+    }
 
-public class RunnerTestMedicalQuotation extends AbstractTestNGCucumberTests{
+    @DataProvider(parallel = true) // ✅ PARALLEL ENABLED
+    public Object[][] scenarios() {
+    	System.setProperty("dataproviderthreadcount", "2");
+        return testNGCucumberRunner.provideScenarios();
+    }
 
+    @AfterClass(alwaysRun = true)
+    public void tearDownClass() {
+        if (testNGCucumberRunner != null) {
+            testNGCucumberRunner.finish();
+        }
+    }
 }
-

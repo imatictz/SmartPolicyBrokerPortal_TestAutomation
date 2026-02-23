@@ -1,4 +1,4 @@
-@All
+@All @QUOTE @MEDICAL
 Feature: Medical Quotation 
 
 Background: 
@@ -8,7 +8,7 @@ When user navigate on quotations menu
 When user click on current quotations
  
 
-@MandatoryFields
+@MandatoryFields @MEDICAL
 Scenario: (Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user click on add button
@@ -33,7 +33,7 @@ When user click on save button
 When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
-@MandatoryFieldsNoAddon
+@MandatoryFieldsNoAddon  @MEDICAL
 Scenario: (Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user click on add button
@@ -52,7 +52,7 @@ When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt" as status
 
 
-@AllFields
+@AllFields @MEDICAL
 Scenario: (Medical Quotation) Verify user able to enter all fields and save quotation successfully
 
 When user click on add button
@@ -69,6 +69,8 @@ When user select on borrower type check box
 When user click on borrower type dropdown
 And user enter "Retail Banking" as borrower type
 Then user select Retail Banking as borrower type
+When user enter "Pravin Test Acc" as borrower account name
+When user enter "9541203288" as borrower account number
 #When user enter "15244-51654-84125" as cover note number
 When user click on loss ratio forecast dropdown
 When user enter "Profit making" as loss ratio forecast
@@ -115,7 +117,7 @@ When user click on save button
 When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
-@PrintQuote
+@PrintQuote  @MEDICAL
  Scenario: User prints the Medical quote
    When user select "01/09/2025" as from date
    When user enter "Medical" as Insurance Type
@@ -132,7 +134,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
       | Insurance Type  | 
   # And the user should be able to send the quote to the printer
   
-@EditQuote
+@EditQuote  @MEDICAL
  Scenario: Verify user able to edit an existing Medical quote successfully
    When user select "15/09/2025" as from date
    When user enter "Medical" as Insurance Type
@@ -156,3 +158,11 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
    When user click on update button to save policy information
    When user click on update button
    When user click on Ok button to accept commission alert
+   Then user able to view "1003-Information modified successfully" as message
+   
+   
+   
+   
+ 
+
+  

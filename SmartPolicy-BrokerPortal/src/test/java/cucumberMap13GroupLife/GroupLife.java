@@ -14,10 +14,11 @@ import utility.SeleniumOperations;
 
 public class GroupLife {
 	@When("^user navigate on operation dropdown menu$")
-	public void user_navigate_on_operation_dropdown_menu() {
+	public void user_navigate_on_operation_dropdown_menu1() throws InterruptedException {
 		Object[] input7=new Object[1];
 	    input7[0]="//*[@id='MOD_OPERATIONS']";
 	    SeleniumOperations.actionClass(input7);
+	    Thread.sleep(2000);
 	}
 
 	@When("^user navigate on quotations menu$")
@@ -619,6 +620,7 @@ public class GroupLife {
 	public void user_enter_as_quote_number(String quoteName) throws InterruptedException {
 		String quoteNo = SeleniumOperations.getQuote(quoteName);
 		Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
+		Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 		Thread.sleep(4000);
 	}
 	
@@ -658,6 +660,14 @@ public class GroupLife {
 			Thread.sleep(2000);
 	    }
 	    
+	}
+	@When ("user enter {string} as borrower account name")
+	public void user_enter_as_borrower_account_name(String borrowerName) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccName']", borrowerName, "user enter {string} as borrower account name", "TEXTBOX", 0);
+	}
+	@When ("user enter {string} as borrower account number")
+	public void user_enter_as_borrower_account_number(String borrowerNumber) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
 	}
 	
 }

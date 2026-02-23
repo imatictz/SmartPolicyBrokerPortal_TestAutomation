@@ -80,6 +80,8 @@ When user select on borrower type check box
 When user click on borrower type dropdown
 And user enter "Retail Banking" as borrower type
 Then user select Retail Banking as borrower type
+When user enter "Pravin Test Acc" as borrower account name
+When user enter "9541203288" as borrower account number
 When user enter "15244-51654-84125" as cover note number
 When user click on loss ratio forecast dropdown
 When user enter "Profit making" as loss ratio forecast

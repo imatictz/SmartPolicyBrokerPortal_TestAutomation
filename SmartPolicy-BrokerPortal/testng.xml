@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PHASED_EXECUTION" parallel="methods" thread-count="2">
+
+   <test name="PHASE-1-CLIENT"
+          parallel="methods"
+          >
+
+        <parameter name="cucumber.filter.tags" value="@CLIENT"/>
+
+        <classes>
+            <class name="testRunner.RunnerTestClientDetails"/>
+        </classes>
+    </test>
+    <test name="PHASE-2-MEDICAL"
+          parallel="methods"
+          >
+
+        <parameter name="cucumber.filter.tags" value="@MEDICAL"/>
+
+        <classes>
+            <class name="testRunner.RunnerTestMedicalQuotation"/>
+        </classes>
+    </test>
+    
+    
+    
+
+</suite>

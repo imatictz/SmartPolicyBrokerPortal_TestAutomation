@@ -7,6 +7,10 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,11 +23,12 @@ public class AccidentalDamage
 	
 	 
 	 @When("^user navigate on operation dropdown menu$")
-		public void user_navigate_on_operation_dropdown_menu() 
+		public void user_navigate_on_operation_dropdown_menu() throws InterruptedException 
 		{
 			Object[] input7=new Object[1];
 		    input7[0]="//*[@id='MOD_OPERATIONS']";
 		    SeleniumOperations.actionClass(input7);
+		    Thread.sleep(2000);
 		   
 		}
 
@@ -279,6 +284,7 @@ public class AccidentalDamage
 		{
 			Hashtable<String,Object> output= SeleniumOperations.alert();
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
+			Thread.sleep(2000);
 		}
 
 		@Then("^user able to view \"([^\"]*)\" as status$")
@@ -368,7 +374,7 @@ public class AccidentalDamage
 			   input50[0]="//*[@id='MainContent_chkHighSuminsured']";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select on limit of liability amount checkbox",output50.get("MESSAGE").toString());
-		       Thread.sleep(2000);
+		       Thread.sleep(4000);
 		}
 
 		@Then("^user enter \"([^\"]*)\" as limit of liability amount$")
@@ -388,7 +394,7 @@ public class AccidentalDamage
 			   input50[0]="//*[@id='MainContent_chkFirstLossVaidate']";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user Select on first loss payee checkbox",output50.get("MESSAGE").toString());
-		       Thread.sleep(2000);
+		       Thread.sleep(4000);
 		}
 
 		@Then("^user enter \"([^\"]*)\" as first loss payee$")
@@ -408,7 +414,7 @@ public class AccidentalDamage
 			   input50[0]="//*[@id='MainContent_chkBorrower']";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select on borrower type check box",output50.get("MESSAGE").toString());
-		       Thread.sleep(2000);
+		       Thread.sleep(4000);
 		}
 
 		@When("^user click on borrower type dropdown$")
@@ -418,6 +424,7 @@ public class AccidentalDamage
 			   input50[0]="//*[contains(@aria-controls,'MainContent_cmbBorrower')]";
 			   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 			   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on borrower type dropdown",output50.get("MESSAGE").toString());
+			   Thread.sleep(2000);
 		}
 
 		@When("^user enter \"([^\"]*)\" as borrower type$")
@@ -587,6 +594,7 @@ public class AccidentalDamage
 		@When("user enter {string} as Insurance Type")
 		public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
 		    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+		    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 		}
 		
 		@When ("user click on search button to find {string} quote")
@@ -653,14 +661,21 @@ public class AccidentalDamage
 		@Then ("user able to view {string} as message")
 		public void validation(String validation) throws InterruptedException{
 			Object[] input=new Object[2];
-			input[0]="//*[@class='messenger-message-inner']";
+			input[0]="//*[text()='1003-Information modified successfully']";
 			input[1]=validation;
 			Hashtable<String,Object> output=SeleniumOperations.validation(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} as message",output.get("MESSAGE").toString());
 			Thread.sleep(2000);
 		}
 
-		
+		@When ("user enter {string} as borrower account name")
+		public void user_enter_as_borrower_account_name(String borrowerName) throws InterruptedException {
+			Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccName']", borrowerName, "user enter {string} as borrower account name", "TEXTBOX", 0);
+		}
+		@When ("user enter {string} as borrower account number")
+		public void user_enter_as_borrower_account_number(String borrowerNumber) throws InterruptedException {
+			Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
+		}
 	
 
 		

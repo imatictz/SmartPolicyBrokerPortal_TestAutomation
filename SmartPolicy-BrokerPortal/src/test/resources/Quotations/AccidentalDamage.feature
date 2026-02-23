@@ -13,7 +13,7 @@ Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fiel
 When user click on add button
 When user select "Individual Personal Accident" as insurance type
 When user enter "Pravin Testing Broker" as client name
-And user select Pravin Testing as client name
+And user select "Pravin Testing Broker" as client name
 When user Select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user Select "Category 1" as insurance class
@@ -34,11 +34,11 @@ When user click on Ok button to accept commission alert
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
-Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully
+Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fields with out no Addon and save quotation successfully
 When user click on add button
 When user select "Individual Personal Accident" as insurance type
 When user enter "Pravin Testing Broker" as client name
-And user select Pravin Testing as client name
+And user select "Pravin Testing Broker" as client name
 When user Select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user Select "Category 1" as insurance class
@@ -57,7 +57,7 @@ Scenario: (Accidental Damage Quotation) Verify user able to enter all fields and
 When user click on add button
 When user select "Individual Personal Accident" as insurance type
 When user enter "Pravin Testing Broker" as client name
-And user select Pravin Testing as client name
+And user select "Pravin Testing Broker" as client name
 When user Select "Automated Testing Company" as insurer
 #When user click on business by dropdown
 #Then user select Demo User as business by
@@ -73,6 +73,8 @@ When user select on borrower type check box
 When user click on borrower type dropdown
 And user enter "Retail Banking" as borrower type
 Then user select Retail Banking as borrower type
+When user enter "Pravin Test Acc" as borrower account name
+When user enter "9541203288" as borrower account number
 When user enter "15244-51654-84125" as cover note number
 When user click on loss ratio forecast dropdown
 When user enter "Profit making" as loss ratio forecast
@@ -151,8 +153,5 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
    When user click on Ok button to accept commission alert
    Then user able to view "1003-Information modified successfully" as message
     
-    
-    
-    
-    
+ 
     

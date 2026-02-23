@@ -12,11 +12,12 @@ public class RenewPolicy {
 	
  	
  	@When ("^user navigate on operation dropdown$")
- 	public void user_navigate_on_operation_dropdown_menu() 
+ 	public void user_navigate_on_operation_dropdown_menu() throws InterruptedException 
 	{
 		Object[] input7=new Object[1];
 	input7[0]="//*[@id='MOD_OPERATIONS']";
 	SeleniumOperations.actionClass(input7);
+	Thread.sleep(2000);
 	   
 	}
 	
@@ -46,13 +47,13 @@ public class RenewPolicy {
 	  HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user enter \\\"([^\\\"]*)\\\" as expiry from date", output.get("MESSAGE").toString());
  	}
 
- 	@When("^user enter \"([^\"]*)\" as risk note$")
+ 	@When("^user enter \"([^\"]*)\" as cover information$")
  	public void user_enter_as_risk_note(String riskNote) throws Throwable {
  		Object[] input4=new Object[2];
-	      input4[0]="//*[@id='MainContent_txtRiskNote']";
+	      input4[0]="//*[@id='MainContent_txtCoverInfo']";
 	      input4[1]=riskNote;
 	  Hashtable<String, Object>output=SeleniumOperations.sendKeys(input4);
-	  HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user enter \\\"([^\\\"]*)\\\" as risk note", output.get("MESSAGE").toString());
+	  HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user enter \\\"([^\\\"]*)\\\" as cover information", output.get("MESSAGE").toString());
 	Thread.sleep(2000);
  	}
  	

@@ -18,12 +18,12 @@ public class Vehicle
 	
 	
 	 @When("^user navigate on operation dropdown menu$")
-		public void user_navigate_on_operation_dropdown_menu() 
+		public void user_navigate_on_operation_dropdown_menu() throws InterruptedException 
 		{
 			Object[] input7=new Object[1];
 		input7[0]="//*[@id='MOD_OPERATIONS']";
 		SeleniumOperations.actionClass(input7);
-		   
+		Thread.sleep(2000);
 		}
 
 		@When("^user navigate on quotations menu$")
@@ -188,7 +188,7 @@ public class Vehicle
 
 	 @When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltClassType')]", "//*[@class='select2-search__field']", insuranceClass , "(//*[contains(@data-select2-id,'-MainContent_cmbFltClassType')])[2]", "user select {String} as insurance class", "DROPDOWN", 4000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltClassType')]", "//*[@class='select2-search__field']", insuranceClass , "(//*[contains(@data-select2-id,'-MainContent_cmbFltClassType')])[2]", "user select {String} as insurance class", "DROPDOWN", 5000);
 
 		}
 	 
@@ -211,7 +211,7 @@ public class Vehicle
 		    input[1]=registrationNumber;
 		    Hashtable<String,Object> output= SeleniumOperations.DynamicValuessendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"15641A56BIKE\" as registration number",output.get("MESSAGE").toString());   
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		}
 
 	 @When("^user enter \"([^\"]*)\" as chasis number$")
@@ -220,7 +220,7 @@ public class Vehicle
 		 Object[] input1=new Object[1];
 		   input1[0]="//*[@id='txtChasisNo']";
 		   SeleniumOperations.clickOnElement(input1);
-		   Thread.sleep(2000);
+		   Thread.sleep(6000);
 		 Object[] input=new Object[2];
 			input[0]="//*[@id='txtChasisNo']";
 			input[1]=chasisNumber;
@@ -1370,8 +1370,23 @@ public class Vehicle
 			Itl.CustomValidationEvent("//*[@id='uploadStatus']", status, "the user able to view {string} as upload status", "VALIDATION", 2000);
 
 		}
-
-	
+		@When ("user enter {string} as borrower account name")
+		public void user_enter_as_borrower_account_name(String borrowerName) throws InterruptedException {
+			Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccName']", borrowerName, "user enter {string} as borrower account name", "TEXTBOX", 0);
+		}
+		@When ("user enter {string} as borrower account number")
+		public void user_enter_as_borrower_account_number(String borrowerNumber) throws InterruptedException {
+			Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
+		}
+		@Then ("user able to view {string} as message")
+		public void validation(String validation) throws InterruptedException{
+			Object[] input=new Object[2];
+			input[0]="//*[text()='1003-Information modified successfully']";
+			input[1]=validation;
+			Hashtable<String,Object> output=SeleniumOperations.validation(input);
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} as message",output.get("MESSAGE").toString());
+			Thread.sleep(2000);
+		}
 	
 	
 	

@@ -74,6 +74,8 @@ When user select on borrower type check box
 When user click on borrower type dropdown
 And user enter "Retail Banking" as borrower type
 Then user select Retail Banking as borrower type
+When user enter "Pravin Test Acc" as borrower account name
+When user enter "9541203288" as borrower account number
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 When user click on loss ratio forecast dropdown

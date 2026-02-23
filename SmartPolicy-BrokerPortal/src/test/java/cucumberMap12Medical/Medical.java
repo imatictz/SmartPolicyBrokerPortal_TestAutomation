@@ -14,21 +14,22 @@ import utility.SeleniumOperations;
 
 public class Medical {
 	@When("^user navigate on operation dropdown menu$")
-	public void user_navigate_on_operation_dropdown_menu() {
+	public void user_navigate_on_operation_dropdown_menu1() throws InterruptedException {
 		Object[] input7=new Object[1];
 	    input7[0]="//*[@id='MOD_OPERATIONS']";
 	    SeleniumOperations.actionClass(input7);
+	    Thread.sleep(2000);
 	}
 
 	@When("^user navigate on quotations menu$")
-	public void user_navigate_on_quotations_menu() {
+	public void user_navigate_on_quotations_menu1() {
 		Object[] input8=new Object[1];
 	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 	    SeleniumOperations.actionClass(input8);
 	}
 
 	@When("^user click on current quotations$")
-	public void user_click_on_current_quotations() throws InterruptedException {
+	public void user_click_on_current_quotations1() throws InterruptedException {
 		Object[] input9=new Object[1];
 	    input9[0]="//*[@id='MNU_wfFIQNM']";
 	    SeleniumOperations.clickOnElement(input9);
@@ -36,7 +37,7 @@ public class Medical {
 	}
 
 	@When("^user click on add button$")
-	public void user_click_on_add_button() throws InterruptedException  {
+	public void user_click_on_add_button1() throws InterruptedException  {
 		Object[] input10=new Object[1];
 	    input10[0]="//*[@id='MainContent_btnAdd']";
 	    SeleniumOperations.clickOnElement(input10);
@@ -44,7 +45,7 @@ public class Medical {
 	}
 
 	@When("^user select \"([^\"]*)\" as insurance type$")
-	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+	public void user_select_as_insurance_type1(String insuranceType) throws Throwable {
 		Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
 		input[1]="//*[@class='select2-search__field']";
@@ -56,7 +57,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as client name$")
-	public void enterClientName(String clientName) throws Throwable {
+	public void enterClientName1(String clientName) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtClientName']";
 	    input[1]=clientName;
@@ -65,15 +66,17 @@ public class Medical {
 	    Thread.sleep(2000);
 	}
 
+	
 	@When("^user select Pravin Testing as client name$")
 	public void clickOnClientName() throws Throwable {
 		Object[] input=new Object[1];
 		input[0]="//*[@id='MainContent_txtClientName']";
 		Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Pravin Testing as client name",output.get("MESSAGE").toString());
+	    Thread.sleep(2000);
 	}
 	@When("^user click on update button$")
-	 public void user_click_on_update_button() throws Throwable
+	 public void user_click_on_update_button1() throws Throwable
 	 {
 		 Object[] input7=new Object[1];
 			input7[0]="//*[@id='btnSave']";
@@ -82,7 +85,7 @@ public class Medical {
 			 Thread.sleep(4000);
 	 }
 	@When("user click on update button to save policy information")
-	 public void user_click_on_update_button_policyInformation() throws Throwable
+	 public void user_click_on_update_button_policyInformation1() throws Throwable
 	 {
 		 Object[] input7=new Object[1];
 			input7[0]="//*[@id='btnInsert']";
@@ -91,20 +94,20 @@ public class Medical {
 	     
 	 }
 	@When("user click on select icon to edit details")
-	 public void user_click_on_selectIcon() throws Throwable
+	 public void user_click_on_selectIcon1() throws Throwable
 	 {
 		 Object[] input7=new Object[1];
-			input7[0]="//*[@id='sort_table_Medical']/tbody/tr[1]/td[10]/*[1]";
+			input7[0]="//*[@id='MainContent_rptMedical_btnSelect_0']";
 			 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on select icon to edit details",output.get("MESSAGE").toString());
 	         Thread.sleep(2000);
 	 }
 	@When("user clicks on edit option")
-	public void user_clicks_on_edit_option() throws InterruptedException {
+	public void user_clicks_on_edit_option1() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[1]", "user clicks on edit option", "CLICK", 2000);
 	}
 	@When("user select {string} as client name")
-	public void clickOnClientName(String clientName) throws Throwable 
+	public void clickOnClientName1(String clientName) throws Throwable 
 	{
 		Object[] input=new Object[1];
 		input[0]="//*[@id='MainContent_txtClientName']";
@@ -113,14 +116,14 @@ public class Medical {
 		Thread.sleep(2000);
 	}
 	@When("^user click on Ok button to accept commission alert$")
-	public void clickOnOKButton() throws Throwable 
+	public void clickOnOKButton11() throws Throwable 
 	{
 		Hashtable<String,Object> output= SeleniumOperations.alert();
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission alert",output.get("MESSAGE").toString());
 	}
 
 	@When ("^user select \"(.*)\" as insurer$")
-	public void selectInsurer(String insurer) throws Throwable 
+	public void selectInsurer1(String insurer) throws Throwable 
 	{
 		Object[] input = new Object[4];
 	    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
@@ -133,7 +136,7 @@ public class Medical {
 	}
 	
 	@When("^user enter \"([^\"]*)\" as date of birth$")
-	public void enterDateOfBirth(String dateOfBirth) throws Throwable {
+	public void enterDateOfBirth1(String dateOfBirth) throws Throwable {
 		Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtDOBDate']";
 	    input[1]=dateOfBirth;
@@ -143,7 +146,7 @@ public class Medical {
 	}
 
 	@When ("user select {string} as insurance class")
-	public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
+	public void user_select_as_insuranceClass1(String insuranceClass) throws InterruptedException {
 		Object[] input = new Object[4];
 	    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]";
 	    input[1] = "//*[@class='select2-search__field']";
@@ -155,14 +158,14 @@ public class Medical {
 	}
 	
 	@When ("user select {string} as relationship")
-	public void user_select_as_relationship(String relationship) throws InterruptedException {
+	public void user_select_as_relationship1(String relationship) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbRelationship')]", "//*[@class='select2-search__field']", relationship , "//*[contains(@id,'select2-MainContent_cmbRelationship-result-')]", "user select {string} as relationship", "DROPDOWN", 2000);
 
 	}
 	
 	
 	@When("^user enter \"([^\"]*)\" as total premium$")
-	public void enterTotalPremium(String totalPremium) throws Throwable {
+	public void enterTotalPremium1(String totalPremium) throws Throwable {
 		Object[] input=new Object[2];
 	    input[0]="//*[@id='txtTtlPremium']";
 	    input[1]=totalPremium;
@@ -172,7 +175,7 @@ public class Medical {
 	}
 	   
 	@When("^user click on insert button$")
-	public void clickOnInsertButton() throws Throwable {
+	public void clickOnInsertButton1() throws Throwable {
 		Object[] input1=new Object[1];
 		input1[0]="//*[@id='btnInsert']";
 		SeleniumOperations.clickOnElement(input1);
@@ -190,7 +193,7 @@ public class Medical {
 	}
 
 	@When("^user click on addOn button$")
-	public void clickOnAddon() throws Throwable {
+	public void clickOnAddon1() throws Throwable {
 	    Object[] input=new Object[1];
 	    input[0]="//*[text()='Add-ons']";
 	    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
@@ -199,7 +202,7 @@ public class Medical {
 	}
 
 	@When("^user select \"([^\"]*)\" as extension$")
-	public void user_select_as_extension(String extension) throws Throwable {
+	public void user_select_as_extension1(String extension) throws Throwable {
 		Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
 		input[1]="//*[@class='select2-search__field']";
@@ -211,7 +214,7 @@ public class Medical {
 
 	
 	@When ("^user enter \"(.*)\" as rate%$")
-	public void enterRate(String rate) throws Throwable {
+	public void enterRate1(String rate) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='txtRateAddons']";
 	    input[1]=rate;
@@ -221,7 +224,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as sum insured \\(AddOn\\)$")
-	public void enterSumInsuredAddOn(String sumInsuredAddOn) throws Throwable 
+	public void enterSumInsuredAddOn1(String sumInsuredAddOn) throws Throwable 
 	{
 	   Object[] input=new Object[2];
 	   input[0]="//*[@id='txtSumInsuredAddons']";
@@ -230,7 +233,7 @@ public class Medical {
 	   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"200000\" as sum insured (AddOn)",output.get("MESSAGE").toString());
 	}
 	@When("^user enter \"([^\"]*)\" as description \\(AddOn\\)$")
-	public void enterDescriptionAddon(String description) throws Throwable {
+	public void enterDescriptionAddon1(String description) throws Throwable {
 		Object[] input =new Object[2];
 		input[0]="//*[@id='MainContent_txtDescriptionAddons']";
 		input[1]=description;
@@ -240,7 +243,7 @@ public class Medical {
 	}
 
 	@When("^user click on insert button \\(AddOn\\)$")
-	public void clickOnInsertButtonAddOn() throws Throwable {
+	public void clickOnInsertButtonAddOn1() throws Throwable {
 	    Object[] input=new Object[1];
 	    input[0]="//*[@id='btnInsertAddons']";
 	    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
@@ -249,13 +252,13 @@ public class Medical {
 	}
 	
 	@When("user click on save button")
-	public void user_click_on_save_button() throws InterruptedException {
+	public void user_click_on_save_button1() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='btnSave']", "user click on save button", "CLICK", 3000);
 
 	}
 	
 	@When("^user click on Ok button to accept commission alert message$")
-	public void clickOnOKbuttonCommission() throws Throwable {
+	public void clickOnOKbuttonCommission1() throws Throwable {
         Hashtable<String,Object> output= SeleniumOperations.alert();
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on Ok button to accept commission rate alert message",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -263,7 +266,7 @@ public class Medical {
 	
 	
 	@Then("^user able to view \"([^\"]*)\" as status$")
-	public void user_able_to_view_as_status(String awaitingReceipt) throws Throwable {
+	public void user_able_to_view_as_status1(String awaitingReceipt) throws Throwable {
 		Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_repIQNM_lblStatus_0']";
 	    input[1]=awaitingReceipt;
@@ -272,7 +275,7 @@ public class Medical {
 	}
 	
 	@When ("^user click on business by dropdown$")
-	public void clickOnBusinessDropdown() throws InterruptedException{
+	public void clickOnBusinessDropdown1() throws InterruptedException{
 		Object[] input50=new Object[1];
 		input50[0]="//*[@class='select2-search-field']";
 		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
@@ -281,7 +284,7 @@ public class Medical {
 	} 
 	
 	@Then("^user select Demo User as business by$")
-	public void user_enter_as_business_by() throws Throwable {
+	public void user_enter_as_business_by1() throws Throwable {
 	    Object[] input50=new Object[1];
 		input50[0]="//*[@id='s2id_autogen28']";
 	    Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
@@ -290,7 +293,7 @@ public class Medical {
 	}
 
 	@When("^user select on non-renewabale checkbox$")
-	public void user_select_on_non_renewabale_checkbox() throws Throwable {
+	public void user_select_on_non_renewabale_checkbox1() throws Throwable {
 	    Object[] input50=new Object[1];
 		input50[0]="//*[@id='MainContent_chkNonRenewable']";
 		Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
@@ -299,7 +302,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as contact person$")
-	public void user_enter_as_contact_person(String contactPerson) throws Throwable {
+	public void user_enter_as_contact_person1(String contactPerson) throws Throwable {
 		Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtConPerson']";
 	    input[1]=contactPerson;
@@ -309,7 +312,7 @@ public class Medical {
 	}
 
 	@When("^user select on RI per class checkbox$")
-	public void user_select_on_RI_per_class_checkbox() throws Throwable {
+	public void user_select_on_RI_per_class_checkbox1() throws Throwable {
 	    Object[] input50=new Object[1];
 		input50[0]="//*[@id='MainContent_chkRIClass']";
 		Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
@@ -318,7 +321,7 @@ public class Medical {
 	}
 
 	@When("^user Select on first loss payee checkbox$")
-	public void user_Select_on_first_loss_payee_checkbox() throws Throwable {
+	public void user_Select_on_first_loss_payee_checkbox1() throws Throwable {
 	    Object[] input50=new Object[1];
 		input50[0]="//*[@id='MainContent_chkFirstLossVaidate']";
 		Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
@@ -327,7 +330,7 @@ public class Medical {
 	}
 
 	@Then("^user enter \"([^\"]*)\" as first loss payee$")
-	public void user_enter_as_first_loss_payee(String firstLossPayee) throws Throwable {
+	public void user_enter_as_first_loss_payee1(String firstLossPayee) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtFirstLoss']";
 	    input[1]=firstLossPayee;
@@ -336,7 +339,7 @@ public class Medical {
 	}
 
 	@When("^user select on borrower type check box$")
-	public void user_select_on_borrower_type_check_box() throws Throwable {
+	public void user_select_on_borrower_type_check_box1() throws Throwable {
 	    Object[] input50=new Object[1];
 		input50[0]="//*[@id='MainContent_chkBorrower']";
 		Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
@@ -345,7 +348,7 @@ public class Medical {
 	}
 
 	@When("^user click on borrower type dropdown$")
-	public void user_click_on_borrower_type_dropdown() throws Throwable {
+	public void user_click_on_borrower_type_dropdown1() throws Throwable {
 	   
 		Object[] input50=new Object[1];
 		   input50[0]="//*[contains(@aria-controls,'MainContent_cmbBorrower')]";
@@ -354,7 +357,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as borrower type$")
-	public void user_enter_as_borrower_type(String borrowerType) throws Throwable {
+	public void user_enter_as_borrower_type1(String borrowerType) throws Throwable {
 	  
 		Object[] input=new Object[2];
 	    input[0]="//*[@Class='select2-search__field']";
@@ -365,7 +368,7 @@ public class Medical {
 	}
 
 	@Then("^user select Retail Banking as borrower type$")
-	public void user_select_Retail_Banking_as_borrower_type() throws Throwable {
+	public void user_select_Retail_Banking_as_borrower_type1() throws Throwable {
 	   
 		Object[] input50=new Object[1];
 		   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbBorrower-result')])";
@@ -375,7 +378,7 @@ public class Medical {
 	}
 
 	@When("^user click on loss ratio forecast dropdown$")
-	public void user_click_on_loss_ratio_forecast_dropdown() throws Throwable {
+	public void user_click_on_loss_ratio_forecast_dropdown1() throws Throwable {
 	 
 		Object[] input50=new Object[1];
 		   input50[0]="//*[contains(@aria-controls,'MainContent_cmbLRF')]";
@@ -385,7 +388,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as loss ratio forecast$")
-	public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
+	public void user_enter_as_loss_ratio_forecast1(String lossRatioForecast) throws Throwable {
 	   
 		Object[] input=new Object[2];
 	    input[0]="//*[@Class='select2-search__field']";
@@ -395,7 +398,7 @@ public class Medical {
 	}
 
 	@Then("^user select Profit making as loss ratio forecast$")
-	public void user_select_Profit_making_as_loss_ratio_forecast() throws Throwable {
+	public void user_select_Profit_making_as_loss_ratio_forecast1() throws Throwable {
 	   
 		Object[] input50=new Object[1];
 		   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbLRF-result')])";
@@ -405,7 +408,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as covering details$")
-	public void user_enter_as_covering_details(String coveringDetails) throws Throwable {
+	public void user_enter_as_covering_details1(String coveringDetails) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtCovering']";
 	    input[1]=coveringDetails;
@@ -414,7 +417,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as description of risk$")
-	public void user_enter_as_description_of_risk(String descriptionOfRisk) throws Throwable {
+	public void user_enter_as_description_of_risk1(String descriptionOfRisk) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtDescRisk']";
 	    input[1]=descriptionOfRisk;
@@ -423,7 +426,7 @@ public class Medical {
 	}
 
     @When("^user enter \"([^\"]*)\" as commission rate%$")
-	public void user_enter_as_commission_rate(String commissionRate) throws Throwable {
+	public void user_enter_as_commission_rate1(String commissionRate) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='txtCommissionRateAddons']";
 	    input[1]=commissionRate;
@@ -433,7 +436,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as other fee$")
-	public void user_enter_as_other_fee(String otherFee) throws Throwable {
+	public void user_enter_as_other_fee1(String otherFee) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtOtherFee']";
 	    input[1]=otherFee;
@@ -442,7 +445,7 @@ public class Medical {
     }
 
 	@When("^user enter \"([^\"]*)\" as discount on commission %$")
-	public void user_enter_as_discount_on_commission(String discountOnCommission) throws Throwable {
+	public void user_enter_as_discount_on_commission1(String discountOnCommission) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtDiscountCommRate']";
 	    input[1]=discountOnCommission;
@@ -451,7 +454,7 @@ public class Medical {
     }
 	
 	@When("^user enter \"([^\"]*)\" as cover note number$")
-	public void enterCoverNote(String coverNote) throws Throwable{
+	public void enterCoverNote1(String coverNote) throws Throwable{
 		Object[] input=new Object[2];
 	    input[0]="//*[@id='MainContent_txtGridICN']";
 	    input[1]=coverNote;
@@ -461,13 +464,13 @@ public class Medical {
 	}
 	
     @When("^user select \"([^\"]*)\" as ID type$")
-	public void user_enter_as_ID_type(String idType) throws Throwable {
+	public void user_enter_as_ID_type1(String idType) throws Throwable {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbaIDType')]", "//*[@Class='select2-search__field']", idType , "(//*[contains(@data-select2-id,'MainContent_cmbaIDType-result')])", "user select \\\"([^\\\"]*)\\\" as ID type", "DROPDOWN", 3000);
 
 	}
 
 	@When("^user enter \"([^\"]*)\" as ID number$")
-	public void user_enter_as_ID_number(String idNumber) throws Throwable {
+	public void user_enter_as_ID_number1(String idNumber) throws Throwable {
 	    Object[] input=new Object[2];
 	    input[0]="//*[@id='txtIdNb']";
 	    input[1]=idNumber;
@@ -478,7 +481,7 @@ public class Medical {
 
 		
 	@When("^user enter \"([^\"]*)\" as sum assured$")
-	public void user_enter_as_sum_assured(String sumAssured) throws Throwable {
+	public void user_enter_as_sum_assured1(String sumAssured) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='txtSumInsured']";
 		input50[1]=sumAssured;
@@ -488,7 +491,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as pre existing condition$")
-	public void user_enter_as_pre_existing_condition(String preExistingCondition) throws Throwable {
+	public void user_enter_as_pre_existing_condition1(String preExistingCondition) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtPreExisting']";
 		input50[1]=preExistingCondition;
@@ -498,7 +501,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as inpatient limit$")
-	public void user_enter_as_inpatient_limit(String inpatientLimit) throws Throwable {
+	public void user_enter_as_inpatient_limit1(String inpatientLimit) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtInpatientLimit']";
 		input50[1]=inpatientLimit;
@@ -508,7 +511,7 @@ public class Medical {
 	}
 
 	@Then("^user enter \"([^\"]*)\" as inpatient premium$")
-	public void user_enter_as_inpatient_premium(String inpatientPremium) throws Throwable {
+	public void user_enter_as_inpatient_premium1(String inpatientPremium) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtInpatientPrem']";
 		input50[1]=inpatientPremium;
@@ -518,7 +521,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as outpatient limit$")
-	public void user_enter_as_outpatient_limit(String outpatientLimit) throws Throwable {
+	public void user_enter_as_outpatient_limit1(String outpatientLimit) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtOutpatientLimit']";
 		input50[1]=outpatientLimit;
@@ -528,7 +531,7 @@ public class Medical {
 	}
 
 	@Then("^user enter \"([^\"]*)\" as outpatient premium$")
-	public void user_enter_as_outpatient_premium(String outpatientPremium) throws Throwable {
+	public void user_enter_as_outpatient_premium1(String outpatientPremium) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtOutpatientPrem']";
 		input50[1]=outpatientPremium;
@@ -538,7 +541,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as last expense limit$")
-	public void user_enter_as_last_expense_limit(String expenseLimit) throws Throwable {
+	public void user_enter_as_last_expense_limit1(String expenseLimit) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtLastExpenseLimit']";
 		input50[1]=expenseLimit;
@@ -548,7 +551,7 @@ public class Medical {
 	}
 
 	@Then("^user enter \"([^\"]*)\" as last expense premium$")
-	public void user_enter_as_last_expense_premium(String expensePremium) throws Throwable {
+	public void user_enter_as_last_expense_premium1(String expensePremium) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtLastExpensePrem']";
 		input50[1]=expensePremium;
@@ -558,7 +561,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as personal accident limit$")
-	public void user_enter_as_personal_accident_limit(String accidentLimit) throws Throwable {
+	public void user_enter_as_personal_accident_limit1(String accidentLimit) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtPersonalAccidentLimit']";
 		input50[1]=accidentLimit;
@@ -568,7 +571,7 @@ public class Medical {
 	}
 
 	@Then("^user enter \"([^\"]*)\" as personal accident premium$")
-	public void user_enter_as_personal_accident_premium(String accidentPremium) throws Throwable {
+	public void user_enter_as_personal_accident_premium1(String accidentPremium) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtPersonalAccidentPrem']";
 		input50[1]=accidentPremium;
@@ -578,7 +581,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as dental limit$")
-	public void user_enter_as_dental_limit(String dentalLimit) throws Throwable {
+	public void user_enter_as_dental_limit1(String dentalLimit) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtDentalLimit']";
 		input50[1]=dentalLimit;
@@ -588,7 +591,7 @@ public class Medical {
 	}
 
 	@Then("^user enter \"([^\"]*)\" as dental premium$")
-	public void user_enter_as_dental_premium(String dentalPremium) throws Throwable {
+	public void user_enter_as_dental_premium1(String dentalPremium) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtDentalPrem']";
 		input50[1]=dentalPremium;
@@ -598,7 +601,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as optical limit$")
-	public void user_enter_as_optical_limit(String opticalLimit) throws Throwable {
+	public void user_enter_as_optical_limit1(String opticalLimit) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtOpticalLimit']";
 		input50[1]=opticalLimit;
@@ -608,7 +611,7 @@ public class Medical {
 	}
 
 	@Then("^user enter \"([^\"]*)\" as optical premium$")
-	public void user_enter_as_optical_premium(String opticalPremium) throws Throwable {
+	public void user_enter_as_optical_premium1(String opticalPremium) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtOpticalPrem']";
 		input50[1]=opticalPremium;
@@ -618,7 +621,7 @@ public class Medical {
     }
 
 	@When("^user enter \"([^\"]*)\" as maternity limit$")
-	public void user_enter_as_maternity_limit(String maternityLimit) throws Throwable {
+	public void user_enter_as_maternity_limit1(String maternityLimit) throws Throwable {
 	    Object[] input50=new Object[2];
 		input50[0]="//*[@id='MainContent_txtMaternityLimit']";
 		input50[1]=maternityLimit;
@@ -627,7 +630,7 @@ public class Medical {
 		Thread.sleep(2000);
 	}
 	@When("^user click on extension dropdown$")
-	public void clickOnExtensionDropdown()
+	public void clickOnExtensionDropdown1()
 	{
 		Object[] input11=new Object[1];
 		input11[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
@@ -636,7 +639,7 @@ public class Medical {
 	}
 
 	@When("^user enter \"([^\"]*)\" as extension$")
-	public void enterExtension(String extension)
+	public void enterExtension1(String extension)
 	{
 		Object[] input=new Object[2];
 	    input[0]="//*[@class='select2-search__field']";
@@ -646,7 +649,7 @@ public class Medical {
 	}
 
 	@When("^user select on All Risk Cover as extension$")
-	public void selectExtension() throws Throwable 
+	public void selectExtension1() throws Throwable 
 	{
 	   Object[] input=new Object[1];
 	   input[0]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
@@ -655,17 +658,17 @@ public class Medical {
 	}
 	
 	@When("^user select \"([^\"]*)\" as from date$")
-	 public void user_select_as_date_from(String dateFrom) throws Throwable {
+	 public void user_select_as_date_from1(String dateFrom) throws Throwable {
 		 Object[] input=new Object[2];
 		 input[0]="//*[@id='MainContent_txtSrchFromDate']";
 		 input[1]=dateFrom;
 		 Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \"01/01/2023\" as from date",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
+		 Thread.sleep(4000);
 	 }
 	
 	@When("user enter {string} as Insurance Type")
-	public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
+	public void user_enter_as_insuranceType1(String insuranceType) throws InterruptedException {
 	    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
 	}
 	
@@ -681,14 +684,15 @@ public class Medical {
 	 }
 	
 	@When ("user enter quote number to search {string} quote")
-	public void user_enter_as_quote_number(String quoteName) throws InterruptedException {
+	public void user_enter_as_quote_number1(String quoteName) throws InterruptedException {
 		String quoteNo = SeleniumOperations.getQuote(quoteName);
-		Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
+		Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 1000);
+		Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 		Thread.sleep(4000);
 	}
 	
 	@When ("user click on search button")
-	 public void user_click_on_search_button_quoteNo() throws Throwable {
+	 public void user_click_on_search_button_quoteNo1() throws Throwable {
 		 Object[] input=new Object[1];
 		 input[0]="//*[@id='button_btnSearch_lc']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
@@ -697,17 +701,17 @@ public class Medical {
 	 }
 	
 	@When("user clicks on the actions dropdown")
-	public void user_clicks_on_the_actions_dropdown() throws InterruptedException {
+	public void user_clicks_on_the_actions_dropdown1() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]", "user clicks on the actions dropdown", "CLICK", 2000);
 
 	}
 	@When("user clicks on print quotation option")
-	public void user_clicks_on_print_quotation_option() throws InterruptedException {
+	public void user_clicks_on_print_quotation_option1() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[3]", "user clicks on print quotation option", "CLICK", 2000);
 
 	}
 	@When("the quote should include all relevant details like")
-	public void the_quote_should_include_all_relevant_details(DataTable dataTable) throws IOException, InterruptedException {
+	public void the_quote_should_include_all_relevant_details1(DataTable dataTable) throws IOException, InterruptedException {
 		 List<String> rawFields = dataTable.asList(String.class);
 		    List<String> fields = new ArrayList<>(rawFields); // ✅ make it modifiable
 
@@ -723,5 +727,22 @@ public class Medical {
 			Thread.sleep(2000);
 	    }
 	    
+	}
+	@When ("user enter {string} as borrower account name")
+	public void user_enter_as_borrower_account_name1(String borrowerName) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccName']", borrowerName, "user enter {string} as borrower account name", "TEXTBOX", 0);
+	}
+	@When ("user enter {string} as borrower account number")
+	public void user_enter_as_borrower_account_number1(String borrowerNumber) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
+	}
+	@Then ("user able to view {string} message")
+	public void validation(String validation) throws InterruptedException{
+		Object[] input=new Object[2];
+		input[0]="//*[text()='1003-Information modified successfully']";
+		input[1]=validation;
+		Hashtable<String,Object> output=SeleniumOperations.validation(input);
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} message",output.get("MESSAGE").toString());
+		Thread.sleep(2000);
 	}
 }

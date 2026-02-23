@@ -11,14 +11,19 @@ When user click on add button
 @Test
 Scenario: Verify user able to create Provisional Batch Tax Invoices successfully
 When user select "Automated Testing Company" as insurer name
-When user enter "10-Jul-2024" as date from
+When user enter "01-Dec-2025" as date from
+When user enter "11-Dec-2025" as date to
 And user select "General" as category
 Then user click on fetch button
 
+
 #Scenario:
 When user click on checkbox to select commission
-And user click on save button
+When user click on save button
 Then user able to view "Pending" as status
+And user clicks on the actions dropdown
+
+
 When user click on collect cash icon
 When user select "Bank payment" as mode
 When user select "Bank Of Tanzania" as issuer bank

@@ -3,6 +3,7 @@ Feature: Login Functionality
 Background: Launch browser and open application
 
 
+    
 @SmokeTest  
 Scenario: (Login)To check Authentication and Authorization functionality by providing valid user id and valid password
 When user enter username

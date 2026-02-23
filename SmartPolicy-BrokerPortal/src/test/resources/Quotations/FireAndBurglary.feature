@@ -70,14 +70,16 @@ When user enter "1425DT10" as unique property identification
 When user select on non-renewabale checkbox
 When user enter "Manager654123" as contact person
 When user select on RI per class checkbox
-When user select on limit of liability amount checkbox
-Then user enter "1524025" as limit of liability amount
+#When user select on limit of liability amount checkbox
+#Then user enter "1524025" as limit of liability amount
 When user Select on first loss payee checkbox
 Then user enter "Payee101" as first loss payee
 When user select on borrower type check box
 When user click on borrower type dropdown
 And user enter "Retail Banking" as borrower type
 Then user select Retail Banking as borrower type
+When user enter "Pravin Test Acc" as borrower account name
+When user enter "9541203288" as borrower account number
 When user enter "15244-51654-84125" as cover note number
 When user click on loss ratio forecast dropdown
 When user enter "Profit making" as loss ratio forecast

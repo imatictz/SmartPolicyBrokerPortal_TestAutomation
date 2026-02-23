@@ -12,7 +12,8 @@ public class ProvisionalBatchTaxInvoices {
 	      Object[] input = new Object[2];
 	      input[0]="//*[@id='MOD_OPERATIONS']";
 	      SeleniumOperations.actionClass(input);
-	}
+	      Thread.sleep(2000);	
+	      }
 	@When("user navigate on billing option")
 	public void user_navigate_on_billing_menu() throws Throwable {
 	    
@@ -44,6 +45,11 @@ public class ProvisionalBatchTaxInvoices {
 	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtFromDate']", dateFrom, "user enter {string} as date from", "TEXTBOX", 0);
 
 	}
+	@When("user enter {string} as date to")
+	public void user_enter_as_date_to(String dateTo) throws InterruptedException {
+	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtToDate']", dateTo, "user enter {string} as date to", "TEXTBOX", 0);
+
+	}
 	@When("user select {string} as category")
 	public void user_select_as_category(String category) throws InterruptedException {
 	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'select2-MainContent_cmbCategory-container')]", "//*[@class='select2-search__field']", category , "//*[contains(@data-select2-id,'select2-data-select2-MainContent_cmbCategory-result')]", "user select {string} as category", "DROPDOWN", 2000);
@@ -58,9 +64,9 @@ public class ProvisionalBatchTaxInvoices {
 	
 	@When("user click on checkbox to select commission")
 	public void user_click_on_checkbox_to_select_commission() throws InterruptedException {
-	    Itl.CustomClickEvent("//*[@id='grdBatchTaxInvoice']/tbody/tr[1]/td[13]", "user click on checkbox to select commission", "CLICK", 8000);
-	    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATonCommission']", "//*[@id='MainContent_txtGrossCommission']", "//*[@id='MainContent_txtTotalCommission']", "GSTVALIDATION", 0);
-        
+	    Itl.CustomClickEvent("//*[@id='selectall']", "user click on checkbox to select commission", "CLICK", 8000);
+	   // Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATonCommission']", "//*[@id='MainContent_txtGrossCommission']", "//*[@id='MainContent_txtTotalCommission']", "GSTVALIDATION", 0);
+        Itl.CustomvalidateProvisionalBatchTaxInvoicesCalculationEvent("Provisional Batch Tax Invoices Details", "VALIDATION", 2000);
 	}
 	
 	@When("user click on save button")
@@ -73,9 +79,14 @@ public class ProvisionalBatchTaxInvoices {
 	public void user_able_to_view_as_status(String status) throws InterruptedException {
 	    Itl.CustomValidationEvent("//*[@id='sort_table']/tbody/tr[1]/td[11]", status, "user able to view {string} as status", "VALIDATION", 3000);
 	}
+	@When("user clicks on the actions dropdown")
+	public void user_clicks_on_the_actions_dropdown() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[12]/*[3]", "user clicks on the actions dropdown", "CLICK", 2000);
+
+	}
 	@When("user click on collect cash icon")
 	public void user_click_on_collect_cash_icon() throws InterruptedException {
-	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[12]/button[4]", "user click on collect cash icon", "CLICK", 2000);
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[12]/*[3]/*[2]/*[2]", "user click on collect cash icon", "CLICK", 2000);
 
 	}
 	@When("user select {string} as mode")

@@ -69,7 +69,7 @@ public class ClientDetails {
 	    Thread.sleep(2000);
 	}
 
-	@When("^user enter \"([^\"]*)\" as client name$")
+	@When("^user enter (.+) as client name$")
 	public void user_enter_as_client_name(String clientName) throws InterruptedException {   
 		Thread.sleep(4000);
 		Object[] input18=new Object[2];

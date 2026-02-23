@@ -31,6 +31,7 @@ public class TestDataLoader {
 
                 case "Health":
                     return mapper.treeToValue(node, HealthPolicyData.class);
+                    
 
                 default:
                     throw new RuntimeException("Unknown policy type: " + policyType);

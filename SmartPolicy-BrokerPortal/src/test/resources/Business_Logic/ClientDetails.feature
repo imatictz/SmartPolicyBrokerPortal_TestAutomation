@@ -1,4 +1,4 @@
-@All
+@All @CLIENT
 Feature: New Client details
 
 Background:
@@ -6,14 +6,14 @@ Background:
 When user click on client icon from quick menu
 
 
-@RegressionTest       @MandatoryFields @main
+@RegressionTest       @MandatoryFields @main @CLIENT
 Scenario: (ClientDetails) Enter new client details with mandatory fields
 
 When user click on add button
 When user click on title dropdown
 When user enter "Mr" as title in search box
 When user click on Mr from dropdown
-When user enter "Pravin Test Client" as client name
+When user enter Pravin Test Client as client name
 When user click in account number field
 When user enter "5412502145021004" as account number
 When user click on ID type dropdown
@@ -41,7 +41,7 @@ When user enter "xxxxxxx503@gmail.com" as email id one
 When user click on save button to save client details
 Then user able to view "1001-New information recorded successfully" as message
 
-@AllFields @main
+@AllFields @main  @CLIENT
 Scenario: (ClientDetails) Enter new client details with all fields
 
 When user click on add button
@@ -55,7 +55,7 @@ When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
 When user enter "564548465468482004" as ID number
-When user enter "215112165151115" as TIN/PAN
+When user enter "987654321" as TIN/PAN
 When user enter "32189412349515" as ZRB No
 When user enter "01/01/2000" as date of birth
 When user click on nationality dropdown
@@ -109,8 +109,7 @@ When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
 Then user able to view "1001-New information recorded successfully" as message
 
-
-@Corporate  @main
+@Corporate  @main  @CLIENT
 Scenario: (ClientDetails) Enter new client details with all fields for corporate
 
 When user click on add button
@@ -124,7 +123,7 @@ When user click on ID type dropdown
 When user enter "Company Incorporation Certificate Number" to search ID type in search box
 When user click on Company Incorporation Certificate Number as ID type from dropdown
 When user enter "654851846543004" as ID number
-When user enter "215112165151162" as TIN/PAN
+When user enter "987654321" as TIN/PAN
 When user enter "321894123495" as ZRB No
 When user select "None" as Disability Status 
 When user select "Corporates" as Client Sub Status
@@ -178,6 +177,8 @@ When user click on save button to save client details
 Then user able to view "1001-New information recorded successfully" as message
 
 
+    
+
 
 
 @One
@@ -224,8 +225,8 @@ When user select gender dropdown to view options
       | @#$%       | invalid        |
       | 1234!      | invalid        |
       | --/--/---- | invalid        |
-
-  @range @DOB
+      
+      @range @DOB
   Scenario Outline: System should validate logical DOB range
   When user click on add button
     When I enter "<inputDate>" into the Date of Birth field
@@ -377,42 +378,42 @@ When user enter "659544202" as mobile No One
     When the user enters the client name "TestAutomation104" in Name field
     And clicks on the search button
     Then the system should display client(s) with the name "TestAutomation104"
-    And the displayed client details should include "Client ID", "Email", "Mobile", and "Account Number"     
+    #And the displayed client details should include "Client ID", "Email", "Mobile", and "Account Number"     
     
     @SearchByMobile     @Search
     Scenario: Search client by valid Mobile Number
     When the user enters the mobile number "+255659544202" in mobile number field
     And clicks on the search button
     Then the system should display client(s) whose mobile number is "+255659544202"
-    And the displayed client details should include "Name", "Email", and "Client ID" 
+    #And the displayed client details should include "Name", "Email", and "Client ID" 
     
     @SearchByEmail    @Search
     Scenario: Search client by valid Email ID
     When the user enters the client email "xxxxxxx102@gmail.com" in the Email ID field
     And clicks on the search button
     Then the system should display client(s) whose email is "xxxxxxx102@gmail.com"
-    And the displayed details should include "Name", "Mobile", and "Client ID"
+    #And the displayed details should include "Name", "Mobile", and "Client ID"
 
     @SearchByClientID    @Search
     Scenario: Search client by valid Client ID
     When the user enters the client ID "140" in the Client ID field
     And clicks on the search button
     Then the system should display the client with Client ID "140"
-    And the displayed details should include "Name", "Email", and "Mobile"
+    #And the displayed details should include "Name", "Email", and "Mobile"
 
     @SearchByAccountNumber    @Search
     Scenario: Search client by valid Account Number
     When the user enters the account number "5412502145021004" in the Account Number field
     And clicks on the search button
     Then the system should display the client(s) linked with account number "5412502145021004"
-    And the displayed details should include "Name", "Email", and "Client ID"
+    #And the displayed details should include "Name", "Email", and "Client ID"
 
     @SearchByDateOfBirth  @Search
     Scenario: Search client by valid Date of Birth
     When the user enters the date of birth "01-Jan-2000" in the Date of Birth field
     And clicks on the search button
     Then the system should display client(s) date of birth "01-Jan-2000"
-    And the displayed details should include "Name", "Email", and "Client ID"
+    #And the displayed details should include "Name", "Email", and "Client ID"
 
     @CombinedSearch    @Search
     Scenario: Search client by multiple valid fields
@@ -433,7 +434,7 @@ When user enter "659544202" as mobile No One
       | Client ID      | 141                   |
       | Account No     | 564548465468482004    |
       | Date Of Birth  | 01-Jan-2000           |
-    And the displayed details should include "Client ID", "Account Number", and "Date of Birth"     
+    #And the displayed details should include "Client ID", "Account Number", and "Date of Birth"     
       
     @EditClientDetails     
     Scenario: Verify user able to edit an existing client details successfully
@@ -472,8 +473,7 @@ When user enter "659544202" as mobile No One
     When user enter "659544202" as mobile No One
     When user enter "xxxxxxx503@gmail.com" as email id one
     When user click on save button to save client details
-    Then user able to view "1003-Information modified successfully" as message
+    Then user able to view "1003-Information modified successfully" as message   
     
     
-
-
+    

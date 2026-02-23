@@ -38,6 +38,7 @@ public class ClaimsTracking {
 	@When("user enter {string} as Cover Information")
 	public void user_enter_as_insuranceType(String CoverInformation) throws InterruptedException {
 	    Itl.CustomSendEvent("//*[@id='MainContent_txtSrchCoverType']", CoverInformation, "user enter {string} as Cover Information", "TEXTBOX", 0);
+	    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 	}
 	
 	@When ("user click on search button to find {string} claim ID")
@@ -100,19 +101,19 @@ public class ClaimsTracking {
 	}
 	 @When("user enter date of loss\\/Accident")
 	 public void user_enter_as_date_of_loss_accident() throws InterruptedException {
-          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of loss\\\\/Accident", "TEXTBOX", 0);
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']","Today", "user enter date of loss\\\\/Accident", "TEXTBOX", 0);
 	 }
 	 @When("user enter reported date")
 	 public void user_enter_as_reportDate() throws InterruptedException {
-          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtReportedDate']", "user enter reported date", "TEXTBOX", 0);
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtReportedDate']","Today", "user enter reported date", "TEXTBOX", 0);
 	 }
 	 @When("user enter police reported date")
 	 public void user_enter_as_policereportDate() throws InterruptedException {
-          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtPSPD']", "user enter police reported date", "TEXTBOX", 0);
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtPSPD']","Today", "user enter police reported date", "TEXTBOX", 0);
 	 }
 	 @When("user enter date of death\\/illnes\\/others")
 	 public void user_enter_as_date_of_death_illnes_others() throws InterruptedException {
-          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']", "user enter date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);
+          Itl.CustomSendTodaysDateEvent("//*[@id='MainContent_txtAcciDate']","Today", "user enter date of death\\\\/illnes\\\\/others", "TEXTBOX", 0);
 	 }
 	 @When("user select {string} as country")
 	 public void user_select_as_country(String country) throws InterruptedException {
