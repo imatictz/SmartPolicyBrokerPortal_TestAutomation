@@ -3,34 +3,6 @@
 <suite data-provider-thread-count="2" name="Failed suite [SmartPoilcy]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test1(failed)">
     <classes>
-      <class name="testRunner.RunnerTestRiskNote_DebitNote">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="1"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestRiskNote_DebitNote -->
-      <class name="testRunner.RunnerTestEndorsementScreen">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="8"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestEndorsementScreen -->
-      <class name="testRunner.RunnerTestEndorsement">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="2 3 4 5 10 12 13 14 15 21 22 23"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestEndorsement -->
-      <class name="testRunner.RunnerTestVehicleQuotation">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="7"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestVehicleQuotation -->
       <class name="testRunner.RunnerTestMedicalQuotation">
         <methods>
           <include name="tearDownClass"/>
@@ -38,6 +10,13 @@
           <include name="setUpClass"/>
         </methods>
       </class> <!-- testRunner.RunnerTestMedicalQuotation -->
+      <class name="testRunner.RunnerTestVehicleQuotation">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="7"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestVehicleQuotation -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [SmartPoilcy] -->

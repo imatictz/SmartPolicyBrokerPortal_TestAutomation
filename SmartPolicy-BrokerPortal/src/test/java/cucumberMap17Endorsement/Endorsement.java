@@ -75,6 +75,14 @@ public class Endorsement {
 		 Thread.sleep(2000); 
 	 }
 	 
+	 @When("^user select educare Endorsements as endorsement type$")
+	 public void user_select_educare_Endorsements_as_endorsement_type() throws Throwable {
+		 Object[] input7=new Object[1];
+		 input7[0]="(//*[contains(@data-select2-id,'-MainContent_cmbPopEndorsementType')])[2]";
+		 SeleniumOperations.clickOnElement(input7);
+		 Thread.sleep(2000); 
+	 }
+	 
 	 @When ("^user select Medical Endorsement as endorsement type$")
 	 public void user_select_Medical_Endorsements_as_endorsement_type() throws Throwable {
 		 Object[] input7=new Object[1];
@@ -112,6 +120,16 @@ public class Endorsement {
 	 public void user_click_on_select_icon_to_make_financial_changes() throws Throwable {
 		    Itl.CustomClickEvent("//*[@class='DisplayData fa fa-edit']", "user click on select option to edit details", "CLICK", 2000);
 
+	 }
+	 @When("user enter {string} as change value of Annual Salary\\/Limit of Liability")
+	 public void user_enter_as_change_value_of_annual_salary_limit_of_liability(String amount) throws InterruptedException {
+		 Itl.CustomClearSendEvent(
+	                "//input[@id='MainContent_txtAnnualSalary']",
+	                amount,
+	                "Enter Annual Salary/Limit of Liability",
+	                "TEXTBOX",
+	                0
+	        );
 	 }
 
 	
@@ -455,6 +473,7 @@ public class Endorsement {
 			Itl.CustomSendEvent("//*[@id='txtRiskNote']", risknoteNo, "user enter risk note number to search policy", "TEXTBOX", 0);
 			Thread.sleep(4000);
 		}
+		
 		
 		@When ("user enter risk note number")
 		public void user_enter_as_risk_number() throws InterruptedException {

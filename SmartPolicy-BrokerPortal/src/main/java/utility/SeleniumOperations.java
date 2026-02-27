@@ -166,6 +166,7 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   d().findElement(By.xpath(strXpath)).click();
+		   Thread.sleep(2000);
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
 	   /*  String test = d().findElement(By.xpath("//*[text()='Session Expired.']")).getText();
@@ -2049,7 +2050,6 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	            for (WebElement row : rows) {
     	                WebElement cell1 = row.findElement(By.xpath("./td[4]")); // 4th column
     	                WebElement cell2 = row.findElement(By.xpath("./td[8]")); // 8th column
-
     	                if (cell1.getText().trim().equalsIgnoreCase(quoteName)
     	                        && cell2.getText().trim().equalsIgnoreCase("Awaiting Receipt")) {
 

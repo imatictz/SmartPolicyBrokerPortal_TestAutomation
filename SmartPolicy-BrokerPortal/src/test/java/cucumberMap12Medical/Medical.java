@@ -670,6 +670,7 @@ public class Medical {
 	@When("user enter {string} as Insurance Type")
 	public void user_enter_as_insuranceType1(String insuranceType) throws InterruptedException {
 	    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+	    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 	}
 	
 	@When ("user click on search button to find {string} quote")
@@ -678,7 +679,7 @@ public class Medical {
 		 input[0]="//*[@id='button_btnSearch_lc']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
+		 Thread.sleep(5000);
 		 SeleniumOperations.getQuote(quoteName);
 		 Thread.sleep(4000);
 	 }
@@ -687,7 +688,6 @@ public class Medical {
 	public void user_enter_as_quote_number1(String quoteName) throws InterruptedException {
 		String quoteNo = SeleniumOperations.getQuote(quoteName);
 		Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 1000);
-		Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 		Thread.sleep(4000);
 	}
 	

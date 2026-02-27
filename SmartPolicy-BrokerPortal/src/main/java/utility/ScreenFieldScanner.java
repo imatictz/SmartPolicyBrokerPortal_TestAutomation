@@ -2,6 +2,7 @@ package utility;
 
 	import org.openqa.selenium.*;
 	import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -24,17 +25,26 @@ import java.time.Duration;
 	            driver.findElement(By.xpath("//*[@id='usercode']")).sendKeys("PravinS");
 	            driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Wa@12345");
 	            driver.findElement(By.xpath("//*[@id='btnLogin']")).click();
+	            //operation menu
+	           /* Actions act = new Actions(driver);
+	           WebElement move = driver.findElement(By.xpath("//*[@id='MOD_OPERATIONS']"));
+	           act.moveToElement(move).build().perform();
+	           Thread.sleep(2000);
+	           //customer management
+	           WebElement move1 = driver.findElement(By.xpath("//*[@id='span124']"));
+	           act.moveToElement(move1).build().perform();
+	           driver.findElement(By.xpath("//*[@id='Span83']")).click();*/
 	            //Open Quotation Screen
-	            driver.findElement(By.xpath("//*[@id='MNU_WFCLNT_2']")).click();
+	           driver.findElement(By.xpath("//*[@id='MNU_WFFIQNM_2']")).click();
 	            //Click on ADD
 	            driver.findElement(By.xpath("//*[@id='MainContent_btnAdd']")).click();
-               /* Thread.sleep(15000);
+                Thread.sleep(15000);
 	            //Select Insurance Type
 	            driver.findElement(By.xpath("//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]")).click();
-	            Thread.sleep(7000);
-	            driver.findElement(By.xpath("//*[@class='select2-search__field']")).sendKeys("Marine - Containerized ICC Clause (A)(Less Than 500M)");
+	            Thread.sleep(5000);
+	            driver.findElement(By.xpath("//*[@class='select2-search__field']")).sendKeys("workmens");
 	            driver.findElement(By.xpath("//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]")).click();
-	            Thread.sleep(10000);*/
+	            Thread.sleep(1000);
 
 	         // --------------------------------------------------
 	            // STEP 2: Collect all visible fields

@@ -57,12 +57,8 @@ package cucumberMap31PaymentReceipt;
 
 	 	@When("^user enter \"([^\"]*)\" as client name$")
 		public void enterClientName(String clientName) throws Throwable {
-		    Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtClientName']";
-		    input[1]=clientName;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name",output.get("MESSAGE").toString());
-		    Thread.sleep(2000);
+		    
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtClientName']", clientName, "user enter \\\"([^\\\"]*)\\\" as amount", "TEXTBOX", 2000);
 		}
 
 		@When("^user select Pravin Testing as client name$")
@@ -74,12 +70,8 @@ package cucumberMap31PaymentReceipt;
 		}
 	 	@When("^user enter \"([^\"]*)\" as amount$")
 	 	public void user_enter_as_amount(String amount) throws Throwable {
-	 	    Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtAmount']";
-		    input[1]=amount;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as amount",output.get("MESSAGE").toString());
-		}
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAmount']", amount, "user enter \\\"([^\\\"]*)\\\" as amount", "TEXTBOX", 0);
+	 	}
 
 	 	@When("user select {string} as mode")
 		public void user_select_as_mode(String mode) throws InterruptedException {
@@ -87,16 +79,10 @@ package cucumberMap31PaymentReceipt;
 
 		}
 
-	 	
-
 	 	@When("^user enter \"([^\"]*)\" as notes$")
 	 	public void user_enter_as_notes(String notes) throws Throwable {
-	 	    Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtNotes']";
-		    input[1]=notes;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as notes",output.get("MESSAGE").toString());
-		}
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtNotes']", notes, "user enter {string} as Cheque\\\\/ Reference Number", "TEXTBOX", 0);
+	 	}
 
 	 	@When("user select {string} as issuer bank")
 		public void user_select_as_issuer_bank(String issuerBank) throws InterruptedException {
@@ -105,7 +91,7 @@ package cucumberMap31PaymentReceipt;
 		}
 		@When("user enter {string} as Cheque\\/ Reference Number")
 		public void user_enter_as_cheque_reference_number(String refNumber) throws InterruptedException {
-		    Itl.CustomSendEvent("//*[@id='MainContent_txtRefNB']", refNumber, "user enter {string} as Cheque\\\\/ Reference Number", "TEXTBOX", 0);	
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtRefNB']", refNumber, "user enter {string} as Cheque\\\\/ Reference Number", "TEXTBOX", 0);	
 		    
 		}
 		@When("user select {string} as collecting bank")
@@ -116,21 +102,14 @@ package cucumberMap31PaymentReceipt;
 
 	 	@When("^user enter \"([^\"]*)\" as refrence id$")
 	 	public void user_enter_as_refrence_id(String refrenceId) throws Throwable {
-	 	    Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtAcctRefId']";
-		    input[1]=refrenceId;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as refrence id",output.get("MESSAGE").toString());
-		}
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtAcctRefId']", refrenceId, "user enter \\\"([^\\\"]*)\\\" as refrence id", "TEXTBOX", 2000);
+	 	}
 
 	 	@Then("^user enter \"([^\"]*)\" as insurer payment refrence id$")
 	 	public void user_enter_as_insurer_payment_refrence_id(String insurerPayRefrenceId) throws Throwable {
-	 	    Object[] input=new Object[2];
-		    input[0]="//*[@id='MainContent_txtInsurerPaymetId']";
-		    input[1]=insurerPayRefrenceId;
-		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as insurer payment refrence id",output.get("MESSAGE").toString());
-		    Thread.sleep(2000);
+	 	    
+		    Itl.CustomClearSendEvent("//*[@id='MainContent_txtInsurerPaymetId']", insurerPayRefrenceId, "user enter \\\"([^\\\"]*)\\\" as insurer payment refrence id", "TEXTBOX", 2000);	
+
 	 	}
 
 	 	@Then("^user click on save button$")

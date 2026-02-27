@@ -247,5 +247,27 @@ Then user click on endorsement
       | New Premium        |
       | Actual Premium     |
       | VAT Amount         |
+      | Total Premium      |
+      
+      @PrintWorkmensEndorsement   @print
+   Scenario: User print endorsement report for Workmens policy
+   When user select "01/01/2025" as from date
+   When user enter "Workmens (With Liability)" as Insurance Type
+   When user click on search button to find "Workmens (With Liability)" endorsement no
+   When user enter endorsement no to search "Workmens (With Liability)" endorsement record
+   When user click on search button
+   And user clicks on the actions dropdown
+   And user clicks on print option
+   And the vehicle endorsement report should include all relevant details like
+      | Field              | 
+      | Endorsement No     |
+      | Risk Note No       |
+      | Branch             |
+      | Date               |
+      | Insured Name       |
+      | Insurance Company  |
+      | New Premium        |
+      | Actual Premium     |
+      | VAT Amount         |
       | Total Premium      |   
       

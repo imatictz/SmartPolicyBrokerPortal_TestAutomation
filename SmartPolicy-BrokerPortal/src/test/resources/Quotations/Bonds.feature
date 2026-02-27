@@ -37,7 +37,7 @@ When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
-Scenario: (Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully
+Scenario: (Bonds Quotation) Verify user able to enter mandatory fields with NoAddon and save quotation successfully
 When user click on add button
 When user select "Bonds" as insurance type
 When user enter "Pravin Testing Broker" as client name

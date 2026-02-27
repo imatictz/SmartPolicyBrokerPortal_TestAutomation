@@ -1429,4 +1429,242 @@ When user click on process endorsement icon
 When user click on YES button for confirmation
 Then user able to view "Issued" as status
 
+@NonFinancialEducare
+Scenario: (Educare Quotation Endorsement-NonFinancial)Verify user able to do policy  educare non-financial endorsement
+
+When user select "01/01/2025" as from date
+When user enter "Educare Life Insurance" as Insurance Type
+When user click on search button to find "Educare Life Insurance" risk note
+When user navigate on operation dropdown menu
+When user navigate on endorsement menu
+When user click on endorsement option
+When user click on add button
+When user click on endorsement type dropdown
+When user enter "Educare Endorsement" as endorsement type
+When user select educare Endorsements as endorsement type
+#BrokerPortal
+When user enter risk note number
+When user click on fetch button
+#Beneficiary 1
+
+When user enter "Tester Testing Beneficiary 1" as name of beneficiary (For Beneficiary one)
+When user enter "15/05/1988" as date of birth (For Beneficiary one)
+When user select "Male" as gender (For Beneficiary one)
+When user select "Self" as relationship to owner (For Beneficiary one)
+When user enter "659544202" as telephone (For Beneficiary one)
+When user enter "15" as percent of life benefit given (For Beneficiary one)
+When user enter "Address No 1" as address (For Beneficiary one)
+When user enter "Non Financial endorsement" as endorsement details
+When user click on process endorsement button
+When user click on OK button to process endorsement 
+When user select "01/01/2025" as from date
+When user enter "Educare Endorsement" as Insurance Type
+When user enter risk note number
+When user click on search button
+Then user able to view "Insurer Approval Required" as status
+
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Wa@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user select "01/01/2025" as from date
+When user enter "Educare Life Insurance" as Insurance Type
+When user enter risk note number
+When user click on search button(Insurer)
+Then user able to view "Insurer Approval Required" as status(Insurer)
+When user click on display icon
+Then user click on approve endorsement button
+Then user navigate on Endorsement Approval screen
+#Return To Broker Portal
+
+When user click on search button
+Then user able to view "Pending" as status
+When user click on actions button
+When user click on process endorsement icon
+When user click on YES button for confirmation
+Then user able to view "Issued" as status
+
+#Workmens Quotation
+@UpgradeWorkmensPolicy @one
+Scenario: (Workmens Quotation Endorsement-UpgradePolicy)Verify user able to do policy upgrading for general financial endorsement
+
+When user select "01/10/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user click on search button to find "Workmens (With Liability)" risk note
+When user navigate on operation dropdown menu
+When user navigate on endorsement menu
+When user click on endorsement option
+When user click on add button
+When user click on endorsement type dropdown
+When user enter "General Endorsements" as endorsement type
+When user select General Endorsements as endorsement type
+#BrokerPortal
+When user enter risk note number to search policy
+When user click on fetch button
+#When user enter "46548-12446-54984" as cover note number
+When user click on select option to edit details
+When user enter "45000000" as change value of Annual Salary/Limit of Liability
+When user click on compute button
+When user click on update button 
+When user enter "Upgrading Policy" as endorsement details
+When user click on process endorsement button
+When user click on OK button to process endorsement 
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user enter risk note number
+When user click on search button
+Then user able to view "Insurer Approval Required" as status
+
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Wa@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user enter risk note number
+When user click on search button(Insurer)
+Then user able to view "Insurer Approval Required" as status(Insurer)
+When user click on display icon
+Then user click on approve endorsement button
+Then user navigate on Endorsement Approval screen
+#Return To Broker Portal
+
+When user click on search button
+Then user able to view "Awaiting Receipt" as status
+When user click on actions button
+When user click on capture receipt icon
+When user select "Electronic Funds Transfer (EFT)" as mode
+When user select "Absa Group Limited" as issuer bank
+When user select "Uchumi Commercial Bank" as collecting bank
+When user enter "1250" as reference No
+When user click on proceed button
+When user click on actions button
+When user click on process endorsement icon
+When user click on YES button for confirmation
+Then user able to view "Issued" as status
+
+
+@DownGradeWorkmensPolicy   @one
+Scenario: (Workmens Quotation Endorsement-DownGradePolicy)Verify user able to do policy downgrading for general financial endorsement
+
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user click on search button to find "Workmens (With Liability)" risk note
+When user navigate on operation dropdown menu
+When user navigate on endorsement menu
+When user click on endorsement option
+When user click on add button
+When user click on endorsement type dropdown
+When user enter "General Endorsements" as endorsement type
+When user select General Endorsements as endorsement type
+#BrokerPortal
+When user enter risk note number to search policy
+When user click on fetch button
+#When user enter "46548-12446-54984" as cover note number
+When user click on select option to edit details
+When user enter "25000" as change value of Annual Salary/Limit of Liability
+When user click on compute button 
+When user click on update button 
+When user enter "Downgrading Policy" as endorsement details
+When user click on process endorsement button
+When user click on OK button to process endorsement 
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user enter risk note number
+When user click on search button
+Then user able to view "Insurer Approval Required" as status
+
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Wa@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user enter risk note number
+When user click on search button(Insurer)
+Then user able to view "Insurer Approval Required" as status(Insurer)
+When user click on display icon
+Then user click on approve endorsement button
+Then user navigate on Endorsement Approval screen
+#Return To Broker Portal
+
+When user click on search button
+Then user able to view "Pending" as status
+When user click on actions button
+When user click on process endorsement icon
+When user click on YES button for confirmation
+Then user able to view "Issued" as status
+
+@NonFinancialWorkmensPolicy @one
+Scenario: (Workmens Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement
+
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user click on search button to find "Workmens (With Liability)" risk note
+When user navigate on operation dropdown menu
+When user navigate on endorsement menu
+When user click on endorsement option
+When user click on add button
+When user click on endorsement type dropdown
+When user enter "General Endorsements" as endorsement type
+When user select General Endorsements as endorsement type
+#BrokerPortal
+When user enter risk note number to search policy
+When user click on fetch button
+#When user enter "46548-12446-54984" as cover note number
+When user select non-financial endorsement
+When user enter "Pravin Testing Non Financial Change1" to make change in insured name
+When user enter "Testing cover details" to make change in covering details
+When user enter "Testing description of risk" to make change in description of risk
+When user enter "Payeee name" to make change in firstloss payee
+When user enter "Non Financial endorsement" as endorsement details
+When user click on process endorsement button
+When user click on OK button to process endorsement 
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user enter risk note number
+When user click on search button
+Then user able to view "Insurer Approval Required" as status
+
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Wa@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user select "01/01/2025" as from date
+When user enter "Workmens (With Liability)" as Insurance Type
+When user enter risk note number
+When user click on search button(Insurer)
+Then user able to view "Insurer Approval Required" as status(Insurer)
+When user click on display icon
+Then user click on approve endorsement button
+Then user navigate on Endorsement Approval screen
+#Return To Broker Portal
+
+When user click on search button
+Then user able to view "Pending" as status
+When user click on actions button
+When user click on process endorsement icon
+When user click on YES button for confirmation
+Then user able to view "Issued" as status
+
 

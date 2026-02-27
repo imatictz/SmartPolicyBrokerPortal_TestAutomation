@@ -8,7 +8,6 @@ When user navigate on quotations menu
 When user click on current quotations
 
 
-
 @IssueAccidentalRiskNote
 Scenario: (Issue Risk Note-AccidentalDamageQuote) Verify user able to issue risk note of accidental damage quotation successfully
 When user select "01/09/2025" as from date

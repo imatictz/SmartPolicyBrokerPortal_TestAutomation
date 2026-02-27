@@ -734,6 +734,7 @@ public class RiskNoteDebitNote {
 	@When("user enter {string} as Insurance Type")
 	public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
 	    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+	    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 	}
 	@When ("user click on search button")
 	 public void user_click_on_search_button_quoteNo() throws Throwable {

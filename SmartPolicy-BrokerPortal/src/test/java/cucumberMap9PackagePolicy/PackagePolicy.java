@@ -1009,6 +1009,7 @@ public class PackagePolicy
 		@When("user enter {string} as Insurance Type")
 		public void user_enter_as_insuranceType1(String insuranceType) throws InterruptedException {
 		    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+		    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 		}
 		
 		@When ("user click on search button to find {string} quote")
@@ -1026,7 +1027,7 @@ public class PackagePolicy
 		public void user_enter_as_quote_number1(String quoteName) throws InterruptedException {
 			String quoteNo = SeleniumOperations.getQuote(quoteName);
 			Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
-			Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
+			
 			Thread.sleep(4000);
 		}
 		

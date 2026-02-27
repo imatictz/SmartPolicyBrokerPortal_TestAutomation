@@ -1,111 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-23T09:31:46 EAT" name="Default suite" finished-at="2026-02-23T09:36:39 EAT" duration-ms="292348">
+  <suite started-at="2026-02-27T14:28:21 EAT" name="Default suite" finished-at="2026-02-27T14:29:08 EAT" duration-ms="46436">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestProductMapping@4e406694]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-02-23T09:31:46 EAT" name="Default test" finished-at="2026-02-23T09:36:39 EAT" duration-ms="292348">
-      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" started-at="2026-02-23T09:31:46 EAT" name="setUpClass" finished-at="2026-02-23T09:31:48 EAT" duration-ms="1157" status="PASS">
+    <test started-at="2026-02-27T14:28:21 EAT" name="Default test" finished-at="2026-02-27T14:29:08 EAT" duration-ms="46436">
+      <class name="testRunner.RunnerTestProductMapping">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestProductMapping@4e406694]" started-at="2026-02-27T14:28:21 EAT" name="setUpClass" finished-at="2026-02-27T14:28:22 EAT" duration-ms="1118" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7a360554]]>
+                <![CDATA[org.testng.TestRunner@459b6c53]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" started-at="2026-02-23T09:31:48 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-23T09:32:38 EAT" duration-ms="50577" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestProductMapping@4e406694]" started-at="2026-02-27T14:28:22 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-27T14:29:07 EAT" duration-ms="45096" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["(Accidental Damage Quotation) Verify user able to enter mandatory fields with out no Addon and save quotation successfully"]]>
+                <![CDATA["Verify user able to edit product mapping details"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["AccidentalDamage Quotation"]]>
+                <![CDATA["Product Mapping"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" started-at="2026-02-23T09:31:48 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-23T09:33:13 EAT" duration-ms="85718" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Accidental Damage Quotation) Verify user able to enter mandatory fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["AccidentalDamage Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" started-at="2026-02-23T09:32:38 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-23T09:34:52 EAT" duration-ms="133298" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["(Accidental Damage Quotation) Verify user able to enter all fields and save quotation successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["AccidentalDamage Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" started-at="2026-02-23T09:33:13 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-23T09:34:10 EAT" duration-ms="56416" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["User prints the Individual Personal Accident quote"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["AccidentalDamage Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" started-at="2026-02-23T09:34:10 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-23T09:36:39 EAT" duration-ms="148718" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify user able to edit an existing Individual Personal Accident quote successfully"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["AccidentalDamage Quotation"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestAccidentalDamageQuotation@38600b]" started-at="2026-02-23T09:36:39 EAT" name="tearDownClass" finished-at="2026-02-23T09:36:39 EAT" duration-ms="215" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestProductMapping@4e406694]" started-at="2026-02-27T14:29:08 EAT" name="tearDownClass" finished-at="2026-02-27T14:29:08 EAT" duration-ms="62" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
+      </class> <!-- testRunner.RunnerTestProductMapping -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

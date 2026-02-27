@@ -45,7 +45,7 @@ When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
-Scenario: (Package Policy Quotation)Verify user able to enter mandatory fields and save quotation successfully
+Scenario: (Package Policy Quotation)Verify user able to enter mandatory fields with NoAddon and save quotation successfully
 When user click on add button
 When user select "Package Policy" as insurance types
 When user enter "Pravin Testing Broker" as client name

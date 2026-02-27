@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/EduCareLifeInsurance.feature", 
-                   tags= "@MandatoryFields", 
+                   tags= "@All", 
                    glue={"cucumberMap15EduCareLifeInsurance","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	
