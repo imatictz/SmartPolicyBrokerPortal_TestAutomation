@@ -5,22 +5,11 @@
           parallel="methods"
           >
 
-        <parameter name="cucumber.filter.tags" value="@CLIENT"/>
-
         <classes>
-            <class name="testRunner.RunnerTestClientDetails"/>
+            <class name="testRunner.RunnerTestBondsQuotation"/>
         </classes>
     </test>
-    <test name="PHASE-2-MEDICAL"
-          parallel="methods"
-          >
-
-        <parameter name="cucumber.filter.tags" value="@MEDICAL"/>
-
-        <classes>
-            <class name="testRunner.RunnerTestMedicalQuotation"/>
-        </classes>
-    </test>
+   
     
     
     

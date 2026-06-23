@@ -109,7 +109,7 @@ When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
 Then user able to view "1001-New information recorded successfully" as message
 
-@Corporate  @main  @CLIENT
+@Corporate    @CLIENT
 Scenario: (ClientDetails) Enter new client details with all fields for corporate
 
 When user click on add button
