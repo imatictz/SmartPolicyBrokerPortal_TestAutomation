@@ -481,7 +481,7 @@ public class Burglary
 		    input[1]=coverNoteNumber;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as cover note number",output.get("MESSAGE").toString());  
-		
+		    Thread.sleep(2000);
 		
 		}
 
