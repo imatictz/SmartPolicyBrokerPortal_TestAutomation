@@ -42,7 +42,18 @@ public class EduCareLifeInsurance {
 	    SeleniumOperations.clickOnElement(input10);
 	    Thread.sleep(8000);
 	}
-
+	@When ("^user select \"(.*)\" as insurer$")
+	public void selectInsurer1(String insurer) throws Throwable 
+	{
+		Object[] input = new Object[4];
+	    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
+	    input[1] = "//*[@class='select2-search__field']";
+	    input[2] = insurer;
+	    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
+		Thread.sleep(2000);
+	}
 	@When("^user select \"([^\"]*)\" as insurance type$")
 	public void user_select_as_insurance_type1(String insuranceType) throws Throwable {
 		Object[] input= new Object[4];
@@ -639,6 +650,7 @@ public class EduCareLifeInsurance {
 		input[3]="//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]";	
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as plan",output.get("MESSAGE").toString());
+	    Thread.sleep(2000);
 	}
 
 	@When("^user enter \"([^\"]*)\" as terms\\(Year\\)$")

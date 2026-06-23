@@ -29,7 +29,7 @@ public class Workmens {
 	public void user_navigate_on_quotations_menu() 
 	{
 		Object[] input8=new Object[1];
-	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
+	    input8[0]="//*[@id='span_quotations_lc']";
 	    SeleniumOperations.actionClass(input8);
 	   
 	}
@@ -83,7 +83,7 @@ public class Workmens {
 	    if (data.get("Insurer") != null) {
 	        Itl.CustomDropdownEvent(
 	                "//*[contains(@aria-controls,'MainContent_cmbInsurer')]",
-	                "//*[@class='select2-search__field']",
+	                "(//*[@class='select2-search__field'])[2]",
 	                data.get("Insurer"),
 	                "(//*[contains(@data-select2-id,'MainContent_cmbInsurer-result')])",
 	                "Select Insurer",
@@ -292,7 +292,7 @@ public class Workmens {
 			input7[0]="//*[@id='btnSave']";
 			 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on update button",output.get("MESSAGE").toString());
-			 Thread.sleep(4000);
+			 Thread.sleep(2000);
 	 }
 	@When("user click on update button to save policy information")
 	 public void user_click_on_update_button_policyInformation() throws Throwable
@@ -407,4 +407,48 @@ public class Workmens {
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on select icon to edit details",output.get("MESSAGE").toString());
 	         Thread.sleep(2000);
 	 }
+	@When("user enter product discovery details :")
+	public void user_enter_product_discovery_details(DataTable dataTable) throws Throwable {
+
+	    Map<String, String> data = dataTable.asMap(String.class, String.class);
+
+	    // Select Insurer
+	    if (data.get("Select Insurer") != null) {
+	        Itl.CustomDropdownEvent(
+	            "//*[contains(@aria-controls,'MainContent_cmbInsurerName')]",
+	            "(//*[@class='select2-search__field'])[1]",
+	            data.get("Select Insurer"),
+	            "(//*[contains(@data-select2-id,'MainContent_cmbInsurerName-result')])",
+	            "user select Insurer",
+	            "DROPDOWN",
+	            0
+	        );
+	    }
+
+	    // Policy Category
+	    if (data.get("Policy Category") != null) {
+	        Itl.CustomDropdownEvent(
+	            "//*[contains(@aria-controls,'MainContent_cmbPolicyCategory')]",
+	            "(//*[@class='select2-search__field'])[1]",
+	            data.get("Policy Category"),
+	            "(//*[contains(@data-select2-id,'MainContent_cmbPolicyCategory-result')])",
+	            "user select Policy Category",
+	            "DROPDOWN",
+	            0
+	        );
+	    }
+
+	    // Insurance Type
+	    if (data.get("Insurance Type") != null) {
+	        Itl.CustomDropdownEvent(
+	            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
+	            "(//*[@class='select2-search__field'])[1]",
+	            data.get("Insurance Type"),
+	            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])",
+	            "user select Insurance Type",
+	            "DROPDOWN",
+	            4000
+	        );
+	    }
+	}
 }

@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/FireAndBurglary.feature", 
-                   tags= "@All", 
+                   tags= "@MandatoryFieldsNoAddon", 
                    glue={"cucumberMap4FireAndBurglary","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

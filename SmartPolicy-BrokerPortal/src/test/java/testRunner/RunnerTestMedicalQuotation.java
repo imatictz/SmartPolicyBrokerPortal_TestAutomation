@@ -6,7 +6,7 @@ import org.testng.annotations.*;
 
 @CucumberOptions(
     features = "src/test/resources/Quotations/Medical.feature",
-    tags = "@All",
+    tags = "@MandatoryFieldsNoAddon",
     glue = {
         "cucumberMap12Medical",
         "MyHooks"

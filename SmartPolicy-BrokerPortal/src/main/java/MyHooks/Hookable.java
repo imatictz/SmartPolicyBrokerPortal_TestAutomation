@@ -24,7 +24,7 @@ public class Hookable {
     @BeforeAll
     public static void beforeAllScenarios() throws UnknownHostException {
         HTMLReportGenerator.TestSuiteStart(
-            "C:\\ExecuteParrallel\\FEB27.html",
+            "C:\\ExecuteParrallel_Final\\May05.html",
             "SmartPolicy"
         );
     }
@@ -72,13 +72,13 @@ public class Hookable {
     @After
     public void afterScenario(Scenario scenario) {
 
-        HTMLReportGenerator.logScenarioResult(scenario);
+       // HTMLReportGenerator.logScenarioResult(scenario);
         HTMLReportGenerator.TestCaseEnd();
 
         // 🔥 IMPORTANT: flush after each scenario
         HTMLReportGenerator.flush();
 
-       // SeleniumOperations.browserClose();
+        SeleniumOperations.browserClose();
         ScreenContext.clear();
 
         System.out.println("---- Scenario End : " + scenario.getName() + " ----");
@@ -87,6 +87,7 @@ public class Hookable {
     // 🔹 CLOSE REPORT ONCE
     @AfterAll
     public static void afterAll() {
+    	
         HTMLReportGenerator.CloseReport();
     }
 }

@@ -1,7 +1,9 @@
 package cucumberMap11TravelInsurance;
 
 import java.util.Hashtable;
+import java.util.Map;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import itl.Itl;
@@ -21,7 +23,7 @@ public class TravelInsurance {
 	@When("^user navigate on quotations menu$")
 	public void user_navigate_on_quotations_menu() {
 		Object[] input8=new Object[1];
-	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
+	    input8[0]="//*[@id='span_quotations_lc']";
 	    SeleniumOperations.actionClass(input8);
 	}
 
@@ -72,34 +74,38 @@ public class TravelInsurance {
 		Thread.sleep(2000);
 	}
 
-	@When ("^user Select \"(.*)\" as insurer$")
-	public void selectInsurer(String insurer) throws Throwable 
-	{
-		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
-		input[1]="//*[@class='select2-input select2-focused']";
-		input[2]=insurer;
-		input[3]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
-		
+	@When("user select {string} as insurer")
+	public void user_select_as_insurer(String insurer) throws InterruptedException {
+		Object[] input = new Object[4];
+	    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
+	    input[1] = "(//*[@class='select2-search__field'])[4]";
+	    input[2] = insurer;
+	    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select {string} as insurer", output.get("MESSAGE").toString());
+        Thread.sleep(3000);
 	}
 	@When("user select {string} as country travelling to")
 	public void user_select_as_travellingTo(String travellingTo) throws Throwable {
-		Object[] input= new Object[4];
+		/*Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbCntrTo')]";
 		input[1]="(//*[@class='select2-search__field'])[2]";
 		input[2]=travellingTo;
 		input[3]="(//*[contains(@id,'select2-MainContent_cmbCntrTo-result-')])";	
-		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as country travelling to",output.get("MESSAGE").toString());
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);*/	
+		//HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as country travelling to",output.get("MESSAGE").toString());
+		
+		Itl.SendEvent("(//*[@class='select2-search__field'])[1]",
+			travellingTo, "TEXTBOX", 2000);
+		SeleniumOperations.actionDownEnter();
+	//Itl.ClickEvent("(//*[contains(@id,'select2-MainContent_cmbCntrTo-result-')])", "CLICK", 0);
 	}
 
 	@When("user select {string} as plan")
 	public void user_select_as_plan(String plan) throws Throwable {
 		Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]";
-		input[1]="//*[@class='select2-search__field']";
+		input[1]="(//*[@class='select2-search__field'])[4]";
 		input[2]=plan;
 		input[3]="(//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')])";	
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -152,7 +158,7 @@ public class TravelInsurance {
 	public void user_select_as_plan1(String relationship) throws Throwable {
 		Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbRelationship')]";
-		input[1]="//*[@class='select2-search__field']";
+		input[1]="(//*[@class='select2-search__field'])[4]";
 		input[2]=relationship;
 		input[3]="(//*[contains(@id,'select2-MainContent_cmbRelationship-result-')])";	
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -163,9 +169,9 @@ public class TravelInsurance {
 	@When("^user click on compute button$")
 	public void clickOnComputeButton() throws Throwable {
 		Object[] input=new Object[1];
-	    input[0]="//*[@id='btnComputeOnline']";
+	    input[0]="//*[@id='btnCompute']";
 	    SeleniumOperations.clickOnElement(input);
-	    input[0]="//*[@id='btnComputeOnline']";
+	    input[0]="//*[@id='btnCompute']";
 	    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on compute button",output.get("MESSAGE").toString());
 	    Thread.sleep(9000);
@@ -185,7 +191,7 @@ public class TravelInsurance {
 	@When("^user click on addOn button$")
 	public void clickOnAddon() throws Throwable {
 	    Object[] input=new Object[1];
-	    input[0]="//*[@id='li2']";
+	    input[0]="//*[text()='Add-ons']";
 	    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on addOn button",output.get("MESSAGE").toString());
 	}
@@ -201,7 +207,7 @@ public class TravelInsurance {
 	@When("^user enter \"([^\"]*)\" as extension$")
 	public void enterExtension(String extension) throws Throwable {
 		Object[] input=new Object[2];
-		input[0]="//*[@class='select2-search__field']";
+		input[0]="(//*[@class='select2-search__field'])[4]";
 		input[1]=extension;
 		Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
@@ -344,7 +350,7 @@ public class TravelInsurance {
 	@When("^user click on borrower type dropdown$")
 	public void user_click_on_borrower_type_dropdown() throws Throwable {
 	    Object[] input50=new Object[1];
-		input50[0]="(//*[@class='select2-chosen'])[8]";
+		input50[0]="//*[contains(@aria-controls,'MainContent_cmbBorrower')]";
 		Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
 		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on borrower type dropdown",output50.get("MESSAGE").toString());
 	}
@@ -352,7 +358,7 @@ public class TravelInsurance {
 	@When("^user enter \"([^\"]*)\" as borrower type$")
 	public void user_enter_as_borrower_type(String borrowerType) throws Throwable {
 	    Object[] input=new Object[2];
-	    input[0]="(//*[@class='select2-input select2-focused'])";
+	    input[0]="(//*[@class='select2-search__field'])[4]";
 	    input[1]=borrowerType;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -361,7 +367,7 @@ public class TravelInsurance {
 	@Then("^user select Retail Banking as borrower type$")
 	public void user_select_Retail_Banking_as_borrower_type() throws Throwable {
 	    Object[] input50=new Object[1];
-		input50[0]="//*[@class='select2-match']";
+		input50[0]="//*[contains(@id,'select2-MainContent_cmbBorrower-result-')]";
 		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
 		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select Retail Banking as borrower type",output50.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -378,16 +384,19 @@ public class TravelInsurance {
 
 	@When("^user click on loss ratio forecast dropdown$")
 	public void user_click_on_loss_ratio_forecast_dropdown() throws Throwable {
-	    Object[] input50=new Object[1];
-		input50[0]="(//*[@class='select2-chosen'])[12]";
-		Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on loss ratio forecast dropdown",output50.get("MESSAGE").toString());
+	 
+		Object[] input50=new Object[1];
+		   input50[0]="//*[contains(@aria-controls,'MainContent_cmbLRF')]";
+		   Hashtable<String, Object> output50 = SeleniumOperations.clickOnElement(input50);
+		   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on loss ratio forecast dropdown",output50.get("MESSAGE").toString());
+	
 	}
 
 	@When("^user enter \"([^\"]*)\" as loss ratio forecast$")
 	public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
-	    Object[] input=new Object[2];
-	    input[0]="(//*[@class='select2-input select2-focused'])";
+	   
+		Object[] input=new Object[2];
+	    input[0]="(//*[@Class='select2-search__field'])[4]";
 	    input[1]=lossRatioForecast;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
@@ -395,11 +404,12 @@ public class TravelInsurance {
 
 	@Then("^user select Profit making as loss ratio forecast$")
 	public void user_select_Profit_making_as_loss_ratio_forecast() throws Throwable {
-	    Object[] input50=new Object[1];
-		input50[0]="//*[@class='select2-match']";
-		Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
-		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select Profit making as loss ratio forecast",output50.get("MESSAGE").toString());
-		Thread.sleep(2000);
+	   
+		Object[] input50=new Object[1];
+		   input50[0]="(//*[contains(@data-select2-id,'MainContent_cmbLRF-result')])";
+		   Hashtable<String, Object> output50 =SeleniumOperations.clickOnElement(input50);
+		   HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user select Profit making as loss ratio forecast",output50.get("MESSAGE").toString());
+		   Thread.sleep(2000);
 	}
 
 	@When("^user enter \"([^\"]*)\" as adjust premium$")
@@ -468,5 +478,57 @@ public class TravelInsurance {
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"(.*)\\\" as route information",output.get("MESSAGE").toString());  
         Thread.sleep(2000);
+	}
+	@When("user enter product discovery details :")
+	public void user_enter_product_discovery_details(DataTable dataTable) throws Throwable {
+
+	    Map<String, String> data = dataTable.asMap(String.class, String.class);
+
+	    // Select Insurer
+	    if (data.get("Select Insurer") != null) {
+	        Itl.CustomDropdownEvent(
+	            "//*[contains(@aria-controls,'MainContent_cmbInsurerName')]",
+	            "(//*[@class='select2-search__field'])[1]",
+	            data.get("Select Insurer"),
+	            "(//*[contains(@data-select2-id,'MainContent_cmbInsurerName-result')])",
+	            "user select Insurer",
+	            "DROPDOWN",
+	            0
+	        );
+	    }
+
+	    // Policy Category
+	    if (data.get("Policy Category") != null) {
+	        Itl.CustomDropdownEvent(
+	            "//*[contains(@aria-controls,'MainContent_cmbPolicyCategory')]",
+	            "(//*[@class='select2-search__field'])[1]",
+	            data.get("Policy Category"),
+	            "(//*[contains(@data-select2-id,'MainContent_cmbPolicyCategory-result')])",
+	            "user select Policy Category",
+	            "DROPDOWN",
+	            0
+	        );
+	    }
+
+	    // Insurance Type
+	    if (data.get("Insurance Type") != null) {
+	        Itl.CustomDropdownEvent(
+	            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
+	            "(//*[@class='select2-search__field'])[1]",
+	            data.get("Insurance Type"),
+	            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])[2]",
+	            "user select Insurance Type",
+	            "DROPDOWN",
+	            4000
+	        );
+	    }
+	}
+	@When ("user enter {string} as borrower account name")
+	public void user_enter_as_borrower_account_name(String borrowerName) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccName']", borrowerName, "user enter {string} as borrower account name", "TEXTBOX", 0);
+	}
+	@When ("user enter {string} as borrower account number")
+	public void user_enter_as_borrower_account_number(String borrowerNumber) throws InterruptedException {
+		Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
 	}
 }

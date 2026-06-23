@@ -23,13 +23,13 @@ public class EndorsementScreen {
 	@When("user navigate on endorsement options")
 	public void user_navigate_on_endorsement_options() {
 		Object[] input7=new Object[1];
-	    input7[0]="//*[@id='span100']";
+	    input7[0]="//*[@id='span_Endorsement_lc']";
 	    SeleniumOperations.actionClass(input7);
 	}
 	@Then("user click on endorsement")
 	public void user_click_on_endorsement() throws InterruptedException {
 		Object[] input9=new Object[1];
-		input9[0]="//*[@id='span101']";
+		input9[0]="//*[@id='span_EndrosementL_lc']";
 		SeleniumOperations.clickOnElement(input9);
 		Thread.sleep(2000);
 	}

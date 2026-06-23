@@ -12,7 +12,12 @@ When user click on current quotations
 Scenario: (Fire & Burglary Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user click on add button
-When user select "Fire and Burglary" as insurance type
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Fire Insurance             |
+    | Insurance Type   | Fire and Burglary          |
+#When user select "Fire and Burglary" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -41,7 +46,12 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 Scenario: (Fire & Burglary Quotation) Verify user able to enter mandatory fields with NoAddon and save quotation successfully
 
 When user click on add button
-When user select "Fire and Burglary" as insurance type
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Fire Insurance             |
+    | Insurance Type   | Fire and Burglary          |
+#When user select "Fire and Burglary" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -60,7 +70,12 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (Fire & Burglary Quotation) Verify user able to enter all fields and save quotation successfully
 
 When user click on add button
-When user select "Fire and Burglary" as insurance type
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Fire Insurance             |
+    | Insurance Type   | Fire and Burglary          |
+#When user select "Fire and Burglary" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer

@@ -93,6 +93,7 @@ public class ClaimsTracking {
 	        input[1] = "//*[@id='select2-MainContent_cmbInsuranceType-container']";
 	        input[2] = "//*[@id='MainContent_txtPolicyNb']";
 	        input[3] = "//*[@id='MainContent_txtSumInsured']";
+	        
 	        Hashtable<String, Object> output = SeleniumOperations.printClaimReport(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "the claim report should include all relevant details like", output.get("MESSAGE").toString());
 			Thread.sleep(2000);

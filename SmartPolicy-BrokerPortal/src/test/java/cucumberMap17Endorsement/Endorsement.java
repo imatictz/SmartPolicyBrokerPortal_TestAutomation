@@ -22,14 +22,14 @@ public class Endorsement {
 	 @Then("^user select risk note menu$")
 		public void user_select_risk_note_menu() throws Throwable {
 		    Object[] input9=new Object[1];
-			input9[0]="//*[@id='span6']";
+			input9[0]="//*[@id='span_riskNote_lc']";
 			SeleniumOperations.clickOnElement(input9);
 		}
 	 
 	 @When("^user navigate on endorsement menu$")
 	 public void user_navigate_on_endorsement_menu() throws Throwable {
 		 Object[] input7=new Object[1];
-	     input7[0]="//*[@id='MNU_ENDORSEMENT']";
+	     input7[0]="//*[@id='span_Endorsement_lc']";
 	     SeleniumOperations.actionClass(input7);
 	     Thread.sleep(2000);
 	 }
@@ -37,7 +37,7 @@ public class Endorsement {
 	 @When("^user click on endorsement option$")
 	 public void user_click_on_endorsement_option() throws Throwable {
 		 Object[] input7=new Object[1];
-	     input7[0]="//*[@id='MNU_WFEICNMD']";
+	     input7[0]="//*[@id='span_EndrosementL_lc']";
 	     SeleniumOperations.clickOnElement(input7);
 	     Thread.sleep(2000);
 	 }

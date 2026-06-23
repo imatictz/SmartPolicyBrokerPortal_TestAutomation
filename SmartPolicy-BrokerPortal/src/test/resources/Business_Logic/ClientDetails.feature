@@ -19,7 +19,7 @@ When user enter "5412502145021004" as account number
 When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
-When user enter "5412502145021004" as ID number
+When user enter "Value" as ID number
 When user enter "01/01/2000" as date of birth
 When user click on nationality dropdown
 When user enter "Tanzania" to search nationality in search box
@@ -54,7 +54,7 @@ When user enter "564548465468482004" as account number
 When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
-When user enter "564548465468482004" as ID number
+When user enter "Value" as ID number
 When user enter "987654321" as TIN/PAN
 When user enter "32189412349515" as ZRB No
 When user enter "01/01/2000" as date of birth
@@ -122,7 +122,7 @@ When user enter "654851846543004" as account number
 When user click on ID type dropdown
 When user enter "Company Incorporation Certificate Number" to search ID type in search box
 When user click on Company Incorporation Certificate Number as ID type from dropdown
-When user enter "654851846543004" as ID number
+When user enter "Value" as ID number
 When user enter "987654321" as TIN/PAN
 When user enter "321894123495" as ZRB No
 When user select "None" as Disability Status 
@@ -330,7 +330,7 @@ When user select gender dropdown to view options
       | Nationality          |
       | Place Of Birth       |
       | Gender               |
-      | Registration Number     |
+      | Registration Number  |
       
       
 @email
@@ -346,7 +346,7 @@ When user enter "5412502145021004" as account number
 When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
-When user enter "5412502145021004" as ID number
+When user enter "Value" as ID number
 When user enter "01/01/2000" as date of birth
 When user click on nationality dropdown
 When user enter "Tanzania" to search nationality in search box
@@ -469,8 +469,8 @@ When user enter "659544202" as mobile No One
     When user enter "Bahi" to search district in search box
     When user click on bahi as district
     When user enter "Tree" as cell/street
+    #When user enter "659544202" as mobile No One
     When user enter "House No.12 XYZ World" as address
-    When user enter "659544202" as mobile No One
     When user enter "xxxxxxx503@gmail.com" as email id one
     When user click on save button to save client details
     Then user able to view "1003-Information modified successfully" as message   

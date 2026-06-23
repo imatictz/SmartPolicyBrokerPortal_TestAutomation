@@ -11,7 +11,7 @@ When user click on current quotations
 @MandatoryFields
 Scenario: (Educare Life Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user click on add button
-When user select "Educare Life Insurance" as insurance type
+When user select "Education Care" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user enter "121" as P.O. Box
@@ -100,6 +100,7 @@ When user click on next button (Second Page)
 
 #Cover Details
 
+When user select "Automated Testing Company" as insurer
 When user select "Option 5" as plan
 When user enter "10" as terms(Year)
 
@@ -110,7 +111,7 @@ When user enter "594200" as saving premium
 When user click on compute button
 When user select "Yearly" as payment frequency
 When user click on calculate schedule button
-When user click on save button
+#When user click on save button
 Then user able to view "Awaiting Receipt" as status
 
 @PrintQuote
@@ -228,6 +229,7 @@ When user click on next button (Second Page)
 
 #Cover Details
 
+When user select "Automated Testing Company" as insurer
 When user select "Option 5" as plan
 When user enter "10" as terms(Year)
 

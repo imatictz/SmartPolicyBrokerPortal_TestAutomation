@@ -44,7 +44,8 @@ Scenario: (Report Bond Claim) Verify user able to report claim successfully
 When user select "01/09/2025" as from date
 When user enter "Bonds" as Insurance Type
 When user click on search button to find "Bonds" risk note
-When user click on fetch button
+When user enter risk note number
+When user click on search button
 #Loss Event Details
 
 When user select "Tanzania" as country

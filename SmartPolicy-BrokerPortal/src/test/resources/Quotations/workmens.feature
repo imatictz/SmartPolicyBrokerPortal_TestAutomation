@@ -11,7 +11,12 @@ When user click on current quotations
 @MandatoryFields
 Scenario: (Workmens Quotation) Verify user able to enter mandatory fields and save quotation successfully
     When user click on add button
-    When user select "Workmens (With Liability)" as insurance type
+    When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Liability Insurance        |
+    | Insurance Type   | Workmens (With Liability)  |
+    #When user select "Workmens (With Liability)" as insurance type
     When user enter screen details :
       | Field Name                       | Value                          |
       | Client Name                      | Pravin Testing Broker          |
@@ -32,12 +37,17 @@ When user enter "Workmens (With Liability)" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission alert
-Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+Then user able to view "Awaiting Receipt" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Workmens Quotation) Verify user able to enter mandatory fields with NoAddon and save quotation successfully
     When user click on add button
-    When user select "Workmens (With Liability)" as insurance type
+    When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Liability Insurance        |
+    | Insurance Type   | Workmens (With Liability)  |
+   # When user select "Workmens (With Liability)" as insurance type
     When user enter screen details :
       | Field Name                       | Value                          |
       | Client Name                      | Pravin Testing Broker          |

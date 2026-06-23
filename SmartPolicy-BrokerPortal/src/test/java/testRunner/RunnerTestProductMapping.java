@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/IntegrationMonitoring/ProductMapping.feature", 
-                   tags= "@Edit", 
+                   tags= "@All", 
                    glue={"cucumberMap35ProductMapping","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

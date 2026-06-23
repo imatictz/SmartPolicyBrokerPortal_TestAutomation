@@ -29,7 +29,7 @@ public class Burglary
 		public void user_navigate_on_quotations_menu() 
 		{
 			Object[] input8=new Object[1];
-		input8[0]="//*[@id='span_CompanySetupMapping_lc']";
+		input8[0]="//*[@id='span_quotations_lc']";
 		SeleniumOperations.actionClass(input8);
 		   
 		}
@@ -137,7 +137,7 @@ public class Burglary
 		public void user_select_as_insurer(String insurer) throws InterruptedException {
 			Object[] input = new Object[4];
 		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
-		    input[1] = "//*[@class='select2-search__field']";
+		    input[1] = "(//*[@class='select2-search__field'])[2]";
 		    input[2] = insurer;
 		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
@@ -150,7 +150,13 @@ public class Burglary
 		
 		@When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]", "//*[@class='select2-search__field']", insuranceClass , "//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]", "user select {String} as insurance class", "DROPDOWN", 3000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]", 
+		    		"(//*[@class='select2-search__field'])[2]",
+		    		insuranceClass ,
+		    		"//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]", 
+		    		"user select {String} as insurance class",
+		    		"DROPDOWN",
+		    		3000);
 
 		}
 		
@@ -718,6 +724,50 @@ public class Burglary
 		@When ("user enter {string} as borrower account number")
 		public void user_enter_as_borrower_account_number(String borrowerNumber) throws InterruptedException {
 			Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
+		}
+		@When("user enter product discovery details :")
+		public void user_enter_product_discovery_details(DataTable dataTable) throws Throwable {
+
+		    Map<String, String> data = dataTable.asMap(String.class, String.class);
+
+		    // Select Insurer
+		    if (data.get("Select Insurer") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbInsurerName')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Select Insurer"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbInsurerName-result')])",
+		            "user select Insurer",
+		            "DROPDOWN",
+		            0
+		        );
+		    }
+
+		    // Policy Category
+		    if (data.get("Policy Category") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbPolicyCategory')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Policy Category"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbPolicyCategory-result')])",
+		            "user select Policy Category",
+		            "DROPDOWN",
+		            0
+		        );
+		    }
+
+		    // Insurance Type
+		    if (data.get("Insurance Type") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Insurance Type"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])",
+		            "user select Insurance Type",
+		            "DROPDOWN",
+		            4000
+		        );
+		    }
 		}
 
 }

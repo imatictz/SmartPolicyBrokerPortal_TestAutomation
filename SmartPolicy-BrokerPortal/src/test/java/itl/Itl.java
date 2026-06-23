@@ -150,6 +150,31 @@ public class Itl {
 				Thread.sleep(intThreadSleepTime);	
 			}
 	}
+	public static void CustomClearSend2Event(String strElementId1, String strInputText1,
+            String strElementId2, String strInputText2,
+            String stepName, String strElementType,
+            int intThreadSleepTime) throws InterruptedException {
+
+      /*strElementType can be as follows: Textbox, Dropdown, RadioButton, CheckBox*/
+
+        if (strElementType.equals("TEXTBOX")) {
+
+       Object[] input = new Object[4];
+       input[0] = strElementId1;
+       input[1] = strInputText1;
+       input[2] = strElementId2;
+       input[3] = strInputText2;
+
+      Hashtable<String, Object> output = SeleniumOperations.clearAndEnter2(input);
+
+      HTMLReportGenerator.StepDetails(
+      output.get("STATUS").toString(),
+      stepName,
+      output.get("MESSAGE").toString());
+
+      Thread.sleep(intThreadSleepTime);
+}
+}
 	
 	public static void ClearSendEvent(String strElementId,String strInputText,
 			String strElementType, int intThreadSleepTime ) throws InterruptedException {

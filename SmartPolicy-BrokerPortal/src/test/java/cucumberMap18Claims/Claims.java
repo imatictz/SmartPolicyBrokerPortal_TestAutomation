@@ -149,7 +149,8 @@ public class Claims {
      }
      @When("user select time of loss")
  	 public void user_select_time_of_loss() throws InterruptedException {
- 	    Itl.CustomClickEvent("//*[@id='MainContent_txtAccidentTime']", "user select time of loss", "CLICK", 2000);
+ 	    Itl.CustomClickEvent("//*[@id='MainContent_txtAccidentTime']",
+ 	    		"user select time of loss", "CLICK", 2000);
      }
      @When("user click on report to insurer option")
      public void user_click_on_report_to_insurer_option() throws InterruptedException {

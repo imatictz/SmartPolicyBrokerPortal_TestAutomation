@@ -134,7 +134,7 @@ public class ClientDetails {
 		Object[] input24=new Object[2];
 	    input24[0]="//*[@id='txtIDNumber']";
 	    input24[1]=idNumber;
-	    Hashtable<String, Object> output24 =SeleniumOperations.clearAndEnter(input24);
+	    Hashtable<String, Object> output24 =SeleniumOperations.sendKeysUniqueId(input24);
 	    HTMLReportGenerator.StepDetails(output24.get("STATUS").toString(),"user enter \"12345678901\" as ID number",output24.get("MESSAGE").toString());    
 	    Thread.sleep(2000);
 	}
@@ -425,7 +425,7 @@ public class ClientDetails {
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select related party checkbox",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);	
-		//SeleniumOperations.scrolldown();
+		SeleniumOperations.scrolldown();
 	}
 	
 	@When ("user select \"(.*)\" as related party$")
@@ -444,7 +444,7 @@ public class ClientDetails {
 	@When ("user select \"(.*)\" as relationship$")
 	public void relationship(String relationship) throws InterruptedException{
 		Object[] input43=new Object[1];
-		input43[0]="//*[@id='MainContent_cmbCLNTRelationship']";
+		input43[0]="//*[contains(@aria-controls,'MainContent_cmbRelationship')]";
 		SeleniumOperations.clickOnElement(input43);
 		Object[] input44=new Object[1];
 		input44[0]="//*[text()='Direct']";
@@ -570,6 +570,7 @@ public class ClientDetails {
 
 	@When("^user enter \"([^\"]*)\" as mobile No One$")
 	public void user_enter_as_mobile_No_One(String mobileOne) throws Throwable {
+		
 	    Object[] input42=new Object[2];
 		input42[0]="//*[@id='MainContent_txtmobileno1']";
 		input42[1]=mobileOne;
@@ -806,21 +807,21 @@ public class ClientDetails {
 	@When("I enter {string} into the Mobile No field one")
 	public void i_enter_into_the_mobile_no_field1(String mob) throws InterruptedException {
 	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtmobileno1']",mob, "I enter {string} into the Mobile No field one", "TEXTBOX", 2000);
-        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
+        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 3000);
 
 	}
 	
 	@When("I enter {string} into the Mobile No field two")
 	public void i_enter_into_the_mobile_no_field2(String mob) throws InterruptedException {
 	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtmobileno2']",mob, "I enter {string} into the Mobile No field two", "TEXTBOX", 2000);
-        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
+        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 3000);
 
 	}
 
 	@When("I enter {string} into the Mobile No field three")
 	public void i_enter_into_the_mobile_no_field3(String mob) throws InterruptedException {
 	    Itl.CustomClearSendEvent("//*[@id='MainContent_txtmobileno3']",mob, "I enter {string} into the Mobile No field three", "TEXTBOX", 2000);
-        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 2000);
+        Itl.ClickEvent("//*[contains(@aria-controls,'MainContent_cmbRegion')]", "CLICK", 3000);
 
 	}
 	@Then("I should see the validation result as {string}")

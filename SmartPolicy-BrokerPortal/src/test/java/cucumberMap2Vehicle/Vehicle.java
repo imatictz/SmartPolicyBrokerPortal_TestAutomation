@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -30,7 +31,7 @@ public class Vehicle
 		public void user_navigate_on_quotations_menu() 
 		{
 			Object[] input8=new Object[1];
-		input8[0]="//*[@id='span_CompanySetupMapping_lc']";
+		input8[0]="//*[@id='span_quotations_lc']";
 		SeleniumOperations.actionClass(input8);
 		   
 		}
@@ -143,7 +144,7 @@ public class Vehicle
 		{
 		 Object[] input = new Object[4];
 		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
-		    input[1] = "//*[@class='select2-search__field']";
+		    input[1] = "(//*[@class='select2-search__field'])[2]";
 		    input[2] = insurer;
 		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -164,7 +165,7 @@ public class Vehicle
 	 public void enterMotorType(String motorType) throws Throwable 
 	 {
 		 Object[] input=new Object[2];
-			input[0]="//*[@class='select2-search__field']";
+			input[0]="(//*[@class='select2-search__field'])[2]";
 			input[1]=motorType; 
 			Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Registered\" as motor type",output.get("MESSAGE").toString());
@@ -194,12 +195,12 @@ public class Vehicle
 	 
 	 @When ("user select {string} as owner category")
 		public void user_select_as_ownerCategory(String ownerCategory) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbOwnerCat')]", "//*[@class='select2-search__field']", ownerCategory , "(//*[contains(@data-select2-id,'-MainContent_cmbOwnerCat')])[2]", "user select {string} as owner category", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbOwnerCat')]", "(//*[@class='select2-search__field'])[2]", ownerCategory , "(//*[contains(@data-select2-id,'-MainContent_cmbOwnerCat')])[2]", "user select {string} as owner category", "DROPDOWN", 2000);
 
 		}
 	 @When ("user select {string} as motor usage")
 		public void user_select_as_motorUsage(String motorUsage) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMotorUsage')]", "//*[@class='select2-search__field']", motorUsage , "(//*[contains(@data-select2-id,'-MainContent_cmbMotorUsage')])[2]", "user select {string} as owner category", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMotorUsage')]", "(//*[@class='select2-search__field'])[2]", motorUsage , "(//*[contains(@data-select2-id,'-MainContent_cmbMotorUsage')])[2]", "user select {string} as owner category", "DROPDOWN", 2000);
 
 		}
 
@@ -211,7 +212,7 @@ public class Vehicle
 		    input[1]=registrationNumber;
 		    Hashtable<String,Object> output= SeleniumOperations.DynamicValuessendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"15641A56BIKE\" as registration number",output.get("MESSAGE").toString());   
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		}
 
 	 @When("^user enter \"([^\"]*)\" as chasis number$")
@@ -279,7 +280,7 @@ public class Vehicle
 	 public void enterVehicleType(String vehicleType) throws Throwable
 	 {
 		 Object[] input=new Object[2];
-			input[0]="//*[@class='select2-search__field']";
+			input[0]="(//*[@class='select2-search__field'])[2]";
 			input[1]=vehicleType;
 			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"BIKE\" as vehicle type",output.get("MESSAGE").toString());
@@ -727,7 +728,7 @@ public class Vehicle
 		public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
 		   
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@Class='select2-search__field'])[2]";
 		    input[1]=lossRatioForecast;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
@@ -1387,7 +1388,50 @@ public class Vehicle
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} as message",output.get("MESSAGE").toString());
 			Thread.sleep(2000);
 		}
-	
+		@When("user enter product discovery details :")
+		public void user_enter_product_discovery_details(DataTable dataTable) throws Throwable {
+
+		    Map<String, String> data = dataTable.asMap(String.class, String.class);
+
+		    // Select Insurer
+		    if (data.get("Select Insurer") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbInsurerName')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Select Insurer"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbInsurerName-result')])",
+		            "user select Insurer",
+		            "DROPDOWN",
+		            0
+		        );
+		    }
+
+		    // Policy Category
+		    if (data.get("Policy Category") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbPolicyCategory')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Policy Category"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbPolicyCategory-result')])",
+		            "user select Policy Category",
+		            "DROPDOWN",
+		            0
+		        );
+		    }
+
+		    // Insurance Type
+		    if (data.get("Insurance Type") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Insurance Type"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])[2]",
+		            "user select Insurance Type",
+		            "DROPDOWN",
+		            4000
+		        );
+		    }
+		}
 	
 	
 	

@@ -21,7 +21,7 @@ public class RiskNoteDebitNote {
 	@When("^user navigate on quotations menu$")
 	public void user_navigate_on_quotations_menu() {
 		Object[] input8=new Object[1];
-	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
+	    input8[0]="//*[@id='span_quotations_lc']";
 	    SeleniumOperations.actionClass(input8);
 	}
 

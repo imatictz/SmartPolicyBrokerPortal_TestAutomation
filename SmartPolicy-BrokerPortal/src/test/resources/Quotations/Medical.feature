@@ -12,12 +12,17 @@ When user click on current quotations
 Scenario: (Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user click on add button
-When user select "Medical" as insurance type
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Health Insurance           |
+    | Insurance Type   | Medical Insurance          |
+#When user select "Medical" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
-When user select "Standard Rate" as insurance class
+When user select "Plan A" as insurance class
 When user enter "01/01/2000" as date of birth
 When user select "Self" as relationship
 When user enter "160000" as total premium
@@ -37,12 +42,17 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 Scenario: (Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully
 
 When user click on add button
-When user select "Medical" as insurance type
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Health Insurance           |
+    | Insurance Type   | Medical Insurance          |
+#When user select "Medical" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
-When user select "Standard Rate" as insurance class
+When user select "Plan A" as insurance class
 When user enter "01/01/2000" as date of birth
 When user select "Self" as relationship
 When user enter "160000" as total premium
@@ -56,7 +66,12 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (Medical Quotation) Verify user able to enter all fields and save quotation successfully
 
 When user click on add button
-When user select "Medical" as insurance type
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Health Insurance           |
+    | Insurance Type   | Medical Insurance          |
+#When user select "Medical" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -78,7 +93,7 @@ Then user select Profit making as loss ratio forecast
 When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
-When user select "Standard Rate" as insurance class
+When user select "Plan A" as insurance class
 When user enter "01/01/2000" as date of birth
 When user select "Birth Certificate" as ID type
 When user enter "YTG1220S02" as ID number
@@ -151,7 +166,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
    
    #Financial Change
    When user click on select icon to edit details
-   When user select "Standard Rate" as insurance class
+   When user select "Plan A" as insurance class
    When user enter "01/01/2005" as date of birth
    When user select "Self" as relationship
    When user enter "120000" as total premium

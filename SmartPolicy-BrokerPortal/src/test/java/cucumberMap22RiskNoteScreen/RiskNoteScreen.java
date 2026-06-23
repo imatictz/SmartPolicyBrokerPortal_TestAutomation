@@ -31,7 +31,7 @@ public class RiskNoteScreen {
 	@Then("^user select risk note menu$")
 	public void user_select_risk_note_menu() throws Throwable {
 	    Object[] input9=new Object[1];
-		input9[0]="//*[@id='span6']";
+		input9[0]="//*[@id='span_riskNote_lc']";
 		SeleniumOperations.clickOnElement(input9);
 	}
 	

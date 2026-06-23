@@ -12,7 +12,12 @@ When user click on current quotations
 Scenario: (Vehicle)Verify user able to enter mandatory fields and save quotation successfully
 
 When user click on add button
-When user select "Vehicle" as insurance types
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Motor Insurance            |
+    | Insurance Type   | Vehicle                    |
+#When user select "Vehicle" as insurance types
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -65,7 +70,12 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (Vehicle)Verify user able to enter mandatory fields and save quotation successfully
 
 When user click on add button
-When user select "Vehicle" as insurance types
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Motor Insurance            |
+    | Insurance Type   | Vehicle                    |
+#When user select "Vehicle" as insurance types
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
@@ -113,7 +123,12 @@ Then user able to view "Awaiting Receipt" as status
 Scenario: (Vehicle)Verify user able to enter all fields and save quotation successfully
 
 When user click on add button
-When user select "Vehicle" as insurance types
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Motor Insurance            |
+    | Insurance Type   | Vehicle                    |
+#When user select "Vehicle" as insurance types
 When user enter "Pravin Testing Broker" as client name in vehicle quotation
 When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer

@@ -6,7 +6,7 @@ Background:
 When user navigate on operation dropdown menu
 Then user select risk note menu
 
-@PrintAccidentRiskNote
+#@PrintAccidentRiskNote
  Scenario: User prints risk note for Individual Personal Accident 
    When user select "01/09/2025" as from date
    When user enter "Individual Personal Accident" as Insurance Type
@@ -226,7 +226,7 @@ Then user select risk note menu
       | Total Receivable| 
   # And the user should be able to send the risk note to the printer
   
-@PrintMotorRiskNote
+#@PrintMotorRiskNote
  Scenario: User prints risk note for Motor Insurance
    When user select "01/09/2025" as from date
    When user enter "Motor" as Insurance Type

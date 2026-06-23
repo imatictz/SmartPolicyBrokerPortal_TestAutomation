@@ -40,8 +40,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.asserts.SoftAssert;
@@ -95,13 +97,40 @@ public class SeleniumOperations
 	    threadConfig.set(cfg);
 
 	    WebDriver wd;
+
 	    if (cfg.getBrowserName().equalsIgnoreCase("chrome")) {
+
+	        WebDriverManager.chromedriver().setup();
+
+	        ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--disable-extensions");
+	        options.addArguments("--disable-gpu");
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
+
+	        // 🔥 Recommended for your system (8GB RAM)
+	        // options.addArguments("--headless=new");
+	         options.addArguments("--window-size=1920,1080");
+
+	        wd = new ChromeDriver(options);
+
+	    } else if (cfg.getBrowserName().equalsIgnoreCase("firefox")) {
+
+	        WebDriverManager.firefoxdriver().setup();
+
+	        FirefoxOptions options = new FirefoxOptions();
+
+	        // 🔥 Recommended for your system
+	        // options.addArguments("-headless");
+
+	        wd = new FirefoxDriver(options);
+
+	    } else {
+	        // Default fallback → Chrome
 	        WebDriverManager.chromedriver().setup();
 	        wd = new ChromeDriver();
-	    } else {
-	        // Default fallback
-	        wd = new ChromeDriver();
 	    }
+
 	    wd.manage().window().maximize();
 
 	    // Set ThreadLocal driver
@@ -124,6 +153,7 @@ public class SeleniumOperations
 	    }
 
 	    wd.get(cfg.getApplicationUrl());
+	    d().navigate().refresh();
 	}
 
      
@@ -201,6 +231,29 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
+     public static Hashtable<String,Object> sendKeysUniqueId(Object[] inputparameters){   
+    	    try {
+    	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+
+    	        String strXpath = (String) inputparameters[0];
+    	        String strvalue=(String)inputparameters[1];
+    	        if (strvalue.equalsIgnoreCase("Value")) {
+    	        // Generate unique ID
+    	        String uniqueId = "54125" + System.currentTimeMillis();
+
+    	        d().findElement(By.xpath(strXpath)).clear();
+    	        d().findElement(By.xpath(strXpath)).sendKeys(uniqueId);
+
+    	        outputparameters.put("STATUS","PASS");
+    	        outputparameters.put("MESSAGE","Method Used: sendKeysUniqueId, Value Generated: " + uniqueId);
+    	    }
+    	    }
+    	    catch(Exception e){
+    	        outputparameters.put("STATUS","FAIL");
+    	        outputparameters.put("MESSAGE","Method Used: sendKeysUniqueId, Error Occurred");
+    	    }
+    	    return outputparameters;
+    	}
      
 //DynamicValuesSendKeys
      public static Hashtable<String,Object> DynamicValuessendKeys(Object[] inputparameters){   
@@ -319,7 +372,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String givenText=(String)inputparameters[0];
-		   Alert pass=driver.switchTo().alert();
+		   Alert pass=d().switchTo().alert();
 		   String findText = pass.getText();
 		   //pass.accept();
 		   System.out.println(findText);
@@ -406,47 +459,63 @@ public class SeleniumOperations
      
 //ValidationForEmail
      
-     public static Hashtable<String,Object> validationForEmail(Object[] inputparameters){  
-		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   String Xpath1=(String)inputparameters[0];
-		   String email=(String)inputparameters[1];
-		   String Xpath2=(String)inputparameters[2];
-		   String Xpath3=(String)inputparameters[3];
-		   String givenText=(String)inputparameters[4];
-		   
-		   WebElement emailField = d().findElement(By.xpath(Xpath1));
-		   emailField.clear();
-	        emailField.sendKeys(email);
+     public static Hashtable<String,Object> validationForEmail(Object[] inputparameters) {
 
-	        // Submit the form (update selector if needed)
-	        d().findElement(By.xpath(Xpath2)).click();
+    	    try {
 
-	        // Wait for error/validation message (optional wait can be added)
-	        String findText=d().findElement(By.xpath(Xpath3)).getText();
-			   System.out.println(findText);
-			   
-			   if(givenText.equalsIgnoreCase(findText)){
-				 System.out.println("Test Case Pass");
-				 outputparameters.put("STATUS","PASS");
-				   outputparameters.put("MESSAGE","Method Used:validationEmail, Input Given:"+inputparameters[1]);
-			     
-			   }
-			   else {
-				 System.out.println("Test Case Fail");
-				 outputparameters.put("STATUS","FAIL");
-				   outputparameters.put("MESSAGE","Method Used:validationEmail, Input Given:"+inputparameters[1]);
-			   }
+    	        String xpathEmail = (String) inputparameters[0];
+    	        String email = (String) inputparameters[1];
+    	        String xpathSave = (String) inputparameters[2];
+    	        String xpathMsg = (String) inputparameters[3];
+    	        String expectedText = (String) inputparameters[4];
 
-	    
-		 }
-		   
-	     catch(Exception e) {
-		   outputparameters.put("STATUS","FAIL");
-		   outputparameters.put("MESSAGE","Method Used:validationEmail, Input Given:"+inputparameters[1]);
-	     }
-	     return outputparameters;
-     }
+    	        WebDriverWait wait =
+    	                new WebDriverWait(d(), Duration.ofSeconds(10));
+
+    	        WebElement emailField =
+    	                wait.until(ExpectedConditions.elementToBeClickable(
+    	                        By.xpath(xpathEmail)));
+
+    	        emailField.clear();
+    	        emailField.sendKeys(email);
+
+    	        d().findElement(By.xpath(xpathSave)).click();
+
+    	        WebElement msg =
+    	                wait.until(ExpectedConditions.visibilityOfElementLocated(
+    	                        By.xpath(xpathMsg)));
+
+    	        String actualText = msg.getText().trim();
+
+    	        System.out.println("Email : " + email);
+    	        System.out.println("Expected : " + expectedText);
+    	        System.out.println("Actual : " + actualText);
+
+    	        if (expectedText.equalsIgnoreCase(actualText)) {
+
+    	            outputparameters.put("STATUS", "PASS");
+    	            outputparameters.put("MESSAGE",
+    	                    "Method Used: validationEmail, Input Given:" + email);
+
+    	        } else {
+
+    	            outputparameters.put("STATUS", "FAIL");
+    	            outputparameters.put("MESSAGE",
+    	                    "Expected: " + expectedText +
+    	                    " Actual: " + actualText);
+    	        }
+
+    	    } catch (Exception e) {
+
+    	        e.printStackTrace();
+
+    	        outputparameters.put("STATUS", "FAIL");
+    	        outputparameters.put("MESSAGE",
+    	                "Exception : " + e.getMessage());
+    	    }
+
+    	    return outputparameters;
+    	}
 
 //Actions Class	 
 	 public static Hashtable<String,Object> actionClass(Object[] inputparameters) {
@@ -648,6 +717,45 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
+     public static Hashtable<String, Object> clearAndEnter2(Object[] inputparameters) {
+
+    	    Hashtable<String, Object> outputparameters = new Hashtable<String, Object>();
+
+    	    try {
+
+    	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+
+    	        String strXpath1 = (String) inputparameters[0];
+    	        String strvalue1 = (String) inputparameters[1];
+    	        String strXpath2 = (String) inputparameters[2];
+    	        String strvalue2 = (String) inputparameters[3];
+
+    	        WebElement remove1 = driver.findElement(By.xpath(strXpath1));
+    	        WebElement remove2 = driver.findElement(By.xpath(strXpath2));
+
+    	        remove1.clear();
+    	        Thread.sleep(2000);
+    	        remove1.click();
+    	        Thread.sleep(2000);
+    	        remove1.sendKeys(strvalue1);
+
+    	        remove2.clear();
+    	        Thread.sleep(2000);
+    	        remove2.click();
+    	        Thread.sleep(2000);
+    	        remove2.sendKeys(strvalue2);
+
+    	        outputparameters.put("STATUS", "PASS");
+    	        outputparameters.put("MESSAGE", "Values entered successfully: " + strvalue1 + " , " + strvalue2);
+
+    	    } catch (Exception e) {
+
+    	        outputparameters.put("STATUS", "FAIL");
+    	        outputparameters.put("MESSAGE", "Unable to enter values: " + e.getMessage());
+    	    }
+
+    	    return outputparameters;
+    	}
      
    //Clear
      public static Hashtable<String,Object> clear(Object[]inputparameters) {   
@@ -1568,6 +1676,15 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	    return outputparameters;
     	}
+     public static String getFirstLineText(String xpath) {
+    	    String text = d().findElement(By.xpath(xpath)).getText();
+
+    	    if (text == null || text.trim().isEmpty()) {
+    	        return "";
+    	    }
+
+    	    return text.split("\\R")[0].trim();
+    	}
      
      public static Hashtable<String, Object> printClaimReport(Object[] inputparameters) throws IOException {
  	    Hashtable<String, Object> outputparameters = new Hashtable<>();
@@ -1584,12 +1701,34 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	        String mainWindow = d().getWindowHandle();
 
  	        // ✅ Get expected values from UI BEFORE switching to PDF
- 	        Map<String, String> expectedValues = new HashMap<>();
- 	        expectedValues.put("System Claim No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[1]")).getText().toUpperCase());
- 	        expectedValues.put("Risk Note No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]")).getText());
- 	        expectedValues.put("CoverNote No", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText());
- 	        expectedValues.put("Claimant Name", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[5]")).getText());
+ 	       Map<String, String> expectedValues = new HashMap<>();
 
+ 	      expectedValues.put(
+ 	              "System Claim No",
+ 	              d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[1]"))
+ 	                      .getText()
+ 	                      .trim()
+ 	                      .toUpperCase());
+
+ 	      expectedValues.put(
+ 	              "Risk Note No",
+ 	              d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[3]"))
+ 	                      .getText()
+ 	                      .trim());
+
+ 	      expectedValues.put(
+ 	              "CoverNote No",
+ 	              d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]"))
+ 	                      .getText()
+ 	                      .trim());
+
+ 	      // Get only first line before <br>
+ 	      String claimantName = getFirstLineText("//*[@id='sort_table']/tbody/tr/td[5]");
+
+ 	      expectedValues.put("Claimant Name", claimantName);
+
+ 	      System.out.println("Claimant Name = " + claimantName);
+ 	       
  	        Thread.sleep(2000);
  	        // ✅ Step 1: Click on Display icon
  	        WebElement displayIcon = d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr[1]/td[10]/*[1]")); 
@@ -1860,9 +1999,8 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      
      public static void browserClose() {
     	 try {
-    		 driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-    		 if (getDriver() != null) {
-    		        getDriver().quit();      // Quit only current thread's driver
+    		 if (d() != null) {
+    			 d().quit();      // Quit only current thread's driver
     		        threadDriver.remove();   // Clean up ThreadLocal
     		        threadConfig.remove();   // Clean up ThreadLocal config
     		    }

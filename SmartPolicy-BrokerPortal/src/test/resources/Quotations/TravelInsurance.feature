@@ -6,21 +6,29 @@ Background:
 When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
-When user click on add button
-When user select "Travel Insurance" as insurance type 
+ 
 
 @MandatoryFields
 Scenario: (Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Travel Insurance           |
+    | Insurance Type   | Travel Insurance           |
+#When user select "Travel Insurance" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
+When user select "Automated Testing Company" as insurer
 When user select "South Africa" as country travelling to
-When user select "Plan Africa" as plan
+When user select "Complete Package" as plan
 When user enter "15244-51654-84125" as cover note number
 When user enter "25428Af111" as passport number
 When user enter "01/01/2000" as date of birth
 When user enter "25/11/2024" as expiry date
 When user select "self" as relationship
-#When user click on compute button
+When user enter "5000" as adjust premium
+When user click on compute button
 When user click on insert button
 #Addon
 When user click on addOn button
@@ -37,9 +45,16 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user click on add button
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Travel Insurance           |
+    | Insurance Type   | Travel Insurance           |
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user select "Plan Africa" as plan
+When user select "Automated Testing Company" as insurer
+When user select "Complete Package" as plan
 When user select "South Africa" as country travelling to
 When user enter "15244-51654-84125" as cover note number
 When user enter "25428Af111" as passport number
@@ -47,6 +62,7 @@ When user enter "01/01/2000" as date of birth
 When user enter "25/11/2024" as expiry date
 When user select "self" as relationship
 When user enter "621234568" as mobile number
+When user enter "962.3" as adjust premium
 When user click on compute button
 When user click on insert button
 When user click on save button
@@ -57,14 +73,19 @@ Then user able to view "Awaiting Receipt" as status
 
 @AllFields
 Scenario: (Travel Insurance Quotation) Verify user able to enter all fields and save quotation successfully
+When user click on add button
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Travel Insurance           |
+    | Insurance Type   | Travel Insurance           |
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
-When user click on country travelling to dropdown
+When user select "Automated Testing Company" as insurer
+#When user click on country travelling to dropdown
 When user select "South Africa" as country travelling to
 When user enter "ByAIR1025-BUS842@#$1206" as route information
-When user click on plan dropdown
-When user select "Plan Africa" as plan
-When user click on business by dropdown
+When user select "Complete Package" as plan
 Then user select Demo User as business by
 When user enter "Manager654123" as contact person
 When user select on RI per class checkbox
@@ -74,6 +95,8 @@ When user select on borrower type check box
 When user click on borrower type dropdown
 And user enter "Retail Banking" as borrower type
 Then user select Retail Banking as borrower type
+When user enter "Pravin Test Acc" as borrower account name
+When user enter "9541203288" as borrower account number
 When user enter "15244-51654-84125" as cover note number
 When user click on loss ratio forecast dropdown
 When user enter "Profit making" as loss ratio forecast
@@ -82,12 +105,10 @@ Then user select Profit making as loss ratio forecast
 When user enter "25428Af111" as passport number
 When user enter "01/01/2000" as date of birth
 When user enter "25/12/2024" as expiry date
-When user click on relationship dropdown
-When user enter "self" as relationship
-When user select self as realtionship
+When user select "self" as relationship
 When user enter "TravellingTOAFrica12032" as pre existing condition
-When user enter "-962.3" as adjust premium
-#When user click on compute button
+When user enter "62101" as adjust premium
+When user click on compute button
 When user click on insert button
 #AddOn
 When user click on addOn button
@@ -119,7 +140,7 @@ And user clicks on edit option
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user select "South Africa" as country travelling to
-When user select "Plan Africa" as plan
+When user select "Complete Package" as plan
 When user enter "15244-51654-84125" as cover note number
 When user enter "25428Af111" as passport number
 When user enter "01/01/2000" as date of birth
