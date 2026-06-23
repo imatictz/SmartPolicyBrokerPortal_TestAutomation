@@ -132,11 +132,11 @@
 
 
 
-  	<dependency>
+  <!-- 	<dependency>
   		<groupId>SmartPolicy</groupId>
   		<artifactId>InsurerPortal</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
+  	</dependency>-->
   </dependencies> 
 
 <build>
