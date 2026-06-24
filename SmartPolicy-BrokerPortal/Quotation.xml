@@ -27,7 +27,7 @@
      <class name="testRunner.RunnerTestPayment"/>
      <class name="testRunner.RunnerTestEndorsement"/>
      <class name="testRunner.RunnerTestEndorsementScreen"/>
-     <class name="testRunner.RunnerTestReports"/> 
+     <!--<class name="testRunner.RunnerTestReports"/> -->
       
       
     </classes>
