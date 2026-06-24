@@ -206,7 +206,7 @@ public class Medical {
 	public void user_select_as_extension1(String extension) throws Throwable {
 		Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
-		input[1]="//*[@class='select2-search__field']";
+		input[1]="(//*[@Class='select2-search__field'])[2]";
 		input[2]=extension;
 		input[3]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -361,7 +361,7 @@ public class Medical {
 	public void user_enter_as_borrower_type1(String borrowerType) throws Throwable {
 	  
 		Object[] input=new Object[2];
-	    input[0]="//*[@Class='select2-search__field']";
+	    input[0]="(//*[@Class='select2-search__field'])[2]";
 	    input[1]=borrowerType;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -392,7 +392,7 @@ public class Medical {
 	public void user_enter_as_loss_ratio_forecast1(String lossRatioForecast) throws Throwable {
 	   
 		Object[] input=new Object[2];
-	    input[0]="//*[@Class='select2-search__field']";
+	    input[0]="(//*[@Class='select2-search__field'])[2]";
 	    input[1]=lossRatioForecast;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
@@ -466,7 +466,7 @@ public class Medical {
 	
     @When("^user select \"([^\"]*)\" as ID type$")
 	public void user_enter_as_ID_type1(String idType) throws Throwable {
-	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbaIDType')]", "//*[@Class='select2-search__field']", idType , "(//*[contains(@data-select2-id,'MainContent_cmbaIDType-result')])", "user select \\\"([^\\\"]*)\\\" as ID type", "DROPDOWN", 3000);
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbaIDType')]", "(//*[@Class='select2-search__field'])[2]", idType , "(//*[contains(@data-select2-id,'MainContent_cmbaIDType-result')])", "user select \\\"([^\\\"]*)\\\" as ID type", "DROPDOWN", 3000);
 
 	}
 

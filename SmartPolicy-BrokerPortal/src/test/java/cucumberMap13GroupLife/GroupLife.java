@@ -236,7 +236,7 @@ public class GroupLife {
 	@When("^user enter \"([^\"]*)\" as extension$")
 	public void enterExtension(String extension) throws Throwable{
 	    Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-search__field']";
+	    input[0]="(//*[@Class='select2-search__field'])[2]";
 	    input[1]=extension;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Others\" as extension",output.get("MESSAGE").toString());
@@ -398,7 +398,7 @@ public class GroupLife {
 	public void user_enter_as_borrower_type(String borrowerType) throws Throwable {
 	  
 		Object[] input=new Object[2];
-	    input[0]="//*[@Class='select2-search__field']";
+	    input[0]="(//*[@Class='select2-search__field'])[2]";
 	    input[1]=borrowerType;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -429,7 +429,7 @@ public class GroupLife {
 	public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
 	   
 		Object[] input=new Object[2];
-	    input[0]="//*[@Class='select2-search__field']";
+	    input[0]="(//*[@Class='select2-search__field'])[2]";
 	    input[1]=lossRatioForecast;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  

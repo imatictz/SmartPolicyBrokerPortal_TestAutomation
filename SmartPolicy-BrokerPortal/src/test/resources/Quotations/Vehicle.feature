@@ -108,7 +108,7 @@ When user enter "101" as gross weight
 When user enter "97" as tare weight
 When user enter "2" as number of axel
 When user enter "1" as axel distance
-When user enter "1000000" as sum insured
+When user enter "150000" as sum insured
 When user click on compute button
 When user click on insert button (Policy Information)
 When user click on OK button for commission alert
@@ -211,7 +211,7 @@ And user enter "15156" as accessories sum insured
 Then user enter "Accessories INFO 1252ACCIoiy" as accessories information
 When user enter "2" as number of axel
 When user enter "1" as axel distance
-When user enter "100000" as sum insured
+When user enter "150000" as sum insured
 Then user enter "15" as override%
 When user enter "98500" as TPPD free limit
 When user enter "120000" as TPPD increase limit

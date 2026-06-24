@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/GroupLife.feature", 
-                   tags= "@MandatoryFieldsNoAddon", 
+                   tags= "@All", 
                    glue={"cucumberMap13GroupLife","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

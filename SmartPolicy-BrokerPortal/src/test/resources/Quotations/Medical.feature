@@ -130,7 +130,7 @@ When user enter "702.3" as other fee
 When user enter "10" as discount on commission %
 When user click on save button
 When user click on Ok button to accept commission alert message
-Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+Then user able to view "Awaiting Receipt" as status
 
 @PrintQuote  @MEDICAL
  Scenario: User prints the Medical quote

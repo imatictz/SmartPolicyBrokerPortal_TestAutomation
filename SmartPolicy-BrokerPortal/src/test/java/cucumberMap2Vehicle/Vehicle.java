@@ -182,14 +182,14 @@ public class Vehicle
 
 	    @When ("user select {string} as insurance type")
 		public void user_select_as_insuranceType(String insuranceType) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltCoverType')]", "//*[@class='select2-search__field']", insuranceType , "(//*[contains(@data-select2-id,'-MainContent_cmbFltCoverType')])[2]", "user select {String} as insurance type", "DROPDOWN", 5000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltCoverType')]", "(//*[@class='select2-search__field'])[2]", insuranceType , "(//*[contains(@data-select2-id,'-MainContent_cmbFltCoverType')])[2]", "user select {String} as insurance type", "DROPDOWN", 5000);
 
 		}
 	
 
 	 @When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltClassType')]", "//*[@class='select2-search__field']", insuranceClass , "(//*[contains(@data-select2-id,'-MainContent_cmbFltClassType')])[2]", "user select {String} as insurance class", "DROPDOWN", 5000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltClassType')]", "(//*[@class='select2-search__field'])[2]", insuranceClass , "(//*[contains(@data-select2-id,'-MainContent_cmbFltClassType')])[2]", "user select {String} as insurance class", "DROPDOWN", 5000);
 
 		}
 	 
@@ -333,7 +333,7 @@ public class Vehicle
 	 public void enterFuelType(String fuelType) throws Throwable
 	 {
 		 Object[] input=new Object[2];
-			input[0]="//*[@class='select2-search__field']";
+			input[0]="(//*[@class='select2-search__field'])[2]";
 			input[1]=fuelType;
 			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"CNG\" as fuel type",output.get("MESSAGE").toString());
@@ -694,7 +694,7 @@ public class Vehicle
 		public void user_enter_as_borrower_type(String borrowerType) throws Throwable {
 		  
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@class='select2-search__field'])[2]";
 		    input[1]=borrowerType;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -1174,7 +1174,7 @@ public class Vehicle
 		public void user_enter_as_claim_excess(String claimExcess) throws Throwable {
 		    
 			Object[] input=new Object[2];
-			input[0]="//*[@Class='select2-search__field']";
+			input[0]="(//*[@class='select2-search__field'])[2]";
 			input[1]=claimExcess;
 			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as claim excess",output.get("MESSAGE").toString());
@@ -1216,7 +1216,7 @@ public class Vehicle
 		public void user_enter_as_by_percent_amount(String percentAmount) throws Throwable {
 		   
 			Object[] input=new Object[2];
-			input[0]="//*[@Class='select2-search__field']";
+			input[0]="(//*[@class='select2-search__field'])[2]";
 			input[1]=percentAmount;
 			Hashtable<String, Object> output = SeleniumOperations.sendKeys(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as by percent/amount",output.get("MESSAGE").toString());

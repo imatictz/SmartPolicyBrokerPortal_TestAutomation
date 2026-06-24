@@ -88,7 +88,7 @@ When user enter "ByAIR1025-BUS842@#$1206" as route information
 When user select "Complete Package" as plan
 Then user select Demo User as business by
 When user enter "Manager654123" as contact person
-When user select on RI per class checkbox
+#When user select on RI per class checkbox
 When user Select on first loss payee checkbox
 Then user enter "Payee101" as first loss payee
 When user select on borrower type check box

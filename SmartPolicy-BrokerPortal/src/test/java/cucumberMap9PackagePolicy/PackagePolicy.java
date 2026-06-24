@@ -60,7 +60,7 @@ public class PackagePolicy
 		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 			Object[] input= new Object[4];
 			input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
-			input[1]="//*[@class='select2-search__field']";
+			input[1]="(//*[@class='select2-search__field'])[2]";
 			input[2]=insuranceType;
 			input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -167,7 +167,7 @@ public class PackagePolicy
 		 }
 		@When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltClassType')]", "//*[@class='select2-search__field']", insuranceClass , "(//*[contains(@data-select2-id,'-MainContent_cmbFltClassType')])[2]", "user select {String} as insurance class", "DROPDOWN", 5000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbFltClassType')]", "(//*[@Class='select2-search__field'])[2]", insuranceClass , "(//*[contains(@data-select2-id,'-MainContent_cmbFltClassType')])[2]", "user select {String} as insurance class", "DROPDOWN", 5000);
 
 		}
 
@@ -268,7 +268,7 @@ public class PackagePolicy
 		public void enterExtension1(String extension)
 		{
 			Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-search__field']";
+		    input[0]="(//*[@Class='select2-search__field'])[2]";
 		    input[1]=extension;
 		    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
@@ -450,7 +450,7 @@ public class PackagePolicy
 		public void user_enter_as_borrower_type1(String borrowerType) throws Throwable {
 		  
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@Class='select2-search__field'])[2]";
 		    input[1]=borrowerType;
 		    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -481,7 +481,7 @@ public class PackagePolicy
 		public void user_enter_as_loss_ratio_forecast1(String lossRatioForecast) throws Throwable {
 		   
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@Class='select2-search__field'])[2]";
 		    input[1]=lossRatioForecast;
 		    Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
@@ -833,7 +833,7 @@ public class PackagePolicy
 		 public void enterFuelType(String fuelType) throws Throwable
 		 {
 			 Object[] input=new Object[2];
-				input[0]="//*[@class='select2-search__field']";
+				input[0]="(//*[@Class='select2-search__field'])[2]";
 				input[1]=fuelType;
 				Hashtable<String, Object> output = SeleniumOperations.clearAndEnter(input);
 				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"CNG\" as fuel type",output.get("MESSAGE").toString());
@@ -1145,7 +1145,7 @@ public class PackagePolicy
 		            "(//*[contains(@data-select2-id,'MainContent_cmbPolicyCategory-result')])",
 		            "user select Policy Category",
 		            "DROPDOWN",
-		            0
+		            2000
 		        );
 		    }
 
@@ -1153,7 +1153,7 @@ public class PackagePolicy
 		    if (data.get("Insurance Type") != null) {
 		        Itl.CustomDropdownEvent(
 		            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
-		            "(//*[@class='select2-search__field'])[1]",
+		            "(//*[@Class='select2-search__field'])[1]",
 		            data.get("Insurance Type"),
 		            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])",
 		            "user select Insurance Type",

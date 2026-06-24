@@ -205,7 +205,7 @@ public class CreditLife
 		
 		@When ("user select {string} as client type")
 		public void user_select_as_insuranceClass(String clientType) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientType')]", "//*[@class='select2-search__field']", clientType , "(//*[contains(@data-select2-id,'MainContent_cmbClientType-result')])[1]", "user select {string} as client type", "DROPDOWN", 5000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientType')]", "(//*[@Class='select2-search__field'])[2]", clientType , "(//*[contains(@data-select2-id,'MainContent_cmbClientType-result')])[1]", "user select {string} as client type", "DROPDOWN", 5000);
 		}
 
 		@When("^user click on compute button$")
@@ -245,7 +245,7 @@ public class CreditLife
 		public void enterExtension(String extension) throws Throwable
 		{
 		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-search__field']";
+		    input[0]="(//*[@Class='select2-search__field'])[2]";
 		    input[1]=extension;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Terrorism\" as extension",output.get("MESSAGE").toString());
@@ -431,7 +431,7 @@ public class CreditLife
 		public void user_enter_as_borrower_type(String borrowerType) throws Throwable {
 		  
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@Class='select2-search__field'])[2]";
 		    input[1]=borrowerType;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -464,7 +464,7 @@ public class CreditLife
 		public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
 		   
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@Class='select2-search__field'])[2]";
 		    input[1]=lossRatioForecast;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
