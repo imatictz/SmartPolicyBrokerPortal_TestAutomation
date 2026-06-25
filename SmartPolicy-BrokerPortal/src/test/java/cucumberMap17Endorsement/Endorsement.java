@@ -267,7 +267,7 @@ public class Endorsement {
 		 input[0]="//*[@id='btnProcedeRiskNote']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on YES button for confirmation",output.get("MESSAGE").toString()); 
-		 Thread.sleep(5000);
+		 Thread.sleep(6000);
 	 }
 
 	 
