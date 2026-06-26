@@ -9,9 +9,9 @@ When user Click on risk note menu
 @reportAccidentalDamageClaims
 Scenario: (Report Accidental Damage Claim) Verify user able to report claim successfully
 When user select "01/09/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
-When user click on search button to find "Individual Personal Accident" risk note
-#When user enter risk note number to search "Individual Personal Accident" risk note
+When user enter "Accident Cover" as Insurance Type
+When user click on search button to find "Accident Cover" risk note
+#When user enter risk note number to search "Accident Cover" risk note
 #When user click on search button
 #When user click on actions button
 #When user click on report claim umbrella like button

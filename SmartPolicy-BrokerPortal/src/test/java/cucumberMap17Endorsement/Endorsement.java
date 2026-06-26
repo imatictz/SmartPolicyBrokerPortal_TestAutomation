@@ -107,7 +107,7 @@ public class Endorsement {
 		 input7[0]="//*[@id='btnDetails']";
 		 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on fetch button",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
+		 Thread.sleep(4000);
 	 }
 
 	 @When("^user click on edit icon to make financial changes$")
@@ -409,6 +409,11 @@ public class Endorsement {
 		@When ("^user enter \"(.*)\" as change value of sum assured$")
 		public void enterSumAssured(String sumAssured) throws InterruptedException {
             Itl.CustomClearSendEvent("//*[@id='MainContent_txtSumInsured']",sumAssured ,"user enter \\\"(.*)\\\" as change value of sum assured", "TEXTBOX", 2000);
+		}
+		
+		@When ("user enter {string} as change value of sum assured\\(Death)")
+		public void enterSumAssuredDeath(String sumAssured) throws InterruptedException {
+            Itl.CustomClearSendEvent("//*[@id='MainContent_txtDeathSumInsured']",sumAssured ,"user enter {string} as change value of sum assured\\\\(Death)", "TEXTBOX", 2000);
 		}
 		
 		@When ("^user enter \"(.*)\" as change value of sum insured$")

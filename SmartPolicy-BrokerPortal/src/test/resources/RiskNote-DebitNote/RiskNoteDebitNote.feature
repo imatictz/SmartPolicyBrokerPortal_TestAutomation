@@ -11,9 +11,9 @@ When user click on current quotations
 @IssueAccidentalRiskNote
 Scenario: (Issue Risk Note-AccidentalDamageQuote) Verify user able to issue risk note of accidental damage quotation successfully
 When user select "01/09/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
-When user click on search button to find "Individual Personal Accident" quote
-When user enter quote number to search "Individual Personal Accident" quote
+When user enter "Accident Cover" as Insurance Type
+When user click on search button to find "Accident Cover" quote
+When user enter quote number to search "Accident Cover" quote
 When user click on search button
 When user click on capture receipt icon
 When user click on mode dropdown

@@ -23,10 +23,11 @@ public class Medical {
 	}
 
 	@When("^user navigate on quotations menu$")
-	public void user_navigate_on_quotations_menu1() {
+	public void user_navigate_on_quotations_menu1() throws InterruptedException {
 		Object[] input8=new Object[1];
 	    input8[0]="//*[@id='span_quotations_lc']";
 	    SeleniumOperations.actionClass(input8);
+	    Thread.sleep(2000);
 	}
 
 	@When("^user click on current quotations$")

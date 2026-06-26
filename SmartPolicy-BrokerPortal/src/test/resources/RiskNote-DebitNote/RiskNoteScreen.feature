@@ -6,12 +6,12 @@ Background:
 When user navigate on operation dropdown menu
 Then user select risk note menu
 
-#@PrintAccidentRiskNote
- Scenario: User prints risk note for Individual Personal Accident 
+@PrintAccidentRiskNote
+ Scenario: User prints risk note for Accident Cover 
    When user select "01/09/2025" as from date
-   When user enter "Individual Personal Accident" as Insurance Type
-   When user click on search button to find "Individual Personal Accident" risk note
-   When user enter risk note number to search "Individual Personal Accident" risk note
+   When user enter "Accident Cover" as Insurance Type
+   When user click on search button to find "Accident Cover" risk note
+   When user enter risk note number to search "Accident Cover" risk note
    When user click on search button
    And user clicks on print risk note option
    And the risk note should include all relevant details like

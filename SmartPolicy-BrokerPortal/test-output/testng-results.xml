@@ -1,47 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-25T13:28:40 EAT" name="Default suite" finished-at="2026-06-25T13:34:09 EAT" duration-ms="329152">
+  <suite started-at="2026-06-26T15:46:11 EAT" name="Default suite" finished-at="2026-06-26T15:48:12 EAT" duration-ms="121319">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestEndorsement@721eb7df]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-06-25T13:28:40 EAT" name="Default test" finished-at="2026-06-25T13:34:09 EAT" duration-ms="329152">
-      <class name="testRunner.RunnerTestEndorsement">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestEndorsement@721eb7df]" started-at="2026-06-25T13:28:40 EAT" name="setUpClass" finished-at="2026-06-25T13:28:41 EAT" duration-ms="1537" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@f9f3928]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2026-06-26T15:46:11 EAT" name="Default test" finished-at="2026-06-26T15:48:12 EAT" duration-ms="121319">
+      <class name="testRunner.RunnerTestMedicalQuotation">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:testRunner.RunnerTestMedicalQuotation@5d52e3ef]" started-at="2026-06-26T15:46:11 EAT" name="setUpClass" finished-at="2026-06-26T15:46:12 EAT" duration-ms="1039" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestEndorsement@721eb7df]" started-at="2026-06-25T13:28:41 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-06-25T13:34:09 EAT" duration-ms="327385" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestMedicalQuotation@5d52e3ef]" started-at="2026-06-26T15:46:12 EAT" name="runScenario" data-provider="scenarios" finished-at="2026-06-26T15:48:12 EAT" duration-ms="120012" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["(Bond Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement"]]>
+                <![CDATA["Verify user able to edit an existing Medical quote successfully"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["General Endorsement"]]>
+                <![CDATA["Medical Quotation"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Cucumber framework failure: The step 'user able to view "1003-Information modified successfully" as message' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("user able to view {string} as message")
+public void user_able_to_view_as_message(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Cucumber framework failure: The step 'user able to view "1003-Information modified successfully" as message' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("user able to view {string} as message")
+public void user_able_to_view_as_message(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at org.testng.Assert.fail(Assert.java:99)
+at testRunner.RunnerTestMedicalQuotation.runScenario(RunnerTestMedicalQuotation.java:37)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: io.cucumber.testng.UndefinedStepException: The step 'user able to view "1003-Information modified successfully" as message' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("user able to view {string} as message")
+public void user_able_to_view_as_message(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+at testRunner.RunnerTestMedicalQuotation.runScenario(RunnerTestMedicalQuotation.java:35)
+... 12 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestEndorsement@721eb7df]" started-at="2026-06-25T13:34:09 EAT" name="tearDownClass" finished-at="2026-06-25T13:34:09 EAT" duration-ms="57" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestMedicalQuotation@5d52e3ef]" started-at="2026-06-26T15:48:12 EAT" name="tearDownClass" finished-at="2026-06-26T15:48:12 EAT" duration-ms="71" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestEndorsement -->
+      </class> <!-- testRunner.RunnerTestMedicalQuotation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

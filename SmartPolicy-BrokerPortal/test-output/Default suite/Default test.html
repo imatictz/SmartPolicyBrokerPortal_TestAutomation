@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 25 13:28:40 EAT 2026</td>
+<td>Started on:</td><td>Fri Jun 26 15:46:11 EAT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>329 seconds (329152 ms)</td>
+<tr><td>Total time:</td><td>121 seconds (121319 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,10 +76,93 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testRunner.RunnerTestEndorsement.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestEndorsement<br>Test method: Runs Cucumber Scenarios<br>Parameters: "(Bond Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement", "General Endorsement"</td>
-<td></td>
-<td>327</td>
-<td>testRunner.RunnerTestEndorsement@721eb7df</td></tr>
+<td title='testRunner.RunnerTestMedicalQuotation.runScenario()'><b>runScenario</b><br>Test class: testRunner.RunnerTestMedicalQuotation<br>Parameters: "Verify user able to edit an existing Medical quote successfully", "Medical Quotation"</td>
+<td><div><pre>java.lang.AssertionError: Cucumber framework failure: The step &apos;user able to view &quot;1003-Information modified successfully&quot; as message&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;user able to view {string} as message&quot;)
+public void user_able_to_view_as_message(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at org.testng.Assert.fail(Assert.java:99)
+	at testRunner.RunnerTestMedicalQuotation.runScenario(RunnerTestMedicalQuotation.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: io.cucumber.testng.UndefinedStepException: The step &apos;user able to view &quot;1003-Information modified successfully&quot; as message&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;user able to view {string} as message&quot;)
+public void user_able_to_view_as_message(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at testRunner.RunnerTestMedicalQuotation.runScenario(RunnerTestMedicalQuotation.java:35)
+	... 12 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1460746133", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1460746133'><pre>java.lang.AssertionError: Cucumber framework failure: The step &apos;user able to view &quot;1003-Information modified successfully&quot; as message&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;user able to view {string} as message&quot;)
+public void user_able_to_view_as_message(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at org.testng.Assert.fail(Assert.java:99)
+	at testRunner.RunnerTestMedicalQuotation.runScenario(RunnerTestMedicalQuotation.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: io.cucumber.testng.UndefinedStepException: The step &apos;user able to view &quot;1003-Information modified successfully&quot; as message&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then(&quot;user able to view {string} as message&quot;)
+public void user_able_to_view_as_message(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at testRunner.RunnerTestMedicalQuotation.runScenario(RunnerTestMedicalQuotation.java:35)
+	... 12 more
+</pre></div></td>
+<td>120</td>
+<td>testRunner.RunnerTestMedicalQuotation@5d52e3ef</td></tr>
 </table><p>
 </body>
 </html>

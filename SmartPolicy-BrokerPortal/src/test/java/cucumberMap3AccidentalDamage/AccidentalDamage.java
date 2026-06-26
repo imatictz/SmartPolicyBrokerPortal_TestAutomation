@@ -37,7 +37,7 @@ public class AccidentalDamage
 		public void user_navigate_on_quotations_menu() 
 		{
 			Object[] input8=new Object[1];
-		    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
+		    input8[0]="//*[@id='span_quotations_lc']";
 		    SeleniumOperations.actionClass(input8);
 		   
 		}
@@ -81,7 +81,7 @@ public class AccidentalDamage
 		   Object[] input=new Object[2];
 		   input[0]="//*[@id='MainContent_txtClientName']";
 		   input[1]=clientName;
-		   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		   Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name",output.get("MESSAGE").toString());
 		   Thread.sleep(8000);
 		}
@@ -103,7 +103,7 @@ public class AccidentalDamage
 		{
 			Object[] input = new Object[4];
 		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
-		    input[1] = "//*[@class='select2-search__field']";
+		    input[1] = "(//*[@class='select2-search__field'])[2]";
 		    input[2] = insurer;
 		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -116,7 +116,7 @@ public class AccidentalDamage
 			
 			Object[] input = new Object[4];
 		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]";
-		    input[1] = "//*[@class='select2-search__field']";
+		    input[1] = "(//*[@class='select2-search__field'])[2]";
 		    input[2] = insuranceClass;
 		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -174,8 +174,11 @@ public class AccidentalDamage
 		   input[0]="//*[@id='btnInsert']";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button",output.get("MESSAGE").toString());
-		    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
-
+		   Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
+           Thread.sleep(1000);
+		   SeleniumOperations.scrollUp();
+		   Thread.sleep(1000);
+		   
 		}
 		@When("^user click on update button$")
 		 public void user_click_on_update_button() throws Throwable
@@ -199,7 +202,7 @@ public class AccidentalDamage
 		 public void user_click_on_selectIcon() throws Throwable
 		 {
 			 Object[] input7=new Object[1];
-				input7[0]="//*[@id='sort_table_Bond']/tbody/tr[1]/td[8]";
+				input7[0]="//*[@id='sort_table_Accident']/tbody/tr[1]/td[9]";
 				 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
 				 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on select icon to edit details",output.get("MESSAGE").toString());
 		         Thread.sleep(2000);
@@ -209,7 +212,7 @@ public class AccidentalDamage
 		public void clickOnAddon() throws Throwable 
 		{
 		    Object[] input=new Object[1];
-		    input[0]="//*[text()='Add-ons']";
+		    input[0]="(//*[text()='Add-ons'])[2]";
 		    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on addOn button",output.get("MESSAGE").toString());
 		}
@@ -218,7 +221,7 @@ public class AccidentalDamage
 		public void user_select_as_extension(String extension) throws Throwable {
 			Object[] input= new Object[4];
 			input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
-			input[1]="//*[@class='select2-search__field']";
+			input[1]="(//*[@class='select2-search__field'])[2]";
 			input[2]=extension;
 			input[3]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -431,7 +434,7 @@ public class AccidentalDamage
 		public void user_enter_as_borrower_type(String borrowerType) throws Throwable {
 		  
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@class='select2-search__field'])[2]";
 		    input[1]=borrowerType;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as borrower type",output.get("MESSAGE").toString());  
@@ -474,7 +477,7 @@ public class AccidentalDamage
 		public void user_enter_as_loss_ratio_forecast(String lossRatioForecast) throws Throwable {
 		   
 			Object[] input=new Object[2];
-		    input[0]="//*[@Class='select2-search__field']";
+		    input[0]="(//*[@class='select2-search__field'])[2]";
 		    input[1]=lossRatioForecast;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as loss ratio forecast",output.get("MESSAGE").toString());  
@@ -637,7 +640,7 @@ public class AccidentalDamage
 		}
 		@When("user clicks on edit option")
 		public void user_clicks_on_edit_option() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[1]", "user clicks on edit option", "CLICK", 2000);
+		    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[1]", "user clicks on edit option", "CLICK", 4000);
 		}
 
 		@When("the quote should include all relevant details like")
@@ -661,7 +664,7 @@ public class AccidentalDamage
 		@Then ("user able to view {string} as message")
 		public void validation(String validation) throws InterruptedException{
 			Object[] input=new Object[2];
-			input[0]="//*[text()='1003-Information modified successfully']";
+			input[0]="//*[@id='MainContent_repIQNM_lblClientName_0']";
 			input[1]=validation;
 			Hashtable<String,Object> output=SeleniumOperations.validation(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} as message",output.get("MESSAGE").toString());
@@ -677,17 +680,125 @@ public class AccidentalDamage
 			Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
 		}
 	
+		@When("user enter product discovery details :")
+		public void user_enter_product_discovery_details(DataTable dataTable) throws Throwable {
 
-		
-		
-		
-		
-		
-		
-		
+		    Map<String, String> data = dataTable.asMap(String.class, String.class);
+
+		    // Select Insurer
+		    if (data.get("Select Insurer") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbInsurerName')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Select Insurer"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbInsurerName-result')])",
+		            "user select Insurer",
+		            "DROPDOWN",
+		            0
+		        );
+		    }
+
+		    // Policy Category
+		    if (data.get("Policy Category") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbPolicyCategory')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Policy Category"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbPolicyCategory-result')])",
+		            "user select Policy Category",
+		            "DROPDOWN",
+		            0
+		        );
+		    }
+
+		    // Insurance Type
+		    if (data.get("Insurance Type") != null) {
+		        Itl.CustomDropdownEvent(
+		            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
+		            "(//*[@class='select2-search__field'])[1]",
+		            data.get("Insurance Type"),
+		            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])",
+		            "user select Insurance Type",
+		            "DROPDOWN",
+		            4000
+		        );
+		    }
+		}
+		@When("user enter {string} as Death Sum Assured")
+		public void user_enter_as_death_sum_assured(String death_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtDeathSumInsured']",
+					death_sum_assured, 
+					"user enter {string} as Death Sum Assured", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} % as override%\\(Death Sum Assured)")
+		public void user_enter_as_override_death_sum_assured(String override_death_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtDeathOvrRate']",
+					override_death_sum_assured, 
+					"user enter {string} % as override%\\\\(Death Sum Assured)", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} as Medical Sum Assured")
+		public void user_enter_as_medical_sum_assured(String medical_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtMedicalSumAssured']",
+					medical_sum_assured, 
+					"user enter {string} as Medical Sum Assured", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} % as override%\\(Medical Sum Assured)")
+		public void user_enter_as_override_medical_sum_assured(String override_medical_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtMedicalOvrRate']",
+					override_medical_sum_assured, 
+					"user enter {string} % as override%\\\\(Medical Sum Assured)", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} as TPD Sum Assured")
+		public void user_enter_as_tpd_sum_assured(String tpd_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtPrmSumAssured']",
+					tpd_sum_assured, 
+					"user enter {string} as TPD Sum Assured", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} % as override%\\(TPD Sum Assured)")
+		public void user_enter_as_override_tpd_sum_assured(String override_tpd_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtPrmOvrRate']",
+					override_tpd_sum_assured, 
+					"user enter {string} % as override%\\\\(TPD Sum Assured)", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} as TTD Sum Assured")
+		public void user_enter_as_ttd_sum_assured(String ttd_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtTempSumAssured']",
+					ttd_sum_assured, 
+					"user enter {string} as TTD Sum Assured", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} % as override%\\(TTD Sum Assured)")
+		public void user_enter_as_override_ttd_sum_assured(String override_ttd_sum_assured) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtTempOvrRate']",
+					override_ttd_sum_assured, 
+					"user enter {string} % as override%\\\\(TTD Sum Assured)", 
+					"TEXTBOX",
+					0);
+		}
+		@When("user enter {string} as weeks")
+		public void user_enter_as_weeks(String weeks) throws InterruptedException {
+			Itl.CustomClearSendEvent("//*[@id='txtWeeks']",
+					weeks, 
+					"user enter {string} as weeks", 
+					"TEXTBOX",
+					0);
+		}
 		
 		
 		
 		
 
-}
+		}

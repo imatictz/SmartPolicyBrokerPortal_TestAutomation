@@ -368,8 +368,8 @@ Scenario: (Accidental Damage Quotation Endorsement-UpgradePolicy)Verify user abl
 #BrokerPortal
 
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
-When user click on search button to find "Individual Personal Accident" risk note
+When user enter "Accident Cover" as Insurance Type
+When user click on search button to find "Accident Cover" risk note
 When user navigate on operation dropdown menu
 When user navigate on endorsement menu
 When user click on endorsement option
@@ -380,16 +380,16 @@ When user select General Endorsements as endorsement type
 #BrokerPortal
 When user enter risk note number to search policy
 When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "45000000" as change value of sum assured
+#When user enter "46548-12446-54984" as cover note number
+When user click on select option to edit details
+When user enter "450000" as change value of sum assured(Death)
 When user click on compute button
 When user click on update button 
 When user enter "Upgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
+When user enter "Accident Cover" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -404,7 +404,7 @@ When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
+When user enter "Accident Cover" as Insurance Type
 When user enter risk note number
 When user click on search button(Insurer)
 Then user able to view "Insurer Approval Required" as status(Insurer)
@@ -432,8 +432,8 @@ Then user able to view "Issued" as status
 Scenario: (Accidental Damage Quotation Endorsement-DownGradePolicy)Verify user able to do policy downgrading for general financial endorsement
 
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
-When user click on search button to find "Individual Personal Accident" risk note
+When user enter "Accident Cover" as Insurance Type
+When user click on search button to find "Accident Cover" risk note
 When user navigate on operation dropdown menu
 When user navigate on endorsement menu
 When user click on endorsement option
@@ -444,16 +444,16 @@ When user select General Endorsements as endorsement type
 #BrokerPortal
 When user enter risk note number to search policy
 When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
-When user click on edit icon to make financial changes
-When user enter "25000" as change value of sum assured
+#When user enter "46548-12446-54984" as cover note number
+When user click on select option to edit details
+When user enter "25000" as change value of sum assured(Death)
 When user click on compute button
 When user click on update button 
 When user enter "Downgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
+When user enter "Accident Cover" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -468,7 +468,7 @@ When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
+When user enter "Accident Cover" as Insurance Type
 When user enter risk note number
 When user click on search button(Insurer)
 Then user able to view "Insurer Approval Required" as status(Insurer)
@@ -488,8 +488,8 @@ Then user able to view "Issued" as status
 Scenario: (Accidental Damage Quotation Endorsement-NonFinancial)Verify user able to do policy  general non-financial endorsement
 
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
-When user click on search button to find "Individual Personal Accident" risk note
+When user enter "Accident Cover" as Insurance Type
+When user click on search button to find "Accident Cover" risk note
 When user navigate on operation dropdown menu
 When user navigate on endorsement menu
 When user click on endorsement option
@@ -510,7 +510,7 @@ When user enter "Non Financial endorsement" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement 
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
+When user enter "Accident Cover" as Insurance Type
 When user enter risk note number
 When user click on search button
 Then user able to view "Insurer Approval Required" as status
@@ -525,7 +525,7 @@ When user navigate on operation dropdown menu (InsurerPortal)
 And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Insurance Type
+When user enter "Accident Cover" as Insurance Type
 When user enter risk note number
 When user click on search button(Insurer)
 Then user able to view "Insurer Approval Required" as status(Insurer)

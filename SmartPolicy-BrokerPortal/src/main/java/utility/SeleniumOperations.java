@@ -623,7 +623,7 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   JavascriptExecutor js = (JavascriptExecutor) d();
-		   js.executeScript("window.scrollBy(0,-750)");
+		   js.executeScript("window.scrollBy(0,-450)");
 		  // js.executeScript("window.scrollBy(0,250");
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:scrollUp, Input Given:");

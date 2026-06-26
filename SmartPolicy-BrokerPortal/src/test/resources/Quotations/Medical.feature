@@ -135,9 +135,9 @@ Then user able to view "Awaiting Receipt" as status
 @PrintQuote  @MEDICAL
  Scenario: User prints the Medical quote
    When user select "01/09/2025" as from date
-   When user enter "Medical" as Insurance Type
-   When user click on search button to find "Medical" quote
-   When user enter quote number to search "Medical" quote
+   When user enter "Medical Insurance" as Insurance Type
+   When user click on search button to find "Medical Insurance" quote
+   When user enter quote number to search "Medical Insurance" quote
    When user click on search button
    And user clicks on the actions dropdown
    And user clicks on print quotation option
@@ -152,9 +152,9 @@ Then user able to view "Awaiting Receipt" as status
 @EditQuote  @MEDICAL
  Scenario: Verify user able to edit an existing Medical quote successfully
    When user select "15/09/2025" as from date
-   When user enter "Medical" as Insurance Type
-   When user click on search button to find "Medical" quote
-   When user enter quote number to search "Medical" quote
+   When user enter "Medical Insurance" as Insurance Type
+   When user click on search button to find "Medical Insurance" quote
+   When user enter quote number to search "Medical Insurance" quote
    When user click on search button
    And user clicks on the actions dropdown
    And user clicks on edit option

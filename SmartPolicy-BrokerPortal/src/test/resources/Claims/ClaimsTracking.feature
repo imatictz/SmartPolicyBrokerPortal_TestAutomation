@@ -8,11 +8,11 @@ And user navigate on claims options
 Then user click on manage claim
 
 @PrintAccidentClaim   @print
- Scenario: User print claim report for Individual Personal Accident policy
+ Scenario: User print claim report for Accident Cover policy
    When user select "01/01/2025" as from date
-   When user enter "Individual Personal Accident" as Cover Information
-   When user click on search button to find "Individual Personal Accident" claim ID
-   When user enter claim ID to search "Individual Personal Accident" claim record
+   When user enter "Accident Cover" as Cover Information
+   When user click on search button to find "Accident Cover" claim ID
+   When user enter claim ID to search "Accident Cover" claim record
    When user click on search button
    And user clicks on the actions dropdown
    And user clicks on print claim report option
@@ -230,9 +230,9 @@ Then user click on manage claim
 @editAccidentalDamageClaims
 Scenario: (Accidental Damage Claim) Verify user able to edit and save claim successfully
 When user select "01/01/2025" as from date
-When user enter "Individual Personal Accident" as Cover Information
-When user click on search button to find "Individual Personal Accident" claim ID
-When user enter claim ID to search "Individual Personal Accident" claim record
+When user enter "Accident Cover" as Cover Information
+When user click on search button to find "Accident Cover" claim ID
+When user enter claim ID to search "Accident Cover" claim record
 When user click on search button
 And user clicks on the actions dropdown
 Then user click on edit option

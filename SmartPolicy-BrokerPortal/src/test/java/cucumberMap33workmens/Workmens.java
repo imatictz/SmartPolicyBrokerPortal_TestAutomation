@@ -107,7 +107,7 @@ public class Workmens {
 	    if (data.get("Insurance Class") != null) {
 	        Itl.CustomDropdownEvent(
 	                "//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]",
-	                "//*[@class='select2-search__field']",
+	                "(//*[@class='select2-search__field'])[2]",
 	                data.get("Insurance Class"),
 	                "(//*[contains(@data-select2-id,'MainContent_cmbInsuranceClass-result')])",
 	                "Select Insurance Class",
@@ -146,7 +146,7 @@ public class Workmens {
 	    if (data.get("Insurance Class") != null) {
 	        Itl.CustomDropdownEvent(
 	                "//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]",
-	                "//*[@class='select2-search__field']",
+	                "(//*[@class='select2-search__field'])[2]",
 	                data.get("Insurance Class"),
 	                "(//*[contains(@data-select2-id,'MainContent_cmbInsuranceClass-result')])",
 	                "Select Insurance Class",
@@ -188,7 +188,7 @@ public class Workmens {
 	public void user_select_as_extension(String extension) throws Throwable {
 		Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
-		input[1]="//*[@class='select2-search__field']";
+		input[1]="(//*[@class='select2-search__field'])[2]";
 		input[2]=extension;
 		input[3]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
