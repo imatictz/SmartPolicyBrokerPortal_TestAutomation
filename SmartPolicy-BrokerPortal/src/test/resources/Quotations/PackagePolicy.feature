@@ -190,7 +190,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote  
  Scenario: User prints the Package Policy quote
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Package Policy" as Insurance Type
    When user click on search button to find "Package Policy" quote
    When user enter quote number to search "Package Policy" quote
@@ -207,7 +207,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
   
   @EditQuote  
  Scenario: Verify user able to edit an existing Package Policy quote successfully
-   When user select "15/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Package Policy" as Insurance Type
    When user click on search button to find "Package Policy" quote
    When user enter quote number to search "Package Policy" quote

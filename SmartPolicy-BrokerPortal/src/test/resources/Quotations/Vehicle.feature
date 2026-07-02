@@ -229,7 +229,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Motor quote
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Motor" as Insurance Type
    When user click on search button to find "Motor" quote
    When user enter quote number to search "Motor" quote
@@ -246,7 +246,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
   
 @EditQuote
  Scenario: Verify user able to edit an existing Motor quote successfully
-   When user select "15/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Motor" as Insurance Type
    When user click on search button to find "Motor" quote
    When user enter quote number to search "Motor" quote

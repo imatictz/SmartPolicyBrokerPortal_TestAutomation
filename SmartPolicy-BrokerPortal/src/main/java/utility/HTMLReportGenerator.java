@@ -61,6 +61,10 @@ public class HTMLReportGenerator {
     public static void StepDetails(String status, String step, String details) {
 
         ExtentTest test = testcase.get();
+        if (test == null) {
+            System.out.println("ExtentTest is NULL for step : " + step);
+            return;
+        }
 
         if (status.equalsIgnoreCase("pass"))
             test.log(Status.PASS, step + " : " + details);

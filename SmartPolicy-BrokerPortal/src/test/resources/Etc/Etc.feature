@@ -230,3 +230,74 @@ Then user click on search button
 When user click on process endorsement icon
 When user click on YES button for confirmation
 Then user able to view "Issued" as status
+
+@workman
+Scenario: Verify user able to enter all fields
+    When user enter screen details :
+      | Field Name                     | Value                    |
+      | Show Policy                    | POL67890                 |
+      | Insurer                        | Alliance Insurance       |
+      | Currency                       | TZS                      |
+      | X Rate                         | 1.00                     |
+      | Insurer X Rate                 | 1.00                     |
+      | Insured Name                   | XYZ Traders Ltd          |
+      | Date From                      | 01/01/2026               |
+      | - To -                         | 31/12/2026               |
+      | Contact Person                 | Michael John             |
+      | VAT %                          | 18                       |
+      | Address                        | Dar es Salaam Tanzania   |
+      | Branch                         | Head Office              |
+      | Cover Note Number              | CN123456                 |
+      | Business Type                  | Renewal                  |
+      | Business by                    | Underwriter User         |
+      | (For TRA Purpose Only)         | 123456789                |
+      | VRN No.                        | VRN987654                |
+      | Policy Type                    | Comprehensive            |
+      | Loss Ratio Forecaste           | Low                      |
+      | First Loss Payee               | true                     |
+      | Bind to Collateral             | Yes                      |
+      | Collateral Name                | Property Collateral      |
+      | Borrower Type                  | true                     |
+      | Borrower Account Name          | Jane Smith               |
+      | Borrower Account Number        | 9876543210               |
+      | Non-Renewable                  | true                     |
+      | Covering Details               | Full building coverage   |
+      | Description of Risk            | Fire and Allied Perils   |
+      | Insured Status                 | Active                   |
+      | Gender                         | Female                   |
+      | ID Type                        | Passport                 |
+      | ID Number:                     | P1234567                 |
+      | Nationality                    | Kenyan                   |
+      | Date of Birth                  | 01/01/1990               |
+      | Insurance Class                | Marine Insurance         |
+      | Description                    | Marine cargo policy      |
+      | No of Employees                | 50                       |
+      | Monthly Salary                 | 2000000                  |
+      | Annual Salary/Limit of Liability | 75000000               |
+      | Rate %                         | 2.5                      |
+      | Override %                     | 1.5                      |
+      | Annual Premium                 | 1500000                  |
+      | Emp Liability %                | 5                        |
+      | Actual Premium                 | 1550000                  |
+      | Adjust Premium                 | 50000                    |
+      | Total Premium                  | 1600000                  |
+      | Other Taxes                    | 20000                    |
+      | Other Fee                      | 10000                    |
+      | VAT Amount                     | 288000                   |
+      | Policy Holders Fund            | 5000                     |
+      | Training/Insurance Levy        | 3000                     |
+      | Stamp Duty                     | 1000                     |
+      | Withhold Tax                   | 2000                     |
+      | Commission Rate %              | 10                       |
+      | Broker Commission              | 160000                   |
+      | VAT on Commission              | 28800                    |
+      | Insurer Settlement             | 1300000                  |
+      | Administration Charges         | 5000                     |
+      | Discount on Commission %       | 2                        |
+      | Discount Commission            | 3000                     |
+      | Discount on Premium %          | 1                        |
+      | Discount Premium               | 15000                    |
+      | Addon Premium                  | 25000                    |
+      | Total Receivable               | 1700000                  |
+      | Scope Of Cover                 | Standard fire cover      |
+      | Reject Description             | N/A                      |

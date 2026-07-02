@@ -35,17 +35,17 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.asserts.SoftAssert;
 
 import com.itextpdf.text.Document;
@@ -155,13 +155,12 @@ public class SeleniumOperations
 	    wd.get(cfg.getApplicationUrl());
 	    d().navigate().refresh();
 	}
-
      
 	 
 //SendUserID
      public static Hashtable<String,Object> sendUserId(Object[]inputparameters){   
 	    try {
-	      driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+	      d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 	      String strXpath=(String)inputparameters[0];
           d().findElement(By.xpath(strXpath)).sendKeys(config.sendUserId());
           outputparameters.put("STATUS","PASS");
@@ -177,7 +176,7 @@ public class SeleniumOperations
 //SendPassword
      public static Hashtable<String,Object> sendPassword(Object[]inputparameters){   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 	       d().findElement(By.xpath(strXpath)).sendKeys(config.sendPassword());
 	       outputparameters.put("STATUS","PASS");
@@ -193,20 +192,13 @@ public class SeleniumOperations
      //ClickOnLoginButton
      public static Hashtable<String,Object> clickOnLogin(Object[] inputparameters){   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   d().findElement(By.xpath(strXpath)).click();
-		   Thread.sleep(2000);
+		   Thread.sleep(3000);
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
-	   /*  String test = d().findElement(By.xpath("//*[text()='Session Expired.']")).getText();
-		   System.out.println(test);
-	     if(test.equalsIgnoreCase("Session Expired.")) {
-			   d().findElement(By.xpath("//*[@href='wfLogin.aspx']")).click();
-			   d().findElement(By.xpath("//*[@id='usercode']")).sendKeys(config.sendUserId());
-			   d().findElement(By.xpath("//*[@id='password']")).sendKeys(config.sendPassword());
-			   d().findElement(By.xpath("//*[text()='Login']")).click();
-		   }*/
+	   
 		 }
 	     catch(Exception e) {
 	       outputparameters.put("STATUS","FAIL");
@@ -216,9 +208,9 @@ public class SeleniumOperations
      }
 
 //SendKeys
-     public static Hashtable<String,Object> sendKeys(Object[] inputparameters){   
+     public static Hashtable<String,Object> sendKeysTest(Object[] inputparameters){   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
 	       d().findElement(By.xpath(strXpath)).sendKeys(strvalue);
@@ -231,9 +223,74 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
+     public static Hashtable<String, Object> sendKeys(Object[] inputParameters) {
+
+    	    Hashtable<String, Object> output = new Hashtable<>();
+
+    	    String xpath = (String) inputParameters[0];
+    	    String value = (String) inputParameters[1];
+
+    	    By locator = By.xpath(xpath);
+
+    	    try {
+
+    	        WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));
+    	        WebElement element = wait.until(
+    	                ExpectedConditions.visibilityOfElementLocated(locator)
+    	        );
+
+    	        if (!element.isDisplayed()) {
+
+    	            String msg = "Textbox not displayed: " + xpath;
+    	            output.put("STATUS", "FAIL");
+    	            output.put("MESSAGE", msg);
+    	            SoftFailureContext.add(msg);
+
+    	            return output;
+    	        }
+
+    	        JavascriptExecutor js = (JavascriptExecutor) d();
+
+    	        // Remove readonly attribute if present
+    	        js.executeScript(
+    	                "arguments[0].removeAttribute('readonly');",
+    	                element
+    	        );
+
+    	        element.clear();
+    	        element.sendKeys(value);
+
+    	        output.put("STATUS", "PASS");
+    	        output.put("MESSAGE", "Textbox value entered: " + value);
+
+    	    } catch (Exception e) {
+
+    	        String screenshotPath = "";
+
+    	        try {
+    	            WebElement element = d().findElement(locator);
+    	            screenshotPath = ScreenshotUtil.capture(d(), element, "Readonly_Textbox_Exception");
+    	        } catch (Exception ex) {
+    	            screenshotPath = ScreenshotUtil.captureFullPage(d(), "Readonly_Textbox_Exception");
+    	        }
+
+    	        String msg =
+    	                "Readonly textbox interaction failed\n" +
+    	                "Locator    : " + xpath + "\n" +
+    	                "Value      : " + value + "\n" +
+    	                "Reason     : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+    	                "Screenshot : " + screenshotPath;
+
+    	        output.put("STATUS", "FAIL");
+    	        output.put("MESSAGE", msg);
+    	        SoftFailureContext.add(msg);
+    	    }
+
+    	    return output;
+    	}
      public static Hashtable<String,Object> sendKeysUniqueId(Object[] inputparameters){   
     	    try {
-    	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+    	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
     	        String strXpath = (String) inputparameters[0];
     	        String strvalue=(String)inputparameters[1];
@@ -256,9 +313,9 @@ public class SeleniumOperations
     	}
      
 //DynamicValuesSendKeys
-     public static Hashtable<String,Object> DynamicValuessendKeys(Object[] inputparameters){   
+     public static Hashtable<String,Object> DynamicValuessendKeysTest(Object[] inputparameters){   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
 		   if (strvalue.equalsIgnoreCase("CODE")) {
@@ -283,7 +340,7 @@ public class SeleniumOperations
    //SendKeysVehRegistration
      public static Hashtable<String,Object> sendKeysVehRes(Object[] inputparameters){   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
 		   String vehicleNumber = strvalue; // Initial value
@@ -305,9 +362,9 @@ public class SeleniumOperations
      
 	
 //Click
-     public static Hashtable<String,Object> clickOnElement(Object[] inputparameters){   
+     public static Hashtable<String,Object> clickOnElementTest(Object[] inputparameters){   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   d().findElement(By.xpath(strXpath)).click();
 		   outputparameters.put("STATUS","PASS");
@@ -319,11 +376,99 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
-     
+     public static Hashtable<String, Object> clickOnElement(Object[] inputparameters) {
+
+ 	    Hashtable<String, Object> output = new Hashtable<>();
+
+ 	    String xpath = (String) inputparameters[0];
+ 	    By locator = By.xpath(xpath);
+
+ 	    int attempts = 0;
+
+ 	    try {
+
+ 	        while (attempts < 2) {
+ 	            try {
+ 	                // ✅ Explicit Wait (CLICKABLE)
+ 	                WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));
+ 	                WebElement element = wait.until(
+ 	                        ExpectedConditions.elementToBeClickable(locator)
+ 	                );
+
+ 	                if (!element.isDisplayed()) {
+ 	                    String msg = "Element not displayed: " + xpath;
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                if (!element.isEnabled()) {
+ 	                    String screenshotPath = ScreenshotUtil.capture(d(), element, "Click_Disabled");
+
+ 	                    String msg =
+ 	                            "Element is disabled\n" +
+ 	                            "Locator    : " + xpath + "\n" +
+ 	                            "Screenshot : " + screenshotPath;
+
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                // ✅ Normal click
+ 	                element.click();
+
+ 	                output.put("STATUS", "PASS");
+ 	                output.put("MESSAGE", "Clicked on: " + xpath);
+
+ 	                return output;
+
+ 	            } catch (StaleElementReferenceException e) {
+ 	                attempts++;
+ 	            } catch (ElementClickInterceptedException e) {
+ 	                // 🔥 Handle overlay/intercept issue
+ 	                WebElement element = d().findElement(locator);
+ 	                JavascriptExecutor js = (JavascriptExecutor) d();
+ 	                js.executeScript("arguments[0].click();", element);
+
+ 	                output.put("STATUS", "PASS");
+ 	                output.put("MESSAGE", "Clicked using JS on: " + xpath);
+ 	                return output;
+ 	            }
+ 	        }
+
+ 	        throw new RuntimeException("Element unstable after retry");
+
+ 	    } catch (Exception e) {
+
+ 	        String screenshotPath;
+
+ 	        try {
+ 	            WebElement element = d().findElement(locator);
+ 	            screenshotPath = ScreenshotUtil.capture(d(), element, "Click_Exception");
+ 	        } catch (Exception ex) {
+ 	            screenshotPath = ScreenshotUtil.captureFullPage(d(), "Click_Exception");
+ 	        }
+
+ 	        String msg =
+ 	                "Click action failed\n" +
+ 	                "Locator    : " + xpath + "\n" +
+ 	                "Reason     : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+ 	                "Screenshot : " + screenshotPath;
+
+ 	        output.put("STATUS", "FAIL");
+ 	        output.put("MESSAGE", msg);
+ 	        SoftFailureContext.add(msg);
+ 	    }
+
+ 	    return output;
+ 	}
  //DoubleClick
-     public static Hashtable<String,Object> doubleClickOnElement(Object[] inputparameters){   
+     public static Hashtable<String,Object> doubleClickOnElementTest(Object[] inputparameters){   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   d().findElement(By.xpath(strXpath)).click();
 		   outputparameters.put("STATUS","PASS");
@@ -335,12 +480,117 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }   
-     
+     public static Hashtable<String, Object> doubleClickOnElement(Object[] inputparameters) {
+
+ 	    Hashtable<String, Object> output = new Hashtable<>();
+
+ 	    String xpath = (String) inputparameters[0];
+ 	    By locator = By.xpath(xpath);
+
+ 	    int attempts = 0;
+
+ 	    try {
+
+ 	        while (attempts < 2) {
+ 	            try {
+ 	                // ✅ Better: CLICKABLE instead of just VISIBLE
+ 	                WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));
+ 	                WebElement element = wait.until(
+ 	                        ExpectedConditions.elementToBeClickable(locator)
+ 	                );
+
+ 	                if (!element.isDisplayed()) {
+ 	                    String msg = "Element not displayed: " + xpath;
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                if (!element.isEnabled()) {
+ 	                    String screenshotPath = ScreenshotUtil.capture(d(), element, "DoubleClick_Disabled");
+
+ 	                    String msg =
+ 	                            "Element is disabled\n" +
+ 	                            "Locator    : " + xpath + "\n" +
+ 	                            "Screenshot : " + screenshotPath;
+
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                Actions actions = new Actions(d());
+
+ 	                // ✅ IMPORTANT: move + click to focus
+ 	                actions.moveToElement(element).click().perform();
+
+ 	                Thread.sleep(150); // small stabilization
+
+ 	                // ✅ Perform double click
+ 	                actions.doubleClick(element).perform();
+
+ 	                output.put("STATUS", "PASS");
+ 	                output.put("MESSAGE", "Double clicked on: " + xpath);
+
+ 	                return output;
+
+ 	            } catch (StaleElementReferenceException e) {
+ 	                attempts++;
+ 	                Thread.sleep(150);
+ 	            } catch (Exception e) {
+ 	                // 🔥 JS fallback (critical)
+ 	                try {
+ 	                    WebElement element = d().findElement(locator);
+ 	                    JavascriptExecutor js = (JavascriptExecutor) d();
+
+ 	                    js.executeScript(
+ 	                        "var evt = new MouseEvent('dblclick', {bubbles: true, cancelable: true}); arguments[0].dispatchEvent(evt);",
+ 	                        element
+ 	                    );
+
+ 	                    output.put("STATUS", "PASS");
+ 	                    output.put("MESSAGE", "Double clicked using JS on: " + xpath);
+ 	                    return output;
+
+ 	                } catch (Exception ex) {
+ 	                    throw ex;
+ 	                }
+ 	            }
+ 	        }
+
+ 	        throw new RuntimeException("Element unstable after retry");
+
+ 	    } catch (Exception e) {
+
+ 	        String screenshotPath;
+
+ 	        try {
+ 	            WebElement element = d().findElement(locator);
+ 	            screenshotPath = ScreenshotUtil.capture(d(), element, "DoubleClick_Exception");
+ 	        } catch (Exception ex) {
+ 	            screenshotPath = ScreenshotUtil.captureFullPage(d(), "DoubleClick_Exception");
+ 	        }
+
+ 	        String msg =
+ 	                "Double click failed\n" +
+ 	                "Locator    : " + xpath + "\n" +
+ 	                "Reason     : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+ 	                "Screenshot : " + screenshotPath;
+
+ 	        output.put("STATUS", "FAIL");
+ 	        output.put("MESSAGE", msg);
+ 	        SoftFailureContext.add(msg);
+ 	    }
+
+ 	    return output;
+ 	} 
 	
 //Validation
-     public static Hashtable<String,Object> validation(Object[] inputparameters){  
+     public static Hashtable<String,Object> validationTest(Object[] inputparameters){  
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String xpath=(String)inputparameters[0];
 		   String givenText=(String)inputparameters[1];
 		  // String statusText =(String)inputparameters[2];
@@ -366,11 +616,102 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
+     public static Hashtable<String, Object> validation(Object[] inputparameters) {
+
+ 	    Hashtable<String, Object> output = new Hashtable<>();
+
+ 	    String xpath = (String) inputparameters[0];
+ 	    String expectedText = (String) inputparameters[1];
+
+ 	    By locator = By.xpath(xpath);
+
+ 	    int attempts = 0;
+
+ 	    try {
+
+ 	        while (attempts < 2) {
+ 	            try {
+ 	                // ✅ Explicit wait (VISIBLE)
+ 	                WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));
+ 	                WebElement element = wait.until(
+ 	                        ExpectedConditions.visibilityOfElementLocated(locator)
+ 	                );
+
+ 	                if (!element.isDisplayed()) {
+ 	                    String msg = "Element not displayed: " + xpath;
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                // ✅ Get text safely
+ 	                String actualText = element.getText().trim();
+ 	                String expected = expectedText.trim();
+
+ 	                System.out.println("Actual: " + actualText);
+ 	                System.out.println("Expected: " + expected);
+
+ 	                if (expected.equalsIgnoreCase(actualText)) {
+
+ 	                    output.put("STATUS", "PASS");
+ 	                    output.put("MESSAGE", "Validation passed. Expected: " + expected);
+
+ 	                } else {
+
+ 	                    String screenshotPath = ScreenshotUtil.capture(d(), element, "Validation_Failed");
+
+ 	                    String msg =
+ 	                            "Validation failed\n" +
+ 	                            "Locator    : " + xpath + "\n" +
+ 	                            "Expected   : " + expected + "\n" +
+ 	                            "Actual     : " + actualText + "\n" +
+ 	                            "Screenshot : " + screenshotPath;
+
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                }
+
+ 	                return output;
+
+ 	            } catch (StaleElementReferenceException e) {
+ 	                attempts++;
+ 	            }
+ 	        }
+
+ 	        throw new RuntimeException("Element unstable after retry");
+
+ 	    } catch (Exception e) {
+
+ 	        String screenshotPath;
+
+ 	        try {
+ 	            WebElement element = d().findElement(locator);
+ 	            screenshotPath = ScreenshotUtil.capture(d(), element, "Validation_Exception");
+ 	        } catch (Exception ex) {
+ 	            screenshotPath = ScreenshotUtil.captureFullPage(d(), "Validation_Exception");
+ 	        }
+
+ 	        String msg =
+ 	                "Validation execution failed\n" +
+ 	                "Locator    : " + xpath + "\n" +
+ 	                "Expected   : " + expectedText + "\n" +
+ 	                "Reason     : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+ 	                "Screenshot : " + screenshotPath;
+
+ 	        output.put("STATUS", "FAIL");
+ 	        output.put("MESSAGE", msg);
+ 	        SoftFailureContext.add(msg);
+ 	    }
+
+ 	    return output;
+ 	}
 //ValidationForAlert
      
      public static Hashtable<String,Object> validationForAlert(Object[] inputparameters){  
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String givenText=(String)inputparameters[0];
 		   Alert pass=d().switchTo().alert();
 		   String findText = pass.getText();
@@ -401,7 +742,7 @@ public class SeleniumOperations
      
      public static Hashtable<String,Object> validationForEnabledFields(Object[] inputparameters){  
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String Xpath=(String)inputparameters[0];
 		  WebElement status = d().findElement(By.xpath(Xpath));
 		 boolean result = status.isEnabled();
@@ -428,7 +769,7 @@ public class SeleniumOperations
      
      public static Hashtable<String,Object> validationForDisabledFields(Object[] inputparameters){  
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String Xpath=(String)inputparameters[0];
 		  WebElement status = d().findElement(By.xpath(Xpath));
 		// Attribute extraction
@@ -518,10 +859,10 @@ public class SeleniumOperations
     	}
 
 //Actions Class	 
-	 public static Hashtable<String,Object> actionClass(Object[] inputparameters) {
+	 public static Hashtable<String,Object> actionClassTest(Object[] inputparameters) {
 	     try {
 		   String xpath=(String) inputparameters[0];
-		   //driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   //d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   Actions act=new Actions(d());
 		   WebElement move = d().findElement(By.xpath(xpath));
 		   act.moveToElement(move).build().perform();
@@ -534,12 +875,93 @@ public class SeleniumOperations
 		 }
 		 return outputparameters;
      }
+	 public static Hashtable<String, Object> actionClass(Object[] inputparameters) {
+
+ 	    Hashtable<String, Object> output = new Hashtable<>();
+
+ 	    String xpath = (String) inputparameters[0];
+ 	    By locator = By.xpath(xpath);
+
+ 	    int attempts = 0;
+
+ 	    try {
+
+ 	        while (attempts < 2) {
+ 	            try {
+ 	                // ✅ Explicit Wait (VISIBLE)
+ 	                WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));
+ 	                WebElement element = wait.until(
+ 	                        ExpectedConditions.visibilityOfElementLocated(locator)
+ 	                );
+
+ 	                if (!element.isDisplayed()) {
+ 	                    String msg = "Element not displayed: " + xpath;
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                if (!element.isEnabled()) {
+ 	                    String screenshotPath = ScreenshotUtil.capture(d(), element, "Hover_Disabled");
+
+ 	                    String msg =
+ 	                            "Element is disabled\n" +
+ 	                            "Locator    : " + xpath + "\n" +
+ 	                            "Screenshot : " + screenshotPath;
+
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                // ✅ Hover action
+ 	                Actions act = new Actions(d());
+ 	                act.moveToElement(element).perform();
+
+ 	                output.put("STATUS", "PASS");
+ 	                output.put("MESSAGE", "Hovered on: " + xpath);
+
+ 	                return output;
+
+ 	            } catch (StaleElementReferenceException e) {
+ 	                attempts++;
+ 	            }
+ 	        }
+
+ 	        throw new RuntimeException("Element unstable after retry");
+
+ 	    } catch (Exception e) {
+
+ 	        String screenshotPath;
+
+ 	        try {
+ 	            WebElement element = d().findElement(locator);
+ 	            screenshotPath = ScreenshotUtil.capture(d(), element, "Hover_Exception");
+ 	        } catch (Exception ex) {
+ 	            screenshotPath = ScreenshotUtil.captureFullPage(d(), "Hover_Exception");
+ 	        }
+
+ 	        String msg =
+ 	                "Hover action failed\n" +
+ 	                "Locator    : " + xpath + "\n" +
+ 	                "Reason     : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+ 	                "Screenshot : " + screenshotPath;
+
+ 	        output.put("STATUS", "FAIL");
+ 	        output.put("MESSAGE", msg);
+ 	        SoftFailureContext.add(msg);
+ 	    }
+
+ 	    return output;
+ 	}
 		
 //ActionsDownEnter
 	 public static Hashtable<String,Object> actionDownEnter() {
 		 try { 
 		 //String xpath=(String) inputparameters[0];
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		 //d().findElement(By.xpath(xpath));
 		   Actions act=new Actions(d());
 		   Thread.sleep(2000);
@@ -562,7 +984,7 @@ public class SeleniumOperations
 			 try { 
 			   String xpath=(String) inputparameters[0];
 			   String value=(String) inputparameters[1];
-			   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+			   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 			 WebElement sendxpath = d().findElement(By.xpath(xpath));
 			 sendxpath.sendKeys(value);
 			   Actions act=new Actions(d());
@@ -585,7 +1007,7 @@ public class SeleniumOperations
 	 public static Hashtable<String,Object> actionDoubleDownEnter() {
 		 try { 
 		 //String xpath=(String) inputparameters[0];
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		 //d().findElement(By.xpath(xpath));
 		   Actions act=new Actions(d());
 		   Thread.sleep(2000);
@@ -607,13 +1029,17 @@ public class SeleniumOperations
 //HandleAlertMessage		 
      public static Hashtable<String,Object> alert() {   
     	 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   Alert pass=d().switchTo().alert();
 		   pass.accept();
+		   outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:alert, Input Given:");
 		   
 		 }
 		 catch(Exception e) {
-		   System.out.println(e);
+			 outputparameters.put("STATUS","FAIL");
+			   outputparameters.put("MESSAGE","Method Used:alert, Input Given:");
+		   //System.out.println(e);
 		 }
 		 return outputparameters;
      }
@@ -621,7 +1047,7 @@ public class SeleniumOperations
 //ScrollUp
      public static Hashtable<String,Object> scrollUp() {
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   JavascriptExecutor js = (JavascriptExecutor) d();
 		   js.executeScript("window.scrollBy(0,-450)");
 		  // js.executeScript("window.scrollBy(0,250");
@@ -672,8 +1098,8 @@ public class SeleniumOperations
 //Scrolldown		 
      public static Hashtable<String,Object> scrolldown() {
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
-		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));;
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));;
 	        WebElement popup = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='modal-content'])[3]")));
 		   JavascriptExecutor down=(JavascriptExecutor) d();
 		   //down.executeScript("window.scrollBy(0,1500)");//1050
@@ -697,9 +1123,9 @@ public class SeleniumOperations
      }
 		 
 //ClearAndEnter
-     public static Hashtable<String,Object> clearAndEnter(Object[]inputparameters) {   
+     public static Hashtable<String,Object> clearAndEnterTest(Object[]inputparameters) {   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
 	       WebElement remove=d().findElement(By.xpath(strXpath));
@@ -717,21 +1143,114 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
+     public static Hashtable<String, Object> clearAndEnter(Object[] inputparameters) {
+
+ 	    Hashtable<String, Object> output = new Hashtable<>();
+
+ 	    String xpath = (String) inputparameters[0];
+ 	    String value = (String) inputparameters[1];
+ 	    By locator = By.xpath(xpath);
+
+ 	    int attempts = 0;
+
+ 	    try {
+
+ 	        while (attempts < 2) {
+ 	            try {
+ 	                // ✅ Explicit Wait (VISIBLE)
+ 	                WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));
+ 	                WebElement element = wait.until(
+ 	                        ExpectedConditions.visibilityOfElementLocated(locator)
+ 	                );
+
+ 	                if (!element.isDisplayed()) {
+ 	                    String msg = "Textbox not displayed: " + xpath;
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                if (!element.isEnabled()) {
+ 	                    String screenshotPath = ScreenshotUtil.capture(d(), element, "ClearEnter_Disabled");
+
+ 	                    String msg =
+ 	                            "Textbox is disabled\n" +
+ 	                            "Locator    : " + xpath + "\n" +
+ 	                            "Value      : " + value + "\n" +
+ 	                            "Screenshot : " + screenshotPath;
+
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                // ✅ Stable interaction (no Thread.sleep)
+ 	                element.clear();
+ 	                element.click();        // focus
+ 	                Thread.sleep(1000);// clear existing value
+ 	                element.sendKeys(value);
+
+ 	                // ✅ Optional verification
+ 	                String enteredValue = element.getAttribute("value");
+ 	                if (enteredValue == null || !enteredValue.equals(value)) {
+ 	                    element.clear();
+ 	                    element.sendKeys(value);
+ 	                }
+
+ 	                output.put("STATUS", "PASS");
+ 	                output.put("MESSAGE", "Value entered: " + value);
+
+ 	                return output;
+
+ 	            } catch (StaleElementReferenceException e) {
+ 	                attempts++;
+ 	            }
+ 	        }
+
+ 	        throw new RuntimeException("Element unstable after retry");
+
+ 	    } catch (Exception e) {
+
+ 	        String screenshotPath;
+
+ 	        try {
+ 	            WebElement element = d().findElement(locator);
+ 	            screenshotPath = ScreenshotUtil.capture(d(), element, "ClearEnter_Exception");
+ 	        } catch (Exception ex) {
+ 	            screenshotPath = ScreenshotUtil.captureFullPage(d(), "ClearEnter_Exception");
+ 	        }
+
+ 	        String msg =
+ 	                "Clear and Enter failed\n" +
+ 	                "Locator    : " + xpath + "\n" +
+ 	                "Value      : " + value + "\n" +
+ 	                "Reason     : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+ 	                "Screenshot : " + screenshotPath;
+
+ 	        output.put("STATUS", "FAIL");
+ 	        output.put("MESSAGE", msg);
+ 	        SoftFailureContext.add(msg);
+ 	    }
+
+ 	    return output;
+ 	}
      public static Hashtable<String, Object> clearAndEnter2(Object[] inputparameters) {
 
     	    Hashtable<String, Object> outputparameters = new Hashtable<String, Object>();
 
     	    try {
 
-    	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+    	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
     	        String strXpath1 = (String) inputparameters[0];
     	        String strvalue1 = (String) inputparameters[1];
     	        String strXpath2 = (String) inputparameters[2];
     	        String strvalue2 = (String) inputparameters[3];
 
-    	        WebElement remove1 = driver.findElement(By.xpath(strXpath1));
-    	        WebElement remove2 = driver.findElement(By.xpath(strXpath2));
+    	        WebElement remove1 = d().findElement(By.xpath(strXpath1));
+    	        WebElement remove2 = d().findElement(By.xpath(strXpath2));
 
     	        remove1.clear();
     	        Thread.sleep(2000);
@@ -760,7 +1279,7 @@ public class SeleniumOperations
    //Clear
      public static Hashtable<String,Object> clear(Object[]inputparameters) {   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 	       WebElement remove=d().findElement(By.xpath(strXpath));
 	       remove.clear();
@@ -777,7 +1296,7 @@ public class SeleniumOperations
 //Iframe
      public static Hashtable<String,Object> iFrameEnter(Object[]inputparameters) {   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   String strvalue=(String)inputparameters[1];
 		   d().switchTo().frame(0);
@@ -814,9 +1333,9 @@ public class SeleniumOperations
      }
 
 //DropDown
-     public static Hashtable<String,Object> dropdown(Object[] inputparameters) {   
+     public static Hashtable<String,Object> dropdownTest(Object[] inputparameters) {   
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String clickXpath = (String)inputparameters[0];
 		   d().findElement(By.xpath(clickXpath)).click();
 	 		//wait1.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(waitTill)));
@@ -839,7 +1358,57 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
-     
+     public static Hashtable<String,Object> dropdown(Object[] inputparameters) {
+
+ 	    Hashtable<String,Object> outputparameters = new Hashtable<>();
+
+ 	    try {
+ 	    	d().manage().timeouts().pageLoadTimeout(Duration.ofMinutes(10));
+
+ 	        String clickXpath  = (String) inputparameters[0];
+ 	        String sendXpath   = (String) inputparameters[1];
+ 	        String sendValue   = (String) inputparameters[2];
+ 	        String selectXpath = (String) inputparameters[3];
+
+ 	        d().findElement(By.xpath(clickXpath)).click();
+ 	        Thread.sleep(2000);
+
+ 	        d().findElement(By.xpath(sendXpath)).sendKeys(sendValue);
+ 	        d().findElement(By.xpath(selectXpath)).click();
+
+ 	        // ✅ BUSINESS VALIDATION
+ 	        String selectedText =
+ 	            d().findElement(By.xpath(clickXpath)).getText();
+
+ 	        if (!selectedText.contains(sendValue)) {
+ 	            throw new RuntimeException(
+ 	                "Dropdown value not selected. Expected: " + sendValue
+ 	            );
+ 	        }
+
+ 	        outputparameters.put("STATUS", "PASS");
+ 	        outputparameters.put("MESSAGE", "Dropdown selected successfully: " + sendValue);
+
+ 	    } catch (Exception e) {
+ 	        WebElement clickElement = d().findElement(By.xpath((String) inputparameters[0]));
+ 	        String screenshotPath = ScreenshotUtil.capture(d(), clickElement, "Dropdown_Failure");
+
+ 	        String detailedMessage =
+ 	            "Dropdown selection failed\n" +
+ 	            "Field       : Discount Type\n" +
+ 	            "Locator     : " + inputparameters[0] + "\n" +
+ 	            "Input Value : " + inputparameters[2] + "\n" +
+ 	            "Reason      : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+ 	            "Screenshot  : " + screenshotPath;
+
+ 	        outputparameters.put("STATUS", "FAIL");
+ 	        outputparameters.put("MESSAGE", detailedMessage);
+ 	        SoftFailureContext.add(detailedMessage);
+ 	    }
+
+
+ 	    return outputparameters;
+ 	}
   //Dropdown Options Client
      
      public static Hashtable<String, Object> dropdownOptions(Object[] inputparameters) {
@@ -901,7 +1470,107 @@ public class SeleniumOperations
      }
      
  
-    	
+     public static Hashtable<String, Object> DynamicValuessendKeys(Object[] inputparameters) {
+
+ 	    Hashtable<String, Object> output = new Hashtable<>();
+
+ 	    String xpath = (String) inputparameters[0];
+ 	    String inputValue = (String) inputparameters[1];
+
+ 	    By locator = By.xpath(xpath);
+
+ 	    int attempts = 0;
+
+ 	    try {
+
+ 	        // ✅ Handle dynamic value
+ 	        String finalValue;
+ 	        if ("CODE".equalsIgnoreCase(inputValue)) {
+ 	            finalValue = "Val" + UUID.randomUUID().toString().substring(0, 8);
+ 	        } else {
+ 	            finalValue = inputValue;
+ 	        }
+
+ 	        while (attempts < 2) {
+ 	            try {
+ 	                // ✅ Explicit wait
+ 	                WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(10));
+ 	                WebElement element = wait.until(
+ 	                        ExpectedConditions.visibilityOfElementLocated(locator)
+ 	                );
+
+ 	                if (!element.isDisplayed()) {
+ 	                    String msg = "Textbox not displayed: " + xpath;
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                if (!element.isEnabled()) {
+ 	                    String screenshotPath = ScreenshotUtil.capture(d(), element, "DynamicSendKeys_Disabled");
+
+ 	                    String msg =
+ 	                            "Textbox is disabled\n" +
+ 	                            "Locator    : " + xpath + "\n" +
+ 	                            "Value      : " + finalValue + "\n" +
+ 	                            "Screenshot : " + screenshotPath;
+
+ 	                    output.put("STATUS", "FAIL");
+ 	                    output.put("MESSAGE", msg);
+ 	                    SoftFailureContext.add(msg);
+ 	                    return output;
+ 	                }
+
+ 	                // ✅ Stable interaction
+ 	                element.click();
+ 	                element.clear();
+ 	                element.sendKeys(finalValue);
+
+ 	                // ✅ Optional verification
+ 	                String entered = element.getAttribute("value");
+ 	                if (entered == null || !entered.equals(finalValue)) {
+ 	                    element.clear();
+ 	                    element.sendKeys(finalValue);
+ 	                }
+
+ 	                output.put("STATUS", "PASS");
+ 	                output.put("MESSAGE", "Value entered: " + finalValue);
+
+ 	                return output;
+
+ 	            } catch (StaleElementReferenceException e) {
+ 	                attempts++;
+ 	            }
+ 	        }
+
+ 	        throw new RuntimeException("Element unstable after retry");
+
+ 	    } catch (Exception e) {
+
+ 	        String screenshotPath;
+
+ 	        try {
+ 	            WebElement element = d().findElement(locator);
+ 	            screenshotPath = ScreenshotUtil.capture(d(), element, "DynamicSendKeys_Exception");
+ 	        } catch (Exception ex) {
+ 	            screenshotPath = ScreenshotUtil.captureFullPage(d(), "DynamicSendKeys_Exception");
+ 	        }
+
+ 	        String msg =
+ 	                "Dynamic sendKeys failed\n" +
+ 	                "Locator    : " + xpath + "\n" +
+ 	                "Input      : " + inputValue + "\n" +
+ 	                "Reason     : " + e.getClass().getSimpleName() + " - " + e.getMessage() + "\n" +
+ 	                "Screenshot : " + screenshotPath;
+
+ 	        output.put("STATUS", "FAIL");
+ 	        output.put("MESSAGE", msg);
+ 	        SoftFailureContext.add(msg);
+ 	    }
+
+ 	    return output;
+ 	}
      
 //ValidateDOB
 public static Hashtable<String, Object> validateDob(Object[] inputparameters) {
@@ -992,7 +1661,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 //Navigate Back		 
      public static Hashtable<String,Object> navigateBack() {   
    		 try {
-   		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+   		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
    		d().navigate().back();
    	    // outputparameters.put("STATUS","Pass");
    		// outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
@@ -1007,7 +1676,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 //OpenApplicationOfInsurer
      public static Hashtable<String,Object> openApplicationinsurer(Object[]inputparameters) {   
 	     try {  
-	       driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+	       d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 	       String strXpath=(String)inputparameters[0]; 
 	       d().navigate().to(strXpath);
 	       outputparameters.put("STATUS","Pass");
@@ -1023,7 +1692,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 //ScrollUp450
      public static Hashtable<String,Object> scrollUp450() {
 		 try {
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   JavascriptExecutor js = (JavascriptExecutor) d();
 	       js.executeScript("window.scrollBy(0,-400)");
 	       outputparameters.put("STATUS","Pass");
@@ -1061,7 +1730,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static Hashtable<String, Object> printReport() throws IOException {
     	try {
 
-    	driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+    	d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 
     	Set<String> ids1 = d().getWindowHandles();
     	
@@ -1108,11 +1777,10 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static Hashtable<String, Object> printReport1() {
 
     	    Hashtable<String, Object> output = new Hashtable<>();
-    	    WebDriver driver = d(); // ThreadLocal driver
 
     	    try {
 
-    	        String mainWindow = driver.getWindowHandle();
+    	        String mainWindow = d().getWindowHandle();
     	        String pdfWindow = null;
 
     	        // ======================================
@@ -1123,7 +1791,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	        while ((System.currentTimeMillis() - startTime) < timeout) {
 
-    	            Set<String> handles = driver.getWindowHandles();
+    	            Set<String> handles = d().getWindowHandles();
 
     	            if (handles.size() > 1) {
 
@@ -1148,7 +1816,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        // ======================================
     	        // STEP 2: Switch to PDF tab
     	        // ======================================
-    	        driver.switchTo().window(pdfWindow);
+    	        d().switchTo().window(pdfWindow);
 
     	        // ======================================
     	        // STEP 3: Wait until URL is valid
@@ -1157,7 +1825,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
     	        while ((System.currentTimeMillis() - startTime) < timeout) {
 
-    	            String url = driver.getCurrentUrl();
+    	            String url = d().getCurrentUrl();
 
     	            if (url != null &&
     	                !url.contains("about:blank") &&
@@ -1169,7 +1837,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	            Thread.sleep(1000);
     	        }
 
-    	        String pdfUrlString = driver.getCurrentUrl();
+    	        String pdfUrlString = d().getCurrentUrl();
 
     	        if (pdfUrlString == null || pdfUrlString.contains("about:blank")) {
     	            throw new TimeoutException("PDF URL not loaded properly.");
@@ -1218,8 +1886,8 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        // ======================================
     	        // STEP 7: Close PDF tab and return
     	        // ======================================
-    	        driver.close();
-    	        driver.switchTo().window(mainWindow);
+    	        d().close();
+    	        d().switchTo().window(mainWindow);
 
     	    } catch (Exception e) {
 
@@ -1244,7 +1912,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
        /* public static Hashtable<String, Object> printQuote(Object[] inputparameters) throws IOException {
        	try {
 
-       	driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+       	d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
        	String fieldName = ((String) inputparameters[0]).trim();
         System.out.println(fieldName);
         // 💡 Step 1: Get Client Name from UI before switching to PDF tab
@@ -1265,15 +1933,15 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
        	String InsuranceTypeFromUI =getInsuranceType.toUpperCase();
        	//System.out.println("🔍 Insurance Type from UI: " + InsuranceTypeFromUI);
        	
-       	Set<String> ids1 = driver.getWindowHandles();
+       	Set<String> ids1 = d().getWindowHandles();
        	
        	Iterator<String> values = ids1.iterator();    
        	String one = values.next();
        	String two = values.next();
        	
-           driver.switchTo().window(two);
+           d().switchTo().window(two);
        	
-       	String url = driver.getCurrentUrl();
+       	String url = d().getCurrentUrl();
        	System.out.println(url);
        	 
        	URL pdfUrl = new URL(url);
@@ -1383,7 +2051,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	    Hashtable<String, Object> outputparameters = new Hashtable<>();
 
     	    try {
-    	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+    	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
     	        String fieldName = ((String) inputparameters[0]).trim();
     	        //System.out.println("🔍 Checking field: " + fieldName);
@@ -1399,7 +2067,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	        expectedValues.put("Insurance Type", d().findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")).getText().toUpperCase());
 
     	        // ✅ Now switch to PDF tab
-    	        Set<String> ids = driver.getWindowHandles();
+    	        Set<String> ids = d().getWindowHandles();
     	        for (String id : ids) {
     	            if (!id.equals(mainWindow)) {
     	            	d().switchTo().window(id);
@@ -1447,13 +2115,13 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	    Hashtable<String, Object> outputparameters = new Hashtable<>();
 
  	    try {
- 	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+ 	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
  	        String fieldName = ((String) inputparameters[0]).trim();
  	        //System.out.println("🔍 Checking field: " + fieldName);
 
  	        // ✅ Store current (main) window
- 	        String mainWindow = driver.getWindowHandle();
+ 	        String mainWindow = d().getWindowHandle();
 
  	    
  	        // ✅ Get expected values from UI BEFORE switching to PDF
@@ -1465,16 +2133,16 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
  	    
  	        // ✅ Now switch to PDF tab
- 	        Set<String> ids = driver.getWindowHandles();
+ 	        Set<String> ids = d().getWindowHandles();
  	        for (String id : ids) {
  	            if (!id.equals(mainWindow)) {
- 	                driver.switchTo().window(id);
+ 	                d().switchTo().window(id);
  	                break;
  	            }
  	        }
 
  	        // ✅ Read PDF
- 	        URL pdfUrl = new URL(driver.getCurrentUrl());
+ 	        URL pdfUrl = new URL(d().getCurrentUrl());
  	        URLConnection urlConnection = pdfUrl.openConnection();
  	        urlConnection.addRequestProperty("User-Agent", "Chrome");
 
@@ -1498,7 +2166,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	        }
 
  	        // ✅ Switch back to main tab for next field
- 	        driver.switchTo().window(mainWindow);
+ 	        d().switchTo().window(mainWindow);
 
  	    } catch (Exception e) {
  	        e.printStackTrace();
@@ -1513,7 +2181,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	    Hashtable<String, Object> outputparameters = new Hashtable<>();
 
     	    try {
-    	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+    	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
     	        String fieldName = ((String) inputparameters[0]).trim();
     	        String premiumXpath = ((String)inputparameters[1]);
@@ -1690,7 +2358,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	    Hashtable<String, Object> outputparameters = new Hashtable<>();
 
  	    try {
- 	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+ 	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
  	        String fieldName = ((String) inputparameters[0]).trim();
  	        String typeOfPolicyXpath = ((String)inputparameters[1]);
@@ -1735,7 +2403,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	        displayIcon.click();
  	        Thread.sleep(5000);
  	        
- 	       JavascriptExecutor down=(JavascriptExecutor) driver;
+ 	       JavascriptExecutor down=(JavascriptExecutor) d();
 		   down.executeScript("window.scrollBy(0,1000)");//1050
 
  	        // ✅ Step 2: Capture values from Display screen
@@ -1853,7 +2521,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
   	    Hashtable<String, Object> outputparameters = new Hashtable<>();
 
   	    try {
-  	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+  	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
   	        String fieldName = ((String) inputparameters[0]).trim();
   	        String newPremiumXpath = ((String)inputparameters[1]);
@@ -1879,7 +2547,7 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
   	        displayIcon.click();
   	        Thread.sleep(5000);
   	        
-  	       JavascriptExecutor down=(JavascriptExecutor) driver;
+  	       JavascriptExecutor down=(JavascriptExecutor) d();
  		   down.executeScript("window.scrollBy(0,1000)");//1050
 
   	        // ✅ Step 2: Capture values from Display screen
@@ -2000,8 +2668,8 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
      public static void browserClose() {
     	 try {
     		 if (d() != null) {
-    			 d().quit();      // Quit only current thread's driver
-    		        threadDriver.remove();   // Clean up ThreadLocal
+    			 d().quit();      // Quit only current thread's d()
+    		        ((ThreadLocal<WebDriver>) d()).remove();   // Clean up ThreadLocal
     		        threadConfig.remove();   // Clean up ThreadLocal config
     		    }
     	 }
@@ -2739,13 +3407,13 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
  	    Hashtable<String, Object> outputparameters = new Hashtable<>();
 
  	    try {
- 	        driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
+ 	        d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(), TimeUnit.SECONDS);
 
  	        String fieldName = ((String) inputparameters[0]).trim();
  	        
 
  	        // ✅ Store current (main) window
- 	        String mainWindow = driver.getWindowHandle();
+ 	        String mainWindow = d().getWindowHandle();
 
  	        // ✅ Get expected values from UI BEFORE switching to PDF
  	        Map<String, String> expectedValues = new HashMap<>();
@@ -3216,20 +3884,19 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	    String xpath = (String) input[0];
     	    String value = (String) input[1];
 
-    	    getDriver().findElement(By.xpath(xpath)).sendKeys(value);
+    	    d().findElement(By.xpath(xpath)).sendKeys(value);
     	}
 
      public static void sendPasswordDynamic(Object[] input) {
     	    String xpath = (String) input[0];
     	    String value = (String) input[1];
 
-    	    getDriver().findElement(By.xpath(xpath)).sendKeys(value);
+    	    d().findElement(By.xpath(xpath)).sendKeys(value);
     	}
 
      public static void waitForPageStability() {
 
-    	    WebDriver driver = getDriver();
-    	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+    	    WebDriverWait wait = new WebDriverWait(d(), Duration.ofSeconds(30));
 
     	    // 1. DOM Ready
     	    wait.until(d ->

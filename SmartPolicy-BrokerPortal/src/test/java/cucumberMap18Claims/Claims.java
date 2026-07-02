@@ -72,17 +72,17 @@ public class Claims {
 	 }
 	 @When("user select {string} as country")
 	 public void user_select_as_country(String country) throws InterruptedException {
-		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbCountryofLoss')]", "(//*[@class='select2-search__field'])[2]", country , "(//*[contains(@data-select2-id,'MainContent_cmbCountryofLoss')])[2]", "user select {string} as country", "DROPDOWN", 3000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbCountryofLoss')])[2]", "(//*[@class='select2-search__field'])[2]", country , "(//*[contains(@data-select2-id,'MainContent_cmbCountryofLoss')])[3]", "user select {string} as country", "DROPDOWN", 3000);
 
 	 }
 	 @When("user select {string} as region\\/City of loss")
 	 public void user_select_as_region_city_of_loss(String cityOfLoss) throws InterruptedException {
-		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbRegion')])[1]", "(//*[@class='select2-search__field'])[2]", cityOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbRegion')])[3]", "user select {string} as region\\\\/City of loss", "DROPDOWN", 3000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbRegion')])[3]", "(//*[@class='select2-search__field'])[2]", cityOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbRegion')])[5]", "user select {string} as region\\\\/City of loss", "DROPDOWN", 3000);
 
 	 }
 	 @When("user select {string} as district of loss")
 	 public void user_select_as_district_of_loss(String districtOfLoss) throws InterruptedException {
-		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbDistrict')])[1]", "(//*[@class='select2-search__field'])[2]", districtOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbDistrict')])[3]", "user select {string} as district of loss", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbDistrict')])[3]", "(//*[@class='select2-search__field'])[2]", districtOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbDistrict')])[3]", "user select {string} as district of loss", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as cause of loss\\/Accident")

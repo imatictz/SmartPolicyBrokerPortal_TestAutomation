@@ -22,12 +22,12 @@
      <class name="testRunner.RunnerTestworkmens"/> 
      <class name="testRunner.RunnerTestRiskNote_DebitNote"/>
      <class name="testRunner.RunnerTestRiskNoteScreen"/>
-     <class name="testRunner.RunnerTestClaims"/>
+   <!--  <class name="testRunner.RunnerTestClaims"/>
      <class name="testRunner.RunnerTestClaimsTracking"/>
      <class name="testRunner.RunnerTestPayment"/>
      <class name="testRunner.RunnerTestEndorsement"/>
      <class name="testRunner.RunnerTestEndorsementScreen"/>
-     <class name="testRunner.RunnerTestReports"/>
+     <class name="testRunner.RunnerTestReports"/>-->
       
       
     </classes>

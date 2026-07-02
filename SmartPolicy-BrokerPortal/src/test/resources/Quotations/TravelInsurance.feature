@@ -130,7 +130,7 @@ Then user able to view "Required Approval" as status
 
 @Edit
 Scenario: (Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Travel Insurance" as Insurance Type
 When user click on search button to find "Travel Insurance" quote
 When user enter quote number to search "Travel Insurance" quote

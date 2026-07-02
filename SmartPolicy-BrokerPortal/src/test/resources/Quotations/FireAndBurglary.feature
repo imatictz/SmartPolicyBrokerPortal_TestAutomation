@@ -130,7 +130,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Fire and Burglary quote
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire and Burglary" as Insurance Type
    When user click on search button to find "Fire and Burglary" quote
    When user enter quote number to search "Fire and Burglary" quote
@@ -147,7 +147,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
   
 @EditQuote
  Scenario: Verify user able to edit an existing Fire and Burglary quote successfully
-   When user select "15/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire and Burglary" as Insurance Type
    When user click on search button to find "Fire and Burglary" quote
    When user enter quote number to search "Fire and Burglary" quote

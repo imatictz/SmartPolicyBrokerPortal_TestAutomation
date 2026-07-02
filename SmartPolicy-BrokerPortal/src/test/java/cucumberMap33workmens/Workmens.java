@@ -245,7 +245,7 @@ public class Workmens {
 	
 	@When("^user click on save button$")
 	public void clickOnSaveButton() throws InterruptedException {
-	    Itl.CustomDoubleClickEvent("//*[@id='btnSave']",  "user click on save button","CLICK", 4000);
+	    Itl.CustomClickEvent("//*[@id='btnSave']",  "user click on save button","CLICK", 4000);
 
 	}
 
@@ -440,7 +440,7 @@ public class Workmens {
 
 	    // Insurance Type
 	    if (data.get("Insurance Type") != null) {
-	        Itl.CustomDropdownEvent(
+	        Itl.CustomDropdownEvent1(
 	            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
 	            "(//*[@class='select2-search__field'])[1]",
 	            data.get("Insurance Type"),

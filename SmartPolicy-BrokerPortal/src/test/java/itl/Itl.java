@@ -356,6 +356,19 @@ public class Itl {
 		Thread.sleep(intThreadSleepTime);
 		}
 	}
+	public static void CustomDropdownEvent1(String strElementId,String searchBoxId,String value,
+			String valueId,String stepName,String strElementType,Integer intThreadSleepTime) throws InterruptedException {
+		if(strElementType =="DROPDOWN") {
+		Object[] input= new Object[4];
+		input[0]=strElementId;
+		input[1]=searchBoxId;
+		input[2]=value;
+		input[3]=valueId;
+		Hashtable<String,Object> output=SeleniumOperations.dropdownTest(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),stepName,output.get("MESSAGE").toString());
+		Thread.sleep(intThreadSleepTime);
+		}
+	}
 	
 	public static void DropdownEvent(String strElementId,String searchBoxId,String value,
 			String valueId,String strElementType,Integer intThreadSleepTime) throws InterruptedException {

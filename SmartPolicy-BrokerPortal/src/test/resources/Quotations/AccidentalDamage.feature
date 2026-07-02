@@ -43,7 +43,7 @@ When user enter "Accidental Damage Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission alert
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Accidental Damage Quotation) Verify user able to enter mandatory fields with out no Addon and save quotation successfully
@@ -147,7 +147,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Accident Cover quote
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Accident Cover" as Insurance Type
    When user click on search button to find "Accident Cover" quote
    When user enter quote number to search "Accident Cover" quote
@@ -164,7 +164,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
   
 @EditQuote
  Scenario: Verify user able to edit an existing Accident Cover quote successfully
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Accident Cover" as Insurance Type
    When user click on search button to find "Accident Cover" quote
    When user enter quote number to search "Accident Cover" quote

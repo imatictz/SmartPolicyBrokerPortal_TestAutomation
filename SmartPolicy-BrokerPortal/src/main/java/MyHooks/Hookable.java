@@ -6,9 +6,12 @@ import utility.*;
 import java.net.UnknownHostException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.aventstack.extentreports.ExtentTest;
+
 public class Hookable {
 
     private static AtomicInteger counter = new AtomicInteger(0);
+    private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
     private static String[] usernames = {
         ConfigReader.get("user1.username"),
@@ -76,7 +79,7 @@ public class Hookable {
         HTMLReportGenerator.TestCaseEnd();
 
         // 🔥 IMPORTANT: flush after each scenario
-        HTMLReportGenerator.flush();
+       // HTMLReportGenerator.flush();
 
         SeleniumOperations.browserClose();
         ScreenContext.clear();

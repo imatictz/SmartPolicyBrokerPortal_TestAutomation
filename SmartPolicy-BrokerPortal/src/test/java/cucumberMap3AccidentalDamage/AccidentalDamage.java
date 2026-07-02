@@ -83,7 +83,7 @@ public class AccidentalDamage
 		   input[1]=clientName;
 		   Hashtable<String,Object> output= SeleniumOperations.clearAndEnter(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name",output.get("MESSAGE").toString());
-		   Thread.sleep(8000);
+		   Thread.sleep(5000);
 		}
 
 		@When("user select {string} as client name")
@@ -276,12 +276,6 @@ public class AccidentalDamage
 
 		
 		
-		@When("^user click on save button$")
-		public void clickOnSaveButton() throws InterruptedException {
-		    Itl.CustomDoubleClickEvent("//*[@id='btnSave']",  "user click on save button","CLICK", 4000);
-
-		}
-
 		@When("^user click on Ok button to accept commission alert$")
 		public void clickOnOKButton() throws Throwable 
 		{
@@ -707,22 +701,27 @@ public class AccidentalDamage
 		            "(//*[contains(@data-select2-id,'MainContent_cmbPolicyCategory-result')])",
 		            "user select Policy Category",
 		            "DROPDOWN",
-		            0
+		            2000
 		        );
 		    }
 
 		    // Insurance Type
 		    if (data.get("Insurance Type") != null) {
-		        Itl.CustomDropdownEvent(
+		        Itl.CustomDropdownEvent1(
 		            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
 		            "(//*[@class='select2-search__field'])[1]",
 		            data.get("Insurance Type"),
 		            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])",
 		            "user select Insurance Type",
 		            "DROPDOWN",
-		            4000
+		            8000
 		        );
 		    }
+		}
+		@When("^user click on save button$")
+		public void clickOnSaveButton() throws InterruptedException {
+		    Itl.CustomClickEvent("//*[@id='btnSave']",  "user click on save button","CLICK", 4000);
+
 		}
 		@When("user enter {string} as Death Sum Assured")
 		public void user_enter_as_death_sum_assured(String death_sum_assured) throws InterruptedException {

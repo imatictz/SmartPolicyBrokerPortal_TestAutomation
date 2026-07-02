@@ -131,7 +131,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote
  Scenario: User prints the Fire Class quote
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire Class" as Insurance Type
    When user click on search button to find "Fire Class" quote
    When user enter quote number to search "Fire Class" quote
@@ -148,7 +148,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
   
 @EditQuote
  Scenario: Verify user able to edit an existing Fire Class quote successfully
-   When user select "15/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire Class" as Insurance Type
    When user click on search button to find "Fire Class" quote
    When user enter quote number to search "Fire Class" quote

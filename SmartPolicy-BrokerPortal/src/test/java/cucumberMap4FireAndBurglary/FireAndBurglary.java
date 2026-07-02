@@ -734,7 +734,7 @@ public class FireAndBurglary
 
 		    // Insurance Type
 		    if (data.get("Insurance Type") != null) {
-		        Itl.CustomDropdownEvent(
+		        Itl.CustomDropdownEvent1(
 		            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
 		            "(//*[@class='select2-search__field'])[1]",
 		            data.get("Insurance Type"),
