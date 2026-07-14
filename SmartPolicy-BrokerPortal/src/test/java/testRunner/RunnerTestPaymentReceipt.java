@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/PaymentReceipt/PaymentReceipt.feature", 
-                   tags= "@AllFieldsON", 
+                   tags= "@All", 
                    glue={"cucumberMap31PaymentReceipt","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

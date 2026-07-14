@@ -12,7 +12,7 @@ When user click on add button
 Scenario: Verify user able to create Provisional Batch Tax Invoices successfully
 When user select "Automated Testing Company" as insurer name
 When user enter "01-Dec-2025" as date from
-When user enter "12-Dec-2025" as date to
+When user enter "12-Dec-2026" as date to
 And user select "General" as category
 Then user click on fetch button
 

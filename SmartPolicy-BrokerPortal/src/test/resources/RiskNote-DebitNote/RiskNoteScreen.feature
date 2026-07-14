@@ -8,7 +8,7 @@ Then user select risk note menu
 
 @PrintAccidentRiskNote
  Scenario: User prints risk note for Accident Cover 
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Accident Cover" as Insurance Type
    When user click on search button to find "Accident Cover" risk note
    When user enter risk note number to search "Accident Cover" risk note
@@ -30,7 +30,7 @@ Then user select risk note menu
   
 @PrintBondsRiskNote
  Scenario: User prints risk note for Bonds 
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Bonds" as Insurance Type
    When user click on search button to find "Bonds" risk note
    When user enter risk note number to search "Bonds" risk note
@@ -52,7 +52,7 @@ Then user select risk note menu
   
 @PrintBurglaryRiskNote
  Scenario: User prints risk note for Burglary/Theft 
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Burglary/Theft" as Insurance Type
    When user click on search button to find "Burglary/Theft" risk note
    When user enter risk note number to search "Burglary/Theft" risk note
@@ -74,7 +74,7 @@ Then user select risk note menu
   
 @PrintCreditlifeRiskNote
  Scenario: User prints risk note for Credit life Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Credit Life Insurance" as Insurance Type
    When user click on search button to find "Credit Life Insurance" risk note
    When user enter risk note number to search "Credit Life Insurance" risk note
@@ -96,7 +96,7 @@ Then user select risk note menu
   
 @PrintFidelityRiskNote
  Scenario: User prints risk note for Fidelity Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fidelity" as Insurance Type
    When user click on search button to find "Fidelity" risk note
    When user enter risk note number to search "Fidelity" risk note
@@ -118,7 +118,7 @@ Then user select risk note menu
   
 @PrintFireBurglaryRiskNote
  Scenario: User prints risk note for Fire and Burglary Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire and Burglary" as Insurance Type
    When user click on search button to find "Fire and Burglary" risk note
    When user enter risk note number to search "Fire and Burglary" risk note
@@ -140,7 +140,7 @@ Then user select risk note menu
   
 @PrintFireClassRiskNote
  Scenario: User prints risk note for Fire Class Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire Class" as Insurance Type
    When user click on search button to find "Fire Class" risk note
    When user enter risk note number to search "Fire Class" risk note
@@ -162,7 +162,7 @@ Then user select risk note menu
   
 @PrintGroupLifeRiskNote
  Scenario: User prints risk note for Group Life Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Group Life" as Insurance Type
    When user click on search button to find "Group Life" risk note
    When user enter risk note number to search "Group Life" risk note
@@ -184,7 +184,7 @@ Then user select risk note menu
   
 @PrintMedicalRiskNote
  Scenario: User prints risk note for Medical Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Medical" as Insurance Type
    When user click on search button to find "Medical" risk note
    When user enter risk note number to search "Medical" risk note
@@ -206,7 +206,7 @@ Then user select risk note menu
   
 @PrintPensionRiskNote
  Scenario: User prints risk note for Pension Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Pension" as Insurance Type
    When user click on search button to find "Pension" risk note
    When user enter risk note number to search "Pension" risk note
@@ -228,7 +228,7 @@ Then user select risk note menu
   
 #@PrintMotorRiskNote
  Scenario: User prints risk note for Motor Insurance
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Motor" as Insurance Type
    When user click on search button to find "Motor" risk note
    When user enter risk note number to search "Motor" risk note

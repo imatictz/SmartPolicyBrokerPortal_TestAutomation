@@ -9,7 +9,7 @@ Background: Launch browser and open application
 @AllFields
 Scenario Outline: (RenewPolicy) Verify user able to create quotation for renewing policy - <CoverType>
   # Renew
-  When user enter "01/01/2025" as expiry from date
+  When user enter "01-Jan-2026" as expiry from date
   And user enter "<CoverType>" as cover information
   Then user click on search button
   When user click on renew option
@@ -22,7 +22,7 @@ Scenario Outline: (RenewPolicy) Verify user able to create quotation for renewin
   @Accident
 Examples:
   |            CoverType            |
-  | Accidental Damage               |
+  | Accident Cover                  |
 
   @Bonds
 Examples:

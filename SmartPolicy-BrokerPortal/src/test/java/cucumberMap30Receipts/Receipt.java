@@ -25,7 +25,7 @@ import utility.SeleniumOperations;
 			public void user_navigate_on_quotations_menu() throws InterruptedException 
 			{
 				Object[] input8=new Object[1];
-			   input8[0]="//*[@id='span118']";
+			   input8[0]="//*[@id='span_allReceipts_lc']";
 			    SeleniumOperations.actionClass(input8);
 			  Thread.sleep(2000); 
 			}
@@ -34,7 +34,7 @@ import utility.SeleniumOperations;
 			public void user_click_on_current_quotations() throws InterruptedException 
 			{
 				Object[] input9=new Object[1];
-			     input9[0]="//*[@id='span97']";
+			     input9[0]="//*[@id='span_receipts_lc']";
 			     SeleniumOperations.clickOnElement(input9);
 			     Thread.sleep(4000);
 			    

@@ -20,7 +20,7 @@ When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
 When user enter "Value" as ID number
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user click on nationality dropdown
 When user enter "Tanzania" to search nationality in search box
 When user click on tanzania as nationality
@@ -57,7 +57,7 @@ When user click on birth certificate as ID type from dropdown
 When user enter "Value" as ID number
 When user enter "987654321" as TIN/PAN
 When user enter "32189412349515" as ZRB No
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user click on nationality dropdown
 When user enter "Tanzania" to search nationality in search box
 When user click on tanzania as nationality
@@ -100,7 +100,7 @@ When user enter "xxxxxxx302@gmail.com" as email id two
 When user enter "xxxxxxx402@gmail.com" as email id three
 When user select Email checkbox
 When user select tax exempted checkbox
-When user select PEP customer radiobutton
+When user select PEP customer radio button
 When user click on AML risk category dropdown
 When user enter "Medium" as AML risk category
 When user select medium as AML risk category
@@ -109,7 +109,7 @@ When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
 Then user able to view "1001-New information recorded successfully" as message
 
-@Corporate    @CLIENT
+@Corporate    @CLIENT @main
 Scenario: (ClientDetails) Enter new client details with all fields for corporate
 
 When user click on add button
@@ -133,7 +133,7 @@ When user select Automobile Manufacturing as business type
 When user click on country of registration dropdown
 When user enter "South Africa" as country of registration
 When user select South Africa as country of registration
-When user enter "04/08/2022" as registration date
+When user enter "04-Jan-2025" as registration date
 When user enter "Manager1520" as contact person
 When user enter "TPKUT152ABK" as VRN/GST
 When user click on region/province dropdown
@@ -167,12 +167,12 @@ When user enter "xxxxxxx602@gmail.com" as email id two
 When user enter "xxxxxxx702@gmail.com" as email id three
 When user select Email checkbox
 When user select tax exempted checkbox
-When user select PEP customer radiobutton
+When user select PEP customer radio button
 When user click on AML risk category dropdown
 When user enter "Medium" as AML risk category
 When user select medium as AML risk category
-When user enter "12/08/2023" as appointment date
-When user enter "02/06/2025" as mandate expiry
+When user enter "12-july-2023" as appointment date
+When user enter "02-dec-2025" as mandate expiry
 When user click on save button to save client details
 Then user able to view "1001-New information recorded successfully" as message
 
@@ -194,7 +194,7 @@ When user select gender dropdown to view options
 
     Examples:
       | inputDate     | expectedResult |
-      | 01/01/2000    | valid          |
+      | 01-Jan-2000    | valid          |
       | 21-Jul-2025   | valid          |
       | 1990-05-10    | valid          |
       | 10-12-1985    | valid          |
@@ -347,7 +347,7 @@ When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
 When user enter "Value" as ID number
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user click on nationality dropdown
 When user enter "Tanzania" to search nationality in search box
 When user click on tanzania as nationality
@@ -454,7 +454,7 @@ When user enter "659544202" as mobile No One
     When user enter "Birth certificate" to search ID type in search box
     When user click on birth certificate as ID type from dropdown
     When user enter "5412502145021004" as ID number
-    When user enter "01/01/2000" as date of birth
+    When user enter "01-Jan-2000" as date of birth
     When user click on nationality dropdown
     When user enter "Tanzania" to search nationality in search box
     When user click on tanzania as nationality

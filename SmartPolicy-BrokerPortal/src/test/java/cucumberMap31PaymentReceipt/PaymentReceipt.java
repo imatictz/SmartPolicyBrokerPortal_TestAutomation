@@ -21,7 +21,7 @@ package cucumberMap31PaymentReceipt;
 		@When ("user click on Remittance option")
 		public void PaymentOption() throws InterruptedException {
 			Object[] input = new Object[1];
-			input[0]="//*[@id='span23']";
+			input[0]="//*[@id='span_remmitance_lc']";
 			SeleniumOperations.clickOnElement(input);
 			Thread.sleep(2000);
 		}
@@ -29,7 +29,7 @@ package cucumberMap31PaymentReceipt;
 	 	@Then("^user click on Payment Receipt option$")
 	 	public void user_click_on_payment_option() throws Throwable {
 	 	    Object[] input4=new Object[1];
-		    input4[0]="//*[@id='span98']";
+		    input4[0]="//*[@id='span_paymentReceipt_lc']";
 		    SeleniumOperations.clickOnElement(input4);
 		    Thread.sleep(2000);
 	 	}

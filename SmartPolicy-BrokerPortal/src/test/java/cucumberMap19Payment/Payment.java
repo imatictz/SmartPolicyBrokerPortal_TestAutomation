@@ -19,14 +19,14 @@ public class Payment {
 	@When ("user click on all receipts option")
 	public void PaymentOption() {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='span118']";
+		input[0]="//*[@id='span_allReceipts_lc']";
 		SeleniumOperations.clickOnElement(input);
 	}
 	
  	@Then("^user click on direct payment option$")
  	public void user_click_on_payment_option() throws Throwable {
  	    Object[] input4=new Object[1];
-	    input4[0]="//*[@id='span91']";
+	    input4[0]="//*[@id='span_insurerReceipts_lc']";
 	    SeleniumOperations.clickOnElement(input4);
 	    Thread.sleep(2000);
  	}

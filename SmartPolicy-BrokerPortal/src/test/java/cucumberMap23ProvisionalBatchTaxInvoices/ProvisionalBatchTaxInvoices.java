@@ -18,13 +18,13 @@ public class ProvisionalBatchTaxInvoices {
 	public void user_navigate_on_billing_menu() throws Throwable {
 	    
 	      Object[] input = new Object[2];
-	      input[0]="//*[@id='span128']";
+	      input[0]="//*[@id='span_billing_lc']";
 	      SeleniumOperations.actionClass(input);
 	}
 	@When("user click on Provisional Batch Tax Invoices option")
 	public void user_click_on_provisional_batch_tax_invoices_option() throws InterruptedException {
 		Object[] input = new Object[2];
-	      input[0]="//*[@id='span95']";
+	      input[0]="//*[@id='span_provisionalBatchTaxInvoices_lc']";
 	      SeleniumOperations.clickOnElement(input);
 	      Thread.sleep(2000);
 

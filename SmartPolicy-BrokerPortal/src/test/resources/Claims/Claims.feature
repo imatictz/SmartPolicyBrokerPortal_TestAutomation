@@ -8,7 +8,7 @@ When user Click on risk note menu
 
 @reportAccidentalDamageClaims
 Scenario: (Report Accidental Damage Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Accident Cover" as Insurance Type
 When user click on search button to find "Accident Cover" risk note
 #When user enter risk note number to search "Accident Cover" risk note
@@ -41,7 +41,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportBondsClaims
 Scenario: (Report Bond Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Bonds" as Insurance Type
 When user click on search button to find "Bonds" risk note
 When user click on fetch button
@@ -71,7 +71,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportBurglaryClaims
 Scenario: (Report Burglary Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Burglary/Theft" as Insurance Type
 When user click on search button to find "Burglary/Theft" risk note
 When user click on fetch button
@@ -99,7 +99,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportCreditLifeClaims
 Scenario: (Report Credit Life Insurance Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Credit Life Insurance" as Insurance Type
 When user click on search button to find "Credit Life Insurance" risk note
 When user click on fetch button
@@ -129,7 +129,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportFidelityClaims
 Scenario: (Report Fidelity Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Fidelity" as Insurance Type
 When user click on search button to find "Fidelity" risk note
 When user click on fetch button
@@ -158,7 +158,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportFireBurglaryClaims
 Scenario: (Report Fire and Burglary Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Fire and Burglary" as Insurance Type
 When user click on search button to find "Fire and Burglary" risk note
 When user click on fetch button
@@ -186,7 +186,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportFireClassClaims
 Scenario: (Report Fire Class Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Fire Class" as Insurance Type
 When user click on search button to find "Fire Class" risk note
 When user click on fetch button
@@ -216,7 +216,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportGroupLifeClaims
 Scenario: (Report Group Life Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Group Life" as Insurance Type
 When user click on search button to find "Group Life" risk note
 When user click on fetch button
@@ -243,7 +243,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportMedicalClaims
 Scenario: (Report Medical Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Medical" as Insurance Type
 When user click on search button to find "Medical" risk note
 When user click on fetch button
@@ -271,7 +271,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportPensionClaims
 Scenario: (Report Pension Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Pension" as Insurance Type
 When user click on search button to find "Pension" risk note
 When user click on fetch button
@@ -300,7 +300,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportWorkmensClaims
 Scenario: (Report Workmens Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Workmens (With Liability)" as Insurance Type
 When user click on search button to find "Workmens (With Liability)" risk note
 When user click on fetch button
@@ -329,7 +329,7 @@ Then user able to view "Claim Intimated to Insurer" as status after reporting to
 
 @reportVehicleClaims
 Scenario: (Report Vehicle Claim) Verify user able to report claim successfully
-When user select "01/09/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Motor" as Insurance Type
 When user click on search button to find "Motor" risk note
 When user click on fetch button

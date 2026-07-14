@@ -361,11 +361,12 @@ public class Endorsement {
 		}
 		
 		@And ("^user click on login button$")
-		 public void clickOnLoginButton()
+		 public void clickOnLoginButton() throws InterruptedException
 		 {
 			 Object[] input4=new Object[1];
 		      input4[0]="//*[@id='btnLogin']";
 		  SeleniumOperations.clickOnElement(input4);
+		  Thread.sleep(2000);
 		 }
 		
 		@When ("^user navigate on operation dropdown menu \\(InsurerPortal\\)$")
@@ -418,7 +419,12 @@ public class Endorsement {
 		
 		@When ("^user enter \"(.*)\" as change value of sum insured$")
 		public void enterSumInsurred(String sumInsured) throws InterruptedException {
-            Itl.CustomClearSendEvent("//*[@id='MainContent_txtFltSumInsured']",sumInsured ,"user enter \\\"(.*)\\\" as change value of sum assured", "TEXTBOX", 2000);
+            Itl.CustomClearSendEvent("//*[@id='MainContent_txtFltSumInsured']",
+            		sumInsured ,
+            		"user enter \\\"(.*)\\\" as change value of sum assured", 
+            		"TEXTBOX",
+            		2000
+            		);
 		}
 		
 		

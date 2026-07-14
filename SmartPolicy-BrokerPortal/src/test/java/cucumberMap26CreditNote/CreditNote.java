@@ -22,7 +22,7 @@ public class CreditNote {
 	@When("user navigate on billing option")
 	public void user_navigate_on_billing_option() {
 		Object[] input7=new Object[1];
-	    input7[0]="//*[@id='span128']";
+	    input7[0]="//*[@id='span_billing_lc']";
 	    SeleniumOperations.actionClass(input7);
 	}
 	@Then("user click on credit note option")

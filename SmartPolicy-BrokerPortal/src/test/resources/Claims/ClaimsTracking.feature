@@ -9,7 +9,7 @@ Then user click on manage claim
 
 @PrintAccidentClaim   @print
  Scenario: User print claim report for Accident Cover policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Accident Cover" as Cover Information
    When user click on search button to find "Accident Cover" claim ID
    When user enter claim ID to search "Accident Cover" claim record
@@ -29,7 +29,7 @@ Then user click on manage claim
  
  @PrintBondsClaim    @print
  Scenario: User print claim report for Bonds policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Bonds" as Cover Information
    When user click on search button to find "Bonds" claim ID
    When user enter claim ID to search "Bonds" claim record
@@ -49,7 +49,7 @@ Then user click on manage claim
  
  @PrintBurglaryTheftClaim   @print
  Scenario: User print claim report for Burglary/Theft policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Burglary/Theft" as Cover Information
    When user click on search button to find "Burglary/Theft" claim ID
    When user enter claim ID to search "Burglary/Theft" claim record
@@ -69,7 +69,7 @@ Then user click on manage claim
  
  @PrintCreditlifeClaim   @print
  Scenario: User print claim report for Credit Life Insurance policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Credit Life Insurance" as Cover Information
    When user click on search button to find "Credit Life Insurance" claim ID
    When user enter claim ID to search "Credit Life Insurance" claim record
@@ -89,7 +89,7 @@ Then user click on manage claim
  
  @PrintFidelityClaim   @print
  Scenario: User print claim report for Fidelity policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fidelity" as Cover Information
    When user click on search button to find "Fidelity" claim ID
    When user enter claim ID to search "Fidelity" claim record
@@ -109,7 +109,7 @@ Then user click on manage claim
  
  @PrintFireBurglaryClaim   @print
  Scenario: User print claim report for Fire and Burglary policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire and Burglary" as Cover Information
    When user click on search button to find "Fire and Burglary" claim ID
    When user enter claim ID to search "Fire and Burglary" claim record
@@ -129,7 +129,7 @@ Then user click on manage claim
  
  @PrintFireClassClaim   @print
  Scenario: User print claim report for Fire Class policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Fire Class" as Cover Information
    When user click on search button to find "Fire Class" claim ID
    When user enter claim ID to search "Fire Class" claim record
@@ -149,7 +149,7 @@ Then user click on manage claim
  
  @PrintGroupLifeClaim   @print
  Scenario: User print claim report for Group Life policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Group Life" as Cover Information
    When user click on search button to find "Group Life" claim ID
    When user enter claim ID to search "Group Life" claim record
@@ -169,7 +169,7 @@ Then user click on manage claim
  
  @PrintMedicalClaim   @print
  Scenario: User print claim report for Medical policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Medical" as Cover Information
    When user click on search button to find "Medical" claim ID
    When user enter claim ID to search "Medical" claim record
@@ -189,7 +189,7 @@ Then user click on manage claim
  
  @PrintPensionClaim   @print
  Scenario: User print claim report for Pension policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Pension" as Cover Information
    When user click on search button to find "Pension" claim ID
    When user enter claim ID to search "Pension" claim record
@@ -209,7 +209,7 @@ Then user click on manage claim
  
  @PrintMotorClaim   @print
  Scenario: User print claim report for Motor policy
-   When user select "01/01/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Vehicle" as Cover Information
    When user click on search button to find "Vehicle" claim ID
    When user enter claim ID to search "Vehicle" claim record
@@ -229,7 +229,7 @@ Then user click on manage claim
  
 @editAccidentalDamageClaims
 Scenario: (Accidental Damage Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Accident Cover" as Cover Information
 When user click on search button to find "Accident Cover" claim ID
 When user enter claim ID to search "Accident Cover" claim record
@@ -259,7 +259,7 @@ Then user able to view "Active" as status
 
 @editBondsClaims
 Scenario: (Bond Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Bonds" as Cover Information
 When user click on search button to find "Bonds" claim ID
 When user enter claim ID to search "Bonds" claim record
@@ -290,7 +290,7 @@ Then user able to view "Active" as status
 
 @editBurglaryClaims
 Scenario: (Burglary Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Burglary/Theft" as Cover Information
 When user click on search button to find "Burglary/Theft" claim ID
 When user enter claim ID to search "Burglary/Theft" claim record
@@ -322,7 +322,7 @@ Then user able to view "Active" as status
 
 @editCreditLifeClaims
 Scenario: (Credit Life Insurance Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Credit Life Insurance" as Cover Information
 When user click on search button to find "Credit Life Insurance" claim ID
 When user enter claim ID to search "Credit Life Insurance" claim record
@@ -353,7 +353,7 @@ Then user able to view "Active" as status
 
 @editFidelityClaims
 Scenario: (Fidelity Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Fidelity" as Cover Information
 When user click on search button to find "Fidelity" claim ID
 When user enter claim ID to search "Fidelity" claim record
@@ -383,7 +383,7 @@ Then user able to view "Active" as status
 
 @editFireBurglaryClaims
 Scenario: (Fire and Burglary Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Fire and Burglary" as Cover Information
 When user click on search button to find "Fire and Burglary" claim ID
 When user enter claim ID to search "Fire and Burglary" claim record
@@ -413,7 +413,7 @@ Then user able to view "Active" as status
 
 @editFireClassClaims
 Scenario: (Fire Class Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Fire Class" as Cover Information
 When user click on search button to find "Fire Class" claim ID
 When user enter claim ID to search "Fire Class" claim record
@@ -443,7 +443,7 @@ Then user able to view "Active" as status
 
 @editGroupLifeClaims
 Scenario: (Group Life Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Group Life" as Cover Information
 When user click on search button to find "Group Life" claim ID
 When user enter claim ID to search "Group Life" claim record
@@ -473,7 +473,7 @@ Then user able to view "Active" as status
 
 @editMedicalClaims
 Scenario: (Medical Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Medical" as Cover Information
 When user click on search button to find "Medical" claim ID
 When user enter claim ID to search "Medical" claim record
@@ -504,7 +504,7 @@ Then user able to view "Active" as status
 
 @editPensionClaims
 Scenario: (Pension Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Pension" as Cover Information
 When user click on search button to find "Pension" claim ID
 When user enter claim ID to search "Pension" claim record
@@ -534,7 +534,7 @@ Then user able to view "Active" as status
 
 @editVehicleClaims
 Scenario: (Vehicle Claim) Verify user able to edit and save claim successfully
-When user select "01/01/2025" as from date
+When user select "01-Jan-2026" as from date
 When user enter "Vehicle" as Cover Information
 When user click on search button to find "Vehicle" claim ID
 When user enter claim ID to search "Vehicle" claim record

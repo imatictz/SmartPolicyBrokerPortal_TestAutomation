@@ -1187,10 +1187,23 @@ public class SeleniumOperations
  	                }
 
  	                // ✅ Stable interaction (no Thread.sleep)
- 	                element.clear();
- 	                element.click();        // focus
- 	                Thread.sleep(1000);// clear existing value
- 	                element.sendKeys(value);
+ 	                
+ 	               element.click();          // focus
+
+ 	           // Select existing value (including auto-filled 0.00)
+ 	           element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+ 	           element.sendKeys(Keys.DELETE);
+
+ 	           // Wait a moment if application redraws the field
+ 	           Thread.sleep(300);
+
+ 	           // If application again puts 0.00, remove it once more
+ 	           if ("0.00".equals(element.getAttribute("value"))) {
+ 	               element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+ 	               element.sendKeys(Keys.DELETE);
+ 	           }
+
+ 	           element.sendKeys(value);
 
  	                // ✅ Optional verification
  	                String enteredValue = element.getAttribute("value");

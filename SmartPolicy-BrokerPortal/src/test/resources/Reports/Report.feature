@@ -10,7 +10,7 @@ Scenario: Verify user able to view Admin Fee Report (REPORT206) successfully
 When user search "Admin Fee Report" as report name in search box
 Then user click to select Admin Fee Report as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "admin fee" report in pdf format
 
@@ -22,7 +22,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Branch wise with Risk Note)" report in pdf format
 
@@ -34,7 +34,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Branch wise with Type)" report in pdf format
 
@@ -47,7 +47,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Branch wise)" report in pdf format
 
@@ -59,7 +59,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (by Cover Period start date)" report in pdf format
 
@@ -67,7 +67,7 @@ Then user able to view "Business Summary (by Cover Period start date)" report in
 Scenario: Verify user able to view Business Summary (By total premium booked for each customer) Report (REPORT135) successfully
 When user search "Business Summary (By total premium booked for each customer)" as report name in search box
 Then user click to select Business Summary (By total premium booked for each customer) as report
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (By total premium booked for each customer)" report in pdf format
 
@@ -75,7 +75,7 @@ Then user able to view "Business Summary (By total premium booked for each custo
 Scenario: Verify user able to view Business Summary (By total premium booked for each insurance company Cover period start date)Report (REPORT218) successfully
 When user search "Business Summary (By total premium booked for each insurance company Cover period start date)" as report name in search box
 Then user click to select Business Summary (By total premium booked for each insurance company Cover period start date) as report
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (By total premium booked for each insurance company Cover period start date)" report in pdf format
 
@@ -83,7 +83,7 @@ Then user able to view "Business Summary (By total premium booked for each insur
 Scenario: Verify user able to view Business Summary (By total premium booked for each insurance company) Report (REPORT134) successfully
 When user search "Business Summary (By total premium booked for each insurance company)" as report name in search box
 Then user click to select Business Summary (By total premium booked for each insurance company) as report
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (By total premium booked for each insurance company)" report in pdf format
 
@@ -95,7 +95,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Class wise)" report in pdf format
 
@@ -106,7 +106,7 @@ Then user click to select Business Summary (Client type) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Client type)" report in pdf format
 
@@ -117,7 +117,7 @@ Then user click to select Business Summary (Client wise) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Client wise)" report in pdf format
 
@@ -128,7 +128,7 @@ Then user click to select Business Summary (Client wise-Cover Period start date)
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Client wise-Cover Period start date)" report in pdf format
 
@@ -141,7 +141,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Commercial Banking" as Customer Segment
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Customer Segment)" report in pdf format
 
@@ -151,7 +151,7 @@ When user search "Business Summary (Insurer wise with type)" as report name in s
 Then user click to select Business Summary (Insurer wise with type) as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Insurer wise with type)" report in pdf format
 
@@ -164,7 +164,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Insurer wise)" report in pdf format
 
@@ -176,7 +176,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Insurer wise-Cover Period start date)" report in pdf format
 
@@ -189,7 +189,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Region wise)" report in pdf format
 
@@ -202,7 +202,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary (Zone)" report in pdf format
 
@@ -211,7 +211,7 @@ Scenario: Verify user able to view Business Summary by Charts Report (REPORT226)
 When user search "Business Summary by Charts" as report name in search box
 Then user click to select Business Summary by Charts as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary by Charts" report in pdf format
 
@@ -220,7 +220,7 @@ Scenario: Verify user able to view Business Summary by insurer/category (Base Cu
 When user search "Business Summary by insurer/category (Base Currency)" as report name in search box
 Then user click to select Business Summary by insurer/category (Base Currency) as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary by insurer/category (Base Currency)" report in pdf format
 
@@ -228,7 +228,7 @@ Then user able to view "Business Summary by insurer/category (Base Currency)" re
 Scenario: Verify user able to view Business Summary(User wise) Report (REPORT160) successfully
 When user search "Business Summary(User wise)" as report name in search box
 Then user click to select Business Summary(User wise)as report
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Business Summary(User wise)" report in pdf format
 
@@ -236,7 +236,7 @@ Then user able to view "Business Summary(User wise)" report in pdf format
 Scenario: Verify user able to view claim Payment Request Report Report (REPORT195)successfully
 When user search "Claim Payment Request Report" as report name in search box
 Then user click to select claim Payment Request Report as report
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "claim Payment Request Report" report in pdf format
 
@@ -248,7 +248,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Incured but not reported on time (IBNR)" report in pdf format
 
@@ -262,7 +262,7 @@ And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending (Assessor wise)" report in pdf format
 
@@ -277,7 +277,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending (by Assigned users)" report in pdf format
 
@@ -292,7 +292,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending (Status wise)" report in pdf format
 
@@ -307,7 +307,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending Report" report in pdf format
 
@@ -322,7 +322,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending Report (Branch Wise)" report in pdf format
 
@@ -337,7 +337,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending Report (Covering Branch)" report in pdf format
 
@@ -352,7 +352,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending Report (Time taken between Accident & Reporting)" report in pdf format
 
@@ -367,7 +367,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending Report no activity for last seven Days" report in pdf format
 
@@ -382,7 +382,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending Report(Covering Branch) Not Initiated To Insurer" report in pdf format
 
@@ -397,7 +397,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Pending Report(Covering Branch) Time Taken to Initiate to Insurer" report in pdf format
 
@@ -409,7 +409,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Ratio Report(Branch wise) to Insurer" report in pdf format
 
@@ -421,7 +421,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Ratio Report(Client wise)" report in pdf format
 
@@ -433,7 +433,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Ratio Report(Insurer wise)" report in pdf format
 
@@ -445,7 +445,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Ratio Report(Region wise)" report in pdf format
 
@@ -457,7 +457,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Ratio Report(Zone wise)" report in pdf format
 
@@ -472,7 +472,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Register (Branch Wise)" report in pdf format
 
@@ -487,7 +487,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Register" report in pdf format
 
@@ -499,7 +499,7 @@ When user select "Automated Testing Company" as insurer
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Rejected Report" report in pdf format
 
@@ -514,7 +514,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Report (Retrenchment wise)" report in pdf format
 
@@ -529,7 +529,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Settled Report" report in pdf format
 
@@ -544,7 +544,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Settled Report (Branch Wise)" report in pdf format
 
@@ -559,7 +559,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Settled Report (Time Taken between DV & Settlement)" report in pdf format
 
@@ -573,7 +573,7 @@ And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Settled Report Life" report in pdf format
 
@@ -587,7 +587,7 @@ And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Claims Settlement beyond fourty five Days" report in pdf format
 
@@ -598,7 +598,7 @@ Then user click to select Client Ledger as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Client Ledger" report in pdf format
 
@@ -613,7 +613,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Comesa Booking" report in pdf format
 
@@ -626,7 +626,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commision Rebate Report" report in pdf format
 
@@ -636,7 +636,7 @@ When user search "Commission Allocated Report" as report name in search box
 Then user click to select Commission Allocated Report as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Allocated Report" report in pdf format
 
@@ -646,7 +646,7 @@ When user search "Commission Receivable Ageing Report" as report name in search 
 Then user click to select Commission Receivable Ageing Report as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Receivable Ageing Report" report in pdf format
 
@@ -656,7 +656,7 @@ When user search "Commission Receivable Report" as report name in search box
 Then user click to select Commission Receivable Report as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Receivable Report" report in pdf format
 
@@ -666,7 +666,7 @@ When user search "Commission Receivable Report (With VAT Commission)" as report 
 Then user click to select Commission Receivable Report (With VAT Commission) as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Receivable Report (With VAT Commission)" report in pdf format
 
@@ -676,7 +676,7 @@ When user search "Commission Receivable Report(WH TAX)" as report name in search
 Then user click to select Commission Receivable Report(WH TAX) as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Receivable Report(WH TAX)" report in pdf format
 
@@ -688,7 +688,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Refundable Report" report in pdf format
 
@@ -700,7 +700,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Statement Report" report in pdf format
 
@@ -712,7 +712,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Commission Statement Report one" report in pdf format
 
@@ -728,7 +728,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view CSV Data Extraction report in pdf format
 
@@ -743,7 +743,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Customer Sales Statistics Report" report in pdf format
 
@@ -760,7 +760,7 @@ When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes Report" report in pdf format
 
@@ -776,7 +776,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (Borrower Wise)" report in pdf format
 
@@ -793,7 +793,7 @@ When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (Broker Partner Business)" report in pdf format
 
@@ -810,7 +810,7 @@ When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (Business By)" report in pdf format
 
@@ -827,7 +827,7 @@ When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (Cover Period start date)" report in pdf format
 
@@ -838,7 +838,7 @@ Then user click to select Daily Cover Notes (Different Policy Issued Date & TIRA
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (Different Policy Issued Date & TIRA Issued Date)" report in pdf format
 
@@ -854,7 +854,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (Insurer wise)" report in pdf format
 
@@ -870,7 +870,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (User wise)" report in pdf format
 
@@ -886,7 +886,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (With First Loss Payee)" report in pdf format
 
@@ -902,7 +902,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (With Levy)" report in pdf format
 
@@ -918,7 +918,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (With Reg No)" report in pdf format
 
@@ -934,7 +934,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes (With Stamp Duty)" report in pdf format
 
@@ -951,7 +951,7 @@ When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes Online Channels" report in pdf format
 
@@ -967,7 +967,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes(Lien Clause)" report in pdf format
 
@@ -983,7 +983,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover Notes(New business & renewals)" report in pdf format
 
@@ -1000,7 +1000,7 @@ When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Cover/Notes (Expiry Date wise)" report in pdf format
 
@@ -1012,7 +1012,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Credit Note" report in pdf format
 
@@ -1027,7 +1027,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Direct" as Business type
 When user select "New Policy" as policy type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Debit Notes/ Tax Invoices" report in pdf format
 
@@ -1040,7 +1040,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Debit Notes/ Tax Invoices(Un-Allocated/Allocated" report in pdf format
 
@@ -1054,7 +1054,7 @@ And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Direct" as Business type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Debit Notes/ Tax Invoices(with Levy)" report in pdf format
 
@@ -1063,7 +1063,7 @@ Scenario: Verify user able to view Daily Payments Report (REPORT12)successfully
 When user search "Daily Payments" as report name in search box
 Then user click to select Daily Payments as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Payments" report in pdf format
 
@@ -1075,7 +1075,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Receipts" report in pdf format
 
@@ -1087,7 +1087,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Receipts (Business Type)" report in pdf format
 
@@ -1099,7 +1099,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Receipts (Insurer wise)" report in pdf format
 
@@ -1116,7 +1116,7 @@ When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Daily Remittance report" report in pdf format
 
@@ -1125,7 +1125,7 @@ Scenario: Verify user able to view Debit Note Ageing Report (REPORT16) successfu
 When user search "Debit Note Ageing" as report name in search box
 Then user click to select Debit Note Ageing as report
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Debit Note Ageing" report in pdf format
 
@@ -1146,7 +1146,7 @@ Then user click to select Debtors Analysis Report(by date) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Debtors Analysis Report(by date)" report in pdf format
 
@@ -1157,7 +1157,7 @@ Then user click to select Details of the Policy issued on Credit as report
 When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Details of the Policy issued on credit" report in pdf format
 
@@ -1170,7 +1170,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Direct Payment Transaction" report in pdf format
 
@@ -1179,7 +1179,7 @@ Scenario: Verify user able to view Exchange Rate Report For Insurer Report (REPO
 When user search "Exchange Rate Report For Insurer" as report name in search box
 Then user click to select Exchange Rate Report For Insurer as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Exchange Rate Report For Insurer" report in pdf format
 
@@ -1189,7 +1189,7 @@ When user search "Expired Risk Notes" as report name in search box
 Then user click to select Expired Risk Notes as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Expired Risk Notes" report in pdf format
 
@@ -1253,7 +1253,7 @@ Then user click to select Ledger (Client/Supplier) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view Ledger (Client/Supplier) report in pdf format
 
@@ -1263,7 +1263,7 @@ When user search "Ledger (Insurer)" as report name in search box
 Then user click to select Ledger (Insurer) as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Ledger (Insurer)" report in pdf format
 
@@ -1273,7 +1273,7 @@ When user search "List of Policies" as report name in search box
 Then user click to select List of Policies as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "List of Policies" report in pdf format
 
@@ -1309,7 +1309,7 @@ Scenario: Verify user able to view Mobile Money Transaction Report (REPORT120) s
 When user search "Mobile Money Transaction" as report name in search box
 Then user click to select Mobile Money Transaction as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Mobile Money Transaction" report in pdf format
 
@@ -1320,7 +1320,7 @@ Then user click to select Mobile Money Transaction (User Wise)as report
 When user select "Automated Testing Company" as insurer
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Mobile Money Transaction (User Wise)" report in pdf format
 
@@ -1328,7 +1328,7 @@ Then user able to view "Mobile Money Transaction (User Wise)" report in pdf form
 Scenario: Verify user able to view Modified / Endorsed Cover Notes Report (REPORT61) successfully
 When user search "Modified / Endorsed Cover Notes" as report name in search box
 Then user click to select Modified / Endorsed Cover Notes as report
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Modified / Endorsed Cover Notes" report in pdf format
 
@@ -1346,7 +1346,7 @@ When user search "Multi Policies Quotation" as report name in search box
 Then user click to select Multi Policies Quotation as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Multi Policies Quotation" report in pdf format
 
@@ -1357,7 +1357,7 @@ Then user click to select Not Renewed Policies as report
 When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Not Renewed Policies" report in pdf format
 
@@ -1377,7 +1377,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Outstanding Commission Statement" report in pdf format
 
@@ -1405,7 +1405,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "All" as Supplier Name
 When user select "UBL Bank (TZS)" as account
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Payment Cheque Register" report in pdf format
 
@@ -1416,7 +1416,7 @@ Then user click to select Pending Quotation as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Pending Quotation" report in pdf format
 
@@ -1428,7 +1428,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "2025" as year
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Performance Incentive report" report in pdf format
 
@@ -1442,7 +1442,7 @@ And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Policy Cancellation" report in pdf format
 
@@ -1459,7 +1459,7 @@ When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "36516" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Policy Push Error Records" report in pdf format
 
@@ -1475,7 +1475,7 @@ When user select "All" as business By
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Policy Renewable" report in pdf format
 
@@ -1506,7 +1506,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Premium Financed Risk Notes" report in pdf format
 
@@ -1559,7 +1559,7 @@ Scenario: Verify user able to view Regulatory Document Inventory[REPORT189] Repo
 When user search "Regulatory Document Inventory" as report name in search box
 Then user click to select Regulatory Document Inventory as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Regulatory Document Inventory" report in pdf format
 
@@ -1573,7 +1573,7 @@ And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Renewal List" report in pdf format
 
@@ -1587,7 +1587,7 @@ And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Renewal List (User wise)" report in pdf format
 
@@ -1597,7 +1597,7 @@ When user search "Renewal Reminder Letter" as report name in search box
 Then user click to select Renewal Reminder Letter as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Renewal Reminder Letter" report in pdf format
 
@@ -1610,7 +1610,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Show Expired, Active or Renewed Risk Notes." report in pdf format
 
@@ -1621,7 +1621,7 @@ Then user click to select Statement (Client-wise) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Statement (Client-wise)" report in pdf format
 
@@ -1633,7 +1633,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Statement (Insurer-wise) Comprehensive" report in pdf format
 
@@ -1643,7 +1643,7 @@ When user search "Statement (Insurer-wise) Kenya" as report name in search box
 Then user click to select Statement (Insurer-wise) Kenya as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Statement (Insurer-wise) Kenya" report in pdf format
 
@@ -1652,7 +1652,7 @@ Scenario: Verify user able to view Statement (Insurer-wise)Type 1[REPORT08] Repo
 When user search "Statement (Insurer-wise)Type 1" as report name in search box
 Then user click to select Statement (Insurer-wise)Type one as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Statement (Insurer-wise)Type one" report in pdf format
 
@@ -1661,7 +1661,7 @@ Scenario: Verify user able to view Statement (Insurer-wise)Type 2[REPORT44] Repo
 When user search "Statement (Insurer-wise)Type 2" as report name in search box
 Then user click to select Statement (Insurer-wise)Type two as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Statement (Insurer-wise)Type two" report in pdf format
 
@@ -1670,7 +1670,7 @@ Scenario: Verify user able to view Statement (Insurer-wise)Type 3[REPORT47] Repo
 When user search "Statement (Insurer-wise)Type 3" as report name in search box
 Then user click to select Statement (Insurer-wise)Type three as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Statement (Insurer-wise)Type three" report in pdf format
 
@@ -1682,7 +1682,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user enter "32156" as debit No
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view Statement Statement (Client-wise) - on Risk Note report in pdf format
 
@@ -1693,7 +1693,7 @@ Then user click to select Sticker Replacement as report
 When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Sticker Replacement" report in pdf format
 
@@ -1709,7 +1709,7 @@ Scenario: Verify user able to view Supplier Statement[REPORT104] Report successf
 When user search "Supplier Statement" as report name in search box
 Then user click to select Supplier Statement as report
 When user select "All" as Supplier Name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Supplier Statement" report in pdf format
 
@@ -1719,7 +1719,7 @@ When user search "Targets" as report name in search box
 Then user click to select Targets as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Targets" report in pdf format
 
@@ -1729,7 +1729,7 @@ When user search "Targets (Zone wise)" as report name in search box
 Then user click to select Targets (Zone wise) as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Targets (Zone wise)" report in pdf format
 
@@ -1739,7 +1739,7 @@ When user search "Targets (Zone wise) BY Policy Count" as report name in search 
 Then user click to select Targets (Zone wise) BY Policy Count as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Targets (Zone wise) BY Policy Count" report in pdf format
 
@@ -1749,7 +1749,7 @@ When user search "Targets By Policy Count" as report name in search box
 Then user click to select Targets By Policy Count as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Targets By Policy Count" report in pdf format
 
@@ -1758,7 +1758,7 @@ Scenario: Verify user able to view TIRA MIS Report[REPORT79] Report successfully
 When user search "TIRA MIS Report" as report name in search box
 Then user click to select TIRA MIS Report as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "TIRA MIS report" report in pdf format
 
@@ -1767,7 +1767,7 @@ Scenario: Verify user able to view TIRA Reports - Broker Premium Remittance Stat
 When user search "TIRA Reports - Broker Premium Remittance Statement" as report name in search box
 Then user click to select TIRA Reports - Broker Premium Remittance Statement as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "TIRA Reports - Broker Premium Remittance Statement" report in pdf format
 
@@ -1891,7 +1891,7 @@ Scenario: Verify user able to view TIRA Sticker Inventory[REPORT93] Report succe
 When user search "TIRA Sticker Inventory" as report name in search box
 Then user click to select TIRA Sticker Inventory as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "TIRA Sticker Inventory" report in pdf format
 
@@ -1909,7 +1909,7 @@ Then user click to select Total Outstanding Payments (Detailed) as report
 When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Total Outstanding Payments (Detailed)" report in pdf format
 
@@ -1917,7 +1917,7 @@ Then user able to view "Total Outstanding Payments (Detailed)" report in pdf for
 Scenario: Verify user able to view Total Outstanding Payments (Summarized)[REPORT22] Report successfully
 When user search "Total Outstanding Payments (Summarized)" as report name in search box
 Then user click to select Total Outstanding Payments (Summarized) as report
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Total Outstanding Payments (Summarized)" report in pdf format
 
@@ -1928,7 +1928,7 @@ Then user click to select Total Outstanding Receipts (Detailed) as report
 When user select "Automated Testing Company" as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Total Outstanding Receipts (Detailed)" report in pdf format
 
@@ -1944,7 +1944,7 @@ Scenario: Verify user able to view Unallocated Credit Note[REPORT236] Report suc
 When user search "Unallocated Credit Note" as report name in search box
 Then user click to select Unallocated Credit Note as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Unallocated Credit Note" report in pdf format
 
@@ -1953,7 +1953,7 @@ Scenario: Verify user able to view Unallocated Payments[REPORT24] Report success
 When user search "Unallocated Payments" as report name in search box
 Then user click to select Unallocated Payments as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Unallocated Payments" report in pdf format
 
@@ -1963,7 +1963,7 @@ When user search "Unallocated Receipts" as report name in search box
 Then user click to select Unallocated Receipts as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Unallocated Receipts" report in pdf format
 
@@ -1976,7 +1976,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Unrequested Customer Tax Invoice Transactions" report in pdf format
 
@@ -1999,7 +1999,7 @@ Scenario: Verify user able to view VAT submission Report for Insurance Companies
 When user search "VAT submission Report for Insurance Companies" as report name in search box
 Then user click to select VAT submission Report for Insurance Companies as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "VAT submission Report for Insurance Companies" report in pdf format
 
@@ -2008,7 +2008,7 @@ Scenario: Verify user able to view VAT submission Report for Insurance Companies
 When user search "VAT submission Report for Insurance Companies 1" as report name in search box
 Then user click to select VAT submission Report for Insurance Companies one as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "VAT submission Report for Insurance Companies one" report in pdf format
 
@@ -2019,7 +2019,7 @@ Then user click to select Vouchers Report as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Inventory" as account
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Vouchers report" report in pdf format
 
@@ -2028,7 +2028,7 @@ Scenario: Verify user able to view Insurance Company Fiscal Tax Invoices[REPORT1
 When user search "Insurance Company Fiscal Tax Invoices" as report name in search box
 Then user click to select Insurance Company Fiscal Tax Invoices as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Insurance Company Fiscal Tax Invoices" report in pdf format
 
@@ -2044,7 +2044,7 @@ When user select "TestProject0001" as user name
 When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Insurance Premium Levy Tax Payable" report in pdf format
 
@@ -2063,7 +2063,7 @@ When user search "Insurer Remitance Report" as report name in search box
 Then user click to select Insurer Remitance Report as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Insurer Remitance Report" report in pdf format
 
@@ -2073,7 +2073,7 @@ When user search "Insurer Remitance Report 2" as report name in search box
 Then user click to select Insurer Remitance Report 2 as report
 When user select "Automated Testing Company" as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Insurer Remitance Report 2" report in pdf format
 
@@ -2086,7 +2086,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "TestProject0001" as user name
 When user select "All" as business By
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Insurer Remitance Report(Kenya)" report in pdf format
 
@@ -2095,7 +2095,7 @@ Scenario: Verify user able to view Insurer Tax Invoice Report (REPORT45) success
 When user search "Insurer Tax Invoice" as report name in search box
 Then user click to select Insurer Tax Invoice as report
 When user select "Automated Testing Company" as insurer
-And user select "01/11/2025" as from date
+And user select "01-Jan-2026" as from date
 And user click on show report button
 Then user able to view "Insurer Tax Invoice" report in pdf format
 

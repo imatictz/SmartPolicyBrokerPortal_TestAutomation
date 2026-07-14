@@ -645,10 +645,10 @@ public class ClientDetails {
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select tax exempted checkbox",output43.get("MESSAGE").toString());
 	}
 
-	@When("^user select PEP customer radiobutton$")
+	@When("^user select PEP customer radio button$")
 	public void user_select_PEP_customer_radiobutton() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@id='MainContent_rdlList_0']";
+		input43[0]="//*[@id='chkPepCustomer']";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select PEP customer radiobutton",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -736,7 +736,7 @@ public class ClientDetails {
 	@When("^user click on country of registration dropdown$")
 	public void user_click_on_country_of_registration_dropdown() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[contains(@aria-controls,'MainContent_cmbCOR')]";
+		input43[0]="(//*[contains(@aria-controls,'MainContent_cmbCOR')])[2]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user click on country of registration dropdown",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -754,7 +754,7 @@ public class ClientDetails {
 	@When("^user select South Africa as country of registration$")
 	public void user_select_South_Africa_as_country_of_registration() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbCOR')])[2]";
+		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbCOR')])[3]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select South Africa as country of registration",output43.get("MESSAGE").toString());
 	}
