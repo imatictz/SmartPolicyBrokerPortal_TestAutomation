@@ -81,7 +81,7 @@ public class Hookable {
         // 🔥 IMPORTANT: flush after each scenario
        // HTMLReportGenerator.flush();
 
-       // SeleniumOperations.browserClose();
+        SeleniumOperations.browserClose();
         ScreenContext.clear();
 
         System.out.println("---- Scenario End : " + scenario.getName() + " ----");
