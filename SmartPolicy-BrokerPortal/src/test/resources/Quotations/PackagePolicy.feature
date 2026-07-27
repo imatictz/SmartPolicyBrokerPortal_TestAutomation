@@ -46,7 +46,7 @@ When user enter "3" as rate %
 When user enter "Testing Package Policy" as description
 When user click on insert button (AddOn)
 When user click on save button
-When user click on Ok button to accept commission alert message
+#When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
@@ -77,7 +77,7 @@ When user enter "1200000" as sum insured
 When user click on compute button
 When user click on insert button
 When user click on save button
-When user click on Ok button to accept commission alert message
+#When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt" as status
 
 
@@ -185,7 +185,7 @@ When user click on insert button (AddOn)
 When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 When user click on save button
-When user click on Ok button to accept commission alert message
+#When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @PrintQuote  
@@ -237,5 +237,5 @@ When user enter "1200000" as sum insured
 When user click on compute button
 When user click on update button to save policy information
 When user click on update button
-When user click on Ok button to accept commission alert message
+#When user click on Ok button to accept commission alert message
 Then user able to view "1003-Information modified successfully" as message

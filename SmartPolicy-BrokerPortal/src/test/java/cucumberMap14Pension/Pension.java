@@ -195,7 +195,7 @@ public class Pension {
 	public void user_select_as_extension(String extension) throws Throwable {
 		Object[] input= new Object[4];
 		input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
-		input[1]="//*[@class='select2-search__field']";
+		input[1]="(//*[@class='select2-search__field'])[2]";
 		input[2]=extension;
 		input[3]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
@@ -452,33 +452,7 @@ public class Pension {
 		HTMLReportGenerator.StepDetails(output50.get("STATUS").toString(),"user click on Re-Compute premium",output50.get("MESSAGE").toString());
 		Thread.sleep(2000);
 	}
-	@When("^user click on extension dropdown$")
-	public void clickOnExtensionDropdown()
-	{
-		Object[] input11=new Object[1];
-		input11[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input11);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
-	}
-
-	@When("^user enter \"([^\"]*)\" as extension$")
-	public void enterExtension(String extension)
-	{
-		Object[] input=new Object[2];
-	    input[0]="(//*[@class='select2-search__field'])[2]";
-	    input[1]=extension;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
-	}
-
-	@When("^user select on Others as extension$")
-	public void selectExtension() throws Throwable 
-	{
-	   Object[] input=new Object[1];
-	   input[0]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
-	   Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
-	   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select on Others as extension",output.get("MESSAGE").toString());
-	}
+	
 	
 	@When("user enter {string} as cover note")
 	public void user_enter_as_cover_note_number(String coverNoteNumber) throws Throwable {

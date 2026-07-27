@@ -82,7 +82,7 @@ public class Claims {
 	 }
 	 @When("user select {string} as district of loss")
 	 public void user_select_as_district_of_loss(String districtOfLoss) throws InterruptedException {
-		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbDistrict')])[3]", "(//*[@class='select2-search__field'])[2]", districtOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbDistrict')])[3]", "user select {string} as district of loss", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbDistrict')])[3]", "(//*[@class='select2-search__field'])[2]", districtOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbDistrict')])[5]", "user select {string} as district of loss", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as cause of loss\\/Accident")

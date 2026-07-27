@@ -11,7 +11,12 @@ When user click on current quotations
 @MandatoryFields
 Scenario: (Educare Life Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
 When user click on add button
-When user select "Education Care" as insurance type
+When user enter product discovery details :
+    | Field            | Value                      |
+    | Select Insurer   | Automated Testing Company  |
+    | Policy Category  | Group-Life Business        |
+    | Insurance Type   | Educare Life Insurance     |
+#When user select "Education Care" as insurance type
 When user enter "Pravin Testing Broker" as client name
 When user select Pravin Testing as client name
 When user enter "121" as P.O. Box
@@ -25,16 +30,16 @@ When user select "Single" as marital status
 When user enter "Pravin Testing" as employer name
 When user enter "5214EDRGno51" as employee number /national ID
 When user enter "Worker" as occupation
-When user select "tanzania" as tax payer country
-When user enter "15/04/2023" as employment date
+When user select "Tanzania" as tax payer country
+When user enter "15-Jul-2023" as employment date
 When user click on next button (First Page)
 
 #Beneficiary 1
 
 When user enter "Tester Testing Beneficiary 1" as name of beneficiary (For Beneficiary one)
-When user enter "15/05/1988" as date of birth (For Beneficiary one)
-When user select "Male" as gender (For Beneficiary one)
-When user select "Self" as relationship to owner (For Beneficiary one)
+When user enter "15-May-1988" as date of birth (For Beneficiary one)
+When user select "Female" as gender (For Beneficiary one)
+When user select "SELF" as relationship to owner (For Beneficiary one)
 When user enter "659544202" as telephone (For Beneficiary one)
 When user enter "15" as percent of life benefit given (For Beneficiary one)
 When user enter "Address No 1" as address (For Beneficiary one)
@@ -44,7 +49,7 @@ When user enter "Address No 1" as address (For Beneficiary one)
 When user enter "Tester Testing Beneficiary 2" as name of beneficiary (For Beneficiary Two)
 When user enter "01/02/1990" as date of birth (For Beneficiary Two)
 When user select "Female" as gender (For Beneficiary Two)
-When user select "employee" as relationship to owner (For Beneficiary Two)
+When user select "Employee" as relationship to owner (For Beneficiary Two)
 When user enter "659544202" as telephone (For Beneficiary Two)
 When user enter "30" as percent of life benefit given (For Beneficiary Two)
 When user enter "Address No 2" as address (For Beneficiary Two)
@@ -53,8 +58,8 @@ When user enter "Address No 2" as address (For Beneficiary Two)
 
 When user enter "Tester Testing Beneficiary 3" as name of beneficiary (For Beneficiary Three)
 When user enter "20/12/1998" as date of birth (For Beneficiary Three)
-When user select "other" as gender (For Beneficiary Three)
-When user select "son" as relationship to owner (For Beneficiary Three)
+When user select "Other" as gender (For Beneficiary Three)
+When user select "Son" as relationship to owner (For Beneficiary Three)
 When user enter "659544202" as telephone (For Beneficiary Three)
 When user enter "35" as percent of life benefit given (For Beneficiary Three)
 When user enter "Address No 3" as address (For Beneficiary Three)
@@ -63,8 +68,8 @@ When user enter "Address No 3" as address (For Beneficiary Three)
 
 When user enter "Tester Testing Beneficiary 4" as name of beneficiary (For Beneficiary Four)
 When user enter "06/05/2010" as date of birth (For Beneficiary Four)
-When user select "Male" as gender (For Beneficiary Four)
-When user select "brother" as relationship to owner (For Beneficiary Four)
+When user select "Female" as gender (For Beneficiary Four)
+When user select "Brother" as relationship to owner (For Beneficiary Four)
 When user enter "659544202" as telephone (For Beneficiary Four)
 When user enter "20" as percent of life benefit given (For Beneficiary Four)
 When user enter "Address No 4" as address (For Beneficiary Four)
@@ -100,7 +105,7 @@ When user click on next button (Second Page)
 
 #Cover Details
 
-When user select "Automated Testing Company" as insurer
+#When user select "Automated Testing Company" as insurer
 When user select "Option 5" as plan
 When user enter "10" as terms(Year)
 
@@ -111,12 +116,12 @@ When user enter "594200" as saving premium
 When user click on compute button
 When user select "Yearly" as payment frequency
 When user click on calculate schedule button
-#When user click on save button
+When user click on save button
 Then user able to view "Awaiting Receipt" as status
 
 @PrintQuote
  Scenario: User prints the Educare Life Insurance quote
-   When user select "01/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Educare Life Insurance" as Insurance Type
    When user click on search button to find "Educare Life Insurance" quote
    When user enter quote number to search "Educare Life Insurance" quote
@@ -133,7 +138,7 @@ Then user able to view "Awaiting Receipt" as status
   
   @EditQuote  
  Scenario: Verify user able to edit an existing Educare Life Insurance quote successfully
-   When user select "15/09/2025" as from date
+   When user select "01-Jan-2026" as from date
    When user enter "Educare Life Insurance" as Insurance Type
    When user click on search button to find "Educare Life Insurance" quote
    When user enter quote number to search "Educare Life Insurance" quote
@@ -154,16 +159,16 @@ When user select "Single" as marital status
 When user enter "Pravin Testing" as employer name
 When user enter "5214EDRGno51" as employee number /national ID
 When user enter "Worker" as occupation
-When user select "tanzania" as tax payer country
-When user enter "15/04/2023" as employment date
+When user select "Tanzania" as tax payer country
+When user enter "15-Jul-2023" as employment date
 When user click on next button (First Page)
 
 #Beneficiary 1
 
 When user enter "Tester Testing Beneficiary 1" as name of beneficiary (For Beneficiary one)
-When user enter "15/05/1988" as date of birth (For Beneficiary one)
-When user select "Male" as gender (For Beneficiary one)
-When user select "Self" as relationship to owner (For Beneficiary one)
+When user enter "15-May-1988" as date of birth (For Beneficiary one)
+When user select "Female" as gender (For Beneficiary one)
+When user select "SELF" as relationship to owner (For Beneficiary one)
 When user enter "659544202" as telephone (For Beneficiary one)
 When user enter "15" as percent of life benefit given (For Beneficiary one)
 When user enter "Address No 1" as address (For Beneficiary one)
@@ -173,7 +178,7 @@ When user enter "Address No 1" as address (For Beneficiary one)
 When user enter "Tester Testing Beneficiary 2" as name of beneficiary (For Beneficiary Two)
 When user enter "01/02/1990" as date of birth (For Beneficiary Two)
 When user select "Female" as gender (For Beneficiary Two)
-When user select "employee" as relationship to owner (For Beneficiary Two)
+When user select "Employee" as relationship to owner (For Beneficiary Two)
 When user enter "659544202" as telephone (For Beneficiary Two)
 When user enter "30" as percent of life benefit given (For Beneficiary Two)
 When user enter "Address No 2" as address (For Beneficiary Two)
@@ -182,8 +187,8 @@ When user enter "Address No 2" as address (For Beneficiary Two)
 
 When user enter "Tester Testing Beneficiary 3" as name of beneficiary (For Beneficiary Three)
 When user enter "20/12/1998" as date of birth (For Beneficiary Three)
-When user select "other" as gender (For Beneficiary Three)
-When user select "son" as relationship to owner (For Beneficiary Three)
+When user select "Other" as gender (For Beneficiary Three)
+When user select "Son" as relationship to owner (For Beneficiary Three)
 When user enter "659544202" as telephone (For Beneficiary Three)
 When user enter "35" as percent of life benefit given (For Beneficiary Three)
 When user enter "Address No 3" as address (For Beneficiary Three)
@@ -192,8 +197,8 @@ When user enter "Address No 3" as address (For Beneficiary Three)
 
 When user enter "Tester Testing Beneficiary 4" as name of beneficiary (For Beneficiary Four)
 When user enter "06/05/2010" as date of birth (For Beneficiary Four)
-When user select "Male" as gender (For Beneficiary Four)
-When user select "brother" as relationship to owner (For Beneficiary Four)
+When user select "Female" as gender (For Beneficiary Four)
+When user select "Brother" as relationship to owner (For Beneficiary Four)
 When user enter "659544202" as telephone (For Beneficiary Four)
 When user enter "20" as percent of life benefit given (For Beneficiary Four)
 When user enter "Address No 4" as address (For Beneficiary Four)
@@ -229,7 +234,7 @@ When user click on next button (Second Page)
 
 #Cover Details
 
-When user select "Automated Testing Company" as insurer
+#When user select "Automated Testing Company" as insurer
 When user select "Option 5" as plan
 When user enter "10" as terms(Year)
 

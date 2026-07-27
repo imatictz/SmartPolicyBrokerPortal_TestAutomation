@@ -24,9 +24,9 @@ When user select "South Africa" as country travelling to
 When user select "Complete Package" as plan
 When user enter "15244-51654-84125" as cover note number
 When user enter "25428Af111" as passport number
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "25/11/2024" as expiry date
-When user select "self" as relationship
+When user select "SELF" as relationship
 When user enter "5000" as adjust premium
 When user click on compute button
 When user click on insert button
@@ -58,9 +58,9 @@ When user select "Complete Package" as plan
 When user select "South Africa" as country travelling to
 When user enter "15244-51654-84125" as cover note number
 When user enter "25428Af111" as passport number
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "25/11/2024" as expiry date
-When user select "self" as relationship
+When user select "SELF" as relationship
 When user enter "621234568" as mobile number
 When user enter "962.3" as adjust premium
 When user click on compute button
@@ -103,9 +103,9 @@ When user enter "Profit making" as loss ratio forecast
 Then user select Profit making as loss ratio forecast
 #Policy Information
 When user enter "25428Af111" as passport number
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "25/12/2024" as expiry date
-When user select "self" as relationship
+When user select "SELF" as relationship
 When user enter "TravellingTOAFrica12032" as pre existing condition
 When user enter "62101" as adjust premium
 When user click on compute button
@@ -143,9 +143,9 @@ When user select "South Africa" as country travelling to
 When user select "Complete Package" as plan
 When user enter "15244-51654-84125" as cover note number
 When user enter "25428Af111" as passport number
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "25/11/2024" as expiry date
-When user select "self" as relationship
+When user select "SELF" as relationship
 When user click on update button to save policy information
 When user click on update button
 When user click on Ok button to accept commission alert

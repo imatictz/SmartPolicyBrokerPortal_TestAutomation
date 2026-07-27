@@ -20,14 +20,14 @@ public class CompanyProfile {
 	@When("user navigate on company management option")
 	public void user_navigate_on_companyoption() throws InterruptedException {
 		Object[] input7=new Object[1];
-	    input7[0]="//*[@id='span125']";
+	    input7[0]="//*[@id='span_companyManagement_lc']";
 	    SeleniumOperations.actionClass(input7);
 	    Thread.sleep(4000);
 	}
 	@Then("user click on company profile option")
 	public void user_click_on_company_option() throws InterruptedException {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='span39']";
+		input[0]="//*[@id='span_companyProfile_lc']";
 		SeleniumOperations.clickOnElement(input);
 		Thread.sleep(2000);
 	}

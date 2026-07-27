@@ -24,7 +24,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user Select "Standard Rate" as insurance class
 When user enter "Pravin Testing" as insured name
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "5000000" as sum assured
 When user enter "620000" as premium
 When user click on relationship dropdown
@@ -59,7 +59,7 @@ When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user Select "Standard Rate" as insurance class
 When user enter "Pravin Testing" as insured name
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "5000000" as sum assured
 When user enter "620000" as premium
 When user click on relationship dropdown
@@ -107,7 +107,7 @@ When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 
 When user Select "Standard Rate" as insurance class
 When user enter "Pravin Testing" as insured name
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "Birth Certificate" as ID type
 When user enter "YTG1220S02" as ID number
 When user enter "Bahi" as branch name

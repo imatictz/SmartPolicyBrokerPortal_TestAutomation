@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/TravelInsurance.feature", 
-                   tags= "@AllFields", 
+                   tags= "@All", 
                    glue={"cucumberMap11TravelInsurance","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

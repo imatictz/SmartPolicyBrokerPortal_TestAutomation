@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/Quotations/Pension.feature", 
-                   tags= "@All", 
+                   tags= "@MandatoryFieldsNoAddon", 
                    glue={"cucumberMap14Pension","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

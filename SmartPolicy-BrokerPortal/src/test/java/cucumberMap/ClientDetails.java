@@ -860,7 +860,7 @@ public class ClientDetails {
 	    //Business Type
         Itl.CustomValidationDisabledFields("//*[contains(@aria-controls,'MainContent_cmbClntBusType')]", "Business Type field is disabled", "VALIDATION", 0);
 		//Country Of Registration
-		Itl.CustomValidationDisabledFields("//*[contains(@aria-controls,'MainContent_cmbCOR')]", "Country Of Registration field is disabled", "VALIDATION", 0);
+		Itl.CustomValidationDisabledFields("(//*[contains(@aria-controls,'MainContent_cmbCOR')])[2]", "Country Of Registration field is disabled", "VALIDATION", 0);
 	    //Registration Date
 		Itl.CustomValidationDisabledFields("//*[@id='MainContent_txtRegDate']", "Registration Date field is disabled", "VALIDATION", 0);
 		//Contact Person
@@ -875,7 +875,7 @@ public class ClientDetails {
 		//Business Type 
         Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbClntBusType')]", "Business Type field is enabled", "VALIDATION", 0);
 		//Country Of Registration
-		Itl.CustomValidationEnabledFields("//*[contains(@aria-controls,'MainContent_cmbCOR')]", "Country Of Registration field is enabled", "VALIDATION", 0);
+		Itl.CustomValidationEnabledFields("(//*[contains(@aria-controls,'MainContent_cmbCOR')])[2]", "Country Of Registration field is enabled", "VALIDATION", 0);
 	    //Registration Date
 		Itl.CustomValidationEnabledFields("//*[@id='MainContent_txtRegDate']", "Registration Date field is enabled", "VALIDATION", 0);
 		//Contact Person

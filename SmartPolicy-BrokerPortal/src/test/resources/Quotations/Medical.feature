@@ -23,8 +23,8 @@ When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Plan A" as insurance class
-When user enter "01/01/2000" as date of birth
-When user select "Self" as relationship
+When user enter "01-Jan-2000" as date of birth
+When user select "SELF" as relationship
 When user enter "160000" as total premium
 When user click on insert button
 #Addon
@@ -53,8 +53,8 @@ When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user select "Plan A" as insurance class
-When user enter "01/01/2000" as date of birth
-When user select "Self" as relationship
+When user enter "01-Jan-2000" as date of birth
+When user select "SELF" as relationship
 When user enter "160000" as total premium
 When user click on insert button
 When user click on save button
@@ -94,10 +94,10 @@ When user enter "Covering Details 10250 + Health CARE" as covering details
 When user enter "Description of Risk 21582 +RISK COVERED" as description of risk
 #Policy Information
 When user select "Plan A" as insurance class
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user select "Birth Certificate" as ID type
 When user enter "YTG1220S02" as ID number
-When user select "Self" as relationship
+When user select "SELF" as relationship
 When user enter "600000" as sum assured
 When user enter "TravellingTOAFrica12032" as pre existing condition
 #Limits & Premiums
@@ -168,7 +168,7 @@ Then user able to view "Awaiting Receipt" as status
    When user click on select icon to edit details
    When user select "Plan A" as insurance class
    When user enter "01/01/2005" as date of birth
-   When user select "Self" as relationship
+   When user select "SELF" as relationship
    When user enter "120000" as total premium
    When user click on update button to save policy information
    When user click on update button

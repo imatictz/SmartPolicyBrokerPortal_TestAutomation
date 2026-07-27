@@ -6,7 +6,10 @@
           >
 
         <classes>
-            <class name="testRunner.RunnerTestBondsQuotation"/>
+            <class name="testRunner.RunnerTestCompanyProfile"/>
+            <class name="testRunner.RunnerTestManageSequences"/>
+            <class name="testRunner.RunnerTestTargetDetails"/>
+            <class name="testRunner.RunnerTestUserMaintenance"/>
         </classes>
     </test>
    

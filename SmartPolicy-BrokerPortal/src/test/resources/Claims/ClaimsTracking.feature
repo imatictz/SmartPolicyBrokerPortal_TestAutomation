@@ -227,7 +227,7 @@ Then user click on manage claim
       | Sum Insured        | 
  # And the user should be able to send the risk note to the printer
  
-@editAccidentalDamageClaims
+@editAccidentalDamageClaims   @edit
 Scenario: (Accidental Damage Claim) Verify user able to edit and save claim successfully
 When user select "01-Jan-2026" as from date
 When user enter "Accident Cover" as Cover Information
@@ -344,7 +344,7 @@ When user enter reported date
 When user select "Email" as reported type
 When user select "Critical Illness(CI)" as nature of loss/claim type
 When user enter date of death/illnes/others
-When user select "passenger" as claimant circumstances
+When user select "Motorcycle Passenger" as claimant circumstances
 When user enter "450000" as claimant amount
 When user enter "Medical Loss" as circumstances of accidents
 And user click on update button
@@ -464,7 +464,7 @@ When user enter reported date
 #Claimant Details
 When user select "Email" as reported type
 When user select "Critical Illness(CI)" as nature of loss/claim type
-When user select "passenger" as claimant circumstances
+When user select "Motorcycle Passenger" as claimant circumstances
 When user enter "2000000" as claimant amount
 When user enter "Group Life Loss" as circumstances of accidents
 And user click on update button
@@ -495,7 +495,7 @@ When user enter reported date
 When user select "Email" as reported type
 When user select "Critical Illness(CI)" as nature of loss/claim type
 When user enter date of death/illnes/others
-When user select "passenger" as claimant circumstances
+When user select "Motorcycle Passenger" as claimant circumstances
 When user enter "450000" as claimant amount
 When user enter "Medical Loss" as circumstances of accidents
 And user click on update button

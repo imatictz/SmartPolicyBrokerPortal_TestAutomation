@@ -93,7 +93,7 @@ Then user able to view "Awaiting Receipt" as status
    #Then user able to view "1003-Information modified successfully" as message
 
 @PrintQuote
- Scenario: User prints the Individual Personal Accident quote
+ Scenario: User prints the Workmens (With Liability) quote
    When user select "01-Jan-2026" as from date
    When user enter "Workmens (With Liability)" as Insurance Type
    When user click on search button to find "Workmens (With Liability)" quote

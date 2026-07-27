@@ -10,7 +10,7 @@ public class TargetDetails {
 	@Then("user click on Target Details option")
 	public void user_click_on_company_option() throws InterruptedException {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='Span64']";
+		input[0]="//*[@id='span_targets_lc']";
 		SeleniumOperations.clickOnElement(input);
 		Thread.sleep(2000);
 	}

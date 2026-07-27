@@ -10,13 +10,41 @@
           <include name="runScenario" invocation-numbers="3"/>
         </methods>
       </class> <!-- testRunner.RunnerTestTravelInsuranceQuotation -->
-      <class name="testRunner.RunnerTestReports">
+      <class name="testRunner.RunnerTestPensionQuotation">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="99 58 139"/>
+          <include name="runScenario" invocation-numbers="2"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- testRunner.RunnerTestReports -->
+      </class> <!-- testRunner.RunnerTestPensionQuotation -->
+      <class name="testRunner.RunnerTestClaims">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="10"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestClaims -->
+      <class name="testRunner.RunnerTestEndorsementScreen">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="8"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestEndorsementScreen -->
+      <class name="testRunner.RunnerTestEndorsement">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="24 25 26 27"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestEndorsement -->
+      <class name="testRunner.RunnerTestMedicalQuotation">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="4"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestMedicalQuotation -->
       <class name="testRunner.RunnerTestVehicleQuotation">
         <methods>
           <include name="setUpClass"/>
@@ -24,27 +52,13 @@
           <include name="runScenario" invocation-numbers="7"/>
         </methods>
       </class> <!-- testRunner.RunnerTestVehicleQuotation -->
-      <class name="testRunner.RunnerTestClaims">
+      <class name="testRunner.RunnerTestReports">
         <methods>
           <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="1"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestClaims -->
-      <class name="testRunner.RunnerTestEndorsementScreen">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="8"/>
+          <include name="runScenario" invocation-numbers="98 99 115 58 139 175"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- testRunner.RunnerTestEndorsementScreen -->
-      <class name="testRunner.RunnerTestEndorsement">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="24"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestEndorsement -->
+      </class> <!-- testRunner.RunnerTestReports -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [SmartPoilcy] -->

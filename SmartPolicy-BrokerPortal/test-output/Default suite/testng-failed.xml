@@ -3,13 +3,13 @@
 <suite data-provider-thread-count="2" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testRunner.RunnerTestPayment">
+      <class name="testRunner.RunnerTestEndorsement">
         <methods>
           <include name="setUpClass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- testRunner.RunnerTestPayment -->
+      </class> <!-- testRunner.RunnerTestEndorsement -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

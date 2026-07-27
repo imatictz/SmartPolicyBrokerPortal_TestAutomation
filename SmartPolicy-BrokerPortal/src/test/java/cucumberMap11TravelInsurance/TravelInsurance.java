@@ -516,7 +516,7 @@ public class TravelInsurance {
 	            "//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]",
 	            "(//*[@class='select2-search__field'])[1]",
 	            data.get("Insurance Type"),
-	            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])[2]",
+	            "(//*[contains(@data-select2-id,'MainContent_cmbPopInsuranceType-result')])[3]",
 	            "user select Insurance Type",
 	            "DROPDOWN",
 	            4000

@@ -10,7 +10,7 @@ public class UserMaintenance {
 	@Then("user click on User Maintenance option")
 	public void user_click_on_company_option() throws InterruptedException {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='Span44']";
+		input[0]="//*[@id='span_userMaintenance_lc']";
 		SeleniumOperations.clickOnElement(input);
 		Thread.sleep(2000);
 	}

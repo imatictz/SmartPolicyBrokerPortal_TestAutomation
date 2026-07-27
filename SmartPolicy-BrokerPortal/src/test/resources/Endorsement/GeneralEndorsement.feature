@@ -500,7 +500,7 @@ When user select General Endorsements as endorsement type
 #BrokerPortal
 When user enter risk note number to search policy
 When user click on fetch button
-When user enter "46548-12446-54984" as cover note number
+#When user enter "46548-12446-54984" as cover note number
 When user select non-financial endorsement
 When user enter "Pravin Testing Non Financial Change1" to make change in insured name
 When user enter "Testing cover details" to make change in covering details

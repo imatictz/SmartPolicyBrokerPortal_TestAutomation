@@ -22,7 +22,7 @@ When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user enter "Pravin Testing" as insured name
-When user select "01/01/2000"date of birth
+When user select "01-Jan-2000"date of birth
 When user enter "2000000" as loan amount
 When user enter "180" as period in month
 When user select "Business Banking" as client type
@@ -34,13 +34,13 @@ When user click on addOn button
 When user click on extension dropdown
 When user enter "Terrorism" as extension
 When user select on Terrorism as extension
-When user enter "Credit Life Quotation AddOn" as description (AddOn)
 When user enter "100000" as sum insured (AddOn)
 When user enter "2.5" as rate%
+When user enter "Credit Life Quotation AddOn" as description (AddOn)
 When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission rate alert message
-Then user able to view "Awaiting Receipt" as status
+Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
 Scenario: (Credit Life Quotation)Verify user able to enter mandatory fields and save quotation successfully
@@ -57,7 +57,7 @@ When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user enter "Pravin Testing" as insured name
-When user select "01/01/2000"date of birth
+When user select "01-Jan-2000"date of birth
 When user enter "2000000" as loan amount
 When user enter "180" as period in month
 When user select "Business Banking" as client type
@@ -103,7 +103,7 @@ Then user select Profit making as loss ratio forecast
 When user enter "123459876501234" as cover note
 #Policy Information
 When user enter "Pravin Testing" as insured name
-When user select "01/01/2000"date of birth
+When user select "01-Jan-2000"date of birth
 When user enter "YES" as collateral given
 When user enter "Bahi" as branch name
 When user enter "Birth Certificate" as ID type
@@ -172,7 +172,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
    #Financial Change
    When user click on select icon to edit details
    When user enter "Pravin Testing" as insured name
-   When user select "01/01/2000"date of birth
+   When user select "01-Jan-2000"date of birth
    When user enter "1000000" as loan amount
    When user enter "120" as period in month
    When user select "Commercial Banking" as client type

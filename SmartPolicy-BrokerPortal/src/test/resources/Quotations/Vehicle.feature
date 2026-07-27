@@ -26,7 +26,7 @@ When user enter "Registered" as motor type
 When user click on Registered as motor type
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
-When user select "sole Proprietor" as owner category
+When user select "Sole Proprietor" as owner category
 When user select "Private" as motor usage
 When user enter "CODE" as registration number
 When user enter "632541A" as chasis number
@@ -84,7 +84,7 @@ When user enter "Registered" as motor type
 When user click on Registered as motor type
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
-When user select "sole Proprietor" as owner category
+When user select "Sole Proprietor" as owner category
 When user select "Private" as motor usage
 When user enter "CODE" as registration number
 When user enter "632541Al" as chasis number
@@ -182,7 +182,7 @@ Then user select By Percent as by percent/amount
 When user enter "1200" as stamp duty
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "2 Wheel Comprehensive (Private)" as insurance class
-When user select "sole Proprietor" as owner category
+When user select "Sole Proprietor" as owner category
 When user select "Private" as motor usage
 When user enter "CODE" as registration number
 When user enter "632541A" as chasis number

@@ -17,7 +17,7 @@
      <class name="testRunner.RunnerTestPackagePolicyQuotation"/>
      <class name="testRunner.RunnerTestPensionQuotation"/>
      <class name="testRunner.RunnerTestVehicleQuotation"/>
-  <!--   <class name="testRunner.RunnerTestEduCareLifeInsuranceQuotation"/>-->
+     <class name="testRunner.RunnerTestEduCareLifeInsuranceQuotation"/>
      <class name="testRunner.RunnerTestTravelInsuranceQuotation"/>
      <class name="testRunner.RunnerTestworkmens"/> 
      <class name="testRunner.RunnerTestRiskNote_DebitNote"/>
@@ -27,7 +27,8 @@
      <class name="testRunner.RunnerTestPayment"/>
      <class name="testRunner.RunnerTestEndorsement"/>
      <class name="testRunner.RunnerTestEndorsementScreen"/>
-    <!-- <class name="testRunner.RunnerTestReports"/>-->
+     <class name="testRunner.RunnerTestRenewPolicy"/>
+     <class name="testRunner.RunnerTestReports"/>
       
       
     </classes>
