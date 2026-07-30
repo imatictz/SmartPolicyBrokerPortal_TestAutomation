@@ -7,7 +7,7 @@
         <methods>
           <include name="setUpClass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="3"/>
+          <include name="runScenario" invocation-numbers="1 3"/>
         </methods>
       </class> <!-- testRunner.RunnerTestTravelInsuranceQuotation -->
       <class name="testRunner.RunnerTestPensionQuotation">
@@ -35,7 +35,7 @@
         <methods>
           <include name="setUpClass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="24 25 26 27"/>
+          <include name="runScenario" invocation-numbers="24 25"/>
         </methods>
       </class> <!-- testRunner.RunnerTestEndorsement -->
       <class name="testRunner.RunnerTestMedicalQuotation">
@@ -52,6 +52,13 @@
           <include name="runScenario" invocation-numbers="7"/>
         </methods>
       </class> <!-- testRunner.RunnerTestVehicleQuotation -->
+      <class name="testRunner.RunnerTestBondsQuotation">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="2"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestBondsQuotation -->
       <class name="testRunner.RunnerTestReports">
         <methods>
           <include name="setUpClass"/>

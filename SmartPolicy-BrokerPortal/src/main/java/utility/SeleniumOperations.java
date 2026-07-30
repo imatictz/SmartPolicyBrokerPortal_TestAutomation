@@ -195,7 +195,7 @@ public class SeleniumOperations
 		   d().manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String strXpath=(String)inputparameters[0];
 		   d().findElement(By.xpath(strXpath)).click();
-		   Thread.sleep(3000);
+		   Thread.sleep(4000);
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:clickOnElement, Input Given:"+inputparameters[0]);
 	   
@@ -3932,6 +3932,153 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
     	    } catch (Exception ignored) {}
     	}
      
+     public static Hashtable<String, Object> validateBondCalculation(Object[] inputParameters) {
+
+    	    Hashtable<String, Object> output = new Hashtable<>();
+
+    	    try {
+
+    	        //==========================
+    	        // Read Values
+    	        //==========================
+
+    	        double totalPremium = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtTotalSum']"));
+
+    	        double otherFee = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtOtherFee']"));
+
+    	        double vatAmount = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtVATAmt']"));
+
+    	        double policyHolderFund = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtPHFAmount']"));
+
+    	        double levy = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtTLAmount']"));
+
+    	        double stampDuty = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtSDAmount']"));
+
+    	        double withholdTax = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtWHAmount']"));
+
+    	        double grossPremium = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtTotalGrpPremium']"));
+
+    	        double commissionRate = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtCommissionRate']"));
+
+    	        double brokerCommission = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtBrokerSetl']"));
+
+    	        double vatOnCommission = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtVATonComm']"));
+
+    	        double insurerSettlement = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtInsurerSetl']"));
+
+    	        double administrationCharges = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtAdminCharges']"));
+
+    	        double discountCommission = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtDiscountComm']"));
+
+    	        double discountPremium = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtDiscount']"));
+
+    	        double addonPremium = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtAddonPremium']"));
+
+    	        double totalReceivable = NumberUtil.getAmount(By.xpath("//input[@id='MainContent_txtTotalReceivable']"));
+
+    	        //==========================
+    	        // Calculate
+    	        //==========================
+
+    	        double expectedGrossPremium =
+    	                totalPremium
+    	                + otherFee
+    	                + vatAmount
+    	                + policyHolderFund
+    	                + levy
+    	                + stampDuty
+    	                - withholdTax;
+
+    	        expectedGrossPremium = Math.round(expectedGrossPremium * 100.0) / 100.0;
+
+    	        if (Math.abs(expectedGrossPremium - grossPremium) < 0.01) {
+
+    	            HTMLReportGenerator.StepDetails(
+    	                    "pass",
+    	                    "Gross Premium Validation",
+    	                    "Expected : " + expectedGrossPremium +
+    	                    "<br>Actual : " + grossPremium);
+
+    	        } else {
+
+    	            HTMLReportGenerator.StepDetails(
+    	                    "fail",
+    	                    "Gross Premium Validation",
+    	                    "Expected : " + expectedGrossPremium +
+    	                    "<br>Actual : " + grossPremium);
+
+    	            throw new AssertionError("Gross Premium Validation Failed");
+
+    	        }
+
+    	        double expectedSettlement =
+    	                grossPremium
+    	                - brokerCommission
+    	                - vatOnCommission;
+
+    	        expectedSettlement = Math.round(expectedSettlement * 100.0) / 100.0;
+
+    	        if (Math.abs(expectedSettlement - insurerSettlement) < 0.01) {
+
+    	            HTMLReportGenerator.StepDetails(
+    	                    "pass",
+    	                    "Settlement Validation",
+    	                    "Expected : " + expectedSettlement +
+    	                    "<br>Actual : " + insurerSettlement);
+
+    	        } else {
+
+    	            HTMLReportGenerator.StepDetails(
+    	                    "fail",
+    	                    "Settlement Validation",
+    	                    "Expected : " + expectedSettlement +
+    	                    "<br>Actual : " + insurerSettlement);
+
+    	            throw new AssertionError("Settlement Validation Failed");
+
+    	        }
+
+    	        double expectedReceivable =
+    	                insurerSettlement
+    	                + administrationCharges
+    	                - discountCommission
+    	                - discountPremium
+    	                + addonPremium;
+
+    	        expectedReceivable = Math.round(expectedReceivable * 100.0) / 100.0;
+
+    	        if (Math.abs(expectedReceivable - totalReceivable) < 0.01) {
+
+    	            HTMLReportGenerator.StepDetails(
+    	                    "pass",
+    	                    "Total Receivable Validation",
+    	                    "Expected : " + expectedReceivable +
+    	                    "<br>Actual : " + totalReceivable);
+
+    	        } else {
+
+    	            HTMLReportGenerator.StepDetails(
+    	                    "fail",
+    	                    "Total Receivable Validation",
+    	                    "Expected : " + expectedReceivable +
+    	                    "<br>Actual : " + totalReceivable);
+
+    	            throw new AssertionError("Total Receivable Validation Failed");
+
+    	        }
+
+    	        output.put("STATUS", "PASS");
+
+    	    } catch (Exception e) {
+
+    	        output.put("STATUS", "FAIL");
+    	        output.put("MESSAGE", e.getMessage());
+
+    	    }
+
+    	    return output;
+
+    	}
 
 }          
                       

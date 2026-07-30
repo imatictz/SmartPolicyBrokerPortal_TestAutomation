@@ -63,7 +63,7 @@ public class EduCareLifeInsurance {
 		input[1]="//*[@class='select2-search__field']";
 		input[2]=insuranceType;
 		input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
-		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		Hashtable<String,Object> output=SeleniumOperations.dropdownTest(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 		Thread.sleep(5000);
 		

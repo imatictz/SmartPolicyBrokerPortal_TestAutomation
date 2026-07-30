@@ -107,7 +107,7 @@ public class Workmens {
 	    if (data.get("Insurance Class") != null) {
 	        Itl.CustomDropdownEvent(
 	                "//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]",
-	                "(//*[@class='select2-search__field'])",
+	                "(//*[@class='select2-search__field'])[2]",
 	                data.get("Insurance Class"),
 	                "(//*[contains(@data-select2-id,'MainContent_cmbInsuranceClass-result')])",
 	                "Select Insurance Class",

@@ -10,6 +10,7 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
@@ -68,7 +69,7 @@ public class AccidentalDamage
 			input[1]="//*[@class='select2-search__field']";
 			input[2]=insuranceType;
 			input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
-			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
+			Hashtable<String,Object> output=SeleniumOperations.dropdownTest(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);
 		}
@@ -795,7 +796,35 @@ public class AccidentalDamage
 					"TEXTBOX",
 					0);
 		}
-		
+		@Then("user validates quotation calculations")
+		public void validateQuotationCalculation() {
+
+		    Object[] input = {};
+
+		    Hashtable<String, Object> output =
+		            SeleniumOperations.validateBondCalculation(input);
+
+		    // Safe read from Hashtable
+		    String status = output.containsKey("STATUS")
+		            ? output.get("STATUS").toString()
+		            : "FAIL";
+
+		    String message = output.containsKey("MESSAGE")
+		            ? output.get("MESSAGE").toString()
+		            : "No message returned from validation.";
+
+		    // Print in Extent Report
+		    HTMLReportGenerator.StepDetails(
+		            status,
+		            "User validates quotation calculations",
+		            message);
+
+		    // Fail the test if validation failed
+		    Assert.assertEquals(
+		            status,
+		            "PASS",
+		            message);
+		}
 		
 		
 		

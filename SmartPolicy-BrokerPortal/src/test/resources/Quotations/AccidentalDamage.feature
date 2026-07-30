@@ -71,6 +71,7 @@ When user enter "5" as weeks
 When user enter "Accidental Damage Quotation Testing" as description
 When user click on compute button
 When user click on insert button
+Then user validates quotation calculations
 When user click on save button
 When user click on Ok button to accept commission alert
 Then user able to view "Awaiting Receipt" as status
@@ -141,7 +142,8 @@ When user click on insert button (AddOn)
 When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 #Then user click on Re-Compute premium
-When user click on save button
+Then user validates quotation calculations
+#When user click on save button
 When user click on Ok button to accept commission alert
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
@@ -192,6 +194,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
    When user enter "Accidental Damage Quotation Testing" as description
    When user click on compute button
    When user click on update button to save policy information
+   Then user validates quotation calculations
    When user click on update button
    When user click on Ok button to accept commission alert
    Then user able to view "Pravin Edit Test" as message

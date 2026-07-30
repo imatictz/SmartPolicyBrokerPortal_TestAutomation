@@ -23,7 +23,7 @@ When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user enter "Pravin Testing" as insured name
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "3500000" as sum assured
 When user enter "420000" as premium
 When user click on insert button
@@ -52,7 +52,7 @@ When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user enter "Pravin Testing" as insured name
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "3500000" as sum assured
 When user enter "420000" as premium
 When user click on insert button
@@ -89,7 +89,7 @@ Then user select Profit making as loss ratio forecast
 
 #Policy Information
 When user enter "Pravin Testing" as insured name
-When user enter "01/01/2000" as date of birth
+When user enter "01-Jan-2000" as date of birth
 When user enter "3500000" as sum assured
 When user enter "420000" as premium
 When user enter "Birth Certificate" as ID type

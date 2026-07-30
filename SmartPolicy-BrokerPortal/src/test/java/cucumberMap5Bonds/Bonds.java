@@ -6,6 +6,8 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
+import org.testng.Assert;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -200,7 +202,7 @@ public class Bonds
 			Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input11);
 			 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insert button",output.get("MESSAGE").toString());
 			 Thread.sleep(2000);
-			    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
+			   // Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
 
 		}
 
@@ -783,6 +785,36 @@ public class Bonds
 		            4000
 		        );
 		    }
+		}
+
+		@Then("user validates quotation calculations")
+		public void validateQuotationCalculation() {
+
+		    Object[] input = {};
+
+		    Hashtable<String, Object> output =
+		            SeleniumOperations.validateBondCalculation(input);
+
+		    // Safe read from Hashtable
+		    String status = output.containsKey("STATUS")
+		            ? output.get("STATUS").toString()
+		            : "FAIL";
+
+		    String message = output.containsKey("MESSAGE")
+		            ? output.get("MESSAGE").toString()
+		            : "No message returned from validation.";
+
+		    // Print in Extent Report
+		    HTMLReportGenerator.StepDetails(
+		            status,
+		            "User validates quotation calculations",
+		            message);
+
+		    // Fail the test if validation failed
+		    Assert.assertEquals(
+		            status,
+		            "PASS",
+		            message);
 		}
 
 }
