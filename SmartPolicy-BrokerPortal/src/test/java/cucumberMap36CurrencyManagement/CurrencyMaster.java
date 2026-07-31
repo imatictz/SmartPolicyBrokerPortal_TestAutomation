@@ -20,14 +20,14 @@ public class CurrencyMaster {
 	@When("user navigate on currency management option")
 	public void user_navigate_on_currency_management_option() throws InterruptedException {
 		Object[] input7=new Object[1];
-	    input7[0]="//*[@id='span129']";
+	    input7[0]="//*[@id='span_currencyManagement_lc']";
 	    SeleniumOperations.actionClass(input7);
 	    Thread.sleep(2000);
 	}
 	@Then("user click on currency maintainance option")
 	public void user_click_on_currency_maintainance_option() throws InterruptedException {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='Span62']";
+		input[0]="//*[@id='span_currencyMaintenance_lc']";
 		SeleniumOperations.clickOnElement(input);
 		Thread.sleep(2000);
 	}
@@ -128,6 +128,14 @@ public class CurrencyMaster {
 	    		"user click on edit button", 
 	    		"CLICK",
 	    		2000);
+	}
+	@Then ("user get {string} as message")
+	public void validation2(String status) throws InterruptedException{
+        Itl.CustomValidationEvent("//*[@id='MainContent_lblErrorMsg']",
+        		status, 
+        		"user get {string} as message",
+        		"VALIDATION",
+        		0);
 	}
 	
 }

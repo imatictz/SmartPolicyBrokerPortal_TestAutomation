@@ -3,13 +3,13 @@
 <suite data-provider-thread-count="2" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testRunner.RunnerTestAccidentalDamageQuotation">
+      <class name="testRunner.RunnerTestCurrencyHistory">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- testRunner.RunnerTestAccidentalDamageQuotation -->
+      </class> <!-- testRunner.RunnerTestCurrencyHistory -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

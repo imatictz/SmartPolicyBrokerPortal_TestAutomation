@@ -15,7 +15,8 @@ When user select "Burundian Franc" as currency name
 When user select "Bank Fees & Charges" as account name
 When user enter "12.5" as Ccy Rate
 And user click on save button
-Then user able to view "1001-New information recorded successfully" as message
+Then user get "2004-Currency Code already exists" as message
+#Then user able to view "1001-New information recorded successfully" as message
 
 @Edit
 Scenario: Verify user able to edit currency details

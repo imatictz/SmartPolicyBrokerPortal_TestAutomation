@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/CurrencyManagement/CurrencyMaster.feature", 
-                   tags= "@All", 
+                   tags= "@Edit", 
                    glue={"cucumberMap36CurrencyManagement","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

@@ -13,7 +13,7 @@ public class CurrencyHistory {
 	@Then("user click on currency history option")
 	public void user_click_on_currency_history_option() throws InterruptedException {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='Span63']";
+		input[0]="//*[@id='span_currencyHistory_lc']";
 		SeleniumOperations.clickOnElement(input);
 		Thread.sleep(2000);
 	}
