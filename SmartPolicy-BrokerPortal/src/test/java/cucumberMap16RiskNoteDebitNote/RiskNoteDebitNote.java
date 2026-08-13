@@ -20,7 +20,7 @@ public class RiskNoteDebitNote {
 	@When("^user navigate on quotations menu$")
 	public void user_navigate_on_quotations_menu() {
 		Object[] input8=new Object[1];
-	    input8[0]="(//*[text()='Quotations '])[1]";
+	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 	    SeleniumOperations.actionClass(input8);
 	}
 
@@ -32,10 +32,12 @@ public class RiskNoteDebitNote {
 	}
 
 	@When("^user click on current quotations$")
-	public void user_click_on_current_quotations() {
+	public void user_click_on_current_quotations() throws InterruptedException {
 		Object[] input9=new Object[1];
-	    input9[0]="(//*[text()='Current Quotations'])[1]";
+	    input9[0]="//*[@id='MNU_wfFIQNM']";
 	    SeleniumOperations.clickOnElement(input9);
+	    Thread.sleep(2000);
+	   // SeleniumOperations.getRiskNo();
 	}
 	
 	@When("^user click on capture receipt icon$")
@@ -50,7 +52,7 @@ public class RiskNoteDebitNote {
 	@When("^user click on mode dropdown$")
 	public void user_click_on_mode_dropdown() throws Throwable {
 		Object[] input=new Object[1];
-		input[0]="//*[@id='s2id_MainContent_cmbMode']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbMode')]";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on mode dropdown",output.get("MESSAGE").toString());
 	    Thread.sleep(2000);
@@ -59,7 +61,7 @@ public class RiskNoteDebitNote {
 	@When("^user enter \"([^\"]*)\" as mode$")
 	public void user_enter_as_mode(String mode) throws Throwable {
 		Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
+	    input[0]="//*[@class='select2-search__field']";
 	    input[1]=mode;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Electronic Funds Transfer (EFT)\" as mode",output.get("MESSAGE").toString());  
@@ -68,7 +70,7 @@ public class RiskNoteDebitNote {
 	@When("^user select Electronic Funds Transfer \\(EFT\\) as mode$")
 	public void user_select_Electronic_Funds_Transfer_EFT_as_mode() throws Throwable {
 		Object[] input=new Object[1];
-		input[0]="//*[@CLASS='select2-match']";
+		input[0]="(//*[contains(@data-select2-id,'MainContent_cmbMode')])[2]";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Electronic Funds Transfer (EFT) as mode",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -77,7 +79,7 @@ public class RiskNoteDebitNote {
 	@When("^user click on issuer bank dropdown$")
 	public void user_click_on_issuer_bank_dropdown() throws Throwable {
 		Object[] input=new Object[1];
-		input[0]="//*[@id='s2id_MainContent_cmbClientBank']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbClientBank')]";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on issuer bank dropdown",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -86,7 +88,7 @@ public class RiskNoteDebitNote {
 	@When("^user enter \"([^\"]*)\" as issuer bank$")
 	public void user_enter_as_issuer_bank(String issuerBank ) throws Throwable {
 		Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
+	    input[0]="//*[@class='select2-search__field']";
 	    input[1]=issuerBank;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Absa Group Limited\" as issuer bank",output.get("MESSAGE").toString());  
@@ -95,7 +97,7 @@ public class RiskNoteDebitNote {
 	@When("^user select Absa Group Limited as issuer bank$")
 	public void user_select_Absa_Group_Limited_as_issuer_bank() throws Throwable {
 		Object[] input=new Object[1];
-		input[0]="//*[@CLASS='select2-match']";
+		input[0]="(//*[contains(@data-select2-id,'MainContent_cmbClientBank')])[2]";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Absa Group Limited as issuer bank",output.get("MESSAGE").toString()); 
 		Thread.sleep(2000);
@@ -104,7 +106,7 @@ public class RiskNoteDebitNote {
 	@When("^user click on collecting bank dropdown$")
 	public void user_click_on_collecting_bank_dropdown() throws Throwable {
 		Object[] input=new Object[1];
-		input[0]="//*[@id='s2id_MainContent_cmbInsurerBank']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbInsurerBank')]";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on collecting bank dropdown",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -113,7 +115,7 @@ public class RiskNoteDebitNote {
 	@When("^user enter \"([^\"]*)\" as collecting bank$")
 	public void user_enter_as_collecting_bank(String collectingBank) throws Throwable {
 		Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
+	    input[0]="//*[@class='select2-search__field']";
 	    input[1]=collectingBank;
 	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Uchumi Commercial Bank\" as collecting bank",output.get("MESSAGE").toString());  
@@ -122,7 +124,7 @@ public class RiskNoteDebitNote {
 	@When("^user select Uchumi Commercial Bank as collecting bank$")
 	public void user_select_Uchumi_Commercial_Bank_as_collecting_bank() throws Throwable {
 		Object[] input=new Object[1];
-		input[0]="//*[@CLASS='select2-match']";
+		input[0]="(//*[contains(@data-select2-id,'MainContent_cmbInsurerBank')])[2]";
 		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Uchumi Commercial Bank as collecting bank",output.get("MESSAGE").toString()); 
 		Thread.sleep(2000);
@@ -709,12 +711,29 @@ public class RiskNoteDebitNote {
 	   
 	}
 	
-	@When("user enter {string} as quote number")
-	public void user_enter_as_quote_number(String quoteNo) throws InterruptedException {
-	    Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
+	@When ("user enter quote number to search {string} quote")
+	public void user_enter_as_quote_number(String quoteName) throws InterruptedException {
+		String quoteNo = SeleniumOperations.getriskNote(quoteName);
+		Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 0);
+		Thread.sleep(4000);
 	}
 	
-	@When("^user click on search button$")
+	@When ("user click on search button to find {string} quote")
+	 public void user_click_on_search_button_quoteNo1(String quoteName) throws Throwable {
+		 Object[] input=new Object[1];
+		 input[0]="//*[@id='button_btnSearch_lc']";
+		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+		 SeleniumOperations.getriskNote(quoteName);
+		 Thread.sleep(4000);
+	 }
+	
+	@When("user enter {string} as Insurance Type")
+	public void user_enter_as_insuranceType(String insuranceType) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtInsuranceType']", insuranceType, "user enter {string} as Insurance Type", "TEXTBOX", 0);
+	}
+	@When ("user click on search button")
 	 public void user_click_on_search_button_quoteNo() throws Throwable {
 		 Object[] input=new Object[1];
 		 input[0]="//*[@id='button_btnSearch_lc']";

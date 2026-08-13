@@ -7,7 +7,7 @@ When user navigate on operation dropdown menu
 When user navigate on quotations menu
 When user click on current quotations
 When user click on add button
-When user select "Money Insurance Cover" as insurance type 
+When user select "Bonds" as insurance type 
 When user click on Click here for New Client link
 
 @RegressionTest       @MandatoryFields
@@ -23,12 +23,7 @@ When user click on ID type dropdown
 When user enter "Birth certificate" to search ID type in search box
 When user click on birth certificate as ID type from dropdown
 When user enter "5412502145021003" as ID number
-When user click on date of birth icon
-When user click on previous button
-When user select year from calender
-When user select month from calender
-When user click on next button
-When user select day from calender
+When user enter "01/01/2000" as date of birth
 When user click on nationality dropdown
 When user enter "Tanzania" to search nationality in search box
 When user click on tanzania as nationality
@@ -47,7 +42,7 @@ When user enter "House No.12 XYZ World" as address
 When user enter "659544202" as mobile No One
 When user enter "xxxxxxx503@gmail.com" as email id one
 When user click on save button to save client details
-Then user able to view "Money Insurance Cover Quotation" as quotation
+Then user able to view "Bond Quotation" as quotation
 
 @AllFields
 Scenario: (ClientDetails) Enter new client details with all fields
@@ -64,12 +59,7 @@ When user click on birth certificate as ID type from dropdown
 When user enter "564548465468482003" as ID number
 When user enter "215112165151115" as TIN/PAN
 When user enter "32189412349515" as ZRB No
-When user click on date of birth icon
-When user click on previous button
-When user select year from calender
-When user select month from calender
-When user click on next button
-When user select day from calender
+When user enter "01/01/2000" as date of birth
 When user click on nationality dropdown
 When user enter "Tanzania" to search nationality in search box
 When user click on tanzania as nationality
@@ -93,7 +83,7 @@ When user click on bahi as district
 When user enter "Sector 5" as sector
 When user enter "Tree" as cell/street
 When user enter "Bahi" as village
-When user enter "212-693-2377" as fax
+#When user enter "212-693-2377" as fax
 When user enter "Person10" as profile ID
 When user click on profile category dropdown
 When user enter "Main" as profile category
@@ -119,7 +109,7 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "Money Insurance Cover Quotation" as quotation
+Then user able to view "Bond Quotation" as quotation
 
 
 @Corporate
@@ -139,9 +129,6 @@ When user enter "215112165151162" as TIN/PAN
 When user enter "321894123495" as ZRB No
 When user select "None" as Disability Status 
 When user select "Corporates" as Client Sub Status
-Then user select related party checkbox
-When user select "Shareholders" as related party
-When user select "Direct" as relationship
 When user click on business type dropdown
 When user enter "Automobile Manufacturing" as business type
 When user select Automobile Manufacturing as business type
@@ -160,7 +147,7 @@ When user click on bahi as district
 When user enter "Sector 5" as sector
 When user enter "Tree" as cell/street
 When user enter "Bahi" as village
-When user enter "212-693-2377" as fax
+#When user enter "212-693-2377" as fax
 When user enter "Person10" as profile ID
 When user click on profile category dropdown
 When user enter "Main" as profile category
@@ -170,6 +157,9 @@ When user enter "255-145236962" as Telephone No One
 When user enter "255-145236961" as Telephone No Two
 When user enter "255-145236963" as Telephone No Three
 When user enter "House No.12 XYZ World" as address
+Then user select related party checkbox
+When user select "Shareholders" as related party
+When user select "Direct" as relationship
 When user enter "659544202" as mobile No One
 When user enter "659544202" as mobile No Two
 When user enter "659544202" as mobile No Three
@@ -186,5 +176,5 @@ When user select medium as AML risk category
 When user enter "12/08/2023" as appointment date
 When user enter "02/06/2025" as mandate expiry
 When user click on save button to save client details
-Then user able to view "Money Insurance Cover Quotation" as quotation
+Then user able to view "Bond Quotation" as quotation
 

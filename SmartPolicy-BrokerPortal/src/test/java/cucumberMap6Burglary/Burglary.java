@@ -25,7 +25,7 @@ public class Burglary
 		public void user_navigate_on_quotations_menu() 
 		{
 			Object[] input8=new Object[1];
-		input8[0]="(//*[text()='Quotations '])[1]";
+		input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 		SeleniumOperations.actionClass(input8);
 		   
 		}
@@ -53,10 +53,10 @@ public class Burglary
 		@When("^user select \"([^\"]*)\" as insurance type$")
 		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 			Object[] input= new Object[4];
-			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
-			input[1]="//*[@class='select2-input select2-focused']";
+			input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
+			input[1]="//*[@class='select2-search__field']";
 			input[2]=insuranceType;
-			input[3]="//*[@class='select2-match']";
+			input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);
@@ -90,13 +90,13 @@ public class Burglary
 		}
 
 		@When("user select {string} as insurer")
-		public void user_select_as_insurer(String insurerName) throws InterruptedException {
-		    Object[] input = new Object[4];
-		    input[0] = "//*[@id='s2id_MainContent_cmbInsurer']";
-		    input[1] = "//*[@class='select2-input select2-focused']";
-		    input[2] = insurerName;
-		    input[3] = "(//*[@class='select2-match'])[1]";
-		    Hashtable<String, Object> output = SeleniumOperations.dropdown(input);
+		public void user_select_as_insurer(String insurer) throws InterruptedException {
+			Object[] input = new Object[4];
+		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
+		    input[1] = "//*[@class='select2-search__field']";
+		    input[2] = insurer;
+		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
+			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select {string} as insurer", output.get("MESSAGE").toString());
             Thread.sleep(2000);
 		}
@@ -106,7 +106,7 @@ public class Burglary
 		
 		@When ("user select {string} as insurance class")
 		public void user_select_as_insuranceClass(String insuranceClass) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsuranceClass']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]", "//*[@class='select2-search__field']", insuranceClass , "//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]", "user select {String} as insurance class", "DROPDOWN", 2000);
 
 		}
 		
@@ -173,11 +173,11 @@ public class Burglary
 		{
 			
 		   Object[] input=new Object[1];
-		   input[0]="//*[@id='s2id_MainContent_cmbAddons']";
+		   input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
 		   Object[] input1=new Object[1];
-		   input1[0]="//*[@id='s2id_MainContent_cmbAddons']";
+		   input1[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
 		   SeleniumOperations.clickOnElement(input1);
 		Thread.sleep(2000);
 		}
@@ -187,7 +187,7 @@ public class Burglary
 		 {
 			 
 			 Object[] input1=new Object[1];
-			   input1[0]="//*[@id='s2id_MainContent_cmbAddons']";
+			   input1[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
 			   Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input1);
 			   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
 			   Object[] input2=new Object[1];

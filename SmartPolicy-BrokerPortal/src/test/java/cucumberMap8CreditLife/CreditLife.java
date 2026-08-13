@@ -26,7 +26,7 @@ public class CreditLife
 		public void user_navigate_on_quotations_menu() 
 		{
 			Object[] input8=new Object[1];
-		input8[0]="(//*[text()='Quotations '])[1]";
+		input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 		SeleniumOperations.actionClass(input8);
 		   
 		}
@@ -54,10 +54,10 @@ public class CreditLife
 		@When("^user select \"([^\"]*)\" as insurance type$")
 		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 			Object[] input= new Object[4];
-			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
-			input[1]="//*[@class='select2-input select2-focused']";
+			input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
+			input[1]="//*[@class='select2-search__field']";
 			input[2]=insuranceType;
-			input[3]="(//*[@class='select2-match'])[2]";
+			input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);
@@ -87,15 +87,23 @@ public class CreditLife
 		@When("user select {string} as insurer")
 		public void user_select_as_insurer(String insurerName) {
 		    Object[] input = new Object[4];
-		    input[0] = "//*[@id='s2id_MainContent_cmbInsurer']";
-		    input[1] = "//*[@class='select2-input select2-focused']";
+		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
+		    input[1] = "//*[@class='select2-search__field']";
 		    input[2] = insurerName;
-		    input[3] = "(//*[@class='select2-match'])[1]";
+		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
 		    Hashtable<String, Object> output = SeleniumOperations.dropdown(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select {string} as insurer", output.get("MESSAGE").toString());
 
 		}
-
+		@When("user enter {string} as cover note number")
+		public void user_enter_as_cover_note_number(String coverNoteNumber) {
+			Object[] input=new Object[2];
+		    input[0]="//*[@id='MainContent_txtGridICN']";
+		    input[1]=coverNoteNumber;
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as cover note number",output.get("MESSAGE").toString());  
+		
+		}
 		@When("^user enter \"([^\"]*)\" as insured name$")
 		public void enterInsuredName(String insuredName) throws Throwable 
 		{
@@ -110,23 +118,16 @@ public class CreditLife
 		   Thread.sleep(2000);
 		}
 
-		@When ("^user select date of birth$")
-		public void selectDateOfBirth() throws Throwable
+		@When ("user select {string}date of birth")
+		public void selectDateOfBirth(String insuredName) throws Throwable
 		{
-			Object[] input1=new Object[1];
-		    input1[0]="(//*[@class='fa fa-calendar'])[4]";
-		    SeleniumOperations.clickOnElement(input1);
-		    Object[] input=new Object[6];
-		             input[0]="(//*[@class='fa fa-calendar'])[4]";
-		    		 input[1]="(//*[@class='prev'])[3]";
-		    		 input[2]="(//*[@class='prev'])[3]";
-		    		 input[3]="//*[text()='2000']";
-		    		 input[4]="//*[text()='Jan']";
-		    		 input[5]="(//*[text()='1'])[1]";
-		    		 
-		    		 Hashtable<String, Object> output= SeleniumOperations.date(input);
-		    		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select date of birth",output.get("MESSAGE").toString());
-		    		 Thread.sleep(2000);
+			
+			Object[] input=new Object[2];
+		    input[0]="//*[@id='MainContent_txtDOBDate']";
+		    input[1]=insuredName;
+		    Hashtable<String,Object> output=SeleniumOperations.sendKeys(input);
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select (String)date of birth",output.get("MESSAGE").toString());
+		    Thread.sleep(2000);
 		    		
 		}
 
@@ -157,12 +158,10 @@ public class CreditLife
 		{
 			
 			Object[] input=new Object[1];
-		    input[0]="//*[@id='s2id_MainContent_cmbClientType']";
+		    input[0]="//*[contains(@aria-controls,'MainContent_cmbClientType')]";
 		    Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on client type dropdown",output.get("MESSAGE").toString());
-		    Object[] input1=new Object[1];
-		    input1[0]="//*[@id='s2id_MainContent_cmbClientType']";
-		   SeleniumOperations.clickOnElement(input1);
+		    
 		   Thread.sleep(4000);
 		}
 
@@ -170,7 +169,7 @@ public class CreditLife
 		public void enterClientType(String clientType) throws Throwable 
 		{
 			Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
+		    input[0]="//*[@class='select2-search__field']";
 		    input[1]=clientType;
 		    Hashtable<String,Object> output=SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Business Banking\" as client type",output.get("MESSAGE").toString());
@@ -181,7 +180,7 @@ public class CreditLife
 		public void selectClientTypeResult() throws Throwable 
 		{
 			Object[] input=new Object[1];
-		    input[0]="//*[@class='select2-match']";
+		    input[0]="(//*[contains(@data-select2-id,'select2-data-select2-MainContent_cmbClientType-result')])[2]";
 		    Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Business Banking as client type",output.get("MESSAGE").toString());
 		    Thread.sleep(2000);
@@ -214,7 +213,7 @@ public class CreditLife
 		public void clickOnExtensionDropdown() throws Throwable 
 		{
 		   Object[] input=new Object[1];
-		   input[0]="(//*[@class='select2-chosen'])[16]";
+		   input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
 		   Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
 		   
@@ -224,7 +223,7 @@ public class CreditLife
 		public void enterExtension(String extension) throws Throwable
 		{
 		    Object[] input=new Object[2];
-		    input[0]="//*[@class='select2-input select2-focused']";
+		    input[0]="//*[@class='select2-search__field']";
 		    input[1]=extension;
 		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
 		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Terrorism\" as extension",output.get("MESSAGE").toString());
@@ -234,7 +233,7 @@ public class CreditLife
 		public void selectExtension() throws Throwable 
 		{
 		   Object[] input=new Object[1];
-		   input[0]="//*[@class='select2-match']";
+		   input[0]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
 		   Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
 		   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select on Terrorism as extension",output.get("MESSAGE").toString());
 		}

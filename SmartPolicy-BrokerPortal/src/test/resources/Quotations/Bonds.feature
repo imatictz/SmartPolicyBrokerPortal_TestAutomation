@@ -20,6 +20,7 @@ When user enter "2000000" as contract value
 When user enter "Bonds Quotation" as description
 When user click on compute button
 When user click on insert button
+#Addon
 When user click on addOn button
 When user click on extension dropdown
 When user enter "All Risk Cover" as extension
@@ -33,6 +34,21 @@ When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@MandatoryFieldsNoAddon
+Scenario: (Bonds Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user enter "Pravin Testing Broker" as client name
+When user select Pravin Testing as client name
+When user select "Automated Testing Company" as insurer
+When user enter "123459876501234" as cover note
+When user select "Advance Payment Bond 1" as insurance class
+When user enter "2000000" as contract value
+When user enter "Bonds Quotation" as description
+When user click on compute button
+When user click on insert button
+When user click on save button
+When user click on Ok button to accept commission rate alert message
+Then user able to view "Awaiting Receipt" as status
 
 
 
@@ -86,3 +102,11 @@ Then user click on Re-Compute premium
 When user click on save button
 When user click on Ok button to accept commission rate alert message
 Then user able to view "Required Approval" as status
+
+@alertMessage
+Scenario: Validate sequential alert messages and provide inputs
+When the user clicks save button without entering mandatory fields
+Then the system should display the alert message "2003-Please select Client Status"
+When user enter "Pravin Testing Broker" as client name
+When the user select Pravin Testing as client name
+#When the user clicks save button without entering mandatory fields

@@ -33,6 +33,21 @@ When user click on save button
 When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
+@MandatoryFieldsNoAddon
+Scenario: (Money Insurance Cover)Verify user able to enter mandatory fields and save quotation successfully
+When user enter "Pravin Testing Broker" as client name in quotation
+When user select client name as Pravin Testing
+When user Select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
+When user Select "Standard Rate" as insurance class
+When user enter "100000" as sum insured amount in policy information
+When user enter "Money Insurance Cover Testing" as description in policy information
+When user click on compute button
+When user click on insert button
+When user click on save button
+When user click on Ok button to accept commission rate alert message
+Then user able to view "Awaiting Receipt" as status
+
 
 @AllFields
 Scenario: (Money Insurance Cover)Verify user able to enter all fields and save quotation successfully

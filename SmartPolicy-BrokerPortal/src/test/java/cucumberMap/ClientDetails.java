@@ -20,14 +20,14 @@ public class ClientDetails {
 	@When("^user navigate on quotations menu$")
 	public void user_navigate_on_quotations_menu() {
 		Object[] input8=new Object[1];
-	    input8[0]="(//*[text()='Quotations '])[1]";
+	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 	    SeleniumOperations.actionClass(input8);
 	}
 
 	@When("^user click on current quotations$")
 	public void user_click_on_current_quotations() throws InterruptedException {
 		Object[] input9=new Object[1];
-	    input9[0]="(//*[text()='Current Quotations'])[1]";
+	    input9[0]="//*[@id='MNU_wfFIQNM']";
 	    SeleniumOperations.clickOnElement(input9);
 	    Thread.sleep(2000);
 	}
@@ -40,13 +40,13 @@ public class ClientDetails {
 	    Thread.sleep(4000);
 	}
 
-	@When("^user select \"([^\"]*)\" as insurance type$")
+	@When("user select {string} as insurance type")
 	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=insuranceType;
-		input[3]="//*[@class='select2-match']";
+		input[3]="(//*[contains(@data-select2-id,'-MainContent_cmbPopInsuranceType')])[2]";	
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 		Thread.sleep(5000);
@@ -64,7 +64,7 @@ public class ClientDetails {
 	@When("^user click on title dropdown$")
 	public void user_click_on_title_dropdown() throws InterruptedException {
 		Object[] input15=new Object[1];
-	    input15[0]="//*[@id='s2id_MainContent_cmbTitle']";
+	    input15[0]="//*[contains(@aria-controls,'MainContent_cmbTitle')]";
 	    Hashtable<String, Object> output15 = SeleniumOperations.clickOnElement(input15);
 	    HTMLReportGenerator.StepDetails(output15.get("STATUS").toString(),"^user click on title dropdown$",output15.get("MESSAGE").toString());  
 	    Thread.sleep(5000);
@@ -73,7 +73,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" as title in search box$")
 	public void user_enter_as_title_in_search_box(String Mr) throws InterruptedException {  
 		Object[] input16=new Object[2];
-		input16[0]="(//*[@class='select2-input select2-focused'])";
+		input16[0]="//*[@class='select2-search__field']";
 		input16[1]=Mr;
 		Hashtable<String, Object> output16 =SeleniumOperations.sendKeys(input16);
 		HTMLReportGenerator.StepDetails(output16.get("STATUS").toString(),"user enter \"Mr\" as title in search box",output16.get("MESSAGE").toString());
@@ -84,7 +84,7 @@ public class ClientDetails {
 	public void user_click_on_Mr_from_dropdown() throws InterruptedException {
 		Thread.sleep(5000);
 	    Object[] input17=new Object[1];
-	    input17[0]="(//*[@class='select2-match'])[1]";
+	    input17[0]="(//*[contains(@data-select2-id,'-MainContent_cmbTitle')])[2]";
 	    Hashtable<String, Object> output17 =SeleniumOperations.clickOnElement(input17);
 	    HTMLReportGenerator.StepDetails(output17.get("STATUS").toString(),"user click on Mr from dropdown",output17.get("MESSAGE").toString());
 	    Thread.sleep(2000);
@@ -125,7 +125,7 @@ public class ClientDetails {
 	@When("^user click on ID type dropdown$")
 	public void user_click_on_ID_type_dropdown() throws InterruptedException {
 		Object[] input21=new Object[1];
-	    input21[0]="//*[@id='s2id_MainContent_cmbIDType']";
+	    input21[0]="//*[contains(@aria-controls,'MainContent_cmbIDType')]";
 	    Hashtable<String, Object> output21 =SeleniumOperations.clickOnElement(input21);
 	    HTMLReportGenerator.StepDetails(output21.get("STATUS").toString(),"user click on ID type dropdown",output21.get("MESSAGE").toString());    
 	    Thread.sleep(2000);
@@ -134,7 +134,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" to search ID type in search box$")
 	public void user_enter_to_search_ID_type_in_search_box(String idType) throws InterruptedException {
 		Object[] input22=new Object[2];
-	    input22[0]="//*[@class='select2-input select2-focused']";
+	    input22[0]="//*[@class='select2-search__field']";
 	    input22[1]=idType;
 	    Hashtable<String, Object> output22 =SeleniumOperations.sendKeys(input22);
 	    HTMLReportGenerator.StepDetails(output22.get("STATUS").toString(),"user enter \"Birth certificate\" to search ID type in search box",output22.get("MESSAGE").toString());
@@ -144,7 +144,7 @@ public class ClientDetails {
 	@When("^user click on birth certificate as ID type from dropdown$")
 	public void user_click_on_birth_certificate_as_ID_type_from_dropdown() throws InterruptedException {
 		Object[] input23=new Object[1];
-	    input23[0]="(//*[@class='select2-results-dept-0 select2-result select2-result-selectable select2-highlighted'])";
+	    input23[0]="(//*[contains(@data-select2-id,'-MainContent_cmbIDType')])[2]";
 	    Hashtable<String, Object> output23 =SeleniumOperations.clickOnElement(input23);
 	    HTMLReportGenerator.StepDetails(output23.get("STATUS").toString(),"user click on birth certificate as ID type from dropdown",output23.get("MESSAGE").toString());
 	    Thread.sleep(2000);    
@@ -157,6 +157,16 @@ public class ClientDetails {
 	    input24[1]=idNumber;
 	    Hashtable<String, Object> output24 =SeleniumOperations.sendKeys(input24);
 	    HTMLReportGenerator.StepDetails(output24.get("STATUS").toString(),"user enter \"12345678901\" as ID number",output24.get("MESSAGE").toString());    
+	    Thread.sleep(2000);
+	}
+	
+	@When("^user enter \"([^\"]*)\" as date of birth$")
+	public void enterDateOfBirth(String dateOfBirth) throws Throwable {
+		Object[] input=new Object[2];
+	    input[0]="//*[@id='MainContent_txtDOB']";
+	    input[1]=dateOfBirth;
+	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"01/01/2000\" as date of birth",output.get("MESSAGE").toString()); 
 	    Thread.sleep(2000);
 	}
 
@@ -211,7 +221,7 @@ public class ClientDetails {
 	@When("^user click on nationality dropdown$")
 	public void user_click_on_nationality_dropdown() throws InterruptedException {
 		Object[] input31=new Object[1];
-		input31[0]="//*[@id='s2id_MainContent_cmbNationality']";
+		input31[0]="//*[contains(@aria-controls,'MainContent_cmbNationality')]";
 		Hashtable<String, Object> output31 =SeleniumOperations.clickOnElement(input31);
 		HTMLReportGenerator.StepDetails(output31.get("STATUS").toString(),"user click on nationality dropdown",output31.get("MESSAGE").toString()); 
 		Thread.sleep(2000);
@@ -220,7 +230,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" to search nationality in search box$")
 	public void user_enter_to_search_nationality_in_search_box(String nationality) {
 		Object[] input32=new Object[2];
-		input32[0]="//*[@class='select2-input select2-focused']";
+		input32[0]="//*[@class='select2-search__field']";
 		input32[1]=nationality;
 		Hashtable<String, Object> output32 =SeleniumOperations.sendKeys(input32);
 		HTMLReportGenerator.StepDetails(output32.get("STATUS").toString(),"user enter \"Tanzania\" to search nationality in search box",output32.get("MESSAGE").toString());
@@ -229,7 +239,7 @@ public class ClientDetails {
 	@When("^user click on tanzania as nationality$")
 	public void user_click_on_tanzania_as_nationality() throws InterruptedException {
 		Object[] input33=new Object[1];
-		input33[0]="//*[@class='select2-result-label']";
+		input33[0]="(//*[contains(@data-select2-id,'-MainContent_cmbNationality')])[2]";
 		Hashtable<String, Object> output33 =SeleniumOperations.clickOnElement(input33);
 		HTMLReportGenerator.StepDetails(output33.get("STATUS").toString(),"user click on tanzania as nationality",output33.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -247,7 +257,7 @@ public class ClientDetails {
 	@When("^user click on gender dropdown$")
 	public void user_click_on_gender_dropdown() throws InterruptedException {
 		Object[] input35=new Object[1];
-		input35[0]="//*[@id='s2id_MainContent_cmbclntGender']";
+		input35[0]="//*[contains(@aria-controls,'MainContent_cmbclntGender')]";
 		Hashtable<String, Object> output35 =SeleniumOperations.clickOnElement(input35); 
 		HTMLReportGenerator.StepDetails(output35.get("STATUS").toString(),"user click on gender dropdown",output35.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -256,7 +266,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" to search gender in search box$")
 	public void user_enter_to_search_gender_in_search_box(String gender) {
 		Object[] input36=new Object[2];
-		input36[0]="//*[@class='select2-input select2-focused']";
+		input36[0]="//*[@class='select2-search__field']";
 		input36[1]=gender;
 		Hashtable<String, Object> output36 =SeleniumOperations.sendKeys(input36); 
 		HTMLReportGenerator.StepDetails(output36.get("STATUS").toString(),"user enter \"Male\" to search gender in search box",output36.get("MESSAGE").toString());
@@ -265,7 +275,7 @@ public class ClientDetails {
 	@When("^user click on male as gender$")
 	public void user_click_on_male_as_gender() {
 		Object[] input37=new Object[1];
-		input37[0]="//*[@class='select2-match'][text()='Male']";
+		input37[0]="(//*[contains(@data-select2-id,'-MainContent_cmbclntGender')])[3]";
 		Hashtable<String, Object> output37 =SeleniumOperations.clickOnElement(input37); 
 		HTMLReportGenerator.StepDetails(output37.get("STATUS").toString(),"user click on male as gender",output37.get("MESSAGE").toString());
 	}
@@ -273,7 +283,7 @@ public class ClientDetails {
 	@When("^user click on region/province dropdown$")
 	public void user_click_on_region_province_dropdown() throws InterruptedException {
 		Object[] input38=new Object[1];
-		input38[0]="//*[@id='s2id_MainContent_cmbRegion']";
+		input38[0]="//*[contains(@aria-controls,'MainContent_cmbRegion')]";
 		Hashtable<String, Object> output38 =SeleniumOperations.clickOnElement(input38);
 		HTMLReportGenerator.StepDetails(output38.get("STATUS").toString(),"user click on region/province dropdown",output38.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -282,7 +292,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" to search region/province in search box$")
 	public void user_enter_to_search_region_province_in_search_box(String region) {
 		Object[] input39=new Object[2];
-		input39[0]="//*[@class='select2-input select2-focused']";
+		input39[0]="//*[@class='select2-search__field']";
 		input39[1]=region;
 		Hashtable<String, Object> output39 =SeleniumOperations.sendKeys(input39);
 		HTMLReportGenerator.StepDetails(output39.get("STATUS").toString(),"user enter \"Dodoma\" to search region/province in search box",output39.get("MESSAGE").toString());
@@ -291,7 +301,7 @@ public class ClientDetails {
 	@When("^user click on dodoma as region/province$")
 	public void user_click_on_dodoma_as_region_province() {
 		Object[] input40=new Object[1];
-		input40[0]="//*[@class='select2-match'][text()='Dodoma']";
+		input40[0]="(//*[contains(@data-select2-id,'-MainContent_cmbRegion')])[2]";
 		Hashtable<String, Object> output40 =SeleniumOperations.clickOnElement(input40);
 		HTMLReportGenerator.StepDetails(output40.get("STATUS").toString(),"user click on dodoma as region/province",output40.get("MESSAGE").toString());
 	}
@@ -300,7 +310,7 @@ public class ClientDetails {
 	public void user_click_on_district_dropdown() throws InterruptedException {   
 		Thread.sleep(2000);
 		Object[] input41=new Object[1];
-		input41[0]="//*[@id='s2id_MainContent_cmbDistrict']";
+		input41[0]="//*[contains(@aria-controls,'MainContent_cmbDistrict')]";
 		Hashtable<String, Object> output41 =SeleniumOperations.clickOnElement(input41); 
 		HTMLReportGenerator.StepDetails(output41.get("STATUS").toString(),"user click on district dropdown",output41.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -309,7 +319,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" to search district in search box$")
 	public void user_enter_to_search_district_in_search_box(String district){
 		Object[] input42=new Object[2];
-		input42[0]="//*[@class='select2-input select2-focused']";
+		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=district;
 		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \"Bahi\" to search district in search box",output42.get("MESSAGE").toString());
@@ -318,7 +328,7 @@ public class ClientDetails {
 	@When("^user click on bahi as district$")
 	public void user_click_on_bahi_as_district() {
 		Object[] input43=new Object[1];
-		input43[0]="//*[@class='select2-match'][text()='Bahi']";
+		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbDistrict')])[2]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user click on bahi as district",output43.get("MESSAGE").toString());
 	}
@@ -352,7 +362,7 @@ public class ClientDetails {
 	@Then ("^user able to view \"(.*)\" as quotation$")
 	public void validation(String validation) throws InterruptedException{
 		Object[] input=new Object[2];
-		input[0]="//*[@id='MainContent_lblQuoteHeader']";
+		input[0]="//*[contains(@id,'small_lbl')]";
 		input[1]=validation;
 		Hashtable<String,Object> output=SeleniumOperations.validation(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user is redirected to selected quotation page",output.get("MESSAGE").toString());
@@ -382,7 +392,7 @@ public class ClientDetails {
 	@When("^user click on occupation dropdown$")
 	public void user_click_on_occupation_dropdown() throws Throwable {
 	    Object[] input49=new Object[1];
-		input49[0]="//*[@id='s2id_MainContent_cmbOccupation']";
+		input49[0]="//*[contains(@aria-controls,'MainContent_cmbOccupation')]";
 		Hashtable<String, Object>  output49 =SeleniumOperations.clickOnElement(input49); 
 		HTMLReportGenerator.StepDetails(output49.get("STATUS").toString(),"user click on occupation dropdown",output49.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -391,7 +401,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" as occupation$")
 	public void user_enter_as_occupation(String occupation) throws Throwable {
 	    Object[] input42=new Object[2];
-		input42[0]="//*[@class='select2-input select2-focused']";
+		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=occupation;
 		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as occupation",output42.get("MESSAGE").toString());
@@ -400,7 +410,7 @@ public class ClientDetails {
 	@When("^user select banker as occupation$")
 	public void user_select_banker_as_occupation() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@class='select2-match']";
+		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbOccupation')])[2]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select banker as occupation",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -409,10 +419,10 @@ public class ClientDetails {
 	@When ("^user select \"(.*)\" as Disability Status$")
 	public void disabilityStatus(String status){
 		Object[] input=new Object[5];
-		input[0]="//*[@id='s2id_MainContent_cmbDisbSts']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbDisbSts')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=status;
-		input[3]="//*[@class='select2-match']";
+		input[3]="(//*[contains(@data-select2-id,'-MainContent_cmbDisbSts')])[2]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select \\\"(.*)\\\" as Disability Status", output.get("MESSAGE").toString());
     }
@@ -420,10 +430,10 @@ public class ClientDetails {
 	@When ("^user select \"(.*)\" as Client Sub Status$")
 	public void Clientstatus(String status) throws InterruptedException{
 		Object[] input=new Object[5];
-		input[0]="//*[@id='s2id_MainContent_cmbClntSubSts']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbClntSubSts')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=status;
-		input[3]="//*[@class='select2-match']";
+		input[3]="(//*[contains(@data-select2-id,'-MainContent_cmbClntSubSts')])[2]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select \\\"(.*)\\\" as Client Sub Status", output.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -436,30 +446,33 @@ public class ClientDetails {
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select related party checkbox",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);	
+		//SeleniumOperations.scrolldown();
 	}
 	
 	@When ("user select \"(.*)\" as related party$")
 	public void relatedParty(String relatedParty) throws InterruptedException{
-		Object[] input=new Object[5];
-		input[0]="//*[@id='s2id_MainContent_cmbRelatedParty']";
-		input[1]="//*[@class='select2-input select2-focused']";
-		input[2]=relatedParty;
-		input[3]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select \\\"(.*)\\\" as related party", output.get("MESSAGE").toString());
+		Object[] input43=new Object[1];
+		input43[0]="//*[@id='MainContent_cmbRelatedParty']";
+		SeleniumOperations.clickOnElement(input43);
+		Object[] input44=new Object[1];
+		input44[0]="//*[text()='Senior Officers']";
+		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input44);
+		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select \\\"(.*)\\\" as related party",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
+		
 	}
 	
 	@When ("user select \"(.*)\" as relationship$")
 	public void relationship(String relationship) throws InterruptedException{
-		Object[] input=new Object[5];
-		input[0]="//*[@id='s2id_MainContent_cmbCLNTRelationship']";
-		input[1]="//*[@class='select2-input select2-focused']";
-		input[2]=relationship;
-		input[3]="//*[@class='select2-match']";
-		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select \\\"(.*)\\\" as relationship", output.get("MESSAGE").toString());
+		Object[] input43=new Object[1];
+		input43[0]="//*[@id='MainContent_cmbCLNTRelationship']";
+		SeleniumOperations.clickOnElement(input43);
+		Object[] input44=new Object[1];
+		input44[0]="//*[text()='Direct']";
+		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input44);
+		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select \\\"(.*)\\\" as relationship",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
+		
 	}
 
 	@When("^user enter \"([^\"]*)\" as VRN/GST$")
@@ -513,7 +526,7 @@ public class ClientDetails {
 	@When("^user click on profile category dropdown$")
 	public void user_click_on_profile_category_dropdown() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@id='s2id_MainContent_cmbProfileCat']";
+		input43[0]="//*[contains(@aria-controls,'MainContent_cmbProfileCat')]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user click on profile category dropdown",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -522,7 +535,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" as profile category$")
 	public void user_enter_as_profile_category(String profileCategory) throws Throwable {
 	    Object[] input42=new Object[2];
-		input42[0]="//*[@class='select2-input select2-focused']";
+		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=profileCategory;
 		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as profile category",output42.get("MESSAGE").toString());
@@ -532,7 +545,7 @@ public class ClientDetails {
 	@When("^user select main as profile category$")
 	public void user_select_main_as_profile_category() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@class='select2-match']";
+		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbProfileCat')])[2]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select main as profile category",output43.get("MESSAGE").toString());
 	}
@@ -664,7 +677,7 @@ public class ClientDetails {
 	@When("^user click on AML risk category dropdown$")
 	public void user_click_on_AML_risk_category_dropdown() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@id='s2id_MainContent_cmbRisk']";
+		input43[0]="//*[contains(@aria-controls,'MainContent_cmbRisk')]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user click on AML risk category dropdown",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -673,7 +686,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" as AML risk category$")
 	public void user_enter_as_AML_risk_category(String amlRiskCategory) throws Throwable {
 	    Object[] input42=new Object[2];
-		input42[0]="//*[@class='select2-input select2-focused']";
+		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=amlRiskCategory;
 		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as AML risk category",output42.get("MESSAGE").toString());
@@ -682,7 +695,7 @@ public class ClientDetails {
 	@When("^user select medium as AML risk category$")
 	public void user_select_medium_as_AML_risk_category() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@class='select2-match']";
+		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbRisk')])[2]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select medium as AML risk category",output43.get("MESSAGE").toString());
 	}
@@ -708,7 +721,7 @@ public class ClientDetails {
 	@When ("^user click on Company Incorporation Certificate Number as ID type from dropdown$")
 	public void selectCompanyIncorporationAsIDType() throws InterruptedException {
 		Object[] input23=new Object[1];
-	    input23[0]="(//*[@class='select2-results-dept-0 select2-result select2-result-selectable select2-highlighted'])";
+	    input23[0]="(//*[contains(@data-select2-id,'-MainContent_cmbIDType')])[2]";
 	    Hashtable<String, Object> output23 =SeleniumOperations.clickOnElement(input23);
 	    HTMLReportGenerator.StepDetails(output23.get("STATUS").toString(),"user click on birth certificate as ID type from dropdown",output23.get("MESSAGE").toString());
 	    Thread.sleep(2000);    
@@ -717,7 +730,7 @@ public class ClientDetails {
 	@When("^user click on business type dropdown$")
 	public void user_click_on_business_type_dropdown() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@id='s2id_MainContent_cmbClntBusType']";
+		input43[0]="//*[contains(@aria-controls,'MainContent_cmbClntBusType')]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user click on business type dropdown",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -726,7 +739,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" as business type$")
 	public void user_enter_as_business_type(String businessType) throws Throwable {
 	    Object[] input42=new Object[2];
-		input42[0]="//*[@class='select2-input select2-focused']";
+		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=businessType;
 		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as business type",output42.get("MESSAGE").toString());
@@ -735,7 +748,7 @@ public class ClientDetails {
 	@When("^user select Automobile Manufacturing as business type$")
 	public void user_select_Automobile_Manufacturing_as_business_type() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@class='select2-match']";
+		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbClntBusType')])[2]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select Automobile Manufacturing as business type",output43.get("MESSAGE").toString());
 	}
@@ -743,7 +756,7 @@ public class ClientDetails {
 	@When("^user click on country of registration dropdown$")
 	public void user_click_on_country_of_registration_dropdown() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@id='s2id_MainContent_cmbCOR']";
+		input43[0]="//*[contains(@aria-controls,'MainContent_cmbCOR')]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user click on country of registration dropdown",output43.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -752,7 +765,7 @@ public class ClientDetails {
 	@When("^user enter \"([^\"]*)\" as country of registration$")
 	public void user_enter_as_country_of_registration(String countryOfRegistration) throws Throwable {
 	    Object[] input42=new Object[2];
-		input42[0]="//*[@class='select2-input select2-focused']";
+		input42[0]="//*[@class='select2-search__field']";
 		input42[1]=countryOfRegistration;
 		Hashtable<String, Object> output42 =SeleniumOperations.sendKeys(input42);
 		HTMLReportGenerator.StepDetails(output42.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as country of registration",output42.get("MESSAGE").toString());
@@ -761,7 +774,7 @@ public class ClientDetails {
 	@When("^user select South Africa as country of registration$")
 	public void user_select_South_Africa_as_country_of_registration() throws Throwable {
 	    Object[] input43=new Object[1];
-		input43[0]="//*[@class='select2-match']";
+		input43[0]="(//*[contains(@data-select2-id,'-MainContent_cmbCOR')])[2]";
 		Hashtable<String, Object> output43 =SeleniumOperations.clickOnElement(input43);
 		HTMLReportGenerator.StepDetails(output43.get("STATUS").toString(),"user select South Africa as country of registration",output43.get("MESSAGE").toString());
 	}

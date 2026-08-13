@@ -30,7 +30,7 @@ public class Endorsement {
 	 @When("^user click on endorsement option$")
 	 public void user_click_on_endorsement_option() throws Throwable {
 		 Object[] input7=new Object[1];
-	     input7[0]="(//*[text()='Endorsement'])[1]";
+	     input7[0]="//*[@id='MNU_WFEICNMD']";
 	     SeleniumOperations.clickOnElement(input7);
 	     Thread.sleep(2000);
 	 }
@@ -46,7 +46,7 @@ public class Endorsement {
 	 @When("^user click on endorsement type dropdown$")
 	 public void user_click_on_endorsement_type_dropdown() throws Throwable{
 		 Object[] input7=new Object[1];
-		 input7[0]="//*[@id='s2id_MainContent_cmbPopEndorsementType']";
+		 input7[0]="//*[contains(@aria-controls,'MainContent_cmbPopEndorsementType')]";
 		 SeleniumOperations.clickOnElement(input7);
 		 Thread.sleep(2000);
 	 }
@@ -54,7 +54,7 @@ public class Endorsement {
 	 @When("^user enter \"([^\"]*)\" as endorsement type$")
 	 public void user_enter_as_endorsement_type(String endorsementType) throws Throwable {
 	     Object[] input=new Object[2];
-	     input[0]="//*[@class='select2-input select2-focused']";
+	     input[0]="//*[@class='select2-search__field']";
 	     input[1]=endorsementType;
 	     SeleniumOperations.sendKeys(input);
 	     Thread.sleep(2000);
@@ -63,7 +63,7 @@ public class Endorsement {
 	 @When("^user select General Endorsements as endorsement type$")
 	 public void user_select_General_Endorsements_as_endorsement_type() throws Throwable {
 		 Object[] input7=new Object[1];
-		 input7[0]="//*[@class='select2-match']";
+		 input7[0]="(//*[contains(@data-select2-id,'-MainContent_cmbPopEndorsementType')])[2]";
 		 SeleniumOperations.clickOnElement(input7);
 		 Thread.sleep(2000); 
 	 }
@@ -165,118 +165,72 @@ public class Endorsement {
 	     Thread.sleep(2000);
 	 }
 
+	 
+	 
+	 	 
+	 @When("^user click on actions button$")
+	 public void user_click_on_options_button() throws Throwable {
+		 Object[] input=new Object[1];
+		 input[0]="(//*[@class='removeclass btn btn-light btn-active-light-primary btn-center btn-sm'])[3]";
+		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on options button",output.get("MESSAGE").toString());
+		 Thread.sleep(2000);
+	 }
+
 	 @When("^user click on capture receipt icon$")
-	 public void user_click_on_capture_receipt_icon() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@class='Approve fa fa-file-text']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on capture receipt icon",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
-	 }
-	 
-	 @When("^user click on mode dropdown$")
-	 public void user_click_on_mode_dropdown() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@id='s2id_MainContent_cmbMode']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on mode dropdown",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
-	 }
+		public void user_click_on_capture_receipt_icon() throws Throwable {
+			Object[] input=new Object[1];
+			input[0]="(//*[@class='Approve grid_btnSpace'])[3]";
+			Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on capture receipt icon",output.get("MESSAGE").toString());
+			Thread.sleep(3000);
+		}
+		
+	
+			
+		@When("user select {string} as mode")
+		public void user_select_as_mode(String mode) {
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMode')]", "//*[@class='select2-search__field']", mode , "(//*[contains(@data-select2-id,'MainContent_cmbMode')])[2]", "user select {string} as mode", "DROPDOWN", 2000);
 
-	 @When("^user enter \"([^\"]*)\" as mode$")
-	 public void user_enter_as_mode(String mode) throws Throwable {
-		 Object[] input=new Object[2];
-		 input[0]="//*[@class='select2-input select2-focused']";
-		 input[1]=mode;
-		 Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Electronic Funds Transfer (EFT)\" as mode",output.get("MESSAGE").toString());  
-	 }	
+		}
+		@When("user select {string} as issuer bank")
+		public void user_select_as_issuer_bank(String issuerBank) {
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientBank')]", "//*[@class='select2-search__field']", issuerBank , "(//*[contains(@data-select2-id,'MainContent_cmbClientBank')])[2]", "user select {string} as issuer bank", "DROPDOWN", 2000);
 
-	 @When("^user select Electronic Funds Transfer \\(EFT\\) as mode$")
-	 public void user_select_Electronic_Funds_Transfer_EFT_as_mode() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@CLASS='select2-match']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Electronic Funds Transfer (EFT) as mode",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
-	 }
+		}
+		@When("user enter {string} as Cheque\\/ Reference Number")
+		public void user_enter_as_cheque_reference_number(String refNumber) throws InterruptedException {
+		    Itl.CustomSendEvent("//*[@id='MainContent_txtRefNB']", refNumber, "user enter {string} as Cheque\\\\/ Reference Number", "TEXTBOX", 0);	
+		    
+		}
+		@When("user select {string} as collecting bank")
+		public void user_select_as_collecting_bank(String collectingBank) {
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsurerBank')]", "//*[@class='select2-search__field']", collectingBank , "(//*[contains(@data-select2-id,'MainContent_cmbInsurerBank')])[2]", "user select {string} as collecting bank", "DROPDOWN", 2000);
 
-	 @When("^user click on issuer bank dropdown$")
-	 public void user_click_on_issuer_bank_dropdown() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@id='s2id_MainContent_cmbClientBank']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on issuer bank dropdown",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
-	 }
+		}
 
-	 @When("^user enter \"([^\"]*)\" as issuer bank$")
-	 public void user_enter_as_issuer_bank(String issuerBank ) throws Throwable {
-		 Object[] input=new Object[2];
-		 input[0]="//*[@class='select2-input select2-focused']";
-		 input[1]=issuerBank;
-		 Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Absa Group Limited\" as issuer bank",output.get("MESSAGE").toString());  
-	 }
+	    @When("^user enter \"([^\"]*)\" as reference No$")
+		public void user_enter_as_reference_No(String referenceNo) throws Throwable {
+			Object[] input=new Object[2];
+		    input[0]="//*[@id='MainContent_txtTRReciptNb']";
+		    input[1]=referenceNo;
+		    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+		    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"1250\" as reference No",output.get("MESSAGE").toString());  
+		}
 
-	 @When("^user select Absa Group Limited as issuer bank$")
-	 public void user_select_Absa_Group_Limited_as_issuer_bank() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@CLASS='select2-match']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Absa Group Limited as issuer bank",output.get("MESSAGE").toString()); 
-		 Thread.sleep(2000);
-	 }
-
-	 @When("^user click on collecting bank dropdown$")
-	 public void user_click_on_collecting_bank_dropdown() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@id='s2id_MainContent_cmbInsurerBank']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on collecting bank dropdown",output.get("MESSAGE").toString());
-		 Thread.sleep(2000);
-	 }
-
-	 @When("^user enter \"([^\"]*)\" as collecting bank$")
-	 public void user_enter_as_collecting_bank(String collectingBank) throws Throwable {
-		 Object[] input=new Object[2];
-		 input[0]="//*[@class='select2-input select2-focused']";
-		 input[1]=collectingBank;
-		 Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Uchumi Commercial Bank\" as collecting bank",output.get("MESSAGE").toString());  
-	 }
-
-	 @When("^user select Uchumi Commercial Bank as collecting bank$")
-	 public void user_select_Uchumi_Commercial_Bank_as_collecting_bank() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@CLASS='select2-match']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Uchumi Commercial Bank as collecting bank",output.get("MESSAGE").toString()); 
-		 Thread.sleep(2000);
-	 }
-
-     @When("^user enter \"([^\"]*)\" as reference No$")
-	 public void user_enter_as_reference_No(String referenceNo) throws Throwable {
-		 Object[] input=new Object[2];
-		 input[0]="//*[@id='MainContent_txtTRReciptNb']";
-		 input[1]=referenceNo;
-		 Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"1250\" as reference No",output.get("MESSAGE").toString());  
-	 }
-
-	 @When("^user click on proceed button$")
-	 public void user_click_on_proceed_button() throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@id='btnProceed']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on proceed button",output.get("MESSAGE").toString()); 
-	 Thread.sleep(2000);	 }
-	 
+		@When("^user click on proceed button$")
+		public void user_click_on_proceed_button() throws Throwable {
+			Object[] input=new Object[1];
+		    input[0]="//*[@id='btnProceed']";
+			Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
+			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on proceed button",output.get("MESSAGE").toString()); 
+		    Thread.sleep(2000);
+		}
 
 	 @When("^user click on process endorsement icon$")
 	 public void user_click_on_process_endorsement_icon() throws Throwable {
 		 Object[] input=new Object[1];
-		 input[0]="(//*[@class='IssueRiskNote fa fa-arrow-up'])[1]";
+		 input[0]="//*[@class='IssueRiskNote grid_btnSpace']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on process endorsement icon",output.get("MESSAGE").toString()); 
 	 Thread.sleep(2000);
@@ -392,7 +346,7 @@ public class Endorsement {
 		 public void clickOnLoginButton()
 		 {
 			 Object[] input4=new Object[1];
-		      input4[0]="//*[text()='Login']";
+		      input4[0]="//*[@id='btnLogin']";
 		  SeleniumOperations.clickOnElement(input4);
 		 }
 		
@@ -428,15 +382,16 @@ public class Endorsement {
 		
 		@When("user navigate on pending approvals option")
 		public void user_navigate_on_pending_approvals_option() throws Throwable {
-		    Itl.CustomNavigateAction("//*[@id='MNU_APPROVAL']", "user navigate on pending approvals option", "NAVIGATE", 1000);
+		    Itl.CustomClickEvent("//*[@id='MNU_APPROVAL']", "user navigate on pending approvals option", "CLICK", 2000);
+
 		}
 		@Then("user click on endorsement approval option")
 		public void user_click_on_endorsement_approval_option() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='MNU_WFEICNM']", "user click on endorsement approval option", "CLICK", 2000);
+		    Itl.CustomClickEvent("//*[@id='span_endorApprv_lc']", "user click on endorsement approval option", "CLICK", 2000);
 		}
 		@When("user click on display icon")
 		public void user_click_on_display_icon() throws InterruptedException {
-		    Itl.CustomClickEvent("//*[@id='MainContent_repICNM_btnDisplay_0']", "user click on display icon", "CLICK", 2000);
+		    Itl.CustomClickEvent("(//*[@class='DisplayData fa fa-desktop'])[1]", "user click on display icon", "CLICK", 2000);
 
 		}
 		@Then("user click on approve endorsement button")

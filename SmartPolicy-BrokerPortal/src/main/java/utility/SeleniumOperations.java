@@ -30,6 +30,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -95,8 +96,9 @@ public class SeleniumOperations
 		if(config.getLanguageName().equalsIgnoreCase("En")){		
 		    
 			Object[] input4=new Object[1];
-			input4[0]="//*[@id='languageDropdownContainer']";
+			input4[0]="(//*[@class='menu-arrow'])[18]";
 			SeleniumOperations.actionClass(input4);
+			
 			
 			Object[] input5=new Object[1];
 			input5[0]="//*[@data-language='En']";
@@ -113,7 +115,7 @@ public class SeleniumOperations
 	      }
 	      else if(config.getLanguageName().equalsIgnoreCase("Fr")) { 
 	    	  Object[] input4=new Object[1];
-	  		input4[0]="//*[@id='languageDropdownContainer']";
+	  		input4[0]="(//*[@class='menu-arrow'])[18]";
 	  		SeleniumOperations.actionClass(input4);
 	  		
 	  		Object[] input5=new Object[1];
@@ -132,7 +134,7 @@ public class SeleniumOperations
 	      }
 	      else if(config.getLanguageName().equalsIgnoreCase("Sw")) { 
 	    	  Object[] input4=new Object[1];
-	  		input4[0]="//*[@id='languageDropdownContainer']";
+	  		input4[0]="(//*[@class='menu-arrow'])[18]";
 	  		SeleniumOperations.actionClass(input4);
 	  		
 	  		Object[] input5=new Object[1];
@@ -246,6 +248,30 @@ public class SeleniumOperations
 	     }
 	     return outputparameters;
      }
+     
+   //SendKeysVehRegistration
+     public static Hashtable<String,Object> sendKeysVehRes(Object[] inputparameters){   
+		 try {
+		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   String strXpath=(String)inputparameters[0];
+		   String strvalue=(String)inputparameters[1];
+		   String vehicleNumber = strvalue; // Initial value
+	        int number = Integer.parseInt(vehicleNumber.replaceAll("\\D", "")); // Extract the numeric part
+
+	        number++; // Increment the number
+	        vehicleNumber = "VEHICLE" + number; // Combine the prefix with the new number
+		    
+	       driver.findElement(By.xpath(strXpath)).sendKeys(vehicleNumber);
+	       outputparameters.put("STATUS","PASS");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     catch(Exception e){
+	       outputparameters.put("STATUS","FAIL");
+		   outputparameters.put("MESSAGE","Method Used:sendKeys, Input Given:"+inputparameters[1]);
+	     }
+	     return outputparameters;
+     }
+     
 	
 //Click
      public static Hashtable<String,Object> clickOnElement(Object[] inputparameters){   
@@ -286,8 +312,9 @@ public class SeleniumOperations
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   String xpath=(String)inputparameters[0];
 		   String givenText=(String)inputparameters[1];
+		  // String statusText =(String)inputparameters[2];
 		   String findText=driver.findElement(By.xpath(xpath)).getText();
-		   System.out.println(findText);
+		   //System.out.println(findText);
 		   
 		   if(givenText.equalsIgnoreCase(findText)){
 			 System.out.println("Test Case Pass");
@@ -313,7 +340,7 @@ public class SeleniumOperations
 	 public static Hashtable<String,Object> actionClass(Object[] inputparameters) {
 	     try {
 		   String xpath=(String) inputparameters[0];
-		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
+		   //driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   Actions act=new Actions(driver);
 		   WebElement move = driver.findElement(By.xpath(xpath));
 		   act.moveToElement(move).build().perform();
@@ -441,7 +468,8 @@ public class SeleniumOperations
 		 try {
 		   driver.manage().timeouts().implicitlyWait(config.getImplicitlyWait(),TimeUnit.SECONDS);
 		   JavascriptExecutor down=(JavascriptExecutor) driver;
-		   down.executeScript("window.scrollBy(0,1050)");
+		   down.executeScript("window.scrollBy(0,1500)");//1050
+		   Thread.sleep(2000);
 		   outputparameters.put("STATUS","PASS");
 		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
 		 }
@@ -450,6 +478,13 @@ public class SeleniumOperations
 		   outputparameters.put("MESSAGE","Method Used:date, Input Given:");
 		 }
 		 return outputparameters;
+     }
+     
+     public static void enter() {
+    	 Actions actions = new Actions(driver);
+    	 WebElement element = driver.findElement(By.xpath("//*[@id='btnSave']"));
+    	 actions.moveToElement(element).click().perform();
+
      }
 		 
 //ClearAndEnter
@@ -669,7 +704,7 @@ public class SeleniumOperations
     	int pages = pdDocument.getNumberOfPages();
     	System.out.println("Number Of Pages In PDF"+" "+pages);
         System.out.println("==========End==========");
-        
+        //.load(bufferedInput);
         PDFTextStripper text = new PDFTextStripper();
         String printText = text.getText(pdDocument);
         System.out.println("==========Print PDF Text==========");
@@ -829,7 +864,243 @@ public class SeleniumOperations
          SoftAssert.assertAll();
  	
      }
- }		 
+     
+     public static void getRiskNo1() {
+    	     
+         // Locate the table or list containing quote
+         WebElement quoteTable = driver.findElement(By.id("sort_table")); // Adjust the locator as needed
+         List<WebElement> rows = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
+
+         // Iterate through the rows to find quotes
+         for (WebElement row : rows) {
+             // Locate the quote name and status columns
+        	/*String quoteName = row.getText();
+        	System.out.println(quoteName);*/
+        	 List<WebElement> colQuote = row.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")); // Adjust XPath index as needed
+            for (WebElement passQuote : colQuote ) {
+            	String quoteName = passQuote.getText();
+            	//System.out.println(quoteName);
+            	if (quoteName.equalsIgnoreCase("Bonds")) {
+                    // Check the status
+                    List<WebElement> colStatus = row.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]")); // Adjust XPath index as needed
+                    for (WebElement passStatus : colStatus ) {
+                    	String status = passStatus.getText();
+                    	//System.out.println(status);
+                    if (status.equalsIgnoreCase("Awaiting Receipt")) {
+                        // Get the quote number
+                    	List<WebElement> quoteNumber = row.findElements(By.xpath("//*[contains(@id,'MainContent_repIQNM_lblSrchQuoteNb')]")); // Adjust XPath index as needed
+                    	for (WebElement passNo : quoteNumber ) {
+                        	String quoteNo = passNo.getText();
+                    	System.out.println("Quote Number: " + quoteNo);
+                        ///*quoteNumber = true;
+                        break; // Exit loop since the active quote is found
+                    }
+                    	// Handle the case where no active quote is found
+                        /* if (!isQuoteFound) {
+                             System.out.println("No active 'medical' quote found.");
+                         }*/
+                    
+            }
+            	}
+            }
+         }
+     }
+         
+         
+         
+        
+}
+
+     public static void getRiskNo2() {
+    	 
+    	 
+    	// Locate the table or list containing quote
+         WebElement quoteTable = driver.findElement(By.id("sort_table")); // Adjust the locator as needed
+         List<WebElement> rows = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
+                rows.size();
+         // Iterate through the rows to find quotes
+         for (WebElement row : rows) {
+             // Locate the quote name and status columns
+        	String rowsDetails = row.getText();
+        	//System.out.println(rowsDetails);
+        	
+    	 
+        	}
+         List<WebElement> colQuote = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]"));
+     	for(WebElement quoteList : colQuote) {
+     		String quoteNames = quoteList.getText();
+     		//System.out.println(quoteNames);
+     	
+     	
+     	if(quoteNames.equalsIgnoreCase("Bonds")) {
+     		System.out.println("Bonds quote found");
+     		
+     			
+     		}
+     	
+     	}
+     	List<WebElement> colStatus = quoteTable.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]"));
+ 		for(WebElement statusList : colStatus) {
+ 			String statusUpdate = statusList.getText();
+ 			System.out.println(statusUpdate);
+ 			
+ 			if(statusUpdate.equalsIgnoreCase("Awaiting Receipt")){
+ 				System.out.println("Status is Right");
+ 			}
+ 			
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+     }
+         
+       		
+        		
+     }
+     
+    /* public static void getRiskNo() {
+    	// User-provided quotename
+         String userProvidedQuotename = "Bonds";
+    	 // Locate the table
+         WebElement table = driver.findElement(By.id("sort_table")); // Replace with your table's ID or locator
+
+         // Get all rows of the table (excluding the header row, if present)
+         List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr"));
+
+         // Iterate through each row
+         for (int i = 0; i < rows.size(); i++) { // Assuming first row is a header
+             WebElement row = rows.get(i);
+            //System.out.println(row.getText()); 
+
+             // Get the quotename, status, and quotenumber columns
+             WebElement quotenameElement = row.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]")); // Adjust index based on your table
+             System.out.println(quotenameElement.getText());
+             WebElement statusElement = row.findElement(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]"));   // Adjust index based on your table
+             System.out.println(statusElement.getText());
+             WebElement quotenumberElement = row.findElement(By.xpath("//*[contains(@id,'MainContent_repIQNM_lblSrchQuoteNb')]")); // Adjust index based on your table
+             System.out.println(quotenumberElement.getText()+" "+"NEXT QUOTE DETAILS");
+          // Get text of the columns
+             String quotename = quotenameElement.getText();
+             String status = statusElement.getText();   
+
+             
+          // Get all cells in the current row
+             List<WebElement> cells = row.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td"));)
+
+             // Ensure the row has enough cells (at least 3)
+             if (cells.size() >= 3) {
+                 // Extract values dynamically
+                 String quotename = cells.get(0).getText(); // First cell (adjust index if necessary)
+                 String status = cells.get(1).getText();   // Second cell (adjust index if necessary)
+                 String quotenumber = cells.get(2).getText(); // Third cell (adjust index if necessary)
+             // Check if the quotename matches the user-provided value
+             if (quotename.equalsIgnoreCase(userProvidedQuotename)) {
+                 // Check the status
+                 if (status.equalsIgnoreCase("Awaiting Receipt")) {
+                    // String quotenumber1 = quotenumber.getText();
+                     System.out.println("Quotename: " + quotename + ", Status: " + status + ", Quotenumber: " + quotenumber);
+                     break; // Exit the loop as we found the matching quotename with Active status
+                 } else {
+                     System.out.println("Quotename: " + quotename + ", Status: " + status + " - Moving to next row.");
+                 }
+             }
+         }
+     } 
+     }*/
+     
+     
+
+     public static void InsuranceStatusCheck (){
+          
+             
+             
+             try {
+                 
+                 // Locate the insurance table
+                 WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+                 
+                 // Get all rows of the table
+                 List<WebElement> rows1 = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[4]"));
+                 List<WebElement> rows2 = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr/td[8]"));
+                // System.out.println(rows.size());
+                // boolean pendingFound = false;
+                 for (WebElement cell1 : rows1) {
+                     //System.out.println(cell1.getText().trim()); // Print each insurance type
+                     if (cell1.getText().trim().equalsIgnoreCase("Bonds")) { // First column: Insurance Type
+                       // System.out.println("Right");
+                        for (WebElement cell2 : rows2) {
+                        	//System.out.println(cell2.getText().trim());
+                        	if (cell2.getText().trim().equalsIgnoreCase("Awaiting Receipt")) {
+                                System.out.println("Pending status found for Bonds in row: " );
+                               // pendingFound = true;
+                                break; // Stop when the first "Pending" status is found
+                            }
+                        	
+                        }
+                    	 
+                     }
+                 }
+                
+                 
+             } catch (Exception e) {
+                 e.printStackTrace();
+             } 
+         }
+     public static String getriskNote(String quoteName) {
+    	 try {
+    		    // Locate the insurance table
+    		    WebElement table = driver.findElement(By.xpath("//*[@id='sort_table']")); // Update XPath as needed
+
+    		    // Get all rows of the table
+    		    List<WebElement> rows = table.findElements(By.xpath("//*[@id='sort_table']/tbody/tr")); // Get all rows
+    		    boolean found = false;
+    		    for (WebElement row : rows) {
+    		        WebElement cell1 = row.findElement(By.xpath("./td[4]")); // Get the 4th column
+    		        WebElement cell2 = row.findElement(By.xpath("./td[8]")); // Get the 8th column
+
+    		        if (cell1.getText().trim().equalsIgnoreCase(quoteName) && 
+    		            cell2.getText().trim().equalsIgnoreCase("Awaiting Receipt")) {
+    		            //System.out.println("Pending status found for Bonds in row.");
+    		            WebElement quoteCell = row.findElement(By.xpath("./td[2]/*[1]"));
+    		            String quoteNumber = quoteCell.getText().trim();
+    		            
+    		            
+    		            //System.out.println("Pending status found for Bonds. Quote Number: " + quoteNumber);
+    		            return quoteNumber;
+    		        }
+    		    }
+    		    if (!found) {
+                    Object quoteNumber = null;
+                    System.out.println("No Quote with 'Awaiting Receipt' status found.");
+                }
+
+    		} catch (Exception e) {
+    		    e.printStackTrace();
+    		}
+		return null;
+		
+
+     }
+     
+     }
+
+
+             
+                      
+
+         
+
+    	 
+    	 
+    	 
+    	 
+         
+    	 
+    	 
+     
+ 	 
 	
 
 

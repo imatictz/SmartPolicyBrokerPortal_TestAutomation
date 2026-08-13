@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import itl.Itl;
 import utility.HTMLReportGenerator;
 import utility.SeleniumOperations;
 
@@ -15,17 +16,17 @@ public class Payment {
 	    SeleniumOperations.actionClass(input7);
 	}
 
-	@When ("^user navigate on payment option$")
+	@When ("user click on all receipts option")
 	public void PaymentOption() {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='MNU_PAYMENT']";
-		SeleniumOperations.actionClass(input);
+		input[0]="//*[@id='span118']";
+		SeleniumOperations.clickOnElement(input);
 	}
 	
- 	@Then("^user click on payment option$")
+ 	@Then("^user click on direct payment option$")
  	public void user_click_on_payment_option() throws Throwable {
  	    Object[] input4=new Object[1];
-	    input4[0]="//*[@id='MNU_wfCTXN_PAY']";
+	    input4[0]="//*[@id='span91']";
 	    SeleniumOperations.clickOnElement(input4);
 	    Thread.sleep(2000);
  	}
@@ -38,33 +39,36 @@ public class Payment {
 	    Thread.sleep(2000);
  	}
 
- 	@When("^user click on insurer name dropdown$")
- 	public void user_click_on_insurer_name_dropdown() throws Throwable {
- 	    Object[] input=new Object[1];
-		input[0]="//*[@id='s2id_MainContent_cmbInsurerName']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on insurer name dropdown",output.get("MESSAGE").toString());
+ 	@When ("user select {string} as insurer name")
+	public void selectInsurer(String insurer) throws Throwable 
+	{
+		Object[] input = new Object[4];
+	    input[0] = "(//*[contains(@aria-controls,'MainContent_cmbInsurer')])[2]";
+	    input[1] = "//*[@class='select2-search__field']";
+	    input[2] = insurer;
+	    input[3] = "(//*[contains(@data-select2-id,'MainContent_cmbInsurerID')])[3]";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
- 	}
-
- 	@When("^user enter \"([^\"]*)\" as insurer name$")
- 	public void user_enter_as_insurer_name(String insurerName) throws Throwable {
- 	    Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
-	    input[1]=insurerName;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as insurer name",output.get("MESSAGE").toString());
 	}
 
- 	@Then("^user select Alliance Insurance Company \\(T\\) Ltd as insurer name$")
- 	public void user_select_Alliance_Insurance_Company_T_Ltd_as_insurer_name() throws Throwable {
- 	    Object[]input=new Object[1];
-		input[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Alliance Insurance Company \\\\(T\\\\) Ltd as insurer name",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
- 	}
+ 	@When("^user enter \"([^\"]*)\" as client name$")
+	public void enterClientName(String clientName) throws Throwable {
+	    Object[] input=new Object[2];
+	    input[0]="//*[@id='MainContent_txtClientName']";
+	    input[1]=clientName;
+	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"Pravin Testing\" as client name",output.get("MESSAGE").toString());
+	    Thread.sleep(2000);
+	}
 
+	@When("^user select Pravin Testing as client name$")
+	public void clickOnClientName() throws Throwable {
+		Object[] input=new Object[1];
+		input[0]="//*[@id='MainContent_txtClientName']";
+		Hashtable<String,Object> output= SeleniumOperations.actionDownEnter();
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Pravin Testing as client name",output.get("MESSAGE").toString());
+	}
  	@When("^user enter \"([^\"]*)\" as amount$")
  	public void user_enter_as_amount(String amount) throws Throwable {
  	    Object[] input=new Object[2];
@@ -74,32 +78,11 @@ public class Payment {
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as amount",output.get("MESSAGE").toString());
 	}
 
- 	@When("^user click on mode dropdown$")
- 	public void user_click_on_mode_dropdown() throws Throwable {
- 	    Object[] input=new Object[1];
-		input[0]="(//*[@class='select2-chosen'])[4]";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on mode dropdown",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
- 	}
+ 	@When("user select {string} as mode")
+	public void user_select_as_mode(String mode) {
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMode')]", "//*[@class='select2-search__field']", mode , "(//*[contains(@data-select2-id,'MainContent_cmbMode')])[2]", "user select {string} as mode", "DROPDOWN", 2000);
 
- 	@When("^user enter \"([^\"]*)\" as mode$")
- 	public void user_enter_as_mode(String mode) throws Throwable {
- 	    Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
-	    input[1]=mode;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as mode",output.get("MESSAGE").toString());
 	}
-
- 	@Then("^user select Card Payment as mode$")
- 	public void user_select_Card_Payment_as_mode() throws Throwable {
- 	    Object[]input=new Object[1];
-		input[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select Card Payment as mode",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
- 	}
 
  	@When("^user enter \"([^\"]*)\" as Cheque/ Reference Number$")
  	public void user_enter_as_Cheque_Reference_Number(String chequeRefNo) throws Throwable {
@@ -119,32 +102,21 @@ public class Payment {
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as notes",output.get("MESSAGE").toString());
 	}
 
- 	@When("^user click on bank details dropdown$")
- 	public void user_click_on_bank_details_dropdown() throws Throwable {
- 	    Object[] input=new Object[1];
-		input[0]="(//*[@class='select2-chosen'])[5]";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on bank details dropdown",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
- 	}
+ 	@When("user select {string} as issuer bank")
+	public void user_select_as_issuer_bank(String issuerBank) {
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbClientBank')]", "//*[@class='select2-search__field']", issuerBank , "(//*[contains(@data-select2-id,'MainContent_cmbClientBank')])[2]", "user select {string} as issuer bank", "DROPDOWN", 2000);
 
- 	@When("^user enter \"([^\"]*)\" as bank details$")
- 	public void user_enter_as_bank_details(String bankDetails) throws Throwable {
- 	    Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
-	    input[1]=bankDetails;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \\\"([^\\\"]*)\\\" as bank details",output.get("MESSAGE").toString());
 	}
+	@When("user enter {string} as Cheque\\/ Reference Number")
+	public void user_enter_as_cheque_reference_number(String refNumber) throws InterruptedException {
+	    Itl.CustomSendEvent("//*[@id='MainContent_txtRefNB']", refNumber, "user enter {string} as Cheque\\\\/ Reference Number", "TEXTBOX", 0);	
+	    
+	}
+	@When("user select {string} as collecting bank")
+	public void user_select_as_collecting_bank(String collectingBank) {
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbInsurerBank')]", "//*[@class='select2-search__field']", collectingBank , "(//*[contains(@data-select2-id,'MainContent_cmbInsurerBank')])[2]", "user select {string} as collecting bank", "DROPDOWN", 2000);
 
- 	@Then("^user select UBL Bank \\(TZS\\) as bank details$")
- 	public void user_select_UBL_Bank_TZS_as_bank_details() throws Throwable {
- 	    Object[]input=new Object[1];
-		input[0]="//*[@class='select2-match']";
-		Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select UBL Bank \\\\(TZS\\\\) as bank details",output.get("MESSAGE").toString());
-		Thread.sleep(2000);
- 	}
+	}
 
  	@When("^user enter \"([^\"]*)\" as refrence id$")
  	public void user_enter_as_refrence_id(String refrenceId) throws Throwable {

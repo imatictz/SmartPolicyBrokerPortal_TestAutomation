@@ -50,10 +50,10 @@ public class Reports {
 	public void user_select_as_insurer(String insurerName) throws InterruptedException {
 		Thread.sleep(5000);
 		Object[] input = new Object[4];
-	    input[0] = "//*[@id='s2id_MainContent_cmbSrchInsurer']";
-	    input[1] = "//*[@class='select2-input select2-focused']";
+	    input[0] = "//*[contains(@aria-controls,'MainContent_cmbSrchInsurer')]";
+	    input[1] = "//*[@class='select2-search__field']";
 	    input[2] = insurerName;
-	    input[3] = "(//*[@class='select2-match'])[1]";
+	    input[3] = "//*[contains(@id,'select2-MainContent_cmbSrchInsurer-result-')]";
 	    Hashtable<String, Object> output = SeleniumOperations.dropdown(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), "user select {string} as insurer", output.get("MESSAGE").toString());
 
@@ -148,10 +148,10 @@ public class Reports {
 	@When("^user select \"([^\"]*)\" as insurance type$")
 	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbInsuranceType']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbInsuranceType')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=insuranceType;
-		input[3]="//*[@class='select2-match']";
+		input[3]="(//*[contains(@id,'select2-MainContent_cmbInsuranceType-result-')])[1]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 		
@@ -159,10 +159,10 @@ public class Reports {
 	@When ("^user select \"(.*)\" as curreny$")
 	public void user_select_as_curreny(String curreny) throws Throwable {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbCurrency']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbCurrency')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=curreny;
-		input[3]="//*[@class='select2-match']";
+		input[3]="//*[contains(@id,'select2-MainContent_cmbCurrency-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"(.*)\\\" as curreny",output.get("MESSAGE").toString());
 		
@@ -410,10 +410,10 @@ public class Reports {
 	@When("user select {string} as Customer Segment")
 	public void user_select_as_customer_segment(String customerSegment) {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbCustSegment']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbCustSegment')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=customerSegment;
-		input[3]="//*[@class='select2-match']";
+		input[3]="//*[contains(@id,'select2-MainContent_cmbCustSegment-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as Customer Segment",output.get("MESSAGE").toString());
 		
@@ -645,10 +645,10 @@ public class Reports {
 	@When("user select {string} as user name")
 	public void user_select_as_user_name(String userName) {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbUser']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbUser')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=userName;
-		input[3]="//*[@class='select2-match']";
+		input[3]="(//*[contains(@id,'select2-MainContent_cmbUser-result-')])[1]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as user name",output.get("MESSAGE").toString());
 		
@@ -656,10 +656,10 @@ public class Reports {
 	@When("user select {string} as business By")
 	public void user_select_as_business_by(String businessBy) {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbBusinessBy']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbBusinessBy')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=businessBy;
-		input[3]="//*[@class='select2-match']";
+		input[3]="//*[@id='select2-MainContent_cmbBusinessBy-results']";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as business By",output.get("MESSAGE").toString());
 	}
@@ -674,15 +674,12 @@ public class Reports {
 	}
 	@When("user select {string} as product")
 	public void user_select_as_product(String product) throws InterruptedException {
-		/*Object[] input1 = new Object[2];
-		 input1[0] = "//*[@id='s2id_MainContent_cmbProduct']";
-		 SeleniumOperations.clickOnElement(input1);
-		 Thread.sleep(5000);*/
+		
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbProduct']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbProduct')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=product;
-		input[3]="//*[@class='select2-match']";
+		input[3]="(//*[contains(@id,'select2-MainContent_cmbProduct-result-')])";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as product",output.get("MESSAGE").toString());
 	
@@ -1180,10 +1177,10 @@ public class Reports {
 	@When("user select {string} as Business type")
 	public void user_select_as_business_type(String businessType) {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbBusinessType']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbBusinessType')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=businessType;
-		input[3]="//*[@class='select2-match']";
+		input[3]="//*[contains(@id,'select2-MainContent_cmbBusinessType-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as Business type",output.get("MESSAGE").toString());
 		
@@ -2395,10 +2392,10 @@ public class Reports {
 	@When("user select {string} as year")
 	public void user_select_as_year(String year) {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbYear']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbYear')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=year;
-		input[3]="//*[@class='select2-match']";
+		input[3]="//*[contains(@id,'select2-MainContent_cmbYear-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as year",output.get("MESSAGE").toString());
 		
@@ -2406,10 +2403,10 @@ public class Reports {
 	@When("user select {string} as quarter")
 	public void user_select_as_quarter(String quarter) {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbQuarter']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbQuarter')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=quarter;
-		input[3]="//*[@class='select2-match']";
+		input[3]="//*[contains(@id,'select2-MainContent_cmbQuarter-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select {string} as quarter",output.get("MESSAGE").toString());
 		
@@ -2623,7 +2620,7 @@ public class Reports {
 	}
 	@When("user select {string} as Supplier Name")
 	public void user_select_as_supplier_name(String supplierName) {
-	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbSPLR']", "//*[@class='select2-input select2-focused']", 
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbSPLR')]", "//*[@class='select2-input select2-focused']", 
 	    supplierName, "//*[@class='select2-match']", "user select {string} as Supplier Name", "DROPDOWN", 0);
 	}
 	
@@ -3056,8 +3053,8 @@ public class Reports {
 	}
 	@When("user select {string} as monthly")
 	public void user_select_as_monthly(String monthly) {
-		Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbMonthly']", "//*[@class='select2-input select2-focused']", 
-			    monthly, "//*[@class='select2-match']", "user select {string} as monthly", "DROPDOWN", 0);
+		Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbMonthly')]", "//*[@class='select2-search__field']", 
+			    monthly, "//*[contains(@id,'select2-MainContent_cmbMonthly-result-')]", "user select {string} as monthly", "DROPDOWN", 0);
 			
 	}
 	@Then("user able to view TIRA Reports - Commission IncomeStatement \\(Monthly) in pdf format")

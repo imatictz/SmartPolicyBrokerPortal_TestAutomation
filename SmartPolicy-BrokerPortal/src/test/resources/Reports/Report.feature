@@ -10,7 +10,7 @@ Scenario: Verify user able to view Admin Fee Report successfully
 When user search "Admin Fee Report" as report name in search box
 Then user click to select Admin Fee Report as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view admin fee report in pdf format
 
@@ -19,7 +19,7 @@ Scenario: Verify user able to view Business Summary by Charts Report successfull
 When user search "Business Summary by Charts" as report name in search box
 Then user click to select Business Summary by Charts as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary by Charts report in pdf format
 
@@ -31,7 +31,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view AON Reports in pdf format
 
@@ -43,7 +43,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Branch wise with Risk Note) in pdf format
 
@@ -55,7 +55,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Branch wise with Type) in pdf format
 
@@ -68,7 +68,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Branch wise) in pdf format
 
@@ -80,7 +80,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (by Cover Period start date) in pdf format
 
@@ -88,7 +88,7 @@ Then user able to view Business Summary (by Cover Period start date) in pdf form
 Scenario: Verify user able to view Business Summary (By total premium booked for each customer) Report successfully
 When user search "Business Summary (By total premium booked for each customer)" as report name in search box
 Then user click to select Business Summary (By total premium booked for each customer) as report
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (By total premium booked for each customer) in pdf format
 
@@ -96,7 +96,7 @@ Then user able to view Business Summary (By total premium booked for each custom
 Scenario: Verify user able to view Business Summary (By total premium booked for each insurance company cover Report successfully
 When user search "Business Summary (By total premium booked for each insurance company cover" as report name in search box
 Then user click to select Business Summary (By total premium booked for each insurance company cover as report
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (By total premium booked for each insurance company cover in pdf format
 
@@ -104,7 +104,7 @@ Then user able to view Business Summary (By total premium booked for each insura
 Scenario: Verify user able to view Business Summary (By total premium booked for each insurance company) Report successfully
 When user search "Business Summary (By total premium booked for each insurance company)" as report name in search box
 Then user click to select Business Summary (By total premium booked for each insurance company) as report
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (By total premium booked for each insurance company) in pdf format
 
@@ -116,7 +116,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Class wise) in pdf format
 
@@ -127,7 +127,7 @@ Then user click to select Business Summary (Client type) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Client type) in pdf format
 
@@ -138,7 +138,7 @@ Then user click to select Business Summary (Client wise) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Client wise) in pdf format
 
@@ -149,7 +149,7 @@ Then user click to select Business Summary (Client wise-Cover Period start date)
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Client wise-Cover Period start date) in pdf format
 
@@ -162,7 +162,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Commercial Banking" as Customer Segment
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Customer Segment)in pdf format
 
@@ -172,7 +172,7 @@ When user search "Business Summary (Insurer wise with type)" as report name in s
 Then user click to select Business Summary (Insurer wise with type) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Insurer wise with type)in pdf format
 
@@ -185,7 +185,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Insurer wise)in pdf format
 
@@ -197,7 +197,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Insurer wise-Cover Period start date)in pdf format
 
@@ -210,7 +210,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Region wise) in pdf format
 
@@ -223,7 +223,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary (Zone)in pdf format
 
@@ -232,7 +232,7 @@ Scenario: Verify user able to view Business Summary by insurer/category (Base Cu
 When user search "Business Summary by insurer/category (Base Currency)" as report name in search box
 Then user click to select Business Summary by insurer/category (Base Currency) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary by insurer/category (Base Currency) report in pdf format
 
@@ -240,7 +240,7 @@ Then user able to view Business Summary by insurer/category (Base Currency) repo
 Scenario: Verify user able to view Business Summary(User wise) Report successfully
 When user search "Business Summary(User wise)" as report name in search box
 Then user click to select Business Summary(User wise)as report
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Business Summary(User wise) report in pdf format
 
@@ -248,7 +248,7 @@ Then user able to view Business Summary(User wise) report in pdf format
 Scenario: Verify user able to view claim Payment Request Report Report successfully
 When user search "Claim Payment Request Report" as report name in search box
 Then user click to select claim Payment Request Report as report
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view claim Payment Request Report in pdf format
 
@@ -260,7 +260,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Incured but not reported on time (IBNR)in pdf format
 
@@ -272,9 +272,9 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending (Assessor wise)in pdf format
 
@@ -286,10 +286,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending (by Assigned users)in pdf format
 
@@ -301,10 +301,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending (Status wise)in pdf format
 
@@ -316,10 +316,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending Report in pdf format
 
@@ -331,10 +331,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending Report (Branch Wise) in pdf format
 
@@ -346,10 +346,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending Report (Covering Branch)in pdf format
 
@@ -361,10 +361,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending Report (Time taken between Accident & Reporting)in pdf format
 
@@ -376,10 +376,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending Report no activity for last seven Days in pdf format
 
@@ -391,10 +391,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending Report(Covering Branch) Not Initiated To Insurer in pdf format
 
@@ -406,10 +406,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Pending Report(Covering Branch) Time Taken to Initiate to Insurer in pdf format
 
@@ -421,7 +421,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Ratio Report(Branch wise) to Insurer in pdf format
 
@@ -433,7 +433,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Ratio Report(Client wise)in pdf format
 
@@ -445,7 +445,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Ratio Report(Insurer wise)in pdf format
 
@@ -457,7 +457,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Ratio Report(Region wise)in pdf format
 
@@ -469,7 +469,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Ratio Report(Zone wise)in pdf format
 
@@ -481,10 +481,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Register (Branch Wise) in pdf format
 
@@ -496,10 +496,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Register in pdf format
 
@@ -509,9 +509,9 @@ When user search "Claims Rejected Report" as report name in search box
 Then user click to select Claims Rejected Report as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Rejected Report in pdf format
 
@@ -523,10 +523,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Report (Retrenchment wise) in pdf format
 
@@ -538,10 +538,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Settled Report in pdf format
 
@@ -553,10 +553,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Settled Report (Branch Wise) in pdf format
 
@@ -568,10 +568,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Settled Report (Time Taken between DV & Settlement) in pdf format
 
@@ -583,9 +583,9 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Settled Report Life in pdf format
 
@@ -597,9 +597,9 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Claims Settlement beyond fourty five Days in pdf format
 
@@ -610,11 +610,11 @@ Then user click to select Comesa Booking as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Comesa Booking in pdf format
 
@@ -625,9 +625,9 @@ Then user click to select Commision Rebate Report as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commision Rebate Report in pdf format
 
@@ -637,7 +637,7 @@ When user search "Commission Allocated Report" as report name in search box
 Then user click to select Commission Allocated Report as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Allocated Report in pdf format
 
@@ -647,7 +647,7 @@ When user search "Commission Receivable Ageing Report" as report name in search 
 Then user click to select Commission Receivable Ageing Report as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Receivable Ageing Report in pdf format
 
@@ -657,7 +657,7 @@ When user search "Commission Receivable Report" as report name in search box
 Then user click to select Commission Receivable Report as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Receivable Report in pdf format
 
@@ -667,7 +667,7 @@ When user search "Commission Receivable Report (With VAT Commission)" as report 
 Then user click to select Commission Receivable Report (With VAT Commission) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Receivable Report (With VAT Commission) in pdf format
 
@@ -677,7 +677,7 @@ When user search "Commission Receivable Report(WH TAX)" as report name in search
 Then user click to select Commission Receivable Report(WH TAX) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Receivable Report(WH TAX) in pdf format
 
@@ -689,7 +689,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Refundable Report in pdf format
 
@@ -701,7 +701,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Statement Report in pdf format
 
@@ -713,7 +713,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Commission Statement Report one in pdf format
 
@@ -726,10 +726,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view CSV Data Extraction in pdf format
 
@@ -741,10 +741,10 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Customer Sales Statistics Report in pdf format
 
@@ -756,12 +756,12 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes Report in pdf format
 
@@ -773,11 +773,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (Borrower Wise) in pdf format
 
@@ -789,12 +789,12 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (Broker Partner Business) in pdf format
 
@@ -806,12 +806,12 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (Business By) in pdf format
 
@@ -823,12 +823,12 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (Cover Period start date) in pdf format
 
@@ -839,7 +839,7 @@ Then user click to select Daily Cover Notes (Different Policy Issued Date & TIRA
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (Different Policy Issued Date & TIRA Issued Date) in pdf format
 
@@ -851,11 +851,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (Insurer wise) in pdf format
 
@@ -867,11 +867,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (User wise) in pdf format
 
@@ -883,11 +883,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (With First Loss Payee) in pdf format
 
@@ -899,11 +899,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (With Levy) in pdf format
 
@@ -915,11 +915,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (With Reg No) in pdf format
 
@@ -931,11 +931,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes (With Stamp Duty) in pdf format
 
@@ -947,12 +947,12 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes Online Channels in pdf format
 
@@ -964,11 +964,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes(Lien Clause) in pdf format
 
@@ -980,11 +980,11 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover Notes(New business & renewals) in pdf format
 
@@ -996,12 +996,12 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Cover/Notes (Expiry Date wise) in pdf format
 
@@ -1013,7 +1013,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Credit Note in pdf format
 
@@ -1024,10 +1024,10 @@ Then user click to select Daily Debit Notes/ Tax Invoices as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Debit Notes/ Tax Invoices in pdf format
 
@@ -1038,9 +1038,9 @@ Then user click to select Daily Debit Notes/ Tax Invoices(Un-Allocated/Allocated
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Debit Notes/ Tax Invoices(Un-Allocated/Allocated in pdf format
 
@@ -1051,10 +1051,10 @@ Then user click to select Daily Debit Notes/ Tax Invoices(with Levy) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Debit Notes/ Tax Invoices(with Levy) in pdf format
 
@@ -1063,7 +1063,7 @@ Scenario: Verify user able to view Daily Payments Report successfully
 When user search "Daily Payments" as report name in search box
 Then user click to select Daily Payments as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Payments in pdf format
 
@@ -1073,9 +1073,9 @@ When user search "Daily Receipts" as report name in search box
 Then user click to select Daily Receipts as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Receipts in pdf format
 
@@ -1085,9 +1085,9 @@ When user search "Daily Receipts (Business Type)" as report name in search box
 Then user click to select Daily Receipts (Business Type) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Receipts (Business Type) in pdf format
 
@@ -1097,9 +1097,9 @@ When user search "Daily Receipts (Insurer wise)" as report name in search box
 Then user click to select Daily Receipts (Insurer wise) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Receipts (Insurer wise) in pdf format
 
@@ -1111,12 +1111,12 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "4651654" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Daily Remittance Report in pdf format
 
@@ -1125,7 +1125,7 @@ Scenario: Verify user able to view Debit Note Ageing Report successfully
 When user search "Debit Note Ageing" as report name in search box
 Then user click to select Debit Note Ageing as report
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Debit Note Ageing in pdf format
 
@@ -1146,7 +1146,7 @@ Then user click to select Debtors Analysis Report(by date) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Debtors Analysis Report(by date) in pdf format
 
@@ -1157,7 +1157,7 @@ Then user click to select Details of the Policy issued on Credit as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Details of the Policy issued on credit in pdf format
 
@@ -1166,7 +1166,7 @@ Scenario: Verify user able to view Exchange Rate Report For Insurer Report succe
 When user search "Exchange Rate Report For Insurer" as report name in search box
 Then user click to select Exchange Rate Report For Insurer as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Exchange Rate Report For Insurer in pdf format
 
@@ -1176,7 +1176,7 @@ When user search "Expired Risk Notes" as report name in search box
 Then user click to select Expired Risk Notes as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Expired Risk Notes in pdf format
 
@@ -1226,8 +1226,8 @@ Then user able to view Front Office - Daily Performance in pdf format
 Scenario: Verify user able to view Front Office - Overall Performance Report successfully
 When user search "Front Office - Overall Performance" as report name in search box
 Then user click to select Front Office - Overall Performance as report
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 And user click on show report button
 Then user able to view Front Office - Overall Performance in pdf format
 
@@ -1246,7 +1246,7 @@ Then user click to select Ledger (Client/Supplier) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Ledger (Client/Supplier) in pdf format
 
@@ -1256,7 +1256,7 @@ When user search "Ledger (Insurer)" as report name in search box
 Then user click to select Ledger (Insurer) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Ledger (Insurer) in pdf format
 
@@ -1266,7 +1266,7 @@ When user search "List of Policies" as report name in search box
 Then user click to select List of Policies as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view List of Policies in pdf format
 
@@ -1283,7 +1283,7 @@ Then user able to view List Policies (Customer wise) in pdf format
 Scenario: Verify user able to view MIS - Performance Report (Quarterly) Report successfully
 When user search "MIS - Performance Report (Quarterly)" as report name in search box
 Then user click to select MIS - Performance Report (Quarterly) as report
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view MIS - Performance Report (Quarterly) in pdf format
@@ -1292,7 +1292,7 @@ Then user able to view MIS - Performance Report (Quarterly) in pdf format
 Scenario: Verify user able to view MIS - Performance Report (Yearly) Report successfully
 When user search "MIS - Performance Report (Yearly)" as report name in search box
 Then user click to select MIS - Performance Report (Yearly) as report
-When user select "2024" as year
+When user select "2025" as year
 And user click on show report button
 Then user able to view MIS - Performance Report (Yearly) in pdf format
 
@@ -1302,7 +1302,7 @@ Scenario: Verify user able to view Mobile Money Transaction Report successfully
 When user search "Mobile Money Transaction" as report name in search box
 Then user click to select Mobile Money Transaction as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Mobile Money Transaction in pdf format
 
@@ -1311,9 +1311,9 @@ Scenario: Verify user able to view Mobile Money Transaction (User Wise) Report s
 When user search "Mobile Money Transaction (User Wise)" as report name in search box
 Then user click to select Mobile Money Transaction (User Wise)as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Mobile Money Transaction (User Wise)in pdf format
 
@@ -1321,7 +1321,7 @@ Then user able to view Mobile Money Transaction (User Wise)in pdf format
 Scenario: Verify user able to view Modified / Endorsed Cover Notes Report successfully
 When user search "Modified / Endorsed Cover Notes" as report name in search box
 Then user click to select Modified / Endorsed Cover Notes as report
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Modified / Endorsed Cover Notes in pdf format
 
@@ -1339,7 +1339,7 @@ When user search "Multi Policies Quotation" as report name in search box
 Then user click to select Multi Policies Quotation as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Multi Policies Quotation in pdf format
 
@@ -1350,7 +1350,7 @@ Then user click to select Not Renewed Policies as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Not Renewed Policies in pdf format
 
@@ -1370,7 +1370,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Outstanding Commission Statement in pdf format
 
@@ -1398,7 +1398,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "All" as Supplier Name
 When user select "UBL Bank (TZS)" as account
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Payment Cheque Register in pdf format
 
@@ -1409,7 +1409,7 @@ Then user click to select Pending Quotation as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Pending Quotation in pdf format
 
@@ -1417,11 +1417,11 @@ Then user able to view Pending Quotation in pdf format
 Scenario: Verify user able to view Performance Incentive Report[REPORT64] Report successfully
 When user search "Performance Incentive Report" as report name in search box
 Then user click to select Performance Incentive Report as report
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-When user select "2024" as year
+When user select "TestProject0001" as user name
+When user select "All" as business By
+When user select "2025" as year
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Performance Incentive Report in pdf format
 
@@ -1432,10 +1432,10 @@ Then user click to select Policy Cancellation as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Policy Cancellation in pdf format
 
@@ -1446,13 +1446,13 @@ Then user click to select Policy Push Error Records as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Direct" as Business type
 When user select "Tanzanian Shillings" as curreny
 When user enter "36516" as debit No
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Policy Push Error Records in pdf format
 
@@ -1463,12 +1463,12 @@ Then user click to select Policy Renewable as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Policy Renewable in pdf format
 
@@ -1476,7 +1476,7 @@ Then user able to view Policy Renewable in pdf format
 Scenario: Verify user able to view Policy Retention Report (Quarterly)[REPORT167] Report successfully
 When user search "Policy Retention Report (Quarterly)" as report name in search box
 Then user click to select Policy Retention Report (Quarterly) as report
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view Policy Retention Report (Quarterly) in pdf format
@@ -1485,7 +1485,7 @@ Then user able to view Policy Retention Report (Quarterly) in pdf format
 Scenario: Verify user able to view Policy Retention Report (Yearly)[REPORT168] Report successfully
 When user search "Policy Retention Report (Yearly)" as report name in search box
 Then user click to select Policy Retention Report (Yearly) as report
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view Policy Retention Report (Yearly) in pdf format
@@ -1497,9 +1497,9 @@ Then user click to select Premium Financed Risk Notes as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Premium Financed Risk Notes in pdf format
 
@@ -1552,7 +1552,7 @@ Scenario: Verify user able to view Regulatory Document Inventory[REPORT189] Repo
 When user search "Regulatory Document Inventory" as report name in search box
 Then user click to select Regulatory Document Inventory as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Regulatory Document Inventory in pdf format
 
@@ -1563,10 +1563,10 @@ Then user click to select Renewal List as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Renewal List in pdf format
 
@@ -1577,10 +1577,10 @@ Then user click to select Renewal List (User wise) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
+When user select "TestProject0001" as user name
+When user select "All" as business By
 When user select "2 Wheelers/ 3 Wheelers" as insurance type
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Renewal List (User wise) in pdf format
 
@@ -1590,7 +1590,7 @@ When user search "Renewal Reminder Letter" as report name in search box
 Then user click to select Renewal Reminder Letter as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Renewal Reminder Letter in pdf format
 
@@ -1601,9 +1601,9 @@ Then user click to select Show Expired, Active or Renewed Risk Notes. as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Show Expired, Active or Renewed Risk Notes. in pdf format
 
@@ -1614,7 +1614,7 @@ Then user click to select Statement (Client-wise) as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Statement (Client-wise) in pdf format
 
@@ -1626,7 +1626,7 @@ When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Statement (Insurer-wise) Comprehensive in pdf format
 
@@ -1636,7 +1636,7 @@ When user search "Statement (Insurer-wise) Kenya" as report name in search box
 Then user click to select Statement (Insurer-wise) Kenya as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user select "Tanzanian Shillings" as curreny
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Statement (Insurer-wise) Kenya in pdf format
 
@@ -1645,7 +1645,7 @@ Scenario: Verify user able to view Statement (Insurer-wise)Type 1[REPORT08] Repo
 When user search "Statement (Insurer-wise)Type 1" as report name in search box
 Then user click to select Statement (Insurer-wise)Type one as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Statement (Insurer-wise)Type one in pdf format
 
@@ -1654,7 +1654,7 @@ Scenario: Verify user able to view Statement (Insurer-wise)Type 2[REPORT44] Repo
 When user search "Statement (Insurer-wise)Type 2" as report name in search box
 Then user click to select Statement (Insurer-wise)Type two as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Statement (Insurer-wise)Type two in pdf format
 
@@ -1663,7 +1663,7 @@ Scenario: Verify user able to view Statement (Insurer-wise)Type 3[REPORT44] Repo
 When user search "Statement (Insurer-wise)Type 3" as report name in search box
 Then user click to select Statement (Insurer-wise)Type three as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Statement (Insurer-wise)Type three in pdf format
 
@@ -1675,7 +1675,7 @@ When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user enter "32156" as debit No
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Statement Statement (Client-wise) - on Risk Note in pdf format
 
@@ -1686,7 +1686,7 @@ Then user click to select Sticker Replacement as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Sticker Replacement in pdf format
 
@@ -1702,7 +1702,7 @@ Scenario: Verify user able to view Supplier Statement[REPORT104] Report successf
 When user search "Supplier Statement" as report name in search box
 Then user click to select Supplier Statement as report
 When user select "All" as Supplier Name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Supplier Statement in pdf format
 
@@ -1712,7 +1712,7 @@ When user search "Targets" as report name in search box
 Then user click to select Targets as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Targets in pdf format
 
@@ -1722,7 +1722,7 @@ When user search "Targets (Zone wise)" as report name in search box
 Then user click to select Targets (Zone wise) as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Targets (Zone wise) in pdf format
 
@@ -1732,7 +1732,7 @@ When user search "Targets (Zone wise) BY Policy Count" as report name in search 
 Then user click to select Targets (Zone wise) BY Policy Count as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Targets (Zone wise) BY Policy Count in pdf format
 
@@ -1742,7 +1742,7 @@ When user search "Targets By Policy Count" as report name in search box
 Then user click to select Targets By Policy Count as report
 When user select "Tanzanian Shillings" as curreny
 When user select "General Insurance" as product
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Targets By Policy Count in pdf format
 
@@ -1751,7 +1751,7 @@ Scenario: Verify user able to view TIRA MIS Report[REPORT79] Report successfully
 When user search "TIRA MIS Report" as report name in search box
 Then user click to select TIRA MIS Report as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view TIRA MIS Report in pdf format
 
@@ -1760,7 +1760,7 @@ Scenario: Verify user able to view TIRA Reports - Broker Premium Remittance Stat
 When user search "TIRA Reports - Broker Premium Remittance Statement" as report name in search box
 Then user click to select TIRA Reports - Broker Premium Remittance Statement as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view TIRA Reports - Broker Premium Remittance Statement in pdf format
 
@@ -1769,7 +1769,7 @@ Scenario: Verify user able to view TIRA Reports - Broker Premium Remittance Stat
 When user search "TIRA Reports - Broker Premium Remittance Statement(Quarterly)" as report name in search box
 Then user click to select TIRA Reports - Broker Premium Remittance Statement(Quarterly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view TIRA Reports - Broker Premium Remittance Statement(Quarterly) in pdf format
@@ -1778,7 +1778,7 @@ Then user able to view TIRA Reports - Broker Premium Remittance Statement(Quarte
 Scenario: Verify user able to view TIRA Reports - Brokers Premium Collection Report (Quarterly)[REPORT48] Report successfully
 When user search "TIRA Reports - Brokers Premium Collection Report (Quarterly)" as report name in search box
 Then user click to select TIRA Reports - Brokers Premium Collection Report (Quarterly) as report
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view TIRA Reports - Brokers Premium Collection Report (Quarterly) in pdf format
@@ -1788,7 +1788,7 @@ Scenario: Verify user able to view TIRA Reports - Commission Income Statemnt (Qu
 When user search "TIRA Reports - Commission Income Statemnt (Quarterly)" as report name in search box
 Then user click to select TIRA Reports - Commission Income Statemnt (Quarterly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view TIRA Reports - Commission Income Statemnt (Quarterly) in pdf format
@@ -1798,7 +1798,7 @@ Scenario: Verify user able to view TIRA Reports - Commission Income Statemnt (Ye
 When user search "TIRA Reports - Commission Income Statemnt (Yearly)" as report name in search box
 Then user click to select TIRA Reports - Commission Income Statemnt (Yearly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 And user click on show report button
 Then user able to view TIRA Reports - Commission Income Statemnt (Yearly) in pdf format
 
@@ -1807,7 +1807,7 @@ Scenario: Verify user able to view TIRA Reports - Commission IncomeStatement (Mo
 When user search "TIRA Reports - Commission IncomeStatement (Monthly)" as report name in search box
 Then user click to select TIRA Reports - Commission IncomeStatement (Monthly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 When user select "January" as monthly
 And user click on show report button
 Then user able to view TIRA Reports - Commission IncomeStatement (Monthly) in pdf format
@@ -1817,7 +1817,7 @@ Scenario: Verify user able to view TIRA Reports - Payables Outstanding to Insure
 When user search "TIRA Reports - Payables Outstanding to Insurers" as report name in search box
 Then user click to select TIRA Reports - Payables Outstanding to Insurers as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 And user click on show report button
 Then user able to view TIRA Reports - Payables Outstanding to Insurers in pdf format
 
@@ -1826,7 +1826,7 @@ Scenario: Verify user able to view TIRA Reports - Payables Outstanding to Insure
 When user search "TIRA Reports - Payables Outstanding to Insurers (Quaterly)" as report name in search box
 Then user click to select TIRA Reports - Payables Outstanding to Insurers (Quaterly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view TIRA Reports - Payables Outstanding to Insurers (Quaterly) in pdf format
@@ -1836,7 +1836,7 @@ Scenario: Verify user able to view TIRA Reports - Premium Booked Statement (Mont
 When user search "TIRA Reports - Premium Booked Statement (Monthly)" as report name in search box
 Then user click to select TIRA Reports - Premium Booked Statement (Monthly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 When user select "January" as monthly
 And user click on show report button
 Then user able to view TIRA Reports - Premium Booked Statement (Monthly) in pdf format
@@ -1846,7 +1846,7 @@ Scenario: Verify user able to view TIRA Reports - Premium Booked Statement (Quar
 When user search "TIRA Reports - Premium Booked Statement (Quarterly)" as report name in search box
 Then user click to select TIRA Reports - Premium Booked Statement (Quarterly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view TIRA Reports - Premium Booked Statement (Quarterly) in pdf format
@@ -1856,7 +1856,7 @@ Scenario: Verify user able to view TIRA Reports - Premium Booked Statement (Year
 When user search "TIRA Reports - Premium Booked Statement (Yearly)" as report name in search box
 Then user click to select TIRA Reports - Premium Booked Statement (Yearly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 And user click on show report button
 Then user able to view TIRA Reports - Premium Booked Statement (Yearly) in pdf format
 
@@ -1865,7 +1865,7 @@ Scenario: Verify user able to view TIRA Reports - Premium Booked Statement-Life 
 When user search "TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly)" as report name in search box
 Then user click to select TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 When user select "January to March" as quarter
 And user click on show report button
 Then user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Quarterly) in pdf format
@@ -1875,7 +1875,7 @@ Scenario: Verify user able to view TIRA Reports - Premium Booked Statement-Life 
 When user search "TIRA Reports - Premium Booked Statement-Life Assurance (Yearly)" as report name in search box
 Then user click to select TIRA Reports - Premium Booked Statement-Life Assurance (Yearly) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-When user select "2024" as year
+When user select "2025" as year
 And user click on show report button
 Then user able to view TIRA Reports - Premium Booked Statement-Life Assurance (Yearly) in pdf format
 
@@ -1884,7 +1884,7 @@ Scenario: Verify user able to view TIRA Sticker Inventory[REPORT93] Report succe
 When user search "TIRA Sticker Inventory" as report name in search box
 Then user click to select TIRA Sticker Inventory as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view TIRA Sticker Inventory in pdf format
 
@@ -1902,7 +1902,7 @@ Then user click to select Total Outstanding Payments (Detailed) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Total Outstanding Payments (Detailed) in pdf format
 
@@ -1910,7 +1910,7 @@ Then user able to view Total Outstanding Payments (Detailed) in pdf format
 Scenario: Verify user able to view Total Outstanding Payments (Summarized)[REPORT22] Report successfully
 When user search "Total Outstanding Payments (Summarized)" as report name in search box
 Then user click to select Total Outstanding Payments (Summarized) as report
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Total Outstanding Payments (Summarized) in pdf format
 
@@ -1921,7 +1921,7 @@ Then user click to select Total Outstanding Receipts (Detailed) as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Total Outstanding Receipts (Detailed) in pdf format
 
@@ -1937,7 +1937,7 @@ Scenario: Verify user able to view Unallocated Credit Note[REPORT236] Report suc
 When user search "Unallocated Credit Note" as report name in search box
 Then user click to select Unallocated Credit Note as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Unallocated Credit Note in pdf format
 
@@ -1946,7 +1946,7 @@ Scenario: Verify user able to view Unallocated Payments[REPORT24] Report success
 When user search "Unallocated Payments" as report name in search box
 Then user click to select Unallocated Payments as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Unallocated Payments in pdf format
 
@@ -1956,7 +1956,7 @@ When user search "Unallocated Receipts" as report name in search box
 Then user click to select Unallocated Receipts as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Unallocated Receipts in pdf format
 
@@ -1967,9 +1967,9 @@ Then user click to select Unrequested Customer Tax Invoice Transactions as repor
 When user select "Alliance Insurance Company (T) Ltd." as insurer
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
-When user select "PravinS" as user name
-When user select "Demo User" as business By
-And user select "01/01/2024" as from date
+When user select "TestProject0001" as user name
+When user select "All" as business By
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Unrequested Customer Tax Invoice Transactions in pdf format
 
@@ -1992,7 +1992,7 @@ Scenario: Verify user able to view VAT submission Report for Insurance Companies
 When user search "VAT submission Report for Insurance Companies" as report name in search box
 Then user click to select VAT submission Report for Insurance Companies as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view VAT submission Report for Insurance Companies in pdf format
 
@@ -2001,7 +2001,7 @@ Scenario: Verify user able to view VAT submission Report for Insurance Companies
 When user search "VAT submission Report for Insurance Companies 1" as report name in search box
 Then user click to select VAT submission Report for Insurance Companies one as report
 When user select "Alliance Insurance Company (T) Ltd." as insurer
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view VAT submission Report for Insurance Companies one in pdf format
 
@@ -2012,7 +2012,7 @@ Then user click to select Vouchers Report as report
 When user enter "Pravin Testing Broker" as client name
 And user select Pravin Testing Broker as client name
 When user select "Inventory" as account
-And user select "01/01/2024" as from date
+And user select "01/01/2025" as from date
 And user click on show report button
 Then user able to view Vouchers Report in pdf format
 

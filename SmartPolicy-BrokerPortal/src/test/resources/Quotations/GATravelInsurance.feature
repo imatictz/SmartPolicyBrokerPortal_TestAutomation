@@ -28,6 +28,7 @@ When user enter "self" as relationship
 When user select self as realtionship
 #When user click on compute button
 When user click on insert button
+#Addon
 When user click on addOn button
 When user click on extension dropdown
 When user enter "Others" as extension
@@ -39,6 +40,29 @@ When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@MandatoryFieldsNoAddon
+Scenario: (GA Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user enter "Pravin Testing Broker" as client name
+When user select Pravin Testing as client name
+When user click on country travelling to dropdown
+When user enter "South Africa" as country travelling to
+When user select Sounth Africa as country travelling to
+When user click on plan dropdown
+When user enter "Plan Africa" as plan
+When user select Plan Africa as plan
+When user enter "15244-51654-84125" as cover note number
+When user enter "25428Af111" as passport number
+When user enter "01/01/2000" as date of birth
+When user enter "25/11/2024" as expiry date
+When user click on relationship dropdown
+When user enter "self" as relationship
+When user select self as realtionship
+#When user click on compute button
+When user click on insert button
+When user click on save button
+When user click on Ok button to accept commission alert message
+Then user able to view "Awaiting Receipt" as status
 
 
 

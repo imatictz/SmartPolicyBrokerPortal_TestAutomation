@@ -2,9 +2,15 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Administrator\eclipse-workspace\SmartERP"/>
+			<item value="C:\Users\Administrator\git\SmartErp"/>
+			<item value="C:\Users\Administrator\git\SmartPolicyInsurerPortal_TestAutomation\SmartPolicy-(Alliance-Tanzania)InsurerPortal1"/>
+			<item value="C:\Users\Administrator\eclipse-workspace\SmartERP\SmartERPDemo"/>
+			<item value="C:\Users\Administrator\git\UpdateSmartPolicy\SmartPolicy-BrokerPortal"/>
+			<item value="C:\Users\Administrator\git\SmartPolicyBrokerPortal_TestAutomation\SmartPolicy-BrokerPortal"/>
+			<item value="C:\Users\Administrator\git\SmartPolicyBrokerPortal_TestAutomation\SmartPolicy-(Demo-Tanzania)BrokerPortal"/>
 			<item value="C:\Users\Administrator\eclipse-workspace\SmartPolicyBrokerPortal_TestAutomation\SmartPolicy-(Demo-Tanzania)BrokerPortal"/>
 			<item value="C:\Users\Administrator\eclipse-workspace\SmartPolicyBrokerPortal_TestAutomation"/>
-			<item value="C:\Users\Administrator\git\SmartPolicyBrokerPortal_TestAutomation\SmartPolicy-(Demo-Tanzania)BrokerPortal"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -13,6 +19,81 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\Administrator\git"/>
+			<item value="C:\Users\Administrator\git\repository\SmartPolicy-BrokerPortal\src\test\resources\Business_Logic\ClientDetails.feature"/>
+			<item value="C:\Users\Administrator\git\SmartPolicyBrokerPortal_TestAutomation"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="Insurance.SmartPolicy_Broker_Zambia"/>
+			<item value="Insurance.BrokerPOM"/>
+			<item value="Insurance.BrokerPortalPOM"/>
+		</list>
+		<list key="groupId">
+			<item value="Insurance"/>
+		</list>
+		<list key="artifactId">
+			<item value="SmartPolicy-Broker_Zambia"/>
+			<item value="BrokerPOM"/>
+			<item value="BrokerPortalPOM"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 </section>

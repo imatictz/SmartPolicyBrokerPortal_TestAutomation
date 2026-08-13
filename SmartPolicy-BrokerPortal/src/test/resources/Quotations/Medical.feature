@@ -20,10 +20,9 @@ When user enter "01/01/2000" as date of birth
 When user select "Self" as relationship
 When user enter "160000" as total premium
 When user click on insert button
+#Addon
 When user click on addOn button
-When user click on extension dropdown
-When user enter "All Risk Cover" as extension
-When user select on All Risk Cover as extension
+When user select "All Risk Cover" as extension
 When user enter "320000" as sum insured (AddOn)
 When user enter "1.5" as rate%
 When user enter "Medical Quotation AddOn" as description (AddOn)
@@ -31,6 +30,21 @@ When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@MandatoryFieldsNoAddon
+Scenario: (Medical Quotation) Verify user able to enter mandatory fields and save quotation successfully
+When user enter "Pravin Testing Broker" as client name
+When user select Pravin Testing as client name
+When user Select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
+When user select "Standard Rate" as insurance class
+When user enter "01/01/2000" as date of birth
+When user select "Self" as relationship
+When user enter "160000" as total premium
+When user click on insert button
+When user click on save button
+When user click on Ok button to accept commission alert message
+Then user able to view "Awaiting Receipt" as status
 
 
 @AllFields

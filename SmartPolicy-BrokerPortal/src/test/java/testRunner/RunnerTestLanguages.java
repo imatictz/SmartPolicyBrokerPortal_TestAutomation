@@ -5,7 +5,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/LanguagesFeature/Swahili.feature", 
+		           features="src/test/resources/LanguagesFeature/French.feature", 
                    tags= "@All", 
                    glue={"cucumberMap24Languages","MyHooks"}, 
                    monochrome=true,   

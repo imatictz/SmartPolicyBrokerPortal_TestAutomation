@@ -19,7 +19,7 @@ public class Medical {
 	@When("^user navigate on quotations menu$")
 	public void user_navigate_on_quotations_menu() {
 		Object[] input8=new Object[1];
-	    input8[0]="(//*[text()='Quotations '])[1]";
+	    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 	    SeleniumOperations.actionClass(input8);
 	}
 
@@ -42,10 +42,10 @@ public class Medical {
 	@When("^user select \"([^\"]*)\" as insurance type$")
 	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
-		input[1]="//*[@class='select2-input select2-focused']";
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
+		input[1]="//*[@class='select2-search__field']";
 		input[2]=insuranceType;
-		input[3]="(//*[@class='select2-match'])[1]";
+		input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 		Thread.sleep(5000);
@@ -72,11 +72,11 @@ public class Medical {
 	@When ("^user Select \"(.*)\" as insurer$")
 	public void selectInsurer(String insurer) throws Throwable 
 	{
-		Object[] input= new Object[4];
-		input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
-		input[1]="//*[@class='select2-input select2-focused']";
-		input[2]=insurer;
-		input[3]="//*[@class='select2-match']";
+		Object[] input = new Object[4];
+	    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
+	    input[1] = "//*[@class='select2-search__field']";
+	    input[2] = insurer;
+	    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
 		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
 		Thread.sleep(2000);
@@ -93,14 +93,20 @@ public class Medical {
 	}
 
 	@When ("user select {string} as insurance class")
-	public void user_select_as_insuranceClass(String insuranceClass) {
-	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInsuranceClass']", "//*[@class='select2-input select2-focused']", insuranceClass , "//*[@class='select2-match']", "user select {String} as insurance class", "DROPDOWN", 2000);
-
+	public void user_select_as_insuranceClass(String insuranceClass) throws InterruptedException {
+		Object[] input = new Object[4];
+	    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]";
+	    input[1] = "//*[@class='select2-search__field']";
+	    input[2] = insuranceClass;
+	    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"([^\\\"]*)\\\" as insurance class",output.get("MESSAGE").toString());
+		Thread.sleep(2000);
 	}
 	
 	@When ("user select {string} as relationship")
 	public void user_select_as_relationship(String relationship) {
-	    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbRelationship']", "//*[@class='select2-input select2-focused']", relationship , "//*[@class='select2-match']", "user select {string} as relationship", "DROPDOWN", 2000);
+	    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbRelationship')]", "//*[@class='select2-search__field']", relationship , "//*[contains(@id,'select2-MainContent_cmbRelationship-result-')]", "user select {string} as relationship", "DROPDOWN", 2000);
 
 	}
 	
@@ -130,50 +136,27 @@ public class Medical {
 	    
 	    Itl.CustomGstPercentValidation("//*[@id='MainContent_txtVATAmt']", "//*[@id='MainContent_txtTotalSum']", "//*[@id='MainContent_txtTotalGrpPremium']", "GSTVALIDATION", 0);
 
+	    SeleniumOperations.scrollUp();
 	}
 
 	@When("^user click on addOn button$")
 	public void clickOnAddon() throws Throwable {
 	    Object[] input=new Object[1];
-	    input[0]="//*[@id='li2']";
+	    input[0]="//*[text()='Add-ons']";
 	    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
 	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on addOn button",output.get("MESSAGE").toString());
 	    Thread.sleep(2000);
 	}
 
-	@When("^user click on extension dropdown$")
-	public void clickOnExtensionDropdown() throws Throwable {
-	    Object[] input=new Object[1];
-	    input[0]="//*[@id='s2id_MainContent_cmbAddons']";
-	    Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on extension dropdown",output.get("MESSAGE").toString());
-	}
-
-	@When("^user enter \"([^\"]*)\" as extension$")
-	public void enterExtension(String extension) throws Throwable{
-	    Object[] input=new Object[2];
-	    input[0]="//*[@class='select2-input select2-focused']";
-	    input[1]=extension;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"All Risk Cover\" as extension",output.get("MESSAGE").toString());
-	}
-
-	@When("^user select on All Risk Cover as extension$")
-	public void selectExtension() throws Throwable {
-	    Object[] input=new Object[1];
-	    input[0]="//*[@class='select2-match']";
-	    Hashtable<String,Object> output=  SeleniumOperations.clickOnElement(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select on All Risk Cover as extension",output.get("MESSAGE").toString());
-	}
-
-	@When("^user enter \"([^\"]*)\" as sum insured \\(AddOn\\)$")
-	public void enterSumInsuredAddOn(String sumInsuredAddOn) throws Throwable {
-	    Object[] input=new Object[2];
-	    input[0]="//*[@id='txtSumInsuredAddons']";
-	    input[1]=sumInsuredAddOn;
-	    Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
-	    HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"320000\" as sum insured (AddOn)",output.get("MESSAGE").toString());
-	    Thread.sleep(2000);
+	@When("^user select \"([^\"]*)\" as extension$")
+	public void user_select_as_extension(String extension) throws Throwable {
+		Object[] input= new Object[4];
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
+		input[1]="//*[@class='select2-search__field']";
+		input[2]=extension;
+		input[3]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
+		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as extension",output.get("MESSAGE").toString());
 	}
 
 	
@@ -187,6 +170,15 @@ public class Medical {
 	    Thread.sleep(2000);
 	}
 
+	@When("^user enter \"([^\"]*)\" as sum insured \\(AddOn\\)$")
+	public void enterSumInsuredAddOn(String sumInsuredAddOn) throws Throwable 
+	{
+	   Object[] input=new Object[2];
+	   input[0]="//*[@id='txtSumInsuredAddons']";
+	   input[1]=sumInsuredAddOn;
+	   Hashtable<String,Object> output= SeleniumOperations.sendKeys(input);
+	   HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user enter \"200000\" as sum insured (AddOn)",output.get("MESSAGE").toString());
+	}
 	@When("^user enter \"([^\"]*)\" as description \\(AddOn\\)$")
 	public void enterDescriptionAddon(String description) throws Throwable {
 		Object[] input =new Object[2];

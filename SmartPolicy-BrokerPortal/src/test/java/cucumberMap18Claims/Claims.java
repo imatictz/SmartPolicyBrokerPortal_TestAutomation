@@ -20,7 +20,7 @@ public class Claims {
 	@When("^user Click on risk note menu$")
 	public void user_Click_on_risk_note_menu() throws Throwable {
 		Object[] input=new Object[1];
-		input[0]="(//*[text()='Risk Note '])[1]";
+		input[0]="//*[@id='MNU_wfICNM']";
 		SeleniumOperations.clickOnElement(input);
 		Thread.sleep(2000);
 	}
@@ -54,10 +54,10 @@ public class Claims {
 		 Thread.sleep(2000);
 	 }
 
-	 @When("^user click on options button$")
+	 @When("^user click on actions button$")
 	 public void user_click_on_options_button() throws Throwable {
 		 Object[] input=new Object[1];
-		 input[0]="//*[@class='btn default dropdown-toggle']";
+		 input[0]="//*[@id='MainContent_repICNM_lblActions_0']";
 		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
 		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on options button",output.get("MESSAGE").toString());
 		 Thread.sleep(2000);
@@ -65,7 +65,7 @@ public class Claims {
 
 	 @When("^user click on report claim umbrella like button$")
 	 public void user_click_on_report_claim_umbrella_like_button() throws Throwable {
-		    Itl.CustomClickEvent("//*[@id='MainContent_repICNM_btnClaim_0']", "user click on report claim umbrella like button", "CLICK", 5000);
+		    Itl.CustomClickEvent("//*[@id='MainContent_repICNM_lblReportClaim_0']", "user click on report claim umbrella like button", "CLICK", 5000);
 	        SeleniumOperations.scrolldown();
 	        Thread.sleep(4000);
 	 }
@@ -77,22 +77,22 @@ public class Claims {
 	 }
 	 @When("user select {string} as country")
 	 public void user_select_as_country(String country) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbCountryofLoss']", "//*[@class='select2-input select2-focused']", country , "//*[@class='select2-match']", "user select {string} as country", "DROPDOWN", 3000);
+		    Itl.CustomDropdownEvent("//*[contains(@aria-controls,'MainContent_cmbCountryofLoss')]", "(//*[@class='select2-search__field'])[2]", country , "(//*[contains(@data-select2-id,'MainContent_cmbCountryofLoss')])[2]", "user select {string} as country", "DROPDOWN", 3000);
 
 	 }
 	 @When("user select {string} as region\\/City of loss")
 	 public void user_select_as_region_city_of_loss(String cityOfLoss) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbRegion']", "//*[@class='select2-input select2-focused']", cityOfLoss , "//*[@class='select2-match']", "user select {string} as region\\\\/City of loss", "DROPDOWN", 3000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbRegion')])[1]", "(//*[@class='select2-search__field'])[2]", cityOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbRegion')])[3]", "user select {string} as region\\\\/City of loss", "DROPDOWN", 3000);
 
 	 }
 	 @When("user select {string} as district of loss")
 	 public void user_select_as_district_of_loss(String districtOfLoss) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbDistrict']", "//*[@class='select2-input select2-focused']", districtOfLoss , "//*[@class='select2-match']", "user select {string} as district of loss", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbDistrict')])[1]", "(//*[@class='select2-search__field'])[2]", districtOfLoss , "(//*[contains(@data-select2-id,'MainContent_cmbDistrict')])[3]", "user select {string} as district of loss", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as cause of loss\\/Accident")
 	 public void user_select_as_cause_of_loss_accident(String causeOfLossAccident) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbClmmCauses']", "//*[@class='select2-input select2-focused']", causeOfLossAccident , "//*[@class='select2-match']", "user select {string} as cause of loss\\\\/Accident", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbClmmCauses')])[1]", "(//*[@class='select2-search__field'])[2]", causeOfLossAccident , "(//*[contains(@data-select2-id,'MainContent_cmbClmmCauses')])[2]", "user select {string} as cause of loss\\\\/Accident", "DROPDOWN", 2000);
 
 	 }
 	 @Then("user enter {string} as place of loss\\/Accident")
@@ -102,17 +102,17 @@ public class Claims {
 	 }
 	 @When("user select {string} as reported type")
 	 public void user_select_as_reported_type(String reportedType) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbIntimationType']", "//*[@class='select2-input select2-focused']", reportedType , "//*[@class='select2-match']", "user select {string} as reported type", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbIntimationType')])[1]", "(//*[@class='select2-search__field'])[2]", reportedType , "(//*[contains(@data-select2-id,'MainContent_cmbIntimationType')])[2]", "user select {string} as reported type", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as nature of loss\\/claim type")
 	 public void user_select_as_nature_of_loss_claim_type(String natureOfLossClaimType) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbLossType']", "//*[@class='select2-input select2-focused']", natureOfLossClaimType , "//*[@class='select2-match']", "user select {string} as nature of loss\\\\/claim type", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbLossType')])[1]", "(//*[@class='select2-search__field'])[2]", natureOfLossClaimType , "(//*[contains(@data-select2-id,'MainContent_cmbLossType')])[2]", "user select {string} as nature of loss\\\\/claim type", "DROPDOWN", 2000);
 
 	 }
 	 @When("user select {string} as claimant circumstances")
 	 public void user_select_as_claimant_circumstances(String claimantCircumstances) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbInjured']", "//*[@class='select2-input select2-focused']", claimantCircumstances , "//*[@class='select2-match']", "user select {string} as claimant circumstances", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbInjured')])[1]", "(//*[@class='select2-search__field'])[2]", claimantCircumstances , "(//*[contains(@data-select2-id,'MainContent_cmbInjured')])[2]", "user select {string} as claimant circumstances", "DROPDOWN", 2000);
 
 	 }
 	 @When("user enter {string} as claimant amount")
@@ -129,7 +129,7 @@ public class Claims {
 
      @When("user select {string} as cause of claim")
      public void user_select_as_cause_of_claim(String causeOfClaim) {
-		    Itl.CustomDropdownEvent("//*[@id='s2id_MainContent_cmbClmmCauses']", "//*[@class='select2-input select2-focused']", causeOfClaim , "//*[@class='select2-match']", "user select {string} as cause of claim", "DROPDOWN", 2000);
+		    Itl.CustomDropdownEvent("(//*[contains(@aria-controls,'MainContent_cmbClmmCauses')])[1]", "(//*[@class='select2-search__field'])[2]", causeOfClaim , "(//*[contains(@data-select2-id,'MainContent_cmbClmmCauses')])[2]", "user select {string} as cause of claim", "DROPDOWN", 2000);
 
      }
      @Then("user enter {string} as place of death\\/illnes\\/others")
@@ -152,12 +152,12 @@ public class Claims {
      }
      @When("user click on options menu")
      public void user_click_on_options_menu() throws InterruptedException {
-         Itl.CustomClickEvent("(//*[@class='btn default dropdown-toggle'])[1]", "user click on options menu", "CLICK", 2000);
+         Itl.CustomClickEvent("(//*[@class='removeclass btn btn-light btn-active-light-primary btn-center btn-sm'])[1]", "user click on options menu", "CLICK", 2000);
 
      }
      @When("user click on report to insurer option")
      public void user_click_on_report_to_insurer_option() throws InterruptedException {
-         Itl.CustomClickEvent("(//*[@class='IntimateToInsurer'])[1]", "user click on report to insurer option", "CLICK", 2000);
+         Itl.CustomClickEvent("//*[@id='MainContent_gridCLMGDetails_btnReqIns_1']", "user click on report to insurer option", "CLICK", 2000);
 
      }
      @When("user click on yes,report button for confirmation")
@@ -165,13 +165,14 @@ public class Claims {
          Itl.CustomClickEvent("//*[@id='btnIntimateToInsurer']", "user click on yes,report button for confirmation", "CLICK", 2000);
 
      }
+     @Then("user able to view {string} as status after reporting to insurer")
+     public void user_able_to_view_as_status1(String status) throws InterruptedException {
+         Itl.CustomValidationEvent("//*[@id='sort_table']/tbody/tr[1]/td[8]", status, "user able to view {string} as status after reporting to insurer", "VALIDATION", 0);
+     }
      @When("^user click on fetch button$")
 	 public void user_click_on_fetch_button() throws Throwable {
-		 Object[] input7=new Object[1];
-		 input7[0]="//*[@id='btnFetch']";
-		 Hashtable<String,Object> output=SeleniumOperations.clickOnElement(input7);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on fetch button",output.get("MESSAGE").toString());
-		 Thread.sleep(4000);
+         Itl.CustomClickEvent("//*[@id='btnFetch']", "user click on fetch button", "CLICK", 4000);
+
 	 }
 
 }

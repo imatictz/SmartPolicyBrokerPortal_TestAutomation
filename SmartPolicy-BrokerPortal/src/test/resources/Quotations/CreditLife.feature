@@ -16,7 +16,7 @@ When user select Pravin Testing as client name
 When user select "Automated Testing Company" as insurer
 When user enter "15244-51654-84125" as cover note number
 When user enter "Pravin Testing" as insured name
-When user select date of birth
+When user select "01/01/2000"date of birth
 When user enter "2000000" as loan amount
 When user enter "180" as period in month
 When user click on client type dropdown
@@ -36,6 +36,25 @@ When user click on insert button (AddOn)
 When user click on save button
 When user click on Ok button to accept commission rate alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
+
+@MandatoryFieldsNoAddon
+Scenario: (Credit Life Quotation)Verify user able to enter mandatory fields and save quotation successfully
+When user enter "Pravin Testing Broker" as client name
+When user select Pravin Testing as client name
+When user select "Automated Testing Company" as insurer
+When user enter "15244-51654-84125" as cover note number
+When user enter "Pravin Testing" as insured name
+When user select date of birth
+When user enter "2000000" as loan amount
+When user enter "180" as period in month
+When user click on client type dropdown
+When user enter "Business Banking" as client type
+When user select Business Banking as client type
+When user click on compute button
+When user click on insert button
+When user click on save button
+When user click on Ok button to accept commission rate alert message
+Then user able to view "Awaiting Receipt" as status
 
 
 @AllFields

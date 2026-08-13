@@ -16,5 +16,4 @@ import io.cucumber.testng.CucumberOptions;
 
 
 public class RunnerTestAccidentalDamageQuotation extends AbstractTestNGCucumberTests{
-
 }

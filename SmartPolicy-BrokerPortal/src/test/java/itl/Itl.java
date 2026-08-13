@@ -62,6 +62,7 @@ public class Itl {
 				Object[] input = new Object[2];
 				input[0]=strElementId;
 				input[1]=strInputText;
+				//input[2]=strStatusText;
 				Hashtable<String, Object> output = SeleniumOperations.validation(input);
 				HTMLReportGenerator.StepDetails(output.get("STATUS").toString(), stepName, output.get("MESSAGE").toString());
 				Thread.sleep(intThreadSleepTime);	

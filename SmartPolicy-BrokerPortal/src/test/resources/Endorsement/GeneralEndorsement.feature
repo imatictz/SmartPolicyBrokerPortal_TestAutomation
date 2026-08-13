@@ -16,7 +16,7 @@ When user select General Endorsements as endorsement type
 Scenario: (Motor Quotation Endorsement-UpgradePolicy)Verify user able to do policy upgrading for general financial endorsement
 
 #BrokerPortal
-When user enter "44" risk note number
+When user enter "235" risk note number
 When user click on fetch button
 When user enter "45000000" as change value of sum insured
 When user click on compute button
@@ -34,8 +34,22 @@ And user navigate on pending approvals option
 Then user click on endorsement approval option
 When user click on display icon
 Then user click on approve endorsement button
-When user enter "44" as risk note 
+#Return To Broker Portal
+When user enter "235" as risk note 
 Then user click on search button
+When user click on actions button
+When user click on capture receipt icon
+When user click on mode dropdown
+When user enter "Electronic Funds Transfer (EFT)" as mode
+When user select Electronic Funds Transfer (EFT) as mode
+When user click on issuer bank dropdown
+When user enter "Absa Group Limited" as issuer bank
+When user select Absa Group Limited as issuer bank
+When user click on collecting bank dropdown
+When user enter "Uchumi Commercial Bank" as collecting bank
+When user select Uchumi Commercial Bank as collecting bank
+When user enter "1250" as reference No
+When user click on proceed button
 When user click on process endorsement icon
 When user click on YES button for confirmation
 Then user able to view "Issued" as status
@@ -55,14 +69,26 @@ Then user able to view "Issued" as status
 
 @DownGradeMotorPolicy
 Scenario: (Motor Quotation Endorsement-DownGradePolicy)Verify user able to do policy downgrading for general financial endorsement
-When user enter "37262" risk note number
+When user enter "235" risk note number
 When user click on fetch button
-When user enter "45000000" as change value of sum insured
+When user enter "450000" as change value of sum insured
 When user click on compute button
 When user enter "Upgrading Policy" as endorsement details
 When user select on process endorsement button
-When user click on OK button to process endorsement 
-When user enter "37262" as risk note 
+When user click on OK button to process endorsement
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Sp@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user click on display icon
+Then user click on approve endorsement button
+#Return to broker portal 
+When user enter "235" as risk note 
 Then user click on search button
 When user click on process endorsement icon
 When user click on YES button for confirmation
@@ -89,7 +115,7 @@ Then user able to view "Issued" as status
 Scenario: (Bond Quotation Endorsement-UpgradePolicy)Verify user able to do policy upgrading for general financial endorsement
 
 #BrokerPortal
-When user enter "37124" risk note number
+When user enter "169" risk note number
 When user click on fetch button
 When user enter "46548-12446-54984" as cover note number
 When user click on edit icon to make financial changes
@@ -99,11 +125,37 @@ When user click on update button
 When user enter "Upgrading Policy" as endorsement details
 When user click on process endorsement button
 When user click on OK button to process endorsement
-When user enter "37136" as risk note 
-Then user click on search button 
+#Insurer Portal
+When user open new tab
+When user enter "https://apps.itl.co.tz/insurer/wfLogin.aspx" as url
+When user enter "Auto-1" as username
+When user enter "Sp@12345" as password
+When user click on login button
+When user navigate on operation dropdown menu (InsurerPortal)
+And user navigate on pending approvals option
+Then user click on endorsement approval option
+When user click on display icon
+Then user click on approve endorsement button
+#Return To Broker Portal
+When user enter "169" as risk note 
+Then user click on search button
+When user click on actions button
+When user click on capture receipt icon
+When user select "Electronic Funds Transfer (EFT)" as mode
+When user select "Absa Group Limited" as issuer bank
+When user select "Uchumi Commercial Bank" as collecting bank
+When user enter "1250" as reference No
+When user click on proceed button
+When user click on actions button
 When user click on process endorsement icon
 When user click on YES button for confirmation
 Then user able to view "Issued" as status
+
+#When user enter "229" as risk note 
+#Then user click on search button 
+#When user click on process endorsement icon
+#When user click on YES button for confirmation
+#Then user able to view "Issued" as status
 
 #Insurer Portal
 #When user open new tab

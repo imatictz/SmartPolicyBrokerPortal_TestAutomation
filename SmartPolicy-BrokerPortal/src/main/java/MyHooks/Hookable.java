@@ -12,7 +12,7 @@ import utility.SeleniumOperations;
 public class Hookable {
 	@Before(order=0)
 	public void before(Scenario Scenario) throws UnknownHostException{   
-		HTMLReportGenerator.TestSuiteStart("C:\\TestResult\\TestReport-Jan.html","SmartPolicy");
+		HTMLReportGenerator.TestSuiteStart("C:\\TestResult\\Report25.html","SmartPolicy");
 		HTMLReportGenerator.TestCaseStart(Scenario.getName(),Scenario.getStatus().toString());
 		System.out.println("--------------------Scenario Start---------------------");
 	}
@@ -42,16 +42,17 @@ public class Hookable {
 	}
 	 	
 	@Before(order=4)
-	public void enterPassword(){
+	public void enterPassword() throws InterruptedException{
 	    Object[] input3=new Object[2];
 	    input3[0]="//*[@id='password']";
 	    SeleniumOperations.sendPassword(input3);
+	    Thread.sleep(2000);
 	}
 	 	
 	@Before(order=5)
     public void clickOnLoginButton() throws InterruptedException{
 	    Object[] input4=new Object[1];
-		input4[0]="//*[text()='Login']";
+		input4[0]="//*[@id='btnLogin']";
 		SeleniumOperations.clickOnLogin(input4);
 		Thread.sleep(2000);
 	} 

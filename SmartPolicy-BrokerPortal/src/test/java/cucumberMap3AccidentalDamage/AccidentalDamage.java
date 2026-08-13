@@ -25,7 +25,7 @@ public class AccidentalDamage
 		public void user_navigate_on_quotations_menu() 
 		{
 			Object[] input8=new Object[1];
-		    input8[0]="(//*[text()='Quotations '])[1]";
+		    input8[0]="//*[@id='span_CompanySetupMapping_lc']";
 		    SeleniumOperations.actionClass(input8);
 		   
 		}
@@ -52,11 +52,11 @@ public class AccidentalDamage
 		@When("^user select \"([^\"]*)\" as insurance type$")
 		public void user_select_as_insurance_type(String insuranceType) throws Throwable {
 			Object[] input= new Object[4];
-			input[0]="//*[@id='s2id_MainContent_cmbPopInsuranceType']";
-			input[1]="//*[@class='select2-input select2-focused']";
+			input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
+			input[1]="//*[@class='select2-search__field']";
 			input[2]=insuranceType;
-			input[3]="//*[@class='select2-match']";
-			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
+			input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
+			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
 			Thread.sleep(5000);
 		}
@@ -89,24 +89,24 @@ public class AccidentalDamage
 		@When ("^user Select \"(.*)\" as insurer$")
 		public void selectInsurer(String insurer) throws Throwable 
 		{
-			Object[] input= new Object[4];
-			input[0]="//*[@id='s2id_MainContent_cmbInsurer']";
-			input[1]="//*[@class='select2-input select2-focused']";
-			input[2]=insurer;
-			input[3]="//*[@class='select2-match']";
+			Object[] input = new Object[4];
+		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsurer')]";
+		    input[1] = "//*[@class='select2-search__field']";
+		    input[2] = insurer;
+		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsurer-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"(.*)\\\" as insurer",output.get("MESSAGE").toString());
-			
-		}
+			Thread.sleep(2000);
+			}
 
 		@When("^user Select \"([^\"]*)\" as insurance class$")
 		public void user_Select_as_insurance_class(String insuranceClass) throws Throwable {
 			
-			Object[] input= new Object[4];
-			input[0]="//*[@id='s2id_MainContent_cmbInsuranceClass']";
-			input[1]="//*[@class='select2-input select2-focused']";
-			input[2]=insuranceClass;
-			input[3]="//*[@class='select2-match']";
+			Object[] input = new Object[4];
+		    input[0] = "//*[contains(@aria-controls,'MainContent_cmbInsuranceClass')]";
+		    input[1] = "//*[@class='select2-search__field']";
+		    input[2] = insuranceClass;
+		    input[3] = "//*[contains(@id,'select2-MainContent_cmbInsuranceClass-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user Select \\\"([^\\\"]*)\\\" as insurance class",output.get("MESSAGE").toString());
 		}
@@ -178,10 +178,10 @@ public class AccidentalDamage
 		@When("^user select \"([^\"]*)\" as extension$")
 		public void user_select_as_extension(String extension) throws Throwable {
 			Object[] input= new Object[4];
-			input[0]="(//*[@class='select2-chosen'])[15]";
-			input[1]="//*[@class='select2-input select2-focused']";
+			input[0]="//*[contains(@aria-controls,'MainContent_cmbAddons')]";
+			input[1]="//*[@class='select2-search__field']";
 			input[2]=extension;
-			input[3]="//*[@class='select2-match']";
+			input[3]="//*[contains(@id,'select2-MainContent_cmbAddons-result-')]";
 			Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
 			HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as extension",output.get("MESSAGE").toString());
 		}
