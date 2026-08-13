@@ -2,46 +2,46 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-31T10:16:43 EAT" name="Default suite" finished-at="2026-07-31T10:24:36 EAT" duration-ms="472892">
+  <suite started-at="2026-08-06T09:09:42 EAT" name="Default suite" finished-at="2026-08-06T09:12:32 EAT" duration-ms="170633">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestCurrencyMaster@721eb7df]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestVehicleQuotation@721eb7df]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-07-31T10:16:43 EAT" name="Default test" finished-at="2026-07-31T10:24:36 EAT" duration-ms="472892">
-      <class name="testRunner.RunnerTestCurrencyMaster">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestCurrencyMaster@721eb7df]" started-at="2026-07-31T10:16:43 EAT" name="setUpClass" finished-at="2026-07-31T10:16:44 EAT" duration-ms="1187" status="PASS">
+    <test started-at="2026-08-06T09:09:42 EAT" name="Default test" finished-at="2026-08-06T09:12:32 EAT" duration-ms="170633">
+      <class name="testRunner.RunnerTestVehicleQuotation">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.RunnerTestVehicleQuotation@721eb7df]" started-at="2026-08-06T09:09:42 EAT" name="setUpClass" finished-at="2026-08-06T09:09:43 EAT" duration-ms="1238" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@17b016ac]]>
+                <![CDATA[org.testng.TestRunner@54336976]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestCurrencyMaster@721eb7df]" started-at="2026-07-31T10:16:44 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-31T10:24:35 EAT" duration-ms="471052" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.RunnerTestVehicleQuotation@721eb7df]" started-at="2026-08-06T09:09:43 EAT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-06T09:12:32 EAT" duration-ms="168837" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify user able to edit currency details"]]>
+                <![CDATA["(Vehicle)Verify user able to enter mandatory fields and save quotation successfully"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Currency Master"]]>
+                <![CDATA["Vehicle Quotation"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestCurrencyMaster@721eb7df]" started-at="2026-07-31T10:24:35 EAT" name="tearDownClass" finished-at="2026-07-31T10:24:36 EAT" duration-ms="439" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.RunnerTestVehicleQuotation@721eb7df]" started-at="2026-08-06T09:12:32 EAT" name="tearDownClass" finished-at="2026-08-06T09:12:32 EAT" duration-ms="396" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.RunnerTestCurrencyMaster -->
+      </class> <!-- testRunner.RunnerTestVehicleQuotation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

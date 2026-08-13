@@ -26,7 +26,7 @@ public class CollateralFeedback {
 	public void user_navigate_on_quotations_menu() 
 	{
 		Object[] input8=new Object[1];
-	    input8[0]="//*[@id='span124']";
+	    input8[0]="//*[@id='span_customerManagementLc']";
 	    SeleniumOperations.actionClass(input8);
 	   
 	}
@@ -35,7 +35,7 @@ public class CollateralFeedback {
 	public void user_click_on_current_quotations() throws InterruptedException 
 	{
 		Object[] input9=new Object[1];
-	    input9[0]="//*[@id='Span83']";
+	    input9[0]="//*[@id='span_collateralMaster_lc']";
 	    SeleniumOperations.clickOnElement(input9);
 	    Thread.sleep(2000);
 	}

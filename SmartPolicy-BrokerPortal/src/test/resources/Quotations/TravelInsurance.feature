@@ -44,7 +44,7 @@ When user click on Ok button to accept commission alert message
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 @MandatoryFieldsNoAddon
-Scenario: (Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
+Scenario: (Travel Insurance Quotation) Verify user able to enter mandatory fields without Addon and save quotation successfully
 When user click on add button
 When user enter product discovery details :
     | Field            | Value                      |
@@ -129,7 +129,7 @@ Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
 
 @Edit
-Scenario: (Travel Insurance Quotation) Verify user able to enter mandatory fields and save quotation successfully
+Scenario: (Travel Insurance Quotation) Verify user able to edit and save quotation successfully
 When user select "01-Jan-2026" as from date
 When user enter "Travel Insurance" as Insurance Type
 When user click on search button to find "Travel Insurance" quote

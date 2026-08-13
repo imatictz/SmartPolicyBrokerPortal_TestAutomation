@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
 		           features="src/test/resources/CustomerManagement/CollateralFeedback.feature", 
-                   tags= "@AllFields", 
+                   tags= "@All", 
                    glue={"cucumberMap32CollateralFeedback","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

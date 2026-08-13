@@ -143,7 +143,7 @@ When user enter "502.3" as other fee
 When user enter "50" as discount on commission %
 #Then user click on Re-Compute premium
 Then user validates quotation calculations
-#When user click on save button
+When user click on save button
 When user click on Ok button to accept commission alert
 Then user able to view "Awaiting Receipt(Compliance Issues)" as status
 
