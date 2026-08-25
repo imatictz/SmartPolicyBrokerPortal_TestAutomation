@@ -3,41 +3,27 @@
 <suite data-provider-thread-count="2" name="Failed suite [SmartPoilcy]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test1(failed)">
     <classes>
-      <class name="testRunner.RunnerTestBondsQuotation">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="2"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestBondsQuotation -->
-      <class name="testRunner.RunnerTestMedicalQuotation">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="4"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestMedicalQuotation -->
-      <class name="testRunner.RunnerTestTravelInsuranceQuotation">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="3"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestTravelInsuranceQuotation -->
-      <class name="testRunner.RunnerTestPensionQuotation">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="2"/>
-        </methods>
-      </class> <!-- testRunner.RunnerTestPensionQuotation -->
       <class name="testRunner.RunnerTestEndorsement">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="24"/>
           <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27"/>
         </methods>
       </class> <!-- testRunner.RunnerTestEndorsement -->
+      <class name="testRunner.RunnerTestEndorsementScreen">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="8"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestEndorsementScreen -->
+      <class name="testRunner.RunnerTestReports">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="98 99 115 58 139 175"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- testRunner.RunnerTestReports -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [SmartPoilcy] -->

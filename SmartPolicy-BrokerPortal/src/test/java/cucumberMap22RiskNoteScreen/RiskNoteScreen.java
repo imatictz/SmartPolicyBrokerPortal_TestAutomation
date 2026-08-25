@@ -27,12 +27,20 @@ public class RiskNoteScreen {
 	    Thread.sleep(2000);
 	   
 	}
-	
-	@Then("^user select risk note menu$")
-	public void user_select_risk_note_menu() throws Throwable {
-	    Object[] input9=new Object[1];
-		input9[0]="//*[@id='span_riskNote_lc']";
-		SeleniumOperations.clickOnElement(input9);
+	@When("^user navigate on risk note option$")
+	public void user_navigate_on_riskNoteOption() throws InterruptedException {
+		Object[] input7=new Object[1];
+		input7[0]="//*[@id='dvICNM']";
+		SeleniumOperations.actionClass(input7);
+		Thread.sleep(2000); 
+	}
+	 
+	@When("^user Click on risk note menu$")
+	public void user_Click_on_risk_note_menu() throws Throwable {
+		Object[] input=new Object[1];
+		input[0]="//*[@id='span_ICNM_lc']";
+		SeleniumOperations.clickOnElement(input);
+		Thread.sleep(2000);
 	}
 	
 	@And ("^user click on login button$")

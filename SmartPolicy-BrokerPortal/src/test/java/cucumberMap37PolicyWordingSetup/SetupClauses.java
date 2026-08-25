@@ -20,7 +20,7 @@ public class SetupClauses {
 	@When("user navigate on policy wordings setup option")
 	public void user_navigate_on_policywordingsoption() throws InterruptedException {
 		Object[] input7=new Object[1];
-	    input7[0]="//*[@id='span88']";
+	    input7[0]="//*[@id='span_policyWordingsSetup_lc']";
 	    SeleniumOperations.actionClass(input7);
 	    Thread.sleep(2000);
 	}

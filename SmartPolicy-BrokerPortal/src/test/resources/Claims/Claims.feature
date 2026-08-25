@@ -4,6 +4,7 @@ Feature: Claims
 Background: 
  
 When user navigate on operation dropdown menu
+When user navigate on risk note option
 When user Click on risk note menu
 
 @reportAccidentalDamageClaims

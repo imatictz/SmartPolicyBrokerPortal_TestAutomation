@@ -10,7 +10,7 @@ public class SetupProductLimitsClauses {
 	@Then("user click on Setup Product Limits & Clauses option")
 	public void user_click_on_extension_clauses_terms_option() throws InterruptedException {
 		Object[] input = new Object[1];
-		input[0]="//*[@id='Span71']";
+		input[0]="//*[@id='span_setupProductLimitsAndClauses_lc']";
 		SeleniumOperations.clickOnElement(input);
 		Thread.sleep(2000);
 	}

@@ -27,7 +27,7 @@ public class Hookable {
     @BeforeAll
     public static void beforeAllScenarios() throws UnknownHostException {
         HTMLReportGenerator.TestSuiteStart(
-            "C:\\ExecuteParrallel_Final\\May05.html",
+            "C:\\ExecuteParrallel_Jenkins\\Aug.html",
             "SmartPolicy"
         );
     }
