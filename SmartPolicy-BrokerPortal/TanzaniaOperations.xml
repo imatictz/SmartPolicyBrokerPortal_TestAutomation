@@ -25,10 +25,10 @@
      <class name="testRunner_Tanzania_Country.RunnerTestClaims"/>
      <class name="testRunner_Tanzania_Country.RunnerTestClaimsTracking"/>
      <class name="testRunner.RunnerTestPayment"/>
-     <class name="testRunner.RunnerTestEndorsement"/>
-     <class name="testRunner.RunnerTestEndorsementScreen"/>
+     <class name="testRunner_Tanzania_Country.RunnerTestEndorsement"/>
+     <class name="testRunner_Tanzania_Country.RunnerTestEndorsementScreen"/>
    <!--  <class name="testRunner.RunnerTestRenewPolicy"/>-->
-     <class name="testRunner.RunnerTestReports"/>
+     <class name="testRunner_Tanzania_Country.RunnerTestReports"/>
       
       
     </classes>
