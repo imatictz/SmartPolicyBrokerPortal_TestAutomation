@@ -208,11 +208,11 @@ public class PolicyCancel {
 		    //click on search
 	        Itl.ClickEvent("//*[@id='button_btnSearch_lc']", "CLICK", 2000);
 	        
-			SeleniumOperations.getQuote("Motor");
+			//SeleniumOperations.getQuote("Motor");
 			Thread.sleep(4000);
 			 
-			String quoteNo = SeleniumOperations.getQuote("Motor");
-			Itl.SendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "TEXTBOX", 2000);
+			//String quoteNo = SeleniumOperations.getQuote("Motor");
+			//Itl.SendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "TEXTBOX", 2000);
 			
 			Itl.ClickEvent("//*[@id='button_btnSearch_lc']", "CLICK", 2000);
 			
@@ -329,17 +329,17 @@ public class PolicyCancel {
 	        // Click search
 	        Itl.ClickEvent("//*[@id='button_btnSearch_lc']", "CLICK", 2000);
 
-	        SeleniumOperations.getQuote(policyType);
+	       // SeleniumOperations.getQuote(policyType);
 	        Thread.sleep(4000);
 
-	        String quoteNo = SeleniumOperations.getQuote(policyType);
+	       // String quoteNo = SeleniumOperations.getQuote(policyType);
 
-	        Itl.SendEvent(
+	       /* Itl.SendEvent(
 	                "//*[@id='MainContent_txtSrchQuote']",
 	                quoteNo,
 	                "TEXTBOX",
 	                2000
-	        );
+	        );*/
 
 	        Itl.ClickEvent("//*[@id='button_btnSearch_lc']", "CLICK", 2000);
 	    }

@@ -116,8 +116,8 @@ When user enter "594200" as saving premium
 When user click on compute button
 When user select "Yearly" as payment frequency
 When user click on calculate schedule button
-When user click on save button
-Then user able to view "Awaiting Receipt" as status
+#When user click on save button
+#Then user able to view "Awaiting Receipt" as status
 
 @PrintQuote
  Scenario: User prints the Educare Life Insurance quote

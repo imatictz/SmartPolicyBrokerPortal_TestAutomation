@@ -7,8 +7,8 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Quotations/Fidelity.feature", 
-                   tags= "@All", 
+		           features="src/test/resources/Tanzania_Country/Quotations/Fidelity.feature", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap7Fidelity","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

@@ -7,9 +7,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Claims/Claims.feature", 
+		           features="src/test/resources/Tanzania_Country/Claims/Claims.feature", 
                    tags= "@All", 
-                   glue={"cucumberMap18Claims","MyHooks"}, 
+                   glue={"cucumberMap18Claims","TanzaniaHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	
                            "html:target/CucumberTest/CucumbetReport.html"},

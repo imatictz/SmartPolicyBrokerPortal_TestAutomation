@@ -46,17 +46,7 @@ public class Medical {
 	    Thread.sleep(8000);
 	}
 
-	@When("^user select \"([^\"]*)\" as insurance type$")
-	public void user_select_as_insurance_type1(String insuranceType) throws Throwable {
-		Object[] input= new Object[4];
-		input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
-		input[1]="//*[@class='select2-search__field']";
-		input[2]=insuranceType;
-		input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
-		Hashtable<String,Object> output=SeleniumOperations.dropdown(input);	
-		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
-		Thread.sleep(5000);
-	}
+	
 
 	@When("^user enter \"([^\"]*)\" as client name$")
 	public void enterClientName1(String clientName) throws Throwable {
@@ -675,22 +665,87 @@ public class Medical {
 	    Itl.CustomClearEvent("//*[@id='MainContent_txtUserId']", "CLEAR", 0);
 	}
 	
-	@When ("user click on search button to find {string} quote")
-	 public void user_click_on_search_button_quoteNo1(String quoteName) throws Throwable {
-		 Object[] input=new Object[1];
-		 input[0]="//*[@id='button_btnSearch_lc']";
-		 Hashtable<String,Object> output= SeleniumOperations.clickOnElement(input);
-		 HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user click on search button",output.get("MESSAGE").toString());
-		 Thread.sleep(5000);
-		 SeleniumOperations.getQuote(quoteName);
-		 Thread.sleep(4000);
-	 }
+	@When("user clicks on the actions dropdown\\(zambia)")
+	public void user_clicks_on_the_actions_dropdown1() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[2]", "user clicks on the actions dropdown", "CLICK", 2000);
+
+	}
+	@When("user clicks on print quotation option\\(zambia)")
+	public void user_clicks_on_print_quotation_option1() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[2]/*[2]/*[3]", "user clicks on print quotation option", "CLICK", 2000);
+
+	}
+	@When("user clicks on edit option\\(zambia)")
+	public void user_clicks_on_edit_option2() throws InterruptedException {
+	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[2]/*[2]/*[1]", "user clicks on edit option", "CLICK", 4000);
+	}
+	@When("user click on search button to find {string} quote with status {string}")
+	public void user_click_on_search_button_quoteNo1(String quoteName, String status) throws Throwable {
+
+	    Object[] input = new Object[1];
+	    input[0] = "//*[@id='button_btnSearch_lc']";
+
+	    Hashtable<String, Object> output = SeleniumOperations.clickOnElement(input);
+
+	    HTMLReportGenerator.StepDetails(
+	            output.get("STATUS").toString(),
+	            "user click on search button",
+	            output.get("MESSAGE").toString()
+	    );
+
+	    Thread.sleep(2000);
+
+	    // Find and store quote number
+	    String quoteNumber = SeleniumOperations.getQuote(quoteName, status);
+
+	    if (quoteNumber == null || quoteNumber.isEmpty()) {
+	        throw new RuntimeException(
+	                "No quote found for Quote Name: " + quoteName +
+	                " with Status: " + status
+	        );
+	    }
+
+	    // Store quote number for next step
+	    SeleniumOperations.setSelectedQuoteNumber(quoteNumber);
+
+	    Thread.sleep(4000);
+	}
+
+
+	@When("user enter quote number to search {string} quote")
+	public void user_enter_as_quote_number(String quoteName) throws InterruptedException {
+
+	    // Get quote number already found in previous step
+	    String quoteNo = SeleniumOperations.getSelectedQuoteNumber();
+
+	    if (quoteNo == null || quoteNo.isEmpty()) {
+	        throw new RuntimeException(
+	                "Quote number was not found for: " + quoteName
+	        );
+	    }
+
+	    Itl.CustomSendEvent(
+	            "//*[@id='MainContent_txtSrchQuote']",
+	            quoteNo,
+	            "user enter " + quoteNo + " as quote number",
+	            "TEXTBOX",
+	            0
+	    );
+
+	    Thread.sleep(4000);
+	}
 	
-	@When ("user enter quote number to search {string} quote")
-	public void user_enter_as_quote_number1(String quoteName) throws InterruptedException {
-		String quoteNo = SeleniumOperations.getQuote(quoteName);
-		Itl.CustomSendEvent("//*[@id='MainContent_txtSrchQuote']", quoteNo, "user enter {string} as quote number", "TEXTBOX", 1000);
-		Thread.sleep(4000);
+
+	@When("^user select \"([^\"]*)\" as insurance type$")
+	public void user_select_as_insurance_type(String insuranceType) throws Throwable {
+		Object[] input= new Object[4];
+		input[0]="//*[contains(@aria-controls,'MainContent_cmbPopInsuranceType')]";
+		input[1]="//*[@class='select2-search__field']";
+		input[2]=insuranceType;
+		input[3]="//*[contains(@id,'select2-MainContent_cmbPopInsuranceType-result-')]";	
+		Hashtable<String,Object> output=SeleniumOperations.dropdownTest(input);
+		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user select \\\"([^\\\"]*)\\\" as insurance type",output.get("MESSAGE").toString());
+		Thread.sleep(5000);
 	}
 	
 	@When ("user click on search button")
@@ -703,12 +758,12 @@ public class Medical {
 	 }
 	
 	@When("user clicks on the actions dropdown")
-	public void user_clicks_on_the_actions_dropdown1() throws InterruptedException {
+	public void user_clicks_on_the_actions_dropdown2() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]", "user clicks on the actions dropdown", "CLICK", 2000);
 
 	}
 	@When("user clicks on print quotation option")
-	public void user_clicks_on_print_quotation_option1() throws InterruptedException {
+	public void user_clicks_on_print_quotation_option2() throws InterruptedException {
 	    Itl.CustomClickEvent("//*[@id='sort_table']/tbody/tr[1]/td[9]/*[3]/*[2]/*[3]", "user clicks on print quotation option", "CLICK", 2000);
 
 	}
@@ -738,10 +793,10 @@ public class Medical {
 	public void user_enter_as_borrower_account_number1(String borrowerNumber) throws InterruptedException {
 		Itl.CustomSendEvent("//*[@id='MainContent_txtBorrowerAccNum']", borrowerNumber, "user enter {string} as borrower account number", "TEXTBOX", 0);
 	}
-	@Then ("user able to view {string} message")
+	@Then ("user able to view {string} as message")
 	public void validation(String validation) throws InterruptedException{
 		Object[] input=new Object[2];
-		input[0]="//*[text()='1003-Information modified successfully']";
+		input[0]="//*[@id='sort_table']/tbody/tr[1]/td[3]";
 		input[1]=validation;
 		Hashtable<String,Object> output=SeleniumOperations.validation(input);
 		HTMLReportGenerator.StepDetails(output.get("STATUS").toString(),"user able to view {string} message",output.get("MESSAGE").toString());
@@ -791,4 +846,5 @@ public class Medical {
 	        );
 	    }
 	}
+	
 }

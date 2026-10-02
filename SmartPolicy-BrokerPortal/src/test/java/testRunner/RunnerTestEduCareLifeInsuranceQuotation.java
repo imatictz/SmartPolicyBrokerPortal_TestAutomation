@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Quotations/EduCareLifeInsurance.feature", 
+		           features="src/test/resources/Tanzania_Country/Quotations/EduCareLifeInsurance.feature", 
                    tags= "@All", 
                    glue={"cucumberMap15EduCareLifeInsurance","MyHooks"}, 
                    monochrome=true,   

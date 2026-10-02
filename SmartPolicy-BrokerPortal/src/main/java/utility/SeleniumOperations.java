@@ -2856,55 +2856,98 @@ public static Hashtable<String, Object> sendDate(Object[] inputparameters) {
 
      }
 
-     public static String getQuote(String quoteName) {
+     public static String getQuote(String quoteName, String status) {
+
     	    try {
-    	        boolean found = false;
-    	        String quoteNumber = null;
 
     	        while (true) {
-    	            // Locate table and rows
-    	            WebElement table = d().findElement(By.xpath("//*[@id='sort_table']"));
-    	            List<WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
+
+    	            WebElement table = d().findElement(
+    	                    By.xpath("//*[@id='sort_table']")
+    	            );
+
+    	            List<WebElement> rows = table.findElements(
+    	                    By.xpath(".//tbody/tr")
+    	            );
 
     	            for (WebElement row : rows) {
-    	                WebElement cell1 = row.findElement(By.xpath("./td[4]")); // 4th column
-    	                WebElement cell2 = row.findElement(By.xpath("./td[8]")); // 8th column
+
+    	                WebElement cell1 = row.findElement(
+    	                        By.xpath("./td[4]")
+    	                );
+
+    	                WebElement cell2 = row.findElement(
+    	                        By.xpath("./td[8]")
+    	                );
+
     	                if (cell1.getText().trim().equalsIgnoreCase(quoteName)
-    	                        && cell2.getText().trim().equalsIgnoreCase("Awaiting Receipt")) {
+    	                        && cell2.getText().trim().equalsIgnoreCase(status)) {
 
-    	                    WebElement quoteCell = row.findElement(By.xpath("./td[2]/*[1]"));
-    	                    quoteNumber = quoteCell.getText().trim();
-    	                    found = true;
+    	                    WebElement quoteCell = row.findElement(
+    	                            By.xpath("./td[2]/*[1]")
+    	                    );
 
-    	                    System.out.println("✅ Found 'Awaiting Receipt' for " + quoteName + ". Quote Number: " + quoteNumber);
-    	                    return quoteNumber; // stop immediately
+    	                    String quoteNumber = quoteCell.getText().trim();
+
+    	                    System.out.println(
+    	                            "✅ Found '" + status + "' for "
+    	                            + quoteName
+    	                            + ". Quote Number: "
+    	                            + quoteNumber
+    	                    );
+
+    	                    return quoteNumber;
     	                }
     	            }
 
-    	            // Check for pagination only if not found yet
-    	            if (!found) {
-    	                WebElement nextButton = d().findElement(By.xpath("//*[@id='sort_table_next']"));
-    	                String nextClass = nextButton.getAttribute("class");
+    	            // Check pagination
+    	            WebElement nextButton = d().findElement(
+    	                    By.xpath("//*[@id='sort_table_next']")
+    	            );
 
-    	                if (nextClass != null && nextClass.contains("disabled")) {
-    	                    System.out.println("🚫 Reached last page. No 'Awaiting Receipt' found for: " + quoteName);
-    	                    break;
-    	                } else {
-    	                    System.out.println("➡️ Moving to next page...");
-    	                    nextButton.click();
-    	                    Thread.sleep(1500); // Wait for next page to load
-    	                }
+    	            String nextClass = nextButton.getAttribute("class");
+
+    	            if (nextClass != null && nextClass.contains("disabled")) {
+
+    	                System.out.println(
+    	                        "🚫 Reached last page. No '"
+    	                        + status
+    	                        + "' found for: "
+    	                        + quoteName
+    	                );
+
+    	                break;
+
     	            } else {
-    	                break; // safety exit (redundant but safe)
+
+    	                System.out.println("➡️ Moving to next page...");
+
+    	                nextButton.click();
+
+    	                Thread.sleep(1500);
     	            }
     	        }
 
-    	        return quoteNumber; // null if not found
+    	        return null;
 
     	    } catch (Exception e) {
+
     	        e.printStackTrace();
+
     	        return null;
     	    }
+    	}
+     private static ThreadLocal<String> selectedQuoteNumber = new ThreadLocal<>();
+     public static void setSelectedQuoteNumber(String quoteNumber) {
+    	    selectedQuoteNumber.set(quoteNumber);
+    	}
+
+    	public static String getSelectedQuoteNumber() {
+    	    return selectedQuoteNumber.get();
+    	}
+
+    	public static void clearSelectedQuoteNumber() {
+    	    selectedQuoteNumber.remove();
     	}
 
 

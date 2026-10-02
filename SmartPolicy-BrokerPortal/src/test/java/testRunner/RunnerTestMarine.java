@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Quotations/Marine.feature", 
+		           features="src/test/resources/Tanzania_Country/Quotations/Marine.feature", 
                    tags= "@Mandatory", 
                    glue={"cucumberMap29Marine","MyHooks"}, 
                    monochrome=true,   

@@ -6,8 +6,8 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Quotations/GroupLife.feature", 
-                   tags= "@All", 
+		           features="src/test/resources/Tanzania_Country/Quotations/GroupLife.feature", 
+                   tags= "@MandatoryFields", 
                    glue={"cucumberMap13GroupLife","MyHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	

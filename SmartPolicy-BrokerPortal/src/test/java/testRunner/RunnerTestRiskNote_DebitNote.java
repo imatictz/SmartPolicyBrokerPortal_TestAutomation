@@ -6,9 +6,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/RiskNote-DebitNote/RiskNoteDebitNote.feature", 
-                   tags= "@All", 
-                   glue={"cucumberMap16RiskNoteDebitNote","MyHooks"}, 
+		           features="src/test/resources/Tanzania_Country/RiskNote/RiskNote.feature", 
+                   tags= "@IssueAccidentalRiskNote", 
+                   glue={"cucumberMap16RiskNote","TanzaniaHooks"}, 
                    monochrome=true,   
                    plugin= { "pretty",   	
                            "html:target/CucumberTest/CucumbetReport.html"},

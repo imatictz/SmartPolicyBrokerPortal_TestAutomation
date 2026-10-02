@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SmartPoilcy_Zambia" >
+
+   <test name="PHASE-1-CLIENT">
+
+        <classes>
+     
+     <class name="testRunner_Zambia_Country.RunnerTestClientDetails"/> 
+     <class name="testRunner_Zambia_Country.RunnerTestAccidentalDamageQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestBondsQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestBurglaryQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestCreditLifeQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestFidelityQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestFireClassIQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestMedicalQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestPackagePolicyQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestVehicleQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestTravelInsuranceQuotation"/>
+     <class name="testRunner_Zambia_Country.RunnerTestworkmens"/> 
+     <class name="testRunner_Zambia_Country.RunnerTestRiskNote"/>
+     <class name="testRunner_Zambia_Country.RunnerTestRiskNoteScreen"/>
+     <class name="testRunner_Zambia_Country.RunnerTestClaims"/>
+     <class name="testRunner_Zambia_Country.RunnerTestClaimsTracking"/>
+     <class name="testRunner.RunnerTestPayment"/>
+     <class name="testRunner.RunnerTestEndorsement"/>
+     <class name="testRunner.RunnerTestEndorsementScreen"/>
+     <class name="testRunner.RunnerTestRenewPolicy"/>
+     <class name="testRunner.RunnerTestReports"/>
+      
+      
+    </classes>
+    </test>
+   
+    
+    
+    
+
+</suite>

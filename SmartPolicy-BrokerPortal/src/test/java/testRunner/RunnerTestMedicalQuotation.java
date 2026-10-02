@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 @CucumberOptions(
-    features = "src/test/resources/Quotations/Medical.feature",
+    features = "src/test/resources/Tanzania_Country/Quotations/Medical.feature",
     tags = "@All",
     glue = {
         "cucumberMap12Medical",

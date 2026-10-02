@@ -7,7 +7,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Quotations/FireClassI.feature", 
+		           features="src/test/resources/Tanzania_Country/Quotations/FireClassI.feature", 
                    tags= "@All", 
                    glue={"cucumberMap10FireClassI","MyHooks"}, 
                    monochrome=true,   

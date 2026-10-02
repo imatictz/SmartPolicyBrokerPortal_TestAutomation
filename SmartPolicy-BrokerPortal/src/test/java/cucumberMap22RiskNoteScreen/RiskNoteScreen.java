@@ -35,7 +35,7 @@ public class RiskNoteScreen {
 		Thread.sleep(2000); 
 	}
 	 
-	@When("^user Click on risk note menu$")
+	@When("^user select risk note menu$")
 	public void user_Click_on_risk_note_menu() throws Throwable {
 		Object[] input=new Object[1];
 		input[0]="//*[@id='span_ICNM_lc']";

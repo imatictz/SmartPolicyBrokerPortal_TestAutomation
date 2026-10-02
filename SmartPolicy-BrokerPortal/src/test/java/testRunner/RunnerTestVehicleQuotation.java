@@ -7,7 +7,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(  
-		           features="src/test/resources/Quotations/Vehicle.feature", 
+		           features="src/test/resources/Tanzania_Country/Quotations/Vehicle.feature", 
                    tags= "@All", 
                    glue={"cucumberMap2Vehicle","MyHooks"}, 
                    monochrome=true,   

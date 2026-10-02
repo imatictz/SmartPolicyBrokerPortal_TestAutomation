@@ -5,6 +5,7 @@ Background:
 
 #Get Risk Note Number
 When user navigate on operation dropdown menu
+When user navigate on risk note option
 Then user select risk note menu
 
 
